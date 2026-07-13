@@ -1,0 +1,21 @@
+# runtime artifacts (regenerated every run — never committed)
+photo_*.png
+photos_contact.png
+subjfull_*.png
+card_*.png
+card_*.html
+cards_contact.png
+badge_*.png
+badges_*.png
+badge_pn_*.png
+badge_raw_*.webp
+v_*.html
+vshot_*.png
+vD_*.png
+raw_*.webp
+*.webp
+runs/
+.browser_profile/
+.vprofile/
+__pycache__/
+*.pyc

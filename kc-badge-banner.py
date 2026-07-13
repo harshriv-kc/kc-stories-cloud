@@ -1,0 +1,109 @@
+# -*- coding: utf-8 -*-
+# Render KC badge design VARIANTS for operator sign-off. Each line is nowrap (no accidental wrap);
+# fs tuned per badge so nothing overflows the ring. Full-circle image + gradient scrim + yellow text.
+import base64, subprocess, os, sys, shutil
+from PIL import Image, ImageDraw
+HERE=os.environ.get("KC_DIR", os.getcwd())
+_C=[os.environ.get("CHROME_BIN",""),
+    shutil.which("chromium"), shutil.which("chromium-browser"),
+    shutil.which("google-chrome"), shutil.which("google-chrome-stable"),
+    "/usr/bin/chromium","/usr/bin/chromium-browser","/usr/bin/google-chrome","/usr/bin/google-chrome-stable",
+    r"C:\Program Files\Google\Chrome\Application\chrome.exe",
+    r"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe",
+    r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe",
+    r"C:\Program Files\Microsoft\Edge\Application\msedge.exe"]
+EDGE=next((p for p in _C if p and os.path.exists(p)),_C[0]); PROFILE=os.path.join(HERE,".vprofile")
+D=1080
+def b64(p):
+    with open(p,"rb") as f: return base64.b64encode(f.read()).decode()
+# gradient presets
+SOFT="rgba(11,13,17,0) 40%, rgba(11,13,17,0.30) 56%, rgba(11,13,17,0.74) 76%, rgba(11,13,17,0.94) 92%, rgba(11,13,17,0.97) 100%"
+HARD="rgba(11,13,17,0) 14%, rgba(11,13,17,0.45) 34%, rgba(11,13,17,0.82) 58%, rgba(11,13,17,0.95) 80%, rgba(11,13,17,0.98) 100%"
+# TALL: darkens earlier/higher so BIG text that reaches up to ~45% of the circle stays legible (2026-07-09)
+TALL="rgba(11,13,17,0) 8%, rgba(11,13,17,0.35) 26%, rgba(11,13,17,0.72) 44%, rgba(11,13,17,0.92) 66%, rgba(11,13,17,0.97) 100%"
+# CURVED-BANNER design (operator, 2026-07-09 — "image + text separate like before, curved separator not a
+# straight line, text banner >50%"). Top = product photo; bottom = dark banner whose top edge is a smooth
+# CURVE (quadratic Bézier) with a gold trim stroke; BIG yellow 2-line clicky headline sits in the banner.
+# BEDGE = banner top y at the LEFT/RIGHT edges; BCTRL = Bézier control y at centre (>BEDGE = dips at centre / concave).
+# 2026-07-09 v6 — operator: the contain+blur look was OFF (boxy image, empty-looking blurred side bars). Go back to
+# FULL-BLEED cover (image fills the ENTIRE top space, no bars); the FIX for "half/cropped image" is to use photos
+# COMPOSED to fill the whole frame with stuff (dense overhead flat-lays) so the top cover-crop always looks full.
+# Keep the line spacing that fixed the touching lines (line-height 1.1 + per-line margin). BEDGE/BCTRL = banner curve.
+BEDGE=470; BCTRL=560
+TPL='''<!doctype html><html><head><meta charset="utf-8"><style>
+html,body{{margin:0;padding:0;width:1080px;height:1080px;overflow:hidden;background:#0B0D11;font-family:'Nirmala UI','Segoe UI',sans-serif;}}
+.b{{width:1080px;height:1080px;position:relative;overflow:hidden;}}
+.subj{{position:absolute;inset:0;width:1080px;height:1080px;object-fit:cover;object-position:center;}}
+.banner{{position:absolute;inset:0;}}
+.t{{position:absolute;left:22px;right:22px;bottom:{bottom}px;text-align:center;color:#F4C842;font-weight:800;line-height:1.1;letter-spacing:0px;text-shadow:0 3px 6px rgba(0,0,0,.92);}}
+.t div{{white-space:nowrap;font-size:{fs}px;margin:7px 0;}}
+</style></head><body><div class="b">
+<img class="subj" src="data:image/png;base64,{subj}">
+<svg class="banner" width="1080" height="1080" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0,{edge} Q540,{ctrl} 1080,{edge} L1080,1080 L0,1080 Z" fill="#0E1116"/>
+  <path d="M0,{edge} Q540,{ctrl} 1080,{edge}" fill="none" stroke="#C8A24A" stroke-width="9"/>
+</svg>
+<div class="t">{lines}</div></div></body></html>'''
+def render(tag, cfg, grad, bottom):
+    # Ring, outside -> in: solid RED band (4.5%, OUTERMOST, flush to the edge) + thin WHITE separator (2%) + photo.
+    # The white separator is the white canvas showing through (photo pasted at r_in; red painted at the edge).
+    # 2026-07-10 (operator): make the INNER white ring clearly visible so the red doesn't start flush on the photo;
+    # red stays the outermost ring (NO outer white ring). In the PN export this white separator is cut to
+    # TRANSPARENT ("the middle white should be transparent in pn"), so the PN = photo + transparent gap + red.
+    R=D//2; red_w=round(0.045*D); sep_w=round(0.032*D); r_in=R-red_w-sep_w
+    for c in cfg:
+        lines="".join(f"<div>{ln}</div>" for ln in c["lines"])
+        html=TPL.format(edge=BEDGE,ctrl=BCTRL,bottom=bottom,fs=c["fs"],subj=b64(os.path.join(HERE,c["src"])),lines=lines)
+        hp=os.path.join(HERE,f'v_{tag}_{c["i"]}.html'); op=os.path.join(HERE,f'vshot_{tag}_{c["i"]}.png')
+        with open(hp,"w",encoding="utf-8") as f: f.write(html); f.flush(); os.fsync(f.fileno())
+        if os.path.exists(op): os.remove(op)
+        for _ in range(3):
+            subprocess.run([EDGE,"--headless=new","--disable-gpu","--no-sandbox","--hide-scrollbars",
+                "--no-first-run","--no-default-browser-check",f"--user-data-dir={PROFILE}",
+                "--force-device-scale-factor=1",f"--screenshot={op}","--window-size=1080,1080",hp],capture_output=True)
+            if os.path.exists(op): break
+        im=Image.open(op).convert("RGB"); canvas=Image.new("RGB",(D,D),(255,255,255))
+        m=Image.new("L",(D,D),0); ImageDraw.Draw(m).ellipse((R-r_in,R-r_in,R+r_in,R+r_in),fill=255)
+        canvas.paste(im,(0,0),m); d=ImageDraw.Draw(canvas)
+        # PIL grows an ellipse stroke INWARD from the bbox. So:
+        # crisp WHITE separator ring: bbox outer = red's inner edge (R-red_w); stroke sep_w fills inward to r_in.
+        ri=R-red_w
+        d.ellipse((R-ri,R-ri,R+ri,R+ri),outline=(255,255,255),width=sep_w+2)
+        # RED band, OUTERMOST + flush to the badge edge: bbox at the canvas edge, stroke grows inward.
+        d.ellipse((0,0,D-1,D-1),outline=(0xB9,0x2B,0x0F),width=red_w)
+        canvas.save(os.path.join(HERE,f'v{tag}_{c["i"]}.png'))
+        # --- Transparent square PN export (WebEngage multi_icon), emitted here so it always matches the ring ---
+        # Compound alpha mask: CONTENT disc + RED annulus opaque; the inner WHITE ring between them is cut to
+        # TRANSPARENT (operator 2026-07-10) so the push bg shows through; RED stays the outermost ring at the edge.
+        S=4; red_inner=R-red_w
+        pm=Image.new("L",(D*S,D*S),0); pd=ImageDraw.Draw(pm)
+        pd.ellipse((0,0,D*S,D*S),fill=255)                                                  # badge circle (to edge = red outer) opaque; corners stay transparent
+        pd.ellipse(((R-red_inner)*S,(R-red_inner)*S,(R+red_inner)*S,(R+red_inner)*S),fill=0) # hole: everything inside the red -> transparent
+        pd.ellipse(((R-r_in)*S,(R-r_in)*S,(R+r_in)*S,(R+r_in)*S),fill=255)                   # content disc opaque -> leaves r_in..red_inner (the white ring) transparent
+        pn=canvas.convert("RGBA"); pn.putalpha(pm.resize((D,D),Image.LANCZOS))
+        pn.resize((500,500),Image.LANCZOS).save(os.path.join(HERE,f'badge_pn_{c["i"]}.png'))
+        print(f'v{tag}_{c["i"]} + badge_pn_{c["i"]} done')
+
+# OPTION D (operator-chosen final): full-circle photo + soft bottom gradient scrim + BIG yellow short-hook text
+# 2026-07-09: mandi=लाल मिर्च तेज़ · fmcg=फ्री माल स्कीम · tn=ई-श्रम ₹2 लाख मुफ्त बीमा (shorter word on line 2)
+# 2026-07-09 v3 — CURVED-BANNER design + CLICKY copy (operator direction).
+#   mandi = {commodity} में तेजी/मंदी · fmcg = communicate the actual offer · news = mini-headline w/ hook.
+# 2026-07-09 v7 — operator: (a) UNIFORM text size across all 3 badges (was 3 different fs); (b) more ring
+# clearance (text still grazing border in spots); (c) FMCG uses the REAL product photo (D2R post media:
+# Center Fruit jar with the "2 Godrej No.1 soap free" offer label). Single FS for all; raised bottom.
+# FS 160->154 (2026-07-10): the inner WHITE ring (sep 3.2%) shrank the usable content circle to radius ~454,
+# so the widest line ("1 पैक फ्री") grazed it at FS160 (3px). 154 keeps every badge's widest line >=~15px clear
+# of the white ring while staying uniform. ALWAYS re-check max_text_radius <= ~438 (white-ring inner 454) after
+# changing copy — the widest line caps FS.
+FS=166
+DAY=[dict(i=1,src="subjfull_1.png",lines=["मोठ में","तेजी"],fs=FS),
+     dict(i=2,src="subjfull_2.png",lines=["पेस्ट पर","ब्रश फ्री"],fs=FS),
+     dict(i=3,src="subjfull_3.png",lines=["आटा भाव","काबू में"],fs=FS)]
+if __name__=="__main__":
+    render("D", DAY, TALL, 135)   # FS 152->166 + bottom 205->150->135 (2026-07-13): 205 seated the 2-line block in the
+                                  # UPPER half of the dark banner (empty gap below = "text drifting to the top").
+                                  # Operator then wanted it BIGGER + centered so the banner feels fully covered. Swept
+                                  # uniform FS: 166 is the largest that keeps every badge's widest line clear of the
+                                  # inner white ring (max radial 439 <= ~448; FS174 hit 453 = clip-risk). bottom is
+                                  # set to CENTER the taller block in the banner: bottom ≈ 325 - (2*FS*1.1+14)/2 ≈ 135.
+                                  # Re-measure max_text_radius after any FS/copy change; cap FS where max radial ~446.
