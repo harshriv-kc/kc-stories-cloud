@@ -31,16 +31,18 @@ The stripe + commodity triangle + sub-line delta all use the direction colour.
 Triangle: "up" = ▲ तेज़ी, "down" = ▼ मंदी (drawn with CSS borders, never a glyph).
 Price line: commodity = tri()+₹X+unit · FMCG = ₹X →(grey) ₹Y · news = <span class="news">summary</span>.
 """
-import base64, subprocess, os, shutil
+import base64, subprocess, os, shutil, glob
 from PIL import Image
 
-# Cross-platform Chromium/Chrome finder. CLOUD routine = Linux (chromium installed at setup; the Nirmala UI
-# font is installed from fonts/Nirmala.ttc so 'Nirmala UI' resolves identically). LOCAL = Windows Chrome/Edge.
+# Cross-platform Chromium/Chrome finder. CLOUD = Linux: prefer CHROME_BIN (setup.sh exports a VERIFIED working
+# binary), then the pre-installed Playwright chromium. NOTE: /usr/bin/chromium-browser is a BROKEN snap stub in
+# the sandbox (exists but errors) — do NOT prefer it. Nirmala UI comes from fonts/Nirmala.ttc. LOCAL = Windows.
 _CANDS = [
     os.environ.get("CHROME_BIN", ""),
-    shutil.which("chromium"), shutil.which("chromium-browser"),
-    shutil.which("google-chrome"), shutil.which("google-chrome-stable"),
-    "/usr/bin/chromium", "/usr/bin/chromium-browser", "/usr/bin/google-chrome", "/usr/bin/google-chrome-stable",
+    *sorted(glob.glob("/opt/pw-browsers/chromium*/chrome-linux/chrome"), reverse=True),
+    *sorted(glob.glob(os.path.expanduser("~/.cache/ms-playwright/chromium*/chrome-linux/chrome")), reverse=True),
+    shutil.which("google-chrome"), shutil.which("google-chrome-stable"), shutil.which("chromium"),
+    "/usr/bin/google-chrome", "/usr/bin/google-chrome-stable", "/usr/bin/chromium",
     r"C:\Program Files\Google\Chrome\Application\chrome.exe",
     r"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe",
     r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe",

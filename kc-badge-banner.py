@@ -1,13 +1,16 @@
 # -*- coding: utf-8 -*-
 # Render KC badge design VARIANTS for operator sign-off. Each line is nowrap (no accidental wrap);
 # fs tuned per badge so nothing overflows the ring. Full-circle image + gradient scrim + yellow text.
-import base64, subprocess, os, sys, shutil
+import base64, subprocess, os, sys, shutil, glob
 from PIL import Image, ImageDraw
 HERE=os.environ.get("KC_DIR", os.getcwd())
+# Prefer CHROME_BIN (setup.sh exports a verified binary) then the pre-installed Playwright chromium;
+# /usr/bin/chromium-browser is a broken snap stub in the sandbox — do NOT prefer it.
 _C=[os.environ.get("CHROME_BIN",""),
-    shutil.which("chromium"), shutil.which("chromium-browser"),
-    shutil.which("google-chrome"), shutil.which("google-chrome-stable"),
-    "/usr/bin/chromium","/usr/bin/chromium-browser","/usr/bin/google-chrome","/usr/bin/google-chrome-stable",
+    *sorted(glob.glob("/opt/pw-browsers/chromium*/chrome-linux/chrome"), reverse=True),
+    *sorted(glob.glob(os.path.expanduser("~/.cache/ms-playwright/chromium*/chrome-linux/chrome")), reverse=True),
+    shutil.which("google-chrome"), shutil.which("google-chrome-stable"), shutil.which("chromium"),
+    "/usr/bin/google-chrome","/usr/bin/google-chrome-stable","/usr/bin/chromium",
     r"C:\Program Files\Google\Chrome\Application\chrome.exe",
     r"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe",
     r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe",
