@@ -100,8 +100,8 @@ def render(tag, cfg, grad, bottom):
 # changing copy — the widest line caps FS.
 FS=152
 DAY=[dict(i=1,src="subjfull_1.png",lines=["तूर दाल","तेजी"],fs=FS),
-     dict(i=2,src="subjfull_2.png",lines=["मैक्सफ्रेश","फ्री मिले"],fs=FS),
-     dict(i=3,src="subjfull_3.png",lines=["सस्ता माल","मुनाफा"],fs=FS)]
+     dict(i=2,src="subjfull_2.png",lines=["12 पर 2","फ्री मिले"],fs=FS),
+     dict(i=3,src="subjfull_3.png",lines=["20-40%","सस्ता माल"],fs=FS)]
 if __name__=="__main__":
     render("D", DAY, TALL, 135)   # FS 152->166 + bottom 205->150->135 (2026-07-13): 205 seated the 2-line block in the
                                   # UPPER half of the dark banner (empty gap below = "text drifting to the top").
