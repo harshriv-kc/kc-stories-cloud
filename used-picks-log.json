@@ -287,6 +287,38 @@
         {"news_id": "4b4fa0a3-e48b-4c46-a4fb-98f66045f3ab", "label": "फेविक्विक ₹5 + फेविकॉल क्यूब जेल फ्री — Retailer LR 7.03, clean body-verified backup, not needed (top-3 filled)"},
         {"news_id": "809e0a63-5e22-443b-aec6-79771a57c0ad", "label": "हिमालया फेस वॉश ₹20 जार 12+1 फ्री — Retailer LR 6.95, clean backup, not needed"}
       ]
+    },
+    {
+      "date": "2026-07-14",
+      "_note": "Full autonomous cloud run (harness scheduled routine, ~12:04 IST). Fresh full run — all 3 stories + badges republished live (update_story / update_story_entry_badges, actor Harsh Shrivastava). Prior live content (07-13: मोठ/मेथीदाना/सोया तेल, Sensodyne/ईनो/कैमलिन, गेहूं OMSS) all in the 12-day dedup window → fully swapped, except सोया तेल (kept, see below). Commodity = तूर दाल (in-house RED, ₹200 तेजी ₹8,100/क्विंटल) + मक्का (in-house RED, ₹20 तेजी ₹2,350-2,375/क्विंटल) + सोया तेल (in-house GREEN, ₹300 गिरावट ₹15,400/क्विंटल — same commodity+direction as 07-13, kept for direction balance per workflow rule since every fresh Mixpanel teji_mandi candidate body-verified RED-only: गुड़/हल्दी/गेहूं/चीनी all तेजी, no clean GREEN alternative). धनिया (MP teji_mandi LR 8.39) checked but body was a margin/wholesale post, not a price move — rejected, not a teji_mandi candidate. FMCG top-3 by LR after dedup+body-verify: Tik Tak scheme (LR 7.98) and Royal Dairy scheme (LR 7.97) both SWAPPED OUT (Tik Tak body vague — no jar count/margin figure; Royal Dairy body named a different company 'ifly', LR-label↔body brand mismatch — flag for eng) → next by LR: कोलगेट+मैक्सफ्रेश (Retailer Scheme, LR 7.80, 12 कोलगेट ₹20 + 2 मैक्सफ्रेश ₹20 फ्री = ₹216) + इंजन सरसों तेल (fmcg_product_change/arrow, LR 7.32, ₹118→₹130/500ml) + क्लोज़अप टूथपेस्ट (Consumer Scheme, LR 7.24, 80g 2+1 फ्री). कोलगेट स्ट्रांग मंजन (LR 7.13) skipped to avoid double-Colgate. new_product_launch pool was completely empty in today's Mixpanel report (0 rows). News = बड़ी कंपनी किराना को ज्यादा मुनाफा — Reliance Campa/Independence direct-to-kirana, 20-40% सस्ता + बेहतर मार्जिन, 3 लाख+ दुकानें (in-house, market-impact, chosen over a Saharanpur success-story human-interest post and a DAY-NULM loan-scheme post for freshness/concreteness; रुझान digest skipped per rule). Cards composited via kc-card-render.py — card 7's first draft had a 4-word headline that wrapped to 2 lines and clipped the last grid row off the bottom (caught in full-size QC read, not visible on the contact-sheet thumbnail); shortened headline + re-rendered clean. card_2/card_7 exceeded the 1MB upload cap even after the script's built-in 1000px-wide resize (photo-heavy); manually resized to 850px wide to clear it. Badges = curved-banner design: तूर दाल तेजी (मंडी) / मैक्सफ्रेश फ्री मिले (FMCG) / सस्ता माल मुनाफा (news). FS166 (operator-locked 07-13 standard) measured max radial 453-455 on all 3 today's badges (over the ~448 target) — dropped to FS152; badge 3's original 2nd line 'ज्यादा मुनाफा' was VISUALLY clipped by the ring (confirmed by reading the full-size image, not just the automated radial check, which also throws false positives from golden/tan photo content above the y=470 scan boundary) — shortened to 'मुनाफा' and re-rendered clean. Weekday (Tuesday) — WebEngage Slack handoff to Hritik SKIPPED per spec (weekends only).",
+      "picks": {
+        "mandi_bhav": [
+          {"news_id": "ae9c22ed-4fa4-4842-8b11-686dfde10489", "label": "तूर दाल तेजी ₹200 चढ़े ₹8,100/क्विंटल (दाल मिलों की लिवाली, माल की कमी) — in-house RED"},
+          {"news_id": "a441b990-763b-4f32-a10d-d64422280b74", "label": "मक्का तेजी ₹20 चढ़े ₹2,350-2,375/क्विंटल (बिहार सप्लाई कम, पोल्ट्री-स्टार्च मांग) — in-house RED"},
+          {"news_id": "8e980561-92f3-437b-a4d5-9c94e9d17b32", "label": "सोया तेल मंदी ₹300 घटे ₹15,400/क्विंटल (कमजोर ग्राहकी) — in-house GREEN for balance, same commodity+direction as 07-13 but no fresh GREEN teji_mandi alternative body-verified today"}
+        ],
+        "fmcg": [
+          {"news_id": "c8ad69e6-4b44-4e07-8f2e-0c8512b6fd1b", "label": "कोलगेट + मैक्सफ्रेश — Retailer Scheme, 12 कोलगेट ₹20 पर 2 मैक्सफ्रेश ₹20 फ्री, कुल ₹216 (LR 7.80)"},
+          {"news_id": "7d8d02a7-b520-4e17-907e-b6e24adac812", "label": "इंजन सरसों तेल — fmcg_product_change, 500ml MRP ₹118→₹130 (LR 7.32)"},
+          {"news_id": "2a3ab8f4-0b00-4b01-8e68-318adeda473f", "label": "क्लोज़अप टूथपेस्ट — Consumer Scheme, 80g 2 पीस पर 1 पीस फ्री (LR 7.24)"}
+        ],
+        "trending_news": [
+          {"news_id": "2e40c2dd-f8e0-4cf3-aae9-df8266fb3451", "label": "बड़ी कंपनी किराना को ज्यादा मुनाफा — Reliance Campa/Independence 20-40% सस्ता + बेहतर मार्जिन, 3 लाख+ दुकानें — in-house"}
+        ]
+      },
+      "also_shown": [
+        {"news_id": "1855a846-4d27-4daf-bbd4-98d739db6942", "label": "Tik Tak ₹5 scheme — Retailer LR 7.98 (top), SWAPPED OUT body-verify: vague, no jar-count/margin figure"},
+        {"news_id": "78867403-60c7-46eb-9edf-9c5bce5ea7ef", "label": "Royal Dairy 5₹ + choco bar scheme — Retailer LR 7.97 (#2), SWAPPED OUT: LR-label↔body brand mismatch (body names 'ifly' company, not Royal Dairy) — flag for eng"},
+        {"news_id": "2b1aa1f1-69c3-4597-8ea6-df61dafe0065", "label": "कोलगेट स्ट्रांग मंजन 1+2 फ्री — Retailer LR 7.13, SKIPPED: avoid double-Colgate (कोलगेट+मैक्सफ्रेश already picked)"},
+        {"news_id": "319b23ff-164d-4f61-94be-85a6011d2f53", "label": "गुड़ तेजी ₹540 (₹5000→5540/क्विंटल) — teji_mandi LR 8.11, clean body but NOT used: RED, direction slot filled by तूर दाल+मक्का, गुड़ also published 07-06 (8 days ago)"},
+        {"news_id": "11b9f60a-72fe-4231-8a54-1766feb42623", "label": "धनिया पाउडर मार्जिन पोस्ट — teji_mandi LR 8.39 (top), NOT a teji_mandi candidate: body is a wholesale/margin post (₹230 खरीद/₹300 बिक्री), not a price move, no तेजी/मंदी direction — flag for eng (segment misclassification)"},
+        {"news_id": "976e5594-ec77-441f-a921-03626db64b07", "label": "हल्दी तेजी ₹40 (₹210→250/किलो) — teji_mandi LR 6.94, clean body but NOT used: RED, direction slot filled"},
+        {"news_id": "d6c955d4-a138-4b69-96e9-84a7fac1741d", "label": "चीनी तेजी ₹90 (₹2240→2330/50kg बोरा) — teji_mandi LR 5.82, clean body but NOT used: RED, direction slot filled"},
+        {"news_id": "7dd84428-9e1b-4c7e-b704-e53dfb036793", "label": "गेहूं तेजी ₹80/क्विंटल — teji_mandi LR 7.99, clean body but NOT used: RED, direction slot filled"},
+        {"news_id": "2a3ab8f4-0b00-4b01-8e68-318adeda473f", "label": "(duplicate ref, see picks.fmcg)"},
+        {"news_id": "ad1cbde7-88e9-4a06-8906-696948076bd3", "label": "सहारनपुर की दुकान 5 करोड़ तक — in-house news, NOT used: human-interest success story, chose Reliance/Campa for concrete market-impact numbers"},
+        {"news_id": "19dc7e79-3d8e-403e-9234-9a756168927b", "label": "DAY-NULM बिना गारंटी लोन योजना — in-house news backup, NOT used: chose Reliance/Campa for freshness (govt-scheme topic ran 07-13 गेहूं OMSS + 07-10 area)"}
+      ]
     }
   ]
 }
