@@ -98,12 +98,19 @@ def render(tag, cfg, grad, bottom):
 # so the widest line ("1 पैक फ्री") grazed it at FS160 (3px). 154 keeps every badge's widest line >=~15px clear
 # of the white ring while staying uniform. ALWAYS re-check max_text_radius <= ~438 (white-ring inner 454) after
 # changing copy — the widest line caps FS.
-FS=152
+FS=150
 DAY=[dict(i=1,src="subjfull_1.png",lines=["तूर दाल","तेजी"],fs=FS),
-     dict(i=2,src="subjfull_2.png",lines=["12 पर 2","फ्री मिले"],fs=FS),
-     dict(i=3,src="subjfull_3.png",lines=["20-40%","सस्ता माल"],fs=FS)]
+     dict(i=2,src="subjfull_2.png",lines=["12 पर 2","फ्री"],fs=FS),
+     dict(i=3,src="subjfull_3.png",lines=["20-40%","सस्ता"],fs=FS)]
 if __name__=="__main__":
-    render("D", DAY, TALL, 135)   # FS 152->166 + bottom 205->150->135 (2026-07-13): 205 seated the 2-line block in the
+    render("D", DAY, TALL, 140)   # 2026-07-14 crop fix: operator flagged text CROPPING at the ring. Root cause — the
+                                  # BOTTOM line sits low in the circle where it's narrow, so a 2-WORD bottom line
+                                  # ('फ्री मिले'/'सस्ता माल') hit the ring (455>448) no matter the FS. Fix = make every
+                                  # bottom line ONE short word (तेजी/फ्री/सस्ता, like badge1's safe 388) and put the longer
+                                  # element on the UPPER line where the circle is wide. Copy stays logical: 'तूर दाल तेजी',
+                                  # '12 पर 2 फ्री' (Colgate shown in photo), '20-40% सस्ता' (goods shown). FS back up to 150
+                                  # for prominence. Also swapped to ZOOMED single-subject photos (dal macro / 2 Colgate
+                                  # packs / goods+cash) so the small in-app asset stays legible. FS 152->166 (2026-07-13): 205 seated the 2-line block in the
                                   # UPPER half of the dark banner (empty gap below = "text drifting to the top").
                                   # Operator then wanted it BIGGER + centered so the banner feels fully covered. Swept
                                   # uniform FS: 166 is the largest that keeps every badge's widest line clear of the
