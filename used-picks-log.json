@@ -7,141 +7,330 @@
       "date": "2026-06-24",
       "picks": {
         "mandi_bhav": [
-          {"news_id": "cbd213d2-cc75-4efc-a4f5-6406184860c3", "label": "सोया तेल मंदी ₹15350"},
-          {"news_id": "785102c4-1d1e-4bc7-ad07-279697f918b2", "label": "ढैया गुड़ तेजी ₹5700"},
-          {"news_id": "065fcd6e-7ef3-45e7-9c3e-274037f855ef", "label": "बड़ी इलायची तेजी ₹1625"}
+          {
+            "news_id": "cbd213d2-cc75-4efc-a4f5-6406184860c3",
+            "label": "सोया तेल मंदी ₹15350"
+          },
+          {
+            "news_id": "785102c4-1d1e-4bc7-ad07-279697f918b2",
+            "label": "ढैया गुड़ तेजी ₹5700"
+          },
+          {
+            "news_id": "065fcd6e-7ef3-45e7-9c3e-274037f855ef",
+            "label": "बड़ी इलायची तेजी ₹1625"
+          }
         ],
         "fmcg": [
-          {"news_id": "dfef82bd-aebb-451b-b775-71c990cffcad", "label": "गोदरेज नंबर 1 साबुन ₹110→₹125"},
-          {"news_id": "156c290c-b199-4492-b801-8aaa89b21a08", "label": "गिन्नी भिंडी मसाला ₹48→₹60"},
-          {"news_id": "fcc46750-e70e-425f-9f82-813ec2f90297", "label": "SS Classic चॉको बार ₹100→₹150"}
+          {
+            "news_id": "dfef82bd-aebb-451b-b775-71c990cffcad",
+            "label": "गोदरेज नंबर 1 साबुन ₹110→₹125"
+          },
+          {
+            "news_id": "156c290c-b199-4492-b801-8aaa89b21a08",
+            "label": "गिन्नी भिंडी मसाला ₹48→₹60"
+          },
+          {
+            "news_id": "fcc46750-e70e-425f-9f82-813ec2f90297",
+            "label": "SS Classic चॉको बार ₹100→₹150"
+          }
         ],
         "trending_news": [
-          {"news_id": "72ba9cd4-3b1c-4c57-ba4d-1d1d0234eab2", "label": "हॉर्मुज→बासमती निर्यात दबाव"}
+          {
+            "news_id": "72ba9cd4-3b1c-4c57-ba4d-1d1d0234eab2",
+            "label": "हॉर्मुज→बासमती निर्यात दबाव"
+          }
         ]
       },
       "also_shown": [
-        {"news_id": "c31753da-1430-4f82-96a6-4b791c1e070b", "label": "USHA 9W LED — published early, swapped out as a repeat per operator"},
-        {"news_id": "9e66d29f-21c5-4fbc-a549-33c4c3046ee3", "label": "Dabur Hajmola — published early, swapped out as a repeat per operator"}
+        {
+          "news_id": "c31753da-1430-4f82-96a6-4b791c1e070b",
+          "label": "USHA 9W LED — published early, swapped out as a repeat per operator"
+        },
+        {
+          "news_id": "9e66d29f-21c5-4fbc-a549-33c4c3046ee3",
+          "label": "Dabur Hajmola — published early, swapped out as a repeat per operator"
+        }
       ]
     },
     {
       "date": "2026-06-25",
       "picks": {
         "mandi_bhav": [
-          {"news_id": "8e529579-a463-4f4d-bab2-8f0f7ac9ca00", "label": "सरसों तेल तेजी ₹15650/क्विंटल"},
-          {"news_id": "9ddee431-80f1-4a23-b6c8-e6c1d8afb586", "label": "उड़द दाल मंदी ₹8050/क्विंटल"},
-          {"news_id": "ca9c3441-6ded-432f-967e-0ea0fc55b76d", "label": "सेला चावल तेजी ₹8700/क्विंटल"}
+          {
+            "news_id": "8e529579-a463-4f4d-bab2-8f0f7ac9ca00",
+            "label": "सरसों तेल तेजी ₹15650/क्विंटल"
+          },
+          {
+            "news_id": "9ddee431-80f1-4a23-b6c8-e6c1d8afb586",
+            "label": "उड़द दाल मंदी ₹8050/क्विंटल"
+          },
+          {
+            "news_id": "ca9c3441-6ded-432f-967e-0ea0fc55b76d",
+            "label": "सेला चावल तेजी ₹8700/क्विंटल"
+          }
         ],
         "fmcg": [
-          {"news_id": "efb74016-d728-4f36-b57e-73c2d7d946c6", "label": "संतूर ₹10 साबुन — ₹460/पेटी मार्जिन"},
-          {"news_id": "2bf9b21d-510a-442f-bb1e-19ac3299aebd", "label": "पैराशूट तेल 100ml ₹59→₹65, ₹6 मार्जिन"},
-          {"news_id": "ddbc24da-3150-4976-9da6-73bf9ee1f951", "label": "विम लिक्विड ₹20→₹15 रेट कट"}
+          {
+            "news_id": "efb74016-d728-4f36-b57e-73c2d7d946c6",
+            "label": "संतूर ₹10 साबुन — ₹460/पेटी मार्जिन"
+          },
+          {
+            "news_id": "2bf9b21d-510a-442f-bb1e-19ac3299aebd",
+            "label": "पैराशूट तेल 100ml ₹59→₹65, ₹6 मार्जिन"
+          },
+          {
+            "news_id": "ddbc24da-3150-4976-9da6-73bf9ee1f951",
+            "label": "विम लिक्विड ₹20→₹15 रेट कट"
+          }
         ],
         "trending_news": [
-          {"news_id": "254e02fb-5127-4c52-ac35-cc4c3049d666", "label": "146 साल का सबसे सूखा जून, मानसून कम बारिश"}
+          {
+            "news_id": "254e02fb-5127-4c52-ac35-cc4c3049d666",
+            "label": "146 साल का सबसे सूखा जून, मानसून कम बारिश"
+          }
         ]
       },
       "also_shown": [
-        {"news_id": "de051ac6-34fa-4119-8d92-72299126e56d", "label": "Colgate flexisoft combo — top FMCG LR 6.88, swapped out: free-combo with no clean buy/margin"},
-        {"news_id": "68bcddac-cd21-462d-b421-96ccf74c5f18", "label": "Sprite peti ₹630/15 — FMCG LR 5.73, swapped out: only peti cost, no MRP/margin"}
+        {
+          "news_id": "de051ac6-34fa-4119-8d92-72299126e56d",
+          "label": "Colgate flexisoft combo — top FMCG LR 6.88, swapped out: free-combo with no clean buy/margin"
+        },
+        {
+          "news_id": "68bcddac-cd21-462d-b421-96ccf74c5f18",
+          "label": "Sprite peti ₹630/15 — FMCG LR 5.73, swapped out: only peti cost, no MRP/margin"
+        }
       ]
     },
     {
       "date": "2026-06-26",
       "picks": {
         "mandi_bhav": [
-          {"news_id": "eeb2a2e2-a85e-4d02-8819-50cc712134d7", "label": "अरहर (तूर) तेजी ₹8300/क्विंटल"},
-          {"news_id": "be25fa20-2e5b-4166-af81-c0dec368d99f", "label": "मसूर दाल तेजी ₹72/किलो (2040→2160/30kg)"},
-          {"news_id": "380d5721-916f-475c-8e2b-288aa88efa76", "label": "चीनी तेजी ₹100–300/क्विंटल"}
+          {
+            "news_id": "eeb2a2e2-a85e-4d02-8819-50cc712134d7",
+            "label": "अरहर (तूर) तेजी ₹8300/क्विंटल"
+          },
+          {
+            "news_id": "be25fa20-2e5b-4166-af81-c0dec368d99f",
+            "label": "मसूर दाल तेजी ₹72/किलो (2040→2160/30kg)"
+          },
+          {
+            "news_id": "380d5721-916f-475c-8e2b-288aa88efa76",
+            "label": "चीनी तेजी ₹100–300/क्विंटल"
+          }
         ],
         "fmcg": [
-          {"news_id": "9ea11886-df28-4010-9c4c-dd3302a1738a", "label": "मेलोडी टॉफ़ी — Retailer Scheme, ₹50 पैकेट पर 5 नग फ्री (LR 6.23)"},
-          {"news_id": "7f4cb2bc-a373-4ee2-a7c4-d0d387461cdb", "label": "हल्दीराम Woka नूडल्स ठुकपा — new launch, MRP ₹10 खरीद ₹8.60 (LR 6.22)"},
-          {"news_id": "978a961f-4270-4f55-acdb-664a1d26c266", "label": "All Out — Consumer Scheme, 20+1 फ्री (LR 5.28)"}
+          {
+            "news_id": "9ea11886-df28-4010-9c4c-dd3302a1738a",
+            "label": "मेलोडी टॉफ़ी — Retailer Scheme, ₹50 पैकेट पर 5 नग फ्री (LR 6.23)"
+          },
+          {
+            "news_id": "7f4cb2bc-a373-4ee2-a7c4-d0d387461cdb",
+            "label": "हल्दीराम Woka नूडल्स ठुकपा — new launch, MRP ₹10 खरीद ₹8.60 (LR 6.22)"
+          },
+          {
+            "news_id": "978a961f-4270-4f55-acdb-664a1d26c266",
+            "label": "All Out — Consumer Scheme, 20+1 फ्री (LR 5.28)"
+          }
         ],
         "trending_news": [
-          {"news_id": "f4433f75-aa10-4c67-9105-bd37bb68e27d", "label": "साबुन-डिटर्जेंट 5–7% महंगे, मार्जिन पर असर (Godrej/Britannia, palm oil)"}
+          {
+            "news_id": "f4433f75-aa10-4c67-9105-bd37bb68e27d",
+            "label": "साबुन-डिटर्जेंट 5–7% महंगे, मार्जिन पर असर (Godrej/Britannia, palm oil)"
+          }
         ]
       },
       "also_shown": [
-        {"news_id": "01d49fe1-cdee-47e9-bd9d-065f2c6f48bc", "label": "Colgate Superflex 12+2 — FMCG Consumer Scheme LR 5.13, backup not needed (top-3 all clean)"},
-        {"news_id": "8e861107-f470-4fef-9805-3f774b01759a", "label": "Apis Honey 1kg एक पे एक फ्री — FMCG Consumer Scheme LR 4.84, backup not needed"}
+        {
+          "news_id": "01d49fe1-cdee-47e9-bd9d-065f2c6f48bc",
+          "label": "Colgate Superflex 12+2 — FMCG Consumer Scheme LR 5.13, backup not needed (top-3 all clean)"
+        },
+        {
+          "news_id": "8e861107-f470-4fef-9805-3f774b01759a",
+          "label": "Apis Honey 1kg एक पे एक फ्री — FMCG Consumer Scheme LR 4.84, backup not needed"
+        }
       ]
     },
     {
       "date": "2026-06-28",
       "picks": {
         "mandi_bhav": [
-          {"news_id": "d5523c53-494e-40aa-b731-da4edc1fe484", "label": "सरसों तेल तेजी ₹15750/क्विंटल (एक्सपेलर), बीज +₹25 ₹7700/7725"},
-          {"news_id": "a32f0ea1-fdf2-4a69-9218-61c05b3d27e5", "label": "मूंग दाल मंदी ₹7900/8000/क्विंटल (बेहतरीन मूंग)"},
-          {"news_id": "a0c5a978-148c-4846-a692-65a01cf9afba", "label": "हल्दी मंदी ₹15500 हाजिर, वायदा ₹200 टूटा"}
+          {
+            "news_id": "d5523c53-494e-40aa-b731-da4edc1fe484",
+            "label": "सरसों तेल तेजी ₹15750/क्विंटल (एक्सपेलर), बीज +₹25 ₹7700/7725"
+          },
+          {
+            "news_id": "a32f0ea1-fdf2-4a69-9218-61c05b3d27e5",
+            "label": "मूंग दाल मंदी ₹7900/8000/क्विंटल (बेहतरीन मूंग)"
+          },
+          {
+            "news_id": "a0c5a978-148c-4846-a692-65a01cf9afba",
+            "label": "हल्दी मंदी ₹15500 हाजिर, वायदा ₹200 टूटा"
+          }
         ],
         "fmcg": [
-          {"news_id": "e4517424-9cad-44ee-aa32-70ce42928e56", "label": "जस्ट जेली कैंडी (Alpenliebe) Retailer Scheme — ₹650 जार पर 2 जर्मन बाउल (₹120) फ्री (LR 7.80)"},
-          {"news_id": "bb0d90bf-92dd-47c1-9a5c-feeec9574953", "label": "विम लेमन बार 240g Consumer Scheme — ₹28 बार + स्क्रबर फ्री (₹7) (LR 6.53)"},
-          {"news_id": "0026355b-bbaf-4f8c-9ac7-ab94d25dffb3", "label": "घड़ी डिटर्जेंट 1Kg Consumer Scheme — MRP ₹74 + घड़ी साबुन फ्री (LR 5.80)"}
+          {
+            "news_id": "e4517424-9cad-44ee-aa32-70ce42928e56",
+            "label": "जस्ट जेली कैंडी (Alpenliebe) Retailer Scheme — ₹650 जार पर 2 जर्मन बाउल (₹120) फ्री (LR 7.80)"
+          },
+          {
+            "news_id": "bb0d90bf-92dd-47c1-9a5c-feeec9574953",
+            "label": "विम लेमन बार 240g Consumer Scheme — ₹28 बार + स्क्रबर फ्री (₹7) (LR 6.53)"
+          },
+          {
+            "news_id": "0026355b-bbaf-4f8c-9ac7-ab94d25dffb3",
+            "label": "घड़ी डिटर्जेंट 1Kg Consumer Scheme — MRP ₹74 + घड़ी साबुन फ्री (LR 5.80)"
+          }
         ],
         "trending_news": [
-          {"news_id": "c098f21a-9ca4-46e6-95c0-a8adbda46ab6", "label": "PMEGP सरकारी लोन-सब्सिडी योजना (शहर 15% / गांव 25% / महिला-SC-ST 35%, ₹10 लाख तक बिना गारंटी)"}
+          {
+            "news_id": "c098f21a-9ca4-46e6-95c0-a8adbda46ab6",
+            "label": "PMEGP सरकारी लोन-सब्सिडी योजना (शहर 15% / गांव 25% / महिला-SC-ST 35%, ₹10 लाख तक बिना गारंटी)"
+          }
         ]
       },
       "also_shown": [
-        {"news_id": "e6f9ea31-f134-494f-99e7-f75c0de2af6a", "label": "हल्दीराम झालमुरी नया लॉंच — new_product_launch LR 5.63, SKIPPED: हल्दीराम brand featured 06-26 (Woka)"},
-        {"news_id": "78a4bbb3-f5ac-4abc-aba3-7704b0683e88", "label": "Alpenliebe creamfills Centre Fresh फ्री — fmcg_product_change LR 5.04, SKIPPED: avoid double-Alpenliebe (Just Jelly already picked)"},
-        {"news_id": "31e319ec-4cbb-43da-b240-ef7668b0f847", "label": "पास पास प्लस मिठाई Retailer Scheme LR 4.56 (₹180 मार्जिन) — clean backup, not needed (top-3 by LR)"},
-        {"news_id": "69da0b1d-7b72-4743-8133-d7bd5e5dc899", "label": "मानसून ने पकड़ी रफ्तार — news LR 3.32, NOT used: avoid monsoon topic repeat (06-25), chose PMEGP for freshness"}
+        {
+          "news_id": "e6f9ea31-f134-494f-99e7-f75c0de2af6a",
+          "label": "हल्दीराम झालमुरी नया लॉंच — new_product_launch LR 5.63, SKIPPED: हल्दीराम brand featured 06-26 (Woka)"
+        },
+        {
+          "news_id": "78a4bbb3-f5ac-4abc-aba3-7704b0683e88",
+          "label": "Alpenliebe creamfills Centre Fresh फ्री — fmcg_product_change LR 5.04, SKIPPED: avoid double-Alpenliebe (Just Jelly already picked)"
+        },
+        {
+          "news_id": "31e319ec-4cbb-43da-b240-ef7668b0f847",
+          "label": "पास पास प्लस मिठाई Retailer Scheme LR 4.56 (₹180 मार्जिन) — clean backup, not needed (top-3 by LR)"
+        },
+        {
+          "news_id": "69da0b1d-7b72-4743-8133-d7bd5e5dc899",
+          "label": "मानसून ने पकड़ी रफ्तार — news LR 3.32, NOT used: avoid monsoon topic repeat (06-25), chose PMEGP for freshness"
+        }
       ]
     },
     {
       "date": "2026-06-29",
       "picks": {
         "mandi_bhav": [
-          {"news_id": "8b5f6071-421e-447a-a2a2-a60a5ab14150", "label": "धनिया तेजी ₹15500/क्विंटल (बारां मंडी +₹200–300)"},
-          {"news_id": "788fd960-050c-41f1-bca9-60a4326c5116", "label": "सोया तेल मंदी ₹15200/क्विंटल (₹50 गिरावट) — GREEN for balance, soya over-covered but cleanest मंदी"},
-          {"news_id": "994fc5fa-8ef0-4202-ae8b-a004d94cb4db", "label": "चना तेजी ₹5900–5925/क्विंटल (+₹50, मांग बढ़ी)"}
+          {
+            "news_id": "8b5f6071-421e-447a-a2a2-a60a5ab14150",
+            "label": "धनिया तेजी ₹15500/क्विंटल (बारां मंडी +₹200–300)"
+          },
+          {
+            "news_id": "788fd960-050c-41f1-bca9-60a4326c5116",
+            "label": "सोया तेल मंदी ₹15200/क्विंटल (₹50 गिरावट) — GREEN for balance, soya over-covered but cleanest मंदी"
+          },
+          {
+            "news_id": "994fc5fa-8ef0-4202-ae8b-a004d94cb4db",
+            "label": "चना तेजी ₹5900–5925/क्विंटल (+₹50, मांग बढ़ी)"
+          }
         ],
         "fmcg": [
-          {"news_id": "d7db155b-fb24-4621-96df-bfa858199c9a", "label": "डाबर मंजन Retailer Scheme — ₹10 वाला, 12+2 फ्री (14 नग) (LR 5.93)"},
-          {"news_id": "c0cf04dd-c1b0-4b00-a0ca-e9a2184163c5", "label": "ऑल आउट अल्ट्रा product_change — 45ml रिफिल ₹90→₹85 (LR 5.77) [All Out also ran 06-26 Consumer scheme, 3d ago, not last-2-days]"},
-          {"news_id": "ec6382e8-548b-4808-bcc3-e73bf9275677", "label": "कोलगेट मैक्सफ्रेश Retailer Scheme — ₹20 वाला, 6+1 फ्री (7 नग) (LR 4.85)"}
+          {
+            "news_id": "d7db155b-fb24-4621-96df-bfa858199c9a",
+            "label": "डाबर मंजन Retailer Scheme — ₹10 वाला, 12+2 फ्री (14 नग) (LR 5.93)"
+          },
+          {
+            "news_id": "c0cf04dd-c1b0-4b00-a0ca-e9a2184163c5",
+            "label": "ऑल आउट अल्ट्रा product_change — 45ml रिफिल ₹90→₹85 (LR 5.77) [All Out also ran 06-26 Consumer scheme, 3d ago, not last-2-days]"
+          },
+          {
+            "news_id": "ec6382e8-548b-4808-bcc3-e73bf9275677",
+            "label": "कोलगेट मैक्सफ्रेश Retailer Scheme — ₹20 वाला, 6+1 फ्री (7 नग) (LR 4.85)"
+          }
         ],
         "trending_news": [
-          {"news_id": "307f21cc-adad-4a0e-b0c1-eb4c1ca3ceff", "label": "UPI/RuPay सरकारी इनाम — ₹2000 करोड़ फंड, ₹2000 तक शून्य MDR, 0.15% तक इनाम"}
+          {
+            "news_id": "307f21cc-adad-4a0e-b0c1-eb4c1ca3ceff",
+            "label": "UPI/RuPay सरकारी इनाम — ₹2000 करोड़ फंड, ₹2000 तक शून्य MDR, 0.15% तक इनाम"
+          }
         ]
       },
       "also_shown": [
-        {"news_id": "77636605-f91d-4227-bc7d-da01b455111a", "label": "Maggi family pack 2+गिलास फ्री — top Consumer Scheme LR 5.43, SWAPPED OUT in body-verify: no concrete ₹/MRP/margin in body"},
-        {"news_id": "e6f9ea31-f134-494f-99e7-f75c0de2af6a", "label": "हल्दीराम नया लॉंच — new_product_launch LR 4.27, EXCLUDED: in dedup (06-28 also_shown)"},
-        {"news_id": "7f4cb2bc-a373-4ee2-a7c4-d0d387461cdb", "label": "हल्दीराम Woka नूडल्स — new_product_launch LR 3.84, EXCLUDED: in dedup (06-26 picks)"}
+        {
+          "news_id": "77636605-f91d-4227-bc7d-da01b455111a",
+          "label": "Maggi family pack 2+गिलास फ्री — top Consumer Scheme LR 5.43, SWAPPED OUT in body-verify: no concrete ₹/MRP/margin in body"
+        },
+        {
+          "news_id": "e6f9ea31-f134-494f-99e7-f75c0de2af6a",
+          "label": "हल्दीराम नया लॉंच — new_product_launch LR 4.27, EXCLUDED: in dedup (06-28 also_shown)"
+        },
+        {
+          "news_id": "7f4cb2bc-a373-4ee2-a7c4-d0d387461cdb",
+          "label": "हल्दीराम Woka नूडल्स — new_product_launch LR 3.84, EXCLUDED: in dedup (06-26 picks)"
+        }
       ]
     },
     {
       "date": "2026-06-30",
       "picks": {
         "mandi_bhav": [
-          {"news_id": "1beb093c-2a4f-4c86-8d27-41c493f39c6a", "label": "देसी घी तेजी ~₹9750/किलो (थोक, +₹10 आसार) — in-house"},
-          {"news_id": "4b216fc0-52fb-4a82-aec1-1b1fd203df9e", "label": "इलायची तेजी ₹2700→₹3100/किलो (+₹400) — MP teji_mandi LR 5.31"},
-          {"news_id": "c12931e6-fa8b-4b25-8dae-050a9aca6953", "label": "किशमिश मंदी ₹40–50/किलो गिरावट — MP teji_mandi LR 5.53, GREEN for balance"}
+          {
+            "news_id": "1beb093c-2a4f-4c86-8d27-41c493f39c6a",
+            "label": "देसी घी तेजी ~₹9750/किलो (थोक, +₹10 आसार) — in-house"
+          },
+          {
+            "news_id": "4b216fc0-52fb-4a82-aec1-1b1fd203df9e",
+            "label": "इलायची तेजी ₹2700→₹3100/किलो (+₹400) — MP teji_mandi LR 5.31"
+          },
+          {
+            "news_id": "c12931e6-fa8b-4b25-8dae-050a9aca6953",
+            "label": "किशमिश मंदी ₹40–50/किलो गिरावट — MP teji_mandi LR 5.53, GREEN for balance"
+          }
         ],
         "fmcg": [
-          {"news_id": "3aa7d329-5ad9-4353-802e-e7e91444c0fd", "label": "लाइफबॉय साबुन ₹30 — Consumer Scheme, 4+1 फ्री (LR 8.55)"},
-          {"news_id": "cefcc7e8-4bbe-40a8-ad84-d89df8642bc4", "label": "मैगी ₹10 — Consumer Scheme, 1 पैकेट पर 1 पेंसिल फ्री (LR 4.29)"},
-          {"news_id": "27751a4f-cdb5-4831-a160-8ed749c0be3a", "label": "हेल्पर गोल्ड चॉकलेट — Retailer Scheme, ₹1200 जार + ₹999 बेडशीट फ्री, होलसेल ₹1050, ₹150 मार्जिन (LR 2.91)"}
+          {
+            "news_id": "3aa7d329-5ad9-4353-802e-e7e91444c0fd",
+            "label": "लाइफबॉय साबुन ₹30 — Consumer Scheme, 4+1 फ्री (LR 8.55)"
+          },
+          {
+            "news_id": "cefcc7e8-4bbe-40a8-ad84-d89df8642bc4",
+            "label": "मैगी ₹10 — Consumer Scheme, 1 पैकेट पर 1 पेंसिल फ्री (LR 4.29)"
+          },
+          {
+            "news_id": "27751a4f-cdb5-4831-a160-8ed749c0be3a",
+            "label": "हेल्पर गोल्ड चॉकलेट — Retailer Scheme, ₹1200 जार + ₹999 बेडशीट फ्री, होलसेल ₹1050, ₹150 मार्जिन (LR 2.91)"
+          }
         ],
         "trending_news": [
-          {"news_id": "c3d39be8-a92a-4ff0-bd0c-d9affdeee3d7", "label": "कमर्शियल LPG से सभी रोक हटीं — फ्यूल राहत, पेट्रोल ~₹102, घरेलू LPG ₹912→₹941 — in-house"}
+          {
+            "news_id": "c3d39be8-a92a-4ff0-bd0c-d9affdeee3d7",
+            "label": "कमर्शियल LPG से सभी रोक हटीं — फ्यूल राहत, पेट्रोल ~₹102, घरेलू LPG ₹912→₹941 — in-house"
+          }
         ]
       },
       "also_shown": [
-        {"news_id": "43314ab5-ae13-4f06-9085-8f06f6320a3f", "label": "GlucoPlus-C 1kg + LUXOR आर्ट किट फ्री — Consumer Scheme LR 4.20, SWAPPED OUT in body-verify: no concrete ₹ (only free art-kit, no MRP)"},
-        {"news_id": "6d0d800f-4d21-4de6-9b01-34a2f9f35e5c", "label": "कोलगेट ₹10 12+1 फ्री — Retailer LR 5.16, SKIPPED: Colgate brand featured 06-29"},
-        {"news_id": "11df4b86-3e81-4ddf-8495-06fd8fcd755c", "label": "डाबर रेड पेस्ट ₹10 बंडल 1 फ्री — Retailer LR 3.73, SKIPPED: Dabur brand featured 06-29"},
-        {"news_id": "f4f8a7e8-25fe-4840-acc1-bc9616198c0d", "label": "एक्टिव व्हील डिटर्जेंट रेट बदलाव — fmcg_product_change LR 2.65, SKIPPED body-verify: no concrete ₹X→₹Y"},
-        {"news_id": "74d10bcf-9dd7-49b9-ab75-f7af796c2ce2", "label": "चीनी तेजी — teji_mandi LR 4.55, SKIPPED body-verify: no concrete ₹ figure"},
-        {"news_id": "49e66b02-b3ec-430f-9f27-f08fa8fac94c", "label": "पाम तेल — teji_mandi LR 4.48, SKIPPED: body about crude oil mazbooti, no concrete figure"},
-        {"news_id": "8a2ab1dd-1848-43ab-b70b-814321c72ddd", "label": "मसूर दाल तेजी (₹6650-6700) — in-house, NOT used: same commodity+direction as 06-26, chose किशमिश for GREEN balance"},
-        {"news_id": "aeab1982-cc64-41f9-bc37-f5ffe7d8e983", "label": "सावन स्टॉक एडवाइज़री — in-house news, NOT used: chose LPG (market-impact + concrete ₹)"}
+        {
+          "news_id": "43314ab5-ae13-4f06-9085-8f06f6320a3f",
+          "label": "GlucoPlus-C 1kg + LUXOR आर्ट किट फ्री — Consumer Scheme LR 4.20, SWAPPED OUT in body-verify: no concrete ₹ (only free art-kit, no MRP)"
+        },
+        {
+          "news_id": "6d0d800f-4d21-4de6-9b01-34a2f9f35e5c",
+          "label": "कोलगेट ₹10 12+1 फ्री — Retailer LR 5.16, SKIPPED: Colgate brand featured 06-29"
+        },
+        {
+          "news_id": "11df4b86-3e81-4ddf-8495-06fd8fcd755c",
+          "label": "डाबर रेड पेस्ट ₹10 बंडल 1 फ्री — Retailer LR 3.73, SKIPPED: Dabur brand featured 06-29"
+        },
+        {
+          "news_id": "f4f8a7e8-25fe-4840-acc1-bc9616198c0d",
+          "label": "एक्टिव व्हील डिटर्जेंट रेट बदलाव — fmcg_product_change LR 2.65, SKIPPED body-verify: no concrete ₹X→₹Y"
+        },
+        {
+          "news_id": "74d10bcf-9dd7-49b9-ab75-f7af796c2ce2",
+          "label": "चीनी तेजी — teji_mandi LR 4.55, SKIPPED body-verify: no concrete ₹ figure"
+        },
+        {
+          "news_id": "49e66b02-b3ec-430f-9f27-f08fa8fac94c",
+          "label": "पाम तेल — teji_mandi LR 4.48, SKIPPED: body about crude oil mazbooti, no concrete figure"
+        },
+        {
+          "news_id": "8a2ab1dd-1848-43ab-b70b-814321c72ddd",
+          "label": "मसूर दाल तेजी (₹6650-6700) — in-house, NOT used: same commodity+direction as 06-26, chose किशमिश for GREEN balance"
+        },
+        {
+          "news_id": "aeab1982-cc64-41f9-bc37-f5ffe7d8e983",
+          "label": "सावन स्टॉक एडवाइज़री — in-house news, NOT used: chose LPG (market-impact + concrete ₹)"
+        }
       ]
     },
     {
@@ -149,26 +338,65 @@
       "_note": "No fresh in-house posts today (in-house news pipeline stalled after 2 जुलाई / id 974); all 7 picks sourced from Mixpanel LR pools + body-verified. Last prior run was 06-30 (6-day gap), so no last-2-days brand block active. RE-RUN (operator-triggered, same-day, ~12:15): kept all 7 picks unchanged (no new dedup entry); regenerated the 3 entry badges with the bigger-banner-text rule and the 3 square-1:1 transparent PN exports (was 230×400 portrait), republished badges. The 7 slides were left untouched (no slide rule changed).",
       "picks": {
         "mandi_bhav": [
-          {"news_id": "923e61d6-fce4-402f-a3b1-b58092fd958b", "label": "गुड़ तेजी ₹5300→₹5500/क्विंटल (+₹200) — MP teji_mandi LR 10.72, RED"},
-          {"news_id": "d6b3780f-08fb-4dd1-9c36-45ea56dc64a6", "label": "उड़द दाल तेजी ₹25–100/क्विंटल — MP teji_mandi LR 5.31, RED"},
-          {"news_id": "a1642b19-fcac-4836-b404-6e34e270870e", "label": "काजू मंदी ~₹100/किलो गिरावट (इंदौर) — MP teji_mandi LR 6.60, GREEN for balance"}
+          {
+            "news_id": "923e61d6-fce4-402f-a3b1-b58092fd958b",
+            "label": "गुड़ तेजी ₹5300→₹5500/क्विंटल (+₹200) — MP teji_mandi LR 10.72, RED"
+          },
+          {
+            "news_id": "d6b3780f-08fb-4dd1-9c36-45ea56dc64a6",
+            "label": "उड़द दाल तेजी ₹25–100/क्विंटल — MP teji_mandi LR 5.31, RED"
+          },
+          {
+            "news_id": "a1642b19-fcac-4836-b404-6e34e270870e",
+            "label": "काजू मंदी ~₹100/किलो गिरावट (इंदौर) — MP teji_mandi LR 6.60, GREEN for balance"
+          }
         ],
         "fmcg": [
-          {"news_id": "5b9afb14-25af-49c0-b866-d32c42b045a9", "label": "सुगंधा इलायची चाय 1kg MRP ₹399 + स्टील चम्मच फ्री — Consumer Scheme LR 10.81"},
-          {"news_id": "aa20652e-b401-46c9-8ffa-86aa55587b14", "label": "पतंजलि दंतकांति ₹10 MRP, 12 नग ₹107 (₹9/नग) + 16 एलोवेरा शैम्पू फ्री, ₹13 मार्जिन — Retailer Scheme LR 9.80"},
-          {"news_id": "0e7e83c5-c4ad-4e33-b93d-a42a0951cbb0", "label": "इमली तड़का कैंडी (Glacier) ₹1, 200 पीस जार + 5 फ्री — Retailer Scheme LR 8.35"}
+          {
+            "news_id": "5b9afb14-25af-49c0-b866-d32c42b045a9",
+            "label": "सुगंधा इलायची चाय 1kg MRP ₹399 + स्टील चम्मच फ्री — Consumer Scheme LR 10.81"
+          },
+          {
+            "news_id": "aa20652e-b401-46c9-8ffa-86aa55587b14",
+            "label": "पतंजलि दंतकांति ₹10 MRP, 12 नग ₹107 (₹9/नग) + 16 एलोवेरा शैम्पू फ्री, ₹13 मार्जिन — Retailer Scheme LR 9.80"
+          },
+          {
+            "news_id": "0e7e83c5-c4ad-4e33-b93d-a42a0951cbb0",
+            "label": "इमली तड़का कैंडी (Glacier) ₹1, 200 पीस जार + 5 फ्री — Retailer Scheme LR 8.35"
+          }
         ],
         "trending_news": [
-          {"news_id": "11a25ec5-635c-4e5a-b842-f1cca8e30e8e", "label": "FSSAI फूड लाइसेंस अब स्थायी (रिन्यू खत्म), बेसिक रजिस्ट्रेशन सीमा ₹12 लाख→₹1.5 करोड़ — news LR 3.95, in-house 1 जुलाई"}
+          {
+            "news_id": "11a25ec5-635c-4e5a-b842-f1cca8e30e8e",
+            "label": "FSSAI फूड लाइसेंस अब स्थायी (रिन्यू खत्म), बेसिक रजिस्ट्रेशन सीमा ₹12 लाख→₹1.5 करोड़ — news LR 3.95, in-house 1 जुलाई"
+          }
         ]
       },
       "also_shown": [
-        {"news_id": "5b447439-8f61-460c-a4b6-ec2c7b459f27", "label": "चीनी तेजी — TOP teji_mandi LR 44.94, SWAPPED OUT body-verify: no concrete ₹ figure ('गाने की कमी से तेजी बढ़ सकती है')"},
-        {"news_id": "d1a67314-ec66-4b9d-bc5c-55d023e51556", "label": "चना दाल तेजी — teji_mandi LR 31.46, SWAPPED OUT body-verify: no figure (body only 'चना बाजार अपडेट | 04 जुलाई')"},
-        {"news_id": "d75879ad-6587-4feb-856d-014fb2627a50", "label": "बादाम तेजी — teji_mandi LR 19.29, SWAPPED OUT: LR↔BODY MISMATCH (body about मूंगफली/कपास मानसून, not बादाम, no figure) — flag for eng"},
-        {"news_id": "458e8546-9345-454f-88fd-688257ab122a", "label": "धनिया — teji_mandi LR 14.61, SKIPPED body-verify: no ₹ figure + body says भाव दबाव (down), not तेजी"},
-        {"news_id": "a1428cf6-7c77-4c08-aad7-17e36733e06a", "label": "Koffee toffee jar + bowl free — Retailer Scheme LR 10.18, SWAPPED OUT body-verify: vague, no price/count/margin"},
-        {"news_id": "56fad7ff-3e36-4513-a776-2ef144fcccfa", "label": "Colgate brush 20₹ + 40₹ zigzag free — Retailer Scheme LR 9.26, clean backup, DROPPED to avoid 2nd dental card (Patanjali dental already picked)"}
+        {
+          "news_id": "5b447439-8f61-460c-a4b6-ec2c7b459f27",
+          "label": "चीनी तेजी — TOP teji_mandi LR 44.94, SWAPPED OUT body-verify: no concrete ₹ figure ('गाने की कमी से तेजी बढ़ सकती है')"
+        },
+        {
+          "news_id": "d1a67314-ec66-4b9d-bc5c-55d023e51556",
+          "label": "चना दाल तेजी — teji_mandi LR 31.46, SWAPPED OUT body-verify: no figure (body only 'चना बाजार अपडेट | 04 जुलाई')"
+        },
+        {
+          "news_id": "d75879ad-6587-4feb-856d-014fb2627a50",
+          "label": "बादाम तेजी — teji_mandi LR 19.29, SWAPPED OUT: LR↔BODY MISMATCH (body about मूंगफली/कपास मानसून, not बादाम, no figure) — flag for eng"
+        },
+        {
+          "news_id": "458e8546-9345-454f-88fd-688257ab122a",
+          "label": "धनिया — teji_mandi LR 14.61, SKIPPED body-verify: no ₹ figure + body says भाव दबाव (down), not तेजी"
+        },
+        {
+          "news_id": "a1428cf6-7c77-4c08-aad7-17e36733e06a",
+          "label": "Koffee toffee jar + bowl free — Retailer Scheme LR 10.18, SWAPPED OUT body-verify: vague, no price/count/margin"
+        },
+        {
+          "news_id": "56fad7ff-3e36-4513-a776-2ef144fcccfa",
+          "label": "Colgate brush 20₹ + 40₹ zigzag free — Retailer Scheme LR 9.26, clean backup, DROPPED to avoid 2nd dental card (Patanjali dental already picked)"
+        }
       ]
     },
     {
@@ -176,29 +404,77 @@
       "_note": "In-house today: सौंठ (commodity RED, id 986) + सोया तेल (GREEN, dated 6 जुलाई) + रुझान digest (skipped) + 2 trending news (UPI 123Pay, ONDC DigiDukaan). Almost all top MP teji_mandi picks were EXCLUDED as dedup repeats (चीनी/चना/बादाम/धनिया/गुड़/काजू/उड़द all in 06-25→07-06 window), and the fresh teji_mandi candidates (लौंग/सुपारी/काली मिर्च/चावल/इलायची/जीरा/नारियल) all FAILED body-verify with no concrete ₹ figure. So commodity = सौंठ (in-house) + लहसुन (MP, fresh dramatic ₹9k→16k) + किशमिश (MP, cleanest GREEN body, chosen over stale over-covered soya for freshness). FMCG top-3 by LR all body-verified clean: Eno/Ghadi-Nirma/Gillette. News = in-house DigiDukaan (freshest topic; MP FSSAI/LPG excluded as dedup, UPI 123Pay held back to avoid UPI-topic repeat vs 06-29). BADGE REGEN (operator Hritik, same-day ~17:00): banner text was <50% of banner; switched badges to a DETERMINISTIC banner compositor (KC Stories/kc-badge-banner.py, Nirmala UI, text ~65% of a uniform 42% banner) matching reference samples, republished all 3 entry badges + rebuilt the 3 transparent PN exports. Then further iterated (operator): rejected the hard dark-banner/gold-line look, wanted the product IMAGE visible + BIG text (Zomato-style overlay). FINAL design = full-circle photo + soft bottom gradient scrim (no hard line) + big yellow short-hook text (लहसुन/तेज़ · फ्री माल/स्कीम · सस्ता/माल), 'Option D'. Established that readable text caps ~30-35% of a circle's area (65% not physically possible without hiding the photo). Compositor kc-badge-banner.py rewritten to the gradient design; kc-badge-template.md updated. All 3 entry badges + PN exports republished. Slides untouched. Picks/news_ids unchanged — no new run entry. NOTE: push JSON built but NOT sent to Slack (operator: ask before Slack).",
       "picks": {
         "mandi_bhav": [
-          {"news_id": "2e7c23d8-a813-49f5-bba9-d2749ef47060", "label": "सौंठ (सूखी अदरक) तेजी ~₹32,500/क्विंटल (+₹500), माल की कमी — in-house RED"},
-          {"news_id": "3970a4ac-750a-4b5f-86ba-5e8cfcd57dce", "label": "लहसुन तेजी ₹9,000→₹16,000/क्विंटल (राजस्थान मांग/कम आपूर्ति/निर्यात) — MP teji_mandi LR 3.15, RED"},
-          {"news_id": "fa2c72d3-1639-4f50-a7df-fb8fe08b5aaf", "label": "किशमिश मंदी ₹40–50/किलो कम (आवक↑, मुनाफावसूली, निर्यात↓) — MP teji_mandi LR 3.43, GREEN for balance"}
+          {
+            "news_id": "2e7c23d8-a813-49f5-bba9-d2749ef47060",
+            "label": "सौंठ (सूखी अदरक) तेजी ~₹32,500/क्विंटल (+₹500), माल की कमी — in-house RED"
+          },
+          {
+            "news_id": "3970a4ac-750a-4b5f-86ba-5e8cfcd57dce",
+            "label": "लहसुन तेजी ₹9,000→₹16,000/क्विंटल (राजस्थान मांग/कम आपूर्ति/निर्यात) — MP teji_mandi LR 3.15, RED"
+          },
+          {
+            "news_id": "fa2c72d3-1639-4f50-a7df-fb8fe08b5aaf",
+            "label": "किशमिश मंदी ₹40–50/किलो कम (आवक↑, मुनाफावसूली, निर्यात↓) — MP teji_mandi LR 3.43, GREEN for balance"
+          }
         ],
         "fmcg": [
-          {"news_id": "fd2e2412-eae1-4ac9-949f-854066adf7b4", "label": "ईनो ₹10 MRP — Retailer Scheme, 100 पीस जार पर 2 (100+2) फ्री (LR 34.11)"},
-          {"news_id": "70bf4d89-586b-4106-b757-a8b4014c55cf", "label": "घड़ी/निरमा 1 किलो पाउडर — Consumer Scheme, साथ 60ml स्मार्ट लिक्विड फ्री (LR 30.84)"},
-          {"news_id": "d2e7c692-3c4b-43fe-8b0e-2e864c85f30c", "label": "जिलेट 365 ब्लेड — Retailer Scheme, 40 पीस पर 2 जिलेट गार्ड (₹28) फ्री (LR 27.50)"}
+          {
+            "news_id": "fd2e2412-eae1-4ac9-949f-854066adf7b4",
+            "label": "ईनो ₹10 MRP — Retailer Scheme, 100 पीस जार पर 2 (100+2) फ्री (LR 34.11)"
+          },
+          {
+            "news_id": "70bf4d89-586b-4106-b757-a8b4014c55cf",
+            "label": "घड़ी/निरमा 1 किलो पाउडर — Consumer Scheme, साथ 60ml स्मार्ट लिक्विड फ्री (LR 30.84)"
+          },
+          {
+            "news_id": "d2e7c692-3c4b-43fe-8b0e-2e864c85f30c",
+            "label": "जिलेट 365 ब्लेड — Retailer Scheme, 40 पीस पर 2 जिलेट गार्ड (₹28) फ्री (LR 27.50)"
+          }
         ],
         "trending_news": [
-          {"news_id": "f12789a1-05ef-4967-8f47-c1e81859d03e", "label": "ONDC DigiDukaan — सीधे कंपनी से सस्ता माल (हैदराबाद 10k+ दुकानें, 35+ कंपनियां) — in-house"}
+          {
+            "news_id": "f12789a1-05ef-4967-8f47-c1e81859d03e",
+            "label": "ONDC DigiDukaan — सीधे कंपनी से सस्ता माल (हैदराबाद 10k+ दुकानें, 35+ कंपनियां) — in-house"
+          }
         ]
       },
       "also_shown": [
-        {"news_id": "b119a8ea-9e41-48e9-a78c-6a5f40e7da46", "label": "सोया तेल मंदी ₹15,150/क्विंटल (−₹50) — in-house GREEN, NOT used: soya over-covered (06-24/06-29 + today), chose किशमिश for freshness"},
-        {"news_id": "f3ce53f9-ae62-4407-ad6f-ea92457d94ac", "label": "UPI 123Pay बिना स्मार्टफोन डिजिटल पेमेंट — in-house news, NOT used: chose DigiDukaan (UPI topic touched 06-29)"},
-        {"news_id": "abab3b13-3fe5-49c1-a731-39ef26d94b1f", "label": "लौंग — teji_mandi LR 7.87, SWAPPED body-verify: no ₹ figure ('भाव स्थिर बने रहे')"},
-        {"news_id": "6c127073-b55f-49dc-bbc4-3bbd613a253d", "label": "काली मिर्च — teji_mandi LR 4.38, SWAPPED: LR↔BODY MISMATCH (body is सौंठ/Ginger, no figure) — flag for eng"},
-        {"news_id": "e6e93f83-69f4-47cb-b0a6-708bfb7d3602", "label": "Maaza ₹50 peti — Retailer Scheme LR 21.44, SWAPPED: LR↔BODY MISMATCH (body is Bounce चॉकलेटी बिस्कुट ₹600 कार्टून, not Maaza) — flag for eng"},
-        {"news_id": "cbac4afc-e294-4f92-b32b-f5cfbd98deaf", "label": "सुपारी गिरावट — teji_mandi LR 3.78, SWAPPED body-verify: no ₹ figure"},
-        {"news_id": "6521fe8c-896c-460e-8cf3-7e8ed2903c80", "label": "चीनी तेजी ₹2145→₹2200/50kg (+₹110/qtl) — teji_mandi LR 6.88, has figure but NOT used: चीनी तेजी repeats 06-26 (same commodity+direction)"},
-        {"news_id": "7c22d554-8f31-470c-baa8-5fbe3f85a18f", "label": "Patanjali toothbrush ₹9 12pc — Retailer Scheme LR 27.74, SKIPPED: Patanjali brand featured 07-06 (दंतकांति) + dental repeat"},
-        {"news_id": "5b9afb14-25af-49c0-b866-d32c42b045a9", "label": "सुगंधा इलायची चाय — Consumer Scheme LR 19.24, EXCLUDED: 07-06 pick (dedup)"}
+        {
+          "news_id": "b119a8ea-9e41-48e9-a78c-6a5f40e7da46",
+          "label": "सोया तेल मंदी ₹15,150/क्विंटल (−₹50) — in-house GREEN, NOT used: soya over-covered (06-24/06-29 + today), chose किशमिश for freshness"
+        },
+        {
+          "news_id": "f3ce53f9-ae62-4407-ad6f-ea92457d94ac",
+          "label": "UPI 123Pay बिना स्मार्टफोन डिजिटल पेमेंट — in-house news, NOT used: chose DigiDukaan (UPI topic touched 06-29)"
+        },
+        {
+          "news_id": "abab3b13-3fe5-49c1-a731-39ef26d94b1f",
+          "label": "लौंग — teji_mandi LR 7.87, SWAPPED body-verify: no ₹ figure ('भाव स्थिर बने रहे')"
+        },
+        {
+          "news_id": "6c127073-b55f-49dc-bbc4-3bbd613a253d",
+          "label": "काली मिर्च — teji_mandi LR 4.38, SWAPPED: LR↔BODY MISMATCH (body is सौंठ/Ginger, no figure) — flag for eng"
+        },
+        {
+          "news_id": "e6e93f83-69f4-47cb-b0a6-708bfb7d3602",
+          "label": "Maaza ₹50 peti — Retailer Scheme LR 21.44, SWAPPED: LR↔BODY MISMATCH (body is Bounce चॉकलेटी बिस्कुट ₹600 कार्टून, not Maaza) — flag for eng"
+        },
+        {
+          "news_id": "cbac4afc-e294-4f92-b32b-f5cfbd98deaf",
+          "label": "सुपारी गिरावट — teji_mandi LR 3.78, SWAPPED body-verify: no ₹ figure"
+        },
+        {
+          "news_id": "6521fe8c-896c-460e-8cf3-7e8ed2903c80",
+          "label": "चीनी तेजी ₹2145→₹2200/50kg (+₹110/qtl) — teji_mandi LR 6.88, has figure but NOT used: चीनी तेजी repeats 06-26 (same commodity+direction)"
+        },
+        {
+          "news_id": "7c22d554-8f31-470c-baa8-5fbe3f85a18f",
+          "label": "Patanjali toothbrush ₹9 12pc — Retailer Scheme LR 27.74, SKIPPED: Patanjali brand featured 07-06 (दंतकांति) + dental repeat"
+        },
+        {
+          "news_id": "5b9afb14-25af-49c0-b866-d32c42b045a9",
+          "label": "सुगंधा इलायची चाय — Consumer Scheme LR 19.24, EXCLUDED: 07-06 pick (dedup)"
+        }
       ]
     },
     {
@@ -206,28 +482,73 @@
       "_note": "No run on 07-08 (ledger jumped 07-07 → 07-09); no fresh 9 जुलाई in-house posts, so used the unpublished 8 जुलाई in-house pool as today's in-house. Commodity = लाल मिर्च (in-house RED, गुंटूर आवक कम) + नारियल (MP teji_mandi LR 8.21, top clean, ₹20→₹25/पीस RED) + मसूर दाल (in-house GREEN, −₹50 for balance) = 2 RED + 1 GREEN. FMCG top-3 by LR after dedup+body-verify: Nycil (Consumer LR 11.09) + सेंटर फ्रूट (Retailer LR 6.79) + हाजमोला (Retailer LR 5.51). News = ई-श्रम कार्ड (in-house, fresh; LPG/monsoon skipped as topic-repeats). Badges = Option D gradient design. BADGE REGEN v2 (operator, same-day): banner text still <50%, bumped MUCH bigger — switched to SHORT 1-word lines + big fs (~250) + widened text box (side 18px) + new TALL gradient + raised bottom(132) so text sits in the circle's wider zone. Final hooks: मिर्च/तेज़ · फ्री/स्कीम · ₹2 लाख/बीमा. Entry badges + PN exports republished; slides untouched; picks/news_ids unchanged. Push JSON below uses the v2 PN URLs; NOT sent to Slack (operator: ask before Slack). SCHEDULED RE-VERIFY (07-09 ~12:10, autopilot): confirmed all 3 stories still live with today's news_ids + Jul-9 badges (updated_at 06:18-06:19Z) — did NOT overwrite already-published slides/badges. Rebuilt the 3 transparent square PN exports (500x500 RGBA) from the live entry badges for the push JSON: mandi https://images.kiranaclub.ai/widget3/July/9/f67c19c9-d3b7-4f65-a0c9-2d6a7d51783d/1783579196217.webp · fmcg https://images.kiranaclub.ai/widget3/July/9/9268dbee-6942-45f8-8adf-9825738cddb1/1783579198068.webp · tn https://images.kiranaclub.ai/widget3/July/9/7470eac5-0ccf-4abb-9d2f-c6857d6f6485/1783579199748.webp. BADGE REGEN v3 (operator, same-day ~later): reverted the gradient-overlay entirely — operator wanted image+text SEPARATE with a CURVED gold separator (NOT a straight line), text banner >50%, and CLICKIER copy. Rebuilt kc-badge-banner.py to the curved-banner design (photo top ~48% + dark banner bottom ~52% + quadratic-Bézier concave gold separator + gold trim). Copy rules now: commodity='{comm} में तेजी/मंदी', fmcg=communicate the actual offer (or '{x} पर स्कीम'), news=mini-headline hook. v3 hooks: 'लाल मिर्च / में तेजी' · 'जार पर 2 / साबुन फ्री' · 'ई-श्रम से / ₹2 लाख'. Entry badges + PN exports republished (v3, after a transient d2r upload 502 that cleared on retry); slides untouched; picks/news_ids unchanged. kc-badge-template.md updated: curved-banner design now SUPERSEDES the gradient Option-D. v3 PN URLs: mandi https://images.kiranaclub.ai/widget3/July/9/9cda4891-bf6c-4855-9f7a-23262d369e67/1783592383964.webp · fmcg https://images.kiranaclub.ai/widget3/July/9/205d35d7-04dd-4a9b-a026-afe6e09be5d5/1783592386637.webp · tn https://images.kiranaclub.ai/widget3/July/9/50e2bc29-de32-4d30-81d0-2811f1549640/1783592388407.webp. BADGE REGEN v4 (operator, same-day): curved-banner text box had too much empty space — bumped fs to FILL the banner (mandi 196 / fmcg 162 / news 180), raised banner (BEDGE=450,BCTRL=545) + bottom=182 to fit; verified radial clearance ≤~460 of the 475 ring by measuring bright-text pixels (excl. gold curve + photo). Entry badges + PN republished (v4). Final live v4 PN URLs: mandi https://images.kiranaclub.ai/widget3/July/9/7d09c973-490d-48da-8549-3271cddfb5b0/1783593055035.webp · fmcg https://images.kiranaclub.ai/widget3/July/9/342e4ede-c84d-4ea4-888f-d077409abb82/1783593056718.webp · tn https://images.kiranaclub.ai/widget3/July/9/00fa580c-87c6-44ec-b63c-7a0cc9cda4b3/1783593058420.webp. BADGE REGEN v5→v6 (operator, same-day): v5 tried contain+blurred-fill to show the full subject but operator rejected it as boxy/empty side bars — wanted the ENTIRE top covered with image. Fix (v6): reverted to full-bleed object-fit:cover AND regenerated the 3 subject photos as DENSE frame-filling overhead flat-lays (chillies / soap+sachets+candy / rupees+coins+cards packed corner to corner) so the top crop always looks full. Kept the line-spacing fix (line-height 1.1 + 7px per-line margin) that separated the 2 lines. Radial clearance verified (428/460/456 ≤460 of 475 ring). Entry badges + PN republished (v6). kc-badge-template.md updated (full-bleed cover + frame-filling flat-lay rule; contain+blur explicitly rejected). Final live v6 PN URLs: mandi https://images.kiranaclub.ai/widget3/July/9/37760cb3-d52d-4aaf-b38b-90cb7367a126/1783595943682.webp · fmcg https://images.kiranaclub.ai/widget3/July/9/6c304caa-e4e6-4483-b3be-13a5ca0ba425/1783595945436.webp · tn https://images.kiranaclub.ai/widget3/July/9/398733d9-a44d-4981-be3f-1cbffb4cfcd9/1783595947093.webp. BADGE REGEN v7 (operator, same-day): (a) UNIFORM text size — single FS=152 for all 3 (was per-badge); (b) more ring clearance (target ≤448, measured 393/446/422); (c) FMCG now uses the REAL product photo — pulled the सेंटर फ्रूट D2R post media (ugc_posts.attachment for published_id 5613e40e → storage.googleapis.com compressed-user-posts jpg = actual Center Fruit jar with 'GET 2N Godrej NO.1 SOAP worth ₹10 with this jar' offer label), cropped square so the label sits in the visible top zone. Entry badges + PN republished (v7). kc-badge-template.md updated (uniform FS + real-FMCG-from-D2R-media rules). Final live v7 PN URLs: mandi https://images.kiranaclub.ai/widget3/July/9/6f9d65d7-3e22-4ab2-ba2d-12544c69fc76/1783596710548.webp · fmcg https://images.kiranaclub.ai/widget3/July/9/512767ef-ab20-4e0f-af18-66dace44ba26/1783596712595.webp · tn https://images.kiranaclub.ai/widget3/July/9/1c624c92-dd1c-442d-9871-8e5396db48c7/1783596714272.webp. BADGE REGEN v8 (operator, same-day): the D2R Center Fruit photo was too blurry/unclear → operator: don't use unclear, search internet for the exact product. Sourced a CLEAN high-res image of the exact FREEBIE (Godrej No.1 Lime Aloe Vera soap — matches the offer label) from IndiaMART imimg.com (swapped -250x250.jpg→-1000x1000.jpg for 1000² res), cropped so the 'Godrej No.1' brand face sits in the visible top zone. mandi/news unchanged (real still-lifes; no single product). Uniform FS=152 kept, clearance 393/446/422. Entry badges + PN republished (v8). kc-badge-template.md updated (fallback: unclear D2R media → clean internet image of exact product/freebie, imimg.com 1000x1000 trick). Final live v8 PN URLs: mandi https://images.kiranaclub.ai/widget3/July/9/f9e43770-ce25-4e2f-ab9f-68132833ce07/1783597597856.webp · fmcg https://images.kiranaclub.ai/widget3/July/9/9ad12c83-90bd-4bd4-9f50-efd38ed20596/1783597599676.webp · tn https://images.kiranaclub.ai/widget3/July/9/b199b61f-afbd-44b9-8c58-966dcd7d9f22/1783597601344.webp. BADGE REGEN v9 (operator, same-day): v8 FMCG top image was BLURRY (I cropped a ~700px sub-region of the 1000px soap and upscaled 1.5x). imimg caps at 1000px, Amazon CDN blocked. Fix: took a FULL-WIDTH band of soapB (1000→1080 = ~1.08x, sharp, LANCZOS) with the 'Godrej No.1' brand, pasted at top of the 1080² canvas, dark #0E1116 filler for the hidden bottom → crisp. Rule added to template: SHARPNESS non-negotiable, never upscale a small sub-crop >~1.1x. Entry badges + PN republished (v9). Final live v9 PN URLs: mandi https://images.kiranaclub.ai/widget3/July/9/b1325c54-cdd9-41fe-9c35-ef95799ff877/1783598661003.webp · fmcg https://images.kiranaclub.ai/widget3/July/9/4e7b23a5-56c7-48f9-9eda-fd0bef22bc16/1783598662700.webp · tn https://images.kiranaclub.ai/widget3/July/9/64c7ba6c-48e3-4a98-882a-1869cd0e849f/1783598664560.webp. PN-RECONCILE (operator, same-day): today's WebEngage PN fired with the STALE 07-07 badges (लहसुन भाव तेज़ / फ्री माल स्कीम / सीधे कंपनी से सस्ता माल) because the operator forgot to update the PN. To avoid a wrong-redirect feel, realigned ONLY the FMCG entry banner to match its PN badge 'फ्री माल स्कीम' — regenerated in the OLD gradient (Option-D) design with a GENERATED (not internet) tipped-candy-jar image (render_fmcg_old.py). FMCG story slides unchanged (already free-goods schemes = coherent). mandi ('लहसुन' vs live लाल मिर्च) + news ('सीधे कंपनी' vs live ई-श्रम) PN badges still mismatched — NOT reconciled (would require reverting today's picks); left for operator decision. In-app entry set now temporarily mixed (fmcg=old gradient, mandi/news=curved-banner). fmcg entry banner now https://images.kiranaclub.ai/widget3/July/9/edd13e02-e168-45f5-b07a-0916ca5d0221/1783601133073.webp. WORK HALTED per operator (resume on 'cont'). PN-RECONCILE PART 2 (operator chose 'match story + banner' for mandi+tn): to fully fix the stale-PN redirect, swapped STORY CONTENT + entry banners for mandi & tn to match the PN. mandi reel now leads with लहसुन (re-added 07-07 news_id 3970a4ac, ₹9k→16k, new card_8) then लाल मिर्च + मसूर — नारियल (ba311785) DROPPED. tn reel now सीधे कंपनी से माल / ONDC DigiDukaan (07-07 news_id f12789a1, new card_9) — ई-श्रम (87f52d8e) DROPPED. Both entry banners regenerated in OLD gradient design w/ generated images to match PN (mandi='लहसुन भाव तेज़' garlic, tn='सीधे कंपनी से सस्ता माल' cartons+phone). Now all 3 PN badges (लहसुन/फ्री माल स्कीम/सीधे कंपनी) match their live stories + entry banners; entry set uniformly old-gradient. NOTE: today's fresh नारियल + ई-श्रम picks were sacrificed to match the mistakenly-sent stale PN. WORK HALTED again per operator (resume on 'cont'). FMCG BADGE FIX (operator, 'cont'): operator disliked the flat internet soap CUTOUT on the fmcg badge — wanted a nice STILL-LIFE (product lying on a table, like the slide photos). Generated a frame-filling Gemini still-life of Godrej No.1 Lime Aloe Vera soaps on dark wood (brand legible, lemon+aloe props), composited into the CURVED-BANNER 'जार पर 2 साबुन फ्री' design (reverting fmcg from the old-gradient 'फ्री माल स्कीम' reconcile badge). Swapped ONLY the fmcg entry banner per operator 'rest all is gtg'. RESULT = MIXED live set: mandi+tn still old-gradient reconcile (लहसुन / सीधे कंपनी), fmcg now curved-banner still-life. fmcg entry banner now https://images.kiranaclub.ai/widget3/July/9/5a98f6c7-7888-4d03-9e7b-b0189dd3103f/1783604969726.webp ; fmcg transparent PN export https://images.kiranaclub.ai/widget3/July/9/16a844d4-515b-4bf7-88d6-4ce8be2a136c/1783604971793.webp. Flagged the mixed-set + push-JSON-refresh to operator. DESIGN FINALIZED + SET UNIFIED (operator, 2026-07-09): operator reviewed curved-banner previews and LOCKED the design as standard from tomorrow — FS bumped 152→160 (uniform, verified max clean size before fmcg 'साबुन फ्री' grazes the ring; mandi/tn have headroom). kc-badge-banner.py default FS=160. Then 'make this live' to unify the app: re-rendered all 3 entry banners in the finalized curved-banner FS160 design with the CURRENT LIVE content + clean frame-filling images (mandi=garlic 'लहसुन भाव तेज़', fmcg=Godrej No.1 Lime Aloe Vera soap still-life 'जार पर 2 साबुन फ्री', tn=cartons+phone 'सीधे कंपनी / सस्ता माल' — trimmed from 'सीधे कंपनी से' to fit FS160). Stories unchanged (लहसुन/free-schemes/DigiDukaan). Whole entry set now uniform curved-banner. Live badges: mandi https://images.kiranaclub.ai/widget3/July/9/481789ee-7219-40d3-878f-da28bff15993/1783606687672.webp · fmcg https://images.kiranaclub.ai/widget3/July/9/e86d7209-e50c-472b-952a-3bd695fb3b43/1783606689855.webp · tn https://images.kiranaclub.ai/widget3/July/9/0bcfdd7e-e8cd-43d0-8f6c-44d241827810/1783606691862.webp. NOTE new operator workflow: show previews in chat, push only on explicit 'make live' (see memory kc-stories-show-before-push). FMCG BADGE→CENTER FRUIT (operator, 2026-07-09): the fmcg badge showed Godrej soap but the सेंटर फ्रूट slide showed the candy jar → mismatch. Operator: 'change the godrej banner with center fruit one'. Regenerated the fmcg badge with a Center Fruit ₹1 jar + 2 Godrej No.1 soaps square image (curved-banner FS160 'जार पर 2 साबुन फ्री'), so badge now matches the सेंटर फ्रूट slide. Slide UNCHANGED (card_10 jar+soap variant was built+shown but NOT used — operator chose to fix the badge instead). fmcg badge now https://images.kiranaclub.ai/widget3/July/9/8dddc66e-9eab-4572-bbc8-c8bda0c81e26/1783607732642.webp. FMCG BADGE→CENTER FRUIT ONLY (operator, 2026-07-09): operator wanted the soap gone entirely — 'entry banner for center fruit only, no soap'. Regenerated with a Center Fruit ₹1 candy jar + loose candies square image (NO soap) + text changed 'जार पर 2 साबुन फ्री' → 'सेंटर फ्रूट / स्कीम' (curved-banner FS160). Pushed. fmcg badge now https://images.kiranaclub.ai/widget3/July/9/3abc26c5-358f-4138-82df-9df69789d616/1783608151592.webp. Live set: mandi लहसुन भाव तेज़ · fmcg सेंटर फ्रूट स्कीम · tn सीधे कंपनी सस्ता माल.",
       "picks": {
         "mandi_bhav": [
-          {"news_id": "828ed8a2-4707-4c6a-9fd0-49fd2fcaec26", "label": "लाल मिर्च तेजी ₹23,000–23,500/क्विंटल (गुंटूर आवक कम) — in-house RED"},
-          {"news_id": "ba311785-a3ac-4fa3-89ba-aa56bdf75826", "label": "नारियल तेजी ~₹20→₹25/पीस (बुरा 160, मांग मजबूत/आवक सीमित) — MP teji_mandi LR 8.21, RED"},
-          {"news_id": "34884342-cda0-432f-8906-33d455e605f7", "label": "मसूर दाल मंदी ₹6,675–6,700/क्विंटल (−₹50, मिल मांग सुस्त) — in-house GREEN for balance"}
+          {
+            "news_id": "828ed8a2-4707-4c6a-9fd0-49fd2fcaec26",
+            "label": "लाल मिर्च तेजी ₹23,000–23,500/क्विंटल (गुंटूर आवक कम) — in-house RED"
+          },
+          {
+            "news_id": "ba311785-a3ac-4fa3-89ba-aa56bdf75826",
+            "label": "नारियल तेजी ~₹20→₹25/पीस (बुरा 160, मांग मजबूत/आवक सीमित) — MP teji_mandi LR 8.21, RED"
+          },
+          {
+            "news_id": "34884342-cda0-432f-8906-33d455e605f7",
+            "label": "मसूर दाल मंदी ₹6,675–6,700/क्विंटल (−₹50, मिल मांग सुस्त) — in-house GREEN for balance"
+          }
         ],
         "fmcg": [
-          {"news_id": "b487d497-044f-4980-9b38-d23dd3573f0e", "label": "नाइसिल पाउडर — Consumer Scheme, 150g (MRP ₹150) पर 60g (MRP ₹70) फ्री (LR 11.09)"},
-          {"news_id": "5613e40e-d426-4982-bcea-3d662358f0ff", "label": "सेंटर फ्रूट ₹1 — Retailer Scheme, 350 पीस जार पर 2 नग No.1 साबुन फ्री (LR 6.79)"},
-          {"news_id": "0f8ee730-57b7-43c1-8561-d959562f77d4", "label": "हाजमोला रेगुलर — Retailer Scheme, जार ₹146, MRP ₹170 + 10 पीस फ्री, ~₹34 मुनाफा (LR 5.51)"}
+          {
+            "news_id": "b487d497-044f-4980-9b38-d23dd3573f0e",
+            "label": "नाइसिल पाउडर — Consumer Scheme, 150g (MRP ₹150) पर 60g (MRP ₹70) फ्री (LR 11.09)"
+          },
+          {
+            "news_id": "5613e40e-d426-4982-bcea-3d662358f0ff",
+            "label": "सेंटर फ्रूट ₹1 — Retailer Scheme, 350 पीस जार पर 2 नग No.1 साबुन फ्री (LR 6.79)"
+          },
+          {
+            "news_id": "0f8ee730-57b7-43c1-8561-d959562f77d4",
+            "label": "हाजमोला रेगुलर — Retailer Scheme, जार ₹146, MRP ₹170 + 10 पीस फ्री, ~₹34 मुनाफा (LR 5.51)"
+          }
         ],
         "trending_news": [
-          {"news_id": "87f52d8e-3897-4634-ab7c-dead88a4a89e", "label": "ई-श्रम कार्ड सरकारी योजना — मुफ्त कार्ड, ₹2 लाख दुर्घटना बीमा — in-house"}
+          {
+            "news_id": "87f52d8e-3897-4634-ab7c-dead88a4a89e",
+            "label": "ई-श्रम कार्ड सरकारी योजना — मुफ्त कार्ड, ₹2 लाख दुर्घटना बीमा — in-house"
+          }
         ]
       },
       "also_shown": [
-        {"news_id": "c1c5929e-a48f-42e7-a231-54cb622555e7", "label": "Safed stain wash detergent — Consumer Scheme LR 8.75 (#2), SWAPPED OUT: mis-bucketed pure wholesale/margin post (होलसेल ₹8 / बिक्री ₹10 / ₹2 मार्जिन), no consumer offer to represent — flag for eng (segment misclassification)"},
-        {"news_id": "bfdd2e08-741d-49fd-b69b-77659de35147", "label": "मैरी गोल्ड बिस्किट — Retailer Scheme LR 6.04, SWAPPED: LR↔BODY MISMATCH (body is कोलगेट चारकोल 240g toothpaste 1 पैक पर 3 ब्रश फ्री, not Marigold) — flag for eng"},
-        {"news_id": "9b8c395f-b5ca-48ad-9636-3597e78dbc9c", "label": "अखरोट — teji_mandi LR 5.98, SWAPPED: tagged मंदी but body says 'मंदी बिल्कुल नहीं' + no ₹ figure (LR↔body mismatch)"},
-        {"news_id": "410767bd-5898-45a1-bf22-fd2f9d821fdf", "label": "मूंगफली — teji_mandi LR 5.84, SWAPPED body-verify: no ₹ figure (body only 'मूंगफली बाजार अपडेट 07 जुलाई 2026')"},
-        {"news_id": "2f93f78f-acb3-462d-afd7-ca8a84fa40be", "label": "7 Star Supari — Retailer Scheme LR 6.08, dropped: vague (₹5 पैकेट पर 1 zipper pouch free), no count/margin"},
-        {"news_id": "9fb984e4-df06-42bd-ba36-277922fd0189", "label": "व्यावसायिक गैस सिलेंडर ₹183 सस्ता — in-house news (8 जुल), NOT used: LPG/commercial-gas topic covered 06-30"},
-        {"news_id": "52036765-c463-4f17-8ce0-2fc9ab42c4a9", "label": "मानसून पूरे देश में — in-house news (8 जुल), NOT used: monsoon topic repeat (06-25 pick + 06-28 also_shown)"},
-        {"news_id": "a94700d4-2ce3-431b-982d-6a008882ebe2", "label": "सोया-सरसों तेल तेजी (8 जुल in-house) — NOT used: soya/sarson over-covered (06-24/06-29/06-30/07-07)"}
+        {
+          "news_id": "c1c5929e-a48f-42e7-a231-54cb622555e7",
+          "label": "Safed stain wash detergent — Consumer Scheme LR 8.75 (#2), SWAPPED OUT: mis-bucketed pure wholesale/margin post (होलसेल ₹8 / बिक्री ₹10 / ₹2 मार्जिन), no consumer offer to represent — flag for eng (segment misclassification)"
+        },
+        {
+          "news_id": "bfdd2e08-741d-49fd-b69b-77659de35147",
+          "label": "मैरी गोल्ड बिस्किट — Retailer Scheme LR 6.04, SWAPPED: LR↔BODY MISMATCH (body is कोलगेट चारकोल 240g toothpaste 1 पैक पर 3 ब्रश फ्री, not Marigold) — flag for eng"
+        },
+        {
+          "news_id": "9b8c395f-b5ca-48ad-9636-3597e78dbc9c",
+          "label": "अखरोट — teji_mandi LR 5.98, SWAPPED: tagged मंदी but body says 'मंदी बिल्कुल नहीं' + no ₹ figure (LR↔body mismatch)"
+        },
+        {
+          "news_id": "410767bd-5898-45a1-bf22-fd2f9d821fdf",
+          "label": "मूंगफली — teji_mandi LR 5.84, SWAPPED body-verify: no ₹ figure (body only 'मूंगफली बाजार अपडेट 07 जुलाई 2026')"
+        },
+        {
+          "news_id": "2f93f78f-acb3-462d-afd7-ca8a84fa40be",
+          "label": "7 Star Supari — Retailer Scheme LR 6.08, dropped: vague (₹5 पैकेट पर 1 zipper pouch free), no count/margin"
+        },
+        {
+          "news_id": "9fb984e4-df06-42bd-ba36-277922fd0189",
+          "label": "व्यावसायिक गैस सिलेंडर ₹183 सस्ता — in-house news (8 जुल), NOT used: LPG/commercial-gas topic covered 06-30"
+        },
+        {
+          "news_id": "52036765-c463-4f17-8ce0-2fc9ab42c4a9",
+          "label": "मानसून पूरे देश में — in-house news (8 जुल), NOT used: monsoon topic repeat (06-25 pick + 06-28 also_shown)"
+        },
+        {
+          "news_id": "a94700d4-2ce3-431b-982d-6a008882ebe2",
+          "label": "सोया-सरसों तेल तेजी (8 जुल in-house) — NOT used: soya/sarson over-covered (06-24/06-29/06-30/07-07)"
+        }
       ]
     },
     {
@@ -235,29 +556,77 @@
       "_note": "Fresh full run (all 3 stories + badges republished live via update_story/update_story_entry_badges, actor Harsh Shrivastava). Prior live content (लहसुन/लाल मिर्च/मसूर, Nycil/सेंटर फ्रूट/हाजमोला, ONDC DigiDukaan from the 07-09 PN-reconcile) all in the 12-day dedup window → fully swapped out. Commodity = काबुली चना (in-house RED, ₹9700-9800 दिल्ली) + जीरा (in-house GREEN, हाजिर ₹22400 नरम, for balance) + नमक (MP teji_mandi LR 6.12, novel commodity, थोक बैग ₹1300→₹1390 +₹90 RED) = 2 RED + 1 GREEN. FMCG top-3 by LR after dedup+body-verify, 3 segments: Fighter agarbatti (Consumer LR 5.80, खरीद ₹75/बिक्री ₹120/₹45 मार्जिन + ₹10 अगरबत्ती फ्री) + Pooja Oil (fmcg_product_change LR 5.27, 450ml ₹112→₹130, the arrow card) + Vicks jar (Retailer LR 5.16, जार पर 50 यूनिट/₹100 फ्री, 175+50=225). News = गांव-कस्बों में FMCG मांग तेज (in-house, fresh market-trend; chosen over another govt scheme for variety after 6 straight scheme/policy news). Badges = curved-banner FS160 design (काबुली चना में तेजी / बंडल पर 1 पैक फ्री [Fighter] / गांव में तेज मांग); radial clearance 409/451/448 ≤460. Slides composited via kc-card-render.py, QC'd (contact sheet + full-size read of tallest news card — no overlap). Push JSON built with today's transparent PN badges; NOT sent to Slack (operator: ask before Slack).",
       "picks": {
         "mandi_bhav": [
-          {"news_id": "3da4b2eb-eaff-4109-8d35-0ef7992a9bd2", "label": "काबुली चना तेजी ₹9,700–9,800/क्विंटल (दिल्ली, पुराना स्टॉक कम+आयात घटा) — in-house RED"},
-          {"news_id": "f30902ca-c8b2-4130-b3a6-5e75c46c8b77", "label": "जीरा मंदी हाजिर ~₹22,400/क्विंटल (ऊंचे दाम पर ग्राहकी ठंडी, दबाव) — in-house GREEN for balance"},
-          {"news_id": "1726f7a0-e235-4bb5-8a1e-d6ecbd375a6f", "label": "नमक तेजी थोक बैग ₹1,300→₹1,390 (+₹90), 1kg MRP ₹32 — MP teji_mandi LR 6.12, RED, novel commodity"}
+          {
+            "news_id": "3da4b2eb-eaff-4109-8d35-0ef7992a9bd2",
+            "label": "काबुली चना तेजी ₹9,700–9,800/क्विंटल (दिल्ली, पुराना स्टॉक कम+आयात घटा) — in-house RED"
+          },
+          {
+            "news_id": "f30902ca-c8b2-4130-b3a6-5e75c46c8b77",
+            "label": "जीरा मंदी हाजिर ~₹22,400/क्विंटल (ऊंचे दाम पर ग्राहकी ठंडी, दबाव) — in-house GREEN for balance"
+          },
+          {
+            "news_id": "1726f7a0-e235-4bb5-8a1e-d6ecbd375a6f",
+            "label": "नमक तेजी थोक बैग ₹1,300→₹1,390 (+₹90), 1kg MRP ₹32 — MP teji_mandi LR 6.12, RED, novel commodity"
+          }
         ],
         "fmcg": [
-          {"news_id": "200cb494-b7ca-4e4f-9d7f-745597366b7a", "label": "फाइटर मच्छर अगरबत्ती — Consumer Scheme, बंडल खरीद ₹75/बिक्री ₹120/₹45 मार्जिन + ₹10 अगरबत्ती फ्री (LR 5.80)"},
-          {"news_id": "6f4ec211-fca7-47cf-8daf-972114c9acc2", "label": "पूजा ऑयल — fmcg_product_change, 450ml रेट ₹112→₹130 (नई पैकिंग, +₹18) (LR 5.27)"},
-          {"news_id": "bd6dab1d-d4b6-4da6-95af-6c7fefc00e55", "label": "विक्स जार — Retailer Scheme, जार पर 50 यूनिट (₹100) फ्री, कुल 225 (175+50) (LR 5.16)"}
+          {
+            "news_id": "200cb494-b7ca-4e4f-9d7f-745597366b7a",
+            "label": "फाइटर मच्छर अगरबत्ती — Consumer Scheme, बंडल खरीद ₹75/बिक्री ₹120/₹45 मार्जिन + ₹10 अगरबत्ती फ्री (LR 5.80)"
+          },
+          {
+            "news_id": "6f4ec211-fca7-47cf-8daf-972114c9acc2",
+            "label": "पूजा ऑयल — fmcg_product_change, 450ml रेट ₹112→₹130 (नई पैकिंग, +₹18) (LR 5.27)"
+          },
+          {
+            "news_id": "bd6dab1d-d4b6-4da6-95af-6c7fefc00e55",
+            "label": "विक्स जार — Retailer Scheme, जार पर 50 यूनिट (₹100) फ्री, कुल 225 (175+50) (LR 5.16)"
+          }
         ],
         "trending_news": [
-          {"news_id": "bbf44881-48e4-4004-9963-e96300052aed", "label": "गांव-कस्बों में किराना/FMCG मांग शहरों से तेज बढ़ी — in-house, market-trend/opportunity"}
+          {
+            "news_id": "bbf44881-48e4-4004-9963-e96300052aed",
+            "label": "गांव-कस्बों में किराना/FMCG मांग शहरों से तेज बढ़ी — in-house, market-trend/opportunity"
+          }
         ]
       },
       "also_shown": [
-        {"news_id": "cdf4d643-9b92-4424-87c1-70395fa00849", "label": "Dabur Amla Hair Oil + Dabur Toothpaste free — TOP fresh FMCG Consumer LR 7.20, SKIPPED: no concrete ₹ figure in body + Dabur (हाजमोला) live yesterday 07-09 (brand-in-last-2-days block)"},
-        {"news_id": "f975569d-145c-4e1d-847a-713732cab7e0", "label": "पतंजलि दंत क्रांति 100gm + toothbrush free (होल ₹51/MRP ₹58/₹7 मार्जिन) — Retailer LR 5.68, SKIPPED: Patanjali+dental theme repeat vs 07-06 दंतकांति, chose segment variety"},
-        {"news_id": "f4594183-e783-4fb7-9382-17c05f57be6d", "label": "Bakemate lollipop 1 जार पर 2pcs फ्री — Retailer LR 5.23, DROPPED body-verify: vague, no price/margin figure"},
-        {"news_id": "a42e26e0-b722-45b8-9ecc-94a09fe9fbce", "label": "Alpenliebe बड़ा जार (होल ₹1050 / 1200 pcs / ₹150 मार्जिन + बेडशीट-पिलो फ्री) — Retailer LR 5.11, clean backup, not needed (top-3 by LR filled)"},
-        {"news_id": "f84115c9-1d26-45c4-9d57-30b49da76540", "label": "बासमती चावल (Azooba) 30kg कट्टा ₹1,230→₹1,320 (+₹100) — teji_mandi LR 5.92, clean backup, not needed (नमक chosen: top LR + novelty)"},
-        {"news_id": "dfa5138d-36ec-4f03-a16b-8174eb9ccba7", "label": "अखरोट गिरी तेजी ₹810→₹850/kg (+₹40, एटा) — teji_mandi LR 5.36, clean backup, not needed"},
-        {"news_id": "9bab5866-67bb-4153-a4e6-c0bba1eec71a", "label": "मक्का तेजी (निर्यात 10→25 लाख क्विंटल) — teji_mandi LR 5.32, SWAPPED body-verify: export narrative, no concrete ₹ figure"},
-        {"news_id": "fa46fecc-8ad4-4def-ba62-62c007c98cf8", "label": "काजू तेजी (सावन/geopolitical) — teji_mandi LR 5.92, SWAPPED body-verify: no ₹ figure + काजू covered 07-06 (मंदी)"},
-        {"news_id": "af9f7bd5-97ab-469e-95e1-4e0b33b5918e", "label": "NPS वात्सल्य बाल पेंशन योजना (₹250 से शुरू) — in-house news backup, NOT used: chose गांव-मांग for variety after 6 straight scheme/policy news"}
+        {
+          "news_id": "cdf4d643-9b92-4424-87c1-70395fa00849",
+          "label": "Dabur Amla Hair Oil + Dabur Toothpaste free — TOP fresh FMCG Consumer LR 7.20, SKIPPED: no concrete ₹ figure in body + Dabur (हाजमोला) live yesterday 07-09 (brand-in-last-2-days block)"
+        },
+        {
+          "news_id": "f975569d-145c-4e1d-847a-713732cab7e0",
+          "label": "पतंजलि दंत क्रांति 100gm + toothbrush free (होल ₹51/MRP ₹58/₹7 मार्जिन) — Retailer LR 5.68, SKIPPED: Patanjali+dental theme repeat vs 07-06 दंतकांति, chose segment variety"
+        },
+        {
+          "news_id": "f4594183-e783-4fb7-9382-17c05f57be6d",
+          "label": "Bakemate lollipop 1 जार पर 2pcs फ्री — Retailer LR 5.23, DROPPED body-verify: vague, no price/margin figure"
+        },
+        {
+          "news_id": "a42e26e0-b722-45b8-9ecc-94a09fe9fbce",
+          "label": "Alpenliebe बड़ा जार (होल ₹1050 / 1200 pcs / ₹150 मार्जिन + बेडशीट-पिलो फ्री) — Retailer LR 5.11, clean backup, not needed (top-3 by LR filled)"
+        },
+        {
+          "news_id": "f84115c9-1d26-45c4-9d57-30b49da76540",
+          "label": "बासमती चावल (Azooba) 30kg कट्टा ₹1,230→₹1,320 (+₹100) — teji_mandi LR 5.92, clean backup, not needed (नमक chosen: top LR + novelty)"
+        },
+        {
+          "news_id": "dfa5138d-36ec-4f03-a16b-8174eb9ccba7",
+          "label": "अखरोट गिरी तेजी ₹810→₹850/kg (+₹40, एटा) — teji_mandi LR 5.36, clean backup, not needed"
+        },
+        {
+          "news_id": "9bab5866-67bb-4153-a4e6-c0bba1eec71a",
+          "label": "मक्का तेजी (निर्यात 10→25 लाख क्विंटल) — teji_mandi LR 5.32, SWAPPED body-verify: export narrative, no concrete ₹ figure"
+        },
+        {
+          "news_id": "fa46fecc-8ad4-4def-ba62-62c007c98cf8",
+          "label": "काजू तेजी (सावन/geopolitical) — teji_mandi LR 5.92, SWAPPED body-verify: no ₹ figure + काजू covered 07-06 (मंदी)"
+        },
+        {
+          "news_id": "af9f7bd5-97ab-469e-95e1-4e0b33b5918e",
+          "label": "NPS वात्सल्य बाल पेंशन योजना (₹250 से शुरू) — in-house news backup, NOT used: chose गांव-मांग for variety after 6 straight scheme/policy news"
+        }
       ]
     },
     {
@@ -265,27 +634,69 @@
       "_note": "Run originally BLOCKED earlier in the day — the jack MCP connector (stories/images/publish) was disconnected, so 0 images/0 publishes were possible; selection was pre-computed and reported, ledger deliberately NOT written then. Operator reconnected jack and re-triggered; this is the completed publish. All 3 stories + badges republished live (update_story / update_story_entry_badges, actor Harsh Shrivastava). Prior live content (07-10: काबुली चना/जीरा/नमक, Fighter/Pooja Oil/Vicks, गांव-मांग) all in the 12-day dedup window → fully swapped. Commodity = मोठ (in-house RED, ₹5900→6500 दिल्ली, नई फसल 2.5 माह दूर) + मेथीदाना (in-house RED, ₹7500, आवक कम) + सोया तेल (in-house GREEN, ₹15400 −₹100, kept for balance despite soya over-coverage per workflow rule) = 2 RED + 1 GREEN. FMCG top-3 by LR after dedup+body-verify: Sensodyne (Consumer LR 10.24, ₹245 पेस्ट + ₹65 ब्रश फ्री — the one dental card) + ईनो लेमन फिज़ (Retailer LR 8.05, ₹5 Buy5Get1; Eno brand last seen 07-07 >2 days, news_id fresh) + कैमलिन पेंसिल कलर (Retailer LR 7.39, ₹20 + ₹5 शार्पनर फ्री, novel). News = गेहूं OMSS सरकारी स्टॉक, आटा भाव काबू (in-house, concrete ₹2,585–2,600/qtl; chosen over PPF/economic-barometer for market-impact + freshness). new_product_launch segment had 0 candidates today. Badges = curved-banner FS152 (मोठ में तेजी / पेस्ट पर ब्रश फ्री / आटा भाव काबू में); radial clearance 328/373/374 ≤448. Slides composited via kc-card-render.py, QC'd (contact sheet + full-size read of tallest cards 6+7 — no overlap). Push JSON built with today's transparent PN badges; NOT sent to Slack (operator: ask before Slack). BADGE REGEN (operator, same-day): flagged entry-badge text as top-drifted (empty gap below in-app). Fixed in kc-badge-banner.py: bottom 205->135 (205 seated the block in the banner's upper half; 135 centers it) AND FS 152->166 (operator wanted the text bigger to fully cover the banner). Swept FS — 166 is the largest uniform size clearing the inner white ring (max radial 439<=~448; FS174 hit 453). Entry badges + PN exports re-rendered + republished live (FS166, centered); slides/picks unchanged. Final live v2 PN URLs: mandi https://images.kiranaclub.ai/widget3/July/13/0b323dd1-a108-41fd-9f51-8206bd6864fc/1783927568065.webp · fmcg https://images.kiranaclub.ai/widget3/July/13/fcdc1028-bf58-4040-9739-3e789dc8488b/1783927569821.webp · tn https://images.kiranaclub.ai/widget3/July/13/d290bd36-9d39-4d65-a227-e7491479f9f4/1783927571772.webp",
       "picks": {
         "mandi_bhav": [
-          {"news_id": "2e1edf36-76ad-4c46-9cd1-ea1e277706de", "label": "मोठ तेजी ₹5,900→6,500/क्विंटल (दिल्ली, नई फसल ढाई माह दूर, स्टॉक कम) — in-house RED"},
-          {"news_id": "fa52d349-db09-4eef-8142-f374d5ae928a", "label": "मेथीदाना तेजी ₹7,500/क्विंटल (मानसून, आवक कम) — in-house RED"},
-          {"news_id": "a5942bcd-101f-4e32-85ae-a0767bbe4666", "label": "सोया तेल मंदी ₹15,400/क्विंटल (−₹100, कमजोर खरीद) — in-house GREEN for balance"}
+          {
+            "news_id": "2e1edf36-76ad-4c46-9cd1-ea1e277706de",
+            "label": "मोठ तेजी ₹5,900→6,500/क्विंटल (दिल्ली, नई फसल ढाई माह दूर, स्टॉक कम) — in-house RED"
+          },
+          {
+            "news_id": "fa52d349-db09-4eef-8142-f374d5ae928a",
+            "label": "मेथीदाना तेजी ₹7,500/क्विंटल (मानसून, आवक कम) — in-house RED"
+          },
+          {
+            "news_id": "a5942bcd-101f-4e32-85ae-a0767bbe4666",
+            "label": "सोया तेल मंदी ₹15,400/क्विंटल (−₹100, कमजोर खरीद) — in-house GREEN for balance"
+          }
         ],
         "fmcg": [
-          {"news_id": "ef6bc43f-5f56-4d25-9a49-22ba9ff9abd8", "label": "सेंसोडाइन टूथपेस्ट — Consumer Scheme, ₹245 पेस्ट (1 पीस) पर ₹65 वाला सेंसोडाइन ब्रश फ्री (LR 10.24)"},
-          {"news_id": "2520462b-f456-49a2-aa1a-b704bf900b79", "label": "ईनो लेमन फिज़ ₹5 — Retailer Scheme, 5 पैकेट पर 1 फ्री (5+1) (LR 8.05)"},
-          {"news_id": "3afcc85c-fea4-40da-a8ad-3db3930c4cd7", "label": "कैमलिन पेंसिल कलर ₹20 — Retailer Scheme, ₹5 शार्पनर फ्री (LR 7.39)"}
+          {
+            "news_id": "ef6bc43f-5f56-4d25-9a49-22ba9ff9abd8",
+            "label": "सेंसोडाइन टूथपेस्ट — Consumer Scheme, ₹245 पेस्ट (1 पीस) पर ₹65 वाला सेंसोडाइन ब्रश फ्री (LR 10.24)"
+          },
+          {
+            "news_id": "2520462b-f456-49a2-aa1a-b704bf900b79",
+            "label": "ईनो लेमन फिज़ ₹5 — Retailer Scheme, 5 पैकेट पर 1 फ्री (5+1) (LR 8.05)"
+          },
+          {
+            "news_id": "3afcc85c-fea4-40da-a8ad-3db3930c4cd7",
+            "label": "कैमलिन पेंसिल कलर ₹20 — Retailer Scheme, ₹5 शार्पनर फ्री (LR 7.39)"
+          }
         ],
         "trending_news": [
-          {"news_id": "9986242b-8f22-4ba0-ac56-e202e7d7cf4d", "label": "गेहूं OMSS सरकारी स्टॉक — आटा मिलों को ₹2,585–2,600/क्विंटल गेहूं, आटा-मैदा-सूजी भाव काबू में — in-house"}
+          {
+            "news_id": "9986242b-8f22-4ba0-ac56-e202e7d7cf4d",
+            "label": "गेहूं OMSS सरकारी स्टॉक — आटा मिलों को ₹2,585–2,600/क्विंटल गेहूं, आटा-मैदा-सूजी भाव काबू में — in-house"
+          }
         ]
       },
       "also_shown": [
-        {"news_id": "f262812d-2b7e-4d53-8a0d-1af773d551ee", "label": "Hair care होलसेल ₹50/बिक्री ₹60 — 2nd-highest FMCG Consumer LR 9.49, SWAPPED OUT body-verify: mis-bucketed pure wholesale/margin post, no brand/product name, no consumer offer to represent — flag for eng (segment misclassification)"},
-        {"news_id": "9b41f342-a33e-4612-a662-48bfe5007c07", "label": "क्लोज़अप टूथब्रश 6+1 — Retailer LR 7.98, DROPPED: 2nd dental (Sensodyne already the dental card)"},
-        {"news_id": "98e51fd9-5685-4e6b-86e1-9c3dd7a031f6", "label": "जिलेट ब्लेड 50+5 — Retailer LR 7.62, SKIPPED: Gillette brand featured 07-07 (जिलेट 365)"},
-        {"news_id": "b4510b6b-cad5-40b8-b327-31f62fef7812", "label": "हाजमोला इमली लड्डू (डाबर) — Retailer LR 7.32, SKIPPED: हाजमोला brand featured 07-09"},
-        {"news_id": "02039cdf-d408-4a9c-8bdb-2ccbbd90e36d", "label": "Colgate super flexi toothbrush — Retailer LR 7.27, DROPPED: dental cluster"},
-        {"news_id": "4b4fa0a3-e48b-4c46-a4fb-98f66045f3ab", "label": "फेविक्विक ₹5 + फेविकॉल क्यूब जेल फ्री — Retailer LR 7.03, clean body-verified backup, not needed (top-3 filled)"},
-        {"news_id": "809e0a63-5e22-443b-aec6-79771a57c0ad", "label": "हिमालया फेस वॉश ₹20 जार 12+1 फ्री — Retailer LR 6.95, clean backup, not needed"}
+        {
+          "news_id": "f262812d-2b7e-4d53-8a0d-1af773d551ee",
+          "label": "Hair care होलसेल ₹50/बिक्री ₹60 — 2nd-highest FMCG Consumer LR 9.49, SWAPPED OUT body-verify: mis-bucketed pure wholesale/margin post, no brand/product name, no consumer offer to represent — flag for eng (segment misclassification)"
+        },
+        {
+          "news_id": "9b41f342-a33e-4612-a662-48bfe5007c07",
+          "label": "क्लोज़अप टूथब्रश 6+1 — Retailer LR 7.98, DROPPED: 2nd dental (Sensodyne already the dental card)"
+        },
+        {
+          "news_id": "98e51fd9-5685-4e6b-86e1-9c3dd7a031f6",
+          "label": "जिलेट ब्लेड 50+5 — Retailer LR 7.62, SKIPPED: Gillette brand featured 07-07 (जिलेट 365)"
+        },
+        {
+          "news_id": "b4510b6b-cad5-40b8-b327-31f62fef7812",
+          "label": "हाजमोला इमली लड्डू (डाबर) — Retailer LR 7.32, SKIPPED: हाजमोला brand featured 07-09"
+        },
+        {
+          "news_id": "02039cdf-d408-4a9c-8bdb-2ccbbd90e36d",
+          "label": "Colgate super flexi toothbrush — Retailer LR 7.27, DROPPED: dental cluster"
+        },
+        {
+          "news_id": "4b4fa0a3-e48b-4c46-a4fb-98f66045f3ab",
+          "label": "फेविक्विक ₹5 + फेविकॉल क्यूब जेल फ्री — Retailer LR 7.03, clean body-verified backup, not needed (top-3 filled)"
+        },
+        {
+          "news_id": "809e0a63-5e22-443b-aec6-79771a57c0ad",
+          "label": "हिमालया फेस वॉश ₹20 जार 12+1 फ्री — Retailer LR 6.95, clean backup, not needed"
+        }
       ]
     },
     {
@@ -293,31 +704,191 @@
       "_note": "Full autonomous cloud run (harness scheduled routine, ~12:04 IST). Fresh full run — all 3 stories + badges republished live (update_story / update_story_entry_badges, actor Harsh Shrivastava). Prior live content (07-13: मोठ/मेथीदाना/सोया तेल, Sensodyne/ईनो/कैमलिन, गेहूं OMSS) all in the 12-day dedup window → fully swapped, except सोया तेल (kept, see below). Commodity = तूर दाल (in-house RED, ₹200 तेजी ₹8,100/क्विंटल) + मक्का (in-house RED, ₹20 तेजी ₹2,350-2,375/क्विंटल) + सोया तेल (in-house GREEN, ₹300 गिरावट ₹15,400/क्विंटल — same commodity+direction as 07-13, kept for direction balance per workflow rule since every fresh Mixpanel teji_mandi candidate body-verified RED-only: गुड़/हल्दी/गेहूं/चीनी all तेजी, no clean GREEN alternative). धनिया (MP teji_mandi LR 8.39) checked but body was a margin/wholesale post, not a price move — rejected, not a teji_mandi candidate. FMCG top-3 by LR after dedup+body-verify: Tik Tak scheme (LR 7.98) and Royal Dairy scheme (LR 7.97) both SWAPPED OUT (Tik Tak body vague — no jar count/margin figure; Royal Dairy body named a different company 'ifly', LR-label↔body brand mismatch — flag for eng) → next by LR: कोलगेट+मैक्सफ्रेश (Retailer Scheme, LR 7.80, 12 कोलगेट ₹20 + 2 मैक्सफ्रेश ₹20 फ्री = ₹216) + इंजन सरसों तेल (fmcg_product_change/arrow, LR 7.32, ₹118→₹130/500ml) + क्लोज़अप टूथपेस्ट (Consumer Scheme, LR 7.24, 80g 2+1 फ्री). कोलगेट स्ट्रांग मंजन (LR 7.13) skipped to avoid double-Colgate. new_product_launch pool was completely empty in today's Mixpanel report (0 rows). News = बड़ी कंपनी किराना को ज्यादा मुनाफा — Reliance Campa/Independence direct-to-kirana, 20-40% सस्ता + बेहतर मार्जिन, 3 लाख+ दुकानें (in-house, market-impact, chosen over a Saharanpur success-story human-interest post and a DAY-NULM loan-scheme post for freshness/concreteness; रुझान digest skipped per rule). Cards composited via kc-card-render.py — card 7's first draft had a 4-word headline that wrapped to 2 lines and clipped the last grid row off the bottom (caught in full-size QC read, not visible on the contact-sheet thumbnail); shortened headline + re-rendered clean. card_2/card_7 exceeded the 1MB upload cap even after the script's built-in 1000px-wide resize (photo-heavy); manually resized to 850px wide to clear it. Badges = curved-banner design, FS152 (dropped from the 07-13-locked FS166 standard — today's copy measured max radial 453-455 at FS166, over the ~448 target). POST-PUBLISH CORRECTION #1 (operator: 'मैक्सफ्रेश फ्री मिले'/'सस्ता माल मुनाफा' non-sensical): re-copied to '12 पर 2 / फ्री मिले' + '20-40% / सस्ता माल'. POST-PUBLISH CORRECTION #2 (operator: text CROPPING at ring + 'be logical' + image too small/not visible → use zoomed): (a) ROOT-CAUSED the crop — a 2-WORD bottom line sits low in the circle where it's narrow, so 'फ्री मिले'/'सस्ता माल' hit the ring (measured true text radius 445/455 > 448 inner) regardless of FS; fix = make every bottom line ONE short word and put the longer element on the wider upper line. Final badge copy (all logical, all re-published live): मंडी 'तूर दाल'/'तेजी' (r=389), FMCG '12 पर 2'/'फ्री' (r=382, Colgate shown in photo), news '20-40%'/'सस्ता' (r=402, goods shown) — all ≤440, verified by full-size read + radial measure. (b) Swapped all 3 badge photos to ZOOMED single-subject close-ups (toor-dal macro w/ scoop / two Colgate MaxFresh packs brand-legible / grocery-staple packets + ₹500 fan) so the small in-app circular asset stays readable — the earlier dense flat-lays turned to noise at badge size. FS 152 (mandi/news bottom short words let FS stay large for prominence). FINAL LIVE PN URLs (for WebEngage push JSON): mandi https://images.kiranaclub.ai/widget3/July/14/fb8d933a-c320-4d6d-9aa8-5c3b42ebdf47/1784015559906.webp · fmcg https://images.kiranaclub.ai/widget3/July/14/7796cf0a-886d-4ee0-8d1b-2eb156ea9ca7/1784015567004.webp · tn https://images.kiranaclub.ai/widget3/July/14/fc774a6e-8f20-477c-b82f-bb8d8f8d7ccb/1784015574057.webp. Weekday (Tuesday) — WebEngage Slack handoff to Hritik SKIPPED per spec (weekends only).",
       "picks": {
         "mandi_bhav": [
-          {"news_id": "ae9c22ed-4fa4-4842-8b11-686dfde10489", "label": "तूर दाल तेजी ₹200 चढ़े ₹8,100/क्विंटल (दाल मिलों की लिवाली, माल की कमी) — in-house RED"},
-          {"news_id": "a441b990-763b-4f32-a10d-d64422280b74", "label": "मक्का तेजी ₹20 चढ़े ₹2,350-2,375/क्विंटल (बिहार सप्लाई कम, पोल्ट्री-स्टार्च मांग) — in-house RED"},
-          {"news_id": "8e980561-92f3-437b-a4d5-9c94e9d17b32", "label": "सोया तेल मंदी ₹300 घटे ₹15,400/क्विंटल (कमजोर ग्राहकी) — in-house GREEN for balance, same commodity+direction as 07-13 but no fresh GREEN teji_mandi alternative body-verified today"}
+          {
+            "news_id": "ae9c22ed-4fa4-4842-8b11-686dfde10489",
+            "label": "तूर दाल तेजी ₹200 चढ़े ₹8,100/क्विंटल (दाल मिलों की लिवाली, माल की कमी) — in-house RED"
+          },
+          {
+            "news_id": "a441b990-763b-4f32-a10d-d64422280b74",
+            "label": "मक्का तेजी ₹20 चढ़े ₹2,350-2,375/क्विंटल (बिहार सप्लाई कम, पोल्ट्री-स्टार्च मांग) — in-house RED"
+          },
+          {
+            "news_id": "8e980561-92f3-437b-a4d5-9c94e9d17b32",
+            "label": "सोया तेल मंदी ₹300 घटे ₹15,400/क्विंटल (कमजोर ग्राहकी) — in-house GREEN for balance, same commodity+direction as 07-13 but no fresh GREEN teji_mandi alternative body-verified today"
+          }
         ],
         "fmcg": [
-          {"news_id": "c8ad69e6-4b44-4e07-8f2e-0c8512b6fd1b", "label": "कोलगेट + मैक्सफ्रेश — Retailer Scheme, 12 कोलगेट ₹20 पर 2 मैक्सफ्रेश ₹20 फ्री, कुल ₹216 (LR 7.80)"},
-          {"news_id": "7d8d02a7-b520-4e17-907e-b6e24adac812", "label": "इंजन सरसों तेल — fmcg_product_change, 500ml MRP ₹118→₹130 (LR 7.32)"},
-          {"news_id": "2a3ab8f4-0b00-4b01-8e68-318adeda473f", "label": "क्लोज़अप टूथपेस्ट — Consumer Scheme, 80g 2 पीस पर 1 पीस फ्री (LR 7.24)"}
+          {
+            "news_id": "c8ad69e6-4b44-4e07-8f2e-0c8512b6fd1b",
+            "label": "कोलगेट + मैक्सफ्रेश — Retailer Scheme, 12 कोलगेट ₹20 पर 2 मैक्सफ्रेश ₹20 फ्री, कुल ₹216 (LR 7.80)"
+          },
+          {
+            "news_id": "7d8d02a7-b520-4e17-907e-b6e24adac812",
+            "label": "इंजन सरसों तेल — fmcg_product_change, 500ml MRP ₹118→₹130 (LR 7.32)"
+          },
+          {
+            "news_id": "2a3ab8f4-0b00-4b01-8e68-318adeda473f",
+            "label": "क्लोज़अप टूथपेस्ट — Consumer Scheme, 80g 2 पीस पर 1 पीस फ्री (LR 7.24)"
+          }
         ],
         "trending_news": [
-          {"news_id": "2e40c2dd-f8e0-4cf3-aae9-df8266fb3451", "label": "बड़ी कंपनी किराना को ज्यादा मुनाफा — Reliance Campa/Independence 20-40% सस्ता + बेहतर मार्जिन, 3 लाख+ दुकानें — in-house"}
+          {
+            "news_id": "2e40c2dd-f8e0-4cf3-aae9-df8266fb3451",
+            "label": "बड़ी कंपनी किराना को ज्यादा मुनाफा — Reliance Campa/Independence 20-40% सस्ता + बेहतर मार्जिन, 3 लाख+ दुकानें — in-house"
+          }
         ]
       },
       "also_shown": [
-        {"news_id": "1855a846-4d27-4daf-bbd4-98d739db6942", "label": "Tik Tak ₹5 scheme — Retailer LR 7.98 (top), SWAPPED OUT body-verify: vague, no jar-count/margin figure"},
-        {"news_id": "78867403-60c7-46eb-9edf-9c5bce5ea7ef", "label": "Royal Dairy 5₹ + choco bar scheme — Retailer LR 7.97 (#2), SWAPPED OUT: LR-label↔body brand mismatch (body names 'ifly' company, not Royal Dairy) — flag for eng"},
-        {"news_id": "2b1aa1f1-69c3-4597-8ea6-df61dafe0065", "label": "कोलगेट स्ट्रांग मंजन 1+2 फ्री — Retailer LR 7.13, SKIPPED: avoid double-Colgate (कोलगेट+मैक्सफ्रेश already picked)"},
-        {"news_id": "319b23ff-164d-4f61-94be-85a6011d2f53", "label": "गुड़ तेजी ₹540 (₹5000→5540/क्विंटल) — teji_mandi LR 8.11, clean body but NOT used: RED, direction slot filled by तूर दाल+मक्का, गुड़ also published 07-06 (8 days ago)"},
-        {"news_id": "11b9f60a-72fe-4231-8a54-1766feb42623", "label": "धनिया पाउडर मार्जिन पोस्ट — teji_mandi LR 8.39 (top), NOT a teji_mandi candidate: body is a wholesale/margin post (₹230 खरीद/₹300 बिक्री), not a price move, no तेजी/मंदी direction — flag for eng (segment misclassification)"},
-        {"news_id": "976e5594-ec77-441f-a921-03626db64b07", "label": "हल्दी तेजी ₹40 (₹210→250/किलो) — teji_mandi LR 6.94, clean body but NOT used: RED, direction slot filled"},
-        {"news_id": "d6c955d4-a138-4b69-96e9-84a7fac1741d", "label": "चीनी तेजी ₹90 (₹2240→2330/50kg बोरा) — teji_mandi LR 5.82, clean body but NOT used: RED, direction slot filled"},
-        {"news_id": "7dd84428-9e1b-4c7e-b704-e53dfb036793", "label": "गेहूं तेजी ₹80/क्विंटल — teji_mandi LR 7.99, clean body but NOT used: RED, direction slot filled"},
-        {"news_id": "2a3ab8f4-0b00-4b01-8e68-318adeda473f", "label": "(duplicate ref, see picks.fmcg)"},
-        {"news_id": "ad1cbde7-88e9-4a06-8906-696948076bd3", "label": "सहारनपुर की दुकान 5 करोड़ तक — in-house news, NOT used: human-interest success story, chose Reliance/Campa for concrete market-impact numbers"},
-        {"news_id": "19dc7e79-3d8e-403e-9234-9a756168927b", "label": "DAY-NULM बिना गारंटी लोन योजना — in-house news backup, NOT used: chose Reliance/Campa for freshness (govt-scheme topic ran 07-13 गेहूं OMSS + 07-10 area)"}
+        {
+          "news_id": "1855a846-4d27-4daf-bbd4-98d739db6942",
+          "label": "Tik Tak ₹5 scheme — Retailer LR 7.98 (top), SWAPPED OUT body-verify: vague, no jar-count/margin figure"
+        },
+        {
+          "news_id": "78867403-60c7-46eb-9edf-9c5bce5ea7ef",
+          "label": "Royal Dairy 5₹ + choco bar scheme — Retailer LR 7.97 (#2), SWAPPED OUT: LR-label↔body brand mismatch (body names 'ifly' company, not Royal Dairy) — flag for eng"
+        },
+        {
+          "news_id": "2b1aa1f1-69c3-4597-8ea6-df61dafe0065",
+          "label": "कोलगेट स्ट्रांग मंजन 1+2 फ्री — Retailer LR 7.13, SKIPPED: avoid double-Colgate (कोलगेट+मैक्सफ्रेश already picked)"
+        },
+        {
+          "news_id": "319b23ff-164d-4f61-94be-85a6011d2f53",
+          "label": "गुड़ तेजी ₹540 (₹5000→5540/क्विंटल) — teji_mandi LR 8.11, clean body but NOT used: RED, direction slot filled by तूर दाल+मक्का, गुड़ also published 07-06 (8 days ago)"
+        },
+        {
+          "news_id": "11b9f60a-72fe-4231-8a54-1766feb42623",
+          "label": "धनिया पाउडर मार्जिन पोस्ट — teji_mandi LR 8.39 (top), NOT a teji_mandi candidate: body is a wholesale/margin post (₹230 खरीद/₹300 बिक्री), not a price move, no तेजी/मंदी direction — flag for eng (segment misclassification)"
+        },
+        {
+          "news_id": "976e5594-ec77-441f-a921-03626db64b07",
+          "label": "हल्दी तेजी ₹40 (₹210→250/किलो) — teji_mandi LR 6.94, clean body but NOT used: RED, direction slot filled"
+        },
+        {
+          "news_id": "d6c955d4-a138-4b69-96e9-84a7fac1741d",
+          "label": "चीनी तेजी ₹90 (₹2240→2330/50kg बोरा) — teji_mandi LR 5.82, clean body but NOT used: RED, direction slot filled"
+        },
+        {
+          "news_id": "7dd84428-9e1b-4c7e-b704-e53dfb036793",
+          "label": "गेहूं तेजी ₹80/क्विंटल — teji_mandi LR 7.99, clean body but NOT used: RED, direction slot filled"
+        },
+        {
+          "news_id": "2a3ab8f4-0b00-4b01-8e68-318adeda473f",
+          "label": "(duplicate ref, see picks.fmcg)"
+        },
+        {
+          "news_id": "ad1cbde7-88e9-4a06-8906-696948076bd3",
+          "label": "सहारनपुर की दुकान 5 करोड़ तक — in-house news, NOT used: human-interest success story, chose Reliance/Campa for concrete market-impact numbers"
+        },
+        {
+          "news_id": "19dc7e79-3d8e-403e-9234-9a756168927b",
+          "label": "DAY-NULM बिना गारंटी लोन योजना — in-house news backup, NOT used: chose Reliance/Campa for freshness (govt-scheme topic ran 07-13 गेहूं OMSS + 07-10 area)"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-15",
+      "_note": "Full autonomous cloud run (harness scheduled routine, ~12:04 IST Wednesday). All 3 stories + badges republished live (update_story / update_story_entry_badges, actor Harsh Shrivastava). Prior live content (07-14: तूर दाल/मक्का/सोया तेल, Colgate+MaxFresh/Engine/Closeup, Reliance-Campa) all in the 12-day dedup window -> fully swapped. Commodity = चना दाल (MP teji_mandi LR 9.05, in-house had no clean fresh RED: सोया over-covered, उड़द was a 07-06 same-commodity+direction repeat; डीजे ब्रांड चना दाल 30kg कट्टा ₹2,160->2,220 = ₹72->74/kg +₹2, सावन-त्योहार मांग, RED) + बादाम (MP teji_mandi LR 8.33, California बादाम ₹750->870/kg +₹120, शादी-त्योहार, novel dry-fruit RED) + गेहूं (in-house GREEN, ₹2,770-2,790 -₹20-25/qtl, आवक दबाव+मिल मांग सुस्त, for balance) = 2 RED + 1 GREEN. Rejected commodities: चावल(e8de9e3d) + मटर(66623d62) body-verified NO ₹ figure; नमक(d6aa2bb4 LR9.60) dedup (07-10 नमक); सोया मंदी(b08abb38) over-covered+already have गेहूं GREEN; जीरा(71348761)+गेहूं तेजी(7dd84428)+धनिया(11b9f60a) dedup/conflict. FMCG top-3 by LR after dedup+body-verify+cluster-drop: Cadbury Choclairs (Retailer LR 8.83, ₹1 जार पर 5 नग ₹10 5Star फ्री, green offer pill) + बजाज सरसों आंवला (Consumer LR 8.32, ₹20, 5+1 फ्री, blue pill) + Dettol साबुन (Consumer LR 7.01, 100g, 4+1 फ्री, blue pill). Patanjali दंतकांति (Consumer LR 9.88, TOP) SKIPPED as exact दंतकांति repeat of 07-06 + dental theme; Ghadi 5kg (Consumer LR 9.35) SWAPPED body-verify (only '5kg + free bucket', no ₹ MRP/price to build card); Parle Kapy Candy (Retailer 8.59) + काली सुपारी (Retailer 8.58) DROPPED as 2nd/3rd confectionery cluster (Cadbury already the candy card); Colgate+MaxFresh (07-14 dedup), Sensodyne/Eno/Camlin (07-13), Closeup/Engine (07-14) excluded. new_product_launch pool = 0 rows in report; fmcg_product_change top clean = Exo sabun 135g->160g (LR 5.97) kept as backup, not needed. News = PM-KISAN किसान सम्मान निधि (in-house, concrete ₹6,000/साल = ₹2,000 x3, fresh scheme; ONDC ऑनलाइन in-house SKIPPED as ONDC/DigiDukaan topic repeat vs 07-07; बड़ी कंपनी मुफ्त-app in-house SKIPPED as no-number + big-company theme repeat vs 07-14 Reliance). Cards composited via kc-card-render.py, QC'd (contact sheet + full-size read of card 7 news 3-line grid value + card 4 pill — no overlap, all clear bottom CTA). card 1/2/3/5/7 exceeded 1MB after the script's 1000px resize -> manually resized to 850px wide to clear the nginx cap. Badges = curved-banner design, uniform FS152->146 (Cadbury 'फाइव स्टार' line measured text-radius 437 at FS146 after excluding golden 5Star-wrapper photo pollution via y>565 mask; FS152 would have been ~455 > 448 target). Badge copy: चना दाल/तेजी, 5 फाइव स्टार/फ्री (Cadbury shown), किसान को/₹6000. Radial clearance 374/437/399 <=448. Weekday (Wednesday) -> WebEngage Slack handoff to Hritik SKIPPED per spec (weekends only). FINAL LIVE PN URLs (for WebEngage push JSON): mandi https://images.kiranaclub.ai/widget3/July/15/209b26f8-d303-45f6-b856-7a2ba97a0995/1784099017440.webp · fmcg https://images.kiranaclub.ai/widget3/July/15/bc2e2e84-a783-48b6-953d-d656e5adbe8f/1784099020489.webp · tn https://images.kiranaclub.ai/widget3/July/15/5049416e-63fa-4997-9e21-81febfc01042/1784099024262.webp",
+      "picks": {
+        "mandi_bhav": [
+          {
+            "news_id": "ec4688ca-0f7e-4faa-821c-7b0eae5b860c",
+            "label": "चना दाल तेजी ₹72->74/किलो (डीजे ब्रांड 30kg कट्टा ₹2,160->2,220, +₹2/kg, सावन-त्योहार मांग) — MP teji_mandi LR 9.05, RED"
+          },
+          {
+            "news_id": "259572f6-c291-431c-8167-95bae924a84f",
+            "label": "बादाम तेजी ₹750->870/किलो (California, +₹120/kg, शादी-त्योहार मांग) — MP teji_mandi LR 8.33, RED, novel"
+          },
+          {
+            "news_id": "34fc7045-8781-4980-92bb-14414f5133ef",
+            "label": "गेहूं मंदी ₹2,770-2,790/क्विंटल (-₹20-25, आवक दबाव, मिल मांग सुस्त) — in-house GREEN for balance"
+          }
+        ],
+        "fmcg": [
+          {
+            "news_id": "e2238692-90ad-4399-bcb7-b493b2d1cac6",
+            "label": "कैडबरी चॉक्लेयर्स — Retailer Scheme, ₹1 वाली का 1 जार पर 5 नग ₹10 वाली फाइव स्टार फ्री (LR 8.83)"
+          },
+          {
+            "news_id": "ee998586-e9c8-4a05-8990-8daa9c59ff4f",
+            "label": "बजाज सरसों आंवला हेयर ऑयल ₹20 — Consumer Scheme, 5 पीस पर 1 फ्री (5+1) (LR 8.32)"
+          },
+          {
+            "news_id": "d53353da-7256-42c7-a3fd-cd9047fbcff2",
+            "label": "डेटॉल साबुन 100g — Consumer Scheme, 4 पीस पर 1 फ्री (4+1) (LR 7.01)"
+          }
+        ],
+        "trending_news": [
+          {
+            "news_id": "93b5cc01-1bbf-4553-870d-d90848591d69",
+            "label": "PM किसान सम्मान निधि — खेती वाले परिवारों को ₹2,000 की 3 किस्तों में साल भर ₹6,000, e-KYC ज़रूरी — in-house"
+          }
+        ]
+      },
+      "also_shown": [
+        {
+          "news_id": "5f57b845-8622-40d5-8b5e-c39ba959f29b",
+          "label": "Patanjali दंतकांति 100gm + toothbrush free — Consumer LR 9.88 (TOP), SKIPPED: exact दंतकांति repeat 07-06 + dental theme"
+        },
+        {
+          "news_id": "1d934dd2-21d7-47a2-a6c9-c34162c844eb",
+          "label": "Ghadi 5kg detergent + बाल्टी/टब free — Consumer LR 9.35, SWAPPED body-verify: no ₹ MRP/price (only '5kg + free bucket'), can't build card"
+        },
+        {
+          "news_id": "e21974fe-9a5b-49bd-a676-f0381ede7fd2",
+          "label": "Parle Kapy Candy ₹161 jar + 11 free — Retailer LR 8.59, DROPPED: 2nd confectionery (Cadbury already the candy card)"
+        },
+        {
+          "news_id": "d93fa551-76e7-43c7-b7e3-982197b97436",
+          "label": "काली सुपारी ₹5 12+2 — Retailer LR 8.58, DROPPED: vague brand + 3rd confectionery cluster"
+        },
+        {
+          "news_id": "d6aa2bb4-fa38-4253-8ecb-ace93320d9e6",
+          "label": "नमक तेजी — teji_mandi LR 9.60 (TOP commodity), EXCLUDED: नमक published 07-10 (same commodity, dedup window)"
+        },
+        {
+          "news_id": "b08abb38-5ab0-43a3-bcae-d07202616fd5",
+          "label": "सोया तेल मंदी — teji_mandi LR 9.36, NOT used: soya over-covered + गेहूं already the GREEN"
+        },
+        {
+          "news_id": "71348761-3274-4cbb-8722-4ab42f83333f",
+          "label": "जीरा तेजी — teji_mandi LR 8.78, NOT used: जीरा published 07-10 + today's digest says जीरा दबाव/मंदी (LR↔direction risk)"
+        },
+        {
+          "news_id": "7dd84428-9e1b-4c7e-b704-e53dfb036793",
+          "label": "गेहूं तेजी — teji_mandi LR 8.36, EXCLUDED: 07-14 also_shown (dedup) + conflicts with in-house गेहूं मंदी today"
+        },
+        {
+          "news_id": "11b9f60a-72fe-4231-8a54-1766feb42623",
+          "label": "धनिया — teji_mandi LR 8.23, EXCLUDED: 07-14 also_shown (dedup, mis-bucketed margin post)"
+        },
+        {
+          "news_id": "66623d62-0727-4149-9742-834e2589f98c",
+          "label": "मटर मंदी — teji_mandi LR 7.39, SWAPPED body-verify: no ₹ figure"
+        },
+        {
+          "news_id": "e8de9e3d-6c9a-4c84-a866-c6852064521a",
+          "label": "चावल तेजी — teji_mandi LR 7.17, SWAPPED body-verify: no ₹ figure ('आने वाले दिनों में चावल में तेजी रहेगी')"
+        },
+        {
+          "news_id": "41a87e33-9635-4738-8405-80618938889b",
+          "label": "Exo साबुन ₹10 135g->160g (+25g) — fmcg_product_change LR 5.97, clean arrow backup, not needed (top-3 filled)"
+        },
+        {
+          "news_id": "99a82a32-0dcc-4af0-bdd3-274b52c60cc1",
+          "label": "उड़द दाल तेजी ₹9,200-10,100 (+₹50-100) — in-house RED, NOT used: उड़द तेजी repeat of 07-06 (same commodity+direction, within window)"
+        },
+        {
+          "news_id": "d4487ea2-61ea-4acf-b9c1-6c1f8a8ca445",
+          "label": "सोया तेल तेजी ₹15,450 (+₹200) — in-house RED, NOT used: soya over-covered (07-13/07-14 + many)"
+        },
+        {
+          "news_id": "f81a5b6e-b676-4821-8211-0b066b10c601",
+          "label": "ONDC से किराना ऑनलाइन बिक्री — in-house news, NOT used: ONDC/DigiDukaan topic repeat vs 07-07"
+        },
+        {
+          "news_id": "91129674-0ae4-4b00-83ca-ba30281f9bad",
+          "label": "बड़ी कंपनियां मुफ्त मोबाइल/app सुविधा (Dabur/Coca-Cola/Parle) — in-house news, NOT used: no concrete number + big-company theme repeat vs 07-14"
+        }
       ]
     }
   ]
