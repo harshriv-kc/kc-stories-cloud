@@ -76,7 +76,7 @@ def render(tag, cfg, grad, bottom):
     # 2026-07-10 (operator): make the INNER white ring clearly visible so the red doesn't start flush on the photo;
     # red stays the outermost ring (NO outer white ring). In the PN export this white separator is cut to
     # TRANSPARENT ("the middle white should be transparent in pn"), so the PN = photo + transparent gap + red.
-    R=D//2; red_w=round(0.045*D); sep_w=round(0.0272*D); r_in=R-red_w-sep_w  # sep_w -15% (operator 2026-07-16): 0.032->0.0272·D
+    R=D//2; red_w=round(0.045*D); sep_w=round(0.0304*D); r_in=R-red_w-sep_w  # sep_w -5% (operator 2026-07-16): 0.032->0.0304·D (25%->15%->5%)
     for c in cfg:
         lines="".join(f"<div>{ln}</div>" for ln in c["lines"])
         html=TPL.format(edge=BEDGE,ctrl=BCTRL,bottom=bottom,fs=c["fs"],subj=b64(os.path.join(HERE,c["src"])),lines=lines)
