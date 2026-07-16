@@ -150,6 +150,7 @@ Per tag: `jack:draft_story_refresh(tag, slides=[{news_id, img_url}, ...])` → `
 
 ### 12b. WEBENGAGE PUSH — ⏸ ON HOLD (manual for now, per operator 2026-06-25)
 **Current process: just OUTPUT the ready-to-paste push JSON in the final summary** (Step 12 / Step 14) with the 3 transparent 230×400 PN `.webp` URLs swapped into `url` and the fixed deep_links unchanged. The operator pastes it into the WebEngage `notification_data` key-value manually (for a few days). **Do NOT attempt any WebEngage write/edit** (no auto-fire, no browser automation) until the operator resumes it.
+⚑ **ALWAYS print the WebEngage campaign edit URL right next to the JSON** (operator, 2026-07-16 — for one-tap access): `https://in.webengage.com/accounts/in~58adcc4a/push-notifications/campaigns/~1dng34j/message` (campaign `~1dng34j`). Include it in both Step 12 and the Step 14 final summary alongside the push JSON block.
 The future unattended design (custom event `kc_stories_daily_refresh` + journey personalized from event attributes, fired via the India-DC REST Events API) is fully specced in `webengage-stories-automation.md` — paused pending operator journey build + `WEBENGAGE_API_KEY` secret + audience choice. Resume from that doc when asked.
 
 ### 12c. ⚑ SEND THE PUSH JSON TO SLACK (daily, operator-authorized)
@@ -162,7 +163,7 @@ Message = a one-line context ("KC Stories — WebEngage push `notification_data`
 Immediately after the badges publish, append today's run to `KC Stories/used-picks-log.json`: a new `runs[]` entry with today's `date` and the **final published** `news_id` per tag under `picks` (mandi_bhav / fmcg / trending_news), plus any pick that was shown then swapped out under `also_shown`. Keep newest last; never delete history. Skipping this re-breaks dedup, so do it before the summary. (If the file was missing, create it with `dedup_window_days: 12` and this single run.)
 
 ### 14. Post-publish summary (not a gate)
-Output: picks table (story · direction · LR · id), what was swapped/skipped + any LR↔body mismatch flagged for eng, the 7 slide image links + 3 badge links for spot-check (plus the QC contact sheets if regenerated), and the push JSON. Note: anything off is one tap to edit/remove on the D2R dashboard.
+Output: picks table (story · direction · LR · id), what was swapped/skipped + any LR↔body mismatch flagged for eng, the 7 slide image links + 3 badge links for spot-check (plus the QC contact sheets if regenerated), and the push JSON **with the WebEngage campaign edit URL `https://in.webengage.com/accounts/in~58adcc4a/push-notifications/campaigns/~1dng34j/message` printed directly next to it** (operator 2026-07-16, for one-tap access). Note: anything off is one tap to edit/remove on the D2R dashboard.
 
 ---
 
