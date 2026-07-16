@@ -49,10 +49,17 @@ html,body{{margin:0;padding:0;width:1080px;height:1080px;overflow:hidden;backgro
 <div class="t">{lines}</div></div></body></html>'''
 # Outer-ring conic gradient (operator 2026-07-16): blend ONLY the warm tones #D45339, #B92B0F, #F16943
 # into a rich red-orange sweep AROUND the ring. NO Instagram pink/purple — all three stops are warm reds/oranges.
-RING_STOPS=[(0xD4,0x53,0x39),(0xB9,0x2B,0x0F),(0xF1,0x69,0x43)]  # #D45339, #B92B0F, #F16943
+# Positioned stops = a single BRIGHT pole (#F16943) opposite a single DARK pole (#B92B0F), with #D45339 blending
+# both sides. This directional sweep reads as an obvious gradient (2026-07-16 v2: even 3-cycle averaged out / looked
+# flat — operator: "gradient not visible enough"). Still ONLY the 3 warm tones, no pink/purple.
+RING_STOPS=[(0.00,(0xF1,0x69,0x43)),(0.25,(0xD4,0x53,0x39)),(0.50,(0xB9,0x2B,0x0F)),(0.75,(0xD4,0x53,0x39)),(1.00,(0xF1,0x69,0x43))]
 def _lerp(a,b,t): return tuple(int(round(a[i]+(b[i]-a[i])*t)) for i in range(3))
-def _conic(t):  # t in [0,1) -> colour cyclically through RING_STOPS (wraps #F16943 -> #D45339 for a seamless sweep)
-    n=len(RING_STOPS); p=(t%1.0)*n; i=int(p)%n; return _lerp(RING_STOPS[i],RING_STOPS[(i+1)%n],p-int(p))
+def _conic(t):  # t in [0,1] -> colour by position along RING_STOPS (bright pole at t=0/1, dark pole at t=0.5)
+    t=t%1.0
+    for j in range(len(RING_STOPS)-1):
+        p0,c0=RING_STOPS[j]; p1,c1=RING_STOPS[j+1]
+        if p0<=t<=p1: return _lerp(c0,c1,(t-p0)/(p1-p0) if p1>p0 else 0.0)
+    return RING_STOPS[-1][1]
 def gradient_ring(D,r_outer,r_inner,S=4,steps=720):
     # RGBA layer with a conic (angular) red-orange gradient annulus [r_inner..r_outer], supersampled S then LANCZOS-down for clean AA.
     big=Image.new("RGBA",(D*S,D*S),(0,0,0,0)); dd=ImageDraw.Draw(big)
@@ -69,7 +76,7 @@ def render(tag, cfg, grad, bottom):
     # 2026-07-10 (operator): make the INNER white ring clearly visible so the red doesn't start flush on the photo;
     # red stays the outermost ring (NO outer white ring). In the PN export this white separator is cut to
     # TRANSPARENT ("the middle white should be transparent in pn"), so the PN = photo + transparent gap + red.
-    R=D//2; red_w=round(0.045*D); sep_w=round(0.024*D); r_in=R-red_w-sep_w  # sep_w -25% (operator 2026-07-16): 0.032->0.024·D
+    R=D//2; red_w=round(0.045*D); sep_w=round(0.0272*D); r_in=R-red_w-sep_w  # sep_w -15% (operator 2026-07-16): 0.032->0.0272·D
     for c in cfg:
         lines="".join(f"<div>{ln}</div>" for ln in c["lines"])
         html=TPL.format(edge=BEDGE,ctrl=BCTRL,bottom=bottom,fs=c["fs"],subj=b64(os.path.join(HERE,c["src"])),lines=lines)
