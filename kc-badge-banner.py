@@ -47,13 +47,29 @@ html,body{{margin:0;padding:0;width:1080px;height:1080px;overflow:hidden;backgro
   <path d="M0,{edge} Q540,{ctrl} 1080,{edge}" fill="none" stroke="#C8A24A" stroke-width="9"/>
 </svg>
 <div class="t">{lines}</div></div></body></html>'''
+# Outer-ring conic gradient (operator 2026-07-16): blend ONLY the warm tones #D45339, #B92B0F, #F16943
+# into a rich red-orange sweep AROUND the ring. NO Instagram pink/purple — all three stops are warm reds/oranges.
+RING_STOPS=[(0xD4,0x53,0x39),(0xB9,0x2B,0x0F),(0xF1,0x69,0x43)]  # #D45339, #B92B0F, #F16943
+def _lerp(a,b,t): return tuple(int(round(a[i]+(b[i]-a[i])*t)) for i in range(3))
+def _conic(t):  # t in [0,1) -> colour cyclically through RING_STOPS (wraps #F16943 -> #D45339 for a seamless sweep)
+    n=len(RING_STOPS); p=(t%1.0)*n; i=int(p)%n; return _lerp(RING_STOPS[i],RING_STOPS[(i+1)%n],p-int(p))
+def gradient_ring(D,r_outer,r_inner,S=4,steps=720):
+    # RGBA layer with a conic (angular) red-orange gradient annulus [r_inner..r_outer], supersampled S then LANCZOS-down for clean AA.
+    big=Image.new("RGBA",(D*S,D*S),(0,0,0,0)); dd=ImageDraw.Draw(big)
+    Rc=D*S/2.0; rmid=(r_outer+r_inner)/2.0*S; w=int(round((r_outer-r_inner)*S))
+    bbox=(Rc-rmid,Rc-rmid,Rc+rmid,Rc+rmid)
+    for k in range(steps):
+        a0=360.0*k/steps
+        dd.arc(bbox,a0,360.0*(k+1)/steps+0.8,fill=_conic(k/steps),width=w)  # +0.8 overlap kills seams between arcs
+    return big.resize((D,D),Image.LANCZOS)
+
 def render(tag, cfg, grad, bottom):
     # Ring, outside -> in: solid RED band (4.5%, OUTERMOST, flush to the edge) + thin WHITE separator (2%) + photo.
     # The white separator is the white canvas showing through (photo pasted at r_in; red painted at the edge).
     # 2026-07-10 (operator): make the INNER white ring clearly visible so the red doesn't start flush on the photo;
     # red stays the outermost ring (NO outer white ring). In the PN export this white separator is cut to
     # TRANSPARENT ("the middle white should be transparent in pn"), so the PN = photo + transparent gap + red.
-    R=D//2; red_w=round(0.045*D); sep_w=round(0.032*D); r_in=R-red_w-sep_w
+    R=D//2; red_w=round(0.045*D); sep_w=round(0.024*D); r_in=R-red_w-sep_w  # sep_w -25% (operator 2026-07-16): 0.032->0.024·D
     for c in cfg:
         lines="".join(f"<div>{ln}</div>" for ln in c["lines"])
         html=TPL.format(edge=BEDGE,ctrl=BCTRL,bottom=bottom,fs=c["fs"],subj=b64(os.path.join(HERE,c["src"])),lines=lines)
@@ -72,8 +88,9 @@ def render(tag, cfg, grad, bottom):
         # crisp WHITE separator ring: bbox outer = red's inner edge (R-red_w); stroke sep_w fills inward to r_in.
         ri=R-red_w
         d.ellipse((R-ri,R-ri,R+ri,R+ri),outline=(255,255,255),width=sep_w+2)
-        # RED band, OUTERMOST + flush to the badge edge: bbox at the canvas edge, stroke grows inward.
-        d.ellipse((0,0,D-1,D-1),outline=(0xB9,0x2B,0x0F),width=red_w)
+        # RED-ORANGE band, OUTERMOST + flush to the badge edge [R-red_w .. R]: conic warm gradient (operator 2026-07-16),
+        # composited over the flat fill so its own alpha AA blends cleanly. Reused by the PN export below (matches ring).
+        gr=gradient_ring(D,R,R-red_w); canvas.paste(gr,(0,0),gr)
         canvas.save(os.path.join(HERE,f'v{tag}_{c["i"]}.png'))
         # --- Transparent square PN export (WebEngage multi_icon), emitted here so it always matches the ring ---
         # Compound alpha mask: CONTENT disc + RED annulus opaque; the inner WHITE ring between them is cut to
