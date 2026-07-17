@@ -976,6 +976,80 @@
      "label": "आयुष्मान वय वंदना ₹5L मुफ्त इलाज 70+ (in-house scheme) — held: monsoon = stronger market-impact pick"
     }
    ]
+  },
+  {
+   "date": "2026-07-17",
+   "_note": "Full autonomous cloud run (harness scheduled routine, ~12:04 IST Friday). All 3 stories + badges republished live (update_story / update_story_entry_badges, actor Harsh Shrivastava). Strongly bullish grain/dal day. Commodity = मूंग दाल (in-house RED, ₹8,200/qtl, यूपी आवक घटी + स्टॉकिस्ट-दाल मिल लिवाली) + सूजी (MP teji_mandi LR 6.28, novel commodity, ₹3,070->3,120/qtl +₹50, गेहूं महंगा होने से) + गेहूं मंदी (GREEN for balance, ₹2,770-2,790/qtl -₹20-25 दबाव, आवक भरपूर+मिल मांग सुस्त — sourced from today's रुझान digest news_id 1d140b2f which is itself headlined 'गेहूं-सीपीओ पर दबाव'; the ENTIRE MP teji_mandi pool body-verified RED today, only clean GREEN alt was अरहर मंदी which was REJECTED as it contradicts today's dominant तूर/अरहर तेजी market narrative). = 2 RED + 1 GREEN. गेहूं मंदी repeats 07-15 direction but kept per the balance-override rule (worth keeping the single GREEN even if over-covered) + 07-16 precedent (धनिया sourced from रुझान digest). FMCG top-3 by LR after ledger-dedup + brand-last-2-days + body-verify + confectionery-cluster-drop: डर्बी लॉलीपॉप (Retailer LR 8.32, 1 पैकेट 48 पीस खरीद ₹180/बिक्री ₹240, 2 पैकेट पर 1 बोतल फ्री, green offer pill) + डर्मीकूल प्रिकली हीट पाउडर (Consumer LR 4.79, ₹75 का डर्मीकूल पाउडर फ्री, blue pill, seasonal) + विम बर्तन साबुन 90g (Consumer LR 4.4, 4 पर 2 फ्री, पैक खरीद ₹31/बिक्री ₹35, blue pill). Nearly all higher-LR FMCG were dedup DUPs (Patanjali 5f57b845 9.08, काली सुपारी d93fa551 8.39, Ghadi 1d934dd2 7.54, Cadbury e2238692 7.28, Parle e21974fe 7.12, Oswal c670f245 7.09, बजाज ee998586 6.74, Royal Dairy 78867403 6.56, Dabur Anmol 32080a05 6.21, Oral-B b1f83118 6.11, Closeup 163560e7/2a3ab8f4, Eno c0814907 — all in 12d window). Happydent 8ad01872 (Retailer LR 5.0, clean) DROPPED as 2nd confectionery cluster (डर्बी already the candy card). Dabur पिज़्ज़ा 8e6a556c (5.81) + Dabur दंत मंजन 2187a578/fef07b66 SKIPPED (Dabur brand featured 07-16). Colgate MaxFresh variants (2485a7ff/866b581d/9c3ceadb/9da0b485) skipped (product ran 07-14). Alpenliebe ca3939fc/cdb236e3 + Nyra 6315da33 dropped (vague, no clean margin). new_product_launch pool = 0 rows. News = अगस्त त्योहार सीजन स्टॉक-अप (in-house, fresh market-opportunity, सावन 30 जुल + रक्षाबंधन 28 अगस्त, actionable; chosen over PM फसल बीमा dd265b2a which is farmer-scheme theme repeat vs 07-15 PM-KISAN, and over UPI असली-नाम/ठगी which is SKIPPED as fraud/scam bait per rule). Cards composited via kc-card-render.py, QC'd (contact sheet + full-size read of tallest card 5 डर्मीकूल 3-line grid values — no overlap, clear bottom CTA, brands legible Derby/DermiCool/Vim). cards 1/2/3/7 >1MB after script 1000px resize -> manually resized to 800-880px wide for nginx cap. Badges = curved-banner gradient-ring design (07-16 warm conic red-orange ring, sep_w 0.0304), uniform FS152, bottom146; text-only radial clearance 384/402/422 <=448 (badge1's raw 450 metric was a false positive from yellow moong-dal photo pixels above the banner curve, excluded via y>640). FMCG badge = generated Derby lollipop still-life (D2R post media for a3a8af42 was a VIDEO, unusable; template fallback = clean still-life). Badge copy: मूंग दाल/तेजी, फ्री बोतल/स्कीम, त्योहारी माल/भरें. Weekday (Friday) -> WebEngage Slack handoff to Hritik SKIPPED (weekends only per routine). FINAL LIVE PN URLs (WebEngage push): mandi https://images.kiranaclub.ai/widget3/July/17/663e1096-2644-4292-9ab1-6853e5d34c81/1784261047167.webp · fmcg https://images.kiranaclub.ai/widget3/July/17/a6888b0f-43e4-4777-9dfc-7868cbaad115/1784261050437.webp · tn https://images.kiranaclub.ai/widget3/July/17/fb5cbe33-5f76-46a5-900a-c048328b2f02/1784261054447.webp",
+   "picks": {
+    "mandi_bhav": [
+     {
+      "news_id": "fc65f973-02eb-407a-b814-a977b1d816ba",
+      "label": "मूंग दाल तेजी ₹8,200/क्विंटल (यूपी आवक घटी, स्टॉकिस्ट-दाल मिल लिवाली, नई फसल दूर) — in-house RED"
+     },
+     {
+      "news_id": "0d217fe7-6395-4fb1-9da3-04a52ab8d5ec",
+      "label": "सूजी तेजी ₹3,070->3,120/क्विंटल (+₹50, गेहूं महंगा होने से) — MP teji_mandi LR 6.28, RED, novel"
+     },
+     {
+      "news_id": "1d140b2f-bd46-477b-ad76-989a4c3191e6",
+      "label": "गेहूं मंदी ₹2,770-2,790/क्विंटल (-₹20-25, आवक भरपूर+मिल मांग सुस्त, बेचने का समय) — in-house रुझान digest GREEN for balance"
+     }
+    ],
+    "fmcg": [
+     {
+      "news_id": "a3a8af42-472b-43c4-b6cb-5995d2f56015",
+      "label": "डर्बी लॉलीपॉप — Retailer Scheme, 1 पैकेट 48 पीस खरीद ₹180/बिक्री ₹240, 2 पैकेट पर 1 बोतल फ्री (LR 8.32)"
+     },
+     {
+      "news_id": "2262078e-6c56-44e9-9dae-f914d8b16c1c",
+      "label": "डर्मीकूल प्रिकली हीट पाउडर — Consumer Scheme, साथ ₹75 का डर्मीकूल पाउडर फ्री (LR 4.79)"
+     },
+     {
+      "news_id": "47210a8f-5fa9-4bd4-8187-903e5e71ff2b",
+      "label": "विम बर्तन साबुन 90g — Consumer Scheme, 4 पर 2 फ्री (6 का पैक), पैक खरीद ₹31/बिक्री ₹35 (LR 4.4)"
+     }
+    ],
+    "trending_news": [
+     {
+      "news_id": "abed9819-4854-4a79-bb49-07a5dc707904",
+      "label": "अगस्त त्योहार सीजन — सावन 30 जुल, रक्षाबंधन 28 अगस्त; अभी 3-4 हफ्ते पहले माल भरें — in-house market-opportunity"
+     }
+    ]
+   },
+   "also_shown": [
+    {
+     "news_id": "8ad01872-3d3e-48e1-b183-c68df46ad2c4",
+     "label": "Perfetti Happydent gum jar MRP ₹550/ret ₹480 + 8 Tata Tea free — Retailer LR 5.0, clean, DROPPED: 2nd confectionery cluster (डर्बी already candy card)"
+    },
+    {
+     "news_id": "29b650bb-db63-4944-92e8-3fa28e76fab5",
+     "label": "देसी अरहर दाल मंदी ₹110->108/kg (₹200/qtl कम, सस्ता आयात) — teji_mandi LR 6.09, clean GREEN but NOT used: contradicts today's dominant तूर/अरहर तेजी market narrative (Samachar+रुझान both तुवर 9000 की ओर)"
+    },
+    {
+     "news_id": "73fb68ea-a9db-4be9-84a6-921f9e020746",
+     "label": "नारियल गोला तेजी ₹40-80/kg — teji_mandi LR 6.73, RED, NOT used: नारियल covered 07-09 + RED slots filled (मूंग+सूजी)"
+    },
+    {
+     "news_id": "2bfb7a21-cd28-4feb-a892-72974f46ca77",
+     "label": "बादाम तेज़ी digest — teji_mandi LR 8.66 (TOP), EXCLUDED: बादाम same commodity+direction repeat of 07-15 (259572f6)"
+    },
+    {
+     "news_id": "7028e48e-0217-46ca-b919-a850abd6d5a9",
+     "label": "चीनी तेजी ₹2,240->2,330/50kg (+₹90) — teji_mandi LR 6.40, clean but NOT used: चीनी covered 07-14 (also_shown) + RED slots filled, सूजी chosen for novelty"
+    },
+    {
+     "news_id": "dd265b2a-639f-40a2-8663-bdda21b8d6c3",
+     "label": "PM फसल बीमा योजना (2% प्रीमियम, 31 जुल deadline) — in-house news backup, NOT used: farmer-scheme theme repeat vs 07-15 PM-KISAN, chose त्योहार stock-up for freshness"
+    },
+    {
+     "news_id": "ca3939fc-f0c2-403b-b522-d24409529238",
+     "label": "Alpenliebe chocolate jar + Center Fresh free — Retailer LR 6.14, SWAPPED body-verify: vague, no jar price/count/margin"
+    },
+    {
+     "news_id": "8e6a556c-627a-476b-96d4-dc368c8f15a3",
+     "label": "Dabur पिज़्ज़ा ₹45/₹50 5+1 — Retailer LR 5.81, SKIPPED: Dabur brand featured 07-16 (last-2-days)"
+    }
+   ]
   }
  ]
 }
