@@ -19,3 +19,4 @@ runs/
 .vprofile/
 __pycache__/
 *.pyc
+fmcg_*.jpg
