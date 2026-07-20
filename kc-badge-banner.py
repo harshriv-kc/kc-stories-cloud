@@ -93,28 +93,22 @@ def render(tag, cfg, grad, bottom):
         canvas.paste(im,(0,0),m); d=ImageDraw.Draw(canvas)
         # PIL grows an ellipse stroke INWARD from the bbox. So:
         # crisp WHITE separator ring: bbox outer = red's inner edge (R-red_w); stroke sep_w fills inward to r_in.
-        # 2026-07-20: separator recoloured WHITE->DARK (#0E1116). The white separator was the "extra white
-        # circle" the operator flagged in the PN — on a white push chip the (transparent-gap OR white) ring read
-        # as a stray white halo. A dark separator reads as a clean keyline on any bg and shows NO white ring in
-        # the push OR in-app. Applied to BOTH the entry badge (this canvas) and the PN export below.
         ri=R-red_w
-        d.ellipse((R-ri,R-ri,R+ri,R+ri),outline=(14,17,22),width=sep_w+2)
+        d.ellipse((R-ri,R-ri,R+ri,R+ri),outline=(255,255,255),width=sep_w+2)
         # RED-ORANGE band, OUTERMOST + flush to the badge edge [R-red_w .. R]: conic warm gradient (operator 2026-07-16),
         # composited over the flat fill so its own alpha AA blends cleanly. Reused by the PN export below (matches ring).
         gr=gradient_ring(D,R,R-red_w); canvas.paste(gr,(0,0),gr)
         canvas.save(os.path.join(HERE,f'v{tag}_{c["i"]}.png'))
         # --- Transparent square PN export (WebEngage multi_icon), emitted here so it always matches the ring ---
-        # 2026-07-20 FIX (operator: "extra white circle in the PN"): the old export cut the inner separator ring
-        # to TRANSPARENT so the push bg would show through. But the notification renderer seats the icon on a
-        # WHITE chip, so that transparent gap revealed a stray WHITE ring around the content. Fix = make the PN
-        # background-INDEPENDENT: recolour the separator DARK (opaque, matches the banner #0E1116) and knock out
-        # ONLY the corners. PN now reads: content -> thin dark ring -> red-at-edge, with transparent corners only.
-        pn_rgb=canvas.copy()
-        ImageDraw.Draw(pn_rgb).ellipse((R-ri,R-ri,R+ri,R+ri),outline=(14,17,22),width=sep_w+2)  # dark over the white separator
-        S=4; am=Image.new("L",(D*S,D*S),0)
-        ImageDraw.Draw(am).ellipse((0,0,D*S,D*S),fill=255)                                       # full disc opaque; corners transparent
-        pn=pn_rgb.convert("RGBA"); pn.putalpha(am.resize((D,D),Image.LANCZOS))
-        pn.resize((500,500),Image.LANCZOS).save(os.path.join(HERE,f'badge_pn_{c["i"]}.png'))
+        # PN = photo + TRANSPARENT gap + red ring. Built on a TRANSPARENT base (NOT the white entry canvas) so the
+        # red ring's outer AA fades to transparent — this removes the stray WHITE OUTER RING that the entry canvas'
+        # white base used to bleed at the red's anti-aliased outer edge (operator 2026-07-20). The middle gap
+        # [r_in..red_inner] stays transparent (never black/white); corners transparent; red is the outermost pixel.
+        pnc=Image.new("RGBA",(D,D),(0,0,0,0))
+        cm=Image.new("L",(D,D),0); ImageDraw.Draw(cm).ellipse((R-r_in,R-r_in,R+r_in,R+r_in),fill=255)
+        pnc.paste(im.convert("RGBA"),(0,0),cm)   # photo -> CONTENT disc only; the gap and everything outside stay transparent
+        pnc.alpha_composite(gr)                  # red ring composited over transparent: gap stays transparent, no white outer bleed
+        pnc.resize((500,500),Image.LANCZOS).save(os.path.join(HERE,f'badge_pn_{c["i"]}.png'))
         print(f'v{tag}_{c["i"]} + badge_pn_{c["i"]} done')
 
 # OPTION D (operator-chosen final): full-circle photo + soft bottom gradient scrim + BIG yellow short-hook text
