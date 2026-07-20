@@ -93,8 +93,12 @@ def render(tag, cfg, grad, bottom):
         canvas.paste(im,(0,0),m); d=ImageDraw.Draw(canvas)
         # PIL grows an ellipse stroke INWARD from the bbox. So:
         # crisp WHITE separator ring: bbox outer = red's inner edge (R-red_w); stroke sep_w fills inward to r_in.
+        # 2026-07-20: separator recoloured WHITE->DARK (#0E1116). The white separator was the "extra white
+        # circle" the operator flagged in the PN — on a white push chip the (transparent-gap OR white) ring read
+        # as a stray white halo. A dark separator reads as a clean keyline on any bg and shows NO white ring in
+        # the push OR in-app. Applied to BOTH the entry badge (this canvas) and the PN export below.
         ri=R-red_w
-        d.ellipse((R-ri,R-ri,R+ri,R+ri),outline=(255,255,255),width=sep_w+2)
+        d.ellipse((R-ri,R-ri,R+ri,R+ri),outline=(14,17,22),width=sep_w+2)
         # RED-ORANGE band, OUTERMOST + flush to the badge edge [R-red_w .. R]: conic warm gradient (operator 2026-07-16),
         # composited over the flat fill so its own alpha AA blends cleanly. Reused by the PN export below (matches ring).
         gr=gradient_ring(D,R,R-red_w); canvas.paste(gr,(0,0),gr)
