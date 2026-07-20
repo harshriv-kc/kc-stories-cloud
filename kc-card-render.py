@@ -72,46 +72,47 @@ def b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-07-19)
+# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-07-20)
 CARDS = [
- # --- Commodity (mandi_bhav) — all 3 तेजी/RED: no GREEN commodity today (only down-movers = skip-always सोना-चांदी + digest-only उड़द/मसूर; entire MP teji_mandi pool is तेज़) ---
- dict(i=1, label="मंडी भाव", stripe=RED, headline="सरसों तेल",
-   price=f'{tri("up",RED)}₹15,100–15,150<span class="unit">/क्विंटल</span>',
-   sub=f'सरसों की आवक ~3 लाख बोरी घटने से मिलों की बिकवाली कमजोर, सरसों तेल ₹200 चढ़ा · <b class="delta" style="color:{RED}">₹200 बढ़ोतरी</b>',
-   l1="क्यों", v1="आवक घटी, मिलों की बिकवाली कमजोर; सोया डीओसी निर्यात मांग और महंगे आयात से तेल मजबूत",
-   l2="क्या करें", v2="जरूरत भर का तेल अभी भर लें, जल्दी बड़ी गिरावट के आसार कम"),
- dict(i=2, label="मंडी भाव", stripe=RED, headline="चीनी",
-   price=f'{tri("up",RED)}₹5,900–6,000<span class="unit">/क्विंटल</span>',
-   sub=f'स्टॉकिस्टों की लिवाली और कमजोर मानसून से चीनी ₹100-125 चढ़कर दिल्ली ₹5,900-6,000/क्विंटल · <b class="delta" style="color:{RED}">₹100-125 तेज़ी</b>',
-   l1="क्यों", v1="भारी लिवाली और कमजोर मानसून से उत्पादन घटने की आशंका, खपत सीजन नजदीक",
-   l2="क्या करें", v2="जरूरत का माल भर लें, पर ज्यादा स्टॉक जोखिम भरा—आपूर्ति बढ़ने पर भाव थम सकते हैं"),
- dict(i=3, label="मंडी भाव", stripe=RED, headline="साबूदाना",
-   price=f'{tri("up",RED)}₹80<span class="unit">/किलो</span>',
-   sub=f'मांग बढ़ने और सीमित आपूर्ति से साबूदाना ₹65 से ₹80/किलो पर, आगे भी मजबूती के आसार · <b class="delta" style="color:{RED}">₹15/किलो तेज़ी</b>',
-   l1="क्यों", v1="लगातार बढ़ती मांग और सीमित आपूर्ति से भाव मजबूत, आगे भी तेजी की संभावना",
-   l2="क्या करें", v2="व्रत-त्योहार की मांग से पहले जरूरत का साबूदाना अभी भर लें"),
- # --- FMCG (fmcg) — top by Like Rate desc after dedup + brand-recency + body-verify; Oral-B (LR 7.20) swapped out to avoid 2 dental cards ---
- dict(i=4, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="दंत कांति मंजन",
-   price='<span class="offer" style="background:%s">मंजन पर ब्रश फ्री</span>'%SCHEME_BLUE,
-   sub='पतंजलि दंत कांति मंजन 100g (MRP ₹56) का डिब्बा खरीदने पर एक टूथब्रश बिल्कुल फ्री · <b class="delta">ब्रश फ्री</b>',
-   l1="ऑफर", v1="100g मंजन डिब्बा (MRP ₹56) पर एक टूथब्रश बिल्कुल फ्री",
-   l2="ग्राहक को", v2="भरोसेमंद देसी ब्रांड, फ्री ब्रश से ग्राहक खिंचते हैं और बिक्री बढ़ती है"),
- dict(i=5, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="हैप्पी हैप्पी",
-   price='<span class="offer" style="background:%s">11 पर 1 फ्री</span>'%SCHEME_GREEN,
-   sub='पारले हैप्पी हैप्पी ₹10 वाला—₹99 में 12 पीस खरीद (11+1 फ्री), ₹10 प्रति पीस बिक्री · <b class="delta">₹21 का मार्जिन</b>',
-   l1="स्कीम", v1="₹99 में 12 पीस खरीद (11 पर 1 फ्री), ₹10 प्रति पीस बिक्री",
-   l2="फायदा", v2="हर पैकेट ₹21 मार्जिन, बच्चों का पसंदीदा और रोज़ बिकने वाला माल"),
- dict(i=6, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="किटकैट",
-   price='<span class="offer" style="background:%s">जार पर 2 फ्री</span>'%SCHEME_GREEN,
-   sub='नेस्ले किटकैट ₹10 वाला छोटा जार खरीदने पर ₹10 वाली 2 किटकैट बिल्कुल फ्री · <b class="delta">2 फ्री</b>',
-   l1="स्कीम", v1="₹10 वाला किटकैट का छोटा जार खरीदने पर ₹10 वाली 2 किटकैट फ्री",
-   l2="फायदा", v2="भरोसेमंद चॉकलेट ब्रांड, फ्री पीस से ग्राहक को बचत और तेज़ बिक्री"),
- # --- News (trending_news) — Standup India loan scheme (in-house, policy/scheme, concrete ₹ figures) ---
- dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="₹1 करोड़ लोन",
-   price='<span class="news">नया कारोबार शुरू करने पर लोन</span>',
-   sub='स्टैंडअप इंडिया में हर बैंक शाखा एक SC/ST व एक महिला उद्यमी को ₹1 करोड़ तक लोन देती है · <b class="delta">7 साल चुकौती</b>',
-   l1="क्यों ज़रूरी", v1="नई दुकान या उद्योग के लिए बिना अलग गारंटी लोन, महिला व SC/ST को बड़ा मौका",
-   l2="क्या करें", v2="नजदीकी बैंक या स्टैंडअप इंडिया पोर्टल पर दस्तावेज़ के साथ आवेदन करें"),
+ # --- Commodity (mandi_bhav) — 2 तेजी/RED (घी, काली मिर्च) + 1 मंदी/GREEN (किशमिश) for direction balance ---
+ dict(i=1, label="मंडी भाव", stripe=RED, headline="देसी घी",
+   price=f'{tri("up",RED)}₹9,500–9,750<span class="unit">/किलो</span>',
+   sub=f'उत्तर भारत में दूध उत्पादन घटने से बढ़िया देसी घी ₹60 महंगा, दूध पाउडर ₹310-328/किलो तेज · <b class="delta" style="color:{RED}">₹60 बढ़ोतरी</b>',
+   l1="क्यों", v1="दूध उत्पादन घटा, सावन-त्योहारी मांग निकली; बटर-घी कंपनियों की लागत बढ़ी",
+   l2="क्या करें", v2="सावन में शुद्ध देसी घी की मांग तेज—जरूरत का स्टॉक अभी भर लें, गिरावट के आसार कम"),
+ dict(i=2, label="मंडी भाव", stripe=GREEN, headline="किशमिश",
+   price=f'{tri("down",GREEN)}₹370<span class="unit">/किलो</span>',
+   sub=f'बाजार में पर्याप्त आवक और सामान्य मांग से किशमिश ₹450 से घटकर ₹370/किलो, ₹80 सस्ती · <b class="delta" style="color:{GREEN}">₹80 गिरावट</b>',
+   l1="क्यों", v1="पर्याप्त आवक और मांग सामान्य; आगे भी आंशिक मंदी या स्थिरता बने रहने के आसार",
+   l2="क्या करें", v2="भाव नरम—सस्ती खरीद का मौका, ग्राहक को कम दाम का फायदा देकर बिक्री बढ़ाएं"),
+ dict(i=3, label="मंडी भाव", stripe=RED, headline="काली मिर्च",
+   price=f'{tri("up",RED)}₹850<span class="unit">/किलो</span>',
+   sub=f'मांग बढ़ने से काली मिर्च ₹830 से ₹850/किलो, ₹20 तेज; आपूर्ति सीमित, आगे और मजबूती के आसार · <b class="delta" style="color:{RED}">₹20 बढ़ोतरी</b>',
+   l1="क्यों", v1="मांग अधिक और आपूर्ति सीमित रहने से काली मिर्च के भाव मजबूत बने हुए",
+   l2="क्या करें", v2="जरूरत का माल अभी भर लें, त्योहारी मसाला मांग से भाव और चढ़ सकते हैं"),
+ # --- FMCG (fmcg) — top 3 Retailer Schemes by Like Rate desc after dedup + brand-recency + body-verify ---
+ #     (top LR Hair care/Sensodyne/Kitkat/Patanjali all EXCLUDED by 12-day ledger dedup; Kinley/Sobisco/Dabur swapped on no-₹ / body mismatch)
+ dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="कॉफी टॉफी",
+   price='<span class="offer" style="background:%s">जार पर स्टील गिलास फ्री</span>'%SCHEME_GREEN,
+   sub='₹1 वाली कॉफी टॉफी का जार होलसेल ₹120, बिक्री ₹220—साथ में एक स्टील गिलास फ्री · <b class="delta">₹100 मार्जिन</b>',
+   l1="स्कीम", v1="₹1 टॉफी का जार होल ₹120, बिक्री ₹220; साथ एक स्टील गिलास फ्री",
+   l2="फायदा", v2="हर जार पर ₹100 मार्जिन और फ्री गिलास से ग्राहक-दुकानदार दोनों को फायदा"),
+ dict(i=5, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="अल्पेनलिब",
+   price='<span class="offer" style="background:%s">जार ₹1080 का ₹999</span>'%SCHEME_GREEN,
+   sub='अल्पेनलिब ₹1 टॉफी—1200 पीस का जार होलसेल ₹1080, स्कीम में ₹999 में, ~₹200 मार्जिन · <b class="delta">₹200 मार्जिन</b>',
+   l1="स्कीम", v1="1200 पीस का जार (₹1 टॉफी) होल ₹1080, स्कीम में ₹999 में",
+   l2="फायदा", v2="₹1200 की बिक्री पर ~₹200 मार्जिन, हर उम्र में बिकने वाली भरोसेमंद टॉफी"),
+ dict(i=6, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="जस्ट जेली",
+   price='<span class="offer" style="background:%s">₹599 लंच बॉक्स फ्री</span>'%SCHEME_GREEN,
+   sub='₹1 वाली जस्ट जेली के जार के साथ ₹599 MRP वाला लंच बॉक्स बिल्कुल फ्री · <b class="delta">₹599 का गिफ्ट फ्री</b>',
+   l1="स्कीम", v1="₹1 जेली का जार खरीदने पर ₹599 MRP वाला लंच बॉक्स फ्री",
+   l2="फायदा", v2="बड़ा फ्री गिफ्ट बच्चों-ग्राहकों को खींचता है, जार तेज़ी से बिकता है"),
+ # --- News (trending_news) — PMFME food-processing subsidy (in-house, policy/scheme, concrete ₹ figures) ---
+ dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="35% सब्सिडी",
+   price='<span class="news">खाद्य उद्योग पर सरकारी मदद</span>',
+   sub='PMFME योजना में मसाला-पापड़-आटा जैसी खाद्य यूनिट लगाने पर 35% सब्सिडी, अधिकतम ₹10 लाख तक · <b class="delta">₹10 लाख तक</b>',
+   l1="क्यों ज़रूरी", v1="दुकान से आगे बढ़कर खुद की खाद्य यूनिट लगाने पर लागत का 35% सरकार माफ करती है",
+   l2="क्या करें", v2="आधार, पैन, बैंक खाता व प्रोजेक्ट रिपोर्ट के साथ सरकारी पोर्टल पर ऑनलाइन आवेदन करें"),
 ]
 
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
