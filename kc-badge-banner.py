@@ -100,14 +100,16 @@ def render(tag, cfg, grad, bottom):
         gr=gradient_ring(D,R,R-red_w); canvas.paste(gr,(0,0),gr)
         canvas.save(os.path.join(HERE,f'v{tag}_{c["i"]}.png'))
         # --- Transparent square PN export (WebEngage multi_icon), emitted here so it always matches the ring ---
-        # Compound alpha mask: CONTENT disc + RED annulus opaque; the inner WHITE ring between them is cut to
-        # TRANSPARENT (operator 2026-07-10) so the push bg shows through; RED stays the outermost ring at the edge.
-        S=4; red_inner=R-red_w
-        pm=Image.new("L",(D*S,D*S),0); pd=ImageDraw.Draw(pm)
-        pd.ellipse((0,0,D*S,D*S),fill=255)                                                  # badge circle (to edge = red outer) opaque; corners stay transparent
-        pd.ellipse(((R-red_inner)*S,(R-red_inner)*S,(R+red_inner)*S,(R+red_inner)*S),fill=0) # hole: everything inside the red -> transparent
-        pd.ellipse(((R-r_in)*S,(R-r_in)*S,(R+r_in)*S,(R+r_in)*S),fill=255)                   # content disc opaque -> leaves r_in..red_inner (the white ring) transparent
-        pn=canvas.convert("RGBA"); pn.putalpha(pm.resize((D,D),Image.LANCZOS))
+        # 2026-07-20 FIX (operator: "extra white circle in the PN"): the old export cut the inner separator ring
+        # to TRANSPARENT so the push bg would show through. But the notification renderer seats the icon on a
+        # WHITE chip, so that transparent gap revealed a stray WHITE ring around the content. Fix = make the PN
+        # background-INDEPENDENT: recolour the separator DARK (opaque, matches the banner #0E1116) and knock out
+        # ONLY the corners. PN now reads: content -> thin dark ring -> red-at-edge, with transparent corners only.
+        pn_rgb=canvas.copy()
+        ImageDraw.Draw(pn_rgb).ellipse((R-ri,R-ri,R+ri,R+ri),outline=(14,17,22),width=sep_w+2)  # dark over the white separator
+        S=4; am=Image.new("L",(D*S,D*S),0)
+        ImageDraw.Draw(am).ellipse((0,0,D*S,D*S),fill=255)                                       # full disc opaque; corners transparent
+        pn=pn_rgb.convert("RGBA"); pn.putalpha(am.resize((D,D),Image.LANCZOS))
         pn.resize((500,500),Image.LANCZOS).save(os.path.join(HERE,f'badge_pn_{c["i"]}.png'))
         print(f'v{tag}_{c["i"]} + badge_pn_{c["i"]} done')
 
