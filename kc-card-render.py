@@ -92,7 +92,7 @@ CARDS = [
    l2="क्या करें", v2="जरूरत का माल अभी भर लें, त्योहारी मसाला मांग से भाव और चढ़ सकते हैं"),
  # --- FMCG (fmcg) — top 3 Retailer Schemes by Like Rate desc after dedup + brand-recency + body-verify ---
  #     (top LR Hair care/Sensodyne/Kitkat/Patanjali all EXCLUDED by 12-day ledger dedup; Kinley/Sobisco/Dabur swapped on no-₹ / body mismatch)
- dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="कॉफी टॉफी",
+ dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="कॉफीकिंग",
    price='<span class="offer" style="background:%s">जार पर स्टील गिलास फ्री</span>'%SCHEME_GREEN,
    sub='₹1 वाली कॉफी टॉफी का जार होलसेल ₹120, बिक्री ₹220—साथ में एक स्टील गिलास फ्री · <b class="delta">₹100 मार्जिन</b>',
    l1="स्कीम", v1="₹1 टॉफी का जार होल ₹120, बिक्री ₹220; साथ एक स्टील गिलास फ्री",
