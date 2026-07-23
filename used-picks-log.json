@@ -1267,6 +1267,91 @@
           "label": "Patanjali दंत कांति Consumer LR 7.03 — EXCLUDED: dedup + Patanjali published 07-19"
         }
       ]
+    },
+    {
+      "date": "2026-07-23",
+      "picks": {
+        "mandi_bhav": [
+          {
+            "news_id": "74226f5e-3d78-4f02-a430-988898e918a8",
+            "label": "छोटी इलायची तेजी ₹2,900/किलो (+₹50, केरल बारिश+आवक सीमित) — in-house RED"
+          },
+          {
+            "news_id": "4d935f20-0a11-45e5-bdf5-4e90f53c1cf9",
+            "label": "बारीक चावल तेजी ₹8,300/क्विंटल (निर्यात मांग, और तेजी की उम्मीद) — in-house रुझान RED"
+          },
+          {
+            "news_id": "05d05289-0f2f-415c-87cb-a0f0547b00ff",
+            "label": "उड़द मंदी ₹9,975/क्विंटल (−₹400, बर्मा सस्ता आयात, दाल मिल सुस्त) — in-house GREEN for balance"
+          }
+        ],
+        "fmcg": [
+          {
+            "news_id": "95851ea8-4e29-4b5c-9c50-8f799159d602",
+            "label": "छाछ मसाला/इमली आंटी — Retailer Scheme, 20 पाउच (₹10) पैकेट पर 50 ₹1-इमली आंटी पाउच फ्री (LR 7.63)"
+          },
+          {
+            "news_id": "7f7b3340-3cf0-4305-8658-bc35ee2c19e3",
+            "label": "My Love मिक्स फ्रूट कैंडी — Retailer Scheme, जार होल ₹150/बिक्री ₹200, ₹50 मार्जिन + स्टील गिलास फ्री (LR 6.98)"
+          },
+          {
+            "news_id": "993e404a-7cc6-4c73-8a72-62c36c0d17c0",
+            "label": "पारले मोनैको बिस्किट — Retailer Scheme, 11+1 फ्री, सेट ₹99/बिक्री ₹120, ₹21 मार्जिन (LR 5.57)"
+          }
+        ],
+        "trending_news": [
+          {
+            "news_id": "9c62a430-5af3-47c4-8116-c203ce32e275",
+            "label": "सस्ता AI बिलिंग/स्टॉक ऐप — ₹200/माह, स्टॉक अलर्ट से 15-25% कमाई नुकसान रुके — in-house"
+          }
+        ]
+      },
+      "also_shown": [
+        {
+          "news_id": "041639e7-f1f7-4fbe-9cb3-b35fb663237d",
+          "label": "बाजरा teji_mandi LR 7.21 (TOP commodity) — REJECTED body-verify: no ₹ figure ('बाजरी के रेट मे तेजी आई है')"
+        },
+        {
+          "news_id": "0d8d7131-2f47-4198-b87b-c7705073fc47",
+          "label": "पोहा teji_mandi LR 6.57 — NOT used: only +₹200/qtl delta, no absolute price level"
+        },
+        {
+          "news_id": "bddfd315-a464-46b9-a186-b5715d37d818",
+          "label": "7 Star Supari ₹1 Retailer LR 7.36 (#2 FMCG) — SWAPPED: vague reward (scratch coupon free), no ₹ value/margin — flag for eng"
+        },
+        {
+          "news_id": "6576760b-564a-4a6c-b383-5aa3e9c9b456",
+          "label": "Coffee flavoured candy Retailer LR 7.01 — SKIPPED: coffee-candy repeat of 07-20 Coffee King"
+        },
+        {
+          "news_id": "67eca48a-d8f4-4e26-a7d5-c470a0e5eca6",
+          "label": "Oral-B टूथब्रश Retailer LR 7.14 — SKIPPED: Oral-B featured 07-16 + dental"
+        },
+        {
+          "news_id": "5de57e3e-1546-431f-8677-0855ab71d225",
+          "label": "Elaichi cream candy Retailer LR 6.40 — DROPPED: 2nd-candy cluster (My Love already the candy card); Monaco chosen for variety"
+        },
+        {
+          "news_id": "a154c80f-90e7-469e-810a-5530ba34892f",
+          "label": "Feviquik Retailer LR 5.48 — SKIPPED: duplicate of 07-18 published Feviquik scheme (₹310/₹420/₹110)"
+        },
+        {
+          "news_id": "ec3f578f-0b16-4613-b16b-12464dcc0da6",
+          "label": "Colgate+Maxfresh Retailer LR 5.36 — SKIPPED: Colgate featured 07-18 (कोलगेट स्ट्रॉन्ग)"
+        },
+        {
+          "news_id": "6bec87e5-6eb6-459d-8f4b-41d350c90ff9",
+          "label": "ONDC/DigiDukaan in-house news — SKIPPED: topic repeat (07-07 + also_shown 07-15)"
+        },
+        {
+          "news_id": "f5f913da-d84f-4e43-a3b9-6fd1e386909a",
+          "label": "e-Shram ₹2 लाख बीमा in-house news — NOT used: govt-scheme fatigue (07-15/18/19/20), kept as backup"
+        },
+        {
+          "news_id": "f5f0efd9-0414-43ed-8b4d-919afe6ff550",
+          "label": "सरसों तेल मंदी ₹16,400 in-house — NOT used: oil/soya over-covered; उड़द chosen as the GREEN"
+        }
+      ]
     }
   ]
 }
