@@ -72,47 +72,47 @@ def b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-07-20)
+# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-07-23)
 CARDS = [
- # --- Commodity (mandi_bhav) — 2 तेजी/RED (घी, काली मिर्च) + 1 मंदी/GREEN (किशमिश) for direction balance ---
- dict(i=1, label="मंडी भाव", stripe=RED, headline="देसी घी",
-   price=f'{tri("up",RED)}₹9,500–9,750<span class="unit">/किलो</span>',
-   sub=f'उत्तर भारत में दूध उत्पादन घटने से बढ़िया देसी घी ₹60 महंगा, दूध पाउडर ₹310-328/किलो तेज · <b class="delta" style="color:{RED}">₹60 बढ़ोतरी</b>',
-   l1="क्यों", v1="दूध उत्पादन घटा, सावन-त्योहारी मांग निकली; बटर-घी कंपनियों की लागत बढ़ी",
-   l2="क्या करें", v2="सावन में शुद्ध देसी घी की मांग तेज—जरूरत का स्टॉक अभी भर लें, गिरावट के आसार कम"),
- dict(i=2, label="मंडी भाव", stripe=GREEN, headline="किशमिश",
-   price=f'{tri("down",GREEN)}₹370<span class="unit">/किलो</span>',
-   sub=f'बाजार में पर्याप्त आवक और सामान्य मांग से किशमिश ₹450 से घटकर ₹370/किलो, ₹80 सस्ती · <b class="delta" style="color:{GREEN}">₹80 गिरावट</b>',
-   l1="क्यों", v1="पर्याप्त आवक और मांग सामान्य; आगे भी आंशिक मंदी या स्थिरता बने रहने के आसार",
-   l2="क्या करें", v2="भाव नरम—सस्ती खरीद का मौका, ग्राहक को कम दाम का फायदा देकर बिक्री बढ़ाएं"),
- dict(i=3, label="मंडी भाव", stripe=RED, headline="काली मिर्च",
-   price=f'{tri("up",RED)}₹850<span class="unit">/किलो</span>',
-   sub=f'मांग बढ़ने से काली मिर्च ₹830 से ₹850/किलो, ₹20 तेज; आपूर्ति सीमित, आगे और मजबूती के आसार · <b class="delta" style="color:{RED}">₹20 बढ़ोतरी</b>',
-   l1="क्यों", v1="मांग अधिक और आपूर्ति सीमित रहने से काली मिर्च के भाव मजबूत बने हुए",
-   l2="क्या करें", v2="जरूरत का माल अभी भर लें, त्योहारी मसाला मांग से भाव और चढ़ सकते हैं"),
+ # --- Commodity (mandi_bhav) — 2 तेजी/RED (इलायची, बारीक चावल) + 1 मंदी/GREEN (उड़द) for direction balance ---
+ dict(i=1, label="मंडी भाव", stripe=RED, headline="छोटी इलायची",
+   price=f'{tri("up",RED)}₹2,900<span class="unit">/किलो</span>',
+   sub=f'मांग बढ़ने और आवक सीमित रहने से छोटी इलायची ₹50 तेज होकर ₹2,900/किलो; केरल में बारिश से फसल पर असर · <b class="delta" style="color:{RED}">₹50 बढ़ोतरी</b>',
+   l1="क्यों", v1="केरल में बारिश से फसल प्रभावित; नई फसल की आवक धीमी, चाय-मिठाई मांग तेज",
+   l2="क्या करें", v2="जरूरत का माल अभी लें; नई फसल आने पर भाव पलट सकते हैं"),
+ dict(i=2, label="मंडी भाव", stripe=RED, headline="बारीक चावल",
+   price=f'{tri("up",RED)}₹8,300<span class="unit">/क्विंटल</span>',
+   sub=f'निर्यातकों की मजबूत खरीद से बारीक चावल के भाव ₹8,300/क्विंटल पर मजबूत, आगे और तेजी की उम्मीद · <b class="delta" style="color:{RED}">तेजी बरकरार</b>',
+   l1="क्यों", v1="निर्यातकों की लगातार खरीद और अच्छी मांग से बासमती/बारीक चावल के भाव मजबूत बने हुए",
+   l2="क्या करें", v2="भाव और चढ़ने के आसार; अच्छी क्वालिटी का माल अभी भर लें, त्योहारी मांग निकलेगी"),
+ dict(i=3, label="मंडी भाव", stripe=GREEN, headline="उड़द",
+   price=f'{tri("down",GREEN)}₹9,975<span class="unit">/क्विंटल</span>',
+   sub=f'चालू शिपमेंट कमजोर और दाल मिलों की सुस्त खरीद से उड़द ₹400 घटकर ₹9,975/क्विंटल · <b class="delta" style="color:{GREEN}">₹400 गिरावट</b>',
+   l1="क्यों", v1="बर्मा से सस्ता आयात (~940 डॉलर/टन) और आयातकों की बिकवाली से भाव पर दबाव",
+   l2="क्या करें", v2="करेक्शन के बाद ₹10/किलो तक तेजी संभव; जरूरत भर का माल ही लें"),
  # --- FMCG (fmcg) — top 3 Retailer Schemes by Like Rate desc after dedup + brand-recency + body-verify ---
- #     (top LR Hair care/Sensodyne/Kitkat/Patanjali all EXCLUDED by 12-day ledger dedup; Kinley/Sobisco/Dabur swapped on no-₹ / body mismatch)
- dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="कॉफीकिंग",
-   price='<span class="offer" style="background:%s">जार पर स्टील गिलास फ्री</span>'%SCHEME_GREEN,
-   sub='₹1 वाली कॉफी टॉफी का जार होलसेल ₹120, बिक्री ₹220—साथ में एक स्टील गिलास फ्री · <b class="delta">₹100 मार्जिन</b>',
-   l1="स्कीम", v1="₹1 टॉफी का जार होल ₹120, बिक्री ₹220; साथ एक स्टील गिलास फ्री",
-   l2="फायदा", v2="हर जार पर ₹100 मार्जिन और फ्री गिलास से ग्राहक-दुकानदार दोनों को फायदा"),
- dict(i=5, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="अल्पेनलिब",
-   price='<span class="offer" style="background:%s">जार ₹1080 का ₹999</span>'%SCHEME_GREEN,
-   sub='अल्पेनलिब ₹1 टॉफी—1200 पीस का जार होलसेल ₹1080, स्कीम में ₹999 में, ~₹200 मार्जिन · <b class="delta">₹200 मार्जिन</b>',
-   l1="स्कीम", v1="1200 पीस का जार (₹1 टॉफी) होल ₹1080, स्कीम में ₹999 में",
-   l2="फायदा", v2="₹1200 की बिक्री पर ~₹200 मार्जिन, हर उम्र में बिकने वाली भरोसेमंद टॉफी"),
- dict(i=6, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="जस्ट जेली",
-   price='<span class="offer" style="background:%s">₹599 लंच बॉक्स फ्री</span>'%SCHEME_GREEN,
-   sub='₹1 वाली जस्ट जेली के जार के साथ ₹599 MRP वाला लंच बॉक्स बिल्कुल फ्री · <b class="delta">₹599 का गिफ्ट फ्री</b>',
-   l1="स्कीम", v1="₹1 जेली का जार खरीदने पर ₹599 MRP वाला लंच बॉक्स फ्री",
-   l2="फायदा", v2="बड़ा फ्री गिफ्ट बच्चों-ग्राहकों को खींचता है, जार तेज़ी से बिकता है"),
- # --- News (trending_news) — PMFME food-processing subsidy (in-house, policy/scheme, concrete ₹ figures) ---
- dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="35% सब्सिडी",
-   price='<span class="news">खाद्य उद्योग पर सरकारी मदद</span>',
-   sub='PMFME योजना में मसाला-पापड़-आटा जैसी खाद्य यूनिट लगाने पर 35% सब्सिडी, अधिकतम ₹10 लाख तक · <b class="delta">₹10 लाख तक</b>',
-   l1="क्यों ज़रूरी", v1="दुकान से आगे बढ़कर खुद की खाद्य यूनिट लगाने पर लागत का 35% सरकार माफ करती है",
-   l2="क्या करें", v2="आधार, पैन, बैंक खाता व प्रोजेक्ट रिपोर्ट के साथ सरकारी पोर्टल पर ऑनलाइन आवेदन करें"),
+ #     (Chass masala 7.63 top; 7 Star Supari 7.36 swapped=vague scratch-coupon; Colgate/Oral-B/Coffee-candy/Fizz skipped=recency/cluster; Elaichi candy dropped=2nd-candy)
+ dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="छाछ मसाला",
+   price='<span class="offer" style="background:%s">20 पाउच पर 50 इमली फ्री</span>'%SCHEME_GREEN,
+   sub='₹10 वाली छाछ मसाला के 20 पाउच वाले पैकेट पर ₹1 वाली इमली आंटी के 50 पाउच बिल्कुल फ्री · <b class="delta">50 पाउच फ्री</b>',
+   l1="स्कीम", v1="एक पैकेट में ₹10 वाली छाछ मसाला के 20 पाउच; साथ ₹1 वाली इमली आंटी के 50 पाउच फ्री",
+   l2="फायदा", v2="फ्री इमली पाउच अलग से बिकते हैं—दुकानदार को दोहरी बिक्री, बच्चों-ग्राहकों की पसंद"),
+ dict(i=5, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="माय लव कैंडी",
+   price='<span class="offer" style="background:%s">जार पर ₹50 मार्जिन + गिलास फ्री</span>'%SCHEME_GREEN,
+   sub='₹1 वाली माय लव मिक्स फ्रूट कैंडी का जार होलसेल ₹150, बिक्री ₹200—साथ एक स्टील गिलास फ्री · <b class="delta">₹50 मार्जिन</b>',
+   l1="स्कीम", v1="₹1 वाली मिक्स फ्रूट कैंडी का जार होल ₹150, बिक्री ₹200; साथ एक स्टील गिलास फ्री",
+   l2="फायदा", v2="हर जार पर ₹50 मार्जिन और फ्री गिलास; हर उम्र में बिकने वाली ₹1 कैंडी तेज़ी से बिकती है"),
+ dict(i=6, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="पारले मोनैको",
+   price='<span class="offer" style="background:%s">11 पर 1 फ्री (12 पीस)</span>'%SCHEME_GREEN,
+   sub='₹10 वाली पारले मोनैको बिस्किट के 11 पीस पर 1 पीस फ्री; सेट होलसेल ₹99, 12 पीस की बिक्री ₹120 · <b class="delta">₹21 मार्जिन</b>',
+   l1="स्कीम", v1="₹10 वाली मोनैको के 11 पीस के सेट के साथ 1 पीस फ्री; सेट होलसेल ₹99 में",
+   l2="फायदा", v2="12 पीस बिकने पर ₹120, यानी ₹21 मार्जिन; रोज़ बिकने वाला भरोसेमंद नमकीन बिस्किट"),
+ # --- News (trending_news) — cheap AI billing/stock app (in-house, shopkeeper tool, concrete ₹ figures) ---
+ dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="सस्ता बिलिंग ऐप",
+   price='<span class="news">₹200/माह में दुकान का पूरा हिसाब</span>',
+   sub='सस्ते AI बिलिंग-स्टॉक ऐप हिंदी में बोलकर बिल बनाते हैं और स्टॉक खत्म होने से पहले अलर्ट देते हैं · <b class="delta">15-25% नुकसान रुके</b>',
+   l1="क्यों ज़रूरी", v1="गलत स्टॉक से दुकानदार हर महीने 15-25% कमाई गंवाते हैं; ऐप अलर्ट देकर बचाता है",
+   l2="क्या करें", v2="~₹200/माह वाला बारकोड-बिलिंग ऐप चुनें; रिकॉर्ड साफ, बैंक लोन आसान"),
 ]
 
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>

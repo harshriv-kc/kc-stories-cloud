@@ -122,12 +122,12 @@ def render(tag, cfg, grad, bottom):
 # so the widest line ("1 पैक फ्री") grazed it at FS160 (3px). 154 keeps every badge's widest line >=~15px clear
 # of the white ring while staying uniform. ALWAYS re-check max_text_radius <= ~438 (white-ring inner 454) after
 # changing copy — the widest line caps FS.
-FS=154   # 2026-07-20: dropped 166->154 — today's wider lines (₹599 गिफ्ट / 35%) grazed the ring at 166 (450/456); 154 clears
-DAY=[dict(i=1,src="subjfull_1.png",lines=["देसी घी","तेज़"],fs=FS),
-     dict(i=2,src="subjfull_2.png",lines=["₹599 गिफ्ट","फ्री"],fs=FS),
-     dict(i=3,src="subjfull_3.png",lines=["35%","सब्सिडी"],fs=FS)]
+FS=145   # 2026-07-23: dropped 154->145 — today's wide lines (50 इमली / बिलिंग ऐप) grazed the ring at 154 (455/446); 145 clears (<438)
+DAY=[dict(i=1,src="subjfull_1.png",lines=["इलायची","तेज़"],fs=FS),
+     dict(i=2,src="subjfull_2.png",lines=["50 इमली","फ्री"],fs=FS),
+     dict(i=3,src="subjfull_3.png",lines=["बिलिंग ऐप","सस्ता"],fs=FS)]
 if __name__=="__main__":
-    render("D", DAY, TALL, 148)   # bottom recentred for FS154: 325-(2*154*1.1+14)/2 ≈ 148 (block-centering formula)
+    render("D", DAY, TALL, 159)   # bottom recentred for FS145: 325-(2*145*1.1+14)/2 ≈ 159 (block-centering formula)
     # 2026-07-14 crop fix: operator flagged text CROPPING at the ring. Root cause — the
                                   # BOTTOM line sits low in the circle where it's narrow, so a 2-WORD bottom line
                                   # ('फ्री मिले'/'सस्ता माल') hit the ring (455>448) no matter the FS. Fix = make every
