@@ -1352,6 +1352,80 @@
           "label": "सरसों तेल मंदी ₹16,400 in-house — NOT used: oil/soya over-covered; उड़द chosen as the GREEN"
         }
       ]
+    },
+    {
+      "date": "2026-07-24",
+      "_note": "Full run — all 3 stories + entry badges republished live (update_story/update_story_entry_badges, actor Harsh Shrivastava). Weekday (Friday): weekend Slack-to-Hritik WebEngage handoff SKIPPED (Sat/Sun only per routine). In-house today: मेथी(R id1122)+देसी चना(R id1121)+सोया तेल(stable id1120)+रुझान/samachar digests(skip)+3 trending-news candidates. Commodity = मेथीदाना (in-house RED, ₹7700 मजबूत) + गुड़ (MP teji_mandi LR7.16, थोक ₹52/kg RED) + चीनी (MP teji_mandi LR5.70, −₹90/qtl GREEN for balance) = 2R+1G. Top novel मखाना (LR6.61) SWAPPED: no ₹ in body. FMCG top-3 by LR after dedup+body-verify, all Retailer Scheme: I-fly Royal Dairy chocolate(5.96)+Eno(5.58)+Colgate Super Flexi(5.55). Just jelly(6.37 top) SKIPPED=same product as 07-20 dedup; 7 Star Supari/Chass masala excluded=dedup; Tata salt product_change(4.90 top of segment) SWAPPED=no ₹X→₹Y ('rate change watch video'); Fizz(5.48 clean) dropped=2nd antacid w/ Eno. new_product_launch segment EMPTY in today's report. News = बिस्कुट-नमकीन दाम स्थिर (in-house, market-impact, 3-5% hike paused) over monsoon/NPS-scheme (variety vs recent scheme-heavy news). Slides composited via kc-card-render.py, QC'd (contact sheet + full-size read of card_6 Colgate + card_7 news — no overlap, consistent typography). Badges curved-banner FS145 (गुड़ में तेजी / इनो 100+2 फ्री / दाम नहीं बढ़ेंगे); radial clearance 371/425/413 <=438. FLAGS for eng: (a) Eno body states ₹250 margin but figures 1000-850=₹150 — card uses ₹150; (b) चीनी mixed signal — several UGC posts show चीनी तेजी (+₹200) while picked post 8b803fed shows −₹90 मंदी; used the मंदी post for direction balance. Push JSON built with transparent PN badges; NOT sent to Slack (weekday).",
+      "picks": {
+        "mandi_bhav": [
+          {
+            "news_id": "645e2ed4-169a-463a-9c1a-0d5f789e774e",
+            "label": "मेथीदाना तेजी ₹7,700/क्विंटल (उत्पादन घटा, आवक कम) — in-house RED"
+          },
+          {
+            "news_id": "aa0c36ed-acba-4f28-9b23-90acf1ab1bc7",
+            "label": "गुड़ तेजी थोक ₹52/किलो (मांग बढ़ी) — MP teji_mandi LR 7.16, RED"
+          },
+          {
+            "news_id": "8b803fed-f22c-496d-a6bd-cf253488792c",
+            "label": "चीनी मंदी ₹90/क्विंटल गिरावट — MP teji_mandi LR 5.70, GREEN for balance"
+          }
+        ],
+        "fmcg": [
+          {
+            "news_id": "48d97998-59b8-484d-8f40-c1ff20058b4d",
+            "label": "I-fly रॉयल डेयरी चॉकलेट — Retailer Scheme, ₹5 वाली 30 नग जार होल ₹100 + 3 नग फ्री, ₹50 मार्जिन (LR 5.96)"
+          },
+          {
+            "news_id": "9589632d-4c2e-4a15-ac9a-7bf4d01cc33e",
+            "label": "इनो — Retailer Scheme, 100 सैशे जार होल ₹850/बिक्री ₹1000, 100+2 फ्री, ₹150 मार्जिन (LR 5.58)"
+          },
+          {
+            "news_id": "65805f8d-b68a-4116-9f0e-5a0eece8df2b",
+            "label": "कोलगेट सुपर फ्लेक्सी — Retailer Scheme, ₹18 MRP 11+2 फ्री + ₹40 वाले 2 ब्रश फ्री (LR 5.55)"
+          }
+        ],
+        "trending_news": [
+          {
+            "news_id": "3aa19c52-243b-4b6b-807d-8d74a853fbad",
+            "label": "बिस्कुट-नमकीन के दाम स्थिर — FMCG कंपनियों ने 3-5% बढ़ोतरी फिलहाल टाली (कच्चा माल ठंडा) — in-house market-impact"
+          }
+        ]
+      },
+      "also_shown": [
+        {
+          "news_id": "18da688d-ea71-4ee5-99d3-48e7d8b78003",
+          "label": "मखाना — teji_mandi LR 6.607 (top novel), SWAPPED OUT body-verify: no concrete ₹ figure (त्योहारी मांग से तेजी, कोई भाव नहीं)"
+        },
+        {
+          "news_id": "98c44edb-a322-4d88-91cc-60636ad5270b",
+          "label": "Just jelly जार+टिफिन फ्री — Retailer LR 6.370 (top FMCG), SKIPPED: same product as 07-20 dedup (Just Jelly ₹1 jar + free lunchbox)"
+        },
+        {
+          "news_id": "f1159596-a295-413e-923a-a5630136a19e",
+          "label": "Tata salt ₹30 — fmcg_product_change LR 4.902 (top of segment), SWAPPED body-verify: no concrete ₹X→₹Y ('rate change ho gaya, purana aur naya video dekhen')"
+        },
+        {
+          "news_id": "7c9ee90d-67a1-4e2d-b281-c05bd82c220c",
+          "label": "काजू — teji_mandi LR 3.726 tagged मंदी, SWAPPED: LR↔body mismatch (body says भाव ठहरे/सुस्त ₹800-860, no गिरावट figure) — flag for eng"
+        },
+        {
+          "news_id": "8ef760df-4aec-410a-95d0-e6f7ac471b51",
+          "label": "डाबर Fizz Lemon — Retailer LR 5.479 (clean होल ₹45/बिक्री ₹50/5+1/₹5 मार्जिन), DROPPED to avoid 2nd antacid-digestive card (Eno already picked)"
+        },
+        {
+          "news_id": "a2eef225-3cf3-475b-93b0-d2654ff93f5e",
+          "label": "देसी चना ₹6250 तेजी — in-house RED, NOT used: same commodity+direction as 07-16 (देसी चना तेजी); चना covered 07-15/16/18"
+        },
+        {
+          "news_id": "bd230102-2e02-4af8-b3c5-ff3453c45bc8",
+          "label": "मानसून/खरीफ बुवाई — in-house news, NOT used: monsoon topic repeat, less concrete than FMCG-price-hold"
+        },
+        {
+          "news_id": "f2d9323b-7282-454e-a92f-0e41b49d9383",
+          "label": "NPS वात्सल्य बाल पेंशन योजना — in-house news, NOT used: recent news scheme-heavy (07-19 Standup India, 07-20 PMFME); chose FMCG-price-hold for variety"
+        }
+      ]
     }
   ]
 }
