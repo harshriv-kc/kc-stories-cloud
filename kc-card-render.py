@@ -72,47 +72,47 @@ def b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-07-23)
+# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-07-24)
 CARDS = [
- # --- Commodity (mandi_bhav) — 2 तेजी/RED (इलायची, बारीक चावल) + 1 मंदी/GREEN (उड़द) for direction balance ---
- dict(i=1, label="मंडी भाव", stripe=RED, headline="छोटी इलायची",
-   price=f'{tri("up",RED)}₹2,900<span class="unit">/किलो</span>',
-   sub=f'मांग बढ़ने और आवक सीमित रहने से छोटी इलायची ₹50 तेज होकर ₹2,900/किलो; केरल में बारिश से फसल पर असर · <b class="delta" style="color:{RED}">₹50 बढ़ोतरी</b>',
-   l1="क्यों", v1="केरल में बारिश से फसल प्रभावित; नई फसल की आवक धीमी, चाय-मिठाई मांग तेज",
-   l2="क्या करें", v2="जरूरत का माल अभी लें; नई फसल आने पर भाव पलट सकते हैं"),
- dict(i=2, label="मंडी भाव", stripe=RED, headline="बारीक चावल",
-   price=f'{tri("up",RED)}₹8,300<span class="unit">/क्विंटल</span>',
-   sub=f'निर्यातकों की मजबूत खरीद से बारीक चावल के भाव ₹8,300/क्विंटल पर मजबूत, आगे और तेजी की उम्मीद · <b class="delta" style="color:{RED}">तेजी बरकरार</b>',
-   l1="क्यों", v1="निर्यातकों की लगातार खरीद और अच्छी मांग से बासमती/बारीक चावल के भाव मजबूत बने हुए",
-   l2="क्या करें", v2="भाव और चढ़ने के आसार; अच्छी क्वालिटी का माल अभी भर लें, त्योहारी मांग निकलेगी"),
- dict(i=3, label="मंडी भाव", stripe=GREEN, headline="उड़द",
-   price=f'{tri("down",GREEN)}₹9,975<span class="unit">/क्विंटल</span>',
-   sub=f'चालू शिपमेंट कमजोर और दाल मिलों की सुस्त खरीद से उड़द ₹400 घटकर ₹9,975/क्विंटल · <b class="delta" style="color:{GREEN}">₹400 गिरावट</b>',
-   l1="क्यों", v1="बर्मा से सस्ता आयात (~940 डॉलर/टन) और आयातकों की बिकवाली से भाव पर दबाव",
-   l2="क्या करें", v2="करेक्शन के बाद ₹10/किलो तक तेजी संभव; जरूरत भर का माल ही लें"),
- # --- FMCG (fmcg) — top 3 Retailer Schemes by Like Rate desc after dedup + brand-recency + body-verify ---
- #     (Chass masala 7.63 top; 7 Star Supari 7.36 swapped=vague scratch-coupon; Colgate/Oral-B/Coffee-candy/Fizz skipped=recency/cluster; Elaichi candy dropped=2nd-candy)
- dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="छाछ मसाला",
-   price='<span class="offer" style="background:%s">20 पाउच पर 50 इमली फ्री</span>'%SCHEME_GREEN,
-   sub='₹10 वाली छाछ मसाला के 20 पाउच वाले पैकेट पर ₹1 वाली इमली आंटी के 50 पाउच बिल्कुल फ्री · <b class="delta">50 पाउच फ्री</b>',
-   l1="स्कीम", v1="एक पैकेट में ₹10 वाली छाछ मसाला के 20 पाउच; साथ ₹1 वाली इमली आंटी के 50 पाउच फ्री",
-   l2="फायदा", v2="फ्री इमली पाउच अलग से बिकते हैं—दुकानदार को दोहरी बिक्री, बच्चों-ग्राहकों की पसंद"),
- dict(i=5, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="माय लव कैंडी",
-   price='<span class="offer" style="background:%s">जार पर ₹50 मार्जिन + गिलास फ्री</span>'%SCHEME_GREEN,
-   sub='₹1 वाली माय लव मिक्स फ्रूट कैंडी का जार होलसेल ₹150, बिक्री ₹200—साथ एक स्टील गिलास फ्री · <b class="delta">₹50 मार्जिन</b>',
-   l1="स्कीम", v1="₹1 वाली मिक्स फ्रूट कैंडी का जार होल ₹150, बिक्री ₹200; साथ एक स्टील गिलास फ्री",
-   l2="फायदा", v2="हर जार पर ₹50 मार्जिन और फ्री गिलास; हर उम्र में बिकने वाली ₹1 कैंडी तेज़ी से बिकती है"),
- dict(i=6, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="पारले मोनैको",
-   price='<span class="offer" style="background:%s">11 पर 1 फ्री (12 पीस)</span>'%SCHEME_GREEN,
-   sub='₹10 वाली पारले मोनैको बिस्किट के 11 पीस पर 1 पीस फ्री; सेट होलसेल ₹99, 12 पीस की बिक्री ₹120 · <b class="delta">₹21 मार्जिन</b>',
-   l1="स्कीम", v1="₹10 वाली मोनैको के 11 पीस के सेट के साथ 1 पीस फ्री; सेट होलसेल ₹99 में",
-   l2="फायदा", v2="12 पीस बिकने पर ₹120, यानी ₹21 मार्जिन; रोज़ बिकने वाला भरोसेमंद नमकीन बिस्किट"),
- # --- News (trending_news) — cheap AI billing/stock app (in-house, shopkeeper tool, concrete ₹ figures) ---
- dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="सस्ता बिलिंग ऐप",
-   price='<span class="news">₹200/माह में दुकान का पूरा हिसाब</span>',
-   sub='सस्ते AI बिलिंग-स्टॉक ऐप हिंदी में बोलकर बिल बनाते हैं और स्टॉक खत्म होने से पहले अलर्ट देते हैं · <b class="delta">15-25% नुकसान रुके</b>',
-   l1="क्यों ज़रूरी", v1="गलत स्टॉक से दुकानदार हर महीने 15-25% कमाई गंवाते हैं; ऐप अलर्ट देकर बचाता है",
-   l2="क्या करें", v2="~₹200/माह वाला बारकोड-बिलिंग ऐप चुनें; रिकॉर्ड साफ, बैंक लोन आसान"),
+ # --- Commodity (mandi_bhav) — 2 तेजी/RED (मेथी, गुड़) + 1 मंदी/GREEN (चीनी) for direction balance ---
+ dict(i=1, label="मंडी भाव", stripe=RED, headline="मेथीदाना",
+   price=f'{tri("up",RED)}₹7,700<span class="unit">/क्विंटल</span>',
+   sub=f'इस साल उत्पादन घटने और उत्पादक मंडियों में आवक कम रहने से मेथीदाना ₹7,700/क्विंटल पर मजबूत, आगे भी मजबूती के आसार · <b class="delta" style="color:{RED}">भाव मजबूत</b>',
+   l1="क्यों", v1="बीते साल के मुकाबले बुवाई कम, पुराना स्टॉक सीमित; उत्पादन घटने से भाव को सहारा",
+   l2="क्या करें", v2="मेथी का जरूरी स्टॉक समय रहते रख लें; निकट भविष्य में दाम मजबूत बने रहने के आसार"),
+ dict(i=2, label="मंडी भाव", stripe=RED, headline="गुड़",
+   price=f'{tri("up",RED)}₹52<span class="unit">/किलो (थोक)</span>',
+   sub=f'मांग बढ़ने से गुड़ के थोक भाव तेज होकर ₹52/किलो तक पहुंचे; बाजार में मजबूती का रुख · <b class="delta" style="color:{RED}">थोक ₹52/किलो</b>',
+   l1="क्यों", v1="त्योहारी और सीजन की मांग बढ़ने से गुड़ में तेजी; अच्छी क्वालिटी माल की आपूर्ति सीमित",
+   l2="क्या करें", v2="भाव और चढ़ सकते हैं; अच्छी क्वालिटी का माल समय रहते खरीद लें"),
+ dict(i=3, label="मंडी भाव", stripe=GREEN, headline="चीनी",
+   price=f'{tri("down",GREEN)}₹90<span class="unit">/क्विंटल गिरे</span>',
+   sub=f'थोक बाजार में चीनी के भाव ₹90/क्विंटल घटे; दुकानदारों को खरीद पर थोड़ी राहत · <b class="delta" style="color:{GREEN}">₹90 गिरावट</b>',
+   l1="क्यों", v1="बाजार में आपूर्ति सुधरने से चीनी के थोक भाव में ₹90/क्विंटल की नरमी दर्ज",
+   l2="क्या करें", v2="भाव नरम; जरूरत भर का माल लें, बड़ी खरीद से पहले भाव की चाल पर नजर रखें"),
+ # --- FMCG (fmcg) — top 3 by Like Rate desc across segments after dedup + brand-recency + body-verify ---
+ #     (all 3 Retailer Scheme; Just jelly 6.37 skipped=same product as 07-20 dedup; 7 Star/Chass excluded=dedup; Tata salt swapped=no ₹; Fizz dropped=2nd antacid w/ Eno)
+ dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="रॉयल डेयरी चॉकलेट",
+   price='<span class="offer" style="background:%s">जार पर 3 नग फ्री</span>'%SCHEME_GREEN,
+   sub='₹5 बिक्री वाली I-fly रॉयल डेयरी चॉकलेट का 30 नग वाला जार होलसेल ₹100; साथ 3 नग बिल्कुल फ्री · <b class="delta">₹50 मार्जिन + 3 फ्री</b>',
+   l1="स्कीम", v1="₹5 बिक्री वाली चॉकलेट के 30 नग का जार होलसेल ₹100; स्कीम में 3 नग फ्री",
+   l2="फायदा", v2="30 नग ₹150 में बिकते हैं—₹50 मार्जिन, ऊपर से 3 फ्री नग; बच्चों में तेज़ बिकने वाली"),
+ dict(i=5, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="इनो",
+   price='<span class="offer" style="background:%s">100 पर 2 फ्री (जार)</span>'%SCHEME_GREEN,
+   sub='इनो का 100 सैशे वाला जार होलसेल ₹850, बिक्री ₹1,000; एक जार पर 2 सैशे (100+2) बिल्कुल फ्री · <b class="delta">₹150 मार्जिन</b>',
+   l1="स्कीम", v1="100 सैशे का जार होलसेल ₹850; एक जार पर 2 सैशे (100+2) बिल्कुल फ्री",
+   l2="फायदा", v2="पूरा जार ₹1,000 में बिकता है, ₹150 मार्जिन; एसिडिटी में तेज़ बिकने वाला भरोसेमंद माल"),
+ dict(i=6, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="कोलगेट ब्रश",
+   price='<span class="offer" style="background:%s">11 पर 2 + ₹40 वाले 2 ब्रश फ्री</span>'%SCHEME_GREEN,
+   sub='₹18 MRP कोलगेट सुपर फ्लेक्सी टूथब्रश—11 पर 2 फ्री, साथ ₹40 वाले 2 ब्रश भी बिल्कुल फ्री · <b class="delta">कुल 4 ब्रश फ्री</b>',
+   l1="स्कीम", v1="₹18 MRP सुपर फ्लेक्सी टूथब्रश के 11 पर 2 फ्री; ऑफर में ₹40 वाले 2 ब्रश और फ्री",
+   l2="फायदा", v2="कुल 4 ब्रश मुफ्त; रोज़ बिकने वाला टूथब्रश, ग्राहक और दुकानदार दोनों को फायदा"),
+ # --- News (trending_news) — FMCG cos hold biscuit/namkeen prices (in-house, market-impact, concrete %) ---
+ dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="बिस्कुट-नमकीन",
+   price='<span class="news">अभी दाम नहीं बढ़ेंगे</span>',
+   sub='खाने के तेल समेत कच्चे माल के दाम ठंडे पड़ने से FMCG कंपनियों ने बिस्कुट-नमकीन-स्नैक्स के दाम बढ़ाना फिलहाल टाल दिया · <b class="delta">3-5% बढ़ोतरी टली</b>',
+   l1="क्यों ज़रूरी", v1="कच्चे माल का दबाव घटा; कंपनियां पहले 3-5% दाम बढ़ा चुकी थीं, अब स्थिर रखे",
+   l2="क्या करें", v2="पुराने स्टॉक का माल घाटे में न निकालें; नई रेट लिस्ट डिस्ट्रीब्यूटर से लेते रहें"),
 ]
 
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
