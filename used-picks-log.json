@@ -1426,6 +1426,65 @@
           "label": "NPS वात्सल्य बाल पेंशन योजना — in-house news, NOT used: recent news scheme-heavy (07-19 Standup India, 07-20 PMFME); chose FMCG-price-hold for variety"
         }
       ]
+    },
+    {
+      "date": "2026-07-25",
+      "weekday": "Saturday",
+      "picks": {
+        "mandi_bhav": [
+          {
+            "news_id": "525c11c5-7c16-412d-b56a-c465113b84fa",
+            "label": "मूंग तेजी ₹8,000–8,100/क्विंटल (निर्यात+चीन मांग, दाल मिल लिवाली) — in-house RED"
+          },
+          {
+            "news_id": "cbeaa359-6ae0-49ba-8c67-04808298795a",
+            "label": "मक्का तेजी ~₹2,400/क्विंटल (+₹20–25, यूपी आवक घटी, पोल्ट्री-स्टार्च मांग) — in-house RED"
+          },
+          {
+            "news_id": "4c64a648-d2e9-41dd-aa92-683ad8f0bdcf",
+            "label": "सोया तेल मंदी 750ml चंबल बोतल होलसेल ₹140→₹135 (−₹5, प्लांट बिकवाली घटी) — MP teji_mandi LR 4.91, GREEN for balance"
+          }
+        ],
+        "fmcg": [
+          {
+            "news_id": "c7027b77-c47b-4bdf-a062-f25d57051048",
+            "label": "लिविंडा मिल्क डे — Retailer Scheme, ₹5 MRP मिल्क टॉफी जार 30 पर 3 नग फ्री (30+3) (LR 5.81)"
+          },
+          {
+            "news_id": "dd2bfb62-2278-4b9d-969a-e29efc2bca2c",
+            "label": "गजानंद सिट्रोनेला हर्बल अगरबत्ती — Consumer Scheme, ₹10 बिक्री, 12 पर 1 फ्री (12+1) (LR 5.54)"
+          },
+          {
+            "news_id": "e2a1032d-e1dc-4311-a0ca-61f7ac5cb4d2",
+            "label": "विक्स वेपोरब — Retailer Scheme, ₹25 वाली, बंडल 14 पर 1 फ्री (Buy 14 Get 1) (LR 4.97)"
+          }
+        ],
+        "trending_news": [
+          {
+            "news_id": "69e26cbf-3ae7-4389-af6d-5eded21239df",
+            "label": "UPI नए नियम — दुकानदारों को राहत: ₹10,000+ अनजान पेमेंट पर 1 घंटे होल्ड, दुकान QR इससे बाहर; अप्रैल 2026 से दो-स्तरीय जांच — in-house policy"
+          }
+        ]
+      },
+      "also_shown": [
+        {
+          "news_id": "b145a6ff-f1ac-4cd3-b64b-29f3769201ab",
+          "label": "Boomer लीची ₹1 (Retailer, LR 5.08) — swapped: 2nd near-identical ₹1 candy jar alongside Livinda"
+        },
+        {
+          "news_id": "469934c0-8614-4eff-aa7d-0118427b6f48",
+          "label": "Ujala (Consumer, LR 5.04) — swapped: garbled body / segment-mislabel"
+        },
+        {
+          "news_id": "b84c129b-fbeb-4ca5-ad19-35db75ca30f8",
+          "label": "प्रियागोल्ड टॉम टॉम न्यूडल्स (Retailer, LR 5.58) — rejected: no concrete ₹ figure in body"
+        },
+        {
+          "news_id": "e72c84ea-19f2-4102-832c-971150da3fa5",
+          "label": "लौंग मंदी (teji_mandi GREEN, LR 5.06) — rejected: body has no concrete ₹ figure"
+        }
+      ],
+      "notes": "Weekend (Sat) run. All 3 in-house commodities were RED (सरसों/मूंग/मक्का); dropped सरसों तेल (repeat 07-19) and pulled सोया तेल मंदी for GREEN balance. Colgate & ENO/इनो brand-recency-blocked (both featured 07-24). News UPI नए नियम is a shopkeeper-positive policy (not scam-bait). QC-compositing (chromium+Nirmala) applied to all 7 cards + 3 badges; badge ring normalized deterministically."
     }
   ]
 }
