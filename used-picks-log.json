@@ -1485,6 +1485,46 @@
         }
       ],
       "notes": "Weekend (Sat) run. All 3 in-house commodities were RED (सरसों/मूंग/मक्का); dropped सरसों तेल (repeat 07-19) and pulled सोया तेल मंदी for GREEN balance. Colgate & ENO/इनो brand-recency-blocked (both featured 07-24). News UPI नए नियम is a shopkeeper-positive policy (not scam-bait). QC-compositing (chromium+Nirmala) applied to all 7 cards + 3 badges; badge ring normalized deterministically."
+    },
+    {
+      "date": "2026-07-26",
+      "picks": {
+        "mandi_bhav": [
+          {
+            "news_id": "d7f01623-af6a-49c2-ac5f-7cb9ba2acc90",
+            "label": "सरसों तेल तेजी +₹200 → ₹16,600–16,800/क्विंटल (आवक घटी, तेल मिल मांग; सोया रिफाइंड ₹14,600) — in-house RED"
+          },
+          {
+            "news_id": "00ea6d76-160d-45a6-b664-d75c375363e5",
+            "label": "काबुली चना तेजी ~₹7,500/क्विंटल (+₹68–70, महाराष्ट्र लाइन, त्योहारी मांग, माल कम) — in-house RED"
+          },
+          {
+            "news_id": "2590a2d3-10e4-4e37-84be-d181eeb9a10e",
+            "label": "अरहर/तुवर मंदी ₹8,250–8,300/क्विंटल (गिरावट, दाल मिल कमजोर ग्राहकी; उड़द ₹10,050 नरम) — in-house digest GREEN for balance"
+          }
+        ],
+        "fmcg": [
+          {
+            "news_id": "c7dce827-9907-460d-89c8-fca99cfba12e",
+            "label": "विम बार — Consumer Scheme, 4 पर 2 फ्री (Buy 4 Get 2) — MP LR 5.72"
+          },
+          {
+            "news_id": "cc3eb42f-c149-436a-90f5-9415a0dde7fa",
+            "label": "चख ले मस्त-मौला चटपटी टेबलेट जार — product_change, थोक ₹130→₹120; ₹5 वाले 36 पैकेट, ₹180 बिक्री, ₹60 मुनाफा — MP LR 4.99"
+          },
+          {
+            "news_id": "d27b80a2-36e1-49aa-9e03-94d946326cab",
+            "label": "कैडबरी चोकोलेयर्स — Retailer Scheme, 150 पीस जार MRP ₹150 होलसेल ₹120, ₹10 वाली 5-स्टार फ्री, ₹30 मार्जिन — MP LR 4.53"
+          }
+        ],
+        "trending_news": [
+          {
+            "news_id": "b1931806-ab9f-4472-a83e-a94452377e90",
+            "label": "किसान क्रेडिट कार्ड (KCC) — ₹5 लाख तक कर्ज ~4% ब्याज (7%−3% छूट), ₹2 लाख बिना गिरवी — in-house 25 Jul govt scheme, MP LR 2.20"
+          }
+        ]
+      },
+      "also_shown": []
     }
   ]
 }
