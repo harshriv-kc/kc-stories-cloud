@@ -1525,6 +1525,92 @@
         ]
       },
       "also_shown": []
+    },
+    {
+      "date": "2026-07-27",
+      "_note": "Fresh full run (all 3 stories + badges republished live via update_story/update_story_entry_badges, actor Harsh Shrivastava). In-house सरसों तेल तेजी + काबुली चना तेजी SKIPPED = same commodity+direction as 07-26. Commodity = मैदा (MP teji_mandi LR 7.07 RED, novel, ₹28→₹30/kg) + नमक (MP LR 4.95 RED, novel, Nirma bag ₹690→₹730) + जीरा (in-house GREEN, ऊंझा ₹22,800, जयपुर −₹1,000) = 2 RED + 1 GREEN. Most top teji_mandi were dropped: काजू (LR↔body: भाव ठहरे not तेजी), बादाम (no ₹), चीनी (contradicts today's own रुझान नरमी + recency), उड़द (commodity-recency 07-23, chose novel नमक). FMCG top-3 by LR after dedup+body-verify: Himalaya face wash (Retailer 6.86, ₹20 MRP 12+1), Pulse candy (Retailer 5.51, 650 jar + 50 Pops free), Medimix soap (Consumer 5.03, MRP ₹30 3+1). सेंटा फ्रेस (5.10) SWAPPED=LR↔body mismatch (body is a laddu+school-stationery dabba, not Centa Fresh) — flag for eng; Godrej No.1 4+1 (4.46) dropped=bare combo no price. News = जनऔषधि केंद्र सरकारी योजना (in-house; नकली घी news skipped=scam/raid bait, गांव-FMCG news skipped=topical repeat of 07-18). Badges = curved-banner FS145 (मैदा में तेजी / फेस वॉश 12+1 फ्री / जनऔषधि से कमाई); radial clearance 371/446/421 <=448. Slides composited via kc-card-render.py, QC'd (contact sheet + full-size read of tallest news card — no overlap). Weekday (Monday) → weekend Slack-to-Hritik handoff SKIPPED. Push JSON built with today's transparent PN badges; in final report for operator to paste manually.",
+      "picks": {
+        "mandi_bhav": [
+          {
+            "news_id": "bfb5c530-6f2a-4f96-b925-47a726b97895",
+            "label": "मैदा तेजी ₹28→₹30/किलो (+₹2, स्वस्तिक 50kg पैकेट, गेहूं महंगा) — MP teji_mandi LR 7.07, RED, novel"
+          },
+          {
+            "news_id": "e91b9ed5-f20f-4e4b-8651-c9ba17ca0206",
+            "label": "नमक तेजी थोक बैग ₹690→₹730 (+₹40, Nirma शुद्ध, 2kg पैक MRP ₹50) — MP teji_mandi LR 4.95, RED, novel"
+          },
+          {
+            "news_id": "66a67b74-91a3-4d5e-80fa-e95426d8a85e",
+            "label": "जीरा मंदी ₹22,800/क्विंटल (ऊंझा सुस्त, जयपुर हाजिर −₹1,000, मांग कमजोर) — in-house GREEN for balance"
+          }
+        ],
+        "fmcg": [
+          {
+            "news_id": "fc0e4806-5568-48d5-9bc7-a9a9cf3de383",
+            "label": "हिमालया नीम फेस वॉश — Retailer Scheme, ₹20 MRP, 12 पर 1 फ्री (12+1) (LR 6.86)"
+          },
+          {
+            "news_id": "eb27b981-e57d-4911-a149-6e3727cedb05",
+            "label": "पल्स कैंडी — Retailer Scheme, 650 पीस जार पर 50 पीस पल्स पॉप्स जेली फ्री (LR 5.51)"
+          },
+          {
+            "news_id": "935ca57d-74fa-4eeb-811b-713a4eba1628",
+            "label": "मेडिमिक्स 75g आयुर्वेदिक साबुन — Consumer Scheme, MRP ₹30, 3+1 फ्री (LR 5.03)"
+          }
+        ],
+        "trending_news": [
+          {
+            "news_id": "25e410d9-5737-4996-ad1f-d1c9ee54fcae",
+            "label": "जनऔषधि केंद्र सरकारी योजना — सस्ती दवा (ब्रांडेड से 50-90% सस्ती), दुकान खोलने पर ₹5 लाख तक मदद, हर खरीद पर 20% प्रोत्साहन — in-house"
+          }
+        ]
+      },
+      "also_shown": [
+        {
+          "news_id": "15901aba-477a-4614-8ff6-8b3904b7b028",
+          "label": "चीनी तेजी — teji_mandi LR 7.39 (top), NOT used: contradicts today's own रुझान (चीनी नरमी) + चीनी covered 07-24 मंदी/07-19 तेजी"
+        },
+        {
+          "news_id": "622b87a3-dd97-42e2-89a9-74b67b8e06d2",
+          "label": "काजू तेजी — teji_mandi LR 6.50, SWAPPED body-verify: LR↔body mismatch (body says भाव ठहरे/सुस्त ₹800-860, not तेजी) — flag for eng"
+        },
+        {
+          "news_id": "7c6859e5-8ce4-40f8-b275-5fc257e22ca0",
+          "label": "उड़द तेजी ₹90→105/किलो — teji_mandi LR 5.78, has figure but NOT used: उड़द featured 07-23 (commodity recency), chose novel नमक"
+        },
+        {
+          "news_id": "d5ecfeb9-cf24-4e5d-ae79-94935555d158",
+          "label": "बादाम तेजी — teji_mandi LR 5.85, SWAPPED body-verify: no ₹ figure (only 'अमेरिका/ऑस्ट्रेलिया उत्पादन कम')"
+        },
+        {
+          "news_id": "c56e848a-26d1-4eff-85a0-5e7bba5a4e35",
+          "label": "बाजरा मंदी ₹2200→2100/कुंतल — teji_mandi LR 7.02, clean GREEN backup, not needed (जीरा already GREEN)"
+        },
+        {
+          "news_id": "cf37c024-8fcc-43a4-a2f5-13a3e9d1ef25",
+          "label": "सेंटा फ्रेस — FMCG Retailer LR 5.10, SWAPPED: LR↔body mismatch (body is a laddu+school-stationery dabba ₹160/203pcs, not Centa Fresh candy) — flag for eng"
+        },
+        {
+          "news_id": "84144d3d-f6e2-4ed7-8d6d-00cd32b78a43",
+          "label": "Godrej No.1 साबुन 4+1 — FMCG Consumer LR 4.46, NOT used: bare 4+1 combo, no price; chose Medimix (5.03) w/ MRP ₹30"
+        },
+        {
+          "news_id": "a84947f2-14f9-4bbe-9e23-707093dedece",
+          "label": "Dabur Vatika Shampoo + ₹72 बादाम तेल फ्री — FMCG Consumer LR 4.18, clean backup, not needed"
+        },
+        {
+          "news_id": "bde35663-2904-4c69-bfbe-ba97aed83e8c",
+          "label": "सरसों तेल तेजी +₹200 ₹16,800 — in-house RED, NOT used: same commodity+direction as 07-26"
+        },
+        {
+          "news_id": "4feadf84-247c-40be-b0a1-5b4e3854c5ce",
+          "label": "काबुली चना तेजी ₹70-75/किलो — in-house RED, NOT used: same commodity+direction as 07-26"
+        },
+        {
+          "news_id": "4252c308-346d-4707-9138-3789ed323dc1",
+          "label": "गांव-कस्बों में छोटे पैकेट/FMCG बिक्री तेज — in-house news, NOT used: topical repeat of 07-18 (गांव किराना मांग)"
+        }
+      ]
     }
   ]
 }
