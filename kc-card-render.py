@@ -72,47 +72,47 @@ def b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-07-24)
+# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-07-27)
 CARDS = [
- # --- Commodity (mandi_bhav) — 2 तेजी/RED (मेथी, गुड़) + 1 मंदी/GREEN (चीनी) for direction balance ---
- dict(i=1, label="मंडी भाव", stripe=RED, headline="मेथीदाना",
-   price=f'{tri("up",RED)}₹7,700<span class="unit">/क्विंटल</span>',
-   sub=f'इस साल उत्पादन घटने और उत्पादक मंडियों में आवक कम रहने से मेथीदाना ₹7,700/क्विंटल पर मजबूत, आगे भी मजबूती के आसार · <b class="delta" style="color:{RED}">भाव मजबूत</b>',
-   l1="क्यों", v1="बीते साल के मुकाबले बुवाई कम, पुराना स्टॉक सीमित; उत्पादन घटने से भाव को सहारा",
-   l2="क्या करें", v2="मेथी का जरूरी स्टॉक समय रहते रख लें; निकट भविष्य में दाम मजबूत बने रहने के आसार"),
- dict(i=2, label="मंडी भाव", stripe=RED, headline="गुड़",
-   price=f'{tri("up",RED)}₹52<span class="unit">/किलो (थोक)</span>',
-   sub=f'मांग बढ़ने से गुड़ के थोक भाव तेज होकर ₹52/किलो तक पहुंचे; बाजार में मजबूती का रुख · <b class="delta" style="color:{RED}">थोक ₹52/किलो</b>',
-   l1="क्यों", v1="त्योहारी और सीजन की मांग बढ़ने से गुड़ में तेजी; अच्छी क्वालिटी माल की आपूर्ति सीमित",
-   l2="क्या करें", v2="भाव और चढ़ सकते हैं; अच्छी क्वालिटी का माल समय रहते खरीद लें"),
- dict(i=3, label="मंडी भाव", stripe=GREEN, headline="चीनी",
-   price=f'{tri("down",GREEN)}₹90<span class="unit">/क्विंटल गिरे</span>',
-   sub=f'थोक बाजार में चीनी के भाव ₹90/क्विंटल घटे; दुकानदारों को खरीद पर थोड़ी राहत · <b class="delta" style="color:{GREEN}">₹90 गिरावट</b>',
-   l1="क्यों", v1="बाजार में आपूर्ति सुधरने से चीनी के थोक भाव में ₹90/क्विंटल की नरमी दर्ज",
-   l2="क्या करें", v2="भाव नरम; जरूरत भर का माल लें, बड़ी खरीद से पहले भाव की चाल पर नजर रखें"),
+ # --- Commodity (mandi_bhav) — 2 तेजी/RED (मैदा, नमक; both novel MP teji_mandi) + 1 मंदी/GREEN (जीरा, in-house) for direction balance ---
+ dict(i=1, label="मंडी भाव", stripe=RED, headline="मैदा",
+   price=f'{tri("up",RED)}₹30<span class="unit">/किलो</span>',
+   sub=f'गेहूं महंगा होने से मैदा (50 किलो पैकेट) ₹28 से ₹2 बढ़कर ₹30/किलो; लागत मजबूत, आगे भी दबाव · <b class="delta" style="color:{RED}">+₹2/किलो</b>',
+   l1="क्यों", v1="गेहूं के दाम चढ़ने से मैदा की लागत बढ़ी; 50 किलो पैकेट पहले ₹28/किलो, अब ₹30/किलो",
+   l2="क्या करें", v2="मैदा का जरूरी स्टॉक अभी रख लें; लागत और बढ़ने के आसार, पुराने भाव पर बेच लें"),
+ dict(i=2, label="मंडी भाव", stripe=RED, headline="नमक",
+   price=f'{tri("up",RED)}₹730<span class="unit">/बैग (थोक)</span>',
+   sub=f'निरमा शुद्ध नमक का थोक बैग ₹690 से ₹40 बढ़कर ₹730; 2 किलो पैक की MRP अब ₹50 · <b class="delta" style="color:{RED}">+₹40/बैग</b>',
+   l1="क्यों", v1="नमक के थोक भाव में ₹40/बैग की तेजी; रेट लिस्ट बदली, 2 किलो पैक MRP अब ₹50",
+   l2="क्या करें", v2="रोज़ बिकने वाला माल; जरूरी स्टॉक रख लें और ग्राहक को नई MRP ₹50 पर ही बेचें"),
+ dict(i=3, label="मंडी भाव", stripe=GREEN, headline="जीरा",
+   price=f'{tri("down",GREEN)}₹22,800<span class="unit">/क्विंटल</span>',
+   sub=f'ऊंझा मंडी में जीरा ₹22,800/क्विंटल पर सुस्त; जयपुर हाजिर ₹1,000 घटा, मांग कमजोर · <b class="delta" style="color:{GREEN}">जयपुर −₹1,000</b>',
+   l1="क्यों", v1="ऊंचे दाम पर ग्राहकी ठंडी, नीलामी सुस्त और लिवाली कमजोर रहने से जीरे के भाव दबे",
+   l2="क्या करें", v2="अभी जरूरत भर ही जीरा खरीदें, बड़ा स्टॉक टालें; निकट में भाव नरम रहने के आसार"),
  # --- FMCG (fmcg) — top 3 by Like Rate desc across segments after dedup + brand-recency + body-verify ---
- #     (all 3 Retailer Scheme; Just jelly 6.37 skipped=same product as 07-20 dedup; 7 Star/Chass excluded=dedup; Tata salt swapped=no ₹; Fizz dropped=2nd antacid w/ Eno)
- dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="रॉयल डेयरी चॉकलेट",
-   price='<span class="offer" style="background:%s">जार पर 3 नग फ्री</span>'%SCHEME_GREEN,
-   sub='₹5 बिक्री वाली I-fly रॉयल डेयरी चॉकलेट का 30 नग वाला जार होलसेल ₹100; साथ 3 नग बिल्कुल फ्री · <b class="delta">₹50 मार्जिन + 3 फ्री</b>',
-   l1="स्कीम", v1="₹5 बिक्री वाली चॉकलेट के 30 नग का जार होलसेल ₹100; स्कीम में 3 नग फ्री",
-   l2="फायदा", v2="30 नग ₹150 में बिकते हैं—₹50 मार्जिन, ऊपर से 3 फ्री नग; बच्चों में तेज़ बिकने वाली"),
- dict(i=5, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="इनो",
-   price='<span class="offer" style="background:%s">100 पर 2 फ्री (जार)</span>'%SCHEME_GREEN,
-   sub='इनो का 100 सैशे वाला जार होलसेल ₹850, बिक्री ₹1,000; एक जार पर 2 सैशे (100+2) बिल्कुल फ्री · <b class="delta">₹150 मार्जिन</b>',
-   l1="स्कीम", v1="100 सैशे का जार होलसेल ₹850; एक जार पर 2 सैशे (100+2) बिल्कुल फ्री",
-   l2="फायदा", v2="पूरा जार ₹1,000 में बिकता है, ₹150 मार्जिन; एसिडिटी में तेज़ बिकने वाला भरोसेमंद माल"),
- dict(i=6, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="कोलगेट ब्रश",
-   price='<span class="offer" style="background:%s">11 पर 2 + ₹40 वाले 2 ब्रश फ्री</span>'%SCHEME_GREEN,
-   sub='₹18 MRP कोलगेट सुपर फ्लेक्सी टूथब्रश—11 पर 2 फ्री, साथ ₹40 वाले 2 ब्रश भी बिल्कुल फ्री · <b class="delta">कुल 4 ब्रश फ्री</b>',
-   l1="स्कीम", v1="₹18 MRP सुपर फ्लेक्सी टूथब्रश के 11 पर 2 फ्री; ऑफर में ₹40 वाले 2 ब्रश और फ्री",
-   l2="फायदा", v2="कुल 4 ब्रश मुफ्त; रोज़ बिकने वाला टूथब्रश, ग्राहक और दुकानदार दोनों को फायदा"),
- # --- News (trending_news) — FMCG cos hold biscuit/namkeen prices (in-house, market-impact, concrete %) ---
- dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="बिस्कुट-नमकीन",
-   price='<span class="news">अभी दाम नहीं बढ़ेंगे</span>',
-   sub='खाने के तेल समेत कच्चे माल के दाम ठंडे पड़ने से FMCG कंपनियों ने बिस्कुट-नमकीन-स्नैक्स के दाम बढ़ाना फिलहाल टाल दिया · <b class="delta">3-5% बढ़ोतरी टली</b>',
-   l1="क्यों ज़रूरी", v1="कच्चे माल का दबाव घटा; कंपनियां पहले 3-5% दाम बढ़ा चुकी थीं, अब स्थिर रखे",
-   l2="क्या करें", v2="पुराने स्टॉक का माल घाटे में न निकालें; नई रेट लिस्ट डिस्ट्रीब्यूटर से लेते रहें"),
+ #     (Himalaya 6.86 + Pulse 5.51 Retailer; Medimix 5.03 Consumer. सेंटा फ्रेस 5.10 swapped=LR↔body mismatch (laddu+stationery dabba); Colgate skipped=over-featured; Godrej No.1 4.46=bare 4+1 no price)
+ dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="हिमालया फेस वॉश",
+   price='<span class="offer" style="background:%s">12 पर 1 फ्री</span>'%SCHEME_GREEN,
+   sub='₹20 MRP वाली हिमालया नीम फेस वॉश—12 पीस खरीदने पर 1 पीस बिल्कुल फ्री (12+1) · <b class="delta">MRP ₹20 · 1 फ्री</b>',
+   l1="स्कीम", v1="₹20 MRP वाली हिमालया फेस वॉश की 12 पीस पर 1 पीस बिल्कुल फ्री (12+1 स्कीम)",
+   l2="फायदा", v2="हर 12 पर 1 मुफ्त—सीधा मार्जिन बढ़े; भरोसेमंद ब्रांड, गर्मी-मानसून में तेज़ बिक्री"),
+ dict(i=5, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="पल्स कैंडी",
+   price='<span class="offer" style="background:%s">जार पर 50 पॉप्स फ्री</span>'%SCHEME_GREEN,
+   sub='₹1 वाली पल्स कैंडी के 650 पीस जार के साथ 50 पीस पल्स पॉप्स जेली बिल्कुल फ्री · <b class="delta">650 जार + 50 फ्री</b>',
+   l1="स्कीम", v1="₹1 वाली पल्स कैंडी का 650 पीस जार; साथ में 50 पीस पल्स पॉप्स जेली फ्री",
+   l2="फायदा", v2="जार पर 50 पॉप्स मुफ्त—बच्चों में तेज़ बिकने वाली, काउंटर पर रखते ही चलती है"),
+ dict(i=6, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="मेडिमिक्स साबुन",
+   price='<span class="offer" style="background:%s">3 + 1 फ्री</span>'%SCHEME_BLUE,
+   sub='₹30 MRP वाला मेडिमिक्स 75g आयुर्वेदिक साबुन—3 पीस पर 1 पीस बिल्कुल फ्री (3+1) · <b class="delta">MRP ₹30</b>',
+   l1="ऑफर", v1="₹30 MRP वाला मेडिमिक्स 75g आयुर्वेदिक साबुन; 3 पीस खरीदने पर 1 पीस फ्री (3+1)",
+   l2="ग्राहक को", v2="हर 3 पर 1 साबुन मुफ्त—ग्राहक को सीधा फायदा; हर्बल साबुन की स्थिर मांग"),
+ # --- News (trending_news) — जनऔषधि केंद्र सरकारी योजना (in-house, earning-opportunity, concrete ₹) ---
+ dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="जनऔषधि केंद्र",
+   price='<span class="news">सस्ती दवा दुकान का मौका</span>',
+   sub='जनऔषधि केंद्र खोलने पर सरकार से ₹5 लाख तक मदद; ब्रांडेड से 50-90% सस्ती दवा और हर खरीद पर 20% प्रोत्साहन · <b class="delta">₹5 लाख तक मदद</b>',
+   l1="क्यों ज़रूरी", v1="गांव-कस्बे में सस्ती दवा की दुकान; ब्रांडेड से 50-90% सस्ती दवा, पक्की मांग",
+   l2="क्या करें", v2="फार्मासिस्ट और ~120 वर्ग फुट जगह चाहिए; janaushadhi.gov.in पर आवेदन करें"),
 ]
 
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
