@@ -1611,6 +1611,60 @@
           "label": "गांव-कस्बों में छोटे पैकेट/FMCG बिक्री तेज — in-house news, NOT used: topical repeat of 07-18 (गांव किराना मांग)"
         }
       ]
+    },
+    {
+      "date": "2026-07-28",
+      "_note": "Fresh full run (all 3 stories + badges republished live via update_story/update_story_entry_badges, actor Harsh Shrivastava). Commodity = बादाम गिरी (in-house मेवा, RED ₹910→₹1,000/kg, त्योहारी मांग) + बेसन (MP teji_mandi LR 7.34 RED, 500g ₹30→₹33, novel) + तिल तेल (in-house तेल-post, GREEN −₹300→₹18,500 for balance) = 2 RED + 1 GREEN, 3 distinct commodities. सोया/सरसों तेल SKIPPED=over-covered (07-19/07-25/07-26); चीनी नरम SKIPPED=commodity+direction recency (07-24 चीनी मंदी); सोया तेल MP cfb90212 SKIPPED=repeat of 07-25 ₹140→₹135. FMCG top-3 by LR after dedup+body-verify: Lifebuoy handwash (Consumer 5.60, ₹199 650ml 1+1), Oral-B combo (Retailer 5.46, 6+2 + ₹70 brush free), Dabur Hajmola (Retailer 4.32, ₹1 jar + 10 sachets ₹100 free). Dhan Kranti (Consumer 6.56) SWAPPED=obscure/unrenderable brand + MRP-drop shape ≠ Consumer-combo segment (see also_shown); Colgate (b9a42266 4.67 / ebfb6b97 4.10) SKIPPED=over-featured 07-18/07-24; All Out e4191515 (6.64) & Fena c2ff5d07 (5.64) DROPPED=no ₹ figure (pack-change only); chart-flower lollipop 27e227c7 (4.59) DROPPED=freebie, no price. News = FSSAI लाइसेंस उम्र भर मान्य (in-house policy/regulation, non-bait); नकली-UPI-स्क्रीनशॉट SKIPPED=scam/fraud bait; Udyam scheme SKIPPED=scheme fatigue (07-25/26/27 already schemes). Badges = curved-banner FS145 (बादाम में तेज़ी / हैंडवॉश 1+1 फ्री / FSSAI नियम आसान); radial clearance 371/421/417 <=448. Slides composited via kc-card-render.py, QC'd (contact sheet + full-size read of densest Oral-B & FSSAI cards — no overlap). Weekday (Tuesday) → weekend Slack-to-Hritik handoff SKIPPED. Push JSON built with today's transparent PN badges; in final report for operator to paste manually.",
+      "picks": {
+        "mandi_bhav": [
+          {
+            "news_id": "2abf7858-925b-43c0-8589-2fcd1781ab2e",
+            "label": "बादाम गिरी तेजी ₹910→₹1,000/किलो (कैलिफोर्निया, सावन-त्योहारी मांग+आयात लागत ऊंची) — in-house मेवा RED"
+          },
+          {
+            "news_id": "63987e5b-8700-4484-b6a4-b3e1fa504ed4",
+            "label": "बेसन तेजी 500g पैक ₹30→₹33 (+₹3, मिल आपूर्ति घटी+त्योहारी मांग; बिक्री ₹38 ₹5 मार्जिन) — MP teji_mandi LR 7.34 RED, novel"
+          },
+          {
+            "news_id": "3dd20d49-4b6e-4014-aad0-3888cc93fbe7",
+            "label": "तिल तेल मंदी ₹18,800→₹18,500/क्विंटल (−₹300, मांग कमजोर; सोया-सरसों तेजी के बीच अकेला नरम) — in-house तेल-post GREEN for balance"
+          }
+        ],
+        "fmcg": [
+          {
+            "news_id": "1d3f3999-97a9-4f70-ac24-6f0a78eeb1fe",
+            "label": "लाइफबॉय हैंडवॉश — Consumer Scheme, ₹199 MRP 650ml लिक्विड हैंडवॉश पाउच, एक पर एक फ्री (1+1) (LR 5.60)"
+          },
+          {
+            "news_id": "73176e7f-ba24-4c53-bfe6-ed249cb7fbde",
+            "label": "ऑरल-बी ब्रश कॉम्बो — Retailer Scheme, ₹55+₹35 कॉम्बो सेट, 6 पर 2 फ्री, ₹70 का ब्रश फ्री (LR 5.46)"
+          },
+          {
+            "news_id": "a91acddd-375a-4848-aaf8-0a2bb66fc10e",
+            "label": "डाबर हाजमोला — Retailer Scheme, ₹1 हाजमोला कैंडी जार पर ₹10 वाले 10 सैशे पैकेट फ्री (₹100 का माल) (LR 4.32)"
+          }
+        ],
+        "trending_news": [
+          {
+            "news_id": "5e1b7632-0b6b-41f8-811e-f815298115dc",
+            "label": "FSSAI लाइसेंस अब उम्र भर मान्य — बार-बार रिन्यू का झंझट खत्म; सालाना फीस+रिटर्न ज़रूरी — in-house policy/regulation"
+          }
+        ]
+      },
+      "also_shown": [
+        {
+          "news_id": "48839d08-4e5b-4a33-8a29-f112e0b15984",
+          "label": "Dhan Kranti (Consumer 6.56) — SWAPPED: obscure/unrenderable brand + MRP ₹268→₹229 +grammage shape ≠ Consumer-combo segment"
+        },
+        {
+          "news_id": "e4191515-4fbc-439d-ac84-884295aab7b1",
+          "label": "All Out Ultra packaging change (fmcg_product_change 6.64) — DROPPED: no ₹ figure (pack text change only)"
+        },
+        {
+          "news_id": "c2ff5d07-8bdc-4fec-9b72-c8c562444266",
+          "label": "Fena Power Wash 27→25 units (fmcg_product_change 5.64) — DROPPED: no ₹ price given"
+        }
+      ]
     }
   ]
 }
