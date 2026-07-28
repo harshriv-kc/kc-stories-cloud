@@ -72,47 +72,47 @@ def b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-07-27)
+# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-07-28)
 CARDS = [
- # --- Commodity (mandi_bhav) — 2 तेजी/RED (मैदा, नमक; both novel MP teji_mandi) + 1 मंदी/GREEN (जीरा, in-house) for direction balance ---
- dict(i=1, label="मंडी भाव", stripe=RED, headline="मैदा",
-   price=f'{tri("up",RED)}₹30<span class="unit">/किलो</span>',
-   sub=f'गेहूं महंगा होने से मैदा (50 किलो पैकेट) ₹28 से ₹2 बढ़कर ₹30/किलो; लागत मजबूत, आगे भी दबाव · <b class="delta" style="color:{RED}">+₹2/किलो</b>',
-   l1="क्यों", v1="गेहूं के दाम चढ़ने से मैदा की लागत बढ़ी; 50 किलो पैकेट पहले ₹28/किलो, अब ₹30/किलो",
-   l2="क्या करें", v2="मैदा का जरूरी स्टॉक अभी रख लें; लागत और बढ़ने के आसार, पुराने भाव पर बेच लें"),
- dict(i=2, label="मंडी भाव", stripe=RED, headline="नमक",
-   price=f'{tri("up",RED)}₹730<span class="unit">/बैग (थोक)</span>',
-   sub=f'निरमा शुद्ध नमक का थोक बैग ₹690 से ₹40 बढ़कर ₹730; 2 किलो पैक की MRP अब ₹50 · <b class="delta" style="color:{RED}">+₹40/बैग</b>',
-   l1="क्यों", v1="नमक के थोक भाव में ₹40/बैग की तेजी; रेट लिस्ट बदली, 2 किलो पैक MRP अब ₹50",
-   l2="क्या करें", v2="रोज़ बिकने वाला माल; जरूरी स्टॉक रख लें और ग्राहक को नई MRP ₹50 पर ही बेचें"),
- dict(i=3, label="मंडी भाव", stripe=GREEN, headline="जीरा",
-   price=f'{tri("down",GREEN)}₹22,800<span class="unit">/क्विंटल</span>',
-   sub=f'ऊंझा मंडी में जीरा ₹22,800/क्विंटल पर सुस्त; जयपुर हाजिर ₹1,000 घटा, मांग कमजोर · <b class="delta" style="color:{GREEN}">जयपुर −₹1,000</b>',
-   l1="क्यों", v1="ऊंचे दाम पर ग्राहकी ठंडी, नीलामी सुस्त और लिवाली कमजोर रहने से जीरे के भाव दबे",
-   l2="क्या करें", v2="अभी जरूरत भर ही जीरा खरीदें, बड़ा स्टॉक टालें; निकट में भाव नरम रहने के आसार"),
+ # --- Commodity (mandi_bhav) — 2 तेजी/RED (बादाम in-house मेवा, बेसन novel MP teji_mandi) + 1 मंदी/GREEN (तिल तेल, in-house) for balance ---
+ dict(i=1, label="मंडी भाव", stripe=RED, headline="बादाम गिरी",
+   price=f'{tri("up",RED)}₹1,000<span class="unit">/किलो</span>',
+   sub=f'कैलिफोर्निया बादाम गिरी ₹910 से ₹90 बढ़कर ₹1,000/किलो; सावन-त्योहारी मांग, आयात लागत ऊंची · <b class="delta" style="color:{RED}">+₹90/किलो</b>',
+   l1="क्यों", v1="त्योहारी मांग तेज़ और आयातित बादाम की लागत ऊंची; पिस्ता-साबूदाना भी मजबूत",
+   l2="क्या करें", v2="त्योहार से पहले बादाम-मेवा का स्टॉक अभी भर लें; मांग बढ़ने पर दाम और चढ़ेंगे"),
+ dict(i=2, label="मंडी भाव", stripe=RED, headline="बेसन",
+   price=f'{tri("up",RED)}₹33<span class="unit">/पैक (500g)</span>',
+   sub=f'बेसन का 500g पैक ₹30 से ₹3 बढ़कर ₹33; मिल आपूर्ति घटी और त्योहारी मांग, आगे भी तेज़ी · <b class="delta" style="color:{RED}">+₹3/पैक</b>',
+   l1="क्यों", v1="बेसन मिलों की आपूर्ति कम और त्योहारी मांग बढ़ने से 500g पैक ₹30 से ₹33 हुआ",
+   l2="क्या करें", v2="₹33 में खरीद, ₹38 में बिक्री—₹5 का मार्जिन; जरूरी स्टॉक अभी रखें, भाव और चढ़ेंगे"),
+ dict(i=3, label="मंडी भाव", stripe=GREEN, headline="तिल तेल",
+   price=f'{tri("down",GREEN)}₹18,500<span class="unit">/क्विंटल</span>',
+   sub=f'मांग कमजोर रहने से तिल तेल ₹18,800 से ₹300 घटकर ₹18,500/क्विंटल; बाकी तेलों में तेज़ी के बीच अकेला नरम · <b class="delta" style="color:{GREEN}">−₹300/क्विंटल</b>',
+   l1="क्यों", v1="तिल तेल की मांग सुस्त रहने से भाव ₹300 नरम; सोया-सरसों में तेज़ी पर तिल घटा",
+   l2="क्या करें", v2="अभी बड़ी खरीद टालें; भाव और नरम पड़ सकते हैं, जरूरत भर ही माल मंगाएं"),
  # --- FMCG (fmcg) — top 3 by Like Rate desc across segments after dedup + brand-recency + body-verify ---
- #     (Himalaya 6.86 + Pulse 5.51 Retailer; Medimix 5.03 Consumer. सेंटा फ्रेस 5.10 swapped=LR↔body mismatch (laddu+stationery dabba); Colgate skipped=over-featured; Godrej No.1 4.46=bare 4+1 no price)
- dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="हिमालया फेस वॉश",
-   price='<span class="offer" style="background:%s">12 पर 1 फ्री</span>'%SCHEME_GREEN,
-   sub='₹20 MRP वाली हिमालया नीम फेस वॉश—12 पीस खरीदने पर 1 पीस बिल्कुल फ्री (12+1) · <b class="delta">MRP ₹20 · 1 फ्री</b>',
-   l1="स्कीम", v1="₹20 MRP वाली हिमालया फेस वॉश की 12 पीस पर 1 पीस बिल्कुल फ्री (12+1 स्कीम)",
-   l2="फायदा", v2="हर 12 पर 1 मुफ्त—सीधा मार्जिन बढ़े; भरोसेमंद ब्रांड, गर्मी-मानसून में तेज़ बिक्री"),
- dict(i=5, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="पल्स कैंडी",
-   price='<span class="offer" style="background:%s">जार पर 50 पॉप्स फ्री</span>'%SCHEME_GREEN,
-   sub='₹1 वाली पल्स कैंडी के 650 पीस जार के साथ 50 पीस पल्स पॉप्स जेली बिल्कुल फ्री · <b class="delta">650 जार + 50 फ्री</b>',
-   l1="स्कीम", v1="₹1 वाली पल्स कैंडी का 650 पीस जार; साथ में 50 पीस पल्स पॉप्स जेली फ्री",
-   l2="फायदा", v2="जार पर 50 पॉप्स मुफ्त—बच्चों में तेज़ बिकने वाली, काउंटर पर रखते ही चलती है"),
- dict(i=6, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="मेडिमिक्स साबुन",
-   price='<span class="offer" style="background:%s">3 + 1 फ्री</span>'%SCHEME_BLUE,
-   sub='₹30 MRP वाला मेडिमिक्स 75g आयुर्वेदिक साबुन—3 पीस पर 1 पीस बिल्कुल फ्री (3+1) · <b class="delta">MRP ₹30</b>',
-   l1="ऑफर", v1="₹30 MRP वाला मेडिमिक्स 75g आयुर्वेदिक साबुन; 3 पीस खरीदने पर 1 पीस फ्री (3+1)",
-   l2="ग्राहक को", v2="हर 3 पर 1 साबुन मुफ्त—ग्राहक को सीधा फायदा; हर्बल साबुन की स्थिर मांग"),
- # --- News (trending_news) — जनऔषधि केंद्र सरकारी योजना (in-house, earning-opportunity, concrete ₹) ---
- dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="जनऔषधि केंद्र",
-   price='<span class="news">सस्ती दवा दुकान का मौका</span>',
-   sub='जनऔषधि केंद्र खोलने पर सरकार से ₹5 लाख तक मदद; ब्रांडेड से 50-90% सस्ती दवा और हर खरीद पर 20% प्रोत्साहन · <b class="delta">₹5 लाख तक मदद</b>',
-   l1="क्यों ज़रूरी", v1="गांव-कस्बे में सस्ती दवा की दुकान; ब्रांडेड से 50-90% सस्ती दवा, पक्की मांग",
-   l2="क्या करें", v2="फार्मासिस्ट और ~120 वर्ग फुट जगह चाहिए; janaushadhi.gov.in पर आवेदन करें"),
+ #     (Lifebuoy 5.60 Consumer; Oral-B 5.46 Retailer; Hajmola 4.32 Retailer. Dhan Kranti 6.56 swapped=obscure/unrenderable brand + MRP-drop shape != Consumer-combo; Colgate skipped=over-featured 07-18/07-24; All Out 6.64 & Fena 5.64 dropped=no Rs figure; lollipop 4.59 dropped=freebie no price)
+ dict(i=4, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="लाइफबॉय हैंडवॉश",
+   price='<span class="offer" style="background:%s">1 पर 1 फ्री</span>'%SCHEME_BLUE,
+   sub='MRP ₹199 वाला लाइफबॉय 650ml लिक्विड हैंडवॉश पाउच—एक के साथ एक हैंडवॉश बिल्कुल फ्री · <b class="delta">MRP ₹199</b>',
+   l1="ऑफर", v1="₹199 MRP वाला लाइफबॉय 650ml लिक्विड हैंडवॉश पाउच; एक पर एक हैंडवॉश फ्री (1+1)",
+   l2="ग्राहक को", v2="एक की कीमत में दो—ग्राहक को सीधा फायदा; भरोसेमंद ब्रांड, मानसून में तेज़ मांग"),
+ dict(i=5, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="ऑरल-बी ब्रश",
+   price='<span class="offer" style="background:%s">6 पर 2 फ्री</span>'%SCHEME_GREEN,
+   sub='ऑरल-बी ₹55+₹35 कॉम्बो ब्रश सेट—6 कॉम्बो पर 2 कॉम्बो बिल्कुल फ्री, ₹70 का ब्रश फ्री · <b class="delta">6+2 फ्री</b>',
+   l1="स्कीम", v1="ऑरल-बी का ₹55+₹35 कॉम्बो ब्रश सेट; 6 सेट खरीदने पर 2 सेट बिल्कुल फ्री (6+2)",
+   l2="फायदा", v2="हर 6 पर 2 मुफ्त—₹70 का ब्रश फ्री, सीधा मार्जिन; रोज़ बिकने वाला ज़रूरी सामान"),
+ dict(i=6, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="डाबर हाजमोला",
+   price='<span class="offer" style="background:%s">जार पर 10 पैकेट फ्री</span>'%SCHEME_GREEN,
+   sub='₹1 वाली डाबर हाजमोला कैंडी जार के साथ ₹10 वाले 10 हाजमोला सैशे पैकेट बिल्कुल फ्री · <b class="delta">₹100 का माल फ्री</b>',
+   l1="स्कीम", v1="₹1 वाली हाजमोला कैंडी का जार; साथ में ₹10 वाले 10 हाजमोला सैशे पैकेट फ्री",
+   l2="फायदा", v2="जार पर ₹100 का हाजमोला माल मुफ्त—डाबर का चलता ब्रांड, काउंटर पर तेज़ बिक्री"),
+ # --- News (trending_news) — FSSAI लाइसेंस नियम आसान (in-house, policy/regulation, non-bait) ---
+ dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="FSSAI लाइसेंस",
+   price='<span class="news">अब उम्र भर मान्य</span>',
+   sub='सरकार ने नियम आसान किए—FSSAI लाइसेंस/रजिस्ट्रेशन अब उम्र भर मान्य; हर 1-2 साल रिन्यू का झंझट खत्म · <b class="delta">सालाना फीस ज़रूरी</b>',
+   l1="क्यों ज़रूरी", v1="पैकेट बंद माल बेचने वाली हर किराना दुकान को FSSAI लाइसेंस चाहिए; अब बार-बार रिन्यू नहीं",
+   l2="क्या करें", v2="हर साल तय फीस भरें व सालाना जानकारी दें वरना लाइसेंस रुके; छोटी दुकान बेसिक रजिस्ट्रेशन से चलाए"),
 ]
 
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
