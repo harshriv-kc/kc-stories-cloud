@@ -1665,6 +1665,55 @@
           "label": "Fena Power Wash 27→25 units (fmcg_product_change 5.64) — DROPPED: no ₹ price given"
         }
       ]
+    },
+    {
+      "date": "2026-07-29",
+      "picks": {
+        "mandi_bhav": [
+          {
+            "news_id": "eaa6c430-996e-471d-8b0f-fe15fedb59ba",
+            "label": "लाल मिर्च तेजी ₹23,500/क्विंटल (+₹500, गुंटूर आवक कम, त्योहारी मांग) — in-house RED"
+          },
+          {
+            "news_id": "e8d147fb-991c-4165-b7bd-26bae1b6cdd9",
+            "label": "मसूर मंदी ₹6,800–6,925/क्विंटल (−₹300–400, कनाडा सस्ता आयात, मिल मांग कमजोर) — in-house GREEN"
+          },
+          {
+            "news_id": "73c67361-1cba-4fd0-ab58-f8b0ad6754d8",
+            "label": "सोया तेल मंदी ₹15,600/क्विंटल (−₹150, विदेशी आपूर्ति सुधरी, बिकवाली बढ़ी) — in-house GREEN (soya over-covered, kept for balance)"
+          }
+        ],
+        "fmcg": [
+          {
+            "news_id": "92483b27-a06e-4c3f-8cea-acba5a9ca5e9",
+            "label": "पार्ले लंडनडेरी चॉकलेट Retailer Scheme — ₹1 जार, बिक्री ₹150 पर 11 नग एक्स्ट्रा फ्री, ₹26 मार्जिन (LR 8.29)"
+          },
+          {
+            "news_id": "8a447e07-a725-42d8-bc73-b9c2a6bb15cb",
+            "label": "अल्पेनलीब क्लासिक एक्लेयर्स Retailer Scheme — ₹650 MRP जार ₹566, ₹199 लंच बॉक्स फ्री, ₹84 मार्जिन (LR 7.12)"
+          },
+          {
+            "news_id": "fd097cb4-8ac3-4572-9e28-bffad0de939f",
+            "label": "ईनो लेमन सॉल्ट Retailer Scheme — जार पर 100+2 नग फ्री (LR 6.44)"
+          }
+        ],
+        "trending_news": [
+          {
+            "news_id": "d8e34614-c940-4f80-b436-3613649fb963",
+            "label": "व्यावसायिक गैस सिलेंडर ~₹180 सस्ता (दिल्ली ~₹1,740, मुंबई ~₹2,885; कच्चा तेल ~$76/बैरल) — in-house, market-impact non-bait"
+          }
+        ]
+      },
+      "also_shown": [
+        {
+          "news_id": "f8308160-6f76-4b84-a06c-038fc4947e93",
+          "label": "Dant Kanti 40g Retailer 11+1 (LR 7.78) — SKIPPED: same brand+product as dedup 48839d08 (Dant Kanti)"
+        },
+        {
+          "news_id": "4834af1a-591a-4e38-b613-9dc6735702c8",
+          "label": "Parle toffee 80 unit free Retailer (LR 6.76) — SKIPPED: avoid Parle twice (Londonderry already picked)"
+        }
+      ]
     }
   ]
 }
