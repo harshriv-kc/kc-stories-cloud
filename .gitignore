@@ -17,6 +17,12 @@ raw_*.webp
 runs/
 .browser_profile/
 .vprofile/
+.tprofile/
+# prototype/mockup artifacts (slide-2 tip archetype exploration — not yet productionized)
+tip_*.png
+tip_*.html
+tip_*.raw
+tip_card.py
 __pycache__/
 *.pyc
 fmcg_*.jpg
