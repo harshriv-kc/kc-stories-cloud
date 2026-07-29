@@ -72,47 +72,47 @@ def b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-07-28)
+# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-07-29)
 CARDS = [
- # --- Commodity (mandi_bhav) — 2 तेजी/RED (बादाम in-house मेवा, बेसन novel MP teji_mandi) + 1 मंदी/GREEN (तिल तेल, in-house) for balance ---
- dict(i=1, label="मंडी भाव", stripe=RED, headline="बादाम गिरी",
-   price=f'{tri("up",RED)}₹1,000<span class="unit">/किलो</span>',
-   sub=f'कैलिफोर्निया बादाम गिरी ₹910 से ₹90 बढ़कर ₹1,000/किलो; सावन-त्योहारी मांग, आयात लागत ऊंची · <b class="delta" style="color:{RED}">+₹90/किलो</b>',
-   l1="क्यों", v1="त्योहारी मांग तेज़ और आयातित बादाम की लागत ऊंची; पिस्ता-साबूदाना भी मजबूत",
-   l2="क्या करें", v2="त्योहार से पहले बादाम-मेवा का स्टॉक अभी भर लें; मांग बढ़ने पर दाम और चढ़ेंगे"),
- dict(i=2, label="मंडी भाव", stripe=RED, headline="बेसन",
-   price=f'{tri("up",RED)}₹33<span class="unit">/पैक (500g)</span>',
-   sub=f'बेसन का 500g पैक ₹30 से ₹3 बढ़कर ₹33; मिल आपूर्ति घटी और त्योहारी मांग, आगे भी तेज़ी · <b class="delta" style="color:{RED}">+₹3/पैक</b>',
-   l1="क्यों", v1="बेसन मिलों की आपूर्ति कम और त्योहारी मांग बढ़ने से 500g पैक ₹30 से ₹33 हुआ",
-   l2="क्या करें", v2="₹33 में खरीद, ₹38 में बिक्री—₹5 का मार्जिन; जरूरी स्टॉक अभी रखें, भाव और चढ़ेंगे"),
- dict(i=3, label="मंडी भाव", stripe=GREEN, headline="तिल तेल",
-   price=f'{tri("down",GREEN)}₹18,500<span class="unit">/क्विंटल</span>',
-   sub=f'मांग कमजोर रहने से तिल तेल ₹18,800 से ₹300 घटकर ₹18,500/क्विंटल; बाकी तेलों में तेज़ी के बीच अकेला नरम · <b class="delta" style="color:{GREEN}">−₹300/क्विंटल</b>',
-   l1="क्यों", v1="तिल तेल की मांग सुस्त रहने से भाव ₹300 नरम; सोया-सरसों में तेज़ी पर तिल घटा",
-   l2="क्या करें", v2="अभी बड़ी खरीद टालें; भाव और नरम पड़ सकते हैं, जरूरत भर ही माल मंगाएं"),
- # --- FMCG (fmcg) — top 3 by Like Rate desc across segments after dedup + brand-recency + body-verify ---
- #     (Lifebuoy 5.60 Consumer; Oral-B 5.46 Retailer; Hajmola 4.32 Retailer. Dhan Kranti 6.56 swapped=obscure/unrenderable brand + MRP-drop shape != Consumer-combo; Colgate skipped=over-featured 07-18/07-24; All Out 6.64 & Fena 5.64 dropped=no Rs figure; lollipop 4.59 dropped=freebie no price)
- dict(i=4, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="लाइफबॉय हैंडवॉश",
-   price='<span class="offer" style="background:%s">1 पर 1 फ्री</span>'%SCHEME_BLUE,
-   sub='MRP ₹199 वाला लाइफबॉय 650ml लिक्विड हैंडवॉश पाउच—एक के साथ एक हैंडवॉश बिल्कुल फ्री · <b class="delta">MRP ₹199</b>',
-   l1="ऑफर", v1="₹199 MRP वाला लाइफबॉय 650ml लिक्विड हैंडवॉश पाउच; एक पर एक हैंडवॉश फ्री (1+1)",
-   l2="ग्राहक को", v2="एक की कीमत में दो—ग्राहक को सीधा फायदा; भरोसेमंद ब्रांड, मानसून में तेज़ मांग"),
- dict(i=5, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="ऑरल-बी ब्रश",
-   price='<span class="offer" style="background:%s">6 पर 2 फ्री</span>'%SCHEME_GREEN,
-   sub='ऑरल-बी ₹55+₹35 कॉम्बो ब्रश सेट—6 कॉम्बो पर 2 कॉम्बो बिल्कुल फ्री, ₹70 का ब्रश फ्री · <b class="delta">6+2 फ्री</b>',
-   l1="स्कीम", v1="ऑरल-बी का ₹55+₹35 कॉम्बो ब्रश सेट; 6 सेट खरीदने पर 2 सेट बिल्कुल फ्री (6+2)",
-   l2="फायदा", v2="हर 6 पर 2 मुफ्त—₹70 का ब्रश फ्री, सीधा मार्जिन; रोज़ बिकने वाला ज़रूरी सामान"),
- dict(i=6, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="डाबर हाजमोला",
-   price='<span class="offer" style="background:%s">जार पर 10 पैकेट फ्री</span>'%SCHEME_GREEN,
-   sub='₹1 वाली डाबर हाजमोला कैंडी जार के साथ ₹10 वाले 10 हाजमोला सैशे पैकेट बिल्कुल फ्री · <b class="delta">₹100 का माल फ्री</b>',
-   l1="स्कीम", v1="₹1 वाली हाजमोला कैंडी का जार; साथ में ₹10 वाले 10 हाजमोला सैशे पैकेट फ्री",
-   l2="फायदा", v2="जार पर ₹100 का हाजमोला माल मुफ्त—डाबर का चलता ब्रांड, काउंटर पर तेज़ बिक्री"),
- # --- News (trending_news) — FSSAI लाइसेंस नियम आसान (in-house, policy/regulation, non-bait) ---
- dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="FSSAI लाइसेंस",
-   price='<span class="news">अब उम्र भर मान्य</span>',
-   sub='सरकार ने नियम आसान किए—FSSAI लाइसेंस/रजिस्ट्रेशन अब उम्र भर मान्य; हर 1-2 साल रिन्यू का झंझट खत्म · <b class="delta">सालाना फीस ज़रूरी</b>',
-   l1="क्यों ज़रूरी", v1="पैकेट बंद माल बेचने वाली हर किराना दुकान को FSSAI लाइसेंस चाहिए; अब बार-बार रिन्यू नहीं",
-   l2="क्या करें", v2="हर साल तय फीस भरें व सालाना जानकारी दें वरना लाइसेंस रुके; छोटी दुकान बेसिक रजिस्ट्रेशन से चलाए"),
+ # --- Commodity (mandi_bhav) — 1 तेजी/RED (लाल मिर्च, in-house) + 2 मंदी/GREEN (मसूर, सोया तेल, in-house) for balance ---
+ dict(i=1, label="मंडी भाव", stripe=RED, headline="लाल मिर्च",
+   price=f'{tri("up",RED)}₹23,500<span class="unit">/क्विंटल</span>',
+   sub=f'गुंटूर लाइन में आवक कम और स्टॉकिस्ट लिवाली से लाल मिर्च ₹23,500/क्विंटल पर मजबूत; बीते हफ्ते ~₹500 चढ़ी, आगे और तेज़ी · <b class="delta" style="color:{RED}">+₹500/क्विंटल</b>',
+   l1="क्यों", v1="गुंटूर आवक घटी और स्टॉकिस्ट सक्रिय; मानसून का फसल पर असर, नई आवक कम रहने से मजबूती",
+   l2="क्या करें", v2="त्योहारी मांग से पहले जरूरी स्टॉक अभी भर लें; आगे ~₹500 और चढ़ने के आसार"),
+ dict(i=2, label="मंडी भाव", stripe=GREEN, headline="मसूर",
+   price=f'{tri("down",GREEN)}₹6,800<span class="unit">/क्विंटल</span>',
+   sub=f'देसी मोटी मसूर ₹300–400 घटकर ₹6,800–6,925/क्विंटल; कनाडा से सस्ता आयात और दाल मिलों की कमजोर मांग · <b class="delta" style="color:{GREEN}">−₹400/क्विंटल</b>',
+   l1="क्यों", v1="आयातित सस्ती मसूर (₹5,900–5,925) का दबाव और दाल मिलों की कमजोर मांग से भाव नरम",
+   l2="क्या करें", v2="सस्ती खरीद का मौका, पर एकसाथ ज्यादा नहीं—जरूरत भर ही स्टॉक करें, बड़ी गिरावट सीमित"),
+ dict(i=3, label="मंडी भाव", stripe=GREEN, headline="सोया तेल",
+   price=f'{tri("down",GREEN)}₹15,600<span class="unit">/क्विंटल</span>',
+   sub=f'सोया तेल ₹150 घटकर ₹15,600/क्विंटल; विदेशी आपूर्ति सुधरने और स्टॉकिस्ट बिकवाली से नरमी, मिल मांग कमजोर · <b class="delta" style="color:{GREEN}">−₹150/क्विंटल</b>',
+   l1="क्यों", v1="अमेरिका-ईरान तनाव थमने से आयात सुधरा, बिकवाली बढ़ी; सरसों-राइसब्रान भी नरम",
+   l2="क्या करें", v2="खरीदारी का अच्छा समय, पर आगे बड़ी गिरावट सीमित—जरूरत भर का स्टॉक भरें"),
+ # --- FMCG (fmcg) — top 3 by Like Rate desc across all segments after dedup + brand-recency + body-verify ---
+ #     Londonderry 8.29 (Retailer), Alpenliebe 7.12 (Retailer), Eno 6.44 (Retailer). Dant Kanti 7.78 SKIPPED = same brand+product as dedup 48839d08 (Dant Kanti). Parle toffee 6.76 SKIPPED = avoid Parle twice (Londonderry). Dabur lal manjan SKIPPED = Dabur featured 07-28 (Hajmola).
+ dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="लंडनडेरी चॉकलेट",
+   price='<span class="offer" style="background:%s">जार पर 11 नग फ्री</span>'%SCHEME_GREEN,
+   sub='₹1 वाली पार्ले लंडनडेरी चॉकलेट का जार—होलसेल ₹135, बिक्री ₹150 के साथ 11 नग एक्स्ट्रा फ्री; ₹26 का मार्जिन · <b class="delta">₹26 मार्जिन</b>',
+   l1="स्कीम", v1="₹1 पैकिंग वाला जार (पार्ले); ₹150 बिक्री पर 11 नग चॉकलेट एक्स्ट्रा बिल्कुल फ्री",
+   l2="फायदा", v2="जार पर ₹26 का सीधा मार्जिन; ₹1 वाली चॉकलेट काउंटर पर तेज़ बिकती है"),
+ dict(i=5, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="अल्पेनलीब एक्लेयर्स",
+   price='<span class="offer" style="background:%s">जार पर लंच बॉक्स फ्री</span>'%SCHEME_GREEN,
+   sub='₹650 MRP अल्पेनलीब क्लासिक एक्लेयर्स जार—खरीद ₹566, साथ में ₹199 MRP का लंच बॉक्स फ्री; ₹84 का मार्जिन · <b class="delta">₹84 मार्जिन</b>',
+   l1="स्कीम", v1="₹650 MRP जार ₹566 में; साथ में ₹199 MRP का लंच बॉक्स बिल्कुल फ्री",
+   l2="फायदा", v2="जार पर ₹84 का मार्जिन और मुफ्त लंच बॉक्स—ग्राहक को खींचने वाला ऑफर"),
+ dict(i=6, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="ईनो लेमन",
+   price='<span class="offer" style="background:%s">जार पर 100+2 नग फ्री</span>'%SCHEME_GREEN,
+   sub='ईनो लेमन सॉल्ट का जार—एक जार लेने पर अंदर 100+2 पीस बिल्कुल फ्री; चलती हुई किराना स्कीम · <b class="delta">100+2 फ्री</b>',
+   l1="स्कीम", v1="ईनो लेमन सॉल्ट का 1 जार खरीदने पर जार के अंदर 100+2 पीस फ्री",
+   l2="फायदा", v2="हर जार पर 2 पीस अतिरिक्त मुफ्त; तेज़ बिकने वाला भरोसेमंद ब्रांड"),
+ # --- News (trending_news) — व्यावसायिक गैस सिलेंडर सस्ता (in-house, market-impact, non-bait) ---
+ dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="गैस सिलेंडर सस्ता",
+   price='<span class="news">व्यावसायिक सिलेंडर ₹180 सस्ता</span>',
+   sub='19 किलो वाला व्यावसायिक LPG सिलेंडर इस महीने ~₹180 सस्ता—दिल्ली ~₹1,740, मुंबई ~₹2,885; कच्चा तेल ~$76/बैरल नरम · <b class="delta">₹180 राहत</b>',
+   l1="क्यों ज़रूरी", v1="चाय-नाश्ता-मिठाई-पैकिंग का काम व्यावसायिक सिलेंडर से; हर महीने का खर्च घटेगा",
+   l2="क्या करें", v2="कमर्शियल सिलेंडर पर लागत कम—मुनाफा बेहतर; घरेलू 14 किलो का भाव लगभग स्थिर"),
 ]
 
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
