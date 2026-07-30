@@ -1714,6 +1714,55 @@
           "label": "Parle toffee 80 unit free Retailer (LR 6.76) — SKIPPED: avoid Parle twice (Londonderry already picked)"
         }
       ]
+    },
+    {
+      "date": "2026-07-30",
+      "picks": {
+        "mandi_bhav": [
+          {
+            "news_id": "454f9ff3-8d55-4335-96c0-f099d1fd5fa3",
+            "label": "धनिया तेजी +₹200 → ₹16,200–16,500/क्विंटल (राजस्थान-MP-गुजरात नई फसल आवक घटी, माल की भारी कमी, निर्यात मांग) — in-house RED"
+          },
+          {
+            "news_id": "9ce9a1b9-9802-4ff3-bf0c-b37cde7d39f1",
+            "label": "सरसों तेल मंदी −₹200 → ₹16,400/क्विंटल (हरियाणा ₹16,300; तेल मिल कमजोर मांग + बिकवाली, सरसों बीज भी नरम) — in-house GREEN for balance"
+          },
+          {
+            "news_id": "9e4ab2fa-2a82-4790-a249-aa7d93e68b03",
+            "label": "राजमां चित्रा मंदी −₹400 → ₹11,200 से ₹10,800/क्विंटल (~3.5%, मुनाफावसूली बिकवाली; बीड-वारसी आपूर्ति टूटी, नरमी टिकाऊ नहीं) — in-house GREEN"
+          }
+        ],
+        "fmcg": [
+          {
+            "news_id": "740e5d75-0403-4cb6-b905-bc909c21cf39",
+            "label": "घड़ी डिटर्जेंट Retailer Scheme — 500g वाले 40 पैकेट के कट्टे पर 1 किलो घड़ी डिटर्जेंट फ्री (LR 6.63)"
+          },
+          {
+            "news_id": "356d65b7-7bb6-4fea-9d86-b5e03aaa0235",
+            "label": "कोलगेट ₹20 Retailer Scheme — 12 पीस बंडल पर ₹20 वाली 1 पीस फ्री (12+1) (LR 6.34)"
+          },
+          {
+            "news_id": "62c19940-7fca-4aa9-bfae-153fe79e4f52",
+            "label": "उजाला 75ml + EXO Consumer Scheme — ₹37 MRP उजाला के साथ ₹10 वाला EXO साबुन फ्री (LR 5.51)"
+          }
+        ],
+        "trending_news": [
+          {
+            "news_id": "95f60474-3330-4968-947e-93e6147cba37",
+            "label": "अगस्त चीनी कोटा 22.50 लाख टन जारी (जुलाई 22 लाख से आधा लाख ज्यादा; सप्लाई खुली, भाव स्थिर) — in-house market-impact, non-bait"
+          }
+        ]
+      },
+      "also_shown": [
+        {
+          "news_id": "3a3b624f-23fc-4c40-863d-3b049244b65c",
+          "label": "Smooth milk Retailer Scheme (LR 6.25) SWAPPED OUT — body vague, no ₹/MRP/box-size/count (just '1 box par 3 pec free')"
+        },
+        {
+          "news_id": "f56f0d64-a431-423f-a709-5e84dde3041d",
+          "label": "Dabur lal manjan Retailer Scheme (LR 5.56) SWAPPED OUT — Dabur brand featured 07-28 (Hajmola), brand-recency skip"
+        }
+      ]
     }
   ]
 }
