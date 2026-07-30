@@ -31,3 +31,6 @@ render_slide2.py
 __pycache__/
 *.pyc
 fmcg_*.jpg
+*_src.jpg
+*_src.jpeg
+*_src.png
