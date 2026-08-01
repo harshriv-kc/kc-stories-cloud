@@ -72,47 +72,48 @@ def b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-07-31)
+# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-08-01)
 CARDS = [
- # --- Commodity (mandi_bhav) — 2 तेजी/RED (अरहर, अमचूर, in-house) + 1 मंदी/GREEN (हल्दी, in-house) for balance ---
- dict(i=1, label="मंडी भाव", stripe=RED, headline="अरहर दाल",
-   price=f'{tri("up",RED)}₹8,225<span class="unit">/क्विंटल</span>',
-   sub=f'रंगून अरहर ₹225 चढ़कर ₹8,200–8,225/क्विंटल; दाल मिलों की खरीद तेज़, हाजिर माल कम—आगे ₹8,500 तक के आसार · <b class="delta" style="color:{RED}">+₹225/क्विंटल</b>',
-   l1="क्यों", v1="टमाटर-सब्ज़ी महंगी होने से अरहर दाल की खपत बढ़ी; हाजिर माल कम और आयात देरी से आ रहा",
-   l2="क्या करें", v2="जरूरी भंडार अभी भरें—आगे ₹8,500 तक जा सकता है; एकसाथ नहीं, दो-तीन बार में खरीदें"),
- dict(i=2, label="मंडी भाव", stripe=GREEN, headline="हल्दी",
-   price=f'{tri("down",GREEN)}₹17,900<span class="unit">/क्विंटल</span>',
-   sub=f'हल्दी ₹300 तक सस्ती—इंदौर लाइन ₹17,800–18,000/क्विंटल; वायदा भी 0.73% गिरकर ₹20,208 · <b class="delta" style="color:{GREEN}">−₹300/क्विंटल</b>',
-   l1="क्यों", v1="ग्राहकी कमजोर पड़ने और मुनाफावसूली की बिकवाली से भाव टूटे",
-   l2="क्या करें", v2="घटे भाव पर जरूरत का माल लें; सीमित भंडार से नई फसल तक भाव ऊंचे रहने के आसार"),
- dict(i=3, label="मंडी भाव", stripe=RED, headline="अमचूर",
-   price=f'{tri("up",RED)}₹175<span class="unit">/किलो</span>',
-   sub=f'जगदलपुर लाइन नया अमचूर ₹170–175/किलो, हल्का माल ₹135–140; माल की भारी कमी से व्यापारी अब ₹200 तक बोलने लगे · <b class="delta" style="color:{RED}">₹200 की ओर</b>',
-   l1="क्यों", v1="इस साल उत्पादन घटा और पुराना भंडार खत्म; उत्पादकों ने कच्चा आम काटने के बजाय पकाया",
-   l2="क्या करें", v2="जरूरी अमचूर अभी उठा लें; त्योहारों में खटाई-चाट मसाले की मांग तेज़ रहेगी"),
- # --- FMCG (fmcg) — top 3 by Like Rate desc across all segments after dedup + brand-recency + body-verify ---
- #     Oral-B 5.92 (Retailer), Navratna 4.83 (Consumer), Close Up 4.80 (Retailer). Ujala 5.89 / Ghadi 5.78 / Dant Kanti 4.71 SKIPPED = in 12-day dedup ledger. Dhan Kranti 5.74 SKIPPED = garbled body, unidentifiable/obscure brand.
- dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="ओरल-बी ब्रश",
-   price='<span class="offer" style="background:%s">11+2 फ्री</span>'%SCHEME_GREEN,
-   sub='₹18 MRP वाले ओरल-बी टूथब्रश के 11 पीस खरीदने पर 2 पीस बिल्कुल फ्री—रिटेलर स्कीम · <b class="delta">11+2 फ्री</b>',
-   l1="स्कीम", v1="₹18 MRP ओरल-बी ब्रश—11 पीस खरीदने पर 2 पीस बिल्कुल मुफ्त",
-   l2="फायदा", v2="हर 11 पीस पर 2 ब्रश फ्री; रोज़ बिकने वाला भरोसेमंद ब्रांड"),
- dict(i=5, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="नवरत्न कूल टैल्क",
-   price='<span class="offer" style="background:%s">नवरत्न ऑयल फ्री</span>'%SCHEME_BLUE,
-   sub='बिक्री ₹105 वाली नवरत्न कूल टैल्क के साथ एक नवरत्न हेयर ऑयल बिल्कुल फ्री; खरीद ₹95, ₹10 का मार्जिन · <b class="delta">ऑयल फ्री</b>',
-   l1="ऑफर", v1="नवरत्न कूल टैल्क (बिक्री ₹105) के साथ नवरत्न हेयर ऑयल बिल्कुल फ्री",
-   l2="ग्राहक को", v2="एक पैक में कूल टैल्क और मुफ्त हेयर ऑयल—ग्राहक को सीधी बचत"),
- dict(i=6, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="क्लोज़अप ₹20",
-   price='<span class="offer" style="background:%s">6+1 फ्री</span>'%SCHEME_GREEN,
-   sub='₹20 MRP वाली क्लोज़अप टूथपेस्ट खरीद ₹18 में; 6 पीस पर 1 पीस बिल्कुल फ्री · <b class="delta">6+1 फ्री</b>',
-   l1="स्कीम", v1="₹20 MRP क्लोज़अप—खरीद ₹18 प्रति पीस, 6 खरीदने पर 1 पीस फ्री",
-   l2="फायदा", v2="हर 6 पीस पर ₹20 का 1 पीस मुफ्त; तेज़ बिकने वाला टूथपेस्ट"),
- # --- News (trending_news) — प्याज सालभर में 51% महंगा, आलू-टमाटर सस्ते (in-house, market-impact, non-bait) ---
- dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="प्याज महंगा",
-   price='<span class="news">प्याज थोक भाव सालभर में 51% ऊपर</span>',
-   sub='थोक भाव ₹2,012/क्विंटल (पिछले साल ₹1,328); हफ्तेभर में 9% चढ़ा—पर आलू-टमाटर सस्ते, टमाटर 48% नीचे · <b class="delta">+51% सालाना</b>',
-   l1="क्यों ज़रूरी", v1="प्याज महंगा होने से ग्राहक की जेब पर असर; सरकार ने भंडार खरीद ₹2,125/क्विंटल की",
-   l2="क्या करें", v2="प्याज थोड़ा-थोड़ा मंगाएं, सड़न-नुकसान से बचें; सस्ते आलू-टमाटर से ग्राहक खींचें"),
+ # --- Commodity (mandi_bhav) — 2 तेजी/RED (मटर, राई, in-house) + 1 मंदी/GREEN (सौंठ, in-house) for balance ---
+ dict(i=1, label="मंडी भाव", stripe=RED, headline="मटर",
+   price=f'{tri("up",RED)}₹4,300<span class="unit">/क्विंटल</span>',
+   sub=f'मटर ₹50 चढ़कर ₹4,300/क्विंटल; दिल्ली में विदेशी मटर ₹4,350–4,400, हरी देसी ₹4,950–5,050—लगातार मांग से मजबूती · <b class="delta" style="color:{RED}">+₹50/क्विंटल</b>',
+   l1="क्यों", v1="महीनेभर से स्थानीय और चालानी मांग तेज़; मुंद्रा बंदरगाह पर भी ऊंचे भाव बोले गए",
+   l2="क्या करें", v2="नरम भाव में जरूरी मटर-मटर दाल अभी भर लें; त्योहारी मांग पर भाव और चढ़ सकते हैं"),
+ dict(i=2, label="मंडी भाव", stripe=GREEN, headline="सौंठ",
+   price=f'{tri("down",GREEN)}₹31,500<span class="unit">/क्विंटल</span>',
+   sub=f'सौंठ ₹500 सस्ती—दिल्ली ₹31,500–34,500/क्विंटल, सक्रिय भाव ₹32,000; पर सीमित उपलब्धता से आगे फिर तेजी के संकेत · <b class="delta" style="color:{GREEN}">−₹500/क्विंटल</b>',
+   l1="क्यों", v1="मांग कमजोर और उठाव न निकलने से भाव नरम; पर निर्यात 11% बढ़ा और उपलब्धता तंग है",
+   l2="क्या करें", v2="घटे भाव पर जरूरत का माल भर लें; सर्दी-त्योहारी खपत में सौंठ फिर तेज़ हो सकती है"),
+ dict(i=3, label="मंडी भाव", stripe=RED, headline="राई",
+   price=f'{tri("up",RED)}₹15,700<span class="unit">/क्विंटल</span>',
+   sub=f'राई एक ही दिन में ₹1,300 उछलकर ₹15,500–15,700/क्विंटल—अब तक के सबसे ऊंचे स्तर पर; अचार-मसाले की मांग तेज़ · <b class="delta" style="color:{RED}">+₹1,300/क्विंटल</b>',
+   l1="क्यों", v1="अचार और मसालों की लगातार निकलती मांग से राई में जोरदार तेजी आई",
+   l2="क्या करें", v2="राई का स्टॉक सोच-समझकर भरें; भाव अब तक के ऊंचे स्तर पर, जरूरत भर का ही माल उठाएं"),
+ # --- FMCG (fmcg) — top 3 by Like Rate desc across ALL 4 segments after ledger dedup (news_id + 7-day brand) + body-verify ---
+ #     Jasmin Mehndi 8.19 (Retailer), Fevikwik 6.52 (Retailer), Laser 6.26 (Retailer). Breaks the oral-care streak (beauty/adhesive/grooming).
+ #     SKIPPED as brand-dup(7d): Boomer 8.05, Alpenliebe 6.97, Dant Kanti 6.70, Hajmola 6.34, Pulse 5.66, Vim 5.35, Ghadi 5.14, Colgate 5.12, Close Up 4.99, Oral-B 4.74, Himalaya 4.51, Dabur 4.48. SKIPPED no-number: Sargam Surf 4.48.
+ dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="जैस्मिन मेहंदी",
+   price='<span class="offer" style="background:%s">12 शैंपू फ्री</span>'%SCHEME_GREEN,
+   sub='₹85 में जैस्मिन मेहंदी कोन का बॉक्स (12 कोन, बिक्री ₹120), साथ ₹1 वाले 12 डैंड्रफ शैंपू बिल्कुल फ्री · <b class="delta">12 शैंपू फ्री</b>',
+   l1="स्कीम", v1="₹85 का 12-कोन बॉक्स, ₹120 की बिक्री; ऊपर से 12 शैंपू सैशे मुफ्त",
+   l2="फायदा", v2="₹35 का सीधा मार्जिन और 12 फ्री शैंपू; त्योहारों में तेज़ बिकने वाला माल"),
+ dict(i=5, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="फेविक्विक",
+   price='<span class="offer" style="background:%s">₹120 मार्जिन</span>'%SCHEME_GREEN,
+   sub='₹310 में होलसेल पैकेट—84 यूनिट, ₹420 की बिक्री; ₹120 का मार्जिन और ऊपर से ₹10 की स्कीम · <b class="delta">₹120 मार्जिन</b>',
+   l1="स्कीम", v1="84 यूनिट का पैकेट ₹310; हर यूनिट ₹5 बिक्री, साथ ₹10 की अतिरिक्त स्कीम",
+   l2="फायदा", v2="पूरा पैकेट बेचने पर ₹120 का मार्जिन; रोज़ बिकने वाला भरोसेमंद प्रोडक्ट"),
+ dict(i=6, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="लेज़र ब्लेड",
+   price='<span class="offer" style="background:%s">क्रीम फ्री</span>'%SCHEME_GREEN,
+   sub='60 पीस ट्रिपल-कोटेड लेज़र ब्लेड का पैकेट ₹450 (₹7.5 प्रति पीस) खरीदने पर 100g लेज़र शेविंग क्रीम फ्री · <b class="delta">क्रीम फ्री</b>',
+   l1="स्कीम", v1="60 पीस ब्लेड ₹450 पर 100g शेविंग क्रीम बिल्कुल मुफ्त",
+   l2="फायदा", v2="₹10 बिक्री पर हर पीस ₹2.5 मुनाफा + फ्री क्रीम; रोज़ की जरूरत का सामान"),
+ # --- News (trending_news) — PMFME योजना: खाद्य कारोबार पर ₹10 लाख तक सब्सिडी (in-house scheme, concrete number, non-bait) ---
+ dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="₹10 लाख सौगात",
+   price='<span class="news">खाद्य कारोबार पर ₹10 लाख तक सरकारी मदद</span>',
+   sub='PMFME योजना में मशीन-पैकिंग खर्च का 35% (अधिकतम ₹10 लाख) सरकार देती है—यह रकम कर्ज से घट जाती है; जुलाई 2026 तक 2 लाख+ को लाभ · <b class="delta">35% सब्सिडी</b>',
+   l1="क्यों ज़रूरी", v1="आटा चक्की, मसाला, अचार-पापड़, बेकरी जैसे खाद्य काम पर सीधी सब्सिडी—लागत घटती है",
+   l2="क्या करें", v2="Udyam/FSSAI पंजीयन के साथ योजना की website या जिला संसाधन व्यक्ति से आवेदन करें"),
 ]
 
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
