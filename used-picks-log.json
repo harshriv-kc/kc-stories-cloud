@@ -2183,6 +2183,53 @@
      "brand": "patanjali-dant-kanti"
     }
    ]
+  },
+  {
+   "date": "2026-08-01",
+   "picks": {
+    "mandi_bhav": [
+     {
+      "news_id": "85bf8fb1-262e-44c8-98c9-204bf0854b7a",
+      "label": "मटर तेजी ₹4,300",
+      "brand": "matar"
+     },
+     {
+      "news_id": "1a6816a0-0d07-4332-8f34-3cf5da3a21b2",
+      "label": "सौंठ मंदी ₹31,500",
+      "brand": "saunth"
+     },
+     {
+      "news_id": "daa9fb3c-8a5f-4e03-b701-93c47555788e",
+      "label": "राई तेजी ₹15,700",
+      "brand": "rai"
+     }
+    ],
+    "fmcg": [
+     {
+      "news_id": "e615fd4d-0721-45ce-8ac9-df5348459cbb",
+      "label": "जैस्मिन मेहंदी 12 शैंपू फ्री (Retailer)",
+      "brand": "jasmine-mehndi"
+     },
+     {
+      "news_id": "36191e4e-64d3-4b22-9eec-553adf7c892b",
+      "label": "फेविक्विक ₹120 मार्जिन (Retailer)",
+      "brand": "fevikwik"
+     },
+     {
+      "news_id": "486da5d3-6ee5-436f-aa05-c2507fcac1eb",
+      "label": "लेज़र ब्लेड क्रीम फ्री (Retailer)",
+      "brand": "laser-shaving"
+     }
+    ],
+    "trending_news": [
+     {
+      "news_id": "f8f413a6-77e2-4065-9a96-fdda06cc1ca1",
+      "label": "PMFME योजना ₹10 लाख सब्सिडी",
+      "brand": "pmfme-scheme"
+     }
+    ]
+   },
+   "also_shown": []
   }
  ],
  "brand_dedup_window_days": 7
