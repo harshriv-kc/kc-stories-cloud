@@ -72,48 +72,48 @@ def b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-08-01)
+# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-08-02)
 CARDS = [
- # --- Commodity (mandi_bhav) — 2 तेजी/RED (मटर, राई, in-house) + 1 मंदी/GREEN (सौंठ, in-house) for balance ---
- dict(i=1, label="मंडी भाव", stripe=RED, headline="मटर",
-   price=f'{tri("up",RED)}₹4,300<span class="unit">/क्विंटल</span>',
-   sub=f'मटर ₹50 चढ़कर ₹4,300/क्विंटल; दिल्ली में विदेशी मटर ₹4,350–4,400, हरी देसी ₹4,950–5,050—लगातार मांग से मजबूती · <b class="delta" style="color:{RED}">+₹50/क्विंटल</b>',
-   l1="क्यों", v1="महीनेभर से स्थानीय और चालानी मांग तेज़; मुंद्रा बंदरगाह पर भी ऊंचे भाव बोले गए",
-   l2="क्या करें", v2="नरम भाव में जरूरी मटर-मटर दाल अभी भर लें; त्योहारी मांग पर भाव और चढ़ सकते हैं"),
- dict(i=2, label="मंडी भाव", stripe=GREEN, headline="सौंठ",
-   price=f'{tri("down",GREEN)}₹31,500<span class="unit">/क्विंटल</span>',
-   sub=f'सौंठ ₹500 सस्ती—दिल्ली ₹31,500–34,500/क्विंटल, सक्रिय भाव ₹32,000; पर सीमित उपलब्धता से आगे फिर तेजी के संकेत · <b class="delta" style="color:{GREEN}">−₹500/क्विंटल</b>',
-   l1="क्यों", v1="मांग कमजोर और उठाव न निकलने से भाव नरम; पर निर्यात 11% बढ़ा और उपलब्धता तंग है",
-   l2="क्या करें", v2="घटे भाव पर जरूरत का माल भर लें; सर्दी-त्योहारी खपत में सौंठ फिर तेज़ हो सकती है"),
- dict(i=3, label="मंडी भाव", stripe=RED, headline="राई",
-   price=f'{tri("up",RED)}₹15,700<span class="unit">/क्विंटल</span>',
-   sub=f'राई एक ही दिन में ₹1,300 उछलकर ₹15,500–15,700/क्विंटल—अब तक के सबसे ऊंचे स्तर पर; अचार-मसाले की मांग तेज़ · <b class="delta" style="color:{RED}">+₹1,300/क्विंटल</b>',
-   l1="क्यों", v1="अचार और मसालों की लगातार निकलती मांग से राई में जोरदार तेजी आई",
-   l2="क्या करें", v2="राई का स्टॉक सोच-समझकर भरें; भाव अब तक के ऊंचे स्तर पर, जरूरत भर का ही माल उठाएं"),
+ # --- Commodity (mandi_bhav) — 2 तेजी/RED (सरसों तेल, गेहूं, in-house) + 1 मंदी/GREEN (मूंग, in-house) for balance ---
+ dict(i=1, label="मंडी भाव", stripe=RED, headline="सरसों तेल",
+   price=f'{tri("up",RED)}₹16,600<span class="unit">/क्विंटल</span>',
+   sub=f'सरसों तेल ₹100 उछलकर ₹16,600/क्विंटल; टिन ₹2,700–3,000, दादरी ₹16,500; आवक घटी और मिल मांग निकली · <b class="delta" style="color:{RED}">+₹100/क्विंटल</b>',
+   l1="क्यों", v1="मंडियों में सरसों की आवक घटी और तेल मिलों की मांग निकली; सरसों बीज भी ₹50 तेज़ हुआ",
+   l2="क्या करें", v2="भाव ऊंचे स्तर पर हैं—सरसों तेल की खरीद अभी सिर्फ जरूरत भर की करें"),
+ dict(i=2, label="मंडी भाव", stripe=GREEN, headline="मूंग",
+   price=f'{tri("down",GREEN)}₹6,100–8,000<span class="unit">/क्विंटल</span>',
+   sub=f'मूंग ₹100 टूटकर ₹6,100–8,000/क्विंटल; राजस्थान ₹6,100–6,700, UP ₹7,000–8,000; गर्मी फसल आई, मिल मांग सुस्त · <b class="delta" style="color:{GREEN}">−₹100/क्विंटल</b>',
+   l1="क्यों", v1="गर्मी वाली मूंग मंडियों में आ गई और दाल मिलें ऊंचे भाव पर खरीद नहीं कर रहीं",
+   l2="क्या करें", v2="नीचे भाव पर जरूरत का माल भर लें; MP सरकारी खरीद शुरू होते ही भाव लौट सकते हैं, ज्यादा स्टॉक न करें"),
+ dict(i=3, label="मंडी भाव", stripe=RED, headline="गेहूं",
+   price=f'{tri("up",RED)}₹2,840<span class="unit">/क्विंटल</span>',
+   sub=f'गेहूं ₹10–15 चढ़कर मिल डिलीवरी ₹2,825–2,840/क्विंटल; आटा ₹1,560, मैदा ₹1,630, सूजी ₹1,710 भी महंगे · <b class="delta" style="color:{RED}">+₹15/क्विंटल</b>',
+   l1="क्यों", v1="सरकारी खरीद बाद खुले बाजार में गेहूं कम; आटा मिलों को त्योहारी सीजन के लिए लगातार चाहिए",
+   l2="क्या करें", v2="आटा-मैदा-सूजी रोज़ बिकते हैं—अगले कुछ दिनों का माल अभी उठा लें"),
  # --- FMCG (fmcg) — top 3 by Like Rate desc across ALL 4 segments after ledger dedup (news_id + 7-day brand) + body-verify ---
- #     Jasmin Mehndi 8.19 (Retailer), Fevikwik 6.52 (Retailer), Laser 6.26 (Retailer). Breaks the oral-care streak (beauty/adhesive/grooming).
- #     SKIPPED as brand-dup(7d): Boomer 8.05, Alpenliebe 6.97, Dant Kanti 6.70, Hajmola 6.34, Pulse 5.66, Vim 5.35, Ghadi 5.14, Colgate 5.12, Close Up 4.99, Oral-B 4.74, Himalaya 4.51, Dabur 4.48. SKIPPED no-number: Sargam Surf 4.48.
- dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="जैस्मिन मेहंदी",
-   price='<span class="offer" style="background:%s">12 शैंपू फ्री</span>'%SCHEME_GREEN,
-   sub='₹85 में जैस्मिन मेहंदी कोन का बॉक्स (12 कोन, बिक्री ₹120), साथ ₹1 वाले 12 डैंड्रफ शैंपू बिल्कुल फ्री · <b class="delta">12 शैंपू फ्री</b>',
-   l1="स्कीम", v1="₹85 का 12-कोन बॉक्स, ₹120 की बिक्री; ऊपर से 12 शैंपू सैशे मुफ्त",
-   l2="फायदा", v2="₹35 का सीधा मार्जिन और 12 फ्री शैंपू; त्योहारों में तेज़ बिकने वाला माल"),
- dict(i=5, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="फेविक्विक",
-   price='<span class="offer" style="background:%s">₹120 मार्जिन</span>'%SCHEME_GREEN,
-   sub='₹310 में होलसेल पैकेट—84 यूनिट, ₹420 की बिक्री; ₹120 का मार्जिन और ऊपर से ₹10 की स्कीम · <b class="delta">₹120 मार्जिन</b>',
-   l1="स्कीम", v1="84 यूनिट का पैकेट ₹310; हर यूनिट ₹5 बिक्री, साथ ₹10 की अतिरिक्त स्कीम",
-   l2="फायदा", v2="पूरा पैकेट बेचने पर ₹120 का मार्जिन; रोज़ बिकने वाला भरोसेमंद प्रोडक्ट"),
- dict(i=6, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="लेज़र ब्लेड",
-   price='<span class="offer" style="background:%s">क्रीम फ्री</span>'%SCHEME_GREEN,
-   sub='60 पीस ट्रिपल-कोटेड लेज़र ब्लेड का पैकेट ₹450 (₹7.5 प्रति पीस) खरीदने पर 100g लेज़र शेविंग क्रीम फ्री · <b class="delta">क्रीम फ्री</b>',
-   l1="स्कीम", v1="60 पीस ब्लेड ₹450 पर 100g शेविंग क्रीम बिल्कुल मुफ्त",
-   l2="फायदा", v2="₹10 बिक्री पर हर पीस ₹2.5 मुनाफा + फ्री क्रीम; रोज़ की जरूरत का सामान"),
- # --- News (trending_news) — PMFME योजना: खाद्य कारोबार पर ₹10 लाख तक सब्सिडी (in-house scheme, concrete number, non-bait) ---
- dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="₹10 लाख सौगात",
-   price='<span class="news">खाद्य कारोबार पर ₹10 लाख तक सरकारी मदद</span>',
-   sub='PMFME योजना में मशीन-पैकिंग खर्च का 35% (अधिकतम ₹10 लाख) सरकार देती है—यह रकम कर्ज से घट जाती है; जुलाई 2026 तक 2 लाख+ को लाभ · <b class="delta">35% सब्सिडी</b>',
-   l1="क्यों ज़रूरी", v1="आटा चक्की, मसाला, अचार-पापड़, बेकरी जैसे खाद्य काम पर सीधी सब्सिडी—लागत घटती है",
-   l2="क्या करें", v2="Udyam/FSSAI पंजीयन के साथ योजना की website या जिला संसाधन व्यक्ति से आवेदन करें"),
+ #     Just Jelly 9.05 (Retailer), Ankit Coffee Candy 8.56 (Retailer), Nirma Lime Fresh 6.63 (product_change). 2 candy schemes + 1 soap product-change for visual variety.
+ #     REJECTED no-number (body-verify): Mantos 9.91, 7-Star supari 8.30, Derby 7.81. SKIPPED brand-dup(7d): Closeup 9.04, Colgate 8.92/8.35/7.44, Navratna 8.68, Alpenliebe 7.22, Jasmine 7.53, Fevikwik 5.27, Ujala 5.12, etc.
+ dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="जस्ट जेली",
+   price='<span class="offer" style="background:%s">लंच बॉक्स फ्री</span>'%SCHEME_GREEN,
+   sub='₹1 वाली जस्ट जेली का बड़ा जार (1,200 पीस) होलसेल ₹1,050, बिक्री ₹1,200; साथ लंच बॉक्स फ्री और Buy 1 Get 1 फ्री · <b class="delta">₹150 मार्जिन</b>',
+   l1="स्कीम", v1="₹1,050 में 1,200 पीस का जार, बिक्री ₹1,200; ऊपर से लंच बॉक्स फ्री और Buy 1 Get 1 फ्री",
+   l2="फायदा", v2="पूरा जार बिकने पर ₹150 का सीधा मार्जिन; ₹1 प्राइस पॉइंट पर तेज़ बिकने वाला माल"),
+ dict(i=5, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="अंकित कॉफी कैंडी",
+   price='<span class="offer" style="background:%s">फ्री गिफ्ट अंदर</span>'%SCHEME_GREEN,
+   sub='₹1 वाली अंकित कॉफी कैंडी का बॉक्स होलसेल ₹160 (240 पीस), बिक्री ₹200; साथ फ्री गिफ्ट अंदर · <b class="delta">₹40 मार्जिन</b>',
+   l1="स्कीम", v1="₹160 के बॉक्स में 240 पीस, हर पीस ₹1 बिक्री; ऊपर से फ्री गिफ्ट अंदर",
+   l2="फायदा", v2="पूरा बॉक्स बिकने पर ₹40 का मार्जिन; कॉफी फ्लेवर कैंडी की अच्छी मांग"),
+ dict(i=6, eyebrow="FMCG", label="प्रोडक्ट बदलाव", stripe=BLACK, headline="निरमा लाइम फ्रेश",
+   price='₹114<span class="arrow">→</span>₹125<span class="unit">/4 पीस पैक</span>',
+   sub='निरमा लाइम फ्रेश साबुन की 4-पीस पैकिंग का MRP ₹114 से बढ़कर ₹125 हुआ (नई पैकिंग); पुराना स्टॉक अब भी ₹114 पर · <b class="delta">+₹11 प्रति पैक</b>',
+   l1="बदलाव", v1="नई पैकिंग में 4-पीस साबुन का MRP ₹114 से बढ़कर ₹125 हुआ",
+   l2="फायदा", v2="पुराने ₹114 MRP वाला स्टॉक पुराने रेट पर बेच लें—प्रति पैक ₹11 अतिरिक्त मार्जिन"),
+ # --- News (trending_news) — सावन सोमवार: कल पहला सावन सोमवार, व्रत का सामान भर लें (in-house, timely seasonal demand-alert, non-bait) ---
+ dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="सावन सोमवार",
+   price='<span class="news">कल पहला सावन सोमवार—व्रत का सामान अभी भर लें</span>',
+   sub='30 जुलाई से सावन शुरू; इस बार 4 सोमवार—3, 10, 17 और 24 अगस्त. व्रत में अनाज-प्याज-लहसुन नहीं चलता, फलाहारी सामान की मांग कई गुना बढ़ती है · <b class="delta">4 सोमवार</b>',
+   l1="क्यों ज़रूरी", v1="साबूदाना, कुट्टू-सिंघाड़ा आटा, समा चावल, मखाना, मूंगफली, सेंधा नमक, ड्राई फ्रूट तेज़ बिकते हैं",
+   l2="क्या करें", v2="यह सामान 100–200g छोटे पैकेट में दुकान के आगे रखें; पूरे महीने का माल अभी उठा लें"),
 ]
 
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
