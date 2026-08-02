@@ -2230,6 +2230,69 @@
     ]
    },
    "also_shown": []
+  },
+  {
+   "date": "2026-08-02",
+   "picks": {
+    "mandi_bhav": [
+     {
+      "news_id": "b8fd8bf6-01b2-4685-9e84-6b5088cb7dc4",
+      "label": "सरसों तेल तेजी ₹16,600/क्विंटल (+₹100, आवक घटी, मिल मांग निकली) — in-house RED",
+      "brand": "सरसों-तेल"
+     },
+     {
+      "news_id": "37d1724c-fd37-429f-b01e-8ea635d3ff48",
+      "label": "मूंग मंदी ₹6,100–8,000/क्विंटल (−₹100, गर्मी फसल आई, मिल मांग सुस्त) — in-house GREEN for balance",
+      "brand": "मूंग"
+     },
+     {
+      "news_id": "86bcded7-884e-4bbb-8d1c-22346918036b",
+      "label": "गेहूं तेजी ₹2,825–2,840/क्विंटल (+₹10–15, सरकारी खरीद बाद माल कम, आटा मिल मांग) — in-house RED",
+      "brand": "गेहूं"
+     }
+    ],
+    "fmcg": [
+     {
+      "news_id": "2912b731-ce69-4907-aaf0-bbde31410c2d",
+      "label": "जस्ट जेली Retailer Scheme — जार ₹1,050 (1,200 pcs), बिक्री ₹1,200, ₹150 मार्जिन, लंच बॉक्स फ्री + Buy1Get1 (LR 9.05)",
+      "brand": "just-jelly"
+     },
+     {
+      "news_id": "6b8e702d-962d-4f6a-a715-ff9e44b5d308",
+      "label": "अंकित कॉफी कैंडी Retailer Scheme — बॉक्स ₹160 (240 pcs), बिक्री ₹200, ₹40 मार्जिन, फ्री गिफ्ट अंदर (LR 8.56)",
+      "brand": "ankit-koffee"
+     },
+     {
+      "news_id": "e503edc4-0b6e-4f53-8ba5-47fbb6f756bd",
+      "label": "निरमा लाइम फ्रेश product_change — 4-पीस पैक MRP ₹114→₹125 नई पैकिंग (LR 6.63)",
+      "brand": "nirma"
+     }
+    ],
+    "trending_news": [
+     {
+      "news_id": "de212daf-5b14-4e64-b12c-b939b3e26bd5",
+      "label": "सावन सोमवार — कल पहला सावन सोमवार, व्रत का सामान भर लें (4 सोमवार: 3/10/17/24 अगस्त) — in-house seasonal demand-alert",
+      "brand": "सावन-व्रत"
+     }
+    ]
+   },
+   "also_shown": [
+    {
+     "news_id": "74ca4aa9-e312-469e-9234-15641b3c1e54",
+     "label": "मंटोस ₹1 ट्रॉफी Retailer Scheme (LR 9.91) — REJECTED body-verify: no concrete ₹ (only umbrella free + B1G1)",
+     "brand": "mantos"
+    },
+    {
+     "news_id": "79084f38-d293-4405-ba22-6cb92c1a5874",
+     "label": "7 स्टार सुपारी Retailer Scheme (LR 8.30) — REJECTED body-verify: no price/margin (only 4 pouches free)",
+     "brand": "7-star"
+    },
+    {
+     "news_id": "38e79468-5c23-44b6-87cf-fcd0c0e92f63",
+     "label": "डर्बी टिम बुक टू लॉलीपॉप Retailer Scheme (LR 7.81) — REJECTED body-verify: no price/margin (calculator freebie)",
+     "brand": "derby"
+    }
+   ]
   }
  ],
  "brand_dedup_window_days": 7
