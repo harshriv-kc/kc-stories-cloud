@@ -2293,6 +2293,64 @@
      "brand": "derby"
     }
    ]
+  },
+  {
+   "date": "2026-08-03",
+   "picks": {
+    "mandi_bhav": [
+     {
+      "news_id": "ffeea712-ba4c-46f9-905e-5719104ac729",
+      "label": "छोटी इलायची तेजी ₹3,650/किलो (+₹100, त्योहारी मिठाई-हलवाई मांग, नीलामी 75,108 किलो) — in-house RED",
+      "brand": "छोटी-इलायची"
+     },
+     {
+      "news_id": "b27e750d-905f-4728-9dd0-891a21d64677",
+      "label": "उड़द मंदी ₹9,300/क्विंटल (−₹25, दिल्ली FAQ, दाल मिल ग्राहकी सुस्त) — in-house GREEN",
+      "brand": "उड़द"
+     },
+     {
+      "news_id": "008408dd-0056-42ef-9f41-712ec9ce56de",
+      "label": "सोया तेल (रिफाइंड) मंदी ₹15,500/क्विंटल (−₹100, दिल्ली, विदेशी बाजार नरम) — in-house GREEN",
+      "brand": "सोया-तेल"
+     }
+    ],
+    "fmcg": [
+     {
+      "news_id": "42f1e113-0041-48e2-840c-3daee8056a39",
+      "label": "सेंसोडाइन टूथब्रश Retailer Scheme — पत्ता ₹240 बिक्री ₹420, ₹180 मार्जिन, 1 पत्ता पर 2 ब्रश फ्री (₹31 MRP) (LR 5.88)",
+      "brand": "sensodyne"
+     },
+     {
+      "news_id": "d9b98325-4117-49c6-9d79-e3aa6f029cb0",
+      "label": "कैडबरी 5 स्टार Retailer Scheme — बॉक्स ₹372 बिक्री ₹400 (39+1 pcs ₹10), ₹28 मार्जिन (LR 5.84)",
+      "brand": "cadbury-5star"
+     },
+     {
+      "news_id": "1741d589-48d3-4bc0-976c-fe278957d06f",
+      "label": "पैराशूट प्रोटीन शैंपू नया लॉन्च — 80g MRP ₹55, होलसेल ₹45, ₹10/बोतल मार्जिन (LR 5.11)",
+      "brand": "parachute"
+     }
+    ],
+    "trending_news": [
+     {
+      "news_id": "1033c224-8d62-404b-aa90-5dbbcb80834a",
+      "label": "कम बारिश अलर्ट — अगस्त में औसत का 94% से कम बारिश (अल नीनो), दाल-तेल भाव मजबूत रह सकते; 42% जिलों में कम बारिश — in-house monsoon/market-impact",
+      "brand": "कम-बारिश"
+     }
+    ]
+   },
+   "also_shown": [
+    {
+     "news_id": "cbf328a8-602c-4826-8490-388204de48a3",
+     "label": "टाटा सोलफुल कोको वेफर्स Retailer Scheme (LR 6.90) — REJECTED body-verify: no ₹ figure (only \"1+1\" combo, koi price/margin nahi)",
+     "brand": "tata-soulful"
+    },
+    {
+     "news_id": "d16437d3-15aa-4809-8eab-973dbac9032b",
+     "label": "टॉम टॉम ₹10 + स्नैप चॉकलेट फ्री Retailer Scheme (LR 5.50) — SKIPPED: thin body (no box price/margin) + chocolate category overlap with Cadbury",
+     "brand": "tom-tom"
+    }
+   ]
   }
  ],
  "brand_dedup_window_days": 7
