@@ -2351,6 +2351,74 @@
      "brand": "tom-tom"
     }
    ]
+  },
+  {
+   "date": "2026-08-04",
+   "picks": {
+    "mandi_bhav": [
+     {
+      "news_id": "172d4b49-f0aa-43d7-a87e-0a69b2dec305",
+      "label": "बासमती चावल तेजी ₹8,500–8,600/क्विंटल (+₹600, निर्यातकों की लिवाली, धान उत्पादन कम) — in-house RED",
+      "brand": "बासमती-चावल"
+     },
+     {
+      "news_id": "7be6e0f9-c139-4d83-8dcd-c297f7b7ab54",
+      "label": "देसी चना तेजी ₹6,325/क्विंटल (+₹125, आपूर्ति घटी, ऑस्ट्रेलिया आयात कम) — in-house RED",
+      "brand": "देसी-चना"
+     },
+     {
+      "news_id": "95dad6c7-cc7e-4b86-940e-e79c7cb191b1",
+      "label": "काबुली चना मंदी ₹6,600–7,200/क्विंटल (−₹300, ग्राहकी कमजोर, विदेशी माल सस्ता) — Samachar digest GREEN",
+      "brand": "काबुली-चना"
+     }
+    ],
+    "fmcg": [
+     {
+      "news_id": "3bfbc7f5-467e-492c-a24d-7e9ace2f9f11",
+      "label": "डाबर रेड पेस्ट Retailer Scheme — 12 पर 1 फ्री, MRP ₹10 (LR 7.97)",
+      "brand": "dabur-red"
+     },
+     {
+      "news_id": "9a20c6d6-3620-4504-897c-6a03dfb108c3",
+      "label": "गोदरेज नं.1 साबुन Consumer Scheme — 4 पर 1 फ्री, MRP ₹10 (LR 5.47)",
+      "brand": "godrej-no1"
+     },
+     {
+      "news_id": "084098c2-6258-44ff-8870-a7ea3b8641ed",
+      "label": "स्ट्रीक्स इंस्टा शैंपू हेयर कलर product_change — MRP ₹25→₹22, ₹3 सस्ता (LR 5.29)",
+      "brand": "streax"
+     }
+    ],
+    "trending_news": [
+     {
+      "news_id": "e96ee074-232d-49a0-ab99-23b7f3a3a8e1",
+      "label": "UPI रिकॉर्ड — जुलाई में 2,366 करोड़ बार पेमेंट, ₹29.88 लाख करोड़, +22% (in-house, QR/digital-payment) — non-bait",
+      "brand": "upi"
+     }
+    ]
+   },
+   "also_shown": [
+    {
+     "news_id": "f2d02aa0-f507-4f05-84ef-6e13424310e1",
+     "label": "Dukesh उत्सव बिस्कुट product_change (LR 7.41) — REJECTED body-verify: tagged रेट-change पर body wholesale-margin है, कोई ₹X→₹Y arrow नहीं",
+     "brand": "dukesh"
+    },
+    {
+     "news_id": "cf9d9fa9-a1b1-466e-8188-750afc982ccc",
+     "label": "डाबर कूल किंग पावडर Consumer Scheme (LR 7.88) — SKIPPED: Dabur brand-family dup w/ Red Paste + no ₹ (combo only)",
+     "brand": "dabur-cool-king"
+    },
+    {
+     "news_id": "95bfc63d-7a85-416f-afe4-6a8b5bffba7b",
+     "label": "डाबर आमला हेयर ऑयल product_change/वजन 275→325ml (LR 6.95) — SKIPPED: Dabur brand-family dup w/ Red Paste",
+     "brand": "dabur-amla"
+    },
+    {
+     "news_id": "8575b374-7a90-4af7-8f78-34d64cd10caa",
+     "label": "Gillette Wilkinson Sword Retailer Scheme (LR 5.80) — REJECTED body-verify: vague/garbled body, कोई साफ margin नहीं",
+     "brand": "gillette-wilkinson"
+    }
+   ]
   }
  ],
  "brand_dedup_window_days": 7
