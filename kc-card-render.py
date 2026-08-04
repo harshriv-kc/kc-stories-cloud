@@ -72,49 +72,49 @@ def b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-08-03)
+# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-08-04)
 CARDS = [
- # --- Commodity (mandi_bhav) — 1 तेजी/RED (छोटी इलायची, in-house) + 2 मंदी/GREEN (उड़द, सोया तेल, in-house) for balance;
- #     yesterday's सरसों तेल/मूंग/गेहूं all avoided (7-day commodity freshness) ---
- dict(i=1, label="मंडी भाव", stripe=RED, headline="छोटी इलायची",
-   price=f'{tri("up",RED)}₹3,650<span class="unit">/किलो</span>',
-   sub=f'छोटी इलायची ₹100 चढ़कर ₹3,650/किलो के ऊंचे स्तर पर; औसत भाव ₹3,150; नीलामी में 75,108 किलो आवक पर भी खरीदार डटे रहे · <b class="delta" style="color:{RED}">+₹100/किलो</b>',
-   l1="क्यों", v1="लगातार ग्राहकी और बिकवाली का दबाव कम; सावन बाद रक्षाबंधन-त्योहारों की मिठाई-हलवाई मांग बढ़ेगी",
-   l2="क्या करें", v2="महंगी जिंस है, पूरी पूंजी दब जाती है—आधा माल अभी और आधा दो हफ्ते बाद लें; छोटे पैकेट में बेचें"),
- dict(i=2, label="मंडी भाव", stripe=GREEN, headline="उड़द",
-   price=f'{tri("down",GREEN)}₹9,300<span class="unit">/क्विंटल</span>',
-   sub=f'दिल्ली उड़द FAQ ₹25 घटकर ₹9,300/क्विंटल; SQ ₹9,800–9,825, चेन्नई FAQ ₹9,150; दाल मिलों की ग्राहकी सुस्त · <b class="delta" style="color:{GREEN}">−₹25/क्विंटल</b>',
-   l1="क्यों", v1="चेन्नई के सौदे निपट गए और आयातकों की मुनाफावसूली से बिकवाली का दबाव; बर्मा का माल भी नरम",
-   l2="क्या करें", v2="यह हल्की गिरावट खरीद का मौका—त्योहारी उड़द दाल, मोगर और पापड़-बड़ी का माल थोड़ा-थोड़ा उठाकर औसत नीचे रखें"),
- dict(i=3, label="मंडी भाव", stripe=GREEN, headline="सोया तेल",
-   price=f'{tri("down",GREEN)}₹15,500<span class="unit">/क्विंटल</span>',
-   sub=f'दिल्ली सोया रिफाइंड ₹100 घटकर ₹15,500/क्विंटल; कांदला ₹14,400, देवास ₹14,600; विदेशी बाजार नरम और मंडियों में उठाव कमजोर · <b class="delta" style="color:{GREEN}">−₹100/क्विंटल</b>',
-   l1="क्यों", v1="विदेशी बाजार नरम और मध्य प्रदेश–महाराष्ट्र की मंडियों में सोया तेल का उठाव नहीं निकला",
-   l2="क्या करें", v2="भाव सीमित दायरे में रहेंगे—एक साथ भारी माल न भरें, जरूरत भर का ही लें, पैसा फंसाने से बचें"),
+ # --- Commodity (mandi_bhav) — 2 tejii/RED (Basmati chawal, Desi chana in-house) + 1 mandi/GREEN (Kabuli chana, Samachar digest) for direction balance ---
+ dict(i=1, label="मंडी भाव", stripe=RED, headline="बासमती चावल",
+   price=f'{tri("up",RED)}₹8,500–8,600<span class="unit">/क्विंटल</span>',
+   sub=f'1509 सेला बासमती ₹400–600 चढ़कर ₹8,500–8,600/क्विंटल; 1401 स्टीम ₹9,250 तक पहुंचा · <b class="delta" style="color:{RED}">+₹600/क्विंटल</b>',
+   l1="क्यों", v1="निर्यातकों की लगातार लिवाली; इस बार धान उत्पादन कम, मिलिंग का पड़ता महंगा",
+   l2="क्या करें", v2="बाजार और तेज हो सकता है—त्योहारी बारीक चावल का माल अभी बुक करा लें"),
+ dict(i=2, label="मंडी भाव", stripe=RED, headline="देसी चना",
+   price=f'{tri("up",RED)}₹6,325<span class="unit">/क्विंटल</span>',
+   sub=f'देसी चना ₹125 उछलकर ₹6,325/क्विंटल; राजस्थानी ₹6,250–6,300, चना दाल ₹7,150–7,700 · <b class="delta" style="color:{RED}">+₹125/क्विंटल</b>',
+   l1="क्यों", v1="उत्पादक मंडियों से आपूर्ति घटी और ऑस्ट्रेलिया आयात कम; चने का प्रेशर बना ही नहीं",
+   l2="क्या करें", v2="बाजार आगे और तेज होगा—चना दाल-बेसन की त्योहारी खपत से पहले जरूरत का माल उठा लें"),
+ dict(i=3, label="मंडी भाव", stripe=GREEN, headline="काबुली चना",
+   price=f'{tri("down",GREEN)}₹6,600–7,200<span class="unit">/क्विंटल</span>',
+   sub=f'काबुली चना (महाराष्ट्र) ₹300 घटकर ₹6,600–7,200/क्विंटल; राजमां चित्रा ₹10,000–10,400 (−₹400) भी नरम · <b class="delta" style="color:{GREEN}">−₹300/क्विंटल</b>',
+   l1="क्यों", v1="ग्राहकी कमजोर, मुनाफावसूली की बिकवाली और विदेशी माल सस्ता मिलने से दालों में नरमी",
+   l2="क्या करें", v2="गिरावट खरीद का मौका—काबुली चना का त्योहारी माल सस्ते में थोड़ा-थोड़ा भरें"),
  # --- FMCG (fmcg) — top 3 by Like Rate desc across ALL 4 segments after ledger dedup (news_id + 7-day brand) + body-verify ---
- #     Sensodyne 5.88 (Retailer), Cadbury 5 Star 5.84 (Retailer), Parachute Protein Shampoo 5.11 (नया लॉन्च). oral-care + chocolate + hair-care for category spread.
- #     REJECTED no-number (body-verify): Tata Soulful Wafers 6.90 ("1+1" only, no ₹). SKIPPED brand-dup(7d): Hajmola 7.95, Parle 7.85, Colgate 7.77/6.78/6.11, 7-Star 6.97, Jasmine 6.89, Closeup 6.82, Navratna 6.66, Mantos 6.58, Oral-B 6.40, Derby 6.29, Ankit 6.12, Alpenliebe 6.09, Just Jelly 5.62, Nirma 5.90. Tom Tom 5.50 skipped (thin body + chocolate overlap).
- dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="सेंसोडाइन टूथब्रश",
-   price='<span class="offer" style="background:%s">पत्ते पर 2 ब्रश फ्री</span>'%SCHEME_GREEN,
-   sub='₹31 MRP वाले सेंसोडाइन ब्रश के पूरे पत्ते की खरीद ₹240, बिक्री ₹420; साथ में ₹62 MRP के 2 ब्रश फ्री · <b class="delta">₹180 मार्जिन</b>',
-   l1="स्कीम", v1="₹240 में पूरा पत्ता, बिक्री ₹420; ऊपर से ₹62 MRP के 2 ब्रश बिल्कुल फ्री",
-   l2="फायदा", v2="पूरा पत्ता बिकने पर ₹180 का सीधा मार्जिन; ब्रश की क्वालिटी अच्छी, तेज़ बिकने वाला माल"),
- dict(i=5, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="कैडबरी 5 स्टार",
-   price='<span class="offer" style="background:%s">39 पीस पर 1 फ्री</span>'%SCHEME_GREEN,
-   sub='₹10 वाली 5 स्टार चॉकलेट का बॉक्स (39+1 पीस) होलसेल ₹372, बिक्री ₹400; हर पीस ₹10 · <b class="delta">₹28 मार्जिन</b>',
-   l1="स्कीम", v1="₹372 के बॉक्स में 39 पीस के साथ 1 पीस फ्री, हर पीस ₹10 बिक्री",
-   l2="फायदा", v2="पूरा बॉक्स ₹400 में बिकने पर ₹28 का मार्जिन; ₹10 प्राइस पॉइंट पर तेज़ बिकने वाली चॉकलेट"),
- dict(i=6, eyebrow="FMCG", label="नया प्रोडक्ट लॉन्च", stripe=LAUNCH_AMBER, headline="पैराशूट प्रोटीन शैंपू",
-   price='<span class="newtag" style="background:%s">नया</span><span class="mrp">MRP ₹55</span>'%LAUNCH_AMBER,
-   sub='पैराशूट का नया प्रोटीन शैंपू (80g) MRP ₹55, होलसेल ₹45; हर बोतल पर सीधा ₹10 का मार्जिन · <b class="delta">₹10 मार्जिन</b>',
-   l1="नया क्या", v1="कंपनी ने 80g वाला नया पैराशूट प्रोटीन शैंपू ₹55 MRP पर उतारा, होलसेल ₹45",
-   l2="फायदा", v2="हर बोतल पर सीधा ₹10 मार्जिन; प्रोटीन शैंपू की नई मांग, छोटे पैक से तेज़ बिक्री"),
- # --- News (trending_news) — अगस्त में कम बारिश का अनुमान (मौसम विभाग/अल नीनो), दाल-तेल भाव पर असर (in-house, monsoon/crop market-impact, non-bait) ---
- dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="कम बारिश अलर्ट",
-   price='<span class="news">अगस्त में कम बारिश—दाल-तेल भाव मजबूत रह सकते हैं</span>',
-   sub='मौसम विभाग का अनुमान—अगस्त में औसत का 94% से कम बारिश; प्रशांत में अल नीनो का असर · <b class="delta">42% जिले सूखे</b>',
-   l1="क्यों ज़रूरी", v1="कम बारिश से दाल, तिलहन, चावल की फसल दबेगी; आगे भाव मजबूत रह सकते हैं",
-   l2="क्या करें", v2="सबसे ज्यादा बिकने वाली दाल और खाने का तेल आज के भाव पर थोड़ा भर लें"),
+ #     Dabur Red Paste 7.97 (Retailer scheme), Godrej No.1 5.47 (Consumer scheme), Streax Insta 5.29 (product_change/rate). oral + soap + hair-colour spread; 3 distinct segments.
+ #     REJECTED body-verify: Dukesh Utsav Biscuit 7.41 (tagged rate-change but body = wholesale-margin, no Rs X->Y arrow); Gillette Wilkinson 5.80 (vague/garbled body, no clear margin).
+ #     SKIPPED brand-family/7d dup: Colgate x6, Dabur Cool King 7.88 + Dabur Amla 6.95 (Dabur family dup), Closeup, Cadbury 5Star, Jasmine, Hajmola, Eno, Tata Soulful, Mantos, Alpenliebe, Navratna, Just Jelly, Ujala, Dhan Kranti, Parachute.
+ dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="डाबर रेड पेस्ट",
+   price='<span class="offer" style="background:%s">12 पर 1 फ्री</span>'%SCHEME_GREEN,
+   sub='₹10 MRP वाला डाबर रेड पेस्ट—12 पीस खरीदने पर 1 पीस (₹10 का माल) बिल्कुल फ्री; फास्ट सेलिंग पेस्ट · <b class="delta">₹10 का माल फ्री</b>',
+   l1="स्कीम", v1="₹10 MRP वाले पेस्ट के 12 पीस पर 1 पीस बिल्कुल फ्री",
+   l2="फायदा", v2="हर 12 पीस पर ₹10 का माल फ्री—सीधा फायदा; हर घर में चलने वाला फास्ट सेलिंग पेस्ट"),
+ dict(i=5, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="गोदरेज नं.1 साबुन",
+   price='<span class="offer" style="background:%s">4 पर 1 फ्री</span>'%SCHEME_BLUE,
+   sub='₹10 MRP वाला गोदरेज नं.1 साबुन—4 खरीदने पर 1 फ्री; गांव-देहात में सबसे ज्यादा चलने वाला साबुन · <b class="delta">MRP ₹10</b>',
+   l1="ऑफर", v1="₹10 वाले गोदरेज नं.1 साबुन के 4 पीस पर 1 पीस फ्री",
+   l2="ग्राहक को", v2="ग्राहक को 4 पर 1 साबुन मुफ्त—तेज़ बिक्री और ग्राहक बार-बार लौटकर आता है"),
+ dict(i=6, eyebrow="FMCG", label="प्रोडक्ट बदलाव", stripe=BLACK, headline="स्ट्रीक्स इंस्टा शैंपू",
+   price='₹25<span class="arrow">→</span>₹22',
+   sub='स्ट्रीक्स इंस्टा शैंपू हेयर कलर पहले ₹25 का आता था; कंपनी ने ₹3 घटाकर अब ₹22 कर दिया · <b class="delta">₹3 सस्ता</b>',
+   l1="बदलाव", v1="कंपनी ने रेट ₹25 से घटाकर ₹22 किया (₹3 की कमी)",
+   l2="फायदा", v2="पुराना ₹25 वाला स्टॉक पहले पुराने भाव पर निकाल लें, फिर सस्ता ₹22 वाला माल भरें"),
+ # --- News (trending_news) — UPI July record 2,366 crore payments (in-house, QR/digital-payment market-impact, non-bait; nakli paneer bait SKIPPED) ---
+ dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="UPI का नया रिकॉर्ड",
+   price='<span class="news">जुलाई में 2,366 करोड़ बार UPI पेमेंट</span>',
+   sub='एक महीने में ₹29.88 लाख करोड़ लेनदेन; रोज़ ~76 करोड़ पेमेंट, पिछले साल से 22% ज्यादा · <b class="delta">नया रिकॉर्ड</b>',
+   l1="क्यों ज़रूरी", v1="अब ग्राहक खुले पैसे कम रखता; QR वाली दुकान पर बिना छुट्टे की झंझट के सामान लेता है",
+   l2="क्या करें", v2="दुकान पर QR लगाएं—₹2,000 तक पेमेंट पर कटौती नहीं, हर बिक्री बैंक रिकॉर्ड में"),
 ]
 
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
