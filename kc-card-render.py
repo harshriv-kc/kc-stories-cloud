@@ -72,49 +72,49 @@ def b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-08-04)
+# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-08-05)
 CARDS = [
- # --- Commodity (mandi_bhav) — 2 tejii/RED (Basmati chawal, Desi chana in-house) + 1 mandi/GREEN (Kabuli chana, Samachar digest) for direction balance ---
- dict(i=1, label="मंडी भाव", stripe=RED, headline="बासमती चावल",
-   price=f'{tri("up",RED)}₹8,500–8,600<span class="unit">/क्विंटल</span>',
-   sub=f'1509 सेला बासमती ₹400–600 चढ़कर ₹8,500–8,600/क्विंटल; 1401 स्टीम ₹9,250 तक पहुंचा · <b class="delta" style="color:{RED}">+₹600/क्विंटल</b>',
-   l1="क्यों", v1="निर्यातकों की लगातार लिवाली; इस बार धान उत्पादन कम, मिलिंग का पड़ता महंगा",
-   l2="क्या करें", v2="बाजार और तेज हो सकता है—त्योहारी बारीक चावल का माल अभी बुक करा लें"),
- dict(i=2, label="मंडी भाव", stripe=RED, headline="देसी चना",
-   price=f'{tri("up",RED)}₹6,325<span class="unit">/क्विंटल</span>',
-   sub=f'देसी चना ₹125 उछलकर ₹6,325/क्विंटल; राजस्थानी ₹6,250–6,300, चना दाल ₹7,150–7,700 · <b class="delta" style="color:{RED}">+₹125/क्विंटल</b>',
-   l1="क्यों", v1="उत्पादक मंडियों से आपूर्ति घटी और ऑस्ट्रेलिया आयात कम; चने का प्रेशर बना ही नहीं",
-   l2="क्या करें", v2="बाजार आगे और तेज होगा—चना दाल-बेसन की त्योहारी खपत से पहले जरूरत का माल उठा लें"),
- dict(i=3, label="मंडी भाव", stripe=GREEN, headline="काबुली चना",
-   price=f'{tri("down",GREEN)}₹6,600–7,200<span class="unit">/क्विंटल</span>',
-   sub=f'काबुली चना (महाराष्ट्र) ₹300 घटकर ₹6,600–7,200/क्विंटल; राजमां चित्रा ₹10,000–10,400 (−₹400) भी नरम · <b class="delta" style="color:{GREEN}">−₹300/क्विंटल</b>',
-   l1="क्यों", v1="ग्राहकी कमजोर, मुनाफावसूली की बिकवाली और विदेशी माल सस्ता मिलने से दालों में नरमी",
-   l2="क्या करें", v2="गिरावट खरीद का मौका—काबुली चना का त्योहारी माल सस्ते में थोड़ा-थोड़ा भरें"),
+ # --- Commodity (mandi_bhav) — 2 tejii/RED (Haldi, Chini in-house) + 1 mandi/GREEN (Arhar dal, MP teji_mandi UGC) for balance ---
+ dict(i=1, label="मंडी भाव", stripe=RED, headline="हल्दी",
+   price=f'{tri("up",RED)}₹19,900–20,000<span class="unit">/क्विंटल</span>',
+   sub=f'इरोड गट्ठा हल्दी ₹500 चढ़कर ₹19,900–20,000/क्विंटल; हाजिर ₹199–200/किलो, आगे ₹225–230 तक · <b class="delta" style="color:{RED}">+₹500/क्विंटल</b>',
+   l1="क्यों", v1="इस बार बिजाई 20–22 दिन पिछड़ी व क्षेत्र ~27% घटा; उत्पादन 90 लाख बोरी बनाम खपत 140 लाख बोरी—भारी कमी",
+   l2="क्या करें", v2="भाव गिरने के बजाय चढ़ने के आसार—महीने–डेढ़ महीने की जरूरत का माल अभी भर लें"),
+ dict(i=2, label="मंडी भाव", stripe=RED, headline="चीनी",
+   price=f'{tri("up",RED)}₹5,000–5,150<span class="unit">/क्विंटल</span>',
+   sub=f'चीनी ₹150 उछलकर हाजिर ₹5,000–5,150/क्विंटल (मिल डिलीवरी ₹4,650–4,850); 2 दिन में ₹250 तेज · <b class="delta" style="color:{RED}">+₹150/क्विंटल</b>',
+   l1="क्यों", v1="स्टॉकिस्टों की लिवाली और श्रावणी–रक्षाबंधन त्योहारी मांग; मिलों ने भी भाव बढ़ाकर बेचा",
+   l2="क्या करें", v2="त्योहारी बिक्री तेज रहेगी—हफ्ते–दस दिन का माल भर लें, पर चीनी भंडारण सीमा का ध्यान रखें"),
+ dict(i=3, label="मंडी भाव", stripe=GREEN, headline="अरहर दाल",
+   price=f'{tri("down",GREEN)}₹11,100<span class="unit">/क्विंटल</span>',
+   sub=f'अरहर दाल ₹200 घटकर ~₹11,100/क्विंटल (पिछले हफ्ते ₹11,300); आपूर्ति बढ़ने से भाव नरम · <b class="delta" style="color:{GREEN}">−₹200/क्विंटल</b>',
+   l1="क्यों", v1="बाजार में आपूर्ति अधिक होने से भाव नरम; होलसेलर आगे और गिरावट की संभावना बता रहे",
+   l2="क्या करें", v2="गिरावट में जरूरत भर का माल लें—बड़ा स्टॉक अभी न भरें, भाव और घट सकते हैं"),
  # --- FMCG (fmcg) — top 3 by Like Rate desc across ALL 4 segments after ledger dedup (news_id + 7-day brand) + body-verify ---
- #     Dabur Red Paste 7.97 (Retailer scheme), Godrej No.1 5.47 (Consumer scheme), Streax Insta 5.29 (product_change/rate). oral + soap + hair-colour spread; 3 distinct segments.
- #     REJECTED body-verify: Dukesh Utsav Biscuit 7.41 (tagged rate-change but body = wholesale-margin, no Rs X->Y arrow); Gillette Wilkinson 5.80 (vague/garbled body, no clear margin).
- #     SKIPPED brand-family/7d dup: Colgate x6, Dabur Cool King 7.88 + Dabur Amla 6.95 (Dabur family dup), Closeup, Cadbury 5Star, Jasmine, Hajmola, Eno, Tata Soulful, Mantos, Alpenliebe, Navratna, Just Jelly, Ujala, Dhan Kranti, Parachute.
- dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="डाबर रेड पेस्ट",
-   price='<span class="offer" style="background:%s">12 पर 1 फ्री</span>'%SCHEME_GREEN,
-   sub='₹10 MRP वाला डाबर रेड पेस्ट—12 पीस खरीदने पर 1 पीस (₹10 का माल) बिल्कुल फ्री; फास्ट सेलिंग पेस्ट · <b class="delta">₹10 का माल फ्री</b>',
-   l1="स्कीम", v1="₹10 MRP वाले पेस्ट के 12 पीस पर 1 पीस बिल्कुल फ्री",
-   l2="फायदा", v2="हर 12 पीस पर ₹10 का माल फ्री—सीधा फायदा; हर घर में चलने वाला फास्ट सेलिंग पेस्ट"),
- dict(i=5, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="गोदरेज नं.1 साबुन",
-   price='<span class="offer" style="background:%s">4 पर 1 फ्री</span>'%SCHEME_BLUE,
-   sub='₹10 MRP वाला गोदरेज नं.1 साबुन—4 खरीदने पर 1 फ्री; गांव-देहात में सबसे ज्यादा चलने वाला साबुन · <b class="delta">MRP ₹10</b>',
-   l1="ऑफर", v1="₹10 वाले गोदरेज नं.1 साबुन के 4 पीस पर 1 पीस फ्री",
-   l2="ग्राहक को", v2="ग्राहक को 4 पर 1 साबुन मुफ्त—तेज़ बिक्री और ग्राहक बार-बार लौटकर आता है"),
- dict(i=6, eyebrow="FMCG", label="प्रोडक्ट बदलाव", stripe=BLACK, headline="स्ट्रीक्स इंस्टा शैंपू",
-   price='₹25<span class="arrow">→</span>₹22',
-   sub='स्ट्रीक्स इंस्टा शैंपू हेयर कलर पहले ₹25 का आता था; कंपनी ने ₹3 घटाकर अब ₹22 कर दिया · <b class="delta">₹3 सस्ता</b>',
-   l1="बदलाव", v1="कंपनी ने रेट ₹25 से घटाकर ₹22 किया (₹3 की कमी)",
-   l2="फायदा", v2="पुराना ₹25 वाला स्टॉक पहले पुराने भाव पर निकाल लें, फिर सस्ता ₹22 वाला माल भरें"),
- # --- News (trending_news) — UPI July record 2,366 crore payments (in-house, QR/digital-payment market-impact, non-bait; nakli paneer bait SKIPPED) ---
- dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="UPI का नया रिकॉर्ड",
-   price='<span class="news">जुलाई में 2,366 करोड़ बार UPI पेमेंट</span>',
-   sub='एक महीने में ₹29.88 लाख करोड़ लेनदेन; रोज़ ~76 करोड़ पेमेंट, पिछले साल से 22% ज्यादा · <b class="delta">नया रिकॉर्ड</b>',
-   l1="क्यों ज़रूरी", v1="अब ग्राहक खुले पैसे कम रखता; QR वाली दुकान पर बिना छुट्टे की झंझट के सामान लेता है",
-   l2="क्या करें", v2="दुकान पर QR लगाएं—₹2,000 तक पेमेंट पर कटौती नहीं, हर बिक्री बैंक रिकॉर्ड में"),
+ #     Vicks jar 8.56 (Retailer scheme), Royal Dairy choc 8.33 (Retailer scheme), Stickband bandage 7.64 (Retailer scheme). balm + candy + first-aid — 3 distinct categories.
+ #     SWAPPED OUT body-verify: Anchor toothpaste 7.76 (tagged Retailer Scheme but body = pure wholesale margin, NO free-goods mechanic — segment mismatch, like Dukesh 8-04).
+ #     SKIPPED 7d brand/news_id dup: Fevikwik, Colgate x6, Cadbury 5Star, Dabur Red (news_id+brand), Eno, Closeup x2, Parle, Tata Soulful (news_id+brand).
+ dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="विक्स जार",
+   price='<span class="offer" style="background:%s">1 जार पर 25 नग फ्री</span>'%SCHEME_GREEN,
+   sub='₹2 बिक्री वाली विक्स का एक जार खरीदने पर 25 नग बिल्कुल फ्री—यानी ₹50 का सीधा एक्स्ट्रा मुनाफा · <b class="delta">₹50 फ्री माल</b>',
+   l1="स्कीम", v1="₹2 वाली विक्स का 1 जार खरीदने पर 25 नग बिल्कुल फ्री",
+   l2="फायदा", v2="हर जार पर ₹50 का माल फ्री—सर्दी–खांसी में हर घर की जरूरत, तेज बिकने वाला माल"),
+ dict(i=5, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="रॉयल चॉकलेट",
+   price='<span class="offer" style="background:%s">30 पर 3 फ्री</span>'%SCHEME_GREEN,
+   sub='₹5 वाली रॉयल डेयरी चॉकलेट का डिब्बा (33 नग) होलसेल ₹100—30+3 फ्री; पूरा बेचने पर ₹65 का मुनाफा · <b class="delta">₹65 मार्जिन</b>',
+   l1="स्कीम", v1="होलसेल ₹100 के डिब्बे में 33 नग (30+3 फ्री), हर नग ₹5 बिक्री",
+   l2="फायदा", v2="एक डिब्बे पर सीधा ₹65 का फायदा—बच्चों में तेज बिकने वाली ₹5 चॉकलेट"),
+ dict(i=6, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="स्टिकबैंड बैंडेज",
+   price='<span class="offer" style="background:%s">डिब्बे पर 5 फ्री</span>'%SCHEME_GREEN,
+   sub='₹2 बिक्री वाली स्टिकबैंड बैंडेज—एक डिब्बे में 5 बैंडेज बिल्कुल फ्री, यानी ₹10 का सीधा मुनाफा · <b class="delta">₹10 फ्री माल</b>',
+   l1="स्कीम", v1="स्टिकबैंड बैंडेज के डिब्बे में 5 बैंडेज (₹2 बिक्री वाली) फ्री",
+   l2="फायदा", v2="हर डिब्बे पर ₹10 का माल फ्री—रोज़ काम आने वाली, हर दुकान पर चलने वाली चीज़"),
+ # --- News (trending_news) — FSSAI licence now lifetime (in-house policy relief, high-relevance for every kirana; scam/fraud bait SKIPPED) ---
+ dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="FSSAI लाइसेंस आजीवन",
+   price='<span class="news">बार-बार रिन्यू का झंझट खत्म</span>',
+   sub='एक बार बना लाइसेंस हमेशा चलेगा; ₹1.5 करोड़ तक बिक्री पर सिर्फ सस्ता रजिस्ट्रेशन · <b class="delta">बड़ी राहत</b>',
+   l1="क्यों ज़रूरी", v1="हर खाद्य दुकान को FSSAI लाइसेंस जरूरी; अब रिन्यू का झंझट व जुर्माना खत्म",
+   l2="क्या करें", v2="सालाना फीस समय पर भरते रहें, वरना लाइसेंस अपने आप बंद हो जाएगा"),
 ]
 
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
