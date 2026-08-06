@@ -72,49 +72,49 @@ def b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-08-05)
+# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-08-06)
+# No in-house commodity/news posts for 08-06 at run time — commodity + news sourced from Mixpanel LR pools (body-verified).
 CARDS = [
- # --- Commodity (mandi_bhav) — 2 tejii/RED (Haldi, Chini in-house) + 1 mandi/GREEN (Arhar dal, MP teji_mandi UGC) for balance ---
- dict(i=1, label="मंडी भाव", stripe=RED, headline="हल्दी",
-   price=f'{tri("up",RED)}₹19,900–20,000<span class="unit">/क्विंटल</span>',
-   sub=f'इरोड गट्ठा हल्दी ₹500 चढ़कर ₹19,900–20,000/क्विंटल; हाजिर ₹199–200/किलो, आगे ₹225–230 तक · <b class="delta" style="color:{RED}">+₹500/क्विंटल</b>',
-   l1="क्यों", v1="इस बार बिजाई 20–22 दिन पिछड़ी व क्षेत्र ~27% घटा; उत्पादन 90 लाख बोरी बनाम खपत 140 लाख बोरी—भारी कमी",
-   l2="क्या करें", v2="भाव गिरने के बजाय चढ़ने के आसार—महीने–डेढ़ महीने की जरूरत का माल अभी भर लें"),
- dict(i=2, label="मंडी भाव", stripe=RED, headline="चीनी",
-   price=f'{tri("up",RED)}₹5,000–5,150<span class="unit">/क्विंटल</span>',
-   sub=f'चीनी ₹150 उछलकर हाजिर ₹5,000–5,150/क्विंटल (मिल डिलीवरी ₹4,650–4,850); 2 दिन में ₹250 तेज · <b class="delta" style="color:{RED}">+₹150/क्विंटल</b>',
-   l1="क्यों", v1="स्टॉकिस्टों की लिवाली और श्रावणी–रक्षाबंधन त्योहारी मांग; मिलों ने भी भाव बढ़ाकर बेचा",
-   l2="क्या करें", v2="त्योहारी बिक्री तेज रहेगी—हफ्ते–दस दिन का माल भर लें, पर चीनी भंडारण सीमा का ध्यान रखें"),
- dict(i=3, label="मंडी भाव", stripe=GREEN, headline="अरहर दाल",
-   price=f'{tri("down",GREEN)}₹11,100<span class="unit">/क्विंटल</span>',
-   sub=f'अरहर दाल ₹200 घटकर ~₹11,100/क्विंटल (पिछले हफ्ते ₹11,300); आपूर्ति बढ़ने से भाव नरम · <b class="delta" style="color:{GREEN}">−₹200/क्विंटल</b>',
-   l1="क्यों", v1="बाजार में आपूर्ति अधिक होने से भाव नरम; होलसेलर आगे और गिरावट की संभावना बता रहे",
-   l2="क्या करें", v2="गिरावट में जरूरत भर का माल लें—बड़ा स्टॉक अभी न भरें, भाव और घट सकते हैं"),
+ # --- Commodity (mandi_bhav) — 2 tejii/RED (Sabudana, Badam — MP teji_mandi UGC) + 1 mandi/GREEN (Jeera) for balance ---
+ dict(i=1, label="मंडी भाव", stripe=RED, headline="साबूदाना",
+   price=f'{tri("up",RED)}₹70–72<span class="unit">/किलो</span>',
+   sub=f'साबूदाना ₹10 चढ़कर ₹70–72/किलो (पहले ₹60–62); श्रावण-त्योहारी मांग से भाव में तेजी · <b class="delta" style="color:{RED}">+₹10/किलो</b>',
+   l1="क्यों", v1="श्रावण महीने व आगामी त्योहारों की मांग तेज; व्रत–उपवास में साबूदाना की खपत बढ़ी",
+   l2="क्या करें", v2="त्योहारी मांग में भाव और चढ़ सकते हैं—हफ्ते-दस दिन की जरूरत का माल अभी भर लें"),
+ dict(i=2, label="मंडी भाव", stripe=RED, headline="बादाम",
+   price=f'{tri("up",RED)}₹900<span class="unit">/किलो</span>',
+   sub=f'बादाम ₹70 चढ़कर ₹900/किलो (पहले ₹830); आयात में देरी व सीमित स्टॉक से तेजी, आगे और संभव · <b class="delta" style="color:{RED}">+₹70/किलो</b>',
+   l1="क्यों", v1="मुख्य उत्पादक देशों से आयात में देरी और आवक कम होने से बाजार में स्टॉक सीमित",
+   l2="क्या करें", v2="भाव और चढ़ने के आसार—ड्राई फ्रूट की त्योहारी मांग से पहले जरूरत का माल भर लें"),
+ dict(i=3, label="मंडी भाव", stripe=GREEN, headline="जीरा",
+   price=f'{tri("down",GREEN)}₹250<span class="unit">/किलो</span>',
+   sub=f'जीरा ₹40 घटकर ₹250/किलो (पिछली बार ₹290); आपूर्ति बढ़ने से भाव नरम, आगे और मंदी संभव · <b class="delta" style="color:{GREEN}">−₹40/किलो</b>',
+   l1="क्यों", v1="बाजार में आवक अच्छी और मांग सामान्य; इसलिए जीरे के भाव में नरमी",
+   l2="क्या करें", v2="गिरावट में जरूरत भर का माल लें—बड़ा स्टॉक न भरें, भाव और घट सकते हैं"),
  # --- FMCG (fmcg) — top 3 by Like Rate desc across ALL 4 segments after ledger dedup (news_id + 7-day brand) + body-verify ---
- #     Vicks jar 8.56 (Retailer scheme), Royal Dairy choc 8.33 (Retailer scheme), Stickband bandage 7.64 (Retailer scheme). balm + candy + first-aid — 3 distinct categories.
- #     SWAPPED OUT body-verify: Anchor toothpaste 7.76 (tagged Retailer Scheme but body = pure wholesale margin, NO free-goods mechanic — segment mismatch, like Dukesh 8-04).
- #     SKIPPED 7d brand/news_id dup: Fevikwik, Colgate x6, Cadbury 5Star, Dabur Red (news_id+brand), Eno, Closeup x2, Parle, Tata Soulful (news_id+brand).
- dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="विक्स जार",
-   price='<span class="offer" style="background:%s">1 जार पर 25 नग फ्री</span>'%SCHEME_GREEN,
-   sub='₹2 बिक्री वाली विक्स का एक जार खरीदने पर 25 नग बिल्कुल फ्री—यानी ₹50 का सीधा एक्स्ट्रा मुनाफा · <b class="delta">₹50 फ्री माल</b>',
-   l1="स्कीम", v1="₹2 वाली विक्स का 1 जार खरीदने पर 25 नग बिल्कुल फ्री",
-   l2="फायदा", v2="हर जार पर ₹50 का माल फ्री—सर्दी–खांसी में हर घर की जरूरत, तेज बिकने वाला माल"),
- dict(i=5, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="रॉयल चॉकलेट",
-   price='<span class="offer" style="background:%s">30 पर 3 फ्री</span>'%SCHEME_GREEN,
-   sub='₹5 वाली रॉयल डेयरी चॉकलेट का डिब्बा (33 नग) होलसेल ₹100—30+3 फ्री; पूरा बेचने पर ₹65 का मुनाफा · <b class="delta">₹65 मार्जिन</b>',
-   l1="स्कीम", v1="होलसेल ₹100 के डिब्बे में 33 नग (30+3 फ्री), हर नग ₹5 बिक्री",
-   l2="फायदा", v2="एक डिब्बे पर सीधा ₹65 का फायदा—बच्चों में तेज बिकने वाली ₹5 चॉकलेट"),
- dict(i=6, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="स्टिकबैंड बैंडेज",
-   price='<span class="offer" style="background:%s">डिब्बे पर 5 फ्री</span>'%SCHEME_GREEN,
-   sub='₹2 बिक्री वाली स्टिकबैंड बैंडेज—एक डिब्बे में 5 बैंडेज बिल्कुल फ्री, यानी ₹10 का सीधा मुनाफा · <b class="delta">₹10 फ्री माल</b>',
-   l1="स्कीम", v1="स्टिकबैंड बैंडेज के डिब्बे में 5 बैंडेज (₹2 बिक्री वाली) फ्री",
-   l2="फायदा", v2="हर डिब्बे पर ₹10 का माल फ्री—रोज़ काम आने वाली, हर दुकान पर चलने वाली चीज़"),
- # --- News (trending_news) — FSSAI licence now lifetime (in-house policy relief, high-relevance for every kirana; scam/fraud bait SKIPPED) ---
- dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="FSSAI लाइसेंस आजीवन",
-   price='<span class="news">बार-बार रिन्यू का झंझट खत्म</span>',
-   sub='एक बार बना लाइसेंस हमेशा चलेगा; ₹1.5 करोड़ तक बिक्री पर सिर्फ सस्ता रजिस्ट्रेशन · <b class="delta">बड़ी राहत</b>',
-   l1="क्यों ज़रूरी", v1="हर खाद्य दुकान को FSSAI लाइसेंस जरूरी; अब रिन्यू का झंझट व जुर्माना खत्म",
-   l2="क्या करें", v2="सालाना फीस समय पर भरते रहें, वरना लाइसेंस अपने आप बंद हो जाएगा"),
+ #     Babool paste 6.83, Patanjali brush 6.80, Kaccha Mango Bite jar 6.79 — all Retailer Scheme, all clean free-goods mechanics.
+ #     SKIPPED 7d brand/news_id dup: Patanjali dant-kanti 9.45(brand), Cadbury 5Star x2, Hajmola, Stickband(news_id), 7-Star(brand+body-reject), Fevikwik, Close-Up, Colgate, Vicks(brand), Royal Dairy(news_id+brand).
+ dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="बाबुल पेस्ट",
+   price='<span class="offer" style="background:%s">9 पीस पर 4 फ्री</span>'%SCHEME_GREEN,
+   sub='डाबर बाबुल पेस्ट ₹10 बिक्री—एक पैकेट (9 पीस) खरीदने पर 4 पीस बिल्कुल फ्री; फुल साइज, तेज बिकने वाला माल · <b class="delta">4 पीस फ्री</b>',
+   l1="स्कीम", v1="₹10 बिक्री वाली डाबर बाबुल पेस्ट—1 पैकेट (9 पीस) पर 4 पीस फ्री",
+   l2="फायदा", v2="हर पैकेट पर 4 पीस का सीधा फ्री माल—नाम से बिकने वाली, फास्ट मूविंग पेस्ट"),
+ dict(i=5, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="पतंजलि ब्रश",
+   price='<span class="offer" style="background:%s">12 पर ₹35 ब्रश फ्री</span>'%SCHEME_GREEN,
+   sub='₹10 वाला पतंजलि टूथब्रश—12 पीस खरीदने पर एक ₹35 वाला ब्रश बिल्कुल फ्री; क्वालिटी अच्छी, नाम से बिकने वाला · <b class="delta">₹35 ब्रश फ्री</b>',
+   l1="स्कीम", v1="₹10 वाले पतंजलि टूथब्रश के 12 पीस पर एक ₹35 वाला ब्रश फ्री",
+   l2="फायदा", v2="हर 12 पीस पर ₹35 का ब्रश फ्री—अच्छी क्वालिटी, तेज बिक्री"),
+ dict(i=6, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="कच्चा मैंगो बाइट",
+   price='<span class="offer" style="background:%s">जार पर 11 यूनिट फ्री</span>'%SCHEME_GREEN,
+   sub='₹1 वाली कच्चा मैंगो बाइट—1 जार (होलसेल ₹135) पर 11 यूनिट फ्री, रिटेल ₹150; तेज बिकने वाली, बाजार में भारी मांग · <b class="delta">11 यूनिट फ्री</b>',
+   l1="स्कीम", v1="होलसेल ₹135 का 1 जार खरीदने पर 11 यूनिट (₹1 वाली) फ्री",
+   l2="फायदा", v2="रिटेल ₹150 में बिक्री + 11 यूनिट फ्री माल—बच्चों में तेज बिकने वाली कैंडी"),
+ # --- News (trending_news) — CGTMSE collateral-free loan scheme (in-house policy relief, actionable for every kirana; scam/fraud bait & रुझान digests SKIPPED) ---
+ dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="बिना गिरवी कर्ज",
+   price='<span class="news">CGTMSE: बैंक की गारंटी सरकार देगी</span>',
+   sub='CGTMSE योजना में सरकार खुद बैंक को गारंटी देती है—बिना जमीन/मकान गिरवी रखे दुकान के लिए कर्ज; गारंटी सीमा ₹10 करोड़ तक · <b class="delta">बड़ी राहत</b>',
+   l1="क्यों ज़रूरी", v1="दुकान बढ़ाने को पैसा चाहिए पर गिरवी नहीं—छोटे/महिला/पूर्वोत्तर कारोबारी को 85% तक गारंटी",
+   l2="क्या करें", v2="पहले Udyam में मुफ्त रजिस्ट्रेशन कराएं, फिर बैंक में CGTMSE गारंटी के तहत कर्ज की अर्जी दें"),
 ]
 
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
