@@ -2483,6 +2483,95 @@
           "news_id": "bf09be4c-82b7-452d-a673-54f8912cca48"
         }
       ]
+    },
+    {
+      "date": "2026-08-06",
+      "picks": {
+        "mandi_bhav": [
+          {
+            "news_id": "e2c8ec51-33de-48a1-bab8-b6e56a7b7c32",
+            "brand": "sabudana",
+            "label": "साबूदाना तेजी +₹10 → ₹70–72/किलो (₹60–62 था; श्रावण-त्योहारी मांग) — MP teji_mandi UGC LR 7.05 RED"
+          },
+          {
+            "news_id": "6fccf20a-3b6e-4b46-b238-71bd62b90b24",
+            "brand": "badam",
+            "label": "बादाम तेजी +₹70 → ₹900/किलो (₹830 था; आयात देरी, सीमित स्टॉक) — MP teji_mandi UGC LR 6.91 RED"
+          },
+          {
+            "news_id": "66d2211a-b079-4e2f-ba58-fd660ed82f7f",
+            "brand": "jeera",
+            "label": "जीरा मंदी −₹40 → ₹250/किलो (₹290 था; आपूर्ति बढ़ी) — MP teji_mandi UGC LR 6.10 GREEN for balance"
+          }
+        ],
+        "fmcg": [
+          {
+            "news_id": "995ab45c-324c-47b3-a37b-107e061ad23b",
+            "brand": "dabur-babool",
+            "label": "डाबर बाबुल पेस्ट Retailer Scheme — ₹10 बिक्री, 1 पैकेट (9 पीस) पर 4 पीस फ्री (LR 6.83)"
+          },
+          {
+            "news_id": "772c46bc-703c-4b03-9833-c41470633f5a",
+            "brand": "patanjali-toothbrush",
+            "label": "पतंजलि टूथब्रश Retailer Scheme — ₹10 वाला, 12 पीस पर ₹35 वाला ब्रश फ्री (LR 6.80)"
+          },
+          {
+            "news_id": "bdda3216-5dc6-4dd5-a115-719cb78c30a0",
+            "brand": "kaccha-mango-bite",
+            "label": "कच्चा मैंगो बाइट Retailer Scheme — ₹1 वाली, 1 जार (होलसेल ₹135) पर 11 यूनिट फ्री, रिटेल ₹150 (LR 6.79)"
+          }
+        ],
+        "trending_news": [
+          {
+            "news_id": "6f0ec61a-02c6-458b-8650-0d83e1c233ad",
+            "brand": "cgtmse-loan",
+            "label": "बिना गिरवी कर्ज (CGTMSE) — सरकार बैंक को गारंटी देती है; गारंटी सीमा ₹10 करोड़, 85% तक गारंटी — in-house policy BLACK"
+          }
+        ]
+      },
+      "also_shown": [
+        {
+          "news_id": "4fcc5c18-47f5-42a5-9212-dedbbbefe1b1",
+          "brand": "kaju",
+          "label": "काजू मंदी — MP teji_mandi LR 7.74, SWAPPED body-verify: no concrete ₹ figure (pure sentiment)"
+        },
+        {
+          "news_id": "96173092-ff08-4ecb-bbe9-e41f37749ccb",
+          "brand": "poha",
+          "label": "पोहा तेजी — MP teji_mandi LR 5.95, SWAPPED: no concrete ₹"
+        },
+        {
+          "news_id": "a0d7c082-6a40-404e-912a-7e5f5c527905",
+          "brand": "dhaniya",
+          "label": "धनिया तेजी — MP teji_mandi LR 5.69, SWAPPED: no concrete ₹"
+        },
+        {
+          "news_id": "4a95a54b-c15a-466d-a79d-6a475bab4d78",
+          "brand": "chana-dal",
+          "label": "चना दाल तेजी +₹140 (₹2210→₹2350/30kg) — MP teji_mandi LR 6.59, SWAPPED for GREEN direction balance (kept Jeera)"
+        },
+        {
+          "news_id": "60465e7e-4869-43d3-a7b1-999eea1fe8a7",
+          "brand": "patanjali-dant-kanti",
+          "label": "पतंजलि टूथपेस्ट Retailer Scheme LR 9.45, SKIPPED 7d brand dedup"
+        },
+        {
+          "news_id": "361ca756-118e-4016-82de-f83c49af3732",
+          "brand": "cadbury-5star",
+          "label": "Cadbury 5 Star Retailer Scheme LR 7.80, SKIPPED 7d brand dedup"
+        },
+        {
+          "news_id": "e809b641-d7fc-450d-9ab2-408d2bd86565",
+          "brand": "dabur-hajmola",
+          "label": "Hajmola chatkola Retailer Scheme LR 7.67, SKIPPED 7d brand dedup"
+        },
+        {
+          "news_id": "0933c658-4e95-4852-86f5-64429a7bd2b8",
+          "brand": "7-star",
+          "label": "KAMAL 7 Star supari Retailer Scheme LR 7.51, SKIPPED 7d brand dedup + prior body-reject (08-02)"
+        }
+      ],
+      "notes": "No in-house commodity/news posts for 08-06 at run time (latest in-house = 08-05); commodity+news sourced from Mixpanel LR pools, body-verified. QC-composite (cards + badge ring) applied. Weekday — no WebEngage Slack handoff."
     }
   ],
   "brand_dedup_window_days": 7
