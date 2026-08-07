@@ -2572,6 +2572,110 @@
         }
       ],
       "notes": "No in-house commodity/news posts for 08-06 at run time (latest in-house = 08-05); commodity+news sourced from Mixpanel LR pools, body-verified. QC-composite (cards + badge ring) applied. Weekday — no WebEngage Slack handoff."
+    },
+    {
+      "date": "2026-08-07",
+      "_note": "Fresh full run (all 3 stories + 3 entry badges republished live via update_story/update_story_entry_badges, actor Harsh Shrivastava). Commodity: मसूर तेजी (in-house RED, +₹25 दिल्ली ₹6,850–6,875) + सरसों तेल मंदी (in-house GREEN, −₹50 ₹16,800, for balance; सरसों over-covered but cleanest GREEN — jeera मंदी repeated 08-06, काजू/धनिया no ₹ figure) + बेसन तेजी (MP teji_mandi LR 4.21, RED, Samrat कट्टा ₹76→₹80). FMCG top-3 by LR after 12d news_id dedup + 7d brand dedup + body-verify, 3 distinct categories: Bakemate Cofe Town toffee (Retailer LR 6.48, confectionery) + Clean & Clear facewash (Retailer LR 6.46, personal-care, margin ₹52+30) + Supermax blade (Retailer LR 5.90, shaving, 50+5, margin ₹75). News = RBI repo-rate hold 5.25% (in-house, direct shopkeeper-loan impact; Stand-Up India loan skipped as too-similar to 08-05/08-06 collateral-free-loan news). Badges = curved-banner FS140 (मसूर में तेज़ी / फेसवॉश 11+1 फ्री / किस्त नहीं बढ़ेगी); radial clearance 366/436/447 ≤448. Slides composited via kc-card-render.py, QC'd (contact sheet + full-size read of tallest सरसों card — no overlap). Weekend Slack handoff SKIPPED (Friday/weekday). Push JSON built with today's transparent PN badges; operator updates WebEngage manually on weekdays.",
+      "picks": {
+        "mandi_bhav": [
+          {
+            "news_id": "1a3d7335-8199-4fbd-8583-2693933499e8",
+            "label": "मसूर दाल तेजी +₹25 → देसी दिल्ली ₹6,850–6,875/क्विंटल (छोटी मसूर किल्लत, कच्चा माल ₹80–85/किलो) — in-house RED",
+            "brand": "मसूर-दाल"
+          },
+          {
+            "news_id": "084ad278-25e2-49b4-b042-fc5c9c813a78",
+            "label": "सरसों तेल मंदी −₹50 → ₹16,800/क्विंटल (दादरी ₹16,700; जुलाई खाद्य तेल आयात +34% ~14.9 लाख टन) — in-house GREEN for balance",
+            "brand": "सरसों-तेल"
+          },
+          {
+            "news_id": "d3656231-2def-47e9-83c2-49d151f65c17",
+            "label": "बेसन तेजी +₹4 → ₹80/किलो (Samrat कट्टा ₹800/10kg, पहले ₹760; मिल आपूर्ति घटी+त्योहारी मांग) — MP teji_mandi LR 4.21 RED",
+            "brand": "बेसन"
+          }
+        ],
+        "fmcg": [
+          {
+            "news_id": "f019b2eb-df23-4c56-b1d5-197b05a2c3f5",
+            "label": "बेकमेट कॉफ़ी टाउन टॉफ़ी — Retailer Scheme, डब्बा 220 टॉफ़ी लागत ₹165.44 + 1 बाउल फ्री (LR 6.48)",
+            "brand": "bakemate"
+          },
+          {
+            "news_id": "f015246b-3b14-49fb-b2a9-701c9801ff9d",
+            "label": "क्लीन एंड क्लियर फेसवॉश — Retailer Scheme, ₹30 बिक्री, जार 11+1 फ्री, होलसेल ₹278/12, मार्जिन ₹52+30 (LR 6.46)",
+            "brand": "clean-and-clear"
+          },
+          {
+            "news_id": "354273f3-875f-45b4-8a75-11d1a298af0f",
+            "label": "सुपरमैक्स स्टेनलेस ब्लेड — Retailer Scheme, 50 पीस डिब्बा अब 55 (5 फ्री), होलसेल ₹90, ₹165 बिक्री, मार्जिन ₹75 (LR 5.90)",
+            "brand": "supermax"
+          }
+        ],
+        "trending_news": [
+          {
+            "news_id": "f8a6e5aa-f6b9-4603-8bb6-8cd62ed102dc",
+            "label": "RBI रेपो रेट 5.25% पर स्थिर — दुकान/गाड़ी/घर कर्ज की किस्त नहीं बढ़ेगी; महंगाई ~5%, विकास 6.7% — in-house",
+            "brand": "rbi-repo"
+          }
+        ]
+      },
+      "also_shown": [
+        {
+          "news_id": "e809b641-d7fc-450d-9ab2-408d2bd86565",
+          "label": "Hajmola chatkola Retailer LR 6.61 — EXCLUDED 12d news_id dedup (also_shown 08-06)",
+          "brand": "dabur-hajmola"
+        },
+        {
+          "news_id": "0933c658-4e95-4852-86f5-64429a7bd2b8",
+          "label": "KAMAL 7 Star supari Retailer LR 6.49 — EXCLUDED 12d news_id dedup (also_shown 08-06)",
+          "brand": "7-star"
+        },
+        {
+          "news_id": "cbf328a8-602c-4826-8490-388204de48a3",
+          "label": "Tata Soulfull wafers Retailer LR 6.48 — EXCLUDED 12d news_id dedup (rejected 08-03); body '1+1' vague",
+          "brand": "tata-soulfull"
+        },
+        {
+          "news_id": "f442ec24-74ae-4b95-8397-9dcfd3e1c403",
+          "label": "नमक — teji_mandi TOP LR 9.31, SWAPPED: LR↔BODY MISMATCH (report tagged मंदी, body is आशीर्वाद salt तेजी ₹15→₹20 MRP ₹30) — flag for eng",
+          "brand": "नमक"
+        },
+        {
+          "news_id": "4fcc5c18-47f5-42a5-9212-dedbbbefe1b1",
+          "label": "काजू मंदी — teji_mandi LR 7.53, SWAPPED body-verify: no concrete ₹ figure (generic मंदी explainer)",
+          "brand": "काजू"
+        },
+        {
+          "news_id": "a0d7c082-6a40-404e-912a-7e5f5c527905",
+          "label": "धनिया तेजी — teji_mandi LR 5.32, SWAPPED body-verify: no ₹ figure ('धनिया पाउडर में तेजी का माहौल')",
+          "brand": "धनिया"
+        },
+        {
+          "news_id": "e1e33275-048a-4d66-a2c7-c55e509cbae3",
+          "label": "मैदा/आटा तेजी — teji_mandi LR 6.37, backup (चक्की आटा 50kg ₹1500→₹1600); not needed, chose बेसन for category variety",
+          "brand": "मैदा"
+        },
+        {
+          "news_id": "b72f62b2-4a95-478b-add3-2406ecf9e927",
+          "label": "कोलगेट ₹10 12+1 Retailer LR 6.73 (मार्जिन ₹25) — SKIPPED soft: oral-care over-covered (07-31/08-03/08-04/08-06)",
+          "brand": "colgate"
+        },
+        {
+          "news_id": "132dce70-3dee-4d58-a2d9-d660cd2fe9ae",
+          "label": "KitKat ₹10 buy-1-get-2 Retailer LR 5.84 — clean backup (chocolate), not needed (Bakemate higher LR)",
+          "brand": "kitkat"
+        },
+        {
+          "news_id": "46e17617-d4c3-4a1c-9e4c-e555b915e9f0",
+          "label": "Stand-Up India बिना गिरवी ₹10L–1cr loan — in-house news, NOT used: too similar to 08-05/08-06 collateral-free-loan (CGTMSE) news, chose RBI for freshness",
+          "brand": "stand-up-india"
+        },
+        {
+          "news_id": "aaf5840a-9ccb-4aa7-afce-cd0dd5415c06",
+          "label": "भारतीय व्यापार महोत्सव 2026 (दिल्ली 12–15 अगस्त) — in-house news, clean fresh backup, not needed (chose RBI for broad loan-impact)",
+          "brand": "vyapar-mahotsav"
+        }
+      ]
     }
   ],
   "brand_dedup_window_days": 7
