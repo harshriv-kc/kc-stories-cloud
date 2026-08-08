@@ -35,3 +35,9 @@ fmcg_*.jpg
 *_src.jpg
 *_src.jpeg
 *_src.png
+# additional QC/helper artifacts (contact sheets, panel crops, badge subject sources)
+contact_cards.png
+panelcrop_*.png
+subj_*.png
+*_d2r.jpg
+*_d2r.png
