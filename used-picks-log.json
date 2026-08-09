@@ -2735,6 +2735,60 @@
      "brand": "mortein"
     }
    ]
+  },
+  {
+   "date": "2026-08-09",
+   "_note": "Fresh full run (all 3 stories + 3 entry badges republished live via update_story/update_story_entry_badges, actor Harsh Shrivastava; Sunday => WebEngage push JSON sent to Hritik on Slack). Commodity: काबुली चना तेजी (in-house RED, थोक ₹7,300→₹7,400/क्विंटल, महाराष्ट्र ₹69–74/किलो) + मखाना तेजी (in-house RED, +₹25 → ₹800–1,325/किलो, त्योहारी मांग) + सरसों तेल मंदी (in-house GREEN, सरसों −₹100 → ₹8,100–8,150; तेल दादरी ₹16,700/क्विंटल — kept for direction balance despite सरसों appearing 08-07/08-02). 2 RED + 1 GREEN. रुझान digest + सोया-तेल-steady skipped as pick-source. FMCG top-3 by LR desc across all 4 segments after 12d news_id + 7d brand dedup + body-verify (all Retailer Scheme, all concrete figures): Milk-D ₹5 choc (LR 6.80, 30 पीस जार ₹95 + 3 फ्री, ~₹70 margin) + Orange Bite 50p candy (LR 6.53, जार पर 80 नग फ्री) + Fevikwik ₹5 (LR 6.32, ₹5 पैकेट पर ₹10 जेल फ्री). CATEGORY-SPREAD SWAP: Pinata fruit jelly (LR 6.46, 3rd by LR, body-verified) swapped OUT for Fevikwik (LR 6.32, 4th) to avoid an all-confectionery day (soft rule) -> 2 candy + 1 adhesive; Pinata in also_shown. SKIPPED 7d brand (HARD): Patanjali toothbrush 7.77, Cadbury 5-Star 7.56, Pulse 6.61, Mortein 6.46, Patanjali toothpaste 6.42, Colgate 6.30, Supermax 6.26, Royal Dairy 6.22. News: चाय-साबुन-तेल 6–8% महंगे (in-house, direct margin-impact; MSME-payment-bill & PM-Vidyalakshmi scheme held back, रुझान/scam bait skipped). FMCG badge used a clean AI orange-candy still-life because the D2R post photo was 434x598/5.8KB (too low-res to upscale sharply). Badge radial clearance 366/359/372 <= 448.",
+   "picks": {
+    "mandi_bhav": [
+     {
+      "news_id": "b86cf4f0-75dc-4fac-945d-cd2c44b84f1e",
+      "label": "काबुली चना तेजी — in-house RED, थोक ₹7,300→₹7,400/क्विंटल (महाराष्ट्र ₹69–74/किलो)",
+      "brand": "kabuli-chana"
+     },
+     {
+      "news_id": "1818457c-3efd-4d1e-b3db-6210cdc7ca88",
+      "label": "मखाना तेजी — in-house RED, +₹25 → ₹800–1,325/किलो (त्योहारी मांग, बिहार आवक सीमित)",
+      "brand": "makhana"
+     },
+     {
+      "news_id": "000cdf25-0ac9-41a4-9c6e-72da40a65087",
+      "label": "सरसों तेल मंदी — in-house GREEN, सरसों −₹100 → ₹8,100–8,150; तेल दादरी ₹16,700/क्विंटल (balance pick)",
+      "brand": "sarson-tel"
+     }
+    ],
+    "fmcg": [
+     {
+      "news_id": "dfe74def-8602-4f47-abbc-b0ba139a0213",
+      "label": "मिल्क डी ₹5 चॉकलेट — Retailer Scheme LR 6.80, 30 पीस जार ₹95 + 3 फ्री (~₹70 margin)",
+      "brand": "milk-d"
+     },
+     {
+      "news_id": "ac2b5efa-2fd8-4e32-8371-a10c76408f36",
+      "label": "ऑरेंज बाइट 50 पैसे कैंडी — Retailer Scheme LR 6.53, 1 बड़ा जार पर 80 यूनिट फ्री",
+      "brand": "orange-bite"
+     },
+     {
+      "news_id": "e4123fc2-2b1f-433f-b315-3242bbfb9f65",
+      "label": "फेविक्विक ₹5 — Retailer Scheme LR 6.32, ₹5 पैकेट पर ₹10 वाली जेल फ्री (category-spread pick)",
+      "brand": "fevikwik"
+     }
+    ],
+    "trending_news": [
+     {
+      "news_id": "8b7ed5cf-f27c-4f7e-a033-bd255d92d303",
+      "label": "चाय-साबुन-तेल 6–8% महंगे — in-house news, त्योहार से पहले FMCG दाम बढ़त (पुराना स्टॉक सस्ता); margin-impact",
+      "brand": "fmcg-price-hike"
+     }
+    ]
+   },
+   "also_shown": [
+    {
+     "news_id": "24453e18-466c-4276-94e3-80fca9817b4b",
+     "label": "Pinata fruit jelly jar 225 pce (Retailer LR 6.46) — body-verified, swapped OUT for Fevikwik to avoid all-confectionery day",
+     "brand": "pinata"
+    }
+   ]
   }
  ],
  "brand_dedup_window_days": 7
