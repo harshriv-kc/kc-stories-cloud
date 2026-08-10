@@ -72,49 +72,49 @@ def b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-08-09)
+# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-08-10)
 CARDS = [
- # --- Commodity (mandi_bhav) — 2 tejii/RED (काबुली चना, मखाना) + 1 mandi/GREEN (सरसों तेल) for balance; all in-house ---
- dict(i=1, label="मंडी भाव", stripe=RED, headline="काबुली चना",
-   price=f'{tri("up",RED)}₹7,300<span class="unit">/क्विंटल</span>',
-   sub=f'महाराष्ट्र काबुली चना ₹69–74/किलो; थोक ₹7,300 से ₹7,400/क्विंटल की ओर; नई फसल के बावजूद विदेश से तेजी व घरेलू मांग, उपलब्धता कम · <b class="delta" style="color:{RED}">+₹100/क्विंटल तक</b>',
-   l1="क्यों", v1="विदेश से तेजी के संकेत और घरेलू मांग; रुपए की तंगी में भी माल कम",
-   l2="क्या करें", v2="त्योहारी खपत से पहले जरूरी काबुली चना अभी भर लें; भाव और चढ़ सकते हैं"),
- dict(i=2, label="मंडी भाव", stripe=RED, headline="मखाना",
-   price=f'{tri("up",RED)}₹1,325<span class="unit">/किलो</span>',
-   sub=f'हाजिर में माल कम और मांग निकलने से मखाना ₹25 महंगा → ₹800–1,325/किलो; चिरौंजी भी ₹50 उछलकर ₹1,400–1,650/किलो · <b class="delta" style="color:{RED}">+₹25/किलो</b>',
-   l1="क्यों", v1="बिहार से आवक सीमित; जन्माष्टमी-रक्षाबंधन की त्योहारी खपत शुरू",
-   l2="क्या करें", v2="मखाना-चिरौंजी का जरूरी स्टॉक अभी भरें; त्योहार तक और चढ़ सकते हैं"),
- dict(i=3, label="मंडी भाव", stripe=GREEN, headline="सरसों तेल",
-   price=f'{tri("down",GREEN)}₹16,700<span class="unit">/क्विंटल</span>',
-   sub=f'तेल मिलों की मांग घटने से सरसों ₹100 टूटकर ₹8,100–8,150/क्विंटल; सरसों तेल सुस्त, दादरी ₹16,700/क्विंटल; दैनिक आवक ढाई लाख बोरी · <b class="delta" style="color:{GREEN}">−₹100/क्विंटल</b>',
-   l1="क्यों", v1="मिलों की मांग कमजोर और स्टॉकिस्ट बिकवाली सुस्त; भारी आवक से दबाव",
-   l2="क्या करें", v2="ऊंची खरीद से बचें; थोड़ा-थोड़ा भरें ताकि औसत लागत नीचे रहे"),
- # --- FMCG (fmcg) — top 3 by Like Rate desc across ALL 4 segments after ledger dedup (news_id + 7-day brand) + body-verify ---
- #     Milk-D ₹5 choc 6.80, Orange Bite 50p candy 6.53, Fevikwik adhesive 6.32 — all Retailer Scheme, body-verified concrete figures.
- #     CATEGORY-SPREAD SWAP: Pinata fruit jelly (6.46, 3rd by LR) swapped OUT for Fevikwik (6.32, 4th) to avoid an all-confectionery day (soft rule) — 2 candy + 1 adhesive. Pinata -> also_shown.
- #     SKIPPED 7d brand (HARD): Patanjali toothbrush 7.77, Cadbury 5-Star 7.56, Pulse 6.61, Mortein 6.46, Patanjali toothpaste 6.42, Colgate 6.30, Supermax 6.26, Royal Dairy 6.22.
- dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="मिल्क डी",
-   price='<span class="offer" style="background:%s">30 पीस पर 3 फ्री</span>'%SCHEME_GREEN,
-   sub='₹5 वाली मिल्क डी चॉकलेट—30 पीस का जार ₹95 में, साथ 3 पीस बिल्कुल फ्री; बच्चों में तेज बिकने वाली चॉकलेट · <b class="delta">~₹70 मार्जिन</b>',
-   l1="स्कीम", v1="₹95 में 30 पीस का जार + 3 पीस बिल्कुल फ्री",
-   l2="फायदा", v2="₹5 MRP; पूरा जार बिकने पर करीब ₹70 का मुनाफा"),
- dict(i=5, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="ऑरेंज बाइट",
-   price='<span class="offer" style="background:%s">जार पर 80 नग फ्री</span>'%SCHEME_GREEN,
-   sub='50 पैसे वाली ऑरेंज बाइट चॉकलेट—1 बड़ा जार खरीदने पर 80 यूनिट बिल्कुल फ्री; बाजार में तेज मांग · <b class="delta">80 नग फ्री</b>',
-   l1="स्कीम", v1="1 बड़ा जार खरीदने पर 80 यूनिट बिल्कुल फ्री",
-   l2="फायदा", v2="50 पैसे MRP; बढ़िया मार्जिन, तेज बिकने वाली कैंडी"),
- dict(i=6, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="फेविक्विक",
-   price='<span class="offer" style="background:%s">₹5 पैकेट पर ₹10 जेल फ्री</span>'%SCHEME_GREEN,
-   sub='₹5 वाला फेविक्विक पैकेट खरीदने पर ₹10 वाली फेविक्विक जेल बिल्कुल फ्री; हर पैकेट पर दोगुना सामान · <b class="delta">₹10 जेल फ्री</b>',
-   l1="स्कीम", v1="₹5 फेविक्विक पैकेट पर ₹10 वाली जेल फ्री",
-   l2="फायदा", v2="हर पैकेट पर ₹10 का अतिरिक्त सामान; रोज़ बिकने वाला प्रोडक्ट"),
- # --- News (trending_news) — FMCG price-hike (in-house, direct margin-impact; scam/fraud bait, रुझान digests & vague no-number posts SKIPPED; MSME-bill & Vidyalakshmi scheme held back) ---
- dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="चाय-साबुन महंगे",
-   price='<span class="news">चाय, साबुन, तेल 6–8% तक महंगे</span>',
-   sub='त्योहार से पहले FMCG कंपनियां दाम बढ़ाएंगी; पाम तेल व कच्चा माल महंगा—HUL, Wipro साबुन 7–8%, Dabur तेल-पेस्ट 4%, शैम्पू 7% महंगा · <b class="delta">पुराना स्टॉक सस्ता</b>',
-   l1="क्यों ज़रूरी", v1="नए रेट का माल आने पर पुराने रेट का स्टॉक आपको सस्ता पड़ेगा",
-   l2="क्या करें", v2="जरूरी माल अभी भरें (त्योहार तक जितना बिके); ग्राहक को दाम बढ़ने की बात पहले बताएं"),
+ # --- Commodity (mandi_bhav) — 2 mandi/GREEN (मूंग दाल, जायफल) + 1 tejii/RED (बासमती चावल) for balance; all in-house ---
+ dict(i=1, label="मंडी भाव", stripe=GREEN, headline="मूंग दाल",
+   price=f'{tri("down",GREEN)}₹9,200–11,800<span class="unit">/क्विंटल</span>',
+   sub=f'दाल मिलों की सुस्त खरीद और मंडियों में आवक के दबाव से मूंग दाल ₹100 टूटी—दिल्ली ₹9,200–11,800/क्विंटल; मूंग (साबुत) ₹6,200–8,000 · <b class="delta" style="color:{GREEN}">−₹100/क्विंटल</b>',
+   l1="क्यों", v1="दाल मिलों की खरीद ठंडी, आवक का दबाव और निर्यात मांग सुस्त",
+   l2="क्या करें", v2="मौजूदा भाव पर पुराना माल निकालें; एक साथ बड़ा स्टॉक न भरें, भाव नरम रह सकते हैं"),
+ dict(i=2, label="मंडी भाव", stripe=GREEN, headline="जायफल",
+   price=f'{tri("down",GREEN)}₹730–735<span class="unit">/किलो</span>',
+   sub=f'ग्राहकी कमजोर और नई फसल के दबाव से जायफल ₹10 और लुढ़का → ₹730–735/किलो; महीने भर में ₹45 सस्ता, लौंग-दालचीनी भी नरम · <b class="delta" style="color:{GREEN}">−₹45/माह</b>',
+   l1="क्यों", v1="किराना जिंसों में उठाव नहीं, नई फसल का दबाव और विदेश से सस्ता माल",
+   l2="क्या करें", v2="मंदा लगभग खत्म—त्योहारी मांग से पहले जायफल-लौंग का जरूरी स्टॉक इसी भाव पर भरें"),
+ dict(i=3, label="मंडी भाव", stripe=RED, headline="बासमती चावल",
+   price=f'{tri("up",RED)}₹9,500–9,600<span class="unit">/क्विंटल</span>',
+   sub=f'निर्यातकों की पूछपरख बढ़ी और राइस मिलों की बिकवाली कमजोर पड़ने से बासमती ₹100–200 चढ़ा—1121 सेला ₹9,500–9,600/क्विंटल; 1509 सेला ₹8,800–8,900 · <b class="delta" style="color:{RED}">+₹200/क्विंटल</b>',
+   l1="क्यों", v1="निर्यात मांग लगातार बनी, राइस मिलों की बिकवाली कमजोर; हाजिर माल तंग",
+   l2="क्या करें", v2="रुक-रुक कर तेजी के आसार—बासमती का जरूरी स्टॉक अभी बना लें"),
+ # --- FMCG (fmcg) — top 3 by Like Rate desc across ALL 4 segments after ledger dedup (news_id + 7-day brand) + body-verify. 3-category spread: home-care / candy / oral-care ---
+ #     Supremo 51 bartan bar 7.28 (Consumer), Parle coffee choc 6.06 (Retailer), Close Up 5.77 (Retailer) — all body-verified concrete figures.
+ #     SWAP (hyper-local): Sita Gold chai 6.50 dropped — body "हमारे एरिया में गिफ्ट" (area-specific) + only a 1-spoon freebie, no margin. -> also_shown.
+ #     SKIPPED 7d brand (HARD): Milk-D 7.49, Patanjali brush 7.00, Dabur Lal 6.91, Godrej No.1 6.80, Royal Dairy 6.79, Fevikwik 6.24, Supermax 6.17, Mortein 6.15, Cadbury 5-Star 6.08, Orange Bite 6.05, Patanjali paste 5.78, Colgate 5.77.
+ dict(i=4, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="सुप्रीमो 51",
+   price='<span class="offer" style="background:%s">₹10 में 250g — 50g ज्यादा</span>'%SCHEME_BLUE,
+   sub='₹10 वाला सुप्रीमो 51 बर्तन बार अब 50 ग्राम ज्यादा—उतने ही ₹10 में पूरा 250 ग्राम साबुन; रोज़ बिकने वाला बर्तन साबुन · <b class="delta">50g ज्यादा वजन</b>',
+   l1="ऑफर", v1="₹10 में 250 ग्राम बर्तन साबुन—50 ग्राम वजन ज्यादा",
+   l2="ग्राहक को", v2="उतने ही दाम में ज्यादा माल; बर्तन बार तेज़ बिकता है"),
+ dict(i=5, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="पारले कॉफ़ी टॉफ़ी",
+   price='<span class="offer" style="background:%s">जार पर 11 टॉफ़ी फ्री</span>'%SCHEME_GREEN,
+   sub='₹1 वाली पारले कॉफ़ी टॉफ़ी—जार ₹135 में (₹150 का माल), साथ 11 टॉफ़ी बिल्कुल फ्री; तेज़ बिकने वाली टॉफ़ी · <b class="delta">₹11 अतिरिक्त मार्जिन</b>',
+   l1="स्कीम", v1="₹135 में जार (₹150 का माल) + 11 टॉफ़ी फ्री",
+   l2="फायदा", v2="₹15 सीधा मार्जिन + 11 फ्री टॉफ़ी (₹11) ≈ ₹26/जार"),
+ dict(i=6, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="क्लोज़ अप",
+   price='<span class="offer" style="background:%s">6 पर 1 फ्री</span>'%SCHEME_GREEN,
+   sub='₹20 वाला क्लोज़ अप टूथपेस्ट—6 खरीदने पर 1 (₹20 वाला) बिल्कुल फ्री; ब्रांडेड, रोज़ बिकने वाला पेस्ट · <b class="delta">₹20 का माल फ्री</b>',
+   l1="स्कीम", v1="₹20 वाले 6 क्लोज़ अप पर 1 क्लोज़ अप फ्री (buy 6 get 1)",
+   l2="फायदा", v2="हर 6 पैक पर ₹20 का अतिरिक्त माल; ब्रांडेड पेस्ट, पक्की बिक्री"),
+ # --- News (trending_news) — PM Jan Aushadhi scheme (in-house, policy/scheme with concrete numbers; scam/fraud QR-bait, रुझान digest & vague no-number festival post SKIPPED) ---
+ dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="जन औषधि केंद्र",
+   price='<span class="news">दवा 50–90% सस्ती, कमाई का नया रास्ता</span>',
+   sub='PM जन औषधि केंद्र पर वही दवा 50–90% सस्ती; केंद्र खोलने पर छपे दाम पर 20% पक्का मार्जिन + 15% इनसेंटिव (₹15,000/माह तक), शुरुआती मदद ₹5 लाख तक · <b class="delta">20% मार्जिन</b>',
+   l1="क्यों ज़रूरी", v1="बुखार-शुगर-बीपी की रोज़ की दवाएं सस्ती; ग्राहक की बड़ी बचत",
+   l2="क्या करें", v2="D.Pharm/B.Pharm और 120 वर्गफुट दुकान हो तो केंद्र खोलें—20% मार्जिन + मासिक इनसेंटिव"),
 ]
 
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
