@@ -2893,6 +2893,80 @@
         }
       ],
       "notes": "Weekday (Mon) — no weekend WebEngage Slack handoff. 3 commodity (2 मंदी/GREEN + 1 तेजी/RED) + 3 FMCG (home-care/candy/oral-care, 3 brands) + 1 news. All 7 slides + 3 badges published live via jack (actor Harsh Shrivastava). QC-composited (Nirmala UI + chromium) — cards + badges normalized."
+    },
+    {
+      "date": "2026-08-11",
+      "picks": {
+        "mandi_bhav": [
+          {
+            "news_id": "0f79336b-1c72-4377-a5f7-e7354c8ed7bd",
+            "brand": "sarson-tel",
+            "label": "सरसों तेल तेजी +₹150 → एक्सपेलर ₹16,850/क्विंटल; सरसों दाना +₹100 (in-house RED)"
+          },
+          {
+            "news_id": "c89fc673-840a-4ac1-8e80-5b689cd36ba0",
+            "brand": "urad",
+            "label": "उड़द मंदी −₹125 → SQ ₹9,700/क्विंटल (in-house GREEN)"
+          },
+          {
+            "news_id": "16552815-a42e-4261-8b27-dd929e304955",
+            "brand": "badam",
+            "label": "बादाम तेजी +₹1,400 (~5.5%) → ₹27,400–27,900/40 किलो (in-house RED)"
+          }
+        ],
+        "fmcg": [
+          {
+            "news_id": "0f89a4ef-9527-4585-a78b-89baf8952a7c",
+            "brand": "comfort",
+            "label": "कंफर्ट फैब्रिक कंडीशनर product_change — MRP ₹58→₹60, खरीद ₹52.2→₹54, ~₹6/pcs मार्जिन (LR 9.60)"
+          },
+          {
+            "news_id": "8fee6b72-e1b7-496b-b8c8-14de9d36acdc",
+            "brand": "martin",
+            "label": "मार्टिन मच्छर मशीन Consumer Scheme — साथ ₹35 वाला डिटॉल साबुन फ्री (LR 7.08)"
+          },
+          {
+            "news_id": "3781712f-f715-459f-b330-500ef1a94671",
+            "brand": "priyagold-cnc",
+            "label": "प्रिया गोल्ड CNC बिस्किट product_change — 32g→40g, 25% ज्यादा (LR 6.76)"
+          }
+        ],
+        "trending_news": [
+          {
+            "news_id": "8c13c075-ff01-4c18-8114-fac6e825a432",
+            "brand": "kharif-rakba",
+            "label": "खरीफ रकबा 18 लाख हेक्टेयर घटी, धान 2% पीछे, बारिश 11% कम → चावल मजबूत (in-house crop news)"
+          }
+        ]
+      },
+      "also_shown": [
+        {
+          "news_id": "4cd23c8b-0a91-4c87-b9f6-f59cd7c2070c",
+          "brand": "vicks",
+          "label": "Vicks Double Power Retailer LR 6.55 — 7d brand skip (vicks recent)"
+        },
+        {
+          "news_id": "c63acdcf-f21d-4bb8-95ac-75bfbe35f690",
+          "brand": "colgate",
+          "label": "Colgate maxfresh 12+2 Retailer LR 6.53 — 7d brand skip (colgate recent)"
+        },
+        {
+          "news_id": "1e5b7cd3-6dee-40a7-8114-a85893e22ef9",
+          "brand": "parle-melody",
+          "label": "Parle Melody ₹1 Retailer LR 6.71 — not picked (below top-3 cut; candy-heavy week)"
+        },
+        {
+          "news_id": "5b6c50d8-9d7f-45d1-a178-674ecbd754bb",
+          "brand": "yippee",
+          "label": "Sunfeast Yippee Magic Masala noodles LR 6.61 — not picked (below top-3 cut)"
+        },
+        {
+          "news_id": "2d6ae91e-06eb-4fc3-9524-327ab2d94d48",
+          "brand": "dettol",
+          "label": "Dettol shaving cream 30% extra LR 6.34 — dropped (percent only, no ₹ figure)"
+        }
+      ],
+      "notes": "Weekday (Tue) — weekend WebEngage Slack-to-Hritik handoff SKIPPED; push JSON in report. 3 commodity (2 तेजी/RED सरसों तेल+बादाम, 1 मंदी/GREEN उड़द) + 3 FMCG top-LR after news_id+7d-brand dedup & body-verify, 3-category spread (home-care Comfort / pest Martin / food CNC) + 1 crop news. All 7 slides + 3 badges published live via jack (actor Harsh Shrivastava). QC-composited (Nirmala UI + chromium): cards overlap-checked at full size, badges radial-clearance measured (max 428 <= 448). Vicks/Colgate fell to 7d brand dedup."
     }
   ],
   "brand_dedup_window_days": 7
