@@ -2967,6 +2967,85 @@
         }
       ],
       "notes": "Weekday (Tue) — weekend WebEngage Slack-to-Hritik handoff SKIPPED; push JSON in report. 3 commodity (2 तेजी/RED सरसों तेल+बादाम, 1 मंदी/GREEN उड़द) + 3 FMCG top-LR after news_id+7d-brand dedup & body-verify, 3-category spread (home-care Comfort / pest Martin / food CNC) + 1 crop news. All 7 slides + 3 badges published live via jack (actor Harsh Shrivastava). QC-composited (Nirmala UI + chromium): cards overlap-checked at full size, badges radial-clearance measured (max 428 <= 448). Vicks/Colgate fell to 7d brand dedup."
+    },
+    {
+      "date": "2026-08-12",
+      "_note": "Full autonomous run — all 3 stories + entry badges republished live (update_story / update_story_entry_badges, actor Harsh Shrivastava). Prior live content in the 12d dedup window swapped out. Commodity = मक्की (in-house RED, भाव ₹2,425→₹2,550 ~5%, novel — बिजाई 22-23% घटी) + देसी चना (in-house GREEN, −₹50 → दिल्ली ₹6,325-6,350, balance) + साबूदाना (MP teji_mandi LR 7.13, RED, ₹60→₹70/किलो, श्रावण/व्रत मांग); in-house सरसों तेल तेजी ₹17,000 SKIPPED = same commodity+direction as 08-11 (sarson-tel). FMCG = top-3 branded schemes by LR desc after ledger dedup (news_id 12d + 7d brand HARD) + body-verify: फ्रूट जेली ₹1 (Retailer 6.28, जार ₹650/900 जेली +100 फ्री, ₹350 मुनाफा) + हेड एंड शोल्डर्स (Retailer 6.15, 8-लड़ी पैक → ₹24 कैशबैक स्क्रैच कूपन) + मैगी मसाला-ए-मैजिक (Consumer 5.76, 5+1 फ्री, MRP ₹36/खरीद ₹28/₹8 मार्जिन). SWAPPED OUT छिली मूंगफली (TOP FMCG LR 6.98, fmcg_product_change ₹140→₹150) = raw-commodity rate mis-bucketed as FMCG, doesn't belong on the scheme story — flag for eng. News = UPI/MDR राहत (in-house; संसद कर संशोधन विधेयक 2026, UPI पर कोई शुल्क नहीं); नकली-तेल जब्त scam/मिलावट bait & रुझान digest SKIPPED, NPS पेंशन held (chose fresher UPI). Slides composited via kc-card-render.py, QC'd (contact sheet + full-size read of tallest card मक्की — no overlap, identical typography). Badges curved-banner uniform FS140 (मक्की में तेजी / 100 जेली फ्री / UPI पर शुल्क नहीं); radial clearance 439/359/444 ≤448 (FS150→FS144→FS140 to clear tn 'शुल्क नहीं' from the ring). Weekday (Wednesday) — no WebEngage weekend Slack handoff; push JSON left in the final report for the operator. Push JSON NOT sent to Slack.",
+      "picks": {
+        "mandi_bhav": [
+          {
+            "news_id": "b52dfb91-a23b-40e5-abfe-4057a88dc810",
+            "label": "मक्की तेजी ₹2,425→₹2,550/क्विंटल (~5%), बिजाई 22-23% घटी — in-house RED",
+            "brand": "makki"
+          },
+          {
+            "news_id": "27554cfb-0d4e-445e-af95-add592a54ae5",
+            "label": "देसी चना मंदी −₹50 → दिल्ली ₹6,325-6,350/क्विंटल (MP ₹6,250-6,275) — in-house GREEN for balance",
+            "brand": "desi-chana"
+          },
+          {
+            "news_id": "bd7484c8-83af-48f5-b55e-e25e56ced261",
+            "label": "साबूदाना तेजी ₹60→₹70/किलो (+₹10, श्रावण/व्रत मांग) — MP teji_mandi LR 7.13, RED",
+            "brand": "sabudana"
+          }
+        ],
+        "fmcg": [
+          {
+            "news_id": "9a007a55-fc63-49d1-8f26-ff1f4f3bf5dc",
+            "label": "फ्रूट जेली ₹1 — Retailer Scheme, जार ₹650 (900 जेली) पर 100 जेली फ्री, ₹350 मुनाफा (LR 6.28)",
+            "brand": "frutle-jelly"
+          },
+          {
+            "news_id": "72f9d110-6417-4a7c-8fb7-2f99d0b4b950",
+            "label": "हेड एंड शोल्डर्स शैम्पू — Retailer Scheme, 8-लड़ी पैक पर स्क्रैच कूपन → ₹24 कैशबैक (LR 6.15)",
+            "brand": "head-and-shoulders"
+          },
+          {
+            "news_id": "1d08e83e-1a95-4215-804e-59980036794f",
+            "label": "मैगी मसाला-ए-मैजिक लड़ी — Consumer Scheme, 5+1 फ्री, MRP ₹36/खरीद ₹28/₹8 मार्जिन (LR 5.76)",
+            "brand": "maggi-masala-magic"
+          }
+        ],
+        "trending_news": [
+          {
+            "news_id": "7d51e089-422f-4942-a119-b59284478204",
+            "label": "UPI पर कोई शुल्क नहीं — संसद कर संशोधन विधेयक 2026, छोटे दुकानदार/ग्राहक से MDR नहीं, 90%+ लेनदेन मुफ्त — in-house",
+            "brand": "upi-mdr"
+          }
+        ]
+      },
+      "also_shown": [
+        {
+          "news_id": "acdafddb-e571-43b2-8f2a-40ec352cb9ad",
+          "label": "छिली मूंगफली (Gora) ₹140→₹150/किग्रा — TOP FMCG LR 6.98 (fmcg_product_change), SWAPPED OUT: raw-commodity rate mis-bucketed as FMCG, doesn't belong on scheme story — flag for eng",
+          "brand": "mungfali"
+        },
+        {
+          "news_id": "ad5d74dc-442a-4d7b-a48c-dd149f59b987",
+          "label": "नमक तेजी — TOP teji_mandi LR 10.65, SWAPPED body-verify: no concrete ₹ figure (only 'तेजी रहेगी 30-35 दिन')",
+          "brand": "namak"
+        },
+        {
+          "news_id": "fc7517f9-1c8e-48a8-ba7d-4ff70a9fe405",
+          "label": "काली मिर्च मजबूत — teji_mandi LR 5.78, SWAPPED body-verify: no concrete ₹ figure",
+          "brand": "kali-mirch"
+        },
+        {
+          "news_id": "b50fc9f2-c1e7-443a-aca3-6f88a6c4b984",
+          "label": "सरसों तेल तेजी +₹150 → ₹17,000/क्विंटल — in-house RED, SKIPPED: same commodity+direction as 08-11 (sarson-tel)",
+          "brand": "sarson-tel"
+        },
+        {
+          "news_id": "216d212a-7825-4afe-a9f1-6466337ae6ca",
+          "label": "1.19 लाख किलो नकली खाद्य तेल जब्त (बीड, ₹1.94 करोड़) — in-house news, SKIPPED: scam/मिलावट/जब्ती bait",
+          "brand": "nakli-tel"
+        },
+        {
+          "news_id": "9c787762-20ad-4f6e-8a75-3ddfa7e2f688",
+          "label": "NPS दुकानदार पेंशन सरकारी योजना — in-house news, NOT used: chose fresher UPI/MDR (timelier policy, संसद 10 अगस्त)",
+          "brand": "nps-pension"
+        }
+      ]
     }
   ],
   "brand_dedup_window_days": 7
