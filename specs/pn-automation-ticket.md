@@ -71,6 +71,24 @@ Reject the request unless:
 - every `includedSegments`/`excludedSegments` entry resolves in the segment list
   (today unknown IDs **silently fall through to userListIds** — `utils.py:140-141`)
 
+### 4b. Make the forced experiment holdouts overridable (`skipExpSegment`)
+`utils.py:286` unconditionally prepends `EXP_SEGMENT = ['~48clbl2','~1i5j875']`
+(constants.py:18) to the caller's exclusions, with no way to opt out:
+```python
+excluded_segments_combined = EXP_SEGMENT + data['excludedSegments']
+```
+**Measured live 2026-08-13:** an automated Scheme/FMCG campaign came out at 201,619 reachable
+vs 205,286 for the hand-built one — identical in every other respect. Only difference: those 2.
+
+Add an optional `skipExpSegment: true` request flag (default false, preserving today's behaviour).
+Also **dedupe** `excluded_segments_combined` — a caller who legitimately lists one of those two
+(the YouTube campaign does) currently sends it twice, and there is no dedup in
+`separate_segments_by_type`.
+
+Note: this is only needed if the operator wants automated campaigns to match hand-built ones that
+do NOT exclude the holdouts. The cheaper fix is to add the 2 exclusions to those manual campaigns —
+every pipeline-created PN already excludes them.
+
 ### 5. Idempotency
 No dedupe exists at any layer; duplicate live campaigns already shipped (2026-07-09,
 `government schemes` created twice, both with real campaign_ids). Add a `UNIQUE(idempotency_key)`
