@@ -1,6 +1,6 @@
 # KC STORIES — DAILY GENERATOR (END-TO-END, AUTOPILOT)
 
-Fully automated daily refresh of the 3 live KC Stories tags + their entry badges + the WebEngage push JSON. Runs on one trigger, publishes on its own.
+Fully automated daily refresh of the 3 live KC Stories tags + their entry badges + the WebEngage push (created and **scheduled automatically for 16:30 IST**, Step 12b). Runs on one trigger, publishes on its own.
 
 ## TRIGGERS
 "today's KC stories", "daily prompts", "make stories", "kc stories", "todays", or any equivalent → run the whole pipeline below end-to-end and **publish without asking**.
@@ -134,7 +134,8 @@ Per tag: `jack:draft_story_refresh(tag, slides=[{news_id, img_url}, ...])` → `
 ### 11. Swap the 3 badges
 `jack:update_story_entry_badges(updates=[{img_url, story_id}, ...], confirm=False)` → returns match plan + token → call again `confirm=True, confirmation_token=<token>, actor_name="Harsh Shrivastava"`. Match by `story_id`. Use the **normalized** badge URLs from Step 9b.
 
-### 12. WebEngage push JSON (`multi_icon_stories`)
+### 12. Build the push payload (`multi_icon_stories` `notification_data`)
+> This JSON is no longer pasted by a human — it is the `--nd` input to the scheduler in **Step 12b**.
 ⚑ **The PN uses a SEPARATE transparent export of each badge, NOT the white-bg widget badge** (operator rule, 2026-06-25). The in-app entry-widget badges (Step 11) stay the normalized 1080² square (white bg). For the push, use the **`badge_pn_<i>.png`** files that **`kc-badge-banner.py` now emits automatically** alongside each `vD_<i>.png` (2026-07-10) — a **SQUARE (1:1) 500×500 RGBA** transparent export built with a **compound alpha mask**: the content disc + the red band are opaque, and the **inner white ring between them is cut to TRANSPARENT** (so the push bg shows through), with **red as the outermost ring flush at the edge** — matching the entry-badge ring exactly. No separate/manual masking step: the compositor keeps the PN in lockstep with the ring geometry, so `sep_w`/`red_w`/FS changes flow through to the PN too. Verify alpha on a checkerboard, then `upload_image(blob="news")` each. The CDN webp keeps the alpha (verify `mode=RGBA`). Use **these transparent square URLs** in the push `url` (clean `.webp`); keep the **fixed deep_links unchanged** (each opens its reel; story_ids are permanent — never re-encode). Order = 1 mandi, 2 fmcg, 3 tn.
 ```json
 {
@@ -149,23 +150,64 @@ Per tag: `jack:draft_story_refresh(tag, slides=[{news_id, img_url}, ...])` → `
 }
 ```
 
-### 12b. WEBENGAGE PUSH — ⏸ ON HOLD (manual for now, per operator 2026-06-25)
-**Current process: just OUTPUT the ready-to-paste push JSON in the final summary** (Step 12 / Step 14) with the 3 transparent 230×400 PN `.webp` URLs swapped into `url` and the fixed deep_links unchanged. The operator pastes it into the WebEngage `notification_data` key-value manually (for a few days). **Do NOT attempt any WebEngage write/edit** (no auto-fire, no browser automation) until the operator resumes it.
-⚑ **ALWAYS print the WebEngage campaign edit URL right next to the JSON** (operator, 2026-07-16 — for one-tap access): `https://in.webengage.com/accounts/in~58adcc4a/push-notifications/campaigns/~1dng34j/message` (campaign `~1dng34j`). Include it in both Step 12 and the Step 14 final summary alongside the push JSON block.
-The future unattended design (custom event `kc_stories_daily_refresh` + journey personalized from event attributes, fired via the India-DC REST Events API) is fully specced in `webengage-stories-automation.md` — paused pending operator journey build + `WEBENGAGE_API_KEY` secret + audience choice. Resume from that doc when asked.
+### 12b. ⚑ SCHEDULE THE PUSH AUTOMATICALLY — daily 16:30 IST (operator, 2026-08-13)
+**SUPERSEDES the old manual-paste process and the retired journey design.** The run no longer just
+prints JSON for a human — it **creates and schedules a fresh `multi_icon` one-time campaign every day**
+via `pn-schedule.py`, using the audience + fixed key-values in `specs/pn-campaign-registry.json`.
 
-### 12c. ⚑ SEND THE PUSH JSON TO SLACK (daily, operator-authorized)
-After building the push JSON (Step 12), DM it to **both** via the Slack MCP `slack_send_message` — this is a standing daily authorization (set 2026-06-25), no need to ask:
-- **Hritik** — channel_id `U057QBHF43H` (hritik@kirana.club)
-- **Harsh** — channel_id `U09K92G1U1X` (harsh.shrivastava@kirana.club)
-Message = a one-line context ("KC Stories — WebEngage push `notification_data` for <date> (multi_icon_stories), transparent 230×400 badges") + the full `notification_data` JSON (today's 3 transparent PN badge URLs, fixed deep_links) in a ```json code block. If a user_id ever fails, re-resolve via `slack_search_users` by email. **Gate:** if the Slack connector is unavailable in the unattended run, skip and report it (the JSON is already in the final summary) — don't fail the run.
+```bash
+# write today's Step-12 JSON (3 badge_pn URLs + the FIXED deep_links) to a file, then:
+python3 pn-schedule.py --type kc_stories_multi_icon --nd /tmp/nd_stories.json \
+        --time "<TODAY> 16:30" --send
+```
+Returns `{"campaign_id": "...", "license_code": "in~58adcc4a"}`. Record the campaign_id.
+
+**🚨 HARD PRECONDITION — the recurring campaign `~1dng34j` MUST be paused/stopped first.**
+It is a RECURRING campaign that fires on its own. If it is still active while this step schedules a
+daily one-time campaign, **every user gets the Stories push TWICE**. Verify it is paused before the
+first automated run, and never re-activate it.
+
+**Gates (all mandatory):**
+- **Only schedule if the stories actually published** (Steps 10 + 11 succeeded). Never send a push
+  pointing at stale or half-updated stories.
+- **Lead time:** `pn-schedule.py` refuses anything under 45 min out. If the run is so late that 16:30
+  today is inside that window, **DO NOT shift the time and DO NOT send** — skip, and flag it loudly in
+  the summary for the operator. Never silently move the send time.
+- **NEVER retry on failure.** A non-200 from the pipeline does **not** mean "not sent" — the campaign
+  is created+activated *before* the call can fail (production: Samachar 242/242 rows with NULL
+  campaign_id). On error, report it and stop. There is no cancel API; a retry double-sends.
+- **Idempotency** is enforced by `pn-schedule-log.json` (key = `type|time`). Commit it with the ledger
+  in Step 13 so the guard survives the ephemeral container.
+
+**Known, accepted deltas vs the old hand-built `~1dng34j`** (measured 2026-08-13 — do not treat as bugs):
+- The pipeline force-adds 2 exclusions (`~48clbl2` Experimentation Segment, `~1i5j875` New Users D0-D2).
+  Stories previously excluded nothing, so reach drops ~1–2%. Not disableable — see
+  `pn-automation-ticket.md` item 4b.
+- Container changes RECURRING → daily ONE-TIME (one campaign per day, fresh id).
+- `campaignType` is forced to an **unmapped** value (`Others`) so the create cannot silently rewrite
+  journey campaigns. **Never** change this to a mapped type (Samachar/Rujhan/…).
+- `isSticky` stays **false** and no CTA is set — this is what keeps the 3 per-badge `deep_link`s working
+  (`~1dng34j` deliberately has an EMPTY on-click action). Adding any CTA breaks badge routing.
+
+### 12c. Report the scheduled push (Slack optional)
+The push JSON is no longer a deliverable for a human to paste. Report the **campaign_id + edit URL** so
+the operator can spot-check or kill it:
+`https://in.webengage.com/accounts/in~58adcc4a/push-notifications/campaigns/<campaign_id>/message`
+If the Slack connector is available, DM that one line to **Hritik** (`U057QBHF43H`) and **Harsh**
+(`U09K92G1U1X`). **Gate:** if Slack is unavailable, skip and report — never fail the run. The old
+weekend-only JSON handoff is **retired** (there is nothing left to paste).
 
 ### 13. ⚑ WRITE THE LEDGER (mandatory — this is what stops tomorrow's repeats)
 Immediately after the badges publish, append today's run to `KC Stories/used-picks-log.json`: a new `runs[]` entry with today's `date` and the **final published** `news_id` per tag under `picks` (mandi_bhav / fmcg / trending_news), plus any pick that was shown then swapped out under `also_shown`. Keep newest last; never delete history. Skipping this re-breaks dedup, so do it before the summary. (If the file was missing, create it with `dedup_window_days: 12`, `brand_dedup_window_days: 7`, and this single run.)
 - **⚑ Every pick and `also_shown` entry MUST carry a normalized `brand` token** (lowercase product-line, e.g. `oral-b`, `close-up`, `navratna`, `colgate`) alongside its `news_id` + `label` — this is what makes tomorrow's **brand-level dedup (Step 3)** deterministic instead of an eyeball check. For commodity/news use the commodity/subject as the token (e.g. `arhar`, `haldi`, `pyaaz`) — optional but recommended. Ensure the file has top-level `brand_dedup_window_days: 7` (add it if missing).
 
 ### 14. Post-publish summary (not a gate)
-Output: picks table (story · direction · LR · id), what was swapped/skipped + any LR↔body mismatch flagged for eng, the 7 slide image links + 3 badge links for spot-check (plus the QC contact sheets if regenerated), and the push JSON **with the WebEngage campaign edit URL `https://in.webengage.com/accounts/in~58adcc4a/push-notifications/campaigns/~1dng34j/message` printed directly next to it** (operator 2026-07-16, for one-tap access). Note: anything off is one tap to edit/remove on the D2R dashboard.
+Output: picks table (story · direction · LR · id), what was swapped/skipped + any LR↔body mismatch flagged for eng, the 7 slide image links + 3 badge links for spot-check (plus the QC contact sheets if regenerated), and the **scheduled push**: `campaign_id`, send time (16:30 IST), and the one-tap edit URL
+`https://in.webengage.com/accounts/in~58adcc4a/push-notifications/campaigns/<campaign_id>/message`.
+If the push was **skipped** (publish failed, lead-time gate, or a non-200 from the pipeline), say so at the
+TOP of the summary with what the operator must do — for a non-200, that the campaign may still be live
+and must be checked in the dashboard rather than re-run. Note: anything off is one tap to edit/remove on
+the D2R dashboard.
 
 ---
 
