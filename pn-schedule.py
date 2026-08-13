@@ -107,7 +107,10 @@ def build_payload(cfg, entity, nd_str, when_epoch, tags, test_segment=None):
         "service": "webengage",
         "env": "PROD",
         "data": {
-            "campaignName": cfg["label"],
+            # `campaign_name` (time-free), NOT `label`. The cloud function appends
+            # ": DD-MM-YYYY HH:MM" itself (utils.py:520), so a label carrying the time
+            # would duplicate it -> "... Shop Tips 18:00: 13-08-2027 18:02".
+            "campaignName": cfg.get("campaign_name", cfg["label"]),
             "campaignType": SAFE_CAMPAIGN_TYPE,
             "campaignTags": tags,
             "segments": seg,
