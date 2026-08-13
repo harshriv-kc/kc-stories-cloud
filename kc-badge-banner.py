@@ -122,12 +122,12 @@ def render(tag, cfg, grad, bottom):
 # so the widest line ("1 पैक फ्री") grazed it at FS160 (3px). 154 keeps every badge's widest line >=~15px clear
 # of the white ring while staying uniform. ALWAYS re-check max_text_radius <= ~438 (white-ring inner 454) after
 # changing copy — the widest line caps FS.
-FS=140   # 2026-08-12: uniform; FS144 tn=451>448, dropped to 140 for margin
-DAY=[dict(i=1,src="subjfull_1.png",lines=["मक्की","में तेजी"],fs=FS),
-     dict(i=2,src="subjfull_2.png",lines=["100 जेली","फ्री"],fs=FS),
-     dict(i=3,src="subjfull_3.png",lines=["UPI पर","शुल्क नहीं"],fs=FS)]
+FS=130   # 2026-08-13: uniform; FS140 → tn 'माल बचाएं' bottom line 456.6>448, dropped to 130 for ring clearance
+DAY=[dict(i=1,src="subjfull_1.png",lines=["चीनी में","तेजी"],fs=FS),
+     dict(i=2,src="subjfull_2.png",lines=["जार पर","5 नग फ्री"],fs=FS),
+     dict(i=3,src="subjfull_3.png",lines=["तेज बारिश","माल बचाएं"],fs=FS)]
 if __name__=="__main__":
-    render("D", DAY, TALL, 164)   # bottom recentred for FS140: 325-(2*140*1.1+14)/2 ≈ 164
+    render("D", DAY, TALL, 190)   # bottom raised for FS130 + wide tn bottom line: seats block higher in the circle's wider zone to clear the ring
     # 2026-07-14 crop fix: operator flagged text CROPPING at the ring. Root cause — the
                                   # BOTTOM line sits low in the circle where it's narrow, so a 2-WORD bottom line
                                   # ('फ्री मिले'/'सस्ता माल') hit the ring (455>448) no matter the FS. Fix = make every

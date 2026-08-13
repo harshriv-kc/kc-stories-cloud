@@ -72,50 +72,50 @@ def b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-08-12)
+# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-08-13)
 CARDS = [
- # --- Commodity (mandi_bhav) — 2 तेजी/RED (मक्की, साबूदाना) + 1 मंदी/GREEN (देसी चना) for balance ---
- #     मक्की + देसी चना in-house; साबूदाना MP teji_mandi LR 7.13 (in-house सरसों तेल तेजी SKIPPED = same commodity+direction as 08-11).
- dict(i=1, label="मंडी भाव", stripe=RED, headline="मक्की",
-   price=f'{tri("up",RED)}₹2,425<span class="unit">/क्विंटल</span>',
-   sub=f'मध्य प्रदेश-महाराष्ट्र में बिजाई 22–23% घटी और एथेनॉल-स्टार्च-फीड मिलों की लगातार खरीद से मक्की मजबूत; भाव ₹2,425 से ₹2,550/क्विंटल (~5%) तक जाने के आसार · <b class="delta" style="color:{RED}">+₹125/क्विंटल</b>',
-   l1="क्यों", v1="बिजाई 22–23% कम, उत्पादन 25–30% घटने का अनुमान; एथेनॉल-फीड मिलों की खरीद जारी",
-   l2="क्या करें", v2="अभी मंदे का सौदा ठीक नहीं; जरूरत का मक्की स्टॉक बना लें—अक्टूबर-नवंबर की फसल भी कम रहेगी"),
- dict(i=2, label="मंडी भाव", stripe=GREEN, headline="देसी चना",
-   price=f'{tri("down",GREEN)}₹6,325–6,350<span class="unit">/क्विंटल</span>',
-   sub=f'दाल मिलों की कमजोर ग्राहकी से देसी चना ₹50 टूटकर दिल्ली (राजस्थान) ₹6,325–6,350; MP चना ₹6,250–6,275, बेसन ₹3,020/35 किलो · <b class="delta" style="color:{GREEN}">−₹50/क्विंटल</b>',
-   l1="क्यों", v1="दाल मिलों की सुस्त ग्राहकी, नीचे भाव पर भी बिकवाली का दबाव; आयातित चना महंगा पर खेप कम",
-   l2="क्या करें", v2="इन भावों में चना-चना दाल भरना फायदे का; रक्षाबंधन-त्योहार पर बेसन-दाल की मांग बढ़ेगी"),
- dict(i=3, label="मंडी भाव", stripe=RED, headline="साबूदाना",
-   price=f'{tri("up",RED)}₹70<span class="unit">/किलो</span>',
-   sub=f'श्रावण और व्रत-त्योहार की मांग से साबूदाना ₹60 से ₹10 चढ़कर ₹70/किलो खरीदी; आगे और तेजी के आसार · <b class="delta" style="color:{RED}">+₹10/किलो</b>',
-   l1="क्यों", v1="श्रावण-व्रत और त्योहारी मांग तेज; आगे भाव और चढ़ने की उम्मीद",
-   l2="क्या करें", v2="व्रत सीजन की मांग से पहले साबूदाना का स्टॉक भर लें—आगे महंगा पड़ सकता है"),
- # --- FMCG (fmcg) — top 3 branded schemes by Like Rate desc across ALL 4 segments after ledger dedup (news_id 12d + 7d brand HARD) + body-verify. 3-category spread: candy / personal-care / food ---
- #     Frutle jelly 6.28 (Retailer), Head&Shoulders 6.15 (Retailer), Maggi Masala-ae-Magic 5.76 (Consumer) — all body-verified concrete figures.
- #     SWAPPED OUT: छिली मूंगफली 6.98 (top LR, fmcg_product_change) = raw-commodity rate mis-bucketed as FMCG, doesn't belong on the scheme story (flag for eng).
- #     SKIPPED 7d brand (HARD): Comfort 6.62, Cadbury 5-Star 6.46, Yippee 6.43, Vicks 6.40, Patanjali dant-kanti 6.29, Fevikwik 6.20, Sita Gold 6.04, Close-Up 5.91, Martin 5.87, Parle Melody 5.57, Hajmola 5.51.
- dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="फ्रूट जेली",
-   price='<span class="offer" style="background:%s">बड़ा जार पर 100 जेली फ्री</span>'%SCHEME_GREEN,
-   sub='₹1 वाली फ्रूट जेली—₹650 का बड़ा जार (900 जेली) खरीदने पर 100 जेली (₹1 वाली) फ्री; दुकानदार को कुल <b class="delta">₹350 मुनाफा</b> प्रति जार',
-   l1="स्कीम", v1="₹650 का बड़ा जार (900 जेली) पर 100 जेली ₹1 वाली फ्री",
-   l2="फायदा", v2="एक जार पर ₹350 तक मुनाफा; बच्चों में तेज़ बिकने वाला ₹1 का आइटम"),
- dict(i=5, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="हेड एंड शोल्डर्स",
-   price='<span class="offer" style="background:%s">8 लड़ी पर ₹24 कैशबैक</span>'%SCHEME_GREEN,
-   sub='हेड एंड शोल्डर्स शैम्पू—8 लड़ी का पैक खरीदने पर एक स्क्रैच कूपन मिलता है, स्कैन करने पर सीधे <b class="delta">₹24 कैशबैक</b>',
-   l1="स्कीम", v1="हर 8-लड़ी पैक पर स्क्रैच कूपन → ₹24 कैशबैक (स्कैन पर)",
-   l2="फायदा", v2="पैक के साथ ₹24 का सीधा कैशबैक; लोकप्रिय शैम्पू—पक्की बिक्री"),
- dict(i=6, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="मैगी मसाला मैजिक",
-   price='<span class="offer" style="background:%s">5 + 1 फ्री</span>'%SCHEME_BLUE,
-   sub='मैगी मसाला-ए-मैजिक लड़ी—5 स्ट्रिप खरीदने पर 1 पाउच फ्री; कुल MRP ₹36, होलसेल खरीद ₹28, दुकानदार को <b class="delta">₹8/स्ट्रिप मार्जिन</b>',
-   l1="ऑफर", v1="5 लड़ी स्ट्रिप पर 1 पाउच फ्री (Buy 5 Get 1)",
-   l2="ग्राहक को", v2="MRP ₹36, खरीद ₹28—₹8/स्ट्रिप सीधा मुनाफा; रोज़ की मसाला मांग"),
- # --- News (trending_news) — UPI/MDR राहत (in-house, timely policy/market-impact; नकली-तेल scam bait & रुझान digest SKIPPED) ---
- dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="UPI पर शुल्क नहीं",
-   price='<span class="news">दुकानदार-ग्राहक से कोई MDR नहीं</span>',
-   sub='संसद ने कर संशोधन विधेयक 2026 पास किया; वित्त मंत्री ने साफ कहा—UPI से पेमेंट लेने-देने पर छोटे दुकानदारों और ग्राहकों से <b class="delta">कोई शुल्क नहीं</b>; 90%+ लेनदेन पूरी तरह मुफ्त',
-   l1="क्यों ज़रूरी", v1="UPI पर चार्ज लगने का डर था; कानून सिर्फ बड़े लेनदेन पर आगे नियम बनाने का हक देता है, अभी कोई शुल्क नहीं",
-   l2="क्या करें", v2="बेझिझक UPI से पेमेंट लेते रहें—रोज़ की किराना बिक्री पर कोई कटौती नहीं"),
+ # --- Commodity (mandi_bhav) — 2 तेजी/RED (चीनी, किशमिश) + 1 मंदी/GREEN (गेहूं) for balance ---
+ #     चीनी + गेहूं in-house standalone; किशमिश MP teji_mandi LR 7.47 (in-house सोया तेल/सरसों SKIPPED = over-covered + same commodity+direction as 08-11).
+ dict(i=1, label="मंडी भाव", stripe=RED, headline="चीनी",
+   price=f'{tri("up",RED)}₹5,075–5,225<span class="unit">/क्विंटल</span>',
+   sub=f'महीने भर में ~10% चढ़कर चीनी रिकॉर्ड ऊंचाई पर; दिल्ली हाजिर ₹5,075–5,225, यूपी मिल डिलीवरी ₹4,700–4,880; कम बारिश से अगले सीजन उत्पादन की चिंता · <b class="delta" style="color:{RED}">+~10%/माह</b>',
+   l1="क्यों", v1="महाराष्ट्र-कर्नाटक में कम बारिश से अगले सीजन गन्ना-चीनी उत्पादन की चिंता; सरकार एथनॉल पर रोक के विचार में",
+   l2="क्या करें", v2="कम से कम 3 महीने चीनी महंगी रह सकती है; जरूरत का स्टॉक अभी भाव और चढ़ने से पहले भर लें"),
+ dict(i=2, label="मंडी भाव", stripe=GREEN, headline="गेहूं",
+   price=f'{tri("down",GREEN)}₹2,870–2,880<span class="unit">/क्विंटल</span>',
+   sub=f'मंडियों में आवक बढ़ने से दिल्ली-NCR गेहूं ₹10–15 घटकर ₹2,870–2,880; आटा (50kg) ₹1,590–1,600, मैदा ₹1,660–1,670 भी नरम · <b class="delta" style="color:{GREEN}">−₹10–15/क्विंटल</b>',
+   l1="क्यों", v1="MP-UP-राजस्थान-हरियाणा-पंजाब में आवक का दबाव; सरकारी खरीद लक्ष्य से ज्यादा, गोदाम भरे",
+   l2="क्या करें", v2="यह छोटी गिरावट खरीद का मौका; आटा-मैदा-सूजी-चोकर की महीने भर की जरूरत अभी भर लें"),
+ dict(i=3, label="मंडी भाव", stripe=RED, headline="किशमिश",
+   price=f'{tri("up",RED)}₹580<span class="unit">/किलो</span>',
+   sub=f'कुछ ही दिनों में किशमिश ₹440 से ₹580/किलो — करीब ₹140 (~32%) की तेजी; कम उत्पादन व मजबूत मांग से भाव चढ़े, आगे और तेजी के आसार · <b class="delta" style="color:{RED}">+₹140/किलो</b>',
+   l1="क्यों", v1="सप्लाई कम व त्योहारी-मेवा मांग तेज; होलसेल खरीद ₹440 से बढ़कर ₹580/किलो पहुंची",
+   l2="क्या करें", v2="राखी-त्योहार की मेवा मांग से पहले जरूरत का किशमिश स्टॉक भर लें—आगे और महंगा"),
+ # --- FMCG (fmcg) — top 3 branded schemes by Like Rate desc across ALL 4 segments after ledger dedup (news_id 12d + 7d brand HARD) + body-verify. 3-category spread: candy / detergent-soap / personal-care ---
+ #     Boomer 7.03 (Retailer), Fena 5.80 (Consumer), Dabur Almond shampoo 5.68 (Consumer) — all body-verified concrete figures.
+ #     SWAPPED OUT (top LR): टोपी/पानी-कैंपर 9.49 = vague, unidentifiable brand + no MRP/margin (drop vague no-number); गणेश खानी 8.65 = tobacco (editorial skip).
+ #     SKIPPED 7d brand (HARD): Colgate 8.88, Vicks-toffee 6.80, Cadbury 5-Star 6.77, Dabur-Red 6.51, Gillette 6.37, Fevikwik 6.25, Pulse 6.17, Frutle 6.07, Parle/Orange-Bite 6.04, Dettol 6.03, Patanjali-toothpaste 5.74, Hajmola 5.70, Clean&Clear 5.70.
+ dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="बूमर चिंगम",
+   price='<span class="offer" style="background:%s">जार पर 5 नग फ्री</span>'%SCHEME_GREEN,
+   sub='₹1 वाली Wrigley\'s बूमर बबल गम—200 पीस के जार पर 5 नग फ्री; बच्चों में सबसे तेज़ बिकने वाला ₹1 का आइटम, हर जार पर सीधा <b class="delta">फायदा</b>',
+   l1="स्कीम", v1="₹1 वाली बूमर का 200-पीस जार खरीदने पर 5 नग फ्री",
+   l2="फायदा", v2="तेज़ बिकने वाली ₹1 बबल गम; हर जार पर 5 नग एक्स्ट्रा मुनाफा"),
+ dict(i=5, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="फेना महाबार",
+   price='<span class="offer" style="background:%s">₹5 पर 25%% ज़्यादा</span>'%SCHEME_BLUE,
+   sub='₹5 वाली फेना महाबार कपड़े धोने की साबुन—हर बार पर <b class="delta">25% एक्स्ट्रा</b> साबुन; रोज़ बिकने वाला आइटम, ग्राहक को उसी दाम में ज़्यादा माल',
+   l1="ऑफर", v1="₹5 वाली फेना महाबार साबुन पर 25% एक्स्ट्रा वज़न",
+   l2="ग्राहक को", v2="उसी ₹5 में 25% ज़्यादा साबुन; रोज़ की पक्की बिक्री"),
+ dict(i=6, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="डाबर आमंड शैम्पू",
+   price='<span class="offer" style="background:%s">साथ आमला तेल फ्री</span>'%SCHEME_BLUE,
+   sub='डाबर आमंड शैम्पू MRP ₹140 (होलसेल खरीद ₹120) के साथ ₹97 वाला डाबर आमला हेयर ऑयल बिल्कुल <b class="delta">फ्री</b>; ग्राहक को दो प्रोडक्ट एक दाम में',
+   l1="ऑफर", v1="₹140 शैम्पू के साथ ₹97 का डाबर आमला तेल फ्री",
+   l2="ग्राहक को", v2="खरीद ₹120, MRP ₹140—साथ में ₹97 का तेल मुफ्त, तगड़ी वैल्यू"),
+ # --- News (trending_news) — बारिश अलर्ट (in-house, timely monsoon/operational; नकली-तेल scam bait & रुझान digest SKIPPED) ---
+ dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="बारिश का अलर्ट",
+   price='<span class="news">19 राज्यों में तेज़ बारिश—माल बचाएं</span>',
+   sub='मौसम विभाग ने UP, दिल्ली, बिहार, राजस्थान, MP समेत 19 राज्यों में तेज़ बारिश, आंधी व 55–60 किमी/घंटा हवा की चेतावनी दी; नमी से आटा-दाल-नमकीन जल्दी <b class="delta">खराब</b> होते हैं',
+   l1="क्यों ज़रूरी", v1="नमी लगते ही आटा, मैदा, नमक, चीनी, दालें व बिस्किट-नमकीन के पैकेट खराब होने लगते हैं",
+   l2="क्या करें", v2="बोरियों को ज़मीन से ऊपर पटरे पर रखें; खुला माल हवाबंद डिब्बे में भरें, छत-दीवार की सीलन आज ही देखें"),
 ]
 
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
