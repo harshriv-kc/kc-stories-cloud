@@ -53,7 +53,14 @@ def load_registry():
 
 
 def validate_notification_data(nd_str, template_type):
-    """notification_data must be a STRING containing valid JSON."""
+    """notification_data must be a STRING containing valid JSON, on ONE line.
+
+    ⚑ WebEngage's key-value field REJECTS multi-line values (it flags the field red
+    and the campaign is unusable). The PN image kit writes its JSON pretty-printed
+    with indent=2, so passing that file through verbatim produces an invalid campaign
+    (hit for real on campaign ~gie2jn, 2026-08-13). We therefore always RE-SERIALIZE
+    compactly here rather than trusting the caller's formatting.
+    """
     if not isinstance(nd_str, str):
         die("notification_data must be a STRING, not an object "
             "(an object silently degrades the push to plain text).")
@@ -74,15 +81,16 @@ def validate_notification_data(nd_str, template_type):
         for k in ("expanded_image", "collapsed_image"):
             if not parsed.get(k):
                 die(f"duo_image notification_data missing {k}")
-    return parsed
+    # single-line compact form — see docstring
+    return json.dumps(parsed, ensure_ascii=False, separators=(",", ":"))
 
 
 def build_payload(cfg, entity, nd_str, when_epoch, tags, test_segment=None):
     tt = cfg["kvPairs_fixed"]["template_type"]
-    validate_notification_data(nd_str, tt)
+    nd_compact = validate_notification_data(nd_str, tt)   # normalised to ONE line
 
     kv = dict(cfg["kvPairs_fixed"])
-    kv["notification_data"] = nd_str
+    kv["notification_data"] = nd_compact
     if "entity" in cfg["kvPairs_per_send"]:
         if not entity:
             die(f"campaign type '{cfg['label']}' requires --entity (the item id used for redirection)")
