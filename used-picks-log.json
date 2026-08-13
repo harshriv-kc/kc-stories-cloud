@@ -3046,6 +3046,70 @@
           "brand": "nps-pension"
         }
       ]
+    },
+    {
+      "date": "2026-08-13",
+      "_note": "Full autonomous cloud run — all 3 stories + entry badges republished live (update_story / update_story_entry_badges, actor Harsh Shrivastava). Commodity = चीनी (in-house RED, दिल्ली हाजिर ₹5,075–5,225/क्विंटल, महीने में ~10% रिकॉर्ड ऊंचाई, एथनॉल रोक विचार) + गेहूं (in-house GREEN, −₹10–15 → दिल्ली ₹2,870–2,880, आवक दबाव, balance) + किशमिश (MP teji_mandi LR 7.47, RED, ₹440→₹580/किलो +₹140 ~32%). In-house सोया तेल/सरसों SKIPPED = over-covered + same commodity+direction as 08-11 sarson-tel; बासमती SKIPPED = same commodity+direction as 08-10. FMCG = top-3 branded schemes by LR desc after ledger dedup (news_id 12d + 7d brand HARD) + body-verify, 3-category spread candy/soap/personal-care: बूमर चिंगम (Retailer 7.03, ₹1 जार 200pc पर 5 नग फ्री) + फेना महाबार (Consumer 5.80, ₹5 साबुन 25% एक्स्ट्रा) + डाबर आमंड शैम्पू (Consumer 5.68, MRP ₹140/खरीद ₹120 + ₹97 डाबर आमला तेल फ्री). SWAPPED OUT (top LR): टोपी/पानी-कैंपर 9.49 = vague unidentifiable brand + no MRP/margin (drop vague no-number, flag for eng); मिर्च 7.98 & नारियल = analytical, no ₹ figure in body (Step 6 reject). SKIPPED 7d brand HARD: Colgate 8.88, Vicks 6.80, Cadbury-5star 6.77, Dabur-Red 6.51, Gillette 6.37, Fevikwik 6.25, Pulse 6.17, Frutle 6.07, Parle/Orange-Bite 6.04, Dettol 6.03, Patanjali 5.74, Hajmola 5.70, Clean&Clear 5.70. गणेश खानी 8.65 SKIPPED = tobacco (editorial). News = बारिश अलर्ट (in-house; 19 राज्यों में तेज बारिश/आंधी, दुकान का माल बचाएं); नकली-तेल scam bait & रुझान digest SKIPPED. Slides composited via kc-card-render.py, QC'd (contact sheet + full-size read of tallest cards 6 डाबर/7 बारिश — no overlap, identical typography, brands legible). Badges kc-badge-banner.py FS130 bottom=190 (चीनी में तेजी / जार पर 5 नग फ्री / तेज बारिश माल बचाएं); radial clearance 340/398/440 ≤448 (FS140→130 + bottom 164→190 to clear tn 'माल बचाएं' from ring). Weekday (Thursday) — no WebEngage weekend Slack handoff; push JSON left in final report for operator. Push JSON NOT sent to Slack.",
+      "picks": {
+        "mandi_bhav": [
+          {
+            "news_id": "a0b13792-1c33-4b6d-891d-0241cd12d85c",
+            "label": "चीनी तेजी ~10%/माह → दिल्ली हाजिर ₹5,075–5,225/क्विंटल, रिकॉर्ड ऊंचाई — in-house RED",
+            "brand": "chini"
+          },
+          {
+            "news_id": "bcc052d1-adbe-4154-8cd6-0efb99db809f",
+            "label": "गेहूं मंदी −₹10–15 → दिल्ली-NCR ₹2,870–2,880/क्विंटल, आवक दबाव — in-house GREEN",
+            "brand": "gehu"
+          },
+          {
+            "news_id": "b9d79610-dfbc-4f89-a861-df80e89e1eda",
+            "label": "किशमिश तेजी ₹440→₹580/किलो (+₹140 ~32%) — MP teji_mandi LR 7.47 RED",
+            "brand": "kishmish"
+          }
+        ],
+        "fmcg": [
+          {
+            "news_id": "fda9d894-ef51-4416-9a03-47b7c9c9adcb",
+            "label": "बूमर चिंगम — Retailer Scheme LR 7.03, ₹1 वाली 200pc जार पर 5 नग फ्री (candy)",
+            "brand": "boomer"
+          },
+          {
+            "news_id": "70a4b309-fd77-49e1-9896-47a29366c2a2",
+            "label": "फेना महाबार — Consumer Scheme LR 5.80, ₹5 साबुन पर 25% एक्स्ट्रा (soap)",
+            "brand": "fena"
+          },
+          {
+            "news_id": "e4365802-321c-41a4-b9c2-fe7cb196692f",
+            "label": "डाबर आमंड शैम्पू — Consumer Scheme LR 5.68, MRP ₹140/खरीद ₹120 + ₹97 आमला तेल फ्री (personal-care)",
+            "brand": "dabur-almond"
+          }
+        ],
+        "trending_news": [
+          {
+            "news_id": "af98e095-87ae-41bd-8479-37b6913c1740",
+            "label": "19 राज्यों में तेज बारिश अलर्ट, दुकान का माल बचाएं — in-house news",
+            "brand": "barish-alert"
+          }
+        ]
+      },
+      "also_shown": [
+        {
+          "news_id": "f1625b7a-4642-4f10-9930-279225ffd4f2",
+          "label": "टोपी 5 jar पर पानी का कैंपर फ्री — TOP FMCG LR 9.49 but vague/unidentifiable brand, no MRP/margin (SWAPPED, flag eng)",
+          "brand": "topi"
+        },
+        {
+          "news_id": "7b99292a-3cb8-402f-a647-8b979645068c",
+          "label": "मिर्च तेजी — teji_mandi LR 7.98 but body analytical, no ₹ figure (SWAPPED per Step 6)",
+          "brand": "mirchi"
+        },
+        {
+          "news_id": "1857b37f-9f26-4279-ab02-fb06aecec3fe",
+          "label": "नारियल तेजी — teji_mandi LR 7.81 but no ₹ figure in body (SWAPPED)",
+          "brand": "nariyal"
+        }
+      ]
     }
   ],
   "brand_dedup_window_days": 7
