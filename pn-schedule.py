@@ -52,6 +52,72 @@ def load_registry():
         return json.load(f)
 
 
+# fields a duo_image type may omit and inherit from _defaults.duo_image
+INHERITABLE = ("container", "target_devices", "segments",
+               "kvPairs_fixed", "kvPairs_per_send", "campaignTags")
+
+
+def resolve_config(reg, type_key, new_duo_name=None):
+    """Return (cfg, inherited_field_names).
+
+    A NEW duo_image campaign type does not have to restate the house audience or
+    key-values: anything it leaves out is filled from `_defaults.duo_image`.
+    Requested 2026-08-14 — "if any new duo image campaign type comes then by default
+    assume the segment as attached if not specified".
+
+    Two ways in:
+      * a registry entry that simply omits the fields, or
+      * --new-duo-image "<Campaign Name>" for a type not in the registry yet.
+
+    multi_icon has NO defaults — its audience and kvPairs are structurally different,
+    so an incomplete multi_icon type is an error, never a silent fill.
+    """
+    dflt = (reg.get("_defaults") or {}).get("duo_image")
+    types = reg["campaign_types"]
+
+    if type_key in types:
+        cfg = json.loads(json.dumps(types[type_key]))       # deep copy
+    elif new_duo_name:
+        cfg = {"label": new_duo_name, "campaign_name": new_duo_name,
+               "template_type": "duo_image", "_adhoc": True}
+    else:
+        die(f"unknown type '{type_key}'. Available: {', '.join(types)}\n"
+            f"         (for a brand-new duo_image campaign not in the registry yet, add\n"
+            f"          --new-duo-image \"<Campaign Name>\" and it will inherit the default audience.)")
+
+    tt = ((cfg.get("kvPairs_fixed") or {}).get("template_type")
+          or cfg.get("template_type")
+          or ("duo_image" if dflt else None))
+
+    inherited = []
+    for f in INHERITABLE:
+        if cfg.get(f) is not None:
+            continue
+        if tt != "duo_image" or not dflt:
+            die(f"campaign type '{type_key}' is missing '{f}' and only duo_image types "
+                f"have defaults (template_type={tt!r}). Add it to the registry.")
+        cfg[f] = json.loads(json.dumps(dflt[f]))
+        inherited.append(f)
+
+    cfg.setdefault("campaign_name", cfg.get("label", type_key))
+    return cfg, inherited
+
+
+def print_inherited_banner(type_key, cfg, inherited):
+    if not inherited:
+        return
+    print("!" * 72)
+    print(f"  DEFAULTS APPLIED — '{type_key}' did not specify: {', '.join(inherited)}")
+    print(f"  Inherited from _defaults.duo_image in the registry.")
+    if "segments" in inherited:
+        s = cfg["segments"]
+        print(f"    audience  include [{s['includedSegmentsOperator']}] {s['includedSegments']}")
+        print(f"              exclude [{s['excludedSegmentsOperator']}] {s['excludedSegments']}")
+        print(f"    -> If this campaign is meant to reach a DIFFERENT audience, stop and add")
+        print(f"       an explicit `segments` block to the registry before sending.")
+    print("!" * 72)
+
+
 def validate_notification_data(nd_str, template_type):
     """notification_data must be a STRING containing valid JSON, on ONE line.
 
@@ -146,13 +212,14 @@ def main():
     p.add_argument("--nd", required=True, help="path to the notification_data JSON file")
     p.add_argument("--time", required=True, help='IST, "YYYY-MM-DD HH:MM"')
     p.add_argument("--test-segment", default=None, help="override audience with ONE segment id")
+    p.add_argument("--new-duo-image", default=None, metavar="CAMPAIGN_NAME",
+                   help="schedule a duo_image campaign type that is not in the registry yet; "
+                        "audience + key-values are inherited from _defaults.duo_image")
     p.add_argument("--send", action="store_true", help="actually schedule (default = dry run)")
     a = p.parse_args()
 
     reg = load_registry()
-    if a.type not in reg["campaign_types"]:
-        die(f"unknown type. Available: {', '.join(reg['campaign_types'])}")
-    cfg = reg["campaign_types"][a.type]
+    cfg, inherited = resolve_config(reg, a.type, a.new_duo_image)
 
     if SAFE_CAMPAIGN_TYPE in JOURNEY_MAPPED:
         die("SAFE_CAMPAIGN_TYPE is journey-mapped — would rewrite other live campaigns.")
@@ -179,6 +246,7 @@ def main():
     if a.test_segment:
         print(f"  ** TEST SEGMENT OVERRIDE ACTIVE -> {a.test_segment} **")
     print("=" * 72)
+    print_inherited_banner(a.type, cfg, inherited)
     print(json.dumps(payload, ensure_ascii=False, indent=2)[:2600])
     print("=" * 72)
 
