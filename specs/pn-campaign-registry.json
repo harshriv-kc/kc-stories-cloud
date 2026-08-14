@@ -22,7 +22,8 @@
     "~23db83k": "PN Imp >= 20 times within last 16 hours",
     "~1i5j875": "New Users D0-D2 Exclude  (EXP_SEGMENT, force-added)",
     "~48clbl2": "Experimentation Segment  (EXP_SEGMENT, force-added)",
-    "~1i5i86g": "App version >= 7.3.0 (App version Code >= 169)"
+    "~1i5i86g": "App version >= 7.3.0 (App version Code >= 169)",
+    "~725k98n": "App Opened in last 15 days"
   },
   "campaign_types": {
     "non_mandi_scheme_fmcg": {
@@ -172,6 +173,43 @@
       ],
       "_note": "No `screen`, `entity` or `channel_id` — unlike the duo_image types. Redirection lives inside notification_data as per-image deep_link, and those 3 story deep_links are PERMANENT (story_ids never change).",
       "campaign_name": "Stories Multi Icon"
+    },
+    "reactivation_exp_image_pn": {
+      "label": "Reactivation Exp (Image PN, Shop Tips) 13:30 - Image PN",
+      "campaign_name": "Reactivation Exp (Image PN, Shop Tips)",
+      "container": "ONETIME",
+      "target_devices": "ANDROID",
+      "default_time_ist": "13:30",
+      "segments": {
+        "includedSegments": [
+          "~14c4aac",
+          "~8172j8k"
+        ],
+        "includedSegmentsOperator": "AND",
+        "excludedSegments": [
+          "~725k98n",
+          "h249a16"
+        ],
+        "excludedSegmentsOperator": "OR"
+      },
+      "_exp_segment_delta": "Does NOT currently exclude ~48clbl2 / ~1i5j875 — automation will add them.",
+      "_ambiguous_segments": "Two name-collisions resolved by capitalisation shown in the UI: 'App Opened in last 15 days' -> ~725k98n (NOT 4lkai8 'App opened in last 15 days'); 'PN Reachable, didn't Received PN in la…' truncated in UI -> h249a16 (…exclude D0-D7 users), matching the other campaign types (NOT h249a1a). VERIFY both in the dashboard.",
+      "campaignTags": [
+        "Reactivation Exp",
+        "Image PN",
+        "Shop Tips"
+      ],
+      "kvPairs_fixed": {
+        "template_type": "duo_image",
+        "we_custom_render": "true",
+        "screen": "NewsDetail",
+        "channel_id": "news_channel",
+        "dismiss_after": "720"
+      },
+      "kvPairs_per_send": [
+        "entity",
+        "notification_data"
+      ]
     }
   }
 }
