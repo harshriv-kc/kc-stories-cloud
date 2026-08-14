@@ -72,50 +72,49 @@ def b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-08-13)
+# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-08-14)
 CARDS = [
- # --- Commodity (mandi_bhav) — 2 तेजी/RED (चीनी, किशमिश) + 1 मंदी/GREEN (गेहूं) for balance ---
- #     चीनी + गेहूं in-house standalone; किशमिश MP teji_mandi LR 7.47 (in-house सोया तेल/सरसों SKIPPED = over-covered + same commodity+direction as 08-11).
- dict(i=1, label="मंडी भाव", stripe=RED, headline="चीनी",
-   price=f'{tri("up",RED)}₹5,075–5,225<span class="unit">/क्विंटल</span>',
-   sub=f'महीने भर में ~10% चढ़कर चीनी रिकॉर्ड ऊंचाई पर; दिल्ली हाजिर ₹5,075–5,225, यूपी मिल डिलीवरी ₹4,700–4,880; कम बारिश से अगले सीजन उत्पादन की चिंता · <b class="delta" style="color:{RED}">+~10%/माह</b>',
-   l1="क्यों", v1="महाराष्ट्र-कर्नाटक में कम बारिश से अगले सीजन गन्ना-चीनी उत्पादन की चिंता; सरकार एथनॉल पर रोक के विचार में",
-   l2="क्या करें", v2="कम से कम 3 महीने चीनी महंगी रह सकती है; जरूरत का स्टॉक अभी भाव और चढ़ने से पहले भर लें"),
- dict(i=2, label="मंडी भाव", stripe=GREEN, headline="गेहूं",
-   price=f'{tri("down",GREEN)}₹2,870–2,880<span class="unit">/क्विंटल</span>',
-   sub=f'मंडियों में आवक बढ़ने से दिल्ली-NCR गेहूं ₹10–15 घटकर ₹2,870–2,880; आटा (50kg) ₹1,590–1,600, मैदा ₹1,660–1,670 भी नरम · <b class="delta" style="color:{GREEN}">−₹10–15/क्विंटल</b>',
-   l1="क्यों", v1="MP-UP-राजस्थान-हरियाणा-पंजाब में आवक का दबाव; सरकारी खरीद लक्ष्य से ज्यादा, गोदाम भरे",
-   l2="क्या करें", v2="यह छोटी गिरावट खरीद का मौका; आटा-मैदा-सूजी-चोकर की महीने भर की जरूरत अभी भर लें"),
- dict(i=3, label="मंडी भाव", stripe=RED, headline="किशमिश",
-   price=f'{tri("up",RED)}₹580<span class="unit">/किलो</span>',
-   sub=f'कुछ ही दिनों में किशमिश ₹440 से ₹580/किलो — करीब ₹140 (~32%) की तेजी; कम उत्पादन व मजबूत मांग से भाव चढ़े, आगे और तेजी के आसार · <b class="delta" style="color:{RED}">+₹140/किलो</b>',
-   l1="क्यों", v1="सप्लाई कम व त्योहारी-मेवा मांग तेज; होलसेल खरीद ₹440 से बढ़कर ₹580/किलो पहुंची",
-   l2="क्या करें", v2="राखी-त्योहार की मेवा मांग से पहले जरूरत का किशमिश स्टॉक भर लें—आगे और महंगा"),
- # --- FMCG (fmcg) — top 3 branded schemes by Like Rate desc across ALL 4 segments after ledger dedup (news_id 12d + 7d brand HARD) + body-verify. 3-category spread: candy / detergent-soap / personal-care ---
- #     Boomer 7.03 (Retailer), Fena 5.80 (Consumer), Dabur Almond shampoo 5.68 (Consumer) — all body-verified concrete figures.
- #     SWAPPED OUT (top LR): टोपी/पानी-कैंपर 9.49 = vague, unidentifiable brand + no MRP/margin (drop vague no-number); गणेश खानी 8.65 = tobacco (editorial skip).
- #     SKIPPED 7d brand (HARD): Colgate 8.88, Vicks-toffee 6.80, Cadbury 5-Star 6.77, Dabur-Red 6.51, Gillette 6.37, Fevikwik 6.25, Pulse 6.17, Frutle 6.07, Parle/Orange-Bite 6.04, Dettol 6.03, Patanjali-toothpaste 5.74, Hajmola 5.70, Clean&Clear 5.70.
- dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="बूमर चिंगम",
-   price='<span class="offer" style="background:%s">जार पर 5 नग फ्री</span>'%SCHEME_GREEN,
-   sub='₹1 वाली Wrigley\'s बूमर बबल गम—200 पीस के जार पर 5 नग फ्री; बच्चों में सबसे तेज़ बिकने वाला ₹1 का आइटम, हर जार पर सीधा <b class="delta">फायदा</b>',
-   l1="स्कीम", v1="₹1 वाली बूमर का 200-पीस जार खरीदने पर 5 नग फ्री",
-   l2="फायदा", v2="तेज़ बिकने वाली ₹1 बबल गम; हर जार पर 5 नग एक्स्ट्रा मुनाफा"),
- dict(i=5, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="फेना महाबार",
-   price='<span class="offer" style="background:%s">₹5 पर 25%% ज़्यादा</span>'%SCHEME_BLUE,
-   sub='₹5 वाली फेना महाबार कपड़े धोने की साबुन—हर बार पर <b class="delta">25% एक्स्ट्रा</b> साबुन; रोज़ बिकने वाला आइटम, ग्राहक को उसी दाम में ज़्यादा माल',
-   l1="ऑफर", v1="₹5 वाली फेना महाबार साबुन पर 25% एक्स्ट्रा वज़न",
-   l2="ग्राहक को", v2="उसी ₹5 में 25% ज़्यादा साबुन; रोज़ की पक्की बिक्री"),
- dict(i=6, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="डाबर आमंड शैम्पू",
-   price='<span class="offer" style="background:%s">साथ आमला तेल फ्री</span>'%SCHEME_BLUE,
-   sub='डाबर आमंड शैम्पू MRP ₹140 (होलसेल खरीद ₹120) के साथ ₹97 वाला डाबर आमला हेयर ऑयल बिल्कुल <b class="delta">फ्री</b>; ग्राहक को दो प्रोडक्ट एक दाम में',
-   l1="ऑफर", v1="₹140 शैम्पू के साथ ₹97 का डाबर आमला तेल फ्री",
-   l2="ग्राहक को", v2="खरीद ₹120, MRP ₹140—साथ में ₹97 का तेल मुफ्त, तगड़ी वैल्यू"),
- # --- News (trending_news) — बारिश अलर्ट (in-house, timely monsoon/operational; नकली-तेल scam bait & रुझान digest SKIPPED) ---
- dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="बारिश का अलर्ट",
-   price='<span class="news">19 राज्यों में तेज़ बारिश—माल बचाएं</span>',
-   sub='मौसम विभाग ने UP, दिल्ली, बिहार, राजस्थान, MP समेत 19 राज्यों में तेज़ बारिश, आंधी व 55–60 किमी/घंटा हवा की चेतावनी दी; नमी से आटा-दाल-नमकीन जल्दी <b class="delta">खराब</b> होते हैं',
-   l1="क्यों ज़रूरी", v1="नमी लगते ही आटा, मैदा, नमक, चीनी, दालें व बिस्किट-नमकीन के पैकेट खराब होने लगते हैं",
-   l2="क्या करें", v2="बोरियों को ज़मीन से ऊपर पटरे पर रखें; खुला माल हवाबंद डिब्बे में भरें, छत-दीवार की सीलन आज ही देखें"),
+ # --- Commodity (mandi_bhav) — 2 तेजी/RED (काली मिर्च, राजमा) + 1 मंदी/GREEN (सरसों तेल) for balance. All 3 today's in-house standalone posts. ---
+ dict(i=1, label="मंडी भाव", stripe=RED, headline="काली मिर्च",
+   price=f'{tri("up",RED)}₹775–780<span class="unit">/किलो</span>',
+   sub=f'दो-तीन दिन में ₹10 चढ़कर काली मिर्च ₹775–780/किलो; अगले महीने तक ₹75–80 और तेजी के आसार · <b class="delta" style="color:{RED}">+₹75–80/किलो संभावित</b>',
+   l1="क्यों", v1="वियतनाम उत्पादन ~3 लाख से घटकर ~1.5 लाख टन; आयात महंगा",
+   l2="क्या करें", v2="मसाला व त्योहारी खपत सीजन आगे; 1–1.5 महीने का माल अभी भर लें"),
+ dict(i=2, label="मंडी भाव", stripe=RED, headline="राजमा",
+   price=f'{tri("up",RED)}₹96–100<span class="unit">/किलो</span>',
+   sub=f'घटे भावों पर खरीदारी लौटी—इंडियन-ब्राजील राजमा ₹96–100/किलो, चीन का ₹115–117/किलो; आगे और तेजी के आसार · <b class="delta" style="color:{RED}">तेजी लौटी</b>',
+   l1="क्यों", v1="बारसी-बीड आवक घटी, चीन में ऊंचे भाव; घटे दाम पर पकड़ मजबूत",
+   l2="क्या करें", v2="त्योहारों में राजमा बिक्री बढ़ती है; एक महीने का माल अभी भर लें"),
+ dict(i=3, label="मंडी भाव", stripe=GREEN, headline="सरसों तेल",
+   price=f'{tri("down",GREEN)}₹16,900<span class="unit">/क्विंटल</span>',
+   sub=f'सरसों तेल एक्सपेलर ₹100 टूटकर ₹16,900/क्विंटल; सोया रिफाइंड भी ₹50 घटकर ₹15,550—मांग कमजोर, मलेशिया पाम गिरा · <b class="delta" style="color:{GREEN}">−₹100/क्विंटल</b>',
+   l1="क्यों", v1="तेल मिलों की मांग सीमित, ग्राहकी कमजोर; मलेशिया CPO −1.1%",
+   l2="क्या करें", v2="टीन-खुला दोनों नरम—राहत; पुराने स्टॉक का पुराना MRP निकालें"),
+ # --- FMCG (fmcg) — top 3 branded schemes by Like Rate desc across ALL 4 segments after ledger dedup (news_id 12d + 7d brand HARD) + body-verify. 3-category spread: food / personal-care / candy ---
+ #     Dabur Honey 5.72 (Retailer, food), Bajaj Gulabjal 5.49 (Consumer, personal-care), Parle Londonderry 5.44 (Retailer, candy) — all body-verified concrete figures.
+ #     SWAPPED OUT (top LR): टोपी/पानी-कैंपर 8.70 = vague, unidentifiable brand + no MRP/margin (drop vague no-number); गणेश खानी 5.86 = tobacco (editorial skip); Dabur Babool 5.79 = vague no-number body.
+ #     SKIPPED 7d brand (HARD) / news_id 12d: Boomer 6.77, Colgate 6.76, Mungfali 6.75(+id), Vicks 6.12(+id), Comfort 5.76, Melody 5.48.
+ dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="डाबर हनी",
+   price='<span class="offer" style="background:%s">जार पर ₹45 की हनी फ्री</span>'%SCHEME_GREEN,
+   sub='₹10 वाली डाबर हनी—जार होलसेल ₹240 (₹8/पीस, ₹2 मार्जिन); 1 जार पर ₹45 की हनी फ्री, हर जार करीब <b class="delta">₹105 फायदा</b>',
+   l1="स्कीम", v1="₹10 वाली डाबर हनी के 1 जार (होलसेल ₹240) पर ₹45 की हनी फ्री",
+   l2="फायदा", v2="₹2/पीस मार्जिन + ₹45 फ्री = हर जार करीब ₹105 फायदा"),
+ dict(i=5, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="बजाज गुलाब जल",
+   price='<span class="offer" style="background:%s">₹30 पर ₹10 वाला फ्री</span>'%SCHEME_BLUE,
+   sub='₹30 MRP बजाज गुलाब जल के साथ ₹10 MRP वाली बजाज गुलाब जल <b class="delta">फ्री</b>; ₹40 का माल ₹30 में—पूजा व स्किन-केयर की रोज़ मांग',
+   l1="ऑफर", v1="₹30 MRP बजाज गुलाब जल के साथ ₹10 MRP वाली फ्री",
+   l2="ग्राहक को", v2="₹40 MRP का माल ₹30 में; पूजा व स्किन-केयर की पक्की बिक्री"),
+ dict(i=6, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="पारले लंदनडेरी",
+   price='<span class="offer" style="background:%s">जार पर 80 नग फ्री</span>'%SCHEME_GREEN,
+   sub='₹1 वाली पारले ग्रैंड लंदनडेरी टॉफ़ी—बड़ा जार (होलसेल ₹700) पर 80 नग फ्री; स्कीम मिलाकर करीब <b class="delta">₹180 फायदा</b>',
+   l1="स्कीम", v1="₹1 वाली लंदनडेरी का बड़ा जार (होलसेल ₹700) पर 80 नग फ्री",
+   l2="फायदा", v2="जार पर ₹100 मार्जिन + 80 नग फ्री (~₹80) = ~₹180 फायदा"),
+ # --- News (trending_news) — FSSAI लाइसेंस सीमा (in-house, direct kirana relief/policy; नकली-तेल scam bait & रुझान digest SKIPPED) ---
+ dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="लाइसेंस में राहत",
+   price='<span class="news">FSSAI सीमा अब ₹1.5 करोड़</span>',
+   sub='FSSAI ने छोटी दुकानों की सीमा ₹12 लाख से बढ़ाकर ₹1.5 करोड़ की (1 अप्रैल 2026 से लागू); अब ~₹100 का साधारण रजिस्ट्रेशन <b class="delta">काफी</b>',
+   l1="क्यों ज़रूरी", v1="पहले ₹12 लाख से ऊपर महंगा राज्य लाइसेंस; अब डेढ़ करोड़ तक छूट",
+   l2="क्या करें", v2="बिक्री ₹1.5 करोड़ से कम तो ~₹100 वाला साधारण रजिस्ट्रेशन काफी"),
 ]
 
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>

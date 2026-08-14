@@ -3110,6 +3110,56 @@
           "brand": "nariyal"
         }
       ]
+    },
+    {
+      "date": "2026-08-14",
+      "picks": {
+        "mandi_bhav": [
+          {
+            "news_id": "3799c84d-29b1-420d-9dac-1b9dc5f91f63",
+            "brand": "kali-mirch",
+            "direction": "तेजी",
+            "label": "काली मिर्च तेजी → ₹775–780/किलो, अगले महीने +₹75–80 संभावित (in-house RED)"
+          },
+          {
+            "news_id": "f924d19a-f326-4fe7-b8c9-0c90c2e23575",
+            "brand": "rajma",
+            "direction": "तेजी",
+            "label": "राजमा तेजी → इंडियन/ब्राजील ₹96–100/किलो, चीन ₹115–117 (in-house RED)"
+          },
+          {
+            "news_id": "7e6ba4c8-697c-4659-8560-f039d41e90ce",
+            "brand": "sarson-tel",
+            "direction": "मंदी",
+            "label": "सरसों तेल मंदी −₹100 → एक्सपेलर ₹16,900/क्विंटल; सोया ₹15,550 (in-house GREEN)"
+          }
+        ],
+        "fmcg": [
+          {
+            "news_id": "9653de1e-7883-4da6-9cce-8ceaa005daed",
+            "brand": "dabur-honey",
+            "label": "डाबर हनी Retailer Scheme LR 5.72 — ₹10 जार होलसेल ₹240 पर ₹45 हनी फ्री, ~₹105 फायदा (food)"
+          },
+          {
+            "news_id": "ad525829-e52c-45ae-953b-3c8e5b333a07",
+            "brand": "bajaj-gulab-jal",
+            "label": "बजाज गुलाब जल Consumer Scheme LR 5.49 — ₹30 MRP पर ₹10 MRP फ्री (personal-care)"
+          },
+          {
+            "news_id": "5e486ff7-43aa-4f48-9a35-f7f105c93433",
+            "brand": "parle-londonderry",
+            "label": "पारले लंदनडेरी Retailer Scheme LR 5.44 — ₹1 टॉफ़ी, जार होलसेल ₹700 पर 80 नग फ्री (candy)"
+          }
+        ],
+        "trending_news": {
+          "news_id": "5f89f064-bb54-42df-8bcb-e4716d3d91b5",
+          "brand": "fssai-license",
+          "label": "FSSAI लाइसेंस सीमा ₹12 लाख → ₹1.5 करोड़ (in-house policy, 1 अप्रैल 2026 से लागू)"
+        }
+      },
+      "also_shown": [],
+      "pn_campaign_id": "~10l0es7",
+      "notes": "FMCG picked by LR desc across 4 segments after news_id(12d)+brand(7d) HARD dedup + body-verify; category-spread food/personal-care/candy. Skipped: टोपी 8.70 (vague no-number), बूमर/कोलगेट/मूंगफली/VICKS/Comfort/Melody (7d brand or news_id dup), गणेश खानी (tobacco), Dabur Babool (vague no-number body). Commodity all today's in-house standalone (2 RED + 1 GREEN)."
     }
   ],
   "brand_dedup_window_days": 7
