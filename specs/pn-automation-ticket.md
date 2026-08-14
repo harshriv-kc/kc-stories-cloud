@@ -94,6 +94,20 @@ No dedupe exists at any layer; duplicate live campaigns already shipped (2026-07
 `government schemes` created twice, both with real campaign_ids). Add a `UNIQUE(idempotency_key)`
 (or `UNIQUE(run_date, campaign_type)`) table written **before** the create call.
 
+### 6. Add a `photo` aspect to `generateStoryImage` (image quality, v2)
+`UTILITY/generateStoryImage/src/index.ts` has only two aspects, and the `square` one appends:
+> *"Compose this as a 1:1 SQUARE image for a small CIRCULAR badge … nothing important in the corners
+> (they get clipped by the circle mask)."*
+
+That hint is correct for KC Stories entry badges but wrong for every other caller. PN backgrounds ask
+for `square` and inherit it, so Gemini returns circular images with white/black corners —
+**measured on 7 of 11** generated backgrounds — and the downstream compositor crops them inward,
+losing framing and resolution.
+
+Add a third aspect (e.g. `photo`) whose hint asks for a **full-bleed rectangular photograph** with no
+badge/circle language, and expose it on jack's `generate_story_image`. Pairs naturally with the
+reference-image and output-size asks already noted for v2.
+
 ---
 
 ## Acceptance criteria
