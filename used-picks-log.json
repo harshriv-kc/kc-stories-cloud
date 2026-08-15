@@ -3160,6 +3160,72 @@
       "also_shown": [],
       "pn_campaign_id": "~10l0es7",
       "notes": "FMCG picked by LR desc across 4 segments after news_id(12d)+brand(7d) HARD dedup + body-verify; category-spread food/personal-care/candy. Skipped: टोपी 8.70 (vague no-number), बूमर/कोलगेट/मूंगफली/VICKS/Comfort/Melody (7d brand or news_id dup), गणेश खानी (tobacco), Dabur Babool (vague no-number body). Commodity all today's in-house standalone (2 RED + 1 GREEN)."
+    },
+    {
+      "date": "2026-08-15",
+      "picks": {
+        "mandi_bhav": [
+          {
+            "news_id": "1a36f747-b8cf-48a6-a18b-d4fb79842bfa",
+            "brand": "masoor",
+            "direction": "तेजी",
+            "label": "मसूर तेजी → देसी मसूर ₹8,000–8,500/क्विंटल, भाव-भविष्य ₹6,800, बिजाई घटकर 25% (in-house RED)"
+          },
+          {
+            "news_id": "ee208bbf-d889-4fcc-9640-5d442221018c",
+            "brand": "kaju",
+            "direction": "तेजी",
+            "label": "काजू तेजी → 15 दिन में ₹840→₹980/किलो (+₹140 ~17%) — MP teji_mandi LR6.82 (RED)"
+          },
+          {
+            "news_id": "c3e73537-0bad-48e3-b58c-25936991283b",
+            "brand": "lal-mirch",
+            "direction": "मंदी",
+            "label": "लाल मिर्च मंदी → तेजा −₹1,000 → ₹19,000–22,500/क्विंटल, निर्यात ~35% घटा (in-house GREEN)"
+          }
+        ],
+        "fmcg": [
+          {
+            "news_id": "af0a1080-cc6c-4820-8607-b1085a180c11",
+            "brand": "keo-karpin",
+            "label": "Keo Karpin Consumer Scheme LR6.28 — ₹140 300ml तेल पर ₹20/36g कोलगेट टूथपेस्ट फ्री (hair-oil)"
+          },
+          {
+            "news_id": "7b75ea58-d25d-462c-b527-b3251f8a06ee",
+            "brand": "kitkat",
+            "label": "किटकैट Retailer Scheme LR6.17 — ₹10 जार पर 2 नग फ्री (chocolate)"
+          },
+          {
+            "news_id": "87acd6d7-7b14-4d1e-a816-a3d583ca501d",
+            "brand": "lux",
+            "label": "लक्स साबुन Consumer Scheme LR5.78 — 3+1 फ्री; खरीद ₹90 बिक्री ₹100 ₹10 मार्जिन (soap)"
+          }
+        ],
+        "trending_news": {
+          "news_id": "d0ed8cc5-517f-4af3-92c5-6c1ad7ec3fb8",
+          "brand": "mehngai-cpi",
+          "label": "खुदरा महंगाई 4.45% (जुलाई) 19 महीने का उच्च; खाद्य 5.52%, रुपया ₹95.36/$ (in-house market)"
+        }
+      },
+      "also_shown": [
+        {
+          "news_id": "0edf6243-d9ac-4f6a-8de9-5029e22f8ea6",
+          "brand": "badam",
+          "label": "बादाम teji_mandi LR7.75 — SWAPPED OUT: body 'बदाम के रेट मे तेजी रहेगी' no concrete ₹ figure (Step6)"
+        },
+        {
+          "news_id": "7b99292a-3cb8-402f-a647-8b979645068c",
+          "brand": "lal-mirch",
+          "label": "मिर्च teji_mandi LR8.16 — SWAPPED OUT: body analytical, no current ₹ price + conflicts with in-house लालमिर्च मंदी"
+        },
+        {
+          "news_id": "3d7d8bfe-2f0a-4b2d-854c-fd74933536f2",
+          "brand": "munch",
+          "label": "Munch Retailer LR6.19 — SWAPPED OUT: vague body '2 to shake 13% more', no wholesale/margin (Step6)"
+        }
+      ],
+      "pn_campaign_id": "~1qq29s8",
+      "notes": "Full autonomous cloud run — all 3 stories + entry badges republished LIVE (update_story + update_story_entry_badges, actor Harsh Shrivastava). Push scheduled 16:30 IST (multi_icon ~1qq29s8, HTTP200). Commodity = मसूर (in-house RED, बिजाई 25%) + काजू (MP teji_mandi LR6.82 RED, ₹840→₹980/किलो) + लाल मिर्च (in-house GREEN, तेजा −₹1000); 2R/1G, 3 distinct types dal/mewa/masala. सोया-सरसों तेल SKIPPED = over-covered + same commodity+direction as 08-14 sarson-tel; रुझान/Samachar digests SKIPPED. FMCG = top-3 by LR desc across the 3 populated segments (new_product_launch pool=0 rows) after news_id(12d)+brand(7d) HARD dedup + body-verify; 3-category spread hair-oil/chocolate/soap: Keo Karpin 6.28 (Consumer) + KitKat 6.17 (Retailer) + Lux 5.78 (Consumer). SKIPPED 7d brand/news_id HARD: Colgate 8.40, Patanjali Dantkanti 7.43 (oral-care), Melody 7.28, मूंगफली 6.71(id), Dabur Red 6.34, Boomer 6.02(id), Bajaj 5.59(id), Dabur Honey/Almond/Londonderry(id/brand); गणेश खानी 6.02 = tobacco. News = खुदरा महंगाई 4.45% 19-month high (in-house); स्वदेशी/PMEGP standalone posts not picked. Slides composited via kc-card-render.py, QC'd (contact sheet + full-size read of tallest card 7 महंगाई — no overlap, identical typography, brands Keo Karpin/KitKat/LUX legible). Badges kc-badge-banner.py FS144 bottom=190 (काजू में तेजी / लक्स साबुन 3+1 फ्री / महंगाई तेज़ छोटे पैक); FMCG badge = real Lux 3+1 FREE D2R photo; radial clearance 371/396/391 ≤448. PN badge_pn transparent exports verified (photo + transparent gap + red ring). Independence Day (Saturday)."
     }
   ],
   "brand_dedup_window_days": 7
