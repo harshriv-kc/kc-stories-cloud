@@ -122,10 +122,10 @@ def render(tag, cfg, grad, bottom):
 # so the widest line ("1 पैक फ्री") grazed it at FS160 (3px). 154 keeps every badge's widest line >=~15px clear
 # of the white ring while staying uniform. ALWAYS re-check max_text_radius <= ~438 (white-ring inner 454) after
 # changing copy — the widest line caps FS.
-FS=144   # 2026-08-14: bumped from 130 (all badges had radial headroom); re-measured below
-DAY=[dict(i=1,src="subjfull_1.png",lines=["काली मिर्च","में तेजी"],fs=FS),
-     dict(i=2,src="subjfull_2.png",lines=["डाबर हनी","₹45 फ्री"],fs=FS),
-     dict(i=3,src="subjfull_3.png",lines=["लाइसेंस में","राहत"],fs=FS)]
+FS=144   # 2026-08-15: caju/lux/mehngai — re-measured radial clearance below
+DAY=[dict(i=1,src="subjfull_1.png",lines=["काजू","में तेजी"],fs=FS),
+     dict(i=2,src="subjfull_2.png",lines=["लक्स साबुन","3+1 फ्री"],fs=FS),
+     dict(i=3,src="subjfull_3.png",lines=["महंगाई तेज़","छोटे पैक"],fs=FS)]
 if __name__=="__main__":
     render("D", DAY, TALL, 190)   # bottom raised for FS130 + wide tn bottom line: seats block higher in the circle's wider zone to clear the ring
     # 2026-07-14 crop fix: operator flagged text CROPPING at the ring. Root cause — the
