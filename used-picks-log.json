@@ -3226,6 +3226,56 @@
       ],
       "pn_campaign_id": "~1qq29s8",
       "notes": "Full autonomous cloud run — all 3 stories + entry badges republished LIVE (update_story + update_story_entry_badges, actor Harsh Shrivastava). Push scheduled 16:30 IST (multi_icon ~1qq29s8, HTTP200). Commodity = मसूर (in-house RED, बिजाई 25%) + काजू (MP teji_mandi LR6.82 RED, ₹840→₹980/किलो) + लाल मिर्च (in-house GREEN, तेजा −₹1000); 2R/1G, 3 distinct types dal/mewa/masala. सोया-सरसों तेल SKIPPED = over-covered + same commodity+direction as 08-14 sarson-tel; रुझान/Samachar digests SKIPPED. FMCG = top-3 by LR desc across the 3 populated segments (new_product_launch pool=0 rows) after news_id(12d)+brand(7d) HARD dedup + body-verify; 3-category spread hair-oil/chocolate/soap: Keo Karpin 6.28 (Consumer) + KitKat 6.17 (Retailer) + Lux 5.78 (Consumer). SKIPPED 7d brand/news_id HARD: Colgate 8.40, Patanjali Dantkanti 7.43 (oral-care), Melody 7.28, मूंगफली 6.71(id), Dabur Red 6.34, Boomer 6.02(id), Bajaj 5.59(id), Dabur Honey/Almond/Londonderry(id/brand); गणेश खानी 6.02 = tobacco. News = खुदरा महंगाई 4.45% 19-month high (in-house); स्वदेशी/PMEGP standalone posts not picked. Slides composited via kc-card-render.py, QC'd (contact sheet + full-size read of tallest card 7 महंगाई — no overlap, identical typography, brands Keo Karpin/KitKat/LUX legible). Badges kc-badge-banner.py FS144 bottom=190 (काजू में तेजी / लक्स साबुन 3+1 फ्री / महंगाई तेज़ छोटे पैक); FMCG badge = real Lux 3+1 FREE D2R photo; radial clearance 371/396/391 ≤448. PN badge_pn transparent exports verified (photo + transparent gap + red ring). Independence Day (Saturday)."
+    },
+    {
+      "date": "2026-08-16",
+      "picks": {
+        "mandi_bhav": [
+          {
+            "news_id": "661215d6-7c88-4dea-a67a-feaf1fccbba8",
+            "brand": "haldi",
+            "direction": "तेजी",
+            "label": "हल्दी तेजी +₹800 → इरोड गट्ठा ₹18,800–19,000/क्विंटल (in-house RED)"
+          },
+          {
+            "news_id": "f23db5fe-32ff-463a-9565-121a59f31134",
+            "brand": "laung",
+            "direction": "तेजी",
+            "label": "लौंग तेजी ₹800–900→₹1,100/किलो, ~₹100/किलो मुनाफा — MP teji_mandi LR7.17 (RED)"
+          },
+          {
+            "news_id": "9642d476-7421-411a-9608-908055c68159",
+            "brand": "tuvar",
+            "direction": "मंदी",
+            "label": "तुवर दाल मंदी → लेमन तुवर ₹8,000/क्विंटल, खरीद का मौका (in-house GREEN)"
+          }
+        ],
+        "fmcg": [
+          {
+            "news_id": "d15134cf-b653-46bb-a6e5-88f806e4c0c1",
+            "brand": "vim",
+            "label": "विम डिशवॉश बार Consumer Scheme LR5.80 — 3+1 फ्री, MRP ₹60/होलसेल ₹45/₹15 मार्जिन (dishwash)"
+          },
+          {
+            "news_id": "4752d9f4-903f-495d-a180-16d611114af5",
+            "brand": "goodnight",
+            "label": "गुड नाइट रिफिल product_change LR5.25 — MRP ₹85→₹80 (₹5 कमी) (home-repellent)"
+          },
+          {
+            "news_id": "d125fd37-54f7-4b2f-bafb-ecd7080e1f80",
+            "brand": "pulse",
+            "label": "पल्स कैंडी Retailer Scheme LR4.98 — ₹1 बड़े जार पर 50 नग फ्री (candy)"
+          }
+        ],
+        "trending_news": {
+          "news_id": "9eb90be0-158f-41c8-8390-1534d18a277f",
+          "brand": "fmcg-distribution",
+          "label": "बड़ी FMCG कंपनियां किराना लौटीं — नए/छोटे ब्रांड 15–20% मार्जिन, 80% बिक्री किराना से (in-house market)"
+        }
+      },
+      "also_shown": [],
+      "campaign_id": "~2ra0mm6",
+      "notes": "7 published (3 commodity + 3 FMCG + 1 news). FMCG top-LR after 12d news_id + 7d brand dedup + body-verify; 3-category spread dishwash/home-repellent/candy. Commodity 2 RED (haldi in-house, laung MP) + 1 GREEN (tuvar in-house) for balance. Badge FS 144->138 (haldi/companies widest lines grazed ring). Rejected FMCG: Brooke Bond चाय (only +₹10, no base for arrow), Dabur Babool (no number), soyabadi (generic, no brand pack). QC-composite applied (chromium+Nirmala)."
     }
   ],
   "brand_dedup_window_days": 7
