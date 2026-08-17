@@ -3276,6 +3276,85 @@
       "also_shown": [],
       "campaign_id": "~2ra0mm6",
       "notes": "7 published (3 commodity + 3 FMCG + 1 news). FMCG top-LR after 12d news_id + 7d brand dedup + body-verify; 3-category spread dishwash/home-repellent/candy. Commodity 2 RED (haldi in-house, laung MP) + 1 GREEN (tuvar in-house) for balance. Badge FS 144->138 (haldi/companies widest lines grazed ring). Rejected FMCG: Brooke Bond चाय (only +₹10, no base for arrow), Dabur Babool (no number), soyabadi (generic, no brand pack). QC-composite applied (chromium+Nirmala)."
+    },
+    {
+      "date": "2026-08-17",
+      "_note": "No fresh in-house 17-अगस्त posts (pipeline last id 1297=16अग, dedup-consumed); all 7 picks from Mixpanel LR pools (bookmark 90465031), body-verified. Full fresh run: all 3 stories + 3 entry badges republished live (update_story x3 + update_story_entry_badges, actor Harsh Shrivastava). Commodity=मैदा(RED,MP teji_mandi 10.49, ₹21->₹22 खरीद/₹25 बिक्री/₹3 मार्जिन) + घी(RED,8.80, हलवाई स्पेशल ₹190->₹200/L) + जीरा(GREEN,5.99, ₹270->₹260/kg, balance) = 2 RED + 1 GREEN, distinct types flour/dairy/spice-seed. हल्दी/लौंग/तुवर excluded = same commodity+direction as 08-16. FMCG top-3 by LR after news_id-12d + brand-7d(HARD) dedup + body-verify, 2 segments: Bournvita(product_change,6.53, MRP ₹295->₹263 clean arrow) + Silky Milky(Retailer,6.20, ₹5 box 3 free) + Parle Coconut(product_change WEIGHT,5.60, 28g->36g +28% ₹40/12pcs ₹20 margin). News=महंगाई 19 महीने उच्चतम(MP news 3.68, खुदरा 4.45%/खाद्य 5.52%, market-impact+actionable). Badges=curved-banner FS138 (मैदा में तेजी / बॉर्नविटा ₹32 सस्ता / महंगाई चरम पर), text radial clearance 367/426/389 <=448. Slides composited via kc-card-render.py, QC'd (contact sheet + full-size read of tallest news card — no overlap). PN scheduled 16:30 IST, campaign_id ~6no8er.",
+      "picks": {
+        "mandi_bhav": [
+          {
+            "news_id": "f4e8c46e-9a32-4351-a970-93a8c49bf84b",
+            "label": "मैदा तेजी ₹21->₹22 खरीद/पैकेट, बिक्री ₹25, ₹3 मार्जिन — MP teji_mandi LR 10.49 RED",
+            "brand": "maida"
+          },
+          {
+            "news_id": "1995d9c1-d01a-4c2b-b224-d44df00e5126",
+            "label": "घी तेजी हलवाई स्पेशल 1L ₹190->₹200 (+₹10) — MP teji_mandi LR 8.80 RED",
+            "brand": "ghee"
+          },
+          {
+            "news_id": "d861dfe5-8993-43ec-9991-accd47c014f3",
+            "label": "जीरा मंदी होलसेल ₹270->₹260/किलो (−₹10, आवक ज्यादा) — MP teji_mandi LR 5.99 GREEN for balance",
+            "brand": "jeera"
+          }
+        ],
+        "fmcg": [
+          {
+            "news_id": "100a3b42-f8da-4b1c-8e09-ec8595de4030",
+            "label": "बॉर्नविटा 500g — fmcg_product_change, MRP ₹295->₹263 (कंपनी ने ₹32 घटाई) — LR 6.53",
+            "brand": "bournvita"
+          },
+          {
+            "news_id": "5474dce9-6131-48a1-9c8a-037abea72dbe",
+            "label": "सिल्की मिल्की ₹5 चॉकलेट — Retailer Scheme, 1 बॉक्स पर अंदर 3 नग फ्री — LR 6.20",
+            "brand": "silky-milky"
+          },
+          {
+            "news_id": "9ebbd955-051a-4f4a-ac11-2936f327379c",
+            "label": "पारले कोकोनट बिस्कुट — fmcg_product_change WEIGHT, 28g->36g (+28%), ₹40 पैक 12pcs, ₹20 मार्जिन — LR 5.60",
+            "brand": "parle-coconut"
+          }
+        ],
+        "trending_news": [
+          {
+            "news_id": "d0ed8cc5-517f-4af3-92c5-6c1ad7ec3fb8",
+            "label": "खुदरा महंगाई 4.45%, 19 महीने का उच्चतम; खाद्य महंगाई 5.52%, थोक लागत बढ़ेगी — MP news LR 3.68",
+            "brand": "mehangai"
+          }
+        ]
+      },
+      "also_shown": [
+        {
+          "news_id": "2da687ac-1a8c-4110-bd97-a7e0bcb266c0",
+          "label": "धनिया मंदी — teji_mandi LR 9.09, SWAPPED OUT body-verify: गिरावट but no concrete ₹ figure -> jeera picked for GREEN",
+          "brand": "dhaniya"
+        },
+        {
+          "news_id": "75050e70-02eb-4098-8a0f-2af26f86bf5d",
+          "label": "निहार शांति आंवला — fmcg_product_change LR 6.16, SWAPPED OUT: packing-relaunch, only new MRPs (₹99/₹54), no clean old->new for the arrow (partial LR<->body mismatch, headline 'रेट' vs body 'packing')",
+          "brand": "nihar"
+        },
+        {
+          "news_id": "c6ef1cd7-75f3-4d22-95a0-34038c768239",
+          "label": "सोयाबड़ी — fmcg_product_change LR 6.35, SKIPPED: generic commodity, no brand pack for FMCG card",
+          "brand": "soyabadi"
+        },
+        {
+          "news_id": "3869cb4a-2dc8-4631-a810-a723f2cd41de",
+          "label": "दाल का सरकारी स्टॉक बाजार में नहीं आएगा — news LR 2.95 (भंडार 43 लाख टन, बुआई -15%), considered; chose महंगाई (higher LR, universal)",
+          "brand": "dal-stock"
+        },
+        {
+          "news_id": "5f89f064-bb54-42df-8bcb-e4716d3d91b5",
+          "label": "लाइसेंस सीमा ₹12लाख->₹1.5करोड़ — news LR 3.73, SKIPPED: 07-06 FSSAI topic repeat (same figures)",
+          "brand": "fssai-license"
+        },
+        {
+          "news_id": "050026ca-ca25-4184-bdcd-f5fd03f9dea1",
+          "label": "गांवों में लौटी खरीदारी — news LR 3.69, NOT used: rural-demand topic repeat (08-16 कंपनियां लौटीं + 07-10)",
+          "brand": "rural-demand"
+        }
+      ]
     }
   ],
   "brand_dedup_window_days": 7
