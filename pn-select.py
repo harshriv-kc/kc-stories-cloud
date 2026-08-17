@@ -62,7 +62,51 @@ VERTICALS = {
 
 MIN_IMPRESSIONS = 5000
 SHORTLIST = 5
+TIEBREAK_BAND = 3      # specificity may only reorder the top N eligible, never reach deeper
 UUID = re.compile(r"^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$")
+
+# ---------------------------------------------------------------- specificity
+# Ranking stays the gate. Within the top TIEBREAK_BAND, prefer the post that gives the
+# writer more to work with — a number, a named rival, a brand, a dated occasion. Every
+# signal is computed from post_description, which (verified 2026-08-17) is the ONLY
+# copy source: no transcript exists, and ai_moderation / meta / tag / category all come
+# back empty for these UGC video posts.
+SIG_NUM = re.compile(r"[0-9०-९]|₹|%|रुपए|रुपये|किलो|ग्राम|लीटर|पैकेट|पीस|पेटी|दर्जन")
+SIG_RIVAL = re.compile(r"सुपर\s?मार्केट|सुपरमार्केट|मॉल|ऑनलाइन|बड़ी दुकान|होलसेल|थोक|"
+                       r"कंपनी|कंपनियां|कंपनियों|ब्लिंकिट|जेप्टो|क्विक|डी\s?मार्ट|रिलायंस")
+SIG_SEASON = re.compile(r"सावन|त्योहार|त्यौहार|दिवाली|दीवाली|राखी|रक्षाबंधन|होली|ईद|"
+                        r"नवरात्र|तीज|पंचमी|15 अगस्त|१५ अगस्त|गणेश|दशहरा|नवरात्रि|करवा")
+# The brands table is 1,549 rows and ALL-LATIN — it cannot match a Devanagari mention,
+# so these common Hindi spellings are carried explicitly. Extend as needed; a miss only
+# under-credits a post, it never picks a wrong one.
+BRANDS_DEVANAGARI = [
+    "कैडबरी", "पतंजलि", "डाबर", "कोलगेट", "मैगी", "सर्फ", "निविया", "फेना", "घड़ी",
+    "निरमा", "अमूल", "पारले", "ब्रिटानिया", "टाटा", "हल्दीराम", "लक्स", "लाइफबॉय",
+    "बिसलेरी", "कैम्पा", "थम्सअप", "हॉर्लिक्स", "बोर्नविटा", "वीम", "रिन", "एरियल",
+    "टाइड", "संतूर", "डेटॉल", "सेवलॉन", "नाइसिल", "बोरोलीन", "विक्स", "ईनो",
+    "हिमालय", "इमामी", "गोदरेज", "नेस्ले", "आईटीसी", "बिंगो", "किटकैट", "डेयरी मिल्क",
+]
+
+
+def specificity(desc, brand_labels):
+    """Return (score, [signal names]) — mechanical, so the choice is auditable."""
+    hits, score = [], 0
+    if SIG_NUM.search(desc):
+        score += 2; hits.append("number")
+    if SIG_RIVAL.search(desc):
+        score += 2; hits.append("rival")
+    brand = next((b for b in BRANDS_DEVANAGARI if b in desc), None)
+    if not brand:
+        low = desc.lower()
+        brand = next((b for b in brand_labels
+                      if len(b) >= 4 and re.search(rf"\b{re.escape(b)}\b", low)), None)
+    if brand:
+        score += 2; hits.append(f"brand:{brand}")
+    if SIG_SEASON.search(desc):
+        score += 1; hits.append("occasion")
+    if len(desc) >= 150:
+        score += 1; hits.append("long")
+    return score, hits
 
 
 def die(m):
@@ -129,12 +173,35 @@ def already_used():
     return used
 
 
+def commit_pick(a, eligible, chosen):
+    log = {"picks": []}
+    if os.path.exists(LEDGER):
+        with open(LEDGER, encoding="utf-8") as f:
+            log = json.load(f)
+    if any(r["item_id"] == chosen["item_id"] for r in log["picks"]):
+        die(f"{chosen['item_id']} is already in the ledger — refusing to re-send.")
+    log["picks"].append({"vertical": a.vertical, "item_id": chosen["item_id"],
+                         "ratio": chosen["ratio"], "impressions": chosen["impressions"],
+                         "rank": eligible.index(chosen) + 1,
+                         "specificity": chosen.get("spec"),
+                         "at": datetime.datetime.utcnow().isoformat() + "Z"})
+    with open(LEDGER, "w", encoding="utf-8") as f:
+        json.dump(log, f, ensure_ascii=False, indent=2)
+    print(f"  ledger updated -> {LEDGER}  ({chosen['item_id']}, rank {eligible.index(chosen)+1})\n")
+
+
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--vertical", required=True, choices=sorted(VERTICALS))
     p.add_argument("--report", required=True, help="JSON saved from Get-Report")
     p.add_argument("--min-impressions", type=int, default=MIN_IMPRESSIONS)
     p.add_argument("--shortlist", type=int, default=SHORTLIST)
+    p.add_argument("--descriptions", default=None,
+                   help="phase B: JSON {item_id: post_description} for the shortlist")
+    p.add_argument("--skip", default="",
+                   help="phase B: comma-separated ids the routine judged UNWRITABLE "
+                        "(greeting + 'watch the video', no subject)")
+    p.add_argument("--brands", default=None, help="optional newline list of Latin brand labels")
     p.add_argument("--commit", metavar="ITEM_ID", default=None,
                    help="record the item the routine actually chose in phase B")
     a = p.parse_args()
@@ -189,6 +256,52 @@ def main():
         die("nothing eligible. Widen the window in the report, or lower the floor deliberately.")
 
     short = eligible[:a.shortlist]
+
+    # ---------------------------------------------------------------- PHASE B
+    if a.descriptions:
+        with open(a.descriptions, encoding="utf-8") as f:
+            descs = json.load(f)
+        brand_labels = []
+        if a.brands and os.path.exists(a.brands):
+            with open(a.brands, encoding="utf-8") as f:
+                brand_labels = [l.strip().lower() for l in f if l.strip()]
+        skip = {x.strip() for x in a.skip.split(",") if x.strip()}
+        band = [c for c in eligible if c["item_id"] in descs][:a.shortlist]
+        writable = [c for c in band if c["item_id"] not in skip]
+        if not writable:
+            die("every shortlisted post was judged unwritable — re-run with a larger --shortlist")
+        band3 = writable[:TIEBREAK_BAND]
+        for c in band3:
+            c["desc"] = descs[c["item_id"]]
+            c["spec"], c["sigs"] = specificity(c["desc"], brand_labels)
+        print("=" * 78)
+        print(f"  PHASE B — specificity tiebreak inside the top {len(band3)} writable")
+        print("=" * 78)
+        for i, c in enumerate(band3, 1):
+            print(f"  {i}. {c['item_id']}  ratio {c['ratio']:.2f}  spec {c['spec']}  [{', '.join(c['sigs']) or 'none'}]")
+            print(f"     {c['desc'][:150]}")
+        if skip:
+            print(f"\n  skipped as unwritable: {', '.join(sorted(skip))}")
+        # highest specificity; ties broken by the metric, never by taste
+        pick = sorted(band3, key=lambda c: (-c["spec"], -c["ratio"]))[0]
+        by_ratio = band3[0]
+        print("\n" + "=" * 78)
+        print("  PICK")
+        print(f"    item_id     : {pick['item_id']}")
+        print(f"    ratio       : {pick['ratio']:.2f}  ·  impressions {pick['impressions']:.0f}")
+        print(f"    specificity : {pick['spec']}  [{', '.join(pick['sigs'])}]")
+        print(f"    description : {pick['desc']}")
+        if pick is not by_ratio:
+            print(f"\n    NOTE: specificity overrode the metric. Top-ratio was")
+            print(f"          {by_ratio['item_id']} (ratio {by_ratio['ratio']:.2f}, spec {by_ratio['spec']}).")
+            print(f"          Override is confined to the top {TIEBREAK_BAND} — it can never reach deeper.")
+        print("=" * 78 + "\n")
+        if a.commit:
+            commit_pick(a, eligible, pick)
+        else:
+            print("  (dry run — add --commit <item_id> to record it)\n")
+        return
+
     print("\n" + "=" * 78)
     print(f"  SHORTLIST — resolve full text for these in rank order, take the first WRITABLE one")
     print("=" * 78)
