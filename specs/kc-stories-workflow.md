@@ -189,13 +189,13 @@ first automated run, and never re-activate it.
 - `isSticky` stays **false** and no CTA is set — this is what keeps the 3 per-badge `deep_link`s working
   (`~1dng34j` deliberately has an EMPTY on-click action). Adding any CTA breaks badge routing.
 
-### 12c. Report the scheduled push (Slack optional)
+### 12c. Report the scheduled push (NO Slack DM)
 The push JSON is no longer a deliverable for a human to paste. Report the **campaign_id + edit URL** so
 the operator can spot-check or kill it:
 `https://in.webengage.com/accounts/in~58adcc4a/push-notifications/campaigns/<campaign_id>/message`
-If the Slack connector is available, DM that one line to **Hritik** (`U057QBHF43H`) and **Harsh**
-(`U09K92G1U1X`). **Gate:** if Slack is unavailable, skip and report — never fail the run. The old
-weekend-only JSON handoff is **retired** (there is nothing left to paste).
+**Do NOT send any Slack DM** (operator Harsh, 2026-08-17: the Hritik/Harsh DM was for testing and is now
+retired — just put the edit URL in the run report every time). The old weekend-only JSON handoff is also
+**retired** (there is nothing left to paste).
 
 ### 13. ⚑ WRITE THE LEDGER (mandatory — this is what stops tomorrow's repeats)
 Immediately after the badges publish, append today's run to `KC Stories/used-picks-log.json`: a new `runs[]` entry with today's `date` and the **final published** `news_id` per tag under `picks` (mandi_bhav / fmcg / trending_news), plus any pick that was shown then swapped out under `also_shown`. Keep newest last; never delete history. Skipping this re-breaks dedup, so do it before the summary. (If the file was missing, create it with `dedup_window_days: 12`, `brand_dedup_window_days: 7`, and this single run.)
