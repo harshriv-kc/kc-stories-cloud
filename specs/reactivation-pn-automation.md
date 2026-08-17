@@ -126,42 +126,46 @@ exclude OR `~725k98n` + `h249a16`) without restating it. Four new registry entri
 Feedback loop for later: `main.webengage_campaign_analytics.ctr` is campaign-level CTR, so the routine
 can be told which verticals and copy styles actually earn their slot.
 
-## 5. The real gap: copy
+## 5. Copy — SOLVED, scraped from history
 
-There is **no machine-readable record of how these PNs are written.** `webengage_notification_history`
-holds 3 rows total for reactivation, all hand-built in March/April 2025:
+`community.webengage_notification_history` holds **16,326 rows**, every one with `entity_id` plus
+`titles`/`messages` as rich HTML. The copy was never lost, only wrapped in markup. Per-vertical
+campaigns exist and were scraped:
 
-```
-Reactivation Exp (All, Shop Tips) 17:15        2025-03-19
-Reactivation Exp (All, Shop Tips) 09:00 bold   2025-04-21
-Reactivation Exp (All,Shop Tips) 19:15 Bold    2025-04-21
-```
+| vertical | campaigns in history | sends |
+|---|---|---|
+| Scheme | `Scheme Post 1`, `Scheme post 2`, `government schemes` | ~549 |
+| Mandi | `Teji Mandi Report ` | 138 |
+| Shop Tips | `Trending News Shop Tips` + 3 `Reactivation Exp` rows | ~37 |
+| FMCG | `Trending News Fmcg` | 25 |
 
-Everything since was built in the WebEngage UI, and because these are `duo_image` pushes the copy lives
-**inside the image pixels** — it is not in `titles[]`, `messages[]`, or any table. So per-vertical copy
-voice cannot be reverse-engineered from data. It has to come from the humans doing it today.
+**The copy is slot-filling, not freehand creative.** Each vertical has a fixed 2–3 line skeleton, a
+small rotating pool of intensifiers/emoji/verbs, and one or two slots that depend on the post. Mandi's
+second line is a byte-identical constant across all 7 sampled sends. Full templates, shipped examples
+and the per-vertical devices are in **`specs/pn-copy-playbook.md`**.
 
-What the sheet does tell us, and it is a genuine per-vertical difference worth encoding:
+The 3-line skeleton maps 1:1 onto the image kit's slots (line 1 → `--head`, line 2 → `--sub`, line 3 →
+the CTA button the kit already draws), so no translation layer is needed and the CTA never has to be
+written.
 
-- **FMCG** — headline must *give value*; clickbait is explicitly sanctioned.
-- **Mandi** — price/direction is the hook; freshness matters more than polish (3-day window).
-- **Scheme / Shop Tips** — no note. Presumably the standard KC PN voice.
+The 3 `Reactivation Exp` rows also turned out to be `template_type: dismiss`, `screen: KiranaLive` —
+**not** `duo_image`. Their distinguishing moves (a personalisation token with Hindi fallback, and the
+outcome reframed as a distress question) are documented in the playbook. Note the Jinja token cannot
+survive into a `duo_image` image — pixels are rendered before WebEngage sees them.
 
 ## 6. What is needed to finish this
 
-1. **The 4 real Mixpanel bookmark IDs** behind the short links `1dPtGm` / `2304fn` / `p0Exu` / `1uJpzH`
-   — open each and copy `#report/<id>` from the address bar. (Or confirm the §2a IDs are the right ones,
-   or say "use SQL" and skip Mixpanel entirely.)
-2. **3–5 real past PNs per vertical** — the two image files, or just the headline + subline text, for
-   each of the 4. This is the only way to get the copy voice right; there is nothing in the DB.
-3. **FMCG send time** (blank in the sheet).
-4. **Campaign identity** — one WebEngage campaign reused for all 4 verticals, or 4 separate ones? The
+1. **FMCG send time** (blank in the sheet).
+2. **Campaign identity** — one WebEngage campaign reused for all 4 verticals, or 4 separate ones? The
    sheet says 13:30 = Mandi; the existing registry entry `reactivation_exp_image_pn` is 13:30 and
    named "Reactivation Exp (Image PN, Shop Tips)". Those cannot both be right, and the answer decides
    whether the registry gets 1 entry or 4.
-5. **Shop Tips policy call** — with ~0.7 eligible posts/day, pick one: (a) draw from the 30–120 day
+3. **Shop Tips policy call** — with ~0.7 eligible posts/day, pick one: (a) draw from the 30–120 day
    backfill pool with a no-repeat ledger, (b) drop 08:30 to 2–3×/week, or (c) let it fall back to
    another vertical when the pool is dry.
+4. *(optional)* **The 4 Mixpanel bookmark IDs** behind the short links `1dPtGm` / `2304fn` / `p0Exu` /
+   `1uJpzH` — only needed if you want CTR-based ranking rather than the SQL engagement ranking in §2b.
+   The links are auth-gated (302 → `/request_access/`), so they have to come from your browser.
 
 ## 7. Shape of the routine (once §6 is answered)
 
