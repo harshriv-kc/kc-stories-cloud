@@ -72,51 +72,51 @@ def b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-08-16)
+# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-08-17)
 CARDS = [
- # --- Commodity (mandi_bhav) — 2 तेजी/RED (हल्दी in-house, लौंग MP) + 1 मंदी/GREEN (तुवर दाल in-house, खरीद मौका) for balance. 3 distinct types: masala / masala / dal. ---
- dict(i=1, label="मंडी भाव", stripe=RED, headline="हल्दी",
-   price=f'{tri("up",RED)}₹18,800–19,000<span class="unit">/क्विंटल</span>',
-   sub=f'इरोड गट्ठा हल्दी ₹800 उछलकर ₹18,800–19,000/क्विंटल; खपत सीजन नजदीक, नीचे के भाव अब लौटते नहीं दिख रहे · <b class="delta" style="color:{RED}">+₹800/क्विंटल</b>',
-   l1="क्यों", v1="ग्राहकी लौटी; इरोड में ~8 हजार बोरी आवक, त्योहारी मसाला मांग नजदीक",
-   l2="क्या करें", v2="जरूरी स्टॉक अभी बना लें; एक साथ नहीं, दो हिस्सों में माल उठाएं"),
- dict(i=2, label="मंडी भाव", stripe=RED, headline="लौंग",
-   price=f'{tri("up",RED)}₹1,100<span class="unit">/किलो</span>',
-   sub=f'लौंग होलसेल ₹800–900 से बढ़कर ₹1,100/किलो; अच्छी क्वालिटी ₹1,200 बिक्री, ~₹100/किलो मुनाफा · <b class="delta" style="color:{RED}">+₹200–300/किलो</b>',
-   l1="क्यों", v1="आपूर्ति घटने से भाव चढ़े; त्योहारी मसाला मांग तेज",
-   l2="क्या करें", v2="पुराने भाव का स्टॉक निकालें; जरूरत भर का ताजा माल ही उठाएं"),
- dict(i=3, label="मंडी भाव", stripe=GREEN, headline="तुवर दाल",
-   price=f'{tri("down",GREEN)}₹8,000<span class="unit">/क्विंटल</span>',
-   sub=f'चेन्नई से घटकर बिकवाली आने पर लेमन तुवर ₹8,000/क्विंटल पर आई; गिरावट क्षणिक, आगे ₹200–300 तेजी संभव · <b class="delta" style="color:{GREEN}">खरीद का मौका</b>',
-   l1="क्यों", v1="चेन्नई का पड़ता कमजोर, बर्मा का माल महंगा; खरीफ में तुवर बुआई पीछे",
-   l2="क्या करें", v2="इस स्तर से नीचे टिकने के आसार कम; त्योहारी माल थोड़ा-थोड़ा अभी उठाएं"),
- # --- FMCG (fmcg) — top 3 by Like Rate desc across the (3 populated) segments after ledger dedup (news_id 12d + 7d brand HARD) + body-verify. 3-category spread: dishwash / home-repellent / candy. ---
- #     Vim 5.80 (Consumer, dishwash), Good Knight 5.25 (product_change rate, home), Pulse 4.98 (Retailer, candy) — all body-verified concrete figures. new_product_launch pool = 0 rows in report.
- #     SWAPPED OUT: Brooke Bond चाय 5.20 = only '+₹10 on 250gm', no base price for the arrow; Dabur Babool 5.47 = 'profit bahut hai' no number; soyabadi 6.54 = generic commodity, no brand pack.
- #     SKIPPED 7d brand (HARD)/news_id 12d: Colgate 6.96, Parle Londonderry 6.79, Parle Melody 6.47/5.78, Patanjali Dantkanti 6.09, Vicks 5.67, Orange Bite 5.65, Dabur Red 5.36, 5 Star 4.94, Fevikwik 4.83, KitKat 4.18; गणेश खानी 5.92 = tobacco.
- dict(i=4, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="विम बार",
-   price='<span class="offer" style="background:%s">3 + 1 फ्री</span>'%SCHEME_BLUE,
-   sub='विम डिशवॉश बार—3 बार लेने पर 1 बार <b class="delta">फ्री</b>; MRP ₹60, होलसेल ₹45, दुकानदार को ₹15 का सीधा मार्जिन',
-   l1="ऑफर", v1="विम डिशवॉश बार का पैक—3 खरीदने पर 1 बार मुफ्त (3+1)",
-   l2="ग्राहक को", v2="हर 3 पर 1 बार मुफ्त; रोज़ बर्तन धोने की पक्की मांग"),
- dict(i=5, eyebrow="FMCG", label="प्रोडक्ट बदलाव", stripe=BLACK, headline="गुड नाइट रिफिल",
-   price='₹85<span class="arrow">→</span>₹80<span class="unit">MRP</span>',
-   sub='गुड नाइट रिफिल की MRP ₹5 घटी—पुराना पैक ₹85, नया पैक ₹80; पुराना स्टॉक पुरानी MRP पर आराम से निकल जाएगा · <b class="delta">₹5 कमी</b>',
-   l1="बदलाव", v1="रिफिल MRP ₹85 से घटकर ₹80 (₹5 की कमी)",
-   l2="फायदा", v2="पुराने पैक ₹85 MRP पर बेच लें; नया माल ₹80 MRP से मंगाएं"),
- dict(i=6, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="पल्स कैंडी",
-   price='<span class="offer" style="background:%s">जार पर 50 नग फ्री</span>'%SCHEME_GREEN,
-   sub='₹1 वाली पल्स कच्चा आम कैंडी—बड़ा जार लेने पर 50 नग <b class="delta">फ्री</b> (जार में एक्स्ट्रा 50+10); तेज़ चलने वाला माल',
-   l1="स्कीम", v1="₹1 वाली पल्स कैंडी का बड़ा जार लेने पर 50 नग फ्री",
-   l2="फायदा", v2="हर जार पर 50 फ्री नग सीधा मुनाफा; बच्चों में पक्की बिक्री"),
- # --- News (trending_news) — बड़ी FMCG कंपनियां किराना की ओर लौटीं, दुकानदार का मार्जिन बढ़ा रहीं (in-house; direct kirana margin impact. दाल-स्टॉक policy + उद्यम-रजिस्ट्रेशन scheme + रुझान digest not picked) ---
- dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="कंपनियां लौटीं",
-   price='<span class="news">बड़ी कंपनियां किराना दुकानों की ओर लौटीं</span>',
-   sub='ITC, नेस्ले, टाटा, डाबर, रिलायंस, पारले दुकानदार का मार्जिन-सप्लाई सुधार रहीं; नए/छोटे ब्रांड <b class="delta">15–20% मार्जिन</b>; 80% बिक्री आज भी किराना से',
-   l1="क्यों ज़रूरी", v1="कंपनियां माल-चक्र छोटा, छोटे पैक व ऊंचा मार्जिन दे रहीं",
-   l2="क्या करें", v2="ऊंचे मार्जिन वाले नए ब्रांड रखें; कम माल-चक्र से पैसा कम फंसेगा"),
+ # --- Commodity (mandi_bhav) — no fresh in-house today (last 16 अगस्त, dedup-consumed); all MP teji_mandi. 2 तेजी/RED (मैदा, घी) + 1 मंदी/GREEN (जीरा) for balance. 3 distinct types: flour / dairy / spice-seed. ---
+ #     हल्दी/लौंग/तुवर excluded (same commodity+direction as 08-16); धनिया मंदी SWAPPED OUT body-verify: no ₹ figure -> जीरा मंदी (₹270->₹260/kg concrete).
+ dict(i=1, label="मंडी भाव", stripe=RED, headline="मैदा",
+   price=f'{tri("up",RED)}₹22<span class="unit">/पैकेट</span>',
+   sub=f'मैदा पैकेट ₹21 से ₹22 (खरीद), बिक्री ₹25 यानी ₹3 का मार्जिन; त्योहारी मांग तेज, आगे और चढ़ सकता है · <b class="delta" style="color:{RED}">+₹1/पैकेट</b>',
+   l1="क्यों", v1="त्योहारों की मांग शुरू; मैदा की खपत बढ़ी, आवक पर दबाव",
+   l2="क्या करें", v2="जरूरत का स्टॉक अभी बना लें; ₹3 का मार्जिन बना रहेगा"),
+ dict(i=2, label="मंडी भाव", stripe=RED, headline="घी",
+   price=f'{tri("up",RED)}₹200<span class="unit">/लीटर</span>',
+   sub=f'हलवाई स्पेशल घी का डिब्बा ₹190 से ₹200/लीटर (+₹10); शादी-त्योहार सीजन में और तेजी की पूरी संभावना · <b class="delta" style="color:{RED}">+₹10/लीटर</b>',
+   l1="क्यों", v1="शादियों-त्योहारों की मांग शुरू; घी में लगातार तेजी",
+   l2="क्या करें", v2="जरूरी स्टॉक अभी उठाएं; ऊंचे भाव आगे बने रह सकते हैं"),
+ dict(i=3, label="मंडी भाव", stripe=GREEN, headline="जीरा",
+   price=f'{tri("down",GREEN)}₹260<span class="unit">/किलो</span>',
+   sub=f'जीरा होलसेल ₹270 से ₹260/किलो पर आया (−₹10); आवक ज्यादा और मांग सुस्त, आगे और नरमी संभव · <b class="delta" style="color:{GREEN}">खरीद का मौका</b>',
+   l1="क्यों", v1="मंडी में आवक बढ़ी, मांग कमजोर; मुनाफावसूली से भाव गिरे",
+   l2="क्या करें", v2="भाव नीचे; त्योहारी जरूरत का माल थोड़ा-थोड़ा उठाएं"),
+ # --- FMCG (fmcg) — top 3 by Like Rate desc across segments after ledger dedup (news_id 12d + 7d brand HARD) + body-verify. 3-category spread: health-drink / candy / biscuit. ---
+ #     Bournvita 6.53 (product_change, MRP 295->263 clean), Silky Milky 6.20 (Retailer, Rs5 box 3 free), Parle Coconut 5.60 (product_change WEIGHT 28g->36g) — all body-verified concrete.
+ #     SWAPPED OUT: soyabadi 6.35 = generic no brand pack; Nihar Amla 6.16 = packing-relaunch, only new MRPs, no clean old->new for the arrow (partial LR<->body mismatch).
+ #     SKIPPED 7d brand (HARD)/news_id 12d: Lux 6.75, KitKat 6.25, Colgate 6.14/5.73/5.52/4.80, Melody 5.80/5.01, Dabur-Red 5.25, 5star 5.19, Orange-Bite 5.11, Vicks 4.93/4.46, Fevikwik 4.71; ganesh khaini 5.62 = tobacco.
+ dict(i=4, eyebrow="FMCG", label="प्रोडक्ट बदलाव", stripe=BLACK, headline="बॉर्नविटा",
+   price='₹295<span class="arrow">→</span>₹263<span class="unit">MRP</span>',
+   sub='बॉर्नविटा 500g की MRP ₹295 से घटाकर ₹263 की गई (कंपनी ने ₹32 घटाई); ग्राहक को सीधा फायदा, बिक्री बढ़ेगी · <b class="delta">₹32 कमी</b>',
+   l1="बदलाव", v1="500 ग्राम पैक की MRP ₹295 से ₹263 (₹32 की कमी)",
+   l2="फायदा", v2="सस्ता होने से तेज बिकेगा; पुराना स्टॉक भी जल्दी निकालें"),
+ dict(i=5, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="सिल्की मिल्की",
+   price='<span class="offer" style="background:%s">बॉक्स पर 3 नग फ्री</span>'%SCHEME_GREEN,
+   sub='₹5 वाली सिल्की मिल्की मिल्क चॉकलेट—एक बॉक्स लेने पर अंदर 3 नग <b class="delta">एक्स्ट्रा फ्री</b>; ₹5 पर तेज़ चलने वाला माल',
+   l1="स्कीम", v1="₹5 वाली चॉकलेट का 1 बॉक्स लेने पर अंदर 3 नग फ्री",
+   l2="फायदा", v2="हर बॉक्स पर 3 फ्री नग सीधा मुनाफा; बच्चों में पक्की बिक्री"),
+ dict(i=6, eyebrow="FMCG", label="प्रोडक्ट बदलाव", stripe=BLACK, headline="पारले कोकोनट",
+   price='28g<span class="arrow">→</span>36g<span class="unit">वजन</span>',
+   sub='पारले कोकोनट बिस्कुट का वजन 28g से 36g हुआ (28% ज्यादा), पैक वही ₹40 में 12 पीस; दुकानदार को ₹20 का मार्जिन · <b class="delta">वजन +28%</b>',
+   l1="बदलाव", v1="पैक का वजन 28 ग्राम से 36 ग्राम (28% ज्यादा)",
+   l2="फायदा", v2="ज्यादा वजन पर वही ₹40 दाम; ₹20 मार्जिन, ग्राहक खुश"),
+ # --- News (trending_news) — खुदरा महंगाई 19 महीने के उच्चतम पर (MP news LR 3.68; market-impact + concrete + actionable). दाल-स्टॉक (LR 2.95) considered; लाइसेंस-सीमा = 07-06 FSSAI topic repeat, skipped. ---
+ dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="महंगाई बढ़ी",
+   price='<span class="news">खुदरा महंगाई 4.45%, 19 महीने में सबसे ऊंची</span>',
+   sub='जुलाई में खुदरा महंगाई 4.45% (जून 4.38%); खाद्य महंगाई 5.52%, गांवों पर बोझ ज्यादा; थोक लागत बढ़ेगी · <b class="delta">19 महीने का उच्चतम</b>',
+   l1="क्यों ज़रूरी", v1="थोक भाव चढ़ेंगे; कंपनियां पैक का वजन घटा सकती हैं",
+   l2="क्या करें", v2="रोज़ भाव पर्ची बनाएं; थोक बढ़ते ही भाव ठीक करें, उधार सख्त रखें"),
 ]
-
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
 html,body{{margin:0;padding:0;width:1080px;height:1920px;overflow:hidden;font-family:'Nirmala UI','Segoe UI',sans-serif;}}
 .card{{width:1080px;height:1920px;position:relative;background:#FAFAF7;}}
