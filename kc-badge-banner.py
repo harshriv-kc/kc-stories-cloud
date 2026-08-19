@@ -123,10 +123,10 @@ def render(tag, cfg, grad, bottom):
 # of the white ring while staying uniform. ALWAYS re-check max_text_radius <= ~438 (white-ring inner 454) after
 # changing copy — the widest line caps FS.
 FS=138   # 2026-08-16: dropped 144->138, haldi/companies widest lines were grazing ring at 456
-# 2026-08-17: mandi=मैदा तेजी, fmcg=Bournvita MRP -₹32, tn=महंगाई. Widest line 'बॉर्नविटा' — verify radial clearance after render.
-DAY=[dict(i=1,src="subjfull_1.png",lines=["मैदा","में तेजी"],fs=FS),
-     dict(i=2,src="subjfull_2.png",lines=["बॉर्नविटा","₹32 सस्ता"],fs=FS),
-     dict(i=3,src="subjfull_3.png",lines=["महंगाई","चरम पर"],fs=FS)]
+# 2026-08-19: mandi=उड़द सस्ती(GREEN), fmcg=ओरल-बी 11+2 फ्री(real product photo), tn=ONDC 50 करोड़+ ऑर्डर. Widest lines '11+2 फ्री'/'50 करोड़+' — verify radial clearance after render.
+DAY=[dict(i=1,src="subjfull_1.png",lines=["उड़द","सस्ती"],fs=FS),
+     dict(i=2,src="subjfull_2.png",lines=["ओरल-बी","11+2 फ्री"],fs=FS),
+     dict(i=3,src="subjfull_3.png",lines=["50 करोड़+","ऑर्डर"],fs=FS)]
 if __name__=="__main__":
     render("D", DAY, TALL, 190)   # bottom raised for FS130 + wide tn bottom line: seats block higher in the circle's wider zone to clear the ring
     # 2026-07-14 crop fix: operator flagged text CROPPING at the ring. Root cause — the

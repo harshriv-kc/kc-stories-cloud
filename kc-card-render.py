@@ -72,50 +72,49 @@ def b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-08-17)
+# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-08-19)
 CARDS = [
- # --- Commodity (mandi_bhav) — no fresh in-house today (last 16 अगस्त, dedup-consumed); all MP teji_mandi. 2 तेजी/RED (मैदा, घी) + 1 मंदी/GREEN (जीरा) for balance. 3 distinct types: flour / dairy / spice-seed. ---
- #     हल्दी/लौंग/तुवर excluded (same commodity+direction as 08-16); धनिया मंदी SWAPPED OUT body-verify: no ₹ figure -> जीरा मंदी (₹270->₹260/kg concrete).
- dict(i=1, label="मंडी भाव", stripe=RED, headline="मैदा",
-   price=f'{tri("up",RED)}₹22<span class="unit">/पैकेट</span>',
-   sub=f'मैदा पैकेट ₹21 से ₹22 (खरीद), बिक्री ₹25 यानी ₹3 का मार्जिन; त्योहारी मांग तेज, आगे और चढ़ सकता है · <b class="delta" style="color:{RED}">+₹1/पैकेट</b>',
-   l1="क्यों", v1="त्योहारों की मांग शुरू; मैदा की खपत बढ़ी, आवक पर दबाव",
-   l2="क्या करें", v2="जरूरत का स्टॉक अभी बना लें; ₹3 का मार्जिन बना रहेगा"),
- dict(i=2, label="मंडी भाव", stripe=RED, headline="घी",
-   price=f'{tri("up",RED)}₹200<span class="unit">/लीटर</span>',
-   sub=f'हलवाई स्पेशल घी का डिब्बा ₹190 से ₹200/लीटर (+₹10); शादी-त्योहार सीजन में और तेजी की पूरी संभावना · <b class="delta" style="color:{RED}">+₹10/लीटर</b>',
-   l1="क्यों", v1="शादियों-त्योहारों की मांग शुरू; घी में लगातार तेजी",
-   l2="क्या करें", v2="जरूरी स्टॉक अभी उठाएं; ऊंचे भाव आगे बने रह सकते हैं"),
- dict(i=3, label="मंडी भाव", stripe=GREEN, headline="जीरा",
-   price=f'{tri("down",GREEN)}₹260<span class="unit">/किलो</span>',
-   sub=f'जीरा होलसेल ₹270 से ₹260/किलो पर आया (−₹10); आवक ज्यादा और मांग सुस्त, आगे और नरमी संभव · <b class="delta" style="color:{GREEN}">खरीद का मौका</b>',
-   l1="क्यों", v1="मंडी में आवक बढ़ी, मांग कमजोर; मुनाफावसूली से भाव गिरे",
-   l2="क्या करें", v2="भाव नीचे; त्योहारी जरूरत का माल थोड़ा-थोड़ा उठाएं"),
- # --- FMCG (fmcg) — top 3 by Like Rate desc across segments after ledger dedup (news_id 12d + 7d brand HARD) + body-verify. 3-category spread: health-drink / candy / biscuit. ---
- #     Bournvita 6.53 (product_change, MRP 295->263 clean), Silky Milky 6.20 (Retailer, Rs5 box 3 free), Parle Coconut 5.60 (product_change WEIGHT 28g->36g) — all body-verified concrete.
- #     SWAPPED OUT: soyabadi 6.35 = generic no brand pack; Nihar Amla 6.16 = packing-relaunch, only new MRPs, no clean old->new for the arrow (partial LR<->body mismatch).
- #     SKIPPED 7d brand (HARD)/news_id 12d: Lux 6.75, KitKat 6.25, Colgate 6.14/5.73/5.52/4.80, Melody 5.80/5.01, Dabur-Red 5.25, 5star 5.19, Orange-Bite 5.11, Vicks 4.93/4.46, Fevikwik 4.71; ganesh khaini 5.62 = tobacco.
- dict(i=4, eyebrow="FMCG", label="प्रोडक्ट बदलाव", stripe=BLACK, headline="बॉर्नविटा",
-   price='₹295<span class="arrow">→</span>₹263<span class="unit">MRP</span>',
-   sub='बॉर्नविटा 500g की MRP ₹295 से घटाकर ₹263 की गई (कंपनी ने ₹32 घटाई); ग्राहक को सीधा फायदा, बिक्री बढ़ेगी · <b class="delta">₹32 कमी</b>',
-   l1="बदलाव", v1="500 ग्राम पैक की MRP ₹295 से ₹263 (₹32 की कमी)",
-   l2="फायदा", v2="सस्ता होने से तेज बिकेगा; पुराना स्टॉक भी जल्दी निकालें"),
- dict(i=5, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="सिल्की मिल्की",
-   price='<span class="offer" style="background:%s">बॉक्स पर 3 नग फ्री</span>'%SCHEME_GREEN,
-   sub='₹5 वाली सिल्की मिल्की मिल्क चॉकलेट—एक बॉक्स लेने पर अंदर 3 नग <b class="delta">एक्स्ट्रा फ्री</b>; ₹5 पर तेज़ चलने वाला माल',
-   l1="स्कीम", v1="₹5 वाली चॉकलेट का 1 बॉक्स लेने पर अंदर 3 नग फ्री",
-   l2="फायदा", v2="हर बॉक्स पर 3 फ्री नग सीधा मुनाफा; बच्चों में पक्की बिक्री"),
- dict(i=6, eyebrow="FMCG", label="प्रोडक्ट बदलाव", stripe=BLACK, headline="पारले कोकोनट",
-   price='28g<span class="arrow">→</span>36g<span class="unit">वजन</span>',
-   sub='पारले कोकोनट बिस्कुट का वजन 28g से 36g हुआ (28% ज्यादा), पैक वही ₹40 में 12 पीस; दुकानदार को ₹20 का मार्जिन · <b class="delta">वजन +28%</b>',
-   l1="बदलाव", v1="पैक का वजन 28 ग्राम से 36 ग्राम (28% ज्यादा)",
-   l2="फायदा", v2="ज्यादा वजन पर वही ₹40 दाम; ₹20 मार्जिन, ग्राहक खुश"),
- # --- News (trending_news) — खुदरा महंगाई 19 महीने के उच्चतम पर (MP news LR 3.68; market-impact + concrete + actionable). दाल-स्टॉक (LR 2.95) considered; लाइसेंस-सीमा = 07-06 FSSAI topic repeat, skipped. ---
- dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="महंगाई बढ़ी",
-   price='<span class="news">खुदरा महंगाई 4.45%, 19 महीने में सबसे ऊंची</span>',
-   sub='जुलाई में खुदरा महंगाई 4.45% (जून 4.38%); खाद्य महंगाई 5.52%, गांवों पर बोझ ज्यादा; थोक लागत बढ़ेगी · <b class="delta">19 महीने का उच्चतम</b>',
-   l1="क्यों ज़रूरी", v1="थोक भाव चढ़ेंगे; कंपनियां पैक का वजन घटा सकती हैं",
-   l2="क्या करें", v2="रोज़ भाव पर्ची बनाएं; थोक बढ़ते ही भाव ठीक करें, उधार सख्त रखें"),
+ # --- Commodity (mandi_bhav) — 3 fresh in-house 19अग, none in 12d ledger. 2 तेजी/RED (इलायची, सरसों तेल) + 1 मंदी/GREEN (उड़द) for balance. 3 distinct types: pulse / spice / edible-oil. ---
+ #     चीनी record excluded (news_id 63ff9776 in 12d + used 08-18 same dir); मूंग excluded (used 08-18); रुझान/Samachar digests skipped.
+ dict(i=1, label="मंडी भाव", stripe=GREEN, headline="उड़द",
+   price=f'{tri("down",GREEN)}₹8,800<span class="unit">/क्विंटल</span>',
+   sub=f'देसी उड़द ₹8,900 से ₹8,800/क्विंटल पर आई (−₹100); मिल खरीद सुस्त और आयात 43% बढ़ा, आगे नरमी सीमित · <b class="delta" style="color:{GREEN}">₹100 गिरावट</b>',
+   l1="क्यों", v1="मिलों की सुस्त खरीद, बड़े व्यापारियों की बिकवाली; सस्ता आयात",
+   l2="क्या करें", v2="उड़द दाल सस्ती पड़ेगी; त्योहारी मांग से पहले जरूरत भर स्टॉक भरें"),
+ dict(i=2, label="मंडी भाव", stripe=RED, headline="बड़ी इलायची",
+   price=f'{tri("up",RED)}₹1,650<span class="unit">/किलो</span>',
+   sub=f'कैंचीकट बड़ी इलायची ₹1,620 से ₹1,650/किलो (+₹30); आवक सीमित और रक्षाबंधन-जन्माष्टमी की मांग तेज · <b class="delta" style="color:{RED}">₹30 बढ़ोतरी</b>',
+   l1="क्यों", v1="मंडी में आवक सीमित; त्योहारी मिठाई-मसाला मांग बढ़ी",
+   l2="क्या करें", v2="जरूरत भर माल अभी उठाएं; भाव आगे और ऊपर जा सकते हैं"),
+ dict(i=3, label="मंडी भाव", stripe=RED, headline="सरसों तेल",
+   price=f'{tri("up",RED)}₹16,900<span class="unit">/क्विंटल</span>',
+   sub=f'सरसों तेल ₹16,800 से ₹16,900/क्विंटल (+₹100); सप्लाई कमजोर, पाम तेल $1250 और जयपुर मंडी तेज · <b class="delta" style="color:{RED}">₹100 तेजी</b>',
+   l1="क्यों", v1="सप्लाई कमजोर और विदेशी बाजार में तेजी; पाम तेल चढ़ा",
+   l2="क्या करें", v2="टीन एकसाथ न भरें; थोड़ा-थोड़ा उठाएं, आवक सुधरते भाव ठहरेंगे"),
+ # --- FMCG (fmcg) — top by Like Rate desc after ledger dedup (news_id 12d + 7d brand HARD) + body-verify. Candy dominated 08-16/17/18 -> broke the streak. 3-category spread: oral-care / puja-dhoop / confectionery. All Retailer Scheme. ---
+ #     oral-b 6.39 (11+2 free, Rs120-130 buy, Rs100+ margin), sab-k-sai dhoop 6.29 (12+5 free, Rs200 wholesale, Rs20/pc), just-jelly 6.79 (Rs450 jar->Rs1200 sale + free tiffin) — all body-verified concrete.
+ #     SWAPPED OUT: tim-buk-tu 8.16 = stale/past-tense scheme, freebie=calculator; center-fruit 7.24 = thin body + candy over-covered 3d; jasmine-mehndi 6.57 = no Rs/qty (vague). SKIPPED 7d brand/news_id: colgate 7.98/6.44/5.47/5.45, chik 7.92/5.77, lux 7.49, kurkure 5.89, parle-coconut 5.66, bournvita 5.61; KP-group 5.00 = pan masala.
+ dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="ओरल-बी ब्रश",
+   price='<span class="offer" style="background:%s">11 पर 2 नग फ्री</span>'%SCHEME_GREEN,
+   sub='₹18 MRP ओरल-बी शाइनी क्लीन ब्रश—पूरा कार्ड 11+2 फ्री (13 पीस); थोक ₹120–130, सब बेचकर <b class="delta">₹100+ मुनाफा</b>',
+   l1="स्कीम", v1="एक कार्ड (11 ब्रश) खरीदने पर 2 ब्रश फ्री, कुल 13 पीस",
+   l2="फायदा", v2="थोक ₹120–130; हर पीस ₹18 पर बिक्री, कार्ड पर ₹100+ मुनाफा"),
+ dict(i=5, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="सबके साईं धूप",
+   price='<span class="offer" style="background:%s">12 पर 5 पाउच फ्री</span>'%SCHEME_GREEN,
+   sub='सबके साईं धूप—1 पैकेट में 12+5 पाउच फ्री (कुल 17); थोक ₹200 का पैकेट, हर पीस <b class="delta">₹20 में बिक्री</b>',
+   l1="स्कीम", v1="एक पैकेट में 12+5 पाउच फ्री, कुल 17 पाउच",
+   l2="फायदा", v2="थोक ₹200 का पैकेट; ₹20/पीस बिक्री, त्योहारी पूजा मांग तेज"),
+ dict(i=6, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="जस्ट जेली",
+   price='<span class="offer" style="background:%s">जार पर टिफिन फ्री</span>'%SCHEME_GREEN,
+   sub='₹450 का जस्ट जेली टॉफी जार—अंदर ₹1,200 की बिक्री; कंपनी से तीन-खाने वाला टिफिन फ्री, <b class="delta">₹750 मुनाफा</b>',
+   l1="स्कीम", v1="₹450 का जार, साथ में तीन-खाने वाला लंच बॉक्स फ्री",
+   l2="फायदा", v2="जार से ₹1,200 की बिक्री; ₹750 सीधा मुनाफा, तेज चलने वाली टॉफी"),
+ # --- News (trending_news) — ONDC 50 करोड़+ ऑर्डर पार (in-house 19अग; market-impact + concrete + actionable, non-bait). MSME payment law + CGTMSE loan considered; ONDC has the strongest concrete number and yesterday's news was a loan scheme (avoid repeat theme). ---
+ dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="ONDC 50 करोड़",
+   price='<span class="news">दुकान से ऑनलाइन बिक्री, 50 करोड़+ ऑर्डर पार</span>',
+   sub='ONDC नेटवर्क पर अब तक 50 करोड़+ ऑर्डर; 2 लाख+ दुकानें जुड़ीं—अपने नाम, अपने दाम, <b class="delta">कम कमीशन</b>',
+   l1="क्यों ज़रूरी", v1="छोटी दुकान अपने नाम से ऑनलाइन बेच सकती है, गोदाम की जरूरत नहीं",
+   l2="क्या करें", v2="दुकान के कागज, बैंक खाता, रेट लिस्ट तैयार कर 20–30 सामान से शुरू करें"),
 ]
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
 html,body{{margin:0;padding:0;width:1080px;height:1920px;overflow:hidden;font-family:'Nirmala UI','Segoe UI',sans-serif;}}
