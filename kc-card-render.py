@@ -74,18 +74,18 @@ def b64(path):
 
 # ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-08-19)
 CARDS = [
- # --- Commodity (mandi_bhav) — 3 fresh in-house 19अग, none in 12d ledger. 2 तेजी/RED (इलायची, सरसों तेल) + 1 मंदी/GREEN (उड़द) for balance. 3 distinct types: pulse / spice / edible-oil. ---
- #     चीनी record excluded (news_id 63ff9776 in 12d + used 08-18 same dir); मूंग excluded (used 08-18); रुझान/Samachar digests skipped.
- dict(i=1, label="मंडी भाव", stripe=GREEN, headline="उड़द",
+ # --- Commodity (mandi_bhav) — SUGAR IS HERO (operator, 2026-08-19: चीनी record = most attention, keep hero next few days). चीनी slide 1 + 2 तेजी/RED + 1 मंदी/GREEN(उड़द) for balance. Types: sugar / pulse / edible-oil. बड़ी इलायची dropped to also_shown to make room for चीनी hero. ---
+ #     चीनी redirects to 19अग Samachar (ed41d4db) which leads with the record; operator override of the 3d same-commodity soft rule (sugar is the hero commodity).
+ dict(i=1, label="मंडी भाव", stripe=RED, headline="चीनी",
+   price=f'{tri("up",RED)}₹6,000<span class="unit">/क्विंटल</span>',
+   sub=f'चीनी हाजिर ₹5,900–6,000/क्विंटल के रिकॉर्ड स्तर पर, मिल डिलीवरी ₹5,550–5,700; दो दिन में ₹900 महंगी · <b class="delta" style="color:{RED}">रिकॉर्ड ऊंचाई</b>',
+   l1="क्यों", v1="बड़े व्यापारियों की लिवाली और सट्टेबाजी; वैश्विक उत्पादन घटने की आशंका",
+   l2="क्या करें", v2="पुराने स्टॉक पर पुराना MRP बेच लें; नया माल जरूरत भर उठाएं, भाव और चढ़ सकते हैं"),
+ dict(i=2, label="मंडी भाव", stripe=GREEN, headline="उड़द",
    price=f'{tri("down",GREEN)}₹8,800<span class="unit">/क्विंटल</span>',
    sub=f'देसी उड़द ₹8,900 से ₹8,800/क्विंटल पर आई (−₹100); मिल खरीद सुस्त और आयात 43% बढ़ा, आगे नरमी सीमित · <b class="delta" style="color:{GREEN}">₹100 गिरावट</b>',
    l1="क्यों", v1="मिलों की सुस्त खरीद, बड़े व्यापारियों की बिकवाली; सस्ता आयात",
    l2="क्या करें", v2="उड़द दाल सस्ती पड़ेगी; त्योहारी मांग से पहले जरूरत भर स्टॉक भरें"),
- dict(i=2, label="मंडी भाव", stripe=RED, headline="बड़ी इलायची",
-   price=f'{tri("up",RED)}₹1,650<span class="unit">/किलो</span>',
-   sub=f'कैंचीकट बड़ी इलायची ₹1,620 से ₹1,650/किलो (+₹30); आवक सीमित और रक्षाबंधन-जन्माष्टमी की मांग तेज · <b class="delta" style="color:{RED}">₹30 बढ़ोतरी</b>',
-   l1="क्यों", v1="मंडी में आवक सीमित; त्योहारी मिठाई-मसाला मांग बढ़ी",
-   l2="क्या करें", v2="जरूरत भर माल अभी उठाएं; भाव आगे और ऊपर जा सकते हैं"),
  dict(i=3, label="मंडी भाव", stripe=RED, headline="सरसों तेल",
    price=f'{tri("up",RED)}₹16,900<span class="unit">/क्विंटल</span>',
    sub=f'सरसों तेल ₹16,800 से ₹16,900/क्विंटल (+₹100); सप्लाई कमजोर, पाम तेल $1250 और जयपुर मंडी तेज · <b class="delta" style="color:{RED}">₹100 तेजी</b>',

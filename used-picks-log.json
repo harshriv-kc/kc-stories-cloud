@@ -3437,26 +3437,26 @@
   },
   {
    "date": "2026-08-19",
-   "_note": "Full fresh run: all 3 stories + 3 entry badges republished live (update_story x3 + update_story_entry_badges, actor Harsh Shrivastava). Commodity (all in-house 19अग, none in 12d): उड़द(GREEN, देसी ₹8,900->₹8,800/क्विंटल −₹100, मिल खरीद सुस्त+आयात 43%) + बड़ी इलायची(RED, ₹1,620->₹1,650/किलो +₹30, आवक सीमित+त्योहारी मांग) + सरसों तेल(RED, ₹16,800->₹16,900/क्विंटल +₹100, सप्लाई कमजोर+पाम तेल) = 1 GREEN + 2 RED, 3 distinct types pulse/spice/edible-oil. चीनी record excluded (news_id 63ff9776 in 12d + used 08-18 same dir); मूंग excluded (used 08-18). FMCG top by LR after news_id-12d + brand-7d(HARD) dedup + body-verify; candy dominated 08-16/17/18 so broke the streak -> 3-category spread: oral-care/puja-dhoop/confectionery, all Retailer Scheme: ओरल-बी ब्रश(6.39, 11+2 फ्री, थोक ₹120-130, ₹100+ मुनाफा) + सबके साईं धूप(6.29, 12+5 पाउच फ्री, थोक ₹200, ₹20/pc) + जस्ट जेली(6.79, ₹450 जार->₹1200 बिक्री + टिफिन फ्री). SWAPPED OUT: tim-buk-tu 8.16 = stale/past-tense scheme (freebie=calculator), center-fruit 7.24 = thin body + candy over-covered 3d, jasmine-mehndi 6.57 = no ₹/qty (vague). SKIPPED 7d brand/news_id: colgate 7.98/6.44/5.47/5.45, chik 7.92/5.77, lux 7.49, kurkure 5.89, parle-coconut 5.66, bournvita 5.61; KP-group 5.00 = pan masala. News=ONDC 50 करोड़+ ऑर्डर (in-house, market-impact+concrete+actionable, non-bait); MSME payment law + CGTMSE loan considered but yesterday's news was a loan scheme (avoided theme repeat); scam/रक्षाबंधन-prep bait skipped. Slides composited via kc-card-render.py, QC'd (contact sheet + full-size read of tallest card oral-b — no overlap); cards 1/5 downscaled to 940px for <1MB nginx cap. Badges=curved-banner FS138 (उड़द सस्ती / ओरल-बी 11+2 फ्री [real product photo] / 50 करोड़+ ऑर्डर), ring-normalized via kc-badge-banner.py, radial clearance 352/413/356<=448, transparent PN verified RGBA on checkerboard. PN scheduled 16:30 IST, campaign_id ~qd3qkm (HTTP 200). [POST-PUBLISH EDIT (operator): trending_news ONDC 50 करोड़ (e13c460a) SWAPPED -> MSME payment-recovery law (f4b46066) — ONDC promotes independent online selling, a competitor angle. tn story slide + entry badge (अटका पैसा वापस) re-published live; PN badge_pn_3 (f897be3c) regenerated + notification_data JSON handed to operator to paste into scheduled campaign ~qd3qkm (mandi/fmcg badges + all deep_links unchanged).]",
+   "_note": "Full fresh run: all 3 stories + 3 entry badges republished live (update_story x3 + update_story_entry_badges, actor Harsh Shrivastava). Commodity (all in-house 19अग, none in 12d): उड़द(GREEN, देसी ₹8,900->₹8,800/क्विंटल −₹100, मिल खरीद सुस्त+आयात 43%) + बड़ी इलायची(RED, ₹1,620->₹1,650/किलो +₹30, आवक सीमित+त्योहारी मांग) + सरसों तेल(RED, ₹16,800->₹16,900/क्विंटल +₹100, सप्लाई कमजोर+पाम तेल) = 1 GREEN + 2 RED, 3 distinct types pulse/spice/edible-oil. चीनी record excluded (news_id 63ff9776 in 12d + used 08-18 same dir); मूंग excluded (used 08-18). FMCG top by LR after news_id-12d + brand-7d(HARD) dedup + body-verify; candy dominated 08-16/17/18 so broke the streak -> 3-category spread: oral-care/puja-dhoop/confectionery, all Retailer Scheme: ओरल-बी ब्रश(6.39, 11+2 फ्री, थोक ₹120-130, ₹100+ मुनाफा) + सबके साईं धूप(6.29, 12+5 पाउच फ्री, थोक ₹200, ₹20/pc) + जस्ट जेली(6.79, ₹450 जार->₹1200 बिक्री + टिफिन फ्री). SWAPPED OUT: tim-buk-tu 8.16 = stale/past-tense scheme (freebie=calculator), center-fruit 7.24 = thin body + candy over-covered 3d, jasmine-mehndi 6.57 = no ₹/qty (vague). SKIPPED 7d brand/news_id: colgate 7.98/6.44/5.47/5.45, chik 7.92/5.77, lux 7.49, kurkure 5.89, parle-coconut 5.66, bournvita 5.61; KP-group 5.00 = pan masala. News=ONDC 50 करोड़+ ऑर्डर (in-house, market-impact+concrete+actionable, non-bait); MSME payment law + CGTMSE loan considered but yesterday's news was a loan scheme (avoided theme repeat); scam/रक्षाबंधन-prep bait skipped. Slides composited via kc-card-render.py, QC'd (contact sheet + full-size read of tallest card oral-b — no overlap); cards 1/5 downscaled to 940px for <1MB nginx cap. Badges=curved-banner FS138 (उड़द सस्ती / ओरल-बी 11+2 फ्री [real product photo] / 50 करोड़+ ऑर्डर), ring-normalized via kc-badge-banner.py, radial clearance 352/413/356<=448, transparent PN verified RGBA on checkerboard. PN scheduled 16:30 IST, campaign_id ~qd3qkm (HTTP 200). [POST-PUBLISH EDIT (operator): trending_news ONDC 50 करोड़ (e13c460a) SWAPPED -> MSME payment-recovery law (f4b46066) — ONDC promotes independent online selling, a competitor angle. tn story slide + entry badge (अटका पैसा वापस) re-published live; PN badge_pn_3 (f897be3c) regenerated + notification_data JSON handed to operator to paste into scheduled campaign ~qd3qkm (mandi/fmcg badges + all deep_links unchanged).] [POST-PUBLISH EDIT 2 (operator: चीनी is the HERO commodity, most attention, keep hero next few days): चीनी record (Samachar ed41d4db) added as mandi_bhav SLIDE 1 + mandi ENTRY BANNER (चीनी रिकॉर्ड ₹6,000) + mandi PN badge_pn_1 (b92a511e); बड़ी इलायची dropped from live to also_shown. mandi_bhav re-published live [चीनी, उड़द, सरसों तेल]; entry badge swapped live. Operator-override of the 3d same-commodity soft dedup (sugar hero). Final PN notification_data (sugar mandi + oral-b fmcg + MSME tn) handed to operator to paste into scheduled campaign ~qd3qkm.]",
    "picks": {
     "mandi_bhav": [
+     {
+      "news_id": "ed41d4db-5ddc-4b0f-a6fd-181d838dbc89",
+      "brand": "chini",
+      "direction": "तेजी",
+      "label": "चीनी HERO (operator) — हाजिर ₹5,900-6,000/क्विंटल रिकॉर्ड, मिल डिलीवरी ₹5,550-5,700, दो दिन में +₹900 — in-house 19अग Samachar RED, slide1"
+     },
      {
       "news_id": "c91e4352-3934-4723-ab3b-5c91bbe1d3c7",
       "brand": "urad",
       "direction": "मंदी",
-      "label": "उड़द मंदी देसी ₹8,900->₹8,800/क्विंटल (−₹100), मिल खरीद सुस्त+आयात 43% बढ़ा — in-house 19अग GREEN"
-     },
-     {
-      "news_id": "c4f61d3f-2633-4683-bbe0-9c19a6f33310",
-      "brand": "badi-elaichi",
-      "direction": "तेजी",
-      "label": "बड़ी इलायची तेजी ₹1,620->₹1,650/किलो (+₹30), आवक सीमित+रक्षाबंधन-जन्माष्टमी मांग — in-house 19अग RED"
+      "label": "उड़द मंदी देसी ₹8,900->₹8,800/क्विंटल (−₹100) — in-house 19अग GREEN, slide2"
      },
      {
       "news_id": "1ef5faa6-9b33-47ec-90d3-e5d309d613e2",
       "brand": "sarson-tel",
       "direction": "तेजी",
-      "label": "सरसों तेल तेजी ₹16,800->₹16,900/क्विंटल (+₹100), सप्लाई कमजोर+पाम तेल $1250 — in-house 19अग RED"
+      "label": "सरसों तेल तेजी ₹16,800->₹16,900/क्विंटल (+₹100) — in-house 19अग RED, slide3"
      }
     ],
     "fmcg": [
@@ -3512,6 +3512,12 @@
      "brand": "ondc",
      "direction": "news",
      "label": "ONDC 50 करोड़+ ऑर्डर — INITIALLY PUBLISHED then SWAPPED OUT by operator (ONDC promotes independent online selling = competitor angle); replaced with MSME payment law"
+    },
+    {
+     "news_id": "c4f61d3f-2633-4683-bbe0-9c19a6f33310",
+     "brand": "badi-elaichi",
+     "direction": "तेजी",
+     "label": "बड़ी इलायची तेजी ₹1,620->₹1,650/किलो (+₹30), आवक सीमित+रक्षाबंधन-जन्माष्टमी मांग — in-house 19अग RED [DROPPED from live to make room for चीनी hero]"
     }
    ]
   }
