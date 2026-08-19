@@ -3434,6 +3434,80 @@
     }
    ],
    "campaign_id": "~24cog2p"
+  },
+  {
+   "date": "2026-08-19",
+   "_note": "Full fresh run: all 3 stories + 3 entry badges republished live (update_story x3 + update_story_entry_badges, actor Harsh Shrivastava). Commodity (all in-house 19अग, none in 12d): उड़द(GREEN, देसी ₹8,900->₹8,800/क्विंटल −₹100, मिल खरीद सुस्त+आयात 43%) + बड़ी इलायची(RED, ₹1,620->₹1,650/किलो +₹30, आवक सीमित+त्योहारी मांग) + सरसों तेल(RED, ₹16,800->₹16,900/क्विंटल +₹100, सप्लाई कमजोर+पाम तेल) = 1 GREEN + 2 RED, 3 distinct types pulse/spice/edible-oil. चीनी record excluded (news_id 63ff9776 in 12d + used 08-18 same dir); मूंग excluded (used 08-18). FMCG top by LR after news_id-12d + brand-7d(HARD) dedup + body-verify; candy dominated 08-16/17/18 so broke the streak -> 3-category spread: oral-care/puja-dhoop/confectionery, all Retailer Scheme: ओरल-बी ब्रश(6.39, 11+2 फ्री, थोक ₹120-130, ₹100+ मुनाफा) + सबके साईं धूप(6.29, 12+5 पाउच फ्री, थोक ₹200, ₹20/pc) + जस्ट जेली(6.79, ₹450 जार->₹1200 बिक्री + टिफिन फ्री). SWAPPED OUT: tim-buk-tu 8.16 = stale/past-tense scheme (freebie=calculator), center-fruit 7.24 = thin body + candy over-covered 3d, jasmine-mehndi 6.57 = no ₹/qty (vague). SKIPPED 7d brand/news_id: colgate 7.98/6.44/5.47/5.45, chik 7.92/5.77, lux 7.49, kurkure 5.89, parle-coconut 5.66, bournvita 5.61; KP-group 5.00 = pan masala. News=ONDC 50 करोड़+ ऑर्डर (in-house, market-impact+concrete+actionable, non-bait); MSME payment law + CGTMSE loan considered but yesterday's news was a loan scheme (avoided theme repeat); scam/रक्षाबंधन-prep bait skipped. Slides composited via kc-card-render.py, QC'd (contact sheet + full-size read of tallest card oral-b — no overlap); cards 1/5 downscaled to 940px for <1MB nginx cap. Badges=curved-banner FS138 (उड़द सस्ती / ओरल-बी 11+2 फ्री [real product photo] / 50 करोड़+ ऑर्डर), ring-normalized via kc-badge-banner.py, radial clearance 352/413/356<=448, transparent PN verified RGBA on checkerboard. PN scheduled 16:30 IST, campaign_id ~qd3qkm (HTTP 200).",
+   "picks": {
+    "mandi_bhav": [
+     {
+      "news_id": "c91e4352-3934-4723-ab3b-5c91bbe1d3c7",
+      "brand": "urad",
+      "direction": "मंदी",
+      "label": "उड़द मंदी देसी ₹8,900->₹8,800/क्विंटल (−₹100), मिल खरीद सुस्त+आयात 43% बढ़ा — in-house 19अग GREEN"
+     },
+     {
+      "news_id": "c4f61d3f-2633-4683-bbe0-9c19a6f33310",
+      "brand": "badi-elaichi",
+      "direction": "तेजी",
+      "label": "बड़ी इलायची तेजी ₹1,620->₹1,650/किलो (+₹30), आवक सीमित+रक्षाबंधन-जन्माष्टमी मांग — in-house 19अग RED"
+     },
+     {
+      "news_id": "1ef5faa6-9b33-47ec-90d3-e5d309d613e2",
+      "brand": "sarson-tel",
+      "direction": "तेजी",
+      "label": "सरसों तेल तेजी ₹16,800->₹16,900/क्विंटल (+₹100), सप्लाई कमजोर+पाम तेल $1250 — in-house 19अग RED"
+     }
+    ],
+    "fmcg": [
+     {
+      "news_id": "d432d2b4-f124-4bcd-8cb5-53daa7ebe3b3",
+      "brand": "oral-b",
+      "direction": "scheme",
+      "label": "ओरल-बी शाइनी क्लीन ब्रश Retailer Scheme LR 6.39: ₹18 MRP, 11+2 फ्री (13 पीस), थोक ₹120-130, ₹100+ मुनाफा — oral-care"
+     },
+     {
+      "news_id": "49674db0-3553-422e-a847-cb1260d0fd55",
+      "brand": "sabke-sai-dhoop",
+      "direction": "scheme",
+      "label": "सबके साईं धूप Retailer Scheme LR 6.29: 1 पैकेट में 12+5 पाउच फ्री (17), थोक ₹200, ₹20/pc — puja-dhoop"
+     },
+     {
+      "news_id": "ed48d148-1e21-453c-9838-ecaeca68e867",
+      "brand": "just-jelly",
+      "direction": "scheme",
+      "label": "जस्ट जेली Retailer Scheme LR 6.79: ₹450 जार -> ₹1,200 बिक्री + तीन-खाने वाला टिफिन फ्री, ₹750 मुनाफा — confectionery"
+     }
+    ],
+    "trending_news": [
+     {
+      "news_id": "e13c460a-9206-464e-b256-d31ba46bb89a",
+      "brand": "ondc",
+      "direction": "news",
+      "label": "ONDC 50 करोड़+ ऑर्डर पार, 2 लाख+ दुकानें जुड़ीं — in-house 19अग, market-impact+actionable BLACK"
+     }
+    ]
+   },
+   "also_shown": [
+    {
+     "news_id": "ee0b8c5d-cfc6-4655-8be9-e80442aae2a0",
+     "brand": "tim-buk-tu",
+     "direction": "scheme",
+     "label": "tim buk tu lollipop Retailer Scheme LR 8.16 SWAPPED OUT: stale/past-tense scheme, freebie=calculator — candy"
+    },
+    {
+     "news_id": "30350377-9faa-43e1-b018-26a82a0f4b19",
+     "brand": "center-fruit",
+     "direction": "scheme",
+     "label": "Center Fruit jar Retailer Scheme LR 7.24 SWAPPED OUT: thin body (no price/margin) + candy over-covered 3d — candy"
+    },
+    {
+     "news_id": "553c8aec-f063-4d35-92ea-d35a8b2233ad",
+     "brand": "jasmine-mehndi",
+     "direction": "scheme",
+     "label": "Jasmine mehndi cone Retailer Scheme LR 6.57 SWAPPED OUT: '1 shampoo muft', no ₹/qty (vague no-number)"
+    }
+   ]
   }
  ],
  "brand_dedup_window_days": 7
