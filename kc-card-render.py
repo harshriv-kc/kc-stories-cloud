@@ -109,12 +109,12 @@ CARDS = [
    sub='₹450 का जस्ट जेली टॉफी जार—अंदर ₹1,200 की बिक्री; कंपनी से तीन-खाने वाला टिफिन फ्री, <b class="delta">₹750 मुनाफा</b>',
    l1="स्कीम", v1="₹450 का जार, साथ में तीन-खाने वाला लंच बॉक्स फ्री",
    l2="फायदा", v2="जार से ₹1,200 की बिक्री; ₹750 सीधा मुनाफा, तेज चलने वाली टॉफी"),
- # --- News (trending_news) — ONDC 50 करोड़+ ऑर्डर पार (in-house 19अग; market-impact + concrete + actionable, non-bait). MSME payment law + CGTMSE loan considered; ONDC has the strongest concrete number and yesterday's news was a loan scheme (avoid repeat theme). ---
- dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="ONDC 50 करोड़",
-   price='<span class="news">दुकान से ऑनलाइन बिक्री, 50 करोड़+ ऑर्डर पार</span>',
-   sub='ONDC नेटवर्क पर अब तक 50 करोड़+ ऑर्डर; 2 लाख+ दुकानें जुड़ीं—अपने नाम, अपने दाम, <b class="delta">कम कमीशन</b>',
-   l1="क्यों ज़रूरी", v1="छोटी दुकान अपने नाम से ऑनलाइन बेच सकती है, गोदाम की जरूरत नहीं",
-   l2="क्या करें", v2="दुकान के कागज, बैंक खाता, रेट लिस्ट तैयार कर 20–30 सामान से शुरू करें"),
+ # --- News (trending_news) — MSME payment-recovery law (in-house 19अग; pro-kirana, actionable, non-competitor). SWAPPED from ONDC 50 करोड़ (operator: ONDC promotes independent online selling = competitor angle). ---
+ dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="अटका पैसा",
+   price='<span class="news">MSME कानून बदला, दुकानदारों का अटका पैसा जल्दी</span>',
+   sub='संसद ने MSME कानून बदला—भुगतान की 45 दिन सीमा सख्त; पुराने अटके मामलों में आधा पैसा पहले दिलाने की व्यवस्था · <b class="delta">तेज़ वसूली</b>',
+   l1="क्यों ज़रूरी", v1="स्कूल-दफ्तर-ठेकेदार को उधार राशन देने वालों का फंसा पैसा अब कानून के दायरे में",
+   l2="क्या करें", v2="उद्यम रजिस्ट्रेशन कराएं और हर उधार का पक्का बिल बनाएं, तभी दावा पक्का"),
 ]
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
 html,body{{margin:0;padding:0;width:1080px;height:1920px;overflow:hidden;font-family:'Nirmala UI','Segoe UI',sans-serif;}}

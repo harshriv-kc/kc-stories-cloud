@@ -3437,7 +3437,7 @@
   },
   {
    "date": "2026-08-19",
-   "_note": "Full fresh run: all 3 stories + 3 entry badges republished live (update_story x3 + update_story_entry_badges, actor Harsh Shrivastava). Commodity (all in-house 19अग, none in 12d): उड़द(GREEN, देसी ₹8,900->₹8,800/क्विंटल −₹100, मिल खरीद सुस्त+आयात 43%) + बड़ी इलायची(RED, ₹1,620->₹1,650/किलो +₹30, आवक सीमित+त्योहारी मांग) + सरसों तेल(RED, ₹16,800->₹16,900/क्विंटल +₹100, सप्लाई कमजोर+पाम तेल) = 1 GREEN + 2 RED, 3 distinct types pulse/spice/edible-oil. चीनी record excluded (news_id 63ff9776 in 12d + used 08-18 same dir); मूंग excluded (used 08-18). FMCG top by LR after news_id-12d + brand-7d(HARD) dedup + body-verify; candy dominated 08-16/17/18 so broke the streak -> 3-category spread: oral-care/puja-dhoop/confectionery, all Retailer Scheme: ओरल-बी ब्रश(6.39, 11+2 फ्री, थोक ₹120-130, ₹100+ मुनाफा) + सबके साईं धूप(6.29, 12+5 पाउच फ्री, थोक ₹200, ₹20/pc) + जस्ट जेली(6.79, ₹450 जार->₹1200 बिक्री + टिफिन फ्री). SWAPPED OUT: tim-buk-tu 8.16 = stale/past-tense scheme (freebie=calculator), center-fruit 7.24 = thin body + candy over-covered 3d, jasmine-mehndi 6.57 = no ₹/qty (vague). SKIPPED 7d brand/news_id: colgate 7.98/6.44/5.47/5.45, chik 7.92/5.77, lux 7.49, kurkure 5.89, parle-coconut 5.66, bournvita 5.61; KP-group 5.00 = pan masala. News=ONDC 50 करोड़+ ऑर्डर (in-house, market-impact+concrete+actionable, non-bait); MSME payment law + CGTMSE loan considered but yesterday's news was a loan scheme (avoided theme repeat); scam/रक्षाबंधन-prep bait skipped. Slides composited via kc-card-render.py, QC'd (contact sheet + full-size read of tallest card oral-b — no overlap); cards 1/5 downscaled to 940px for <1MB nginx cap. Badges=curved-banner FS138 (उड़द सस्ती / ओरल-बी 11+2 फ्री [real product photo] / 50 करोड़+ ऑर्डर), ring-normalized via kc-badge-banner.py, radial clearance 352/413/356<=448, transparent PN verified RGBA on checkerboard. PN scheduled 16:30 IST, campaign_id ~qd3qkm (HTTP 200).",
+   "_note": "Full fresh run: all 3 stories + 3 entry badges republished live (update_story x3 + update_story_entry_badges, actor Harsh Shrivastava). Commodity (all in-house 19अग, none in 12d): उड़द(GREEN, देसी ₹8,900->₹8,800/क्विंटल −₹100, मिल खरीद सुस्त+आयात 43%) + बड़ी इलायची(RED, ₹1,620->₹1,650/किलो +₹30, आवक सीमित+त्योहारी मांग) + सरसों तेल(RED, ₹16,800->₹16,900/क्विंटल +₹100, सप्लाई कमजोर+पाम तेल) = 1 GREEN + 2 RED, 3 distinct types pulse/spice/edible-oil. चीनी record excluded (news_id 63ff9776 in 12d + used 08-18 same dir); मूंग excluded (used 08-18). FMCG top by LR after news_id-12d + brand-7d(HARD) dedup + body-verify; candy dominated 08-16/17/18 so broke the streak -> 3-category spread: oral-care/puja-dhoop/confectionery, all Retailer Scheme: ओरल-बी ब्रश(6.39, 11+2 फ्री, थोक ₹120-130, ₹100+ मुनाफा) + सबके साईं धूप(6.29, 12+5 पाउच फ्री, थोक ₹200, ₹20/pc) + जस्ट जेली(6.79, ₹450 जार->₹1200 बिक्री + टिफिन फ्री). SWAPPED OUT: tim-buk-tu 8.16 = stale/past-tense scheme (freebie=calculator), center-fruit 7.24 = thin body + candy over-covered 3d, jasmine-mehndi 6.57 = no ₹/qty (vague). SKIPPED 7d brand/news_id: colgate 7.98/6.44/5.47/5.45, chik 7.92/5.77, lux 7.49, kurkure 5.89, parle-coconut 5.66, bournvita 5.61; KP-group 5.00 = pan masala. News=ONDC 50 करोड़+ ऑर्डर (in-house, market-impact+concrete+actionable, non-bait); MSME payment law + CGTMSE loan considered but yesterday's news was a loan scheme (avoided theme repeat); scam/रक्षाबंधन-prep bait skipped. Slides composited via kc-card-render.py, QC'd (contact sheet + full-size read of tallest card oral-b — no overlap); cards 1/5 downscaled to 940px for <1MB nginx cap. Badges=curved-banner FS138 (उड़द सस्ती / ओरल-बी 11+2 फ्री [real product photo] / 50 करोड़+ ऑर्डर), ring-normalized via kc-badge-banner.py, radial clearance 352/413/356<=448, transparent PN verified RGBA on checkerboard. PN scheduled 16:30 IST, campaign_id ~qd3qkm (HTTP 200). [POST-PUBLISH EDIT (operator): trending_news ONDC 50 करोड़ (e13c460a) SWAPPED -> MSME payment-recovery law (f4b46066) — ONDC promotes independent online selling, a competitor angle. tn story slide + entry badge (अटका पैसा वापस) re-published live; PN badge_pn_3 (f897be3c) regenerated + notification_data JSON handed to operator to paste into scheduled campaign ~qd3qkm (mandi/fmcg badges + all deep_links unchanged).]",
    "picks": {
     "mandi_bhav": [
      {
@@ -3481,10 +3481,10 @@
     ],
     "trending_news": [
      {
-      "news_id": "e13c460a-9206-464e-b256-d31ba46bb89a",
-      "brand": "ondc",
+      "news_id": "f4b46066-85ec-444e-9dc2-fbdb2e68bd46",
+      "brand": "msme-payment-law",
       "direction": "news",
-      "label": "ONDC 50 करोड़+ ऑर्डर पार, 2 लाख+ दुकानें जुड़ीं — in-house 19अग, market-impact+actionable BLACK"
+      "label": "MSME कानून बदलाव—दुकानदारों का अटका पैसा जल्दी (45 दिन भुगतान सीमा सख्त, अटके मामलों में आधा पैसा पहले) — in-house 19अग, pro-kirana actionable BLACK"
      }
     ]
    },
@@ -3506,6 +3506,12 @@
      "brand": "jasmine-mehndi",
      "direction": "scheme",
      "label": "Jasmine mehndi cone Retailer Scheme LR 6.57 SWAPPED OUT: '1 shampoo muft', no ₹/qty (vague no-number)"
+    },
+    {
+     "news_id": "e13c460a-9206-464e-b256-d31ba46bb89a",
+     "brand": "ondc",
+     "direction": "news",
+     "label": "ONDC 50 करोड़+ ऑर्डर — INITIALLY PUBLISHED then SWAPPED OUT by operator (ONDC promotes independent online selling = competitor angle); replaced with MSME payment law"
     }
    ]
   }

@@ -126,7 +126,7 @@ FS=138   # 2026-08-16: dropped 144->138, haldi/companies widest lines were grazi
 # 2026-08-19: mandi=उड़द सस्ती(GREEN), fmcg=ओरल-बी 11+2 फ्री(real product photo), tn=ONDC 50 करोड़+ ऑर्डर. Widest lines '11+2 फ्री'/'50 करोड़+' — verify radial clearance after render.
 DAY=[dict(i=1,src="subjfull_1.png",lines=["उड़द","सस्ती"],fs=FS),
      dict(i=2,src="subjfull_2.png",lines=["ओरल-बी","11+2 फ्री"],fs=FS),
-     dict(i=3,src="subjfull_3.png",lines=["50 करोड़+","ऑर्डर"],fs=FS)]
+     dict(i=3,src="subjfull_3.png",lines=["अटका पैसा","वापस"],fs=FS)]
 if __name__=="__main__":
     render("D", DAY, TALL, 190)   # bottom raised for FS130 + wide tn bottom line: seats block higher in the circle's wider zone to clear the ring
     # 2026-07-14 crop fix: operator flagged text CROPPING at the ring. Root cause — the
