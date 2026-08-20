@@ -3520,6 +3520,70 @@
      "label": "बड़ी इलायची तेजी ₹1,620->₹1,650/किलो (+₹30), आवक सीमित+रक्षाबंधन-जन्माष्टमी मांग — in-house 19अग RED [DROPPED from live to make room for चीनी hero]"
     }
    ]
+  },
+  {
+   "date": "2026-08-20",
+   "_note": "Full fresh run: all 3 stories + 3 entry badges republished live (update_story x3 + update_story_entry_badges, actor Harsh Shrivastava). Commodity: देसी चना(RED, ₹6,275->₹6,475/क्विंटल +₹200, आपूर्ति घटी+आयात महंगा, in-house 20अग दाल post) + मखाना(GREEN, ₹1,350->₹1,300/किलो -₹50, उठाव कमजोर, in-house 20अग मेवा post) + सूखा नारियल गोला(RED, ₹37,500/क्विंटल, सावन-त्योहार मांग, MP teji_mandi LR7.31 body-verified) = 2 RED + 1 GREEN, types pulse/foxnut/dry-coconut. बादाम(RED) dropped from the same मेवा news_id in favour of मखाना(GREEN) to keep direction balance (मेवा post carries one news_id; both बादाम & मखाना map to 46bd9bcd). सोया तेल skipped=flat/no-direction. FMCG top by LR after news_id-12d + brand-7d(HARD) + body-verify; 3-category spread stationery/biscuit/hair-dye (broke the candy/oral-care run): नटराज पेंसिल(6.37, ₹35 बॉक्स 10 पेंसिल+रबर+कटर फ्री ₹25 मुनाफा) + पारले-जी(5.43, ₹5 MRP 10+2 फ्री) + वासमोल डाई(3.44, खरीद ₹50 बिक्री ₹65 ₹15 मार्जिन + पेस्ट फ्री). SWAPPED OUT: hajmola 7.89 = body has NO rupee figure (only '10pcs free', Step-6 no-number reject), parle-mazelo 5.09 = would be 2nd Parle card same day (brand monotony; kept single Parle=parle-g), patanjali-toothpaste 3.54 = 3rd-consecutive-day oral-care (colgate 18अग, oral-b 19अग) soft spread; golden-dairy-cream 4.11 & haldiram-punjabi-tadka 3.86 also no rupee. SKIPPED 7d brand/news_id: center-fruit 5.85, jasmine-mehndi 5.71, kurkure 5.58, bournvita 5.49, parle-coconut 5.40, colgate 5.27, tim-buk-tu 4.77, lux 4.41, chik 4.05, silky-milky 3.98, sabke-sai-dhoop 3.31, kitkat 3.22; KP-group 3.15=pan masala. News=चीनी आयात छूट (in-house 20अग, market-impact+concrete+actionable, non-bait): सरकार 10 लाख टन आयात छूट पर विचार, चीनी दिल्ली ₹6,100-6,200/क्विंटल रिकॉर्ड; नकली-घी scam bait + जनऔषधि scheme (theme-repeat w/ 18-19अग loan/law news) skipped. Slides composited via kc-card-render.py, QC'd (contact sheet + full-size read of देसी चना & चीनी cards — no overlap, geometry identical); cards 1/4/6 downscaled (card_1 to 840px, 4/6 to 940px) for <1MB nginx cap. Badges=curved-banner FS138 (चना दाल महंगी / नटराज रबर फ्री [real Natraj still-life, brand in top zone] / चीनी होगी सस्ती), ring-normalized via kc-badge-banner.py, radial clearance 427/384/352<=448, transparent PN verified RGBA on checkerboard + on CDN. PN scheduled 16:30 IST, campaign_id ~n5793o (HTTP 200).",
+   "picks": {
+    "mandi_bhav": [
+     {
+      "news_id": "6e07ce58-bbab-480a-9cfa-f6858e2d5966",
+      "brand": "chana",
+      "label": "देसी चना तेजी ₹6,275->₹6,475/क्विंटल (+₹200) — in-house 20अग"
+     },
+     {
+      "news_id": "46bd9bcd-2447-474a-97cf-6719f32635d8",
+      "brand": "makhana",
+      "label": "मखाना मंदी ₹1,350->₹1,300/किलो (−₹50) — in-house 20अग मेवा post"
+     },
+     {
+      "news_id": "c1ad97ec-4e1f-4860-8440-8addd4e03d7b",
+      "brand": "nariyal",
+      "label": "सूखा नारियल गोला तेजी ₹37,500/क्विंटल — MP teji_mandi LR7.31 body-verified"
+     }
+    ],
+    "fmcg": [
+     {
+      "news_id": "cbd13925-0ffc-4538-9e75-1e9aab64c2da",
+      "brand": "natraj-pencil",
+      "label": "नटराज बोल्ड पेंसिल Retailer Scheme LR6.37 — ₹35 थोक बॉक्स, 10 पेंसिल+रबर+कटर फ्री, ₹25 मुनाफा/बॉक्स"
+     },
+     {
+      "news_id": "d2e4eeb4-85c7-486d-bba3-f4f79d9ef81a",
+      "brand": "parle-g",
+      "label": "पारले-जी बिस्कुट Consumer Scheme LR5.43 — ₹5 MRP, 10+2 फ्री"
+     },
+     {
+      "news_id": "39f6238e-fddf-4090-a591-8bf41762b4a1",
+      "brand": "vasmol",
+      "label": "वासमोल केश काला छोटी डाई Consumer Scheme LR3.44 — खरीद ₹50 बिक्री ₹65 (₹15 मार्जिन) + पेस्ट फ्री"
+     }
+    ],
+    "trending_news": [
+     {
+      "news_id": "314e5217-b8df-42cb-8cf0-77bc459b3aea",
+      "brand": "chini-import",
+      "label": "चीनी आयात छूट — सरकार 10 लाख टन आयात पर विचार; दिल्ली ₹6,100-6,200/क्विंटल रिकॉर्ड — in-house 20अग market-impact non-bait"
+     }
+    ]
+   },
+   "also_shown": [
+    {
+     "news_id": "c5fe3cca-debd-4773-816a-85fd2a1a2bdb",
+     "brand": "hajmola",
+     "label": "हाजमोला इमली जार 10 नग फ्री Retailer LR7.89 — SWAPPED: body has no rupee figure (Step-6 no-number)"
+    },
+    {
+     "news_id": "42d4cf18-2bf9-4963-9f21-c160cf535c87",
+     "brand": "parle-mazelo",
+     "label": "पारले मजेलो कैंडी Retailer LR5.09 (₹120 जार, 11 फ्री, ₹41 मार्जिन) — SWAPPED: 2nd Parle card same day"
+    },
+    {
+     "news_id": "e89b1d95-fefe-4979-aa9c-aff07024f5e4",
+     "brand": "patanjali-toothpaste",
+     "label": "पतंजलि ₹10 टूथपेस्ट + 16 शैंपू फ्री Retailer LR3.54 — SWAPPED: 3rd-consecutive-day oral-care"
+    }
+   ]
   }
  ],
  "brand_dedup_window_days": 7
