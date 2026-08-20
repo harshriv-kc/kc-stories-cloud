@@ -72,49 +72,48 @@ def b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-08-19)
+# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-08-20)
 CARDS = [
- # --- Commodity (mandi_bhav) — SUGAR IS HERO (operator, 2026-08-19: चीनी record = most attention, keep hero next few days). चीनी slide 1 + 2 तेजी/RED + 1 मंदी/GREEN(उड़द) for balance. Types: sugar / pulse / edible-oil. बड़ी इलायची dropped to also_shown to make room for चीनी hero. ---
- #     चीनी redirects to 19अग Samachar (ed41d4db) which leads with the record; operator override of the 3d same-commodity soft rule (sugar is the hero commodity).
- dict(i=1, label="मंडी भाव", stripe=RED, headline="चीनी",
-   price=f'{tri("up",RED)}₹6,000<span class="unit">/क्विंटल</span>',
-   sub=f'चीनी हाजिर ₹5,900–6,000/क्विंटल के रिकॉर्ड स्तर पर, मिल डिलीवरी ₹5,550–5,700; दो दिन में ₹900 महंगी · <b class="delta" style="color:{RED}">रिकॉर्ड ऊंचाई</b>',
-   l1="क्यों", v1="बड़े व्यापारियों की लिवाली और सट्टेबाजी; वैश्विक उत्पादन घटने की आशंका",
-   l2="क्या करें", v2="पुराने स्टॉक पर पुराना MRP बेच लें; नया माल जरूरत भर उठाएं, भाव और चढ़ सकते हैं"),
- dict(i=2, label="मंडी भाव", stripe=GREEN, headline="उड़द",
-   price=f'{tri("down",GREEN)}₹8,800<span class="unit">/क्विंटल</span>',
-   sub=f'देसी उड़द ₹8,900 से ₹8,800/क्विंटल पर आई (−₹100); मिल खरीद सुस्त और आयात 43% बढ़ा, आगे नरमी सीमित · <b class="delta" style="color:{GREEN}">₹100 गिरावट</b>',
-   l1="क्यों", v1="मिलों की सुस्त खरीद, बड़े व्यापारियों की बिकवाली; सस्ता आयात",
-   l2="क्या करें", v2="उड़द दाल सस्ती पड़ेगी; त्योहारी मांग से पहले जरूरत भर स्टॉक भरें"),
- dict(i=3, label="मंडी भाव", stripe=RED, headline="सरसों तेल",
-   price=f'{tri("up",RED)}₹16,900<span class="unit">/क्विंटल</span>',
-   sub=f'सरसों तेल ₹16,800 से ₹16,900/क्विंटल (+₹100); सप्लाई कमजोर, पाम तेल $1250 और जयपुर मंडी तेज · <b class="delta" style="color:{RED}">₹100 तेजी</b>',
-   l1="क्यों", v1="सप्लाई कमजोर और विदेशी बाजार में तेजी; पाम तेल चढ़ा",
-   l2="क्या करें", v2="टीन एकसाथ न भरें; थोड़ा-थोड़ा उठाएं, आवक सुधरते भाव ठहरेंगे"),
- # --- FMCG (fmcg) — top by Like Rate desc after ledger dedup (news_id 12d + 7d brand HARD) + body-verify. Candy dominated 08-16/17/18 -> broke the streak. 3-category spread: oral-care / puja-dhoop / confectionery. All Retailer Scheme. ---
- #     oral-b 6.39 (11+2 free, Rs120-130 buy, Rs100+ margin), sab-k-sai dhoop 6.29 (12+5 free, Rs200 wholesale, Rs20/pc), just-jelly 6.79 (Rs450 jar->Rs1200 sale + free tiffin) — all body-verified concrete.
- #     SWAPPED OUT: tim-buk-tu 8.16 = stale/past-tense scheme, freebie=calculator; center-fruit 7.24 = thin body + candy over-covered 3d; jasmine-mehndi 6.57 = no Rs/qty (vague). SKIPPED 7d brand/news_id: colgate 7.98/6.44/5.47/5.45, chik 7.92/5.77, lux 7.49, kurkure 5.89, parle-coconut 5.66, bournvita 5.61; KP-group 5.00 = pan masala.
- dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="ओरल-बी ब्रश",
-   price='<span class="offer" style="background:%s">11 पर 2 नग फ्री</span>'%SCHEME_GREEN,
-   sub='₹18 MRP ओरल-बी शाइनी क्लीन ब्रश—पूरा कार्ड 11+2 फ्री (13 पीस); थोक ₹120–130, सब बेचकर <b class="delta">₹100+ मुनाफा</b>',
-   l1="स्कीम", v1="एक कार्ड (11 ब्रश) खरीदने पर 2 ब्रश फ्री, कुल 13 पीस",
-   l2="फायदा", v2="थोक ₹120–130; हर पीस ₹18 पर बिक्री, कार्ड पर ₹100+ मुनाफा"),
- dict(i=5, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="सबके साईं धूप",
-   price='<span class="offer" style="background:%s">12 पर 5 पाउच फ्री</span>'%SCHEME_GREEN,
-   sub='सबके साईं धूप—1 पैकेट में 12+5 पाउच फ्री (कुल 17); थोक ₹200 का पैकेट, हर पीस <b class="delta">₹20 में बिक्री</b>',
-   l1="स्कीम", v1="एक पैकेट में 12+5 पाउच फ्री, कुल 17 पाउच",
-   l2="फायदा", v2="थोक ₹200 का पैकेट; ₹20/पीस बिक्री, त्योहारी पूजा मांग तेज"),
- dict(i=6, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="जस्ट जेली",
-   price='<span class="offer" style="background:%s">जार पर टिफिन फ्री</span>'%SCHEME_GREEN,
-   sub='₹450 का जस्ट जेली टॉफी जार—अंदर ₹1,200 की बिक्री; कंपनी से तीन-खाने वाला टिफिन फ्री, <b class="delta">₹750 मुनाफा</b>',
-   l1="स्कीम", v1="₹450 का जार, साथ में तीन-खाने वाला लंच बॉक्स फ्री",
-   l2="फायदा", v2="जार से ₹1,200 की बिक्री; ₹750 सीधा मुनाफा, तेज चलने वाली टॉफी"),
- # --- News (trending_news) — MSME payment-recovery law (in-house 19अग; pro-kirana, actionable, non-competitor). SWAPPED from ONDC 50 करोड़ (operator: ONDC promotes independent online selling = competitor angle). ---
- dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="अटका पैसा",
-   price='<span class="news">MSME कानून बदला, दुकानदारों का अटका पैसा जल्दी</span>',
-   sub='संसद ने MSME कानून बदला—भुगतान की 45 दिन सीमा सख्त; पुराने अटके मामलों में आधा पैसा पहले दिलाने की व्यवस्था · <b class="delta">तेज़ वसूली</b>',
-   l1="क्यों ज़रूरी", v1="स्कूल-दफ्तर-ठेकेदार को उधार राशन देने वालों का फंसा पैसा अब कानून के दायरे में",
-   l2="क्या करें", v2="उद्यम रजिस्ट्रेशन कराएं और हर उधार का पक्का बिल बनाएं, तभी दावा पक्का"),
+ # --- Commodity (mandi_bhav) — 2 तेजी/RED + 1 मंदी/GREEN(मखाना) for balance. Types: pulse / foxnut / dry-coconut. देसी चना + मखाना in-house (20अग), नारियल MP teji_mandi LR7.31 (body-verified ₹37,500). ---
+ dict(i=1, label="मंडी भाव", stripe=RED, headline="देसी चना",
+   price=f'{tri("up",RED)}₹6,475<span class="unit">/क्विंटल</span>',
+   sub=f'देसी चना ₹6,275 से ₹6,475/क्विंटल (महीने भर में +₹200); आपूर्ति चौतरफा घटी, ऑस्ट्रेलियाई आयात महंगा—चना दाल-बेसन भी चढ़े · <b class="delta" style="color:{RED}">₹200 तेजी</b>',
+   l1="क्यों", v1="घरेलू उत्पादन ~90 लाख टन बनाम खपत ~140 लाख टन; माल घटा, आयात महंगा",
+   l2="क्या करें", v2="चना दाल-बेसन जरूरत भर अभी उठा लें; भाव ₹7,000 तक जाने के आसार, नई फसल दूर"),
+ dict(i=2, label="मंडी भाव", stripe=GREEN, headline="मखाना",
+   price=f'{tri("down",GREEN)}₹1,300<span class="unit">/किलो</span>',
+   sub=f'मखाना ₹1,350 से ₹1,300/किलो पर नरम (−₹50); उठाव कमजोर, बाजार रेंज ₹750–1,300/किलो · <b class="delta" style="color:{GREEN}">₹50 गिरावट</b>',
+   l1="क्यों", v1="उठाव और मांग सुस्त रहने से भाव मुलायम पड़े",
+   l2="क्या करें", v2="नरमी में स्टॉक थोड़ा रुककर भरें; व्रत-त्योहार मांग पर फिर तेजी संभव"),
+ dict(i=3, label="मंडी भाव", stripe=RED, headline="सूखा नारियल",
+   price=f'{tri("up",RED)}₹37,500<span class="unit">/क्विंटल</span>',
+   sub=f'गोला कट्टा ₹37,500/क्विंटल पर मजबूत; सावन व्रत-त्योहार की मांग और दक्षिण मंडियों में आवक कमजोर · <b class="delta" style="color:{RED}">भाव तेज</b>',
+   l1="क्यों", v1="व्रत-त्योहार की मांग तेज और दक्षिण भारत से आवक कमजोर",
+   l2="क्या करें", v2="पूजा-त्योहार की खपत से पहले जरूरी माल उठा लें, भाव मजबूत रहेंगे"),
+ # --- FMCG (fmcg) — top by Like Rate desc after ledger dedup (news_id 12d + 7d brand HARD) + body-verify. 3-category spread: stationery / biscuit / hair-dye. ---
+ #     natraj-pencil Retailer 6.37 (Rs35 box, 10 pencil + eraser + cutter, Rs25 margin), parle-g Consumer 5.43 (Rs5 MRP, 10+2 free), vasmol Consumer 3.44 (buy Rs50 sell Rs65 = Rs15 margin + free paste) — all body-verified concrete.
+ #     SWAPPED OUT: hajmola 7.89 = body has NO rupee figure (only "10pcs free" free-goods, no price/margin) -> Step-6 no-number reject; parle-mazelo 5.09 = would be a 2nd Parle card same day (brand monotony), kept single Parle=parle-g; patanjali-toothpaste 3.54 = 3rd-consecutive-day oral-care (colgate 18अग, oral-b 19अग) -> soft category-spread. SKIPPED 7d brand/news_id: colgate 5.27, center-fruit 5.85, jasmine-mehndi 5.71, kurkure 5.58, bournvita 5.49, parle-coconut 5.40, tim-buk-tu 4.77, lux 4.41, chik 4.05, silky-milky 3.98, sabke-sai-dhoop 3.31, kitkat 3.22; KP-group 3.15 = pan masala; golden-dairy-cream 4.11 & haldiram 3.86 = no rupee figure.
+ dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="नटराज पेंसिल",
+   price='<span class="offer" style="background:%s">बॉक्स में रबर+कटर फ्री</span>'%SCHEME_GREEN,
+   sub='₹35 थोक का नटराज बोल्ड बॉक्स—अंदर 10 पेंसिल के साथ 1 रबर और 1 कटर फ्री; हर पेंसिल ₹5 बिक्री · <b class="delta">₹25 मुनाफा/बॉक्स</b>',
+   l1="स्कीम", v1="₹35 के बॉक्स में 10 पेंसिल के साथ एक रबर और एक कटर फ्री",
+   l2="फायदा", v2="पेंसिल पर ₹15 + रबर ₹5 + कटर ₹5 = हर बॉक्स पर ₹25 मुनाफा"),
+ dict(i=5, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="पारले-जी",
+   price='<span class="offer" style="background:%s">10 पर 2 पैकेट फ्री</span>'%SCHEME_BLUE,
+   sub='₹5 वाला पारले-जी बिस्कुट—10 पैकेट खरीद पर 2 पैकेट फ्री (10+2); रोज बिकने वाली, ग्राहक खींचने वाली स्कीम · <b class="delta">MRP ₹5</b>',
+   l1="ऑफर", v1="₹5 MRP के 10 पैकेट पर 2 पैकेट बिल्कुल फ्री",
+   l2="ग्राहक को", v2="हर 10 पैकेट पर 2 अतिरिक्त—तेज खपत वाला भरोसेमंद बिस्कुट"),
+ dict(i=6, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="वासमोल डाई",
+   price='<span class="offer" style="background:%s">डाई पर पेस्ट फ्री</span>'%SCHEME_BLUE,
+   sub='वासमोल केश काला छोटी डाई—खरीद ₹50, बिक्री ₹65; हर पैक के साथ एक हेयर पेस्ट बिल्कुल फ्री · <b class="delta">₹15 मार्जिन</b>',
+   l1="ऑफर", v1="छोटी डाई के साथ एक हेयर डाई पेस्ट बिल्कुल फ्री",
+   l2="ग्राहक को", v2="₹65 में डाई और फ्री पेस्ट; दुकानदार को ₹15 का मार्जिन"),
+ # --- News (trending_news) — चीनी import-duty relief (in-house 20अग; market-impact, actionable, non-bait). Sugar heavily covered 18-19अग as commodity but this is a fresh policy angle (import to cool record prices). ---
+ dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="चीनी आयात",
+   price='<span class="news">सरकार 10 लाख टन आयात छूट पर विचार</span>',
+   sub='चीनी दिल्ली हाजिर ₹6,100–6,200/क्विंटल के रिकॉर्ड पर; 100% आयात टैक्स घटाकर अक्टूबर तक 10 लाख टन मंगाने की छूट पर विचार · <b class="delta">भाव नरम पड़ सकते</b>',
+   l1="क्यों ज़रूरी", v1="माल की तंगी और त्योहारी मांग से रिकॉर्ड भाव; आयात खुलते ही नरमी आ सकती है",
+   l2="क्या करें", v2="रिकॉर्ड भाव पर महीनों का बड़ा स्टॉक न भरें; त्योहारी बिक्री भर का माल लें"),
 ]
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
 html,body{{margin:0;padding:0;width:1080px;height:1920px;overflow:hidden;font-family:'Nirmala UI','Segoe UI',sans-serif;}}
