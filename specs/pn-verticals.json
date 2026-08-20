@@ -1,0 +1,88 @@
+{
+  "_doc": "Single source of truth for reactivation PN automation. One entry per vertical describing how to SOURCE a post (which report, how to rank it, how to read its text) and how to WRITE copy from it (what to delete, what shape the source is). The selector (pn-select.py) is generic; ALL vertical-specific behaviour lives here. Captured against the live board reports 2026-08-19.",
+  "_board": "Mixpanel dashboard 10410495 (Reactivation Data), project 2551336",
+
+  "_ranking_doc": {
+    "why_no_absolute_floor": "The reports' impression column is `Average of no_of_impressions on All Interactions`, and its SCALE differs per vertical: Shop Tips/Mandi run 500-130k, Scheme runs 500-4,467. A fixed 5,000 floor deletes all 68 Scheme posts while keeping 73 Mandi ones. So reach is gated RELATIVE to each report, never absolutely.",
+    "reach_floor": "Default 'median' = keep only posts at or above the median reach of THEIR OWN report. Self-calibrating: kills the tiny-reach flukes that inflate the ratio without demanding a cross-vertical number. An integer overrides it with an absolute floor if an operator ever wants one.",
+    "rank_mode": "'primary' ranks by rank_metrics[0] and breaks ties with the rest, in order (Shop Tips/Scheme/Mandi). 'sum' adds all rank_metrics (FMCG, which has no single Formula - it exposes Like% and Comment% separately)."
+  },
+
+  "slots": [
+    {"time": "06:00", "vertical": null, "_note": "assign a vertical; null = operator has not decided this slot yet"},
+    {"time": "08:30", "vertical": "scheme"},
+    {"time": "11:30", "vertical": "shop_tips"},
+    {"time": "13:30", "vertical": "mandi"},
+    {"time": "17:30", "vertical": "fmcg"},
+    {"time": "19:30", "vertical": "shop_tips"},
+    {"time": "21:30", "vertical": null}
+  ],
+  "_slots_doc": "7 daily reactivation sends (from the 'Reactivation PN - by time slot' sheet). vertical assignment is an operator decision - the mapping above is a sensible default, not verified against the live campaign calendar. Two slots deliberately null pending your call. NOTE: shop_tips appears twice but sustains only ~1 fresh post/day (see supply) - do not assign it two daily slots without a backfill pool.",
+
+  "verticals": {
+    "shop_tips": {
+      "report_id": 83460055,
+      "level4_pt": "shop_tips",
+      "rank_metrics": ["Formula"],
+      "rank_mode": "primary",
+      "reach_floor": "median",
+      "text_shape": "freeform",
+      "text_source": "ugc_posts.post_description",
+      "delete_target": "the method/tip itself - the PN promises the outcome and withholds how",
+      "copy_register": "outcome or threat to the shop; green for opportunity, red for warning",
+      "campaign_key": "reactivation_exp_image_pn",
+      "supply": "BOTTLENECK - ~18 posts / 14-day window, ~1 usable/day. Cannot feed a daily slot alone.",
+      "example": "Sawan sales post ba66bc7a; Cadbury gift-box post 6533c30f"
+    },
+    "scheme": {
+      "report_id": 83460007,
+      "level4_pt": "scheme",
+      "rank_metrics": ["Formula", "Formula 2"],
+      "rank_mode": "primary",
+      "reach_floor": "median",
+      "text_shape": "product_dash_offer",
+      "text_source": "ugc_posts.post_description; format is '<Product> - <offer description>'",
+      "delete_target": "the free item / the offer quantity - PN keeps the brand, deletes what you get",
+      "copy_register": "brand + free surprise; yellow deal temperament; seasonal peg when present",
+      "campaign_key": null,
+      "supply": "68 posts, high Formula but ALL low-reach (max 4,467 avg). Count is fine; every pick is low-reach by nature - do not apply an absolute floor.",
+      "example": "'KitKat - 10 MRP wala, 1 jaar lene par 2 unit free' -> delete the 2-units-free"
+    },
+    "mandi": {
+      "report_id": 83460168,
+      "level4_pt": "teji_mandi",
+      "rank_metrics": ["Formula", "Formula 2"],
+      "rank_mode": "primary",
+      "reach_floor": "median",
+      "text_shape": "commodity_source",
+      "text_source": "ugc_posts.post_description; format is 'कमोडिटी का नाम :<X> / जानकारी कहां से मिली :<source>'",
+      "delete_target": "the price direction and number - PN keeps the commodity, deletes up/down and how much",
+      "copy_register": "price move; direction emoji (down/surprise), never celebratory; CTA is the constant 'तेजी-मंदी रिपोर्ट'",
+      "campaign_key": null,
+      "supply": "ABUNDANT - 220 posts, 73 above 5k reach. Can feed multiple slots/day. Perishable: teji_mandi drops after 3 days.",
+      "example": "'कमोडिटी: नारियल / जानकारी: होलसेलर' -> delete the direction+₹"
+    },
+    "fmcg": {
+      "report_id": 83460251,
+      "level4_pt": "fmcg_product_change",
+      "rank_metrics": ["Like Percent", "Comment Percent"],
+      "rank_mode": "sum",
+      "reach_floor": "median",
+      "text_shape": "product_field_change",
+      "text_source": "ugc_posts.post_description; format is 'प्रोडक्ट का नाम :<X> / क्या बदलाव है :<रेट|वजन|पैकेजिंग|नया लॉंच>'",
+      "delete_target": "the new rate/weight - PN keeps product + that SOMETHING changed, deletes the value",
+      "copy_register": "value-giving hook, clickbait sanctioned; question titles and hard numbers allowed",
+      "campaign_key": null,
+      "supply": "MODERATE - 32 posts, 12 above 5k reach. NO Formula metric; ranked on Like%+Comment% sum (confirm this is the metric you trust).",
+      "example": "'प्रोडक्ट: टाटा नमक ₹32 / क्या बदलाव: रेट' -> delete the new rate"
+    }
+  },
+
+  "_dedupe": "Never re-send an item. Checked against pn-select-log.json (the routine's own ledger) AND specs/pn-corpus-duo-image.csv (115 item ids already used by live campaigns).",
+  "_open_decisions": [
+    "Which Formula for scheme/mandi - primary is Formula, tiebreak Formula 2. Confirm Formula (not Formula 2) is the intended rank.",
+    "FMCG ranking - defaulted to Like%+Comment% sum since it has no Formula. Confirm.",
+    "Slot->vertical map - two slots null; shop_tips assigned twice but can't sustain it.",
+    "campaign_key null for scheme/mandi/fmcg - each needs a registry entry (audience + kvPairs) before pn-schedule.py can send it. Only shop_tips (reactivation_exp_image_pn) exists today."
+  ]
+}
