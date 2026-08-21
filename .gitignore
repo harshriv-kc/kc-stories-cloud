@@ -42,3 +42,6 @@ subj_*.png
 *_d2r.jpg
 *_d2r.png
 card_*.jpg
+
+# per-run working dir (photos/cards/badges/webps — regenerated every run)
+run/
