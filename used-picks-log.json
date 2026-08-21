@@ -3584,6 +3584,88 @@
      "label": "पतंजलि ₹10 टूथपेस्ट + 16 शैंपू फ्री Retailer LR3.54 — SWAPPED: 3rd-consecutive-day oral-care"
     }
    ]
+  },
+  {
+   "date": "2026-08-21",
+   "_note": "Full fresh run: all 3 stories + 3 entry badges republished live (update_story x3 + update_story_entry_badges, actor Harsh Shrivastava). Commodity: बासमती चावल(RED, पुराना बासमती +₹200-300/क्विंटल, 1121 सेला ₹9,500-9,600, निर्यात मांग, in-house अनाज post) + मक्का(RED, ₹2,100->₹2,500/क्विंटल ₹3-4/किलो तूफानी तेजी, उत्पादन 18-19% कम, MP teji_mandi LR5.98 body-verified) + कलौंजी(GREEN, ₹21,000-21,500/क्विंटल −₹200-500, मांग घटी/उठाव सुस्त, in-house Samachar नरम section) = 2 RED + 1 GREEN, types cereal/cereal/spice. jeera(GREEN ₹270->₹260) considered for balance but swapped for कलौंजी (jeera identical to 17अग figures = stale; कलौंजी fresh commodity). FMCG TOP 3 by LR after news_id-12d + brand-7d(HARD) + body-verify + no-number reject; 3-category spread personal-care/biscuit/home-care: निविया बॉडी मिल्क(7.39 fmcg_product_change, Shea Smooth 100ml MRP ₹151->₹130 −₹21) + पारले बटर कुकीज़(4.34 Retailer Scheme, MRP ₹10, 11+1 free) + पीतांबरी शाइनिंग पाउडर(4.27 fmcg_product_change/वजन, ₹45 pack 150g->175g +25g extra free). SWAPPED OUT no-rupee (Step-6): pass-pass 5.90(jar+5pcs free no price), golden-dairy 4.00(3pcs free), haldiram 3.65(12pcs free); rajma 5.89 & matar 5.96 = no ₹/garbled body; doms 3.17 backup unused (stationery repeat of 20अग natraj). SKIPPED 7d brand/news_id HARD: lux 7.81, kitkat 6.97, hajmola 6.86, oral-b 5.56, goodnight 5.51, parle-coconut 5.33, kurkure 5.31, jasmine-mehndi 5.26, bournvita 5.17, natraj-pencil 4.80, parle-mazelo 3.99, tim-buk-tu 3.98, patanjali-toothpaste 3.75, silky-milky 3.71, vasmol 3.15, colgate 3.15, sabke-sai 3.14. News=21 राज्यों में भारी बारिश अलर्ट (in-house 21अग; timely monsoon, high-impact stock-protection, non-bait; UPI-MDR & GeM scheme news deprioritized). Slides composited via kc-card-render.py, QC'd (contact sheet + full-size read of मक्का & बारिश cards — no overlap, geometry identical). Badges: मक्का तेज़ी / निविया ₹21 सस्ता (real D2R product photo w/ ₹130 sticker) / बारिश अलर्ट; ring-normalized via kc-badge-banner.py, radial clearance 340/426/347 <=448 OK, PN transparent RGBA verified. PN multi_icon scheduled 16:30 IST campaign_id=1n21g83 HTTP200.",
+   "picks": {
+    "mandi_bhav": [
+     {
+      "news_id": "b557f1c2-94fa-4a5d-b023-b4b7df722f2d",
+      "brand": "basmati",
+      "label": "बासमती चावल तेजी → पुराना बासमती +₹200-300/क्विंटल, 1121 सेला ₹9,500-9,600, निर्यात मांग (in-house RED)",
+      "direction": "तेजी"
+     },
+     {
+      "news_id": "d88c3275-fd4f-412f-870d-13e4104c6b92",
+      "brand": "makka",
+      "label": "मक्का तेजी → ₹2,100->₹2,500/क्विंटल (₹3-4/किलो), उत्पादन 18-19% कम — MP teji_mandi LR5.98 (RED)",
+      "direction": "तेजी"
+     },
+     {
+      "news_id": "694c233f-3068-4f43-87b7-2b3deb957765",
+      "brand": "kalonji",
+      "label": "कलौंजी मंदी → ₹21,000-21,500/क्विंटल (−₹200-500), मांग घटी/उठाव सुस्त (in-house Samachar GREEN)",
+      "direction": "मंदी"
+     }
+    ],
+    "fmcg": [
+     {
+      "news_id": "100e0c2b-fb7f-48a7-9875-a2209b5fc07e",
+      "brand": "nivea",
+      "label": "निविया शिया स्मूथ बॉडी मिल्क 100ml MRP ₹151->₹130 (−₹21) — fmcg_product_change LR7.39"
+     },
+     {
+      "news_id": "6fe2ea8f-6b54-4545-abd9-af10eb7a550e",
+      "brand": "parle-butter-cookies",
+      "label": "पारले बटर कुकीज़ MRP ₹10, 11+1 फ्री — Retailer Scheme LR4.34"
+     },
+     {
+      "news_id": "56b7f6e7-4cca-4089-9a3c-13982a53897b",
+      "brand": "pitambari",
+      "label": "पीतांबरी शाइनिंग पाउडर ₹45 pack 150g->175g (+25g फ्री) — fmcg_product_change/वजन LR4.27"
+     }
+    ],
+    "trending_news": [
+     {
+      "news_id": "3c1165a8-3d46-4271-8c56-8e5ff93d1a90",
+      "brand": "barish-alert",
+      "label": "21 राज्यों में भारी बारिश अलर्ट, दुकान का माल बचाएं (in-house 21अग, non-bait)"
+     }
+    ]
+   },
+   "also_shown": [
+    {
+     "news_id": "b64a1dd4-1f43-4fdd-943b-2b5ff960f80f",
+     "brand": "jeera",
+     "label": "जीरा मंदी ₹270->₹260/किलो — MP teji_mandi LR5.39, swapped for कलौंजी (stale, same as 17अग)"
+    },
+    {
+     "news_id": "71b3e661-847a-4b82-950a-b3018e3e3f52",
+     "brand": "moong",
+     "label": "मूंग दाल तेजी ₹99->₹105/किलो — MP LR6.14, skipped (moong published 18अग, 3-day window)"
+    },
+    {
+     "news_id": "279d4b2c-a71d-460d-bdd3-6d09bef9583f",
+     "brand": "pass-pass",
+     "label": "Pass Pass coffee candy jar 5pcs free — Retailer Scheme LR5.90, no-number reject"
+    },
+    {
+     "news_id": "4ad65001-085b-4036-a0b2-fef36a9384d5",
+     "brand": "doms",
+     "label": "Doms pencil MRP ₹48->₹34 +sharpener+eraser — Retailer Scheme LR3.17, backup unused (stationery repeat)"
+    },
+    {
+     "news_id": "0a0abf2d-c8e6-4d1f-b36c-e399818e2f70",
+     "brand": "golden-dairy-cream",
+     "label": "Golden dairy cream 3pcs free — Retailer Scheme LR4.00, no-number reject"
+    },
+    {
+     "news_id": "3a9df503-2188-4fcd-9a18-c025037984d1",
+     "brand": "haldiram",
+     "label": "Haldiram punjabi tadka 12pcs free — Retailer Scheme LR3.65, no-number reject"
+    }
+   ]
   }
  ],
  "brand_dedup_window_days": 7
