@@ -72,49 +72,49 @@ def b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-08-21)
+# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-08-22)
 CARDS = [
- # --- Commodity (mandi_bhav) — 2 तेजी/RED + 1 मंदी/GREEN(कलौंजी) for balance. Types: cereal / cereal / spice. बासमती + कलौंजी in-house (21अग: अनाज post + Samachar नरम section), मक्का MP teji_mandi LR5.98 (body-verified ₹2,100->₹2,500). ---
- dict(i=1, label="मंडी भाव", stripe=RED, headline="बासमती चावल",
-   price=f'{tri("up",RED)}₹9,600<span class="unit">/क्विंटल</span>',
-   sub=f'पुराना बासमती निर्यात मांग से ₹200–300/क्विंटल चढ़ा; 1121 सेला दिल्ली ₹9,500–9,600, स्टीम ₹10,400–10,500 · <b class="delta" style="color:{RED}">₹300 तेजी</b>',
-   l1="क्यों", v1="निर्यातकों की चौतरफा मांग; मिलों और मंडी में पुराना माल सीमित बचा",
-   l2="क्या करें", v2="पुराने बासमती में घबराकर न काटें; त्योहारी मांग से पहले जरूरत भर उठाएं"),
- dict(i=2, label="मंडी भाव", stripe=RED, headline="मक्का",
-   price=f'{tri("up",RED)}₹2,500<span class="unit">/क्विंटल</span>',
-   sub=f'मक्का 3–4 दिन में ₹2,100 से ₹2,500/क्विंटल (₹3–4/किलो तूफानी तेजी); उत्पादन 18–19% घटा, भाड़ा बढ़ा · <b class="delta" style="color:{RED}">₹400 तेजी</b>',
-   l1="क्यों", v1="बिहार-यूपी में मक्का उत्पादन ~18–19% कम, आवक कमजोर, ट्रक भाड़ा महंगा",
-   l2="क्या करें", v2="भाव और चढ़ने के आसार; पोल्ट्री-स्टार्च मांग के बीच जरूरी माल पहले भरें"),
- dict(i=3, label="मंडी भाव", stripe=GREEN, headline="कलौंजी",
-   price=f'{tri("down",GREEN)}₹21,000<span class="unit">/क्विंटल</span>',
-   sub=f'कलौंजी ₹21,000–21,500/क्विंटल पर नरम (₹200–500 घटी); किराना जिंसों में मांग घटी और उठाव सुस्त रहा · <b class="delta" style="color:{GREEN}">₹500 गिरावट</b>',
-   l1="क्यों", v1="मांग घटने और उठाव सुस्त रहने से मसाला जिंसों के भाव नरम पड़े",
-   l2="क्या करें", v2="नरमी में जरूरत भर खरीदें; भाव और गिरने पर स्टॉक भरने का मौका मिलेगा"),
- # --- FMCG (fmcg) — TOP 3 by Like Rate desc after ledger dedup (news_id 12d + 7d brand HARD) + body-verify. 3-category spread: personal-care / biscuit / home-care. ---
- #     nivea 7.39 fmcg_product_change (MRP ₹151->₹130, Sesa Smooth 100ml), parle-butter-cookies 4.34 Retailer Scheme (MRP ₹10, 11+1 free), pitambari 4.27 fmcg_product_change/वजन (₹45 pack, 150g->175g = +25g extra free).
- #     SWAPPED OUT (no rupee figure -> Step-6 reject): pass-pass 5.90 (jar+5pcs free, no price), golden-dairy 4.00 (3pcs free), haldiram 3.65 (12pcs free); rajma 5.89 & matar 5.96 = no ₹ / garbled body.
- #     SKIPPED 7d brand/news_id HARD: lux 7.81, kitkat 6.97, hajmola 6.86(X), oral-b 5.56, goodnight 5.51, parle-coconut 5.33(X), kurkure 5.31(X), jasmine-mehndi 5.26, bournvita 5.17(X), natraj-pencil 4.80(X), parle-mazelo 3.99(X), tim-buk-tu 3.98(X), patanjali-toothpaste 3.75, silky-milky 3.71(X), vasmol 3.15(X), colgate 3.15(X), sabke-sai 3.14(X).
- dict(i=4, eyebrow="FMCG", label="प्रोडक्ट बदलाव", stripe=BLACK, headline="निविया बॉडी मिल्क",
-   price='₹151<span class="arrow">→</span>₹130',
-   sub='निविया शिया स्मूथ बॉडी मिल्क 100ml की MRP ₹151 से घटकर ₹130 (−₹21); ग्राहक को सीधी बचत, तेज बिकने वाला पैक · <b class="delta">₹21 सस्ता</b>',
-   l1="बदलाव", v1="100ml पैक की MRP ₹151 से ₹130 हुई—₹21 की सीधी कमी",
-   l2="फायदा", v2="कम MRP पर ग्राहक जल्दी खरीदेंगे; मार्जिन बनाए रखते हुए बिक्री बढ़ेगी"),
- dict(i=5, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="पारले बटर कुकीज़",
-   price='<span class="offer" style="background:%s">11 पर 1 पैकेट फ्री</span>'%SCHEME_GREEN,
-   sub='₹10 MRP का पारले बटर कुकीज़—हर 11 पैकेट पर 1 पैकेट फ्री (11+1); तेज बिकने वाला बिस्कुट, ग्राहक खींचने वाली स्कीम · <b class="delta">MRP ₹10</b>',
-   l1="स्कीम", v1="₹10 MRP के 11 पैकेट खरीद पर 1 पैकेट बिल्कुल फ्री",
-   l2="फायदा", v2="हर 11 पर 1 अतिरिक्त—करीब 9% अतिरिक्त मार्जिन, तेज खपत"),
- dict(i=6, eyebrow="FMCG", label="प्रोडक्ट बदलाव", stripe=BLACK, headline="पीतांबरी पाउडर",
-   price='150g<span class="arrow">→</span>175g',
-   sub='पीतांबरी शाइनिंग पाउडर ₹45 वाले पैक में अब 150g के साथ 25g एक्स्ट्रा फ्री—कुल 175g; वही दाम, ज्यादा माल · <b class="delta">25g फ्री</b>',
-   l1="बदलाव", v1="₹45 पैक में 150g के साथ 25g एक्स्ट्रा—कुल वजन 175g",
-   l2="फायदा", v2="वही ₹45 में ज्यादा माल; ग्राहक को दिखने वाला फायदा, तेज बिक्री"),
- # --- News (trending_news) — 21 राज्यों में भारी बारिश अलर्ट (in-house 21अग; timely, high-impact, actionable stock-protection, non-bait). ---
- dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="भारी बारिश अलर्ट",
-   price='<span class="news">21 राज्यों में भारी बारिश की चेतावनी</span>',
-   sub='मौसम विभाग का 21 राज्यों में भारी बारिश-तूफान अलर्ट (60–75 किमी/घंटा हवा); नमक-चीनी-आटा-बिस्कुट सीलन से खराब हो सकते · <b class="delta">माल बचाएं</b>',
-   l1="क्यों ज़रूरी", v1="नमी से नमक, चीनी, आटा, मैदा ढेला बनते और पैकेट सामान नरम पड़ते हैं",
-   l2="क्या करें", v2="बोरियां लकड़ी के पटरे पर दीवार से हटाकर रखें; तौल कांटा-मोबाइल चार्ज रखें"),
+ # --- Commodity (mandi_bhav) — 2 तेजी/RED + 1 मंदी/GREEN for balance. Types: spice / sweetener / oilseed. All in-house 22अग (मसाला / शक्कर / तेल posts). चीनी skipped (HERO 19अग, within recency); गुड़ carries the sugar-complex rally fresh. ---
+ dict(i=1, label="मंडी भाव", stripe=RED, headline="लौंग",
+   price=f'{tri("up",RED)}₹870<span class="unit">/किलो</span>',
+   sub=f'लौंग ₹40 चढ़कर ₹820–870/किलो; मेडागास्कर फसल में पोल और कंटेनर भाड़ा 32–33% बढ़ने से तेजी · <b class="delta" style="color:{RED}">₹40 तेजी</b>',
+   l1="क्यों", v1="मेडागास्कर की फसल कमजोर, भाड़ा महंगा; गरम मसाले की त्योहारी मांग शुरू",
+   l2="क्या करें", v2="भाव ₹100 और चढ़ने के आसार; जरूरी लौंग-गरम मसाला पहले भर लें"),
+ dict(i=2, label="मंडी भाव", stripe=RED, headline="गुड़",
+   price=f'{tri("up",RED)}₹7,100<span class="unit">/क्विंटल</span>',
+   sub=f'गुड़ ₹100 चढ़कर ₹6,700–7,100/क्विंटल; चीनी रिकॉर्ड ऊंचाई पर और खांडसारी भी महंगी, आपूर्ति कमजोर · <b class="delta" style="color:{RED}">₹100 तेजी</b>',
+   l1="क्यों", v1="चीनी रिकॉर्ड ऊंचाई पर, आपूर्ति कमजोर और त्योहारी खपत का दबाव",
+   l2="क्या करें", v2="मिठाई-सीजन की मांग तेज; खरीद-बिक्री का पड़ता रोज मिलाकर देखें"),
+ dict(i=3, label="मंडी भाव", stripe=GREEN, headline="सरसों तिलहन",
+   price=f'{tri("down",GREEN)}₹8,100<span class="unit">/क्विंटल</span>',
+   sub=f'सरसों तिलहन ₹25–50 मुलायम होकर ₹8,100–8,150/क्विंटल; कोटा मंडी ₹8,300, तेल मिलों की मांग सुस्त · <b class="delta" style="color:{GREEN}">₹50 गिरावट</b>',
+   l1="क्यों", v1="तेल मिलों की मांग कमजोर और बिकवाली से सरसों तिलहन नरम पड़ी",
+   l2="क्या करें", v2="भाव और नरम पड़ना संभव; जरूरत भर खरीदें, स्टॉक सोच-समझकर भरें"),
+ # --- FMCG (fmcg) — TOP 3 by Like Rate desc after ledger dedup (news_id 12d + 7d brand HARD) + body-verify. Category spread: biscuit / hair-oil / namkeen. ---
+ #     bounce 7.78 Consumer Scheme (12-pc ₹50, पेंसिल फ्री, ₹10 मुनाफा), bajaj-almond-drops 6.29 Consumer Scheme (475ml + गोदरेज नं.1 साबुन ₹40 फ्री), morano 4.99 fmcg_product_change/वजन (800g->700g shrink).
+ #     SWAPPED OUT: मूंगफली दाना 7.29 fmcg_product_change (raw commodity, no brand/no ₹ -> Step-6 reject).
+ #     SKIPPED 7d brand HARD: nivea 6.16(X 21अग), pass-pass 6.11(X), kurkure 5.33(X), lux 5.19/4.55(X), bournvita 5.03(X), parle-butter 5.02(X 21अग), goodnight 5.02(X), parle-coconut 5.02(X), kitkat 4.98(X), jasmine-mehndi 4.79(X), munch 4.44(X), patanjali-toothpaste/dant-kanti 3.76/3.51(X), chik 3.38(X), oral-b 3.28(X), vasmol 3.22(X), pulse 3.16(X), colgate/hajmola lower(X).
+ dict(i=4, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="बाउंस बिस्किट",
+   price='<span class="offer" style="background:%s">हर पैकेट पर पेंसिल फ्री</span>'%SCHEME_BLUE,
+   sub='बाउंस बिस्किट का 12-पीस पैकेट ₹50; हर पैकेट पर एक पेंसिल फ्री और दुकानदार को ₹10 मुनाफा · <b class="delta">₹10 मुनाफा</b>',
+   l1="ऑफर", v1="₹50 के 12-पीस पैकेट के साथ एक पेंसिल बिल्कुल फ्री",
+   l2="ग्राहक को", v2="बच्चों में पसंद—तेज बिक्री; हर पैकेट पर ₹10 मुनाफा"),
+ dict(i=5, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="आलमंड ड्रॉप्स तेल",
+   price='<span class="offer" style="background:%s">₹40 का साबुन फ्री</span>'%SCHEME_BLUE,
+   sub='आलमंड ड्रॉप्स हेयर ऑयल 475ml के साथ गोदरेज नं.1 साबुन (₹40 का) बिल्कुल फ्री · <b class="delta">₹40 फ्री</b>',
+   l1="ऑफर", v1="475ml तेल की खरीद पर ₹40 का गोदरेज नं.1 साबुन फ्री",
+   l2="ग्राहक को", v2="फ्री साबुन के साथ तेल—दिखने वाला फायदा, तेज बिक्री"),
+ dict(i=6, eyebrow="FMCG", label="प्रोडक्ट बदलाव", stripe=BLACK, headline="मोरानो नमकीन",
+   price='800g<span class="arrow">→</span>700g',
+   sub='मिल्टो कंपनी की मोरानो नमकीन अब 800g की जगह 700g में—दाम वही, 100g वजन घटा · <b class="delta">100g कम</b>',
+   l1="बदलाव", v1="पैक 800g से घटकर 700g (100g कम), दाम वही रहा",
+   l2="फायदा", v2="पुराना 800g स्टॉक पुराने भाव बेच लें; ग्राहक को वजन बता दें"),
+ # --- News (trending_news) — PM लघु व्यापारी मान-धन पेंशन योजना (in-house 22अग; actionable govt scheme for shopkeepers, concrete ₹, non-bait). ---
+ dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="₹3000 पेंशन",
+   price='<span class="news">दुकानदारों को हर महीने ₹3,000 पेंशन</span>',
+   sub='PM लघु व्यापारी मान-धन योजना—18–40 उम्र के दुकानदार ₹55–200/माह जमा करें, सरकार बराबर डालेगी; 60 के बाद जीवन भर पेंशन · <b class="delta">₹3000/माह</b>',
+   l1="क्यों ज़रूरी", v1="60 के बाद पक्की पेंशन; जितना आप जमा करें उतना सरकार भी डाले",
+   l2="क्या करें", v2="नजदीकी CSC पर आधार और बैंक पासबुक ले जाकर आवेदन करें"),
 ]
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
 html,body{{margin:0;padding:0;width:1080px;height:1920px;overflow:hidden;font-family:'Nirmala UI','Segoe UI',sans-serif;}}
