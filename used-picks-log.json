@@ -3666,6 +3666,63 @@
      "label": "Haldiram punjabi tadka 12pcs free — Retailer Scheme LR3.65, no-number reject"
     }
    ]
+  },
+  {
+   "date": "2026-08-22",
+   "_note": "Full fresh run: all 3 stories + 3 entry badges republished live (update_story x3 + update_story_entry_badges, actor Harsh Shrivastava) + multi_icon PN scheduled 16:30 IST (campaign_id ~a2kq77, HTTP 200). Commodity: लौंग(RED, ₹820->₹870/किलो +₹40, मेडागास्कर फसल कमजोर+भाड़ा 32-33%, in-house मसाला post) + गुड़(RED, ₹6,700-7,100/क्विंटल +₹100, चीनी रिकॉर्ड ऊंचाई/आपूर्ति कमजोर, in-house शक्कर post) + सरसों तिलहन(GREEN, ₹8,150->₹8,100/क्विंटल −₹25-50, तेल मिल मांग सुस्त, कोटा ₹8,300, in-house तेल post) = 2 RED + 1 GREEN, types spice/sweetener/oilseed. चीनी(HERO 19अग) skipped for recency; गुड़ carries sugar-complex rally fresh. FMCG TOP 3 by LR after news_id-12d + brand-7d(HARD) + body-verify + no-number reject; category spread biscuit/hair-oil/namkeen: बाउंस बिस्किट(Consumer Scheme LR7.78, 12-पीस ₹50 पेंसिल फ्री ₹10 मुनाफा) + आलमंड ड्रॉप्स(Bajaj, Consumer Scheme LR6.29, 475ml + गोदरेज नं.1 साबुन ₹40 फ्री; FMCG badge uses real D2R photo) + मोरानो नमकीन(fmcg_product_change/वजन LR4.99, मिल्टो कंपनी 800g->700g shrink). SWAPPED OUT: मूंगफली दाना 7.29 fmcg_product_change (raw commodity, no brand/no ₹, Step-6 reject). SKIPPED 7d brand HARD: nivea 6.16, pass-pass 6.11, kurkure 5.33, lux 5.19/4.55, bournvita 5.03, parle-butter 5.02, goodnight 5.02, parle-coconut 5.02, kitkat 4.98, jasmine-mehndi 4.79, munch 4.44, patanjali-toothpaste/dant-kanti 3.76/3.51, chik 3.38, oral-b 3.28, vasmol 3.22, pulse 3.16, colgate/hajmola lower. News: PM लघु व्यापारी मान-धन पेंशन योजना (in-house 22अग, actionable govt scheme, ₹3000/माह, non-bait; rural-demand/fssai in-house alts skipped—brands used within 7d).",
+   "picks": {
+    "mandi_bhav": [
+     {
+      "news_id": "c66815a7-9852-4bfc-9e7b-43ccc106c5cd",
+      "brand": "laung",
+      "label": "लौंग तेजी → ₹820->₹870/किलो (+₹40), मेडागास्कर फसल कमजोर + कंटेनर भाड़ा 32-33% ऊपर (in-house मसाला RED)",
+      "direction": "तेजी"
+     },
+     {
+      "news_id": "9e4ab6ba-9aa8-4146-ab32-e3f32ab8e5d1",
+      "brand": "gud",
+      "label": "गुड़ तेजी → ₹6,700-7,100/क्विंटल (+₹100), चीनी रिकॉर्ड ऊंचाई/आपूर्ति कमजोर, त्योहारी मांग (in-house शक्कर RED)",
+      "direction": "तेजी"
+     },
+     {
+      "news_id": "17bd7565-292a-4fbd-8113-65039368cd5c",
+      "brand": "sarson-tilhan",
+      "label": "सरसों तिलहन मंदी → ₹8,150->₹8,100/क्विंटल (−₹25-50), तेल मिल मांग सुस्त, कोटा ₹8,300 (in-house तेल GREEN)",
+      "direction": "मंदी"
+     }
+    ],
+    "fmcg": [
+     {
+      "news_id": "d4cfb2c6-d8e8-45dd-a273-23dae176403b",
+      "brand": "bounce",
+      "label": "बाउंस बिस्किट Consumer Scheme LR7.78 — 12-पीस पैकेट ₹50, हर पैकेट पर पेंसिल फ्री, ₹10 मुनाफा, biscuit"
+     },
+     {
+      "news_id": "35cbbb04-3452-46f4-800c-0fd3343de2b1",
+      "brand": "bajaj-almond-drops",
+      "label": "आलमंड ड्रॉप्स (Bajaj) Consumer Scheme LR6.29 — 475ml हेयर ऑयल + गोदरेज नं.1 साबुन ₹40 फ्री, hair-oil (FMCG badge = real D2R photo)"
+     },
+     {
+      "news_id": "fb3ab478-c5a9-4c30-9306-ed1b33f60924",
+      "brand": "morano",
+      "label": "मोरानो नमकीन fmcg_product_change/वजन LR4.99 — मिल्टो कंपनी, 800g->700g (100g कम), दाम वही, namkeen"
+     }
+    ],
+    "trending_news": [
+     {
+      "news_id": "ae100d36-de3a-4f36-9026-d67f1f00afcd",
+      "brand": "maan-dhan-pension",
+      "label": "PM लघु व्यापारी मान-धन पेंशन योजना — 18-40 उम्र, ₹55-200/माह जमा, सरकार बराबर, 60 के बाद ₹3000/माह जीवन भर (in-house 22अग scheme, non-bait BLACK)"
+     }
+    ]
+   },
+   "also_shown": [
+    {
+     "news_id": "f8db35e6-638a-4653-9c7d-efdaafca7be4",
+     "brand": "moongfali-dana",
+     "label": "मूंगफली दाना fmcg_product_change LR7.29 — SWAPPED OUT: raw commodity, no brand/no ₹ (Step-6 reject)"
+    }
+   ]
   }
  ],
  "brand_dedup_window_days": 7
