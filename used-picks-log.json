@@ -3723,6 +3723,88 @@
      "label": "मूंगफली दाना fmcg_product_change LR7.29 — SWAPPED OUT: raw commodity, no brand/no ₹ (Step-6 reject)"
     }
    ]
+  },
+  {
+   "date": "2026-08-23",
+   "_note": "Full fresh run: all 3 stories + 3 entry badges republished live (update_story x3 + update_story_entry_badges, actor Harsh Shrivastava) + multi_icon PN scheduled 16:30 IST (campaign_id 2acdgji, HTTP 200). Commodity: मसूर(RED, दिल्ली देसी +₹25 → ₹6,875-6,900/qtl, हफ्ते ~₹700, MP आपूर्ति कमजोर, in-house दाल post) + मखाना(RED, +₹25 → ₹750-1,300/kg, बिहार आवक कमजोर+श्रावण मांग, in-house मेवा post) + तूर दाल(GREEN, ₹8,075→₹8,000/qtl −₹75, दाल मिल ग्राहकी सुस्त, MP LR5.75) = 2 RED + 1 GREEN, types दाल/मेवा/दाल. Market broadly तेजी today (Samachar: जौ-मक्की-बाजरा उछले, चीनी रिकॉर्ड); tuvar only clean fresh मंदी (sarson used yesterday, over-covered). FMCG TOP 3 by LR after news_id-12d + brand-7d(HARD) + body-verify; all Consumer Scheme: डेनिम शेविंग क्रीम(LR7.03, 70g→91g 30% एक्स्ट्रा) + लक्स साबुन(LR6.82, गट्टू 4+1 फ्री) + डर्मीकूल पाउडर(LR5.61, ₹159 पर ₹75 MRP फ्री; FMCG badge uses real LUX packs). Category = shaving/soap/powder (all personal-care, strict LR; no 3-day category domination in ledger). EXCLUDED news_id-12d: bounce(22अग), bajaj-almond-drops(22अग), मूंगफली दाना. EXCLUDED brand-7d: colgate(18अग), goodnight(16अग), pitambari(21अग). apsara 4.80 / kitkat 4.58 / manch 4.23 next but below top-3 LR. News: 19kg कमर्शियल LPG सिलेंडर ₹202 सस्ता (in-house 23अग, concrete ₹, non-bait); taraju-jाँच & सौर-पैनल scheme were in-house backups.",
+   "picks": {
+    "mandi_bhav": [
+     {
+      "news_id": "8373f862-ff1f-4282-8b17-18229c3f0922",
+      "brand": "masoor",
+      "label": "मसूर तेजी → दिल्ली देसी मसूर +₹25 → ₹6,875-6,900/क्विंटल, हफ्ते ~₹700 तेजी, MP आपूर्ति कमजोर (in-house दाल RED)",
+      "direction": "तेजी"
+     },
+     {
+      "news_id": "54feff48-10ed-4f15-a984-6c009025ec27",
+      "brand": "makhana",
+      "label": "मखाना तेजी → +₹25 → ₹750-1,300/किलो, बिहार आवक कमजोर + श्रावण-व्रत मांग (in-house मेवा RED)",
+      "direction": "तेजी"
+     },
+     {
+      "news_id": "88ee2254-1f8b-413c-8173-e5abecd2c32c",
+      "brand": "tuvar",
+      "label": "तूर दाल मंदी → ₹8,075→₹8,000/क्विंटल (−₹75), दाल मिल ग्राहकी सुस्त, गिरावट क्षणिक (MP LR5.75 GREEN)",
+      "direction": "मंदी"
+     }
+    ],
+    "fmcg": [
+     {
+      "news_id": "17e473bc-a84c-481c-8b08-30334cc3a286",
+      "brand": "denim",
+      "label": "डेनिम शेविंग क्रीम Consumer Scheme LR7.03 — 70g पैक में 30% एक्स्ट्रा (70+21=91g), दाम वही"
+     },
+     {
+      "news_id": "fca7b7ab-7aad-4a0d-aa83-9b9f466c6db6",
+      "brand": "lux",
+      "label": "लक्स साबुन Consumer Scheme LR6.82 — गट्टू पर 4 नग खरीद, 1 नग फ्री (4+1)"
+     },
+     {
+      "news_id": "b0b1077d-cce5-4a25-8a3c-f641cf85ac88",
+      "brand": "dermicool",
+      "label": "डर्मीकूल प्रिकली-हीट पाउडर Consumer Scheme LR5.61 — ₹159 वाला खरीद पर ₹75 MRP वाला फ्री"
+     }
+    ],
+    "trending_news": [
+     {
+      "news_id": "2aa93581-9361-4785-afa6-35199412fd16",
+      "brand": "lpg-cylinder",
+      "label": "19kg कमर्शियल LPG सिलेंडर ₹202 सस्ता (दिल्ली ₹202/कोलकाता ₹209), डीज़ल स्थिर, घरेलू 14.2kg अपरिवर्तित (in-house 23अग BLACK)"
+     }
+    ]
+   },
+   "also_shown": [
+    {
+     "news_id": "d4cfb2c6-d8e8-45dd-a273-23dae176403b",
+     "brand": "bounce",
+     "label": "बाउंस बिस्किट Consumer Scheme LR7.78 — SWAPPED OUT: news_id used 22अग (12d dedup)"
+    },
+    {
+     "news_id": "35cbbb04-3452-46f4-800c-0fd3343de2b1",
+     "brand": "bajaj-almond-drops",
+     "label": "आलमंड ड्रॉप्स ऑयल Consumer Scheme LR5.10 — SWAPPED OUT: news_id used 22अग (12d dedup)"
+    },
+    {
+     "news_id": "f8db35e6-638a-4653-9c7d-efdaafca7be4",
+     "brand": "moongfali-dana",
+     "label": "मूंगफली दाना fmcg_product_change LR6.32 — SWAPPED OUT: news_id in 12d set + raw commodity/no brand"
+    },
+    {
+     "news_id": "965f7561-1eb6-4e51-8c91-24e9bee56a9f",
+     "brand": "colgate",
+     "label": "Colgate retailer scheme LR5.39 — SWAPPED OUT: brand used 18अग (7d brand dedup)"
+    },
+    {
+     "news_id": "399a8d77-c4e5-4d85-8c6f-d633d2902a6c",
+     "brand": "goodnight",
+     "label": "Good Night vaporizer fmcg_product_change LR4.75 — SWAPPED OUT: brand used 16अग (7d brand dedup)"
+    },
+    {
+     "news_id": "eb437108-0f35-4678-bed9-c02ea4b9a883",
+     "brand": "sarson-tilhan",
+     "label": "सरसों तिलहन मंदी (in-house तेल) — SWAPPED OUT for tuvar: sarson used yesterday 22अग, over-covered"
+    }
+   ]
   }
  ],
  "brand_dedup_window_days": 7
