@@ -45,3 +45,6 @@ card_*.jpg
 
 # per-run working dir (photos/cards/badges/webps — regenerated every run)
 run/
+contact_badges.png
+contact_badges_small.png
+contact_pn.png
