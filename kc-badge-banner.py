@@ -122,11 +122,11 @@ def render(tag, cfg, grad, bottom):
 # so the widest line ("1 पैक फ्री") grazed it at FS160 (3px). 154 keeps every badge's widest line >=~15px clear
 # of the white ring while staying uniform. ALWAYS re-check max_text_radius <= ~438 (white-ring inner 454) after
 # changing copy — the widest line caps FS.
-FS=138   # 2026-08-16: dropped 144->138, haldi/companies widest lines were grazing ring at 456
-# 2026-08-23: mandi=मसूर तेज़ी(masoor teji, हफ्ते ₹700), fmcg=लक्स/4+1 फ्री(real LUX packs, Consumer Scheme गट्टू 4+1), tn=सिलेंडर/₹202 सस्ता(19kg commercial LPG). Verify radial clearance after render (₹202 सस्ता / 4+1 फ्री widest).
-DAY=[dict(i=1,src="subjfull_1.png",lines=["मसूर","तेज़ी"],fs=FS),
-     dict(i=2,src="subjfull_2.png",lines=["लक्स","4+1 फ्री"],fs=FS),
-     dict(i=3,src="subjfull_3.png",lines=["गैस ₹202","सस्ता"],fs=FS)]
+FS=130   # 2026-08-25: dropped 138->130, "तूर दाल" upper line grazed ring at 455 (>448) at 138
+# 2026-08-25: mandi=तूर दाल/तेज़ी(arhar +₹300), fmcg=नवरत्न पर/टॉल्क फ्री(real Navratna oil+talc, Consumer Scheme ₹49 talc free), tn=सितंबर से/माल महंगा(FMCG price-rise news). Verify radial clearance after render (टॉल्क फ्री / माल महंगा widest).
+DAY=[dict(i=1,src="subjfull_1.png",lines=["तूर दाल","तेज़ी"],fs=FS),
+     dict(i=2,src="subjfull_2.png",lines=["नवरत्न पर","टॉल्क फ्री"],fs=FS),
+     dict(i=3,src="subjfull_3.png",lines=["सितंबर से","माल महंगा"],fs=FS)]
 if __name__=="__main__":
     render("D", DAY, TALL, 190)   # bottom raised for FS130 + wide tn bottom line: seats block higher in the circle's wider zone to clear the ring
     # 2026-07-14 crop fix: operator flagged text CROPPING at the ring. Root cause — the

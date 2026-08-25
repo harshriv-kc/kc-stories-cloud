@@ -72,48 +72,48 @@ def b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-08-23)
+# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-08-25)
 CARDS = [
- # --- Commodity (mandi_bhav) — 2 तेजी/RED + 1 मंदी/GREEN for balance. Types: दाल / मेवा / दाल. masoor+makhana in-house 23अग; tuvar MP LR5.75. Market broadly तेजी today (Samachar: जौ-मक्की-बाजरा उछले, चीनी रिकॉर्ड); tuvar is the only clean fresh मंदी (sarson used yesterday). ---
- dict(i=1, label="मंडी भाव", stripe=RED, headline="मसूर",
-   price=f'{tri("up",RED)}₹6,900<span class="unit">/क्विंटल</span>',
-   sub=f'दिल्ली देसी मसूर ₹25 चढ़कर ₹6,875–6,900/क्विंटल; MP से आपूर्ति कमजोर, हफ्तेभर में करीब ₹700 की तेजी · <b class="delta" style="color:{RED}">हफ्ते ₹700 तेजी</b>',
-   l1="क्यों", v1="MP (गंजबासौदा-सागर-भोपाल) से आवक घटी, दाल मिलों की मांग बनी हुई",
-   l2="क्या करें", v2="ऊंचे भाव पर बड़ा स्टॉक न भरें; अक्टूबर कनाडा फसल पर खरीद देखें"),
- dict(i=2, label="मंडी भाव", stripe=RED, headline="मखाना",
-   price=f'{tri("up",RED)}₹1,300<span class="unit">/किलो</span>',
-   sub=f'मखाना ₹25 चढ़कर ₹750–1,300/किलो (दाने की क्वालिटी अनुसार); बिहार से आवक कमजोर, श्रावण-व्रत की मांग तेज · <b class="delta" style="color:{RED}">₹25 तेजी</b>',
-   l1="क्यों", v1="बिहार के तालाबों से आवक कमजोर, व्रत-उपवास में खपत सबसे ज्यादा",
-   l2="क्या करें", v2="हवाबंद डिब्बे में रखें; ऊंचे भाव पर बड़ा दाना जरूरत भर मंगाएं"),
- dict(i=3, label="मंडी भाव", stripe=GREEN, headline="तूर दाल",
-   price=f'{tri("down",GREEN)}₹8,000<span class="unit">/क्विंटल</span>',
-   sub=f'तूर (अरहर) ₹8,075 से घटकर ₹8,000/क्विंटल; दाल मिलों की ग्राहकी सुस्त—पर गिरावट क्षणिक, आगे ₹200–300 तेजी संभव · <b class="delta" style="color:{GREEN}">₹75 गिरावट</b>',
-   l1="क्यों", v1="दाल मिलों की कमजोर ग्राहकी से दबाव; चेन्नई-बर्मा का पड़ता महंगा",
-   l2="क्या करें", v2="गिरावट क्षणिक—जरूरत भर खरीदें, बड़ा स्टॉक अभी न रोकें"),
- # --- FMCG (fmcg) — TOP 3 by Like Rate desc after ledger dedup (news_id 12d + 7d brand HARD) + body-verify. All Consumer Scheme by LR. ---
- #     denim 7.03 (70g→91g 30% extra), lux 6.82 (गट्टू 4+1 फ्री), dermicool 5.61 (₹159 पर ₹75 MRP फ्री). Category: shaving/soap/powder (all personal-care — strict LR; no 3-day category domination in ledger).
- #     EXCLUDED news_id 12d: bounce(22अग), almond-drops(22अग), मूंगफली दाना. EXCLUDED 7d brand: colgate(18अग), goodnight(16अग), pitambari(21अग). apsara 4.80 / kitkat 4.58 / manch 4.23 were next but below the top-3 LR line.
- dict(i=4, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="डेनिम शेविंग क्रीम",
-   price='<span class="offer" style="background:%s">30%% एक्स्ट्रा फ्री</span>'%SCHEME_BLUE,
-   sub='डेनिम ओरिजिनल शेविंग क्रीम 70g पैक में 30% ज्यादा—70+21=91 ग्राम, दाम वही · <b class="delta">+21g फ्री</b>',
-   l1="ऑफर", v1="70 ग्राम के दाम में 91 ग्राम (30% एक्स्ट्रा) मिल रहा",
-   l2="ग्राहक को", v2="वही कीमत, ज्यादा माल—दिखने वाला फायदा, तेज बिक्री"),
- dict(i=5, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="लक्स साबुन",
-   price='<span class="offer" style="background:%s">4 पर 1 फ्री</span>'%SCHEME_BLUE,
-   sub='लक्स साबुन के गट्टू पर 4 नग खरीदने पर 1 नग बिल्कुल फ्री—5 साबुन, दाम 4 का · <b class="delta">4+1 फ्री</b>',
-   l1="ऑफर", v1="गट्टू (पैक) पर 4 खरीदें, 5वां साबुन मुफ्त",
-   l2="ग्राहक को", v2="20% माल फ्री जैसा—रोज़मर्रा का आइटम, तेज बिक्री"),
- dict(i=6, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="डर्मीकूल पाउडर",
-   price='<span class="offer" style="background:%s">₹75 वाला फ्री</span>'%SCHEME_BLUE,
-   sub='डर्मीकूल प्रिकली-हीट पाउडर ₹159 वाला खरीदने पर ₹75 MRP का पाउडर बिल्कुल फ्री · <b class="delta">₹75 फ्री</b>',
-   l1="ऑफर", v1="₹159 के पाउडर के साथ ₹75 MRP वाला पाउडर मुफ्त",
-   l2="ग्राहक को", v2="गर्मी-बरसात में मांग; ₹234 का माल ₹159 में"),
- # --- News (trending_news) — 19kg कमर्शियल LPG सिलेंडर ₹202 सस्ता (in-house 23अग; concrete ₹, non-bait, direct shopkeeper impact). ---
- dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="सिलेंडर ₹202 सस्ता",
-   price='<span class="news">19kg कमर्शियल LPG सस्ता, डीज़ल स्थिर</span>',
-   sub='1 तारीख से 19 किलो कमर्शियल सिलेंडर दिल्ली ₹202, कोलकाता ₹209 सस्ता; घरेलू 14.2kg अपरिवर्तित · <b class="delta">₹202 सस्ता</b>',
-   l1="क्यों ज़रूरी", v1="ढाबा-मिठाई-नमकीन का ईंधन खर्च घटा; डीज़ल न बढ़ने से भाड़ा स्थिर",
-   l2="क्या करें", v2="ढुलाई खर्च स्थिर—थोक से माल मंगाने का सही समय"),
+ # --- Commodity (mandi_bhav) — 2 तेजी/RED + 1 मंदी/GREEN for balance. Types: दाल / मसाला / तेल. All in-house 25अग (distinct news_ids). Market broadly तेजी (Samachar: उड़द-अरहर उछले, धनिया-राई तेज); सरसों तेल is the only clean fresh मंदी. ---
+ dict(i=1, label="मंडी भाव", stripe=RED, headline="तूर दाल",
+   price=f'{tri("up",RED)}₹8,100<span class="unit">/क्विंटल</span>',
+   sub=f'तूर (अरहर) मुंबई ₹300 उछलकर ₹8,100–8,125/क्विंटल; दिल्ली लेमन ₹8,325–8,350; दाल मिलों की मांग तेज, पुराना माल कम · <b class="delta" style="color:{RED}">₹300 तेजी</b>',
+   l1="क्यों", v1="दाल मिलों की लगातार खरीद, मिलों के पास पुराना माल कम; आयात सौदे महंगे",
+   l2="क्या करें", v2="जरूरत भर माल अभी भर लें; पुराने स्टॉक पर बिक्री भाव बढ़ाकर मार्जिन सुधारें"),
+ dict(i=2, label="मंडी भाव", stripe=RED, headline="धनिया",
+   price=f'{tri("up",RED)}₹16,500<span class="unit">/क्विंटल</span>',
+   sub=f'धनिया ₹200 चढ़कर ₹16,500–16,800/क्विंटल; बढ़िया 3-नंबर ₹17,600–19,300; वायदा +2.70%, राजस्थान आवक सिर्फ 300 बोरी · <b class="delta" style="color:{RED}">₹200 तेजी</b>',
+   l1="क्यों", v1="मंडियों में आवक बहुत कम + मजबूत लिवाली; वायदा 2.70% तेज हुआ",
+   l2="क्या करें", v2="त्योहारी सीजन का माल अभी भर लें; आगे मजबूती के आसार"),
+ dict(i=3, label="मंडी भाव", stripe=GREEN, headline="सरसों तेल",
+   price=f'{tri("down",GREEN)}₹16,700<span class="unit">/क्विंटल</span>',
+   sub=f'सरसों तेल ₹50 फिसलकर ₹16,700/क्विंटल; हफ्तेभर में ₹150 गिरा; आवक बढ़कर 3 लाख बोरी, मिलों ने खरीद ₹50–100 घटाई · <b class="delta" style="color:{GREEN}">₹50 गिरावट</b>',
+   l1="क्यों", v1="मंडी आवक बढ़ी + बड़े कारोबारियों की बिकवाली; विदेशी पाम-सोया कमजोर",
+   l2="क्या करें", v2="भाव नरम—जरूरत का माल लें; बड़ा स्टॉक अभी न भरें"),
+ # --- FMCG (fmcg) — TOP 3 by Like Rate desc after ledger dedup (news_id 12d + 7d brand HARD) + body-verify. ---
+ #     navratna 5.998 (Consumer: 180ml + ₹49 talc फ्री), vim 5.72 (Consumer: 500g + ₹10 स्क्रबर फ्री), bournvita 4.73 (product_change RATE ₹295→₹263).
+ #     SWAPPED body-verify: Fena 5.98 (no figures), Sesa 5.59 (no ₹), Close-up 6.00 (vague "6+1"). BLOCKED 7d brand: hajmola, colgate×2, bounce, dermicool, lux, pitambari, morano. Dropped kesh-king 6.03 (dup navratna-talc freebie / hair). Category spread: hair-oil/dishwash/health-drink.
+ dict(i=4, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="नवरत्न कूल ऑयल",
+   price=f'<span class="offer" style="background:{SCHEME_BLUE}">₹49 वाला टॉल्क फ्री</span>',
+   sub='नवरत्न आयुर्वेदिक कूल ऑयल 180ml के साथ ₹49 MRP का नवरत्न कूल टॉल्क 50g बिल्कुल फ्री · <b class="delta">+₹49 फ्री</b>',
+   l1="ऑफर", v1="180ml ऑयल के साथ 50g कूल टॉल्क (₹49) मुफ्त",
+   l2="ग्राहक को", v2="गर्मी में ठंडक कॉम्बो; ₹49 का माल फ्री, तेज बिक्री"),
+ dict(i=5, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="विम लेमन बार",
+   price=f'<span class="offer" style="background:{SCHEME_BLUE}">₹10 वाला स्क्रबर फ्री</span>',
+   sub='विम लेमन बार 500g पैक के साथ ₹10 MRP का स्क्रबर बिल्कुल फ्री · <b class="delta">+₹10 फ्री</b>',
+   l1="ऑफर", v1="500g बार के साथ ₹10 का स्क्रबर मुफ्त",
+   l2="ग्राहक को", v2="रोज़मर्रा का बर्तन-सामान; स्क्रबर फ्री, तेज बिक्री"),
+ dict(i=6, eyebrow="FMCG", label="प्रोडक्ट बदलाव", stripe=BLACK, headline="बॉर्नविटा 500g",
+   price='₹295<span class="arrow">→</span>₹263',
+   sub='बॉर्नविटा 500g की MRP कंपनी ने ₹295 से घटाकर ₹263 की—₹32 की कटौती · <b class="delta">₹32 सस्ता</b>',
+   l1="बदलाव", v1="MRP ₹295 → ₹263 (₹32 कम)",
+   l2="फायदा", v2="नई MRP पर बेचें; ग्राहक को सस्ता, मांग बढ़ेगी"),
+ # --- News (trending_news) — सितंबर से FMCG दाम बढ़ेंगे (in-house 25अग; concrete %, non-bait, direct shopkeeper impact). ---
+ dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="माल महंगा होगा",
+   price='<span class="news">सितंबर से बिस्किट-साबुन-तेल के दाम बढ़ेंगे</span>',
+   sub='बड़ी कंपनियां सितंबर से दाम बढ़ाएंगी—ब्रिटानिया बिस्किट +1.5–2%, गोदरेज +5%; HUL-डाबर-टाटा भी समीक्षा में · <b class="delta">कच्चा माल महंगा</b>',
+   l1="क्यों ज़रूरी", v1="पाम तेल-चीनी-पैकिंग-ढुलाई महंगी; खरीद भाव आगे बढ़ेगा",
+   l2="क्या करें", v2="पुराने भाव का जरूरत भर माल आज भर लें; नई रेट लिस्ट पहले मंगाएं, पैकेट वजन जांचें"),
 ]
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
 html,body{{margin:0;padding:0;width:1080px;height:1920px;overflow:hidden;font-family:'Nirmala UI','Segoe UI',sans-serif;}}
