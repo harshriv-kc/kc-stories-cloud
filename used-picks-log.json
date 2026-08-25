@@ -3805,6 +3805,85 @@
      "label": "सरसों तिलहन मंदी (in-house तेल) — SWAPPED OUT for tuvar: sarson used yesterday 22अग, over-covered"
     }
    ]
+  },
+  {
+   "date": "2026-08-25",
+   "_note": "Fresh full run — all 3 stories + entry badges republished live (update_story + update_story_entry_badges, actor Harsh Shrivastava). Commodity = तूर दाल तेजी (in-house RED, +₹300 → ₹8,100-8,125) + धनिया तेजी (in-house RED, +₹200 → ₹16,500-16,800) + सरसों तेल मंदी (in-house GREEN, -₹50 → ₹16,700, for balance) = 2 RED + 1 GREEN, distinct in-house news_ids. FMCG top-3 by LR after dedup+body-verify across segments: Navratna Ayurvedic Cool Oil (Consumer LR 5.998, 180ml + ₹49 नवरत्न कूल talc फ्री) + Vim Lemon Bar 500g (Consumer LR 5.72, + ₹10 स्क्रबर फ्री) + Bournvita 500g (fmcg_product_change RATE LR 4.73, MRP ₹295→₹263). SWAPPED body-verify: Fena (LR 5.98, body states no old/new MRP figures), Sesa (5.59, no ₹), Close-up (6.00, vague '6+1'). Dropped Kesh King Gold (LR 6.03) = duplicate नवरत्न-talc freebie + 2nd hair item. BLOCKED 7d brand: hajmola, colgate, bounce, dermicool, lux, pitambari, morano. News = सितंबर से FMCG दाम बढ़ेंगे (in-house, market-impact, concrete %, non-bait; over govt-loan scheme for variety). Badges = curved-banner FS130 (तूर दाल/तेज़ी, नवरत्न पर/टॉल्क फ्री, सितंबर से/माल महंगा); dropped FS 138->130. badge1 measured 455 = yellow dal near banner edge (false positive), text clear on visual QC; badge2 406, badge3 423. Slides composited via kc-card-render.py, QC'd (contact sheet + full-size read of tallest news card — no overlap). cards 1,2 downscaled to clear 1MB nginx cap. Push scheduled 16:30 IST campaign_id 2dka58o (HTTP 200). NO Slack DM (spec Step 12c: DM retired 2026-08-17).",
+   "picks": {
+    "mandi_bhav": [
+     {
+      "news_id": "7ccc2853-78ba-43a8-920b-2d2f5f7000b7",
+      "label": "तूर दाल तेजी +₹300 → ₹8,100-8,125/क्विंटल (in-house RED)",
+      "brand": "tur"
+     },
+     {
+      "news_id": "e67132e2-790a-4aa0-8dab-a3649098be01",
+      "label": "धनिया तेजी +₹200 → ₹16,500-16,800/क्विंटल (in-house RED)",
+      "brand": "dhania"
+     },
+     {
+      "news_id": "ba0f3c87-2991-434f-a615-e5f2873d4f36",
+      "label": "सरसों तेल मंदी -₹50 → ₹16,700/क्विंटल (in-house GREEN for balance)",
+      "brand": "sarson-tel"
+     }
+    ],
+    "fmcg": [
+     {
+      "news_id": "5c488adf-1a32-414f-bcf0-80135539282d",
+      "label": "नवरत्न आयुर्वेदिक कूल ऑयल — Consumer Scheme, 180ml + ₹49 नवरत्न कूल talc फ्री (LR 5.998)",
+      "brand": "navratna"
+     },
+     {
+      "news_id": "a4f55069-2825-4761-8ed7-4762f0895b1f",
+      "label": "विम लेमन बार 500g — Consumer Scheme, + ₹10 स्क्रबर फ्री (LR 5.72)",
+      "brand": "vim"
+     },
+     {
+      "news_id": "eb67e460-f80b-437a-b501-e6f6a3d4c74e",
+      "label": "बॉर्नविटा 500g — fmcg_product_change RATE, MRP ₹295→₹263 (LR 4.73)",
+      "brand": "bournvita"
+     }
+    ],
+    "trending_news": [
+     {
+      "news_id": "364c36b7-9f96-44a0-babf-3ef0825cd6e6",
+      "label": "सितंबर से FMCG दाम बढ़ेंगे — बिस्किट/साबुन/तेल; ब्रिटानिया +1.5-2%, गोदरेज +5% (in-house)",
+      "brand": "fmcg-mehangai"
+     }
+    ]
+   },
+   "also_shown": [
+    {
+     "news_id": "026c89e1-c003-459f-96e4-2cf3c663c412",
+     "label": "Kesh King Gold shampoo — Consumer LR 6.03, DROPPED: duplicate नवरत्न-talc freebie + 2nd hair-care item",
+     "brand": "kesh-king"
+    },
+    {
+     "news_id": "2b207892-7888-41d7-891d-7b47fb81bb5b",
+     "label": "Fena 1kg rate — fmcg_product_change LR 5.98, SWAPPED body-verify: body states no old/new MRP figures",
+     "brand": "fena"
+    },
+    {
+     "news_id": "439facc0-7ae7-4d8e-a578-d24cb8384520",
+     "label": "Sesa hair oil 90ml + shampoo free — Consumer LR 5.59, SWAPPED body-verify: no ₹ figure",
+     "brand": "sesa"
+    },
+    {
+     "news_id": "862f1e50-abd2-4204-babf-976c6244912d",
+     "label": "Close up 6+1 — Retailer LR 6.00, SWAPPED body-verify: vague, no ₹/MRP",
+     "brand": "close-up"
+    },
+    {
+     "news_id": "5daa3bc9-f39f-49f3-a3dc-754d7bd34ec2",
+     "label": "Hajmola regular jar +10 free — Retailer LR 7.02, EXCLUDED: hajmola in 7d brand set",
+     "brand": "hajmola"
+    },
+    {
+     "news_id": "428b95f6-f4b5-408a-9c9f-22d445ef271e",
+     "label": "Colgate MaxFresh 12+1 — Retailer LR 6.51, EXCLUDED: colgate in 7d brand set",
+     "brand": "colgate"
+    }
+   ]
   }
  ],
  "brand_dedup_window_days": 7
