@@ -72,48 +72,48 @@ def b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-08-25)
+# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-08-26)
 CARDS = [
- # --- Commodity (mandi_bhav) — 2 तेजी/RED + 1 मंदी/GREEN for balance. Types: दाल / मसाला / तेल. All in-house 25अग (distinct news_ids). Market broadly तेजी (Samachar: उड़द-अरहर उछले, धनिया-राई तेज); सरसों तेल is the only clean fresh मंदी. ---
- dict(i=1, label="मंडी भाव", stripe=RED, headline="तूर दाल",
-   price=f'{tri("up",RED)}₹8,100<span class="unit">/क्विंटल</span>',
-   sub=f'तूर (अरहर) मुंबई ₹300 उछलकर ₹8,100–8,125/क्विंटल; दिल्ली लेमन ₹8,325–8,350; दाल मिलों की मांग तेज, पुराना माल कम · <b class="delta" style="color:{RED}">₹300 तेजी</b>',
-   l1="क्यों", v1="दाल मिलों की लगातार खरीद, मिलों के पास पुराना माल कम; आयात सौदे महंगे",
-   l2="क्या करें", v2="जरूरत भर माल अभी भर लें; पुराने स्टॉक पर बिक्री भाव बढ़ाकर मार्जिन सुधारें"),
- dict(i=2, label="मंडी भाव", stripe=RED, headline="धनिया",
-   price=f'{tri("up",RED)}₹16,500<span class="unit">/क्विंटल</span>',
-   sub=f'धनिया ₹200 चढ़कर ₹16,500–16,800/क्विंटल; बढ़िया 3-नंबर ₹17,600–19,300; वायदा +2.70%, राजस्थान आवक सिर्फ 300 बोरी · <b class="delta" style="color:{RED}">₹200 तेजी</b>',
-   l1="क्यों", v1="मंडियों में आवक बहुत कम + मजबूत लिवाली; वायदा 2.70% तेज हुआ",
-   l2="क्या करें", v2="त्योहारी सीजन का माल अभी भर लें; आगे मजबूती के आसार"),
- dict(i=3, label="मंडी भाव", stripe=GREEN, headline="सरसों तेल",
-   price=f'{tri("down",GREEN)}₹16,700<span class="unit">/क्विंटल</span>',
-   sub=f'सरसों तेल ₹50 फिसलकर ₹16,700/क्विंटल; हफ्तेभर में ₹150 गिरा; आवक बढ़कर 3 लाख बोरी, मिलों ने खरीद ₹50–100 घटाई · <b class="delta" style="color:{GREEN}">₹50 गिरावट</b>',
-   l1="क्यों", v1="मंडी आवक बढ़ी + बड़े कारोबारियों की बिकवाली; विदेशी पाम-सोया कमजोर",
-   l2="क्या करें", v2="भाव नरम—जरूरत का माल लें; बड़ा स्टॉक अभी न भरें"),
- # --- FMCG (fmcg) — TOP 3 by Like Rate desc after ledger dedup (news_id 12d + 7d brand HARD) + body-verify. ---
- #     navratna 5.998 (Consumer: 180ml + ₹49 talc फ्री), vim 5.72 (Consumer: 500g + ₹10 स्क्रबर फ्री), bournvita 4.73 (product_change RATE ₹295→₹263).
- #     SWAPPED body-verify: Fena 5.98 (no figures), Sesa 5.59 (no ₹), Close-up 6.00 (vague "6+1"). BLOCKED 7d brand: hajmola, colgate×2, bounce, dermicool, lux, pitambari, morano. Dropped kesh-king 6.03 (dup navratna-talc freebie / hair). Category spread: hair-oil/dishwash/health-drink.
- dict(i=4, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="नवरत्न कूल ऑयल",
-   price=f'<span class="offer" style="background:{SCHEME_BLUE}">₹49 वाला टॉल्क फ्री</span>',
-   sub='नवरत्न आयुर्वेदिक कूल ऑयल 180ml के साथ ₹49 MRP का नवरत्न कूल टॉल्क 50g बिल्कुल फ्री · <b class="delta">+₹49 फ्री</b>',
-   l1="ऑफर", v1="180ml ऑयल के साथ 50g कूल टॉल्क (₹49) मुफ्त",
-   l2="ग्राहक को", v2="गर्मी में ठंडक कॉम्बो; ₹49 का माल फ्री, तेज बिक्री"),
- dict(i=5, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="विम लेमन बार",
-   price=f'<span class="offer" style="background:{SCHEME_BLUE}">₹10 वाला स्क्रबर फ्री</span>',
-   sub='विम लेमन बार 500g पैक के साथ ₹10 MRP का स्क्रबर बिल्कुल फ्री · <b class="delta">+₹10 फ्री</b>',
-   l1="ऑफर", v1="500g बार के साथ ₹10 का स्क्रबर मुफ्त",
-   l2="ग्राहक को", v2="रोज़मर्रा का बर्तन-सामान; स्क्रबर फ्री, तेज बिक्री"),
- dict(i=6, eyebrow="FMCG", label="प्रोडक्ट बदलाव", stripe=BLACK, headline="बॉर्नविटा 500g",
-   price='₹295<span class="arrow">→</span>₹263',
-   sub='बॉर्नविटा 500g की MRP कंपनी ने ₹295 से घटाकर ₹263 की—₹32 की कटौती · <b class="delta">₹32 सस्ता</b>',
-   l1="बदलाव", v1="MRP ₹295 → ₹263 (₹32 कम)",
+ # --- Commodity (mandi_bhav) — 2 तेजी/RED + 1 मंदी/GREEN. चावल / दाल / मसाला. In-house 26अग (distinct news_ids). हल्दी = fresh मंदी/GREEN. ---
+ dict(i=1, label="मंडी भाव", stripe=RED, headline="बासमती चावल",
+   price=f'{tri("up",RED)}₹10,000<span class="unit">/क्विंटल</span>',
+   sub=f'बासमती में ₹500 तक उछाल—1121 सेला ₹10,000–10,200/क्विंटल, 1509 सेला ₹9,400–9,500; 1718 धान ₹200 चढ़कर ₹4,900–5,000 · <b class="delta" style="color:{RED}">₹500 तक तेजी</b>',
+   l1="क्यों", v1="राइस मिलों-निर्यातकों की लगातार लिवाली, मंडियों में माल की कमी; नई फसल तक और तेजी संभव",
+   l2="क्या करें", v2="चावल का पड़ता आज ही तय कर लें; त्योहारी बिक्री का जरूरत भर माल अभी भर लें"),
+ dict(i=2, label="मंडी भाव", stripe=RED, headline="मूंग दाल",
+   price=f'{tri("up",RED)}₹8,300<span class="unit">/क्विंटल</span>',
+   sub=f'मूंग ₹100 चढ़कर ₹6,500–8,400/क्विंटल; बढ़िया माल ₹7,700–8,300, हल्का ₹6,500–7,300; बढ़िया माल की किल्लत बनी · <b class="delta" style="color:{RED}">₹100 तेजी</b>',
+   l1="क्यों", v1="राजस्थान मिलें 78–80% माल पहले ही पकड़ चुकीं; बढ़िया माल की मांग लगातार निकल रही",
+   l2="क्या करें", v2="हल्के-बढ़िया माल का फर्क साफ रखें; ग्राहक रेट अभी तय करें, वरना मार्जिन दबेगा"),
+ dict(i=3, label="मंडी भाव", stripe=GREEN, headline="हल्दी",
+   price=f'{tri("down",GREEN)}₹18,900<span class="unit">/क्विंटल</span>',
+   sub=f'हल्दी ₹200 घटकर इंदौर गट्ठा ₹18,900–19,000/क्विंटल; मुनाफावसूली से नरमी, आगे त्योहारी मांग मजबूत · <b class="delta" style="color:{GREEN}">₹200 गिरावट</b>',
+   l1="क्यों", v1="ऊंचे भाव पर मुनाफावसूली की बिकवाली; फिलहाल मांग सुस्त",
+   l2="क्या करें", v2="गिरावट का फायदा लेकर छोटी-छोटी खरीद करें; त्योहार पर हल्दी की बिक्री सबसे ज्यादा"),
+ # --- FMCG (fmcg) — TOP 3 by LR desc after ledger dedup (news_id 12d + 7d brand HARD) + body-verify. Spread: candy/coffee/hair-oil; segments Retailer/product-change/Consumer. ---
+ #     dairy-miss LR3.62 (Retailer 30+3), nescafe LR3.59 (product_change RATE 1139->999), dabur-amla LR3.34 (Consumer 50% extra, +Rs9 margin).
+ #     BLOCKED 7d brand: fena, lux, kesh-king, bournvita, natraj, navratna, sesa, dermicool, pitambari, closeup, denim, colgate/cibaca. SWAP body-verify: stamp 3.48 (no Rs/vague), apsara 3.46 (thin), comfort 3.03 (trivial +2). Card-4 photo = generic Rs5 milk-choc box (Gemini can't render 'Dairy Miss'); headline kept generic to avoid brand mismatch; ledger brand=dairy-miss.
+ dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="मिल्क चॉकलेट बार",
+   price=f'<span class="offer" style="background:{SCHEME_GREEN}">30 पर 3 नग फ्री</span>',
+   sub='₹5 वाली मिल्क चॉकलेट बार—30 यूनिट के बॉक्स के साथ 3 यूनिट (₹15) बिल्कुल फ्री, कुल 33 · <b class="delta">+3 नग फ्री</b>',
+   l1="स्कीम", v1="30 बार के बॉक्स पर 3 बार फ्री (कुल 33)",
+   l2="फायदा", v2="₹15 का माल फ्री; ₹5 इम्पल्स आइटम, तेज बिक्री"),
+ dict(i=5, eyebrow="FMCG", label="प्रोडक्ट बदलाव", stripe=BLACK, headline="नेस्कैफे क्लासिक",
+   price='₹1,139<span class="arrow">→</span>₹999',
+   sub='नेस्कैफे क्लासिक 200g की MRP कंपनी ने ₹1,139 से घटाकर ₹999 की—₹139 सस्ती · <b class="delta">₹139 कम</b>',
+   l1="बदलाव", v1="MRP ₹1,139 → ₹999 (₹139 कम)",
    l2="फायदा", v2="नई MRP पर बेचें; ग्राहक को सस्ता, मांग बढ़ेगी"),
- # --- News (trending_news) — सितंबर से FMCG दाम बढ़ेंगे (in-house 25अग; concrete %, non-bait, direct shopkeeper impact). ---
- dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="माल महंगा होगा",
-   price='<span class="news">सितंबर से बिस्किट-साबुन-तेल के दाम बढ़ेंगे</span>',
-   sub='बड़ी कंपनियां सितंबर से दाम बढ़ाएंगी—ब्रिटानिया बिस्किट +1.5–2%, गोदरेज +5%; HUL-डाबर-टाटा भी समीक्षा में · <b class="delta">कच्चा माल महंगा</b>',
-   l1="क्यों ज़रूरी", v1="पाम तेल-चीनी-पैकिंग-ढुलाई महंगी; खरीद भाव आगे बढ़ेगा",
-   l2="क्या करें", v2="पुराने भाव का जरूरत भर माल आज भर लें; नई रेट लिस्ट पहले मंगाएं, पैकेट वजन जांचें"),
+ dict(i=6, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="डाबर आंवला",
+   price=f'<span class="offer" style="background:{SCHEME_BLUE}">50% एक्स्ट्रा फ्री</span>',
+   sub='डाबर आंवला हेयर ऑयल—बोतल में 50% ज्यादा तेल मुफ्त; खरीद ₹45, बिक्री ₹54, ₹9 का मार्जिन · <b class="delta">50% एक्स्ट्रा</b>',
+   l1="ऑफर", v1="बोतल में 50% एक्स्ट्रा तेल फ्री",
+   l2="ग्राहक को", v2="ज्यादा माल उसी दाम में; रोज़मर्रा का हेयर ऑयल, तेज बिक्री"),
+ # --- News (trending_news) — गणेश चतुर्थी 19 दिन बाकी (in-house 26अग; festive demand, concrete date, non-bait). QR-scam skipped as bait; रुझान skipped. ---
+ dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="गणेश चतुर्थी नज़दीक",
+   price='<span class="news">मोदक-पूजा सामग्री की मांग तेज होगी, तैयारी के 19 दिन</span>',
+   sub='14 सितंबर गणेश चतुर्थी, 11 दिन पूजा—गुड़, बेसन, नारियल बुरादा, घी, मेवा, अगरबत्ती, तेल की मांग तेज; चीनी 10% सस्ती · <b class="delta">त्योहारी मांग</b>',
+   l1="क्यों ज़रूरी", v1="11 दिन लगातार पूजा-भोग; पूजा-मिठाई का सामान बार-बार बिकेगा",
+   l2="क्या करें", v2="पूजा सामग्री का अलग सेट सजाएं; चीनी-तेल सस्ते में अभी भर लें, नारियल-लौंग पहले उठाएं"),
 ]
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
 html,body{{margin:0;padding:0;width:1080px;height:1920px;overflow:hidden;font-family:'Nirmala UI','Segoe UI',sans-serif;}}
