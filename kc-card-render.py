@@ -108,12 +108,12 @@ CARDS = [
    sub='ज़ेड ब्लैक जिपर धूप ₹20 MRP—12 डिब्बी खरीदने पर 4 नग मुफ्त, यानी 25% एक्स्ट्रा माल · <b class="delta">4 नग फ्री</b>',
    l1="स्कीम", v1="12 डिब्बी पर 4 नग मुफ्त (₹20 MRP)",
    l2="फायदा", v2="25% एक्स्ट्रा मार्जिन; पूजा-त्योहार सीजन में तेज बिक्री"),
- # --- News (trending_news) — DigiDukaan/ONDC: 1.4 करोड़ किराना दुकानें फोन से ऑर्डर (in-house 27अग; market-impact, concrete, non-bait). QR-scam skipped as bait; रुझान skipped. ---
- dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="अब फोन से ऑर्डर",
-   price='<span class="news">1.4 करोड़ किराना दुकानें ONDC मंच पर</span>',
-   sub='DPIIT और ONDC का DigiDukaan—दुकानदार, थोक और कंपनी एक ही मंच पर; हैदराबाद-जयपुर में 13 हजार दुकानें जुड़ीं, अब मुंबई-दिल्ली NCR की तैयारी · <b class="delta">छूट साफ दिखेगी</b>',
-   l1="क्यों ज़रूरी", v1="कंपनी की चालू स्कीम सीधे दिखेगी, ऑर्डर का पूरा माल मिलेगा, मार्जिन बेहतर",
-   l2="क्या करें", v2="इलाके में सुविधा आते ही फोन से ऑर्डर लगाएं; रेट-स्कीम तुलना कर सस्ता माल उठाएं"),
+ # --- News (trending_news) — KCC सरकारी लोन योजना: 4% ब्याज पर ₹5 लाख (in-house 27अग; govt scheme, concrete, non-bait, actionable). SWAPPED OUT DigiDukaan/ONDC (competitor B2B ordering platform — operator 27अग). QR-scam bait skipped. ---
+ dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="सस्ता कर्ज",
+   price='<span class="news">सिर्फ 4% ब्याज पर ₹5 लाख तक का कर्ज</span>',
+   sub='किसान क्रेडिट कार्ड (KCC)—समय पर लौटाने पर ब्याज सिर्फ 4% सालाना; ₹2 लाख तक बिना गारंटी, कार्ड 5 साल चले · <b class="delta">त्योहारी पूंजी</b>',
+   l1="क्यों ज़रूरी", v1="खेती, पशुपालन या मछली पालन करने वाले दुकानदार पात्र; बाजार के हर कर्ज से बहुत सस्ता",
+   l2="क्या करें", v2="नजदीकी बैंक या सहकारी समिति में आधार, जमीन कागज, 2 फोटो, पासबुक ले जाएं; कोई दलाली नहीं"),
 ]
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
 html,body{{margin:0;padding:0;width:1080px;height:1920px;overflow:hidden;font-family:'Nirmala UI','Segoe UI',sans-serif;}}

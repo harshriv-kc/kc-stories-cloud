@@ -4014,7 +4014,7 @@
   },
   {
    "date": "2026-08-27",
-   "_note": "Fresh full run — all 3 stories + entry badges republished live (update_story + update_story_entry_badges, actor Harsh Shrivastava). Commodity = चीनी मंदी (in-house Samachar GREEN, थोक ₹6,600→₹6,000, −₹600, सरकारी सख्ती) + सोया तेल मंदी (in-house GREEN, −₹50 → ₹15,500) + लौंग तेजी (in-house मसाला RED, +₹60 → ₹960–1,000/किलो, त्योहारी) = 2 GREEN + 1 RED (balance; recent days RED-heavy), distinct in-house news_ids. FMCG top-3 by LR after dedup+body-verify across segments: Cadbury choco cake (Retailer Scheme LR5.83, MRP₹120/खरीद₹90/₹30 margin, outer+1 free) + All Out Ultra (fmcg_product_change RATE LR5.02, MRP ₹85→₹75) + Zed Black zipper dhoop (Retailer Scheme LR4.16, ₹20 MRP 12+4 free). SWAPPED body-verify: ITC Gangajal soap (LR4.22, 4+1 no ₹/MRP), Dabur Red toothpaste (LR3.94, 6+1 no ₹ + oral-care over-covered), Dabur Glucoplus-C (LR3.34, no ₹). BLOCKED 7d brand: vim, close-up, natraj-pencil, lux, kesh-king, colgate. Category spread: chocolate/repellent/dhoop (no oral-care/soap over-cover). News = DigiDukaan/ONDC 1.4 करोड़ किराना दुकानें फोन से ऑर्डर (in-house, market-impact, concrete 13k dukaan/400+ cities, non-bait; QR-scam bait skipped). Badges = curved-banner FS130 (चीनी/सस्ती, कैडबरी/1 फ्री, फोन से/ऑर्डर); radial clearance 350/346/355 ≤448, PN alpha verified RGBA transparent ring. Slides composited via kc-card-render.py, QC'd (contact sheet + full-size read of tallest news card — no overlap); card_3 downscaled to clear 1MB nginx cap. Push scheduled 16:30 IST campaign_id ~1afja4n (HTTP 200). NO Slack DM (spec Step 12c: DM retired 2026-08-17).",
+   "_note": "Fresh full run — all 3 stories + entry badges republished live (update_story + update_story_entry_badges, actor Harsh Shrivastava). Commodity = चीनी मंदी (in-house Samachar GREEN, थोक ₹6,600→₹6,000, −₹600, सरकारी सख्ती) + सोया तेल मंदी (in-house GREEN, −₹50 → ₹15,500) + लौंग तेजी (in-house मसाला RED, +₹60 → ₹960–1,000/किलो, त्योहारी) = 2 GREEN + 1 RED (balance; recent days RED-heavy), distinct in-house news_ids. FMCG top-3 by LR after dedup+body-verify across segments: Cadbury choco cake (Retailer Scheme LR5.83, MRP₹120/खरीद₹90/₹30 margin, outer+1 free) + All Out Ultra (fmcg_product_change RATE LR5.02, MRP ₹85→₹75) + Zed Black zipper dhoop (Retailer Scheme LR4.16, ₹20 MRP 12+4 free). SWAPPED body-verify: ITC Gangajal soap (LR4.22, 4+1 no ₹/MRP), Dabur Red toothpaste (LR3.94, 6+1 no ₹ + oral-care over-covered), Dabur Glucoplus-C (LR3.34, no ₹). BLOCKED 7d brand: vim, close-up, natraj-pencil, lux, kesh-king, colgate. Category spread: chocolate/repellent/dhoop (no oral-care/soap over-cover). News = originally DigiDukaan/ONDC (phone orders) but that was SWAPPED post-publish (operator: ONDC/DigiDukaan is a competitor B2B ordering platform) → replaced with KCC सरकारी लोन योजना (किसान क्रेडिट कार्ड, 4% ब्याज, ₹5 लाख, non-bait, actionable). trending_news slide + entry badge + PN icon re-rendered and republished; push JSON re-issued with new tn badge_pn. Badges = curved-banner FS130 (चीनी/सस्ती, कैडबरी/1 फ्री, फोन से/ऑर्डर); radial clearance 350/346/355 ≤448, PN alpha verified RGBA transparent ring. Slides composited via kc-card-render.py, QC'd (contact sheet + full-size read of tallest news card — no overlap); card_3 downscaled to clear 1MB nginx cap. Push scheduled 16:30 IST campaign_id ~1afja4n (HTTP 200). NO Slack DM (spec Step 12c: DM retired 2026-08-17). [POST-PUBLISH EDIT 27अग: trending_news swapped ONDC→KCC; tn badge = सस्ता कर्ज/4% ब्याज (radial 402); scheduled push ~1afja4n still carries OLD tn icon — operator must edit/kill it in WebEngage dashboard (pn-schedule.py refuses re-schedule: idempotency key already used).]",
    "picks": {
     "mandi_bhav": [
      {
@@ -4058,14 +4058,20 @@
     ],
     "trending_news": [
      {
-      "news_id": "d6db058d-feb8-41b7-b856-d94ebd23b24b",
-      "brand": "digidukaan-ondc",
+      "news_id": "14f7ca67-e512-4c78-a174-fdbc89bb7181",
+      "brand": "kcc-loan",
       "direction": "news",
-      "label": "अब फोन से ऑर्डर — DPIIT+ONDC DigiDukaan, 1.4 करोड़ किराना दुकानें; हैदराबाद-जयपुर 13 हजार जुड़ीं, 400+ शहर (in-house 27अग, market-impact, non-bait)"
+      "label": "सस्ता कर्ज — किसान क्रेडिट कार्ड (KCC): 4% ब्याज पर ₹5 लाख, ₹2 लाख बिना गारंटी, 5 साल (in-house 27अग सरकारी योजना, non-bait, actionable). REPLACED DigiDukaan/ONDC post-publish (competitor)."
      }
     ]
    },
    "also_shown": [
+    {
+     "news_id": "d6db058d-feb8-41b7-b856-d94ebd23b24b",
+     "brand": "digidukaan-ondc",
+     "direction": "news",
+     "label": "अब फोन से ऑर्डर — DigiDukaan/ONDC 1.4cr kirana. REMOVED post-publish: ONDC/DigiDukaan is a COMPETITOR B2B ordering platform (operator flagged 27अग); trending_news re-rendered + republished with KCC scheme."
+    },
     {
      "news_id": "e91d60ab-1f1e-4b41-a422-c93646d8b2f2",
      "brand": "itc-gangajal",
