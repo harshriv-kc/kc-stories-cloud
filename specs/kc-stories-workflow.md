@@ -211,6 +211,33 @@ the D2R dashboard.
 
 ---
 
+## ROADMAP — PHASED EXPANSION (operator-gated; NOT yet live)
+Approved direction (operator, 2026-08-28). **The daily autopilot above is UNCHANGED until the operator flips a phase ON** — do not implement these in a routine run on your own. Each phase names its enable-gate and its rollback trigger. Sequence: instrument → P1 → P2 → P3.
+
+**Data sources these rely on (verified 2026-08-28):**
+- Content type per post lives in `post_categories.level4_pt` (values: `teji_mandi`, `news`, `scheme`, `fmcg_product_change`, `new_product_launch`, `shop_tips`, `entertainment`, `product_review`, …) — read by the FLEET_ADS ranker. UGC posts are auto-classified into the same `post_type` by the UGCPostModerator (`news` = किराना समाचार / FMCG News, `shop_tips` = शॉप टिप). NOTE: `post_categories` is **not** populated in the Birbal `community` replica — it's read via the fleet's own prod SQL / Mixpanel.
+- Engagement (LR) is the Mixpanel Stories bookmark **90465031** (`teji_mandi` / `news` / scheme sub-labels / `fmcg_product_change` / `new_product_launch`). **`shop_tips` is a tracked level4 elsewhere (fleet metric `87788238`) but is NOT in bookmark 90465031** → adding any shop_tips bucket needs the bookmark widened (or a sibling bookmark), so the pipeline reads shop_tips LR exactly like the others.
+
+**Phase 0 — INSTRUMENT FIRST (do before P1/P2).** Stand up, over ~1 week, per-bucket: story **entry rate**, **per-slide completion / drop-off** (`sort_order`), **D1/D7 return** of exposed users, and **per-PN-icon CTR** (which of the 3 icons earns its slot). These are the baselines every rollback trigger below compares against.
+
+**Phase 1 — DYNAMIC SLIDE COUNT (soft cap, never a hard number).**
+- Base stays **3 commodity + 3 FMCG + 1 news** (§5). A bucket may grow to **+1 (max 4)** on a given day **only if** the extra candidate passes §6 body-verify (concrete ₹ number) **AND** its LR ≥ the bucket's trailing-median LR (supply-gated). If no extra candidate clears the bar, silently fall back to base — **thin days are never padded**. Mandi & FMCG are the flex buckets; today's number is already good, so expansion is opportunistic ("lots of good news that day → 4").
+- **Rollback trigger:** if slide-4 completion or exposed-user D1/D7 return dips vs the 3-slide baseline (users finding it "too much / not coming back"), cap back to base. Re-check weekly.
+
+**Phase 2 — NEWS SOURCE DISCIPLINE (fixes the 2-trending-news dilution).**
+- We publish **2 in-house Pan-India Trending posts daily** → **take the best-1 only** (LR + non-bait + concrete number). Never put both in the story.
+- A **2nd news slide is allowed only from a DIFFERENT source** — the UGC news pool (level4 `news`, the किराना समाचार / FMCG News stream, already surfaced in the bookmark's `news` pool) — **AND only if** it clears a high LR bar, is **not a रुझान/digest** post, and is non-bait. So News = best-1 by default, 2 only when a genuinely distinct high-LR UGC news item exists.
+- Note from today's pool: ~half the `news` bookmark rows are रुझान/mandi digests, not true news — filter those out before counting supply.
+
+**Phase 3 — SHOP TIPS bucket (new, STORY-RAIL-ONLY).**
+- New entry badge on the home rail; **weekly** refresh (not daily — tips don't churn like prices): pick the **top-1 `shop_tips` post by LR/CTR over the trailing 7 days**.
+- **Enable-gate:** widen bookmark 90465031 (or add a sibling) to expose `shop_tips` LR, so the pick reuses the existing LR machinery. Card uses a new masthead label (e.g. "शॉप टिप") — no new render engine needed.
+- Same pattern works later for **सरकारी योजना** (the daily in-house `Pan India Schemes` post) and **मंडी रुझान / outlook** as further rail-only buckets.
+
+**PN POLICY (fixed):** the push stays **exactly 3 icons — mandi / fmcg / trending_news** (the `multi_icon` app template hardcodes 3). **Every new bucket is story-rail-only and never competes for a PN slot.** More than 3 icons would require an app-side `multi_icon_4`/carousel — a separate eng ask, out of scope for this pipeline.
+
+---
+
 ## EDITORIAL VOICE
 - Hindi (Devanagari) for all visible card text. Headlines 2–5 words; sub-headlines ≤12 words.
 - "क्या करें" = operational guidance ("पुराने स्टॉक पर पुराना MRP बेच लें"). "क्यों" = factual reason.
