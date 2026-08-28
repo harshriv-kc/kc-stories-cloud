@@ -5,6 +5,9 @@ Fully automated daily refresh of the 3 live KC Stories tags + their entry badges
 ## TRIGGERS
 "today's KC stories", "daily prompts", "make stories", "kc stories", "todays", or any equivalent → run the whole pipeline below end-to-end and **publish without asking**.
 
+## ⚑ ACTIVE EXPERIMENT (2026-08-29 → 2026-09-02)
+**If today's date is inside this window, read and follow `experiments/slide-count-2026-08-29.md` — it OVERRIDES the base slide count in §5 (Mandi/FMCG may go to 4 slides when a 4th passes body-verify + LR≥bucket-median; News stays 1), logs metrics to `experiment-slide-count-log.json`, DMs the day-5 conclusion to Slack U09K92G1U1X, and handles the operator's Y/N on day-6.** Everything else (dedup, QC, badges, PN=3 icons, ledger) is unchanged. Outside the window (or if the file is CLOSED/absent), ignore this and run §5 as written.
+
 ## ⚑ AUTOPILOT RULES
 - **No clarifying questions. No pick-confirmation gate. No "publish?" gate.** Run start → live in one go.
 - The only human action is the **one-time client "Allow always"** for jack write tools (`update_story`, `update_story_entry_badges`) — that is a Claude-client permission the operator sets once; it is not a question to ask.
@@ -220,7 +223,7 @@ Approved direction (operator, 2026-08-28). **The daily autopilot above is UNCHAN
 
 **Phase 0 — INSTRUMENT FIRST (do before P1/P2).** Stand up, over ~1 week, per-bucket: story **entry rate**, **per-slide completion / drop-off** (`sort_order`), **D1/D7 return** of exposed users, and **per-PN-icon CTR** (which of the 3 icons earns its slot). These are the baselines every rollback trigger below compares against.
 
-**Phase 1 — DYNAMIC SLIDE COUNT (soft cap, never a hard number).**
+**Phase 1 — DYNAMIC SLIDE COUNT (soft cap, never a hard number).** — ⚑ NOW RUNNING as the live experiment `experiments/slide-count-2026-08-29.md` (2026-08-29 → 2026-09-02); on operator Y it becomes the standing §5 rule.
 - Base stays **3 commodity + 3 FMCG + 1 news** (§5). A bucket may grow to **+1 (max 4)** on a given day **only if** the extra candidate passes §6 body-verify (concrete ₹ number) **AND** its LR ≥ the bucket's trailing-median LR (supply-gated). If no extra candidate clears the bar, silently fall back to base — **thin days are never padded**. Mandi & FMCG are the flex buckets; today's number is already good, so expansion is opportunistic ("lots of good news that day → 4").
 - **Rollback trigger:** if slide-4 completion or exposed-user D1/D7 return dips vs the 3-slide baseline (users finding it "too much / not coming back"), cap back to base. Re-check weekly.
 

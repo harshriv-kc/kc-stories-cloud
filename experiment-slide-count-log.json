@@ -1,0 +1,15 @@
+{
+  "experiment": "slide-count-2026-08-29",
+  "protocol": "experiments/slide-count-2026-08-29.md",
+  "status": "ACTIVE",
+  "window": ["2026-08-29", "2026-09-02"],
+  "baseline_window": ["2026-08-23", "2026-08-28"],
+  "conclusion_dm_date": "2026-09-02",
+  "decision_date": "2026-09-03",
+  "slack_target": "U09K92G1U1X",
+  "mixpanel_project": 2551336,
+  "lr_bookmark": 90465031,
+  "hypothesis": "A 4th slide on Mandi/FMCG (only when body-verify + LR>=bucket-median) grows consumption without hurting entry / deep-completion / D1 return.",
+  "primary_guardrails": ["deep_completion", "d1_return"],
+  "days": []
+}
