@@ -4127,6 +4127,80 @@
      "label": "Colgate MaxFresh 6+1 — Retailer LR3.80, BLOCKED 7d brand + oral-care over-covered"
     }
    ]
+  },
+  {
+   "date": "2026-08-28",
+   "_note": "Fresh full run — all 3 stories + entry badges republished live (update_story x3 + update_story_entry_badges, actor Harsh Shrivastava, all HTTP-ok). Commodity = गेहूं तेजी (in-house Samachar RED, चक्की ₹2,945–2,950, +₹80–90/सप्ताह, निर्यात छूट) + देसी चना तेजी (in-house दाल RED, ₹6,375, आवक कम, आगे ~₹500) + छोटी इलायची मंदी (in-house मसाला GREEN, −₹150 → ₹2,600–2,900/किलो, नीलामी औसत ₹2,924) = 2 RED + 1 GREEN (balance). सोया तेल SKIPPED (used yesterday 27अग, same commodity+direction). Distinct in-house news_ids. FMCG top-3 by LR after news_id(12d)+brand(7d) dedup + body-verify across segments: Santoor Classic Handwash 200ml (Consumer Scheme LR7.448, B1G1, MRP ₹105/खरीद ₹75/₹30 margin) + Ankit Choco Wafer ₹2 jar (Retailer Scheme LR5.728, +₹5 goods free, MRP ₹200/खरीद ₹150/₹50 margin) + Aamir Sweet Night Citronella Agarbatti (Consumer Scheme LR5.709, 12+1 pouch ₹12, MRP ₹156/खरीद ₹115/₹41 margin). Category spread: personal-care/confectionery/puja (no oral-care). News = प्याज बफर स्टॉक (in-house 28अग ट्रेंडिंग, सरकार NCCF/NAFED ₹35/किलो, खुदरा ₹55–60, औसत ₹37.87, बफर 62,000 टन, policy/market-impact, non-bait). मिलावट-छापा news (6034578d) SKIPPED as raid/fraud bait. Slides composited via kc-card-render.py, QC'd (contact sheet + full-size read of card_6 sweet-night = tallest 2-line-headline card, no overlap); cards 1/2/3/6/7 palette-compressed to clear 1MB nginx cap. Badges = curved-banner FS130 (गेहूं/तेजी, हैंडवॉश/1+1 फ्री, प्याज/₹35 किलो); FMCG badge uses clean Santoor product photo (brand legible); radial clearance 418/384/419 ≤448, PN alpha verified RGBA transparent ring. Push scheduled 16:30 IST campaign_id g29q9a (HTTP 200); deep_links verbatim from spec (story_ids 51f7efb8/a93e34ab/16c9eaae). NO Slack DM (spec Step 12c: DM retired 2026-08-17).",
+   "picks": {
+    "mandi_bhav": [
+     {
+      "news_id": "d6414ade-3a42-4029-98c6-853511e9badb",
+      "brand": "gehu",
+      "direction": "तेजी",
+      "label": "गेहूं तेजी +₹80–90 → चक्की ₹2,945–2,950/क्विंटल, निर्यात छूट से मिल खरीद तेज (in-house 28अग Samachar RED, slide1)"
+     },
+     {
+      "news_id": "b7f4b381-af08-4e6e-a993-8c9956c39c38",
+      "brand": "chana",
+      "direction": "तेजी",
+      "label": "देसी चना तेजी → ₹6,350–6,375/क्विंटल पर टिका, आवक कम, आगे ~₹500 तेजी संभव (in-house 28अग दाल RED, slide2)"
+     },
+     {
+      "news_id": "3ec82924-d07a-48c3-ba5b-1ce0ab929549",
+      "brand": "elaichi",
+      "direction": "मंदी",
+      "label": "छोटी इलायची मंदी −₹150 → ₹2,600–2,900/किलो, नीलामी औसत ₹2,924, हल्दी भी नरम (in-house 28अग मसाला GREEN, slide3)"
+     }
+    ],
+    "fmcg": [
+     {
+      "news_id": "ba9a0f1b-9abe-47c4-9e3e-6077c20606ad",
+      "brand": "santoor",
+      "direction": "scheme",
+      "label": "सैंटूर क्लासिक हैंडवॉश (सैंडलवुड-तुलसी) 200ml — Consumer Scheme LR7.45, Buy 1 Get 1 फ्री; MRP ₹105/खरीद ₹75/₹30 मार्जिन · personal-care"
+     },
+     {
+      "news_id": "4da381b2-1ea8-477b-8053-10eccfc3be18",
+      "brand": "ankit-wafer",
+      "direction": "scheme",
+      "label": "अंकित चोको वेफर ₹2 जार — Retailer Scheme LR5.73, जार पर ₹5 का माल फ्री; MRP ₹200/खरीद ₹150/₹50 मार्जिन · confectionery"
+     },
+     {
+      "news_id": "bba95609-207a-4667-8f16-71703c1bc0d6",
+      "brand": "sweet-night",
+      "direction": "scheme",
+      "label": "आमिर स्वीट नाईट सिट्रोनेला अगरबत्ती — Consumer Scheme LR5.71, 12+1 पाउच (₹12) फ्री; MRP ₹156/खरीद ₹115/₹41 मार्जिन · puja/agarbatti"
+     }
+    ],
+    "trending_news": [
+     {
+      "news_id": "928d2b3a-cf13-46ce-acde-a7beb4f7a670",
+      "brand": "pyaaz",
+      "direction": "news",
+      "label": "प्याज — सरकार बफर स्टॉक से ₹35/किलो बेच रही; खुदरा ₹55–60, औसत ₹37.87, NCCF/NAFED बफर 62,000 टन, सप्लाई बढ़ेगी (in-house 28अग ट्रेंडिंग, policy/market-impact, non-bait, slide7)"
+     }
+    ]
+   },
+   "also_shown": [
+    {
+     "news_id": "ee563c1d-f070-438a-bb0d-955e7874ea92",
+     "brand": "apsara-pencil",
+     "direction": "scheme",
+     "label": "Apsara Platinum Pencil pack + eraser + sharpener free — Retailer LR7.612 (#1), BLOCKED 7d brand (apsara-pencil in 7d ledger)"
+    },
+    {
+     "news_id": "4004500e-2496-4b01-a25b-3bf03a274c70",
+     "brand": "vim",
+     "direction": "scheme",
+     "label": "Vim Bar 4+2 combo — Consumer LR6.541, BLOCKED 7d brand (25अग)"
+    },
+    {
+     "news_id": "6034578d-7e6f-404a-884e-3af9b7ba3b5c",
+     "brand": "milawat-chhapa",
+     "direction": "news",
+     "label": "मिलावटखोरों पर छापे 5.61 करोड़ जब्त (in-house 28अग) — SKIPPED as raid/fraud/seizure bait per SKIP-ALWAYS"
+    }
+   ]
   }
  ],
  "brand_dedup_window_days": 7
