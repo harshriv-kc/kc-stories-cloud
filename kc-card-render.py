@@ -72,48 +72,53 @@ def b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-08-27)
+# ---- EDIT THIS PER DAY: 3 commodity + 4 FMCG + 1 news ----  (2026-08-29 · slide-count experiment: FMCG→4)
 CARDS = [
- # --- Commodity (mandi_bhav) — 2 मंदी/GREEN + 1 तेजी/RED (balance; recent days RED-heavy). चीनी / सोया तेल / लौंग. In-house 27अग (distinct news_ids). ---
- dict(i=1, label="मंडी भाव", stripe=RED, headline="गेहूं",
-   price=f'{tri("up",RED)}₹2,945–2,950<span class="unit">/क्विंटल</span>',
-   sub=f'चक्की गेहूं ₹2,945–2,950/क्विंटल, एक सप्ताह में ₹80–90 चढ़ा; निर्यात छूट से फ्लोर मिलों की खरीद तेज · <b class="delta" style="color:{RED}">₹80–90 तेजी</b>',
-   l1="क्यों", v1="सरकार ने खुले में गेहूं निर्यात की छूट दी, मिलों की खरीद अचानक तेज हुई",
-   l2="क्या करें", v2="₹3,000/क्विंटल बनते ही एक बार माल बेच लें; NCR मंडियों में ₹40–50 और तेजी संभव"),
- dict(i=2, label="मंडी भाव", stripe=RED, headline="देसी चना",
-   price=f'{tri("up",RED)}₹6,375<span class="unit">/क्विंटल</span>',
-   sub=f'बढ़िया देसी चना ₹6,350–6,375/क्विंटल पर टिका, चना दाल ₹7,200–7,550; आवक कम, आगे ~₹500 तेजी के संकेत · <b class="delta" style="color:{RED}">₹500 संभावित तेजी</b>',
-   l1="क्यों", v1="राजस्थान-कर्नाटक-MP मंडियों में आवक हल्की, दाल मिलों को जरूरत का चना नहीं मिल रहा",
-   l2="क्या करें", v2="महीने भर का चना व बेसन अभी उठा लें; त्योहारों में बेसन खपत बढ़ने से भाव ऊपर जाएंगे"),
- dict(i=3, label="मंडी भाव", stripe=GREEN, headline="इलायची",
-   price=f'{tri("down",GREEN)}₹2,600–2,900<span class="unit">/किलो</span>',
-   sub=f'छोटी इलायची ₹100–150 टूटकर ₹2,600–2,900/किलो; नीलामी औसत घटकर ₹2,924, हल्दी भी नरम · <b class="delta" style="color:{GREEN}">₹150 गिरावट</b>',
-   l1="क्यों", v1="दक्षिण की नीलामी में आवक बनी हुई, ग्राहकी कमजोर और मुनाफा वसूली जारी",
-   l2="क्या करें", v2="त्योहारी इलायची-हल्दी का महीने भर का माल अभी सस्ते में भर लें, सितंबर से महंगा पड़ेगा"),
- # --- FMCG (fmcg) — TOP 3 by LR desc after ledger dedup (news_id 12d + 7d brand HARD) + body-verify. Spread: personal-care/confectionery/puja; segments Consumer/Retailer/Consumer. ---
- #     santoor LR7.45 (Consumer, B1G1 200ml, MRP105/buy75/Rs30), ankit-wafer LR5.73 (Retailer, Rs2 jar +Rs5 free, MRP200/buy150/Rs50), sweet-night LR5.71 (Consumer, 12+1 pouch, MRP156/buy115/Rs41).
- #     BLOCKED 7d brand/newsid dedup: apsara-pencil, vim, close-up, zed-black, natraj-pencil, cadbury, dabur-red, lux, dermicool, navratna, all-out, colgate, sesa, stamp.
- dict(i=4, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="सैंटूर हैंडवॉश",
-   price=f'<span class="offer" style="background:{SCHEME_BLUE}">1 पर 1 फ्री · 200ml</span>',
-   sub='सैंटूर क्लासिक हैंडवॉश (सैंडलवुड-तुलसी) 200ml—Buy 1 Get 1 फ्री; कुल MRP ₹105, खरीद ₹75 · <b class="delta">₹30 मार्जिन</b>',
-   l1="ऑफर", v1="200ml पर 200ml बिल्कुल फ्री—दो बोतल ₹105 में",
-   l2="ग्राहक को", v2="एक के दाम में दो हैंडवॉश; तेज बिकने वाला ऑफर, ₹30 सीधा मार्जिन"),
- dict(i=5, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="अंकित चोको वेफर",
-   price=f'<span class="offer" style="background:{SCHEME_GREEN}">जार पर ₹5 माल फ्री</span>',
-   sub='अंकित चोको वेफर ₹2 जार—खरीदने पर ₹5 का माल जार के अंदर फ्री; कुल MRP ₹200, खरीद ₹150 · <b class="delta">₹50 मार्जिन</b>',
-   l1="स्कीम", v1="₹2 वेफर जार पर ₹5 का माल फ्री (जार के अंदर)",
-   l2="फायदा", v2="₹50 डायरेक्ट मार्जिन; ₹2 इम्पल्स आइटम, बच्चों में तेज बिक्री"),
- dict(i=6, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="स्वीट नाईट अगरबत्ती",
-   price=f'<span class="offer" style="background:{SCHEME_BLUE}">12 पर 1 फ्री</span>',
-   sub='आमिर स्वीट नाईट सिट्रोनेला अगरबत्ती—12 खरीदने पर 1 पाउच (₹12) फ्री; कुल MRP ₹156, खरीद ₹115 · <b class="delta">₹41 मार्जिन</b>',
-   l1="ऑफर", v1="12 पर 1 पाउच मुफ्त, ₹12 का माल फ्री",
-   l2="ग्राहक को", v2="मच्छर भगाने वाली अगरबत्ती; त्योहार-सीजन में मांग तेज, ₹41 मार्जिन"),
- # --- News (trending_news) — प्याज बफर स्टॉक: सरकार ₹35/किलो बेच रही (in-house 28अग; policy/market-impact, concrete, non-bait, actionable). मिलावट-छापा bait skipped. ---
- dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="प्याज",
-   price='<span class="news">सरकार बफर स्टॉक से ₹35/किलो प्याज बेच रही</span>',
-   sub='खुदरा प्याज ₹55–60/किलो, देश का औसत ₹37.87; NCCF-NAFED की दुकान व वैन पर ₹35, बफर 62,000 टन · <b class="delta">सप्लाई बढ़ेगी</b>',
-   l1="क्यों ज़रूरी", v1="त्योहार से पहले दाम चढ़े, सरकार ने बफर से बिक्री शुरू की; आगे थोक भाव नरम पड़ेंगे",
-   l2="क्या करें", v2="ज्यादा प्याज न भरें—हफ्ते भर का माल रखें, प्याज जल्दी सड़ता है और पैसा डूबता है"),
+ # --- Commodity (mandi_bhav) — 2 तेजी/RED + 1 मंदी/GREEN (balance). काजू / मटर / गुड़. In-house 29अग (distinct news_ids). ---
+ dict(i=1, label="मंडी भाव", stripe=RED, headline="काजू",
+   price=f'{tri("up",RED)}₹1,140<span class="unit">/किलो</span>',
+   sub=f'काजू 180 नंबर ₹1,140/किलो पर टिका, हाल में ₹20 चढ़ा; त्योहारी मांग तेज और आपूर्ति सामान्य से तंग · <b class="delta" style="color:{RED}">₹20 तेजी</b>',
+   l1="क्यों", v1="त्योहारी सीजन में मिठाई-मेवा की मांग बढ़ रही, काजू की आवक सामान्य से तंग बतायी जा रही",
+   l2="क्या करें", v2="त्योहार की जरूरत का काजू व गोला बुरादा अभी थमे भाव पर उठा लें; आगे हलचल संभव"),
+ dict(i=2, label="मंडी भाव", stripe=RED, headline="मटर",
+   price=f'{tri("up",RED)}₹4,350<span class="unit">/क्विंटल</span>',
+   sub=f'पीली मटर ₹4,350/क्विंटल पर मजबूत; मुंदड़ा पोर्ट पर ₹4,000 से नीचे माल नहीं, कनाडा का आयात ऊंचा पड़ रहा · <b class="delta" style="color:{RED}">आगे लाभ</b>',
+   l1="क्यों", v1="पोर्ट पर मटर का दबाव नहीं, कनाडा से आयात महंगा; त्योहारों में छोले-मटर-नमकीन की मांग बढ़ेगी",
+   l2="क्या करें", v2="जगह-पैसा हो तो 2–3 हफ्ते का बढ़िया माल अभी उठा लें, आगे सस्ता मिलने के आसार कम"),
+ dict(i=3, label="मंडी भाव", stripe=GREEN, headline="गुड़",
+   price=f'{tri("down",GREEN)}₹6,600–6,700<span class="unit">/क्विंटल</span>',
+   sub=f'गुड़ ढैया ₹200 टूटकर ₹6,600–6,700/क्विंटल; चीनी में सरकारी सख्ती से बिकवाली बढ़ी, उठाव कमजोर · <b class="delta" style="color:{GREEN}">₹200 गिरावट</b>',
+   l1="क्यों", v1="चीनी हफ्तेभर में ₹600 टूटी, सरकारी सख्ती से बिकवाली बढ़ी; गुड़ में उठाव न होने से भाव लुढ़के",
+   l2="क्या करें", v2="गुड़ का बड़ा स्टॉक अभी न भरें; भाव और नरम पड़ सकते हैं, हफ्तेभर की जरूरत का माल लें"),
+ # --- FMCG (fmcg) — TOP 4 by LR desc after ledger dedup (news_id 12d + 7d brand HARD) + body-verify. 4th slide = slide-count experiment (Ghadi LR3.94 >= FMCG median 1.90). Spread: hair/candy/stationery/detergent. ---
+ #     nyel LR4.60 (Consumer, 1+1 800ml MRP489), jolly-rancher LR4.39 (Retailer, 5 lolly+Colgate Rs30, MRP180/135/Rs45), doms LR4.26 (Retailer, jar+5 erasers, MRP165/125/Rs40), ghadi LR3.94 (Consumer, +Venus soap Rs10, MRP75/58/Rs17).
+ #     SWAPPED: coca-cola LR4.39 (garbled body, no MRP). BLOCKED 7d brand dedup: santoor, close-up, sweet-night, ankit-wafer, vim, sesa, colgate, apsara-pencil, cadbury, navratna...
+ dict(i=4, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="नायल शैम्पू",
+   price=f'<span class="offer" style="background:{SCHEME_BLUE}">1 पर 1 फ्री · 800ml</span>',
+   sub='नायल नैचुरल वॉल्यूम शैम्पू (पंप बॉटल) 800ml—एक के साथ एक बिल्कुल फ्री; कुल MRP ₹489 · <b class="delta">1+1 डील</b>',
+   l1="ऑफर", v1="800ml की बड़ी पंप बॉटल पर दूसरी बॉटल फ्री—दो बोतल ₹489 में",
+   l2="ग्राहक को", v2="एक के दाम में दो शैम्पू; बड़ी पंप बॉटल, तेज बिकने वाला ऑफर"),
+ dict(i=5, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="जॉली रैंचर",
+   price=f'<span class="offer" style="background:{SCHEME_GREEN}">5 लॉली + पेस्ट फ्री</span>',
+   sub='जॉली रैंचर लॉलीपॉप जार—5 लॉली फ्री + कोलगेट पेस्ट (₹30) जार के अंदर फ्री; कुल MRP ₹180, खरीद ₹135 · <b class="delta">₹45 मार्जिन</b>',
+   l1="स्कीम", v1="जार खरीदने पर 5 लॉलीपॉप + ₹30 का कोलगेट पेस्ट अंदर फ्री",
+   l2="फायदा", v2="₹45 डायरेक्ट मार्जिन; बच्चों में तेज बिकने वाला इम्पल्स आइटम"),
+ dict(i=6, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="डॉम्स इरेज़र",
+   price=f'<span class="offer" style="background:{SCHEME_GREEN}">जार में 5 रबर फ्री</span>',
+   sub='डॉम्स ट्रायंगल इरेज़र जार—खरीदने पर 5 डॉम्स रबर जार के अंदर फ्री; कुल MRP ₹165, खरीद ₹125 · <b class="delta">₹40 मार्जिन</b>',
+   l1="स्कीम", v1="इरेज़र जार पर 5 डॉम्स रबर अंदर फ्री",
+   l2="फायदा", v2="₹40 डायरेक्ट मार्जिन; स्कूल सीजन में स्टेशनरी की तेज मांग"),
+ dict(i=7, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="घड़ी डिटर्जेंट",
+   price=f'<span class="offer" style="background:{SCHEME_BLUE}">साथ वीनस साबुन फ्री</span>',
+   sub='घड़ी डिटर्जेंट पाउडर पैक के साथ वीनस क्रीम साबुन (₹10) अंदर फ्री; कुल MRP ₹75, खरीद ₹58 · <b class="delta">₹17 मार्जिन</b>',
+   l1="ऑफर", v1="डिटर्जेंट पैक के साथ ₹10 का वीनस साबुन अंदर फ्री",
+   l2="ग्राहक को", v2="रोज़ का सामान, साबुन फ्री; दुकानदार को ₹17 सीधा मार्जिन"),
+ # --- News (trending_news) — 18 राज्यों में भारी बारिश अलर्ट (in-house 29अग; monsoon, actionable, non-bait). FSSAI लाल-निशान backup (also_shown). ---
+ dict(i=8, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="बारिश अलर्ट",
+   price='<span class="news">18 राज्यों में भारी बारिश-आंधी का अलर्ट</span>',
+   sub='दिल्ली, UP, बिहार, MP, झारखंड, बंगाल समेत 18 राज्यों में 80–90 किमी/घंटा आंधी; झारखंड में 3 सितंबर तक · <b class="delta">माल भीगने का खतरा</b>',
+   l1="क्यों ज़रूरी", v1="नमी से आटा-चीनी-नमक-दाल-मसाले जल्दी खराब; बिजली गुल रहने से दूध-पनीर-ठंडे पेय बिगड़ेंगे",
+   l2="क्या करें", v2="बोरियां लकड़ी के पटरों पर व दीवार से हटाकर रखें; मोमबत्ती-माचिस-छाता-चायपत्ती सामने रखें"),
 ]
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
 html,body{{margin:0;padding:0;width:1080px;height:1920px;overflow:hidden;font-family:'Nirmala UI','Segoe UI',sans-serif;}}
