@@ -4201,6 +4201,86 @@
      "label": "मिलावटखोरों पर छापे 5.61 करोड़ जब्त (in-house 28अग) — SKIPPED as raid/fraud/seizure bait per SKIP-ALWAYS"
     }
    ]
+  },
+  {
+   "date": "2026-08-29",
+   "_note": "Fresh full run — all 3 stories + entry badges republished live (update_story x3 HTTP-ok + update_story_entry_badges 3/3, actor Harsh Shrivastava). SLIDE-COUNT EXPERIMENT (day 1/5, 2026-08-29..09-02): Mandi=3 (no qualifying 4th — in-house commodity has no measurable LR and MP teji_mandi are survey posts failing body-verify for a concrete Rs figure; not padded), FMCG=4 (4th=Ghadi LR3.94 >= FMCG bucket-median 1.9048, body-verified Rs75/58/17), News=1 (unchanged). Commodity = काजू तेजी (in-house मेवा 29अग RED, Rs1,140/kg 180नं, +Rs20 recent, festive+tight supply) + मटर तेजी (in-house दाल 29अग RED, Rs4,350/qtl firm, Mundra port floor Rs4,000, Canada import high) + गुड़ मंदी (in-house Samachar 29अग GREEN, -Rs200 -> Rs6,600-6,700/qtl, sugar govt-crackdown, weak lifting) = 2 RED + 1 GREEN (balance). सोया तेल SKIPPED (over-covered + सोया used 27अग same मंदी direction). FMCG top-4 by LR desc after news_id(12d)+brand(7d) dedup + body-verify across segments: Nyel shampoo 1+1 (Consumer LR4.60, MRP489/800ml) + Jolly Rancher lollipops (Retailer LR4.39, 5 units+Colgate paste Rs30 free, MRP180/135/Rs45) + DOMS Triangle eraser jar (Retailer LR4.26, 5 erasers free, MRP165/125/Rs40) + Ghadi detergent (Consumer LR3.94, Venus soap Rs10 free, MRP75/58/Rs17). Category spread hair/candy/stationery/detergent (no oral-care). Coca-Cola (LR4.39) SWAPPED — garbled body, no MRP. BLOCKED 7d brand dedup: santoor/close-up/sweet-night/ankit-wafer/vim/sesa/colgate/apsara-pencil/cadbury/navratna etc. News = 18 राज्यों में भारी बारिश-आंधी अलर्ट (in-house 29अग deeab424; monsoon/actionable/non-bait, माल भीगने से बचाएं); FSSAI लाल-निशान (4a5b22cd) held as also_shown backup. Slides composited via kc-card-render.py, QC'd (contact + full-size read of card_8 barish = tallest 2-line-headline card, no overlap); cards 1/2/3 shrunk to 920px to clear 1MB nginx cap. Badges = curved-banner FS130 (काजू/तेजी, लॉलीपॉप/5 फ्री [FMCG badge uses real Jolly Rancher D2R product photo], बारिश/अलर्ट); radial clearance 340/347/346 <=448, PN alpha verified RGBA transparent ring. Push scheduled 16:30 IST campaign_id 1n21pci (HTTP 200); deep_links verbatim from spec (story_ids 51f7efb8/a93e34ab/16c9eaae). NO Slack DM (spec Step 12c). recurring ~1dng34j untouched (operator-paused).",
+   "picks": {
+    "mandi_bhav": [
+     {
+      "news_id": "83ee6c49-b76d-4d62-aa5d-5025ed696e30",
+      "brand": "kaju",
+      "direction": "तेजी",
+      "label": "काजू तेजी +₹20 → ₹1,140/किलो (180 नं); त्योहारी मांग तेज, आपूर्ति तंग (in-house मेवा 29अग RED, slide1)"
+     },
+     {
+      "news_id": "73f63a51-2389-4e53-985e-fc1b05a07afd",
+      "brand": "matar",
+      "direction": "तेजी",
+      "label": "मटर तेजी → ₹4,350/क्विंटल मजबूत; मुंदड़ा पोर्ट फ्लोर ₹4,000, कनाडा आयात महंगा (in-house दाल 29अग RED, slide2)"
+     },
+     {
+      "news_id": "f66f5215-5ef5-4ad3-885d-daa7b2e5e7b7",
+      "brand": "gud",
+      "direction": "मंदी",
+      "label": "गुड़ मंदी −₹200 → ₹6,600–6,700/क्विंटल; चीनी सरकारी सख्ती, उठाव कमजोर (in-house Samachar 29अग GREEN, slide3)"
+     }
+    ],
+    "fmcg": [
+     {
+      "news_id": "ad8dafb0-7640-4d93-9aa6-716d6ad80823",
+      "brand": "nyel",
+      "direction": "scheme",
+      "label": "Nyel शैम्पू 1+1, MRP ₹489, 800ml पंप (Consumer Scheme, LR4.60, slide1)"
+     },
+     {
+      "news_id": "0dc9809b-096c-4998-ab9a-b54e7ffa45b1",
+      "brand": "jolly-rancher",
+      "direction": "scheme",
+      "label": "Jolly Rancher लॉलीपॉप — 5 नग + कोलगेट पेस्ट ₹30 फ्री; MRP ₹180/खरीद ₹135/₹45 (Retailer Scheme, LR4.39, slide2)"
+     },
+     {
+      "news_id": "1ef71094-fde9-4a32-8d91-a82da7c7322f",
+      "brand": "doms",
+      "direction": "scheme",
+      "label": "DOMS ट्रायंगल इरेज़र जार — 5 रबर फ्री; MRP ₹165/खरीद ₹125/₹40 (Retailer Scheme, LR4.26, slide3)"
+     },
+     {
+      "news_id": "5f7149e9-915a-4a9e-ac9e-faa7b51cccc9",
+      "brand": "ghadi",
+      "direction": "scheme",
+      "label": "घड़ी डिटर्जेंट — वीनस साबुन ₹10 फ्री; MRP ₹75/खरीद ₹58/₹17 (Consumer Scheme, LR3.94, EXPERIMENT 4th slide, slide4)"
+     }
+    ],
+    "trending_news": [
+     {
+      "news_id": "deeab424-691f-4cdb-ac9f-1b641d041fcf",
+      "brand": "barish-alert",
+      "direction": "news",
+      "label": "18 राज्यों में भारी बारिश-आंधी अलर्ट — माल भीगने से बचाएं (in-house 29अग, monsoon, non-bait, slide1)"
+     }
+    ]
+   },
+   "also_shown": [
+    {
+     "tag": "fmcg",
+     "news_id": "4f20ef79-b4ba-4fac-86f2-0b5660d81e73",
+     "brand": "coca-cola",
+     "label": "Coca-Cola 2L (Consumer LR4.39) — SWAPPED: garbled body, no clear MRP/price"
+    },
+    {
+     "tag": "trending_news",
+     "news_id": "4a5b22cd-a9f9-4bb6-9430-87b62e32b998",
+     "brand": "fssai-red-label",
+     "label": "FSSAI लाल चेतावनी निशान (news backup, not published — बारिश chosen for actionability)"
+    },
+    {
+     "tag": "mandi_bhav",
+     "news_id": "d01e260a-733c-432f-9906-2496ac876dee",
+     "brand": "soya-tel",
+     "label": "सोया/सरसों तेल — SKIPPED: over-covered + सोया used 27अग same मंदी direction"
+    }
+   ]
   }
  ],
  "brand_dedup_window_days": 7

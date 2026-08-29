@@ -1,15 +1,43 @@
 {
-  "experiment": "slide-count-2026-08-29",
-  "protocol": "experiments/slide-count-2026-08-29.md",
-  "status": "ACTIVE",
-  "window": ["2026-08-29", "2026-09-02"],
-  "baseline_window": ["2026-08-23", "2026-08-28"],
-  "conclusion_dm_date": "2026-09-02",
-  "decision_date": "2026-09-03",
-  "slack_target": "U09K92G1U1X",
-  "mixpanel_project": 2551336,
-  "lr_bookmark": 90465031,
-  "hypothesis": "A 4th slide on Mandi/FMCG (only when body-verify + LR>=bucket-median) grows consumption without hurting entry / deep-completion / D1 return.",
-  "primary_guardrails": ["deep_completion", "d1_return"],
-  "days": []
+ "experiment": "slide-count-2026-08-29",
+ "protocol": "experiments/slide-count-2026-08-29.md",
+ "status": "ACTIVE",
+ "window": [
+  "2026-08-29",
+  "2026-09-02"
+ ],
+ "baseline_window": [
+  "2026-08-23",
+  "2026-08-28"
+ ],
+ "conclusion_dm_date": "2026-09-02",
+ "decision_date": "2026-09-03",
+ "slack_target": "U09K92G1U1X",
+ "mixpanel_project": 2551336,
+ "lr_bookmark": 90465031,
+ "hypothesis": "A 4th slide on Mandi/FMCG (only when body-verify + LR>=bucket-median) grows consumption without hurting entry / deep-completion / D1 return.",
+ "primary_guardrails": [
+  "deep_completion",
+  "d1_return"
+ ],
+ "days": [
+  {
+   "date": "2026-08-29",
+   "mandi_slides": 3,
+   "fmcg_slides": 4,
+   "news_slides": 1,
+   "mandi_4th": null,
+   "fmcg_4th": {
+    "news_id": "5f7149e9-915a-4a9e-ac9e-faa7b51cccc9",
+    "brand": "ghadi",
+    "LR": 3.944,
+    "bucket_median_LR": 1.9048
+   },
+   "reason": "FMCG->4: rich fresh supply, 4th (Ghadi LR3.94) clears body-verify (MRP75/58, Rs17 margin, Venus soap free) AND LR>=FMCG bucket-median 1.9048; top-4 all fresh after news_id(12d)+brand(7d) dedup (Nyel 4.60, Jolly Rancher 4.39, DOMS 4.26, Ghadi 3.94), category-spread hair/candy/stationery/detergent. Mandi stays 3: no qualifying 4th — today's in-house commodity posts carry no measurable LR in bookmark 90465031, and MP teji_mandi are low-quality survey posts (कमोडिटी सर्वे, no concrete Rs) that fail body-verify; not padded. News stays 1 per protocol.",
+   "metrics_asof": "deferred",
+   "metrics": {
+    "_note": "Per-day metric snapshot (deep-completion, slide-4 LR, CTA CTR, entry rate, D1 return for 2026-08-28) DEFERRED to the day-5 (2026-09-02) conclusion computation, where window-vs-baseline deltas are computed in one pass and DM'd to U09K92G1U1X. Day-1 logs the slide-count decision (the reproducibility-critical record); no 4-slide day exists before today to compare."
+   }
+  }
+ ]
 }
