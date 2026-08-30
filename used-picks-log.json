@@ -4281,6 +4281,93 @@
      "label": "सोया/सरसों तेल — SKIPPED: over-covered + सोया used 27अग same मंदी direction"
     }
    ]
+  },
+  {
+   "date": "2026-08-30",
+   "_note": "Fresh full run — all 3 stories + entry badges republished live (update_story x3 HTTP-ok live:true + update_story_entry_badges 3/3, actor Harsh Shrivastava). SLIDE-COUNT EXPERIMENT day 2/5 (2026-08-29..09-02): BOTH flex buckets -> 4. Mandi=4 (4th=लाल मिर्च UGC teji_mandi LR7.98 >= median 2.9697, body-verified 230->250-260/kg concrete; a RED balancing 2 GREEN+2 RED), FMCG=4 (4th=Rin Consumer LR4.18 >= FMCG median 1.9758, body-verified 40g extra free MRP60/46/Rs14), News=1 (unchanged). Commodity = पाम तेल तेजी (in-house 30अग तेल बाजार, RED, +Rs50 -> Rs12,000/qtl Kandla CPO) + हल्दी मंदी (in-house 30अग Samachar, GREEN, -Rs300 -> Rs18,500/qtl Erode) + मखाना मंदी (in-house 30अग मसाला, GREEN, -Rs50 -> Rs700-1,250/kg) + लाल मिर्च तेजी (UGC LR7.98, RED, Rs250-260/kg) = 2 RED + 2 GREEN balance. सोया तेल SKIPPED (over-covered). FMCG top-4 by LR desc after news_id(12d)+brand(7d) dedup + body-verify across segments: Haldiram Navratan namkeen (Retailer LR4.44, Rs5 peti+1 ladi free 42+1) + Dettol (product_change LR4.38, Rs91.33->Rs83.03 200ml genuine price cut) + Eno lemon jar (Retailer LR4.31, 100+2 free, MRP900/740/Rs160) + Rin soap (Consumer LR4.18, 40g extra free, MRP60/46/Rs14). Category spread namkeen/hygiene/health/detergent (no oral-care, no repeats from 29अग hair/candy/stationery/detergent brands). SWAPPED: Godrej-no1 soap LR6.45 (body only '4 पर 1 फ्री', NO Rs figure - fails Step-6), Sundar soanpapdi LR4.41 (classified product_change but body is festive-margin pitch, no Rs X->Y change - segment/body mismatch). BLOCKED 7d brand dedup: lux, sesa, all-out, coca-cola, vim, closeup, santoor, ghadi, jolly-rancher, doms, cadbury, dabur-red, navratna(oil) etc. News = छोटे दुकानदारों के लिए UPI मुफ्त (in-house 30अग c4dcebc6; PCI confirmation, shopkeeper-relevant, concrete 94%/85%, non-bait); गांवों में खरीदारी लौटी (60d8e2be) held as also_shown backup. Slides composited via kc-card-render.py, QC'd (contact sheet + full-size read of card_9 UPI = tallest 3-line-grid card, no overlap; card_2/card_4 shrunk to 820px to clear 1MB nginx cap). Badges = curved-banner FS130 (लाल मिर्च/तेजी, ईनो जार/2 फ्री [FMCG badge uses real Eno D2R product photo], UPI/मुफ्त); radial clearance 340/349/364 <=448, PN alpha verified RGBA transparent ring (CDN webp RGBA confirmed). Push scheduled 16:30 IST campaign_id 3e48r2m (HTTP 200, lead 416min); deep_links verbatim from spec (story_ids 51f7efb8/a93e34ab/16c9eaae). NO Slack DM (spec Step 12c). recurring ~1dng34j untouched (operator-paused).",
+   "picks": {
+    "mandi_bhav": [
+     {
+      "news_id": "4698d91b-7cf0-4bb0-9e51-69339c38d435",
+      "brand": "pam-tel",
+      "direction": "तेजी",
+      "label": "पाम तेल तेजी +₹50 → ₹12,000/क्विंटल; कांदला CPO, आयातकों की बिकवाली कमजोर"
+     },
+     {
+      "news_id": "1cff0a70-8e80-479f-abc8-7fe1d830657e",
+      "brand": "haldi",
+      "direction": "मंदी",
+      "label": "हल्दी मंदी -₹300 → ₹18,500/क्विंटल; ईरोड गट्ठा, मांग कमजोर+मुनाफावसूली"
+     },
+     {
+      "news_id": "b50cb7a1-9e06-46fe-aa86-3f710bc93eb2",
+      "brand": "makhana",
+      "direction": "मंदी",
+      "label": "मखाना मंदी -₹50 → ₹700–1,250/किलो; मेवा-मसालों में मुनाफावसूली"
+     },
+     {
+      "news_id": "9930a0fe-6b98-49b8-8797-8c490f041cd7",
+      "brand": "lal-mirch",
+      "direction": "तेजी",
+      "label": "लाल मिर्च तेजी +₹20–30 → ₹250–260/किलो (UGC teji_mandi LR7.98, experiment 4th)"
+     }
+    ],
+    "fmcg": [
+     {
+      "news_id": "c5163437-1feb-4ab3-92e8-e64e6a2aea8a",
+      "brand": "haldiram",
+      "segment": "Retailer Scheme",
+      "LR": 4.4444,
+      "label": "हल्दीराम नवरत्न मिक्सचर नमकीन; ₹5 पेटी(42) पर 1 लड़ी फ्री 42+1"
+     },
+     {
+      "news_id": "e07207c3-96ea-4a77-9d6f-a1d41a290110",
+      "brand": "dettol",
+      "segment": "fmcg_product_change",
+      "LR": 4.3807,
+      "label": "डेटॉल एंटीसेप्टिक 200ml ₹91.33→₹83.03 (₹8.30 सस्ता)"
+     },
+     {
+      "news_id": "85360351-a406-4d37-a3c4-47c608e1b94e",
+      "brand": "eno",
+      "segment": "Retailer Scheme",
+      "LR": 4.3097,
+      "label": "ईनो लेमन जार 100+2 नग फ्री; MRP ₹900/खरीद ₹740/₹160 मार्जिन"
+     },
+     {
+      "news_id": "ef65d608-ecc3-4567-8075-4fcee56da527",
+      "brand": "rin",
+      "segment": "Consumer Scheme",
+      "LR": 4.1803,
+      "label": "रिन डिटर्जेंट साबुन 40g एक्स्ट्रा फ्री; MRP ₹60/खरीद ₹46/₹14 मार्जिन (experiment 4th)"
+     }
+    ],
+    "trending_news": [
+     {
+      "news_id": "c4dcebc6-1192-4a22-b55c-7c15e99a4fb2",
+      "brand": "upi-free",
+      "direction": "news",
+      "label": "छोटे दुकानदारों के लिए UPI मुफ्त; PCI पुष्टि, 94% दुकानदार UPI पर, कोई शुल्क नहीं"
+     }
+    ]
+   },
+   "also_shown": [
+    {
+     "news_id": "aeff8f79-ae01-4a8d-b82a-475d5f3d2292",
+     "brand": "godrej-no1",
+     "label": "गोदरेज साबण 4+1 फ्री (Consumer LR6.45) — SWAPPED: body only '4 पर 1 फ्री', no ₹ figure (Step-6 fail)"
+    },
+    {
+     "news_id": "a8e92edc-3845-42b8-90b3-aba1e5651771",
+     "brand": "sundar-soanpapdi",
+     "label": "Sundar सोनपापड़ी 200g MRP80 (product_change LR4.41) — SWAPPED: segment↔body mismatch, no ₹X→₹Y change"
+    },
+    {
+     "news_id": "60d8e2be-eaa9-4abb-9109-1523c7651cd4",
+     "brand": "rural-demand",
+     "label": "गांवों में खरीदारी लौटी, दोपहिया बिक्री +20% (news backup, also_shown)"
+    }
+   ]
   }
  ],
  "brand_dedup_window_days": 7

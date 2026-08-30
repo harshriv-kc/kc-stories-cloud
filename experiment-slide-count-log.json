@@ -38,6 +38,29 @@
    "metrics": {
     "_note": "Per-day metric snapshot (deep-completion, slide-4 LR, CTA CTR, entry rate, D1 return for 2026-08-28) DEFERRED to the day-5 (2026-09-02) conclusion computation, where window-vs-baseline deltas are computed in one pass and DM'd to U09K92G1U1X. Day-1 logs the slide-count decision (the reproducibility-critical record); no 4-slide day exists before today to compare."
    }
+  },
+  {
+   "date": "2026-08-30",
+   "mandi_slides": 4,
+   "fmcg_slides": 4,
+   "news_slides": 1,
+   "mandi_4th": {
+    "news_id": "9930a0fe-6b98-49b8-8797-8c490f041cd7",
+    "brand": "lal-mirch",
+    "LR": 7.9777,
+    "bucket_median_LR": 2.9697
+   },
+   "fmcg_4th": {
+    "news_id": "ef65d608-ecc3-4567-8075-4fcee56da527",
+    "brand": "rin",
+    "LR": 4.1803,
+    "bucket_median_LR": 1.9758
+   },
+   "reason": "Both flex buckets -> 4 (rich qualifying supply, opportunistic). Mandi 4th = लाल मिर्च (UGC teji_mandi LR7.9777 >= teji_mandi median 2.9697; body-verified concrete 230->250-260/kg), a RED that balances the 2 GREEN (हल्दी/मखाना) + 1 RED (पाम तेल) in-house picks. FMCG 4th = Rin (Consumer LR4.1803 >= FMCG median 1.9758; body-verified 40g extra free, MRP60/46/Rs14). FMCG top-4 by LR desc after news_id(12d)+brand(7d) dedup + body-verify: Haldiram 4.44 / Dettol 4.38 / Eno 4.31 / Rin 4.18; category spread namkeen/hygiene/health/detergent. SWAPPED higher-LR fails: Godrej-no1 LR6.45 (body only '4+1 फ्री', no Rs figure) + Sundar soanpapdi LR4.41 (product_change segment but body is festive-margin pitch, no Rs X->Y). teji_mandi UGC today DID carry concrete Rs (unlike day-1 survey posts), so a qualifying Mandi 4th existed. News stays 1 per protocol.",
+   "metrics_asof": "deferred",
+   "metrics": {
+    "_note": "Per-day metric snapshot (deep-completion, slide-4 LR, CTA CTR, entry rate, D1 return) DEFERRED to the day-5 (2026-09-02) conclusion, computed window-vs-baseline in one pass and DM'd to U09K92G1U1X. Day 2/5: both buckets at 4 (day-1 was Mandi=3/FMCG=4)."
+   }
   }
  ]
 }

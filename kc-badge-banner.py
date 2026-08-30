@@ -123,10 +123,10 @@ def render(tag, cfg, grad, bottom):
 # of the white ring while staying uniform. ALWAYS re-check max_text_radius <= ~438 (white-ring inner 454) after
 # changing copy — the widest line caps FS.
 FS=130   # 2026-08-25: dropped 138->130, "तूर दाल" upper line grazed ring at 455 (>448) at 138
-# 2026-08-27: mandi=चीनी/सस्ती(chini मंदी, govt crackdown), fmcg=कैडबरी/1 फ्री(Cadbury cake outer+1 free), tn=सस्ता कर्ज/4% ब्याज(KCC ₹5 लाख govt loan scheme). tn SWAPPED from फोन से/ऑर्डर (DigiDukaan/ONDC = competitor). All 2-line short hooks; verify radial clearance after render.
-DAY=[dict(i=1,src="subjfull_1.png",lines=["काजू","तेजी"],fs=FS),
-     dict(i=2,src="subjfull_2.png",lines=["लॉलीपॉप","5 फ्री"],fs=FS),
-     dict(i=3,src="subjfull_3.png",lines=["बारिश","अलर्ट"],fs=FS)]
+# 2026-08-30: mandi=लाल मिर्च/तेजी (mirch तेजी, UGC LR7.98), fmcg=ईनो जार/2 फ्री (Eno 100+2 free, real D2R ENO jar photo), tn=UPI/मुफ्त (UPI stays free for small shopkeepers). All 2-line short hooks; verify radial clearance after render.
+DAY=[dict(i=1,src="subjfull_1.png",lines=["लाल मिर्च","तेजी"],fs=FS),
+     dict(i=2,src="subjfull_2.png",lines=["ईनो जार","2 फ्री"],fs=FS),
+     dict(i=3,src="subjfull_3.png",lines=["UPI","मुफ्त"],fs=FS)]
 if __name__=="__main__":
     render("D", DAY, TALL, 190)   # bottom raised for FS130 + wide tn bottom line: seats block higher in the circle's wider zone to clear the ring
     # 2026-07-14 crop fix: operator flagged text CROPPING at the ring. Root cause — the
