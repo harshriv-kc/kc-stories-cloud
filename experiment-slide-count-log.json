@@ -61,6 +61,29 @@
    "metrics": {
     "_note": "Per-day metric snapshot (deep-completion, slide-4 LR, CTA CTR, entry rate, D1 return) DEFERRED to the day-5 (2026-09-02) conclusion, computed window-vs-baseline in one pass and DM'd to U09K92G1U1X. Day 2/5: both buckets at 4 (day-1 was Mandi=3/FMCG=4)."
    }
+  },
+  {
+   "date": "2026-08-31",
+   "mandi_slides": 4,
+   "fmcg_slides": 4,
+   "news_slides": 1,
+   "mandi_4th": {
+    "news_id": "3c0e1744-7ffc-400c-aa82-6cbe7272d1f1",
+    "brand": "tur",
+    "LR": 9.0373,
+    "bucket_median_LR": 3.0417
+   },
+   "fmcg_4th": {
+    "news_id": "ce0ac080-a793-406f-bd13-a40506326a44",
+    "brand": "kurkure",
+    "LR": 3.3159,
+    "bucket_median_LR": 2.1127
+   },
+   "reason": "Both flex buckets -> 4 (rich qualifying supply, opportunistic; day 3/5, matches days 1-2). Mandi 4th = तूर दाल मंदी (UGC teji_mandi LR9.0373 >= teji_mandi median 3.0417; body-verified concrete बड़ा दाना ₹90->₹80/kg, मांग घटी), a GREEN balancing 2 RED (मसूर/बासमती in-house तेजी) + 1 GREEN (खाद्य तेल in-house मंदी) -> 2R+2G. In-house commodity posts carry no measurable LR in bookmark 90465031 so the 4th necessarily comes from the UGC teji_mandi pool (as days 1-2). FMCG 4th = Kurkure puffcorn (product_change LR3.3159 >= FMCG median 2.1127; body-verified genuine change 12->14 नग per ladi, खरीद ₹50->₹60). FMCG top-4 by LR desc after news_id(12d)+brand(7d) dedup + body-verify: Pond's 6.77 / Xpert 5.48 / Lookman 4.22 / Kurkure 3.32; category spread personal/home/personal/food + card-type variety. SWAPPED higher-LR fails: Fortune Rice LR4.81 (product_change but body=margin pitch + stale rakshabandhan ₹10, no ₹X->₹Y), Britannia Tiger LR4.10 (body 'वजन कम देखें वीडियो' no number), Parle Fab LR3.44 (margin pitch), Patanjali Dant Kanti LR3.59 (dropped for spread). News stays 1 per protocol.",
+   "metrics_asof": "deferred",
+   "metrics": {
+    "_note": "Per-day metric snapshot DEFERRED to the day-5 (2026-09-02) conclusion, computed window-vs-baseline in one pass and DM'd to U09K92G1U1X. Day 3/5: all three window days so far went Mandi=4/FMCG=4 except day-1 (Mandi=3/FMCG=4)."
+   }
   }
  ]
 }

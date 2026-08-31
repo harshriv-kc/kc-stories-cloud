@@ -4368,6 +4368,93 @@
      "label": "गांवों में खरीदारी लौटी, दोपहिया बिक्री +20% (news backup, also_shown)"
     }
    ]
+  },
+  {
+   "date": "2026-08-31",
+   "_note": "Fresh full run — all 3 stories + entry badges republished live (update_story x3 HTTP-ok live:true + update_story_entry_badges 3/3, actor Harsh Shrivastava). SLIDE-COUNT EXPERIMENT day 3/5 (2026-08-29..09-02): BOTH flex buckets -> 4. Mandi=4 (4th=तूर दाल UGC teji_mandi LR9.0373 >= median 3.0417, body-verified बड़ा दाना ₹90->₹80/kg concrete; a GREEN balancing 2 RED+2 GREEN), FMCG=4 (4th=Kurkure product_change LR3.3159 >= FMCG median 2.1127, body-verified 12->14 नग / खरीद ₹50->₹60 concrete count+price change), News=1 (unchanged). Commodity = मसूर तेजी (in-house 31अग दाल बाजार, RED, ₹6,875-6,900/qtl पाइपलाइन खाली) + बासमती चावल तेजी (in-house 31अग चावल बाजार, RED, +₹500 -> ₹10,100-10,200/qtl 1401 स्टीम) + खाद्य तेल मंदी (in-house 31अग तेल बाजार, GREEN, ₹100-200 नरम; सरसों तिलहन -150, कच्चा पाम -100) + तूर दाल मंदी (UGC teji_mandi LR9.04, GREEN, ₹90->₹80/kg) = 2 RED + 2 GREEN balance. FMCG top-4 by LR desc after news_id(12d)+brand(7d) dedup + body-verify across segments: Pond's Bright Beauty face wash (Retailer LR6.77, ₹20 MRP 12+1 free) + Xpert dishwash bar (Consumer LR5.48, 4 पर 2 फ्री) + Lookman-E-Hayat tel (Consumer LR4.22, 11+1 free ayurvedic) + Kurkure puffcorn (product_change LR3.32, 12->14 नग खरीद ₹50->₹60). Category spread personal/home/personal/food + card-type variety (2 offer-pill + 1 arrow product_change). REJECTED/SWAPPED: Fortune Rice LR4.81 (product_change but body=margin-pitch + stale rakshabandhan ₹10, no clean ₹X->₹Y - Step6 fail), Britannia Tiger LR4.10 (body 'वजन कम, देखें वीडियो' no concrete number - Step6 fail), Parle Fab LR3.44 (margin pitch not a change), 'ग्राहक हो तो फ्री' LR4.32 (vague no-brand no-number), Patanjali Dant Kanti LR3.59 (dropped for category spread -> also_shown). BLOCKED 7d brand dedup: lux, cadbury, all-out, sesa, colgate, coca-cola, dabur-red, ghadi, eno, dettol, nyel, jolly-rancher, doms, santoor etc. News = जन औषधि केंद्र से कमाई (in-house 31अग Pan India Schemes 6a22b774; 20% margin + 15% incentive up to ₹15,000/mo, ₹20,000-50,000/mo, non-bait scheme); LPG सिलेंडर 1 सितंबर + FMCG मार्जिन held as backups. Slides composited via kc-card-render.py, QC'd (contact sheet + full-size read of card_9 जन औषधि = tallest 3-line-grid card, no overlap; card_9 shrunk to 850px to clear 1MB nginx cap). Badges = curved-banner FS130 (बासमती/तेजी, पॉन्ड्स/12+1 फ्री [FMCG badge uses real Pond's D2R product photo], जन औषधि/कमाई); radial clearance 340/406/378 <=448, PN alpha verified transparent inner ring on checkerboard. Push scheduled 16:30 IST campaign_id ~qd3hkg (HTTP 200, lead 412min); deep_links verbatim from spec (story_ids 51f7efb8/a93e34ab/16c9eaae). NO Slack DM (spec Step 12c overrides the summary's DM line; day-3 not the day-5 experiment conclusion). recurring ~1dng34j untouched (operator-paused).",
+   "picks": {
+    "mandi_bhav": [
+     {
+      "news_id": "f0f65cb2-c69a-43fb-afb3-ad8baba9fb69",
+      "brand": "masoor",
+      "direction": "तेजी",
+      "label": "मसूर तेजी → देसी मसूर दिल्ली ₹6,875–6,900/क्विंटल; पाइपलाइन खाली, भाव चढ़े"
+     },
+     {
+      "news_id": "bf00a966-3edb-456f-9c43-71805dd70761",
+      "brand": "basmati",
+      "direction": "तेजी",
+      "label": "बासमती चावल तेजी +₹500 → ₹10,100–10,200/क्विंटल; 1401 स्टीम, निर्यात लिवाली"
+     },
+     {
+      "news_id": "e5e6b998-c2cd-4b49-8074-3b2970bf44d8",
+      "brand": "khadya-tel",
+      "direction": "मंदी",
+      "label": "खाद्य तेल मंदी ₹100–200 नरम; सरसों तिलहन −150 → ₹7,950-8,000, कच्चा पाम −100 → ₹12,100"
+     },
+     {
+      "news_id": "3c0e1744-7ffc-400c-aa82-6cbe7272d1f1",
+      "brand": "tur",
+      "direction": "मंदी",
+      "label": "तूर दाल मंदी → बड़ा दाना ₹90→₹80/किलो (UGC teji_mandi LR9.04, experiment 4th)"
+     }
+    ],
+    "fmcg": [
+     {
+      "news_id": "07d9bf64-97e6-4d9c-9c3b-a140adb7650a",
+      "brand": "ponds",
+      "segment": "Retailer Scheme",
+      "LR": 6.768,
+      "label": "पॉन्ड्स ब्राइट ब्यूटी फेस वॉश ₹20 MRP; 12+1 नग फ्री"
+     },
+     {
+      "news_id": "3b78f3d6-7fa9-4c30-9c54-6872cfc8cee9",
+      "brand": "xpert",
+      "segment": "Consumer Scheme",
+      "LR": 5.4795,
+      "label": "एक्सपर्ट डिशवॉश बर्तन बार; 4 पर 2 नग फ्री"
+     },
+     {
+      "news_id": "468d589b-cc96-4341-98d9-076862aceb07",
+      "brand": "lookman",
+      "segment": "Consumer Scheme",
+      "LR": 4.2173,
+      "label": "लुकमान-ए-हयात आयुर्वेदिक तेल; 11 पर 1 फ्री (11+1)"
+     },
+     {
+      "news_id": "ce0ac080-a793-406f-bd13-a40506326a44",
+      "brand": "kurkure",
+      "segment": "fmcg_product_change",
+      "LR": 3.3159,
+      "label": "कुरकुरे पफकॉर्न 12→14 नग; खरीद ₹50→₹60, मुनाफा ₹10 बरकरार (experiment 4th)"
+     }
+    ],
+    "trending_news": [
+     {
+      "news_id": "6a22b774-c62d-49a3-93bb-cf51a30ee3a5",
+      "brand": "jan-aushadhi",
+      "direction": "news",
+      "label": "जन औषधि केंद्र से कमाई; 20% मार्जिन + 15% इनाम (₹15,000/माह तक), ₹20,000–50,000 मासिक"
+     }
+    ]
+   },
+   "also_shown": [
+    {
+     "news_id": "fd7eb261-85f0-49f5-afa1-8c7ffc2d7565",
+     "brand": "fortune",
+     "label": "Fortune Rice 5kg (product_change LR4.81) — SWAPPED: body=margin pitch + stale rakshabandhan ₹10, no clean ₹X→₹Y (Step-6 fail)"
+    },
+    {
+     "news_id": "3c4cd476-49fe-494f-bb57-c6dcf03088bf",
+     "brand": "britannia",
+     "label": "Britannia Tiger ₹5 (product_change LR4.10) — SWAPPED: body 'वजन कम, देखें वीडियो', no concrete number (Step-6 fail)"
+    },
+    {
+     "news_id": "fd256a21-308f-4230-b905-52ad34b3d5ab",
+     "brand": "patanjali-dant-kanti",
+     "label": "Patanjali Dant Kanti ₹60 + ₹10 साबुन फ्री (Retailer LR3.59) — dropped for category spread (backup)"
+    }
+   ]
   }
  ],
  "brand_dedup_window_days": 7

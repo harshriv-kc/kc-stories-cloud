@@ -72,59 +72,60 @@ def b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-# ---- EDIT THIS PER DAY: 4 commodity + 4 FMCG + 1 news ----  (2026-08-30 · slide-count experiment day 2: Mandi→4 + FMCG→4)
+# ---- EDIT THIS PER DAY: 4 commodity + 4 FMCG + 1 news ----  (2026-08-31 · slide-count experiment day 3: Mandi->4 + FMCG->4, News=1)
 CARDS = [
- # --- Commodity (mandi_bhav) — 2 तेजी/RED + 2 मंदी/GREEN (balance). पाम तेल / हल्दी / मखाना (in-house 30अग) + लाल मिर्च (UGC teji_mandi LR7.98, experiment 4th). ---
- dict(i=1, label="मंडी भाव", stripe=RED, headline="पाम तेल",
-   price=f'{tri("up",RED)}₹12,000<span class="unit">/क्विंटल</span>',
-   sub=f'कच्चा पाम तेल कांदला में ₹50 चढ़कर ₹12,000/क्विंटल; आयातकों की बिकवाली कमजोर, साबुन उद्योग की मांग निकली · <b class="delta" style="color:{RED}">₹50 तेजी</b>',
-   l1="क्यों", v1="आयात करने वालों की बिकवाली कमजोर पड़ी; साबुन बनाने वालों की खरीद से एसिड ऑयल भी ₹50 चढ़ा",
-   l2="क्या करें", v2="त्योहारी खपत का पाम व खाद्य तेल जरूरी माल अभी उठा लें; आगे मजबूती के आसार"),
- dict(i=2, label="मंडी भाव", stripe=GREEN, headline="हल्दी",
-   price=f'{tri("down",GREEN)}₹18,500<span class="unit">/क्विंटल</span>',
-   sub=f'हल्दी ईरोड गट्ठा ₹300 टूटकर ₹18,500–18,600/क्विंटल; मांग कमजोर और मुनाफावसूली से मसालों में नरमी · <b class="delta" style="color:{GREEN}">₹300 गिरावट</b>',
-   l1="क्यों", v1="मांग कमजोर पड़ने और मुनाफावसूली निकलने से किराना जिंसों में नरमी आई",
-   l2="क्या करें", v2="सस्ती हल्दी का त्योहारी स्टॉक अभी भर लें; भाव नीचे, आगे चढ़ने की गुंजाइश"),
- dict(i=3, label="मंडी भाव", stripe=GREEN, headline="मखाना",
-   price=f'{tri("down",GREEN)}₹700–1,250<span class="unit">/किलो</span>',
-   sub=f'मखाना ₹50 घटकर ₹700–1,250/किलो (क्वालिटी अनुसार); मेवा-मसालों में मुनाफावसूली, इलायची भी ₹100–150 टूटी · <b class="delta" style="color:{GREEN}">₹50 गिरावट</b>',
-   l1="क्यों", v1="मेवा-मसालों में मुनाफावसूली से नरमी; ग्राहकी हल्की पड़ने पर भाव लुढ़के",
-   l2="क्या करें", v2="त्योहार की जरूरत भर मखाना लें; बड़ा स्टॉक जल्दबाजी में न भरें"),
- dict(i=4, label="मंडी भाव", stripe=RED, headline="लाल मिर्च",
-   price=f'{tri("up",RED)}₹250–260<span class="unit">/किलो</span>',
-   sub=f'देसी सूखी साबूत लाल मिर्च 15–20 दिन में ₹230 से ₹250–260/किलो; उठाव मजबूत, आगे और तेजी के आसार · <b class="delta" style="color:{RED}">₹20–30 तेजी</b>',
-   l1="क्यों", v1="बाजार में मिर्च का उठाव मजबूत और सप्लाई टाइट; आगे भी तेजी की संभावना जताई जा रही",
-   l2="क्या करें", v2="त्योहारी मसाले की जरूरत की साबूत मिर्च अभी थमे भाव पर उठा लें"),
- # --- FMCG (fmcg) — TOP 4 by LR desc after ledger dedup (news_id 12d + 7d brand HARD) + body-verify. 4th slide (Rin LR4.18 >= FMCG median 1.9758) = slide-count experiment. Spread: namkeen/hygiene/health/detergent. ---
- #     haldiram LR4.44 (Retailer, ₹5 namkeen peti +1 ladi free 42+1), dettol LR4.38 (product_change, ₹91.33->₹83.03 200ml), eno LR4.31 (Retailer, 100+2 free, MRP900/740/₹160), rin LR4.18 (Consumer, 40g extra free, MRP60/46/₹14).
- #     SWAPPED: godrej-no1 LR6.45 (body only "4+1 फ्री", no ₹ figure — fails Step-6), sundar-soanpapdi LR4.41 (product_change segment but body is festive-margin pitch, no ₹X->₹Y change — segment↔body mismatch). BLOCKED 7d brand: lux, sesa, all-out, coca-cola, vim, closeup, santoor, ghadi, jolly-rancher, doms, cadbury, navratna(oil), dabur-red...
- dict(i=5, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="हल्दीराम नमकीन",
-   price=f'<span class="offer" style="background:{SCHEME_GREEN}">पेटी पर 1 लड़ी फ्री</span>',
-   sub='हल्दीराम ₹5 वाली नवरत्न मिक्सचर नमकीन—पूरी पेटी (42 लड़ी) लेने पर 1 लड़ी फ्री (42+1=43) · <b class="delta">1 लड़ी फ्री</b>',
-   l1="स्कीम", v1="₹5 बिक्री वाली नवरत्न मिक्सचर नमकीन की पेटी पर एक लड़ी बिल्कुल फ्री",
-   l2="फायदा", v2="तेज बिकने वाला ₹5 नमकीन; हर पेटी पर एक लड़ी का सीधा फायदा"),
- dict(i=6, eyebrow="FMCG", label="प्रोडक्ट बदलाव", stripe=BLACK, headline="डेटॉल लिक्विड",
-   price='₹91.33<span class="arrow">→</span>₹83.03',
-   sub='डेटॉल एंटीसेप्टिक लिक्विड 200ml का रेट ₹8.30 घटा—MRP ₹91.33 से ₹83.03; रोज की मांग वाला भरोसेमंद ब्रांड सस्ता · <b class="delta">₹8.30 सस्ता</b>',
-   l1="बदलाव", v1="200ml डेटॉल एंटीसेप्टिक का MRP ₹91.33 से घटकर ₹83.03 हुआ",
-   l2="फायदा", v2="भरोसेमंद ब्रांड सस्ता हुआ; ग्राहक की रोज मांग, तेज बिक्री"),
- dict(i=7, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="ईनो लेमन जार",
-   price=f'<span class="offer" style="background:{SCHEME_GREEN}">जार पर 2 नग फ्री</span>',
-   sub='ईनो फ्रूट साल्ट लेमन जार—100 सैशे पर 2 नग अंदर फ्री; कुल MRP ₹900, खरीद ₹740 · <b class="delta">₹160 मार्जिन</b>',
-   l1="स्कीम", v1="लेमन ईनो जार (100 सैशे) खरीदने पर 2 नग जार के अंदर फ्री",
-   l2="फायदा", v2="₹160 डायरेक्ट मार्जिन; एसिडिटी में रोज की मांग, तेज बिक्री"),
- dict(i=8, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="रिन साबुन",
-   price=f'<span class="offer" style="background:{SCHEME_BLUE}">40g एक्स्ट्रा फ्री</span>',
-   sub='रिन डिटर्जेंट साबुन बार—हर बार पर 40 ग्राम एक्स्ट्रा फ्री; MRP ₹60, खरीद ₹46 · <b class="delta">₹14 मार्जिन</b>',
-   l1="ऑफर", v1="रिन डिटर्जेंट बार पर 40g एक्स्ट्रा साबुन बिल्कुल फ्री",
-   l2="ग्राहक को", v2="वही दाम, ज्यादा साबुन; दुकानदार को ₹14 सीधा मार्जिन"),
- # --- News (trending_news) — छोटे दुकानदारों के लिए UPI मुफ्त (in-house 30अग; shopkeeper-relevant, concrete, non-bait). गांवों में खरीदारी लौटी backup (also_shown). ---
- dict(i=9, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="UPI रहेगा मुफ्त",
-   price='<span class="news">छोटे दुकानदारों पर UPI शुल्क नहीं</span>',
-   sub='PCI की पुष्टि—आम ग्राहक और छोटे दुकानदार UPI पहले की तरह बिल्कुल मुफ्त इस्तेमाल करेंगे; देश के डिजिटल पेमेंट में UPI का हिस्सा 85% · <b class="delta">कोई शुल्क नहीं</b>',
-   l1="क्यों ज़रूरी", v1="करीब 94% छोटे दुकानदार अब UPI से पैसा ले रहे; शुल्क की अफवाहों पर विराम",
-   l2="क्या करें", v2="बेझिझक डिजिटल पेमेंट लें; खुल्ले की झंझट खत्म, दिनभर का हिसाब अपने आप"),
+ # --- Commodity (mandi_bhav) — 2 तेजी/RED + 2 मंदी/GREEN (balance). मसूर / बासमती (in-house 31अग तेजी) + खाद्य तेल (in-house मंदी) + तूर दाल (UGC teji_mandi LR9.04, experiment 4th मंदी). ---
+ dict(i=1, label="मंडी भाव", stripe=RED, headline="मसूर",
+   price=f'{tri("up",RED)}₹6,900<span class="unit">/क्विंटल</span>',
+   sub=f'देसी मसूर दिल्ली ₹6,875–6,900/क्विंटल; पाइपलाइन में माल कम और आयातित मसूर भी मजबूत, भाव चढ़े · <b class="delta" style="color:{RED}">₹75 तेजी</b>',
+   l1="क्यों", v1="पाइपलाइन में माल की कमी और विदेशी मसूर अंदरूनी मजबूत; त्योहारी दाल खपत सामने",
+   l2="क्या करें", v2="मसूर का जरूरी स्टॉक अभी उठा लें; कमी बनी रही तो भाव और चढ़ेंगे"),
+ dict(i=2, label="मंडी भाव", stripe=RED, headline="बासमती चावल",
+   price=f'{tri("up",RED)}₹10,200<span class="unit">/क्विंटल</span>',
+   sub=f'बासमती 1401 स्टीम ₹500 उछलकर ₹10,100–10,200/क्विंटल; निर्यात लिवाली तेज और तैयार स्टॉक सीमित · <b class="delta" style="color:{RED}">₹500 तेजी</b>',
+   l1="क्यों", v1="निर्यातकों की चौतरफा लिवाली और मंडियों में तैयार बासमती का सीमित स्टॉक",
+   l2="क्या करें", v2="पुराना स्टॉक फायदे में; नया माल जरूरत भर थोड़ा-थोड़ा लें, ऊंचे भाव पर एकसाथ न भरें"),
+ dict(i=3, label="मंडी भाव", stripe=GREEN, headline="खाद्य तेल",
+   price=f'{tri("down",GREEN)}₹100–200<span class="unit">/क्विंटल नरम</span>',
+   sub=f'अधिकांश खाद्य तेल ₹100–200 नरम—सरसों तिलहन −₹150 → ₹7,950–8,000, कच्चा पाम −₹100 → ₹12,100; ग्राहकी कमजोर · <b class="delta" style="color:{GREEN}">₹100–200 गिरावट</b>',
+   l1="क्यों", v1="ग्राहकी सुस्त पड़ने से बीते हफ्ते अधिकांश खाद्य तेल नरम; विदेश में पाम तेल भी घटा",
+   l2="क्या करें", v2="त्योहारी जरूरत का तेल थमे भाव पर भर लें; आवक घटी है, बड़ी गिरावट के आसार कम"),
+ dict(i=4, label="मंडी भाव", stripe=GREEN, headline="तूर दाल",
+   price=f'{tri("down",GREEN)}₹80<span class="unit">/किलो</span>',
+   sub=f'बड़ा दाना तूर दाल ₹90 से घटकर ₹80/किलो; ग्राहक छोटे दाने को तरजीह देते हैं, मांग घटने से बड़ा दाना सस्ता · <b class="delta" style="color:{GREEN}">₹10 गिरावट</b>',
+   l1="क्यों", v1="बड़े दाने तूर की मांग कमजोर; ग्राहक ज्यादातर छोटा दाना तूर दाल लेते हैं",
+   l2="क्या करें", v2="बड़ा दाना तूर सस्ते भाव पर भर लें; भाव कभी भी दोबारा चढ़ सकता है"),
+ # --- FMCG (fmcg) — TOP 4 by LR desc after ledger dedup (news_id 12d + 7d brand HARD) + body-verify. 4th slide (Kurkure LR3.32 >= FMCG median 2.1127) = slide-count experiment. Spread: personal/home/personal/food + card-type variety. ---
+ #     ponds LR6.77 (Retailer, 12+1 MRP20), xpert LR5.48 (Consumer, 4पर2फ्री), lookman LR4.22 (Consumer, 11+1), kurkure LR3.32 (product_change, 12->14 नग / खरीद 50->60).
+ #     SWAPPED/REJECTED: fortune-rice LR4.81 (product_change but body=margin-pitch + stale rakshabandhan ₹10, no clean ₹X->₹Y), britannia-tiger LR4.10 (body "वजन कम, देखें वीडियो", no concrete number), parle-fab LR3.44 (margin pitch not a change), "ग्राहक हो तो फ्री" LR4.32 (vague no-brand no-number), patanjali-dant-kanti LR3.59 (dropped for category spread). BLOCKED 7d brand: lux, cadbury, all-out, sesa, colgate, coca-cola, dabur-red...
+ dict(i=5, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="पॉन्ड्स फेस वॉश",
+   price=f'<span class="offer" style="background:{SCHEME_GREEN}">12 पर 1 नग फ्री</span>',
+   sub='पॉन्ड्स ब्राइट ब्यूटी फेस वॉश ₹20 MRP वाला—12 नग पर 1 नग फ्री (12+1) · <b class="delta">1 नग फ्री</b>',
+   l1="स्कीम", v1="₹20 MRP पॉन्ड्स ब्राइट ब्यूटी फेस वॉश पर 12 खरीदने पर 1 नग फ्री",
+   l2="फायदा", v2="तेज बिकने वाला ₹20 फेस वॉश; हर 12 नग पर एक नग का सीधा फायदा"),
+ dict(i=6, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="एक्सपर्ट बर्तन बार",
+   price=f'<span class="offer" style="background:{SCHEME_BLUE}">4 पर 2 नग फ्री</span>',
+   sub='एक्सपर्ट डिशवॉश बर्तन बार—4 नग पर 2 नग फ्री; एक-एक कर बेचने पर बढ़िया मार्जिन · <b class="delta">2 नग फ्री</b>',
+   l1="ऑफर", v1="एक्सपर्ट बर्तन बार खरीदने पर 4 नग पर 2 नग बिल्कुल फ्री",
+   l2="ग्राहक को", v2="एक-एक कर बेचने पर दुकानदार को बढ़िया मार्जिन मिलता है"),
+ dict(i=7, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="लुकमान-ए-हयात तेल",
+   price=f'<span class="offer" style="background:{SCHEME_BLUE}">11 पर 1 फ्री</span>',
+   sub='लुकमान-ए-हयात आयुर्वेदिक तेल का पूरा मेडिसिन बॉक्स लेने पर 11 पर 1 नग फ्री (11+1) · <b class="delta">1 नग फ्री</b>',
+   l1="ऑफर", v1="लुकमान-ए-हयात आयुर्वेदिक तेल का बॉक्स लेने पर 11 पर 1 नग फ्री",
+   l2="ग्राहक को", v2="आयुर्वेदिक तेल की स्थिर मांग; हर बॉक्स पर एक नग का फायदा"),
+ dict(i=8, eyebrow="FMCG", label="प्रोडक्ट बदलाव", stripe=BLACK, headline="कुरकुरे पफकॉर्न",
+   price='12 नग<span class="arrow">→</span>14 नग',
+   sub='कुरकुरे पफकॉर्न की एक लड़ी अब 12 की जगह 14 नग; खरीद ₹50 से ₹60, बिक्री ₹60 से ₹70—मुनाफा ₹10 बरकरार · <b class="delta">2 नग ज्यादा</b>',
+   l1="बदलाव", v1="एक लड़ी में अब 14 नग (पहले 12); खरीद ₹50 से बढ़कर ₹60 हुई",
+   l2="फायदा", v2="ग्राहक को 2 नग ज्यादा; दुकानदार का ₹10 मुनाफा पहले जैसा बना रहा"),
+ # --- News (trending_news) — जन औषधि केंद्र (in-house 31अग; concrete income scheme, non-bait). LPG सिलेंडर + FMCG मार्जिन backup (also_shown). ---
+ dict(i=9, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="जन औषधि कमाई",
+   price='<span class="news">20% मार्जिन + ₹15,000 इनाम</span>',
+   sub='प्रधानमंत्री जन औषधि केंद्र—हर दवा पर 20% मार्जिन और मासिक खरीद पर 15% (₹15,000/माह तक) प्रोत्साहन; ₹20,000–50,000 मासिक कमाई संभव · <b class="delta">20% मार्जिन</b>',
+   l1="क्यों ज़रूरी", v1="दुकान के साथ जुड़ी अतिरिक्त कमाई; सस्ती जेनेरिक दवाओं की मांग तेजी से बढ़ रही",
+   l2="क्या करें", v2="B फार्मा/D फार्मा डिग्री या फार्मासिस्ट रखकर 120 वर्गफुट जगह पर ऑनलाइन आवेदन करें"),
 ]
+
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
 html,body{{margin:0;padding:0;width:1080px;height:1920px;overflow:hidden;font-family:'Nirmala UI','Segoe UI',sans-serif;}}
 .card{{width:1080px;height:1920px;position:relative;background:#FAFAF7;}}
