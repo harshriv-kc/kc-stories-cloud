@@ -4455,6 +4455,88 @@
      "label": "Patanjali Dant Kanti ₹60 + ₹10 साबुन फ्री (Retailer LR3.59) — dropped for category spread (backup)"
     }
    ]
+  },
+  {
+   "date": "2026-09-01",
+   "_note": "Fresh full run — all 3 stories + entry badges republished live (update_story x3 HTTP-ok live:true + update_story_entry_badges 3/3, actor Harsh Shrivastava). SLIDE-COUNT EXPERIMENT day 4/5 (2026-08-29..09-02): BOTH flex buckets -> 4. Mandi=4 (4th=किशमिश UGC teji_mandi LR6.8803 >= median 3.2443, body-verified concrete ₹400->₹520/kg festive; a RED -> 3 RED + 1 GREEN, acceptable non-all-red), FMCG=4 (4th=Dabur Vatika Consumer Scheme LR3.877 >= FMCG median 2.475, body-verified MRP₹190/खरीद₹142/₹48 margin + free Dabur Almond oil 45ML ₹33), News=1 (unchanged per protocol). Commodity = राइस ब्रान तेल तेजी (in-house 1सित तेल बाजार, RED, +₹200 -> ₹13,700/qtl; रिफाइंड-ब्लेंडिंग मांग, आपूर्ति घटी) + राजमा चित्रा मंदी (in-house 1सित दाल बाजार, GREEN, -₹400/500 -> ₹9,800-10,200/qtl; स्टॉकिस्ट बिकवाली + नई फसल) + गोला बुरादा तेजी (in-house 1सित मेवा बाजार, RED, +₹100 -> ₹7,300/25kg; त्योहारी हलवाई मांग) + किशमिश तेजी (UGC teji_mandi LR6.88, RED, ₹400->₹520/kg festive) = 3 RED + 1 GREEN. FMCG top-4 by LR desc after news_id(12d)+brand(7d) dedup + body-verify — all Consumer Scheme (ग्राहक ऑफर): पैरासूट एडवांस्ड जस्मीन (Consumer LR6.427, 190ML पर 45ML फ्री) + व्हिस्पर चॉइस XL (Consumer LR4.173, 33+3 पैड) + नायसिल जर्म एक्सपर्ट (Consumer LR3.936, 150g पर 50g फ्री) + डाबर वाटिका शैम्पू (Consumer LR3.877, शैम्पू पर बादाम तेल फ्री, MRP190/WS142/₹48 margin). Category spread hair-oil/feminine-hygiene/heat-powder/hair-care. All 4 body-verified with a concrete specific offer (quantity/ratio or ₹). BLOCKED by 7d brand dedup (higher/near LR skipped): xpert(HIT news_id+brand), ponds, lux, cadbury, eno, vim, sesa, coca-cola, patanjali-dant-kanti, all-out, britannia, dettol, kurkure. News = दूध ₹9 महंगा (in-house 1सित Trending News 1 b4d7e228; थोक ₹93->₹102/लीटर ~10%, खुदरा ₹110-112, market-impact non-bait; picked over Trending News 2 FMCG-small-packets which lacked a single concrete number). Slides composited via kc-card-render.py (9 cards), QC'd (contact sheet + full-size read of card_8 वाटिका = heaviest sub+2-row-grid card, headline below photo, no overlap, clears bottom CTA; cards 2/3/4 shrunk <=950px to clear ~1MB nginx cap; CDN serves <=768px anyway). Badges = curved-banner FS130 (राजमा/सस्ता [generic beans], पैरासूट/45ML फ्री [real Parachute jasmine photo], दूध/₹9 महंगा [generic milk]); radial clearance 350/413/398 <=448, PN alpha verified transparent inner ring on checkerboard, red outermost flush. Push scheduled 16:30 IST campaign_id ~jqabqk (HTTP 200, lead 413min); deep_links extracted verbatim from spec Step-12 block (decoded story_ids 51f7efb8/a93e34ab/16c9eaae verified). NO Slack DM (spec Step 12c overrides summary DM line; day-4 is not the day-5 experiment conclusion). recurring ~1dng34j untouched (operator-paused).",
+   "picks": {
+    "mandi_bhav": [
+     {
+      "news_id": "fa84df92-94f0-4ae1-aaa5-b6df5c06e27b",
+      "brand": "rice-bran",
+      "direction": "तेजी",
+      "label": "राइस ब्रान तेल तेजी +₹200 → ₹13,700/क्विंटल; रिफाइंड-ब्लेंडिंग मांग, आपूर्ति घटी"
+     },
+     {
+      "news_id": "70e70b73-77aa-4c51-84b7-bfaa3907de51",
+      "brand": "rajma",
+      "direction": "मंदी",
+      "label": "राजमा चित्रा मंदी −₹500 → ₹9,800–10,200/क्विंटल; स्टॉकिस्ट बिकवाली + नई फसल दबाव"
+     },
+     {
+      "news_id": "af2f57dd-5324-4e2a-82f8-551c95ae8d88",
+      "brand": "gola-burada",
+      "direction": "तेजी",
+      "label": "गोला बुरादा तेजी +₹100 → ₹7,300/25किलो; त्योहारी हलवाई मांग, दक्षिण आवक सीमित"
+     },
+     {
+      "news_id": "dae42a66-85ea-46bb-a72c-4140465ea410",
+      "brand": "kishmish",
+      "direction": "तेजी",
+      "label": "किशमिश तेजी ₹400→₹520/किलो (UGC teji_mandi LR6.88, experiment 4th)"
+     }
+    ],
+    "fmcg": [
+     {
+      "news_id": "8a9676fc-bc9a-4db7-81bc-58ce32a52ea6",
+      "brand": "parachute",
+      "segment": "Consumer Scheme",
+      "LR": 6.427,
+      "label": "पैरासूट एडवांस्ड जस्मीन 190ML पर 45ML फ्री"
+     },
+     {
+      "news_id": "2856fdf8-01b3-4126-8d92-237dcb7a7550",
+      "brand": "whisper",
+      "segment": "Consumer Scheme",
+      "LR": 4.1734,
+      "label": "व्हिस्पर चॉइस XL पैड; 33 पर 3 फ्री (33+3)"
+     },
+     {
+      "news_id": "5a5aec37-1988-46c1-a2c6-cb1879ecb28b",
+      "brand": "nycil",
+      "segment": "Consumer Scheme",
+      "LR": 3.9356,
+      "label": "नायसिल जर्म एक्सपर्ट 150g पर 50g फ्री"
+     },
+     {
+      "news_id": "9236e9c0-7a4c-4844-86fd-c6c13ac1bb74",
+      "brand": "dabur-vatika",
+      "segment": "Consumer Scheme",
+      "LR": 3.877,
+      "label": "डाबर वाटिका शैम्पू पर बादाम तेल 45ML(₹33) फ्री; MRP₹190/खरीद₹142/₹48 मार्जिन (experiment 4th)"
+     }
+    ],
+    "trending_news": [
+     {
+      "news_id": "b4d7e228-6ce5-4909-a55e-34a698d97947",
+      "brand": "doodh",
+      "direction": "news",
+      "label": "दूध ₹9 महंगा; थोक ₹93→₹102/लीटर (~10%), खुदरा ₹110-112; दही-पनीर-मिठाई महंगे"
+     }
+    ]
+   },
+   "also_shown": [
+    {
+     "news_id": "0d634b62-4c19-4975-9a34-bd340d818b87",
+     "brand": "kishmish-mandi",
+     "label": "किशमिश मंदी (UGC teji_mandi LR6.601, GREEN 4th candidate for balance) — SWAPPED: body has no concrete ₹ figure ('मांग कम, भाव मंदी'), Step-6 fail; किशमिश तेजी taken instead"
+    },
+    {
+     "news_id": "8b1cbfff-83fa-47b5-a57c-e4e75cc30d98",
+     "brand": "kala-namak-chawal",
+     "label": "काला नमक चावल तेजी (UGC teji_mandi LR6.627) — considered mandi 4th; body 'चावल में तेजी' no number, Step-6 fail"
+    }
+   ]
   }
  ],
  "brand_dedup_window_days": 7

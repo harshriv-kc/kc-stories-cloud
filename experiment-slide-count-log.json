@@ -84,6 +84,29 @@
    "metrics": {
     "_note": "Per-day metric snapshot DEFERRED to the day-5 (2026-09-02) conclusion, computed window-vs-baseline in one pass and DM'd to U09K92G1U1X. Day 3/5: all three window days so far went Mandi=4/FMCG=4 except day-1 (Mandi=3/FMCG=4)."
    }
+  },
+  {
+   "date": "2026-09-01",
+   "mandi_slides": 4,
+   "fmcg_slides": 4,
+   "news_slides": 1,
+   "mandi_4th": {
+    "news_id": "dae42a66-85ea-46bb-a72c-4140465ea410",
+    "brand": "kishmish",
+    "LR": 6.8803,
+    "bucket_median_LR": 3.2443
+   },
+   "fmcg_4th": {
+    "news_id": "9236e9c0-7a4c-4844-86fd-c6c13ac1bb74",
+    "brand": "dabur-vatika",
+    "LR": 3.877,
+    "bucket_median_LR": 2.475
+   },
+   "reason": "Both flex buckets -> 4 (rich qualifying supply, opportunistic; day 4/5, matches days 2-3). Mandi 4th = किशमिश तेजी (UGC teji_mandi LR6.8803 >= teji_mandi median 3.2443; body-verified concrete ₹400->₹520/kg, festive मांग). In-house commodity posts carry no measurable LR in bookmark 90465031 so the 4th comes from the UGC teji_mandi pool (as days 1-3). Direction = 3 RED (राइस ब्रान/गोला बुरादा in-house तेजी + किशमिश) + 1 GREEN (राजमा in-house मंदी); no qualifying GREEN teji_mandi 4th existed (किशमिश मंदी LR6.601 and काला-नमक चावल LR6.627 both failed Step-6 body-verify, no ₹ figure), so the top body-verified LR pick (किशमिश तेजी) taken -> 3R+1G, non-all-red, acceptable. FMCG 4th = Dabur Vatika shampoo (Consumer Scheme LR3.877 >= FMCG median 2.475; body-verified MRP₹190/WS₹142/₹48 margin + free Dabur Almond oil 45ml worth ₹33). FMCG top-4 by LR desc after news_id(12d)+brand(7d) dedup + body-verify, ALL Consumer Scheme: पैरासूट जस्मीन 6.427 (190ML+45ML free) / व्हिस्पर चॉइस XL 4.173 (33+3) / नायसिल 3.936 (150g+50g free) / डाबर वाटिका 3.877; category spread hair-oil/feminine-hygiene/heat-powder/hair-care. BLOCKED higher-LR by 7d brand or 12d news_id: Xpert 5.14 (news_id HIT + brand), Pond's 4.86 (brand), Lux 4.39/4.20 (brand), Kurkure 4.32 (brand), Dettol 3.93 (brand), Coca-Cola 5.04 (brand). News stays 1 per protocol.",
+   "metrics_asof": "deferred",
+   "metrics": {
+    "_note": "Per-day metric snapshot (deep-completion, slide-4 LR, CTA CTR, entry rate, D1 return) DEFERRED to the day-5 (2026-09-02) conclusion, computed window-vs-baseline in one pass and DM'd to U09K92G1U1X. Day 4/5: Mandi=4/FMCG=4 (matches days 2-3; day-1 was Mandi=3/FMCG=4)."
+   }
   }
  ]
 }

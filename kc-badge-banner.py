@@ -124,9 +124,9 @@ def render(tag, cfg, grad, bottom):
 # changing copy — the widest line caps FS.
 FS=130   # 2026-08-25: dropped 138->130, "तूर दाल" upper line grazed ring at 455 (>448) at 138
 # 2026-08-31: mandi=बासमती/तेजी (basmati +500 in-house), fmcg=पॉन्ड्स/12+1 फ्री (Pond's Retailer 12+1 MRP20, real D2R Pond's jar photo), tn=जन औषधि/कमाई (Jan Aushadhi 20% margin scheme). All 2-line short hooks; verify radial clearance after render.
-DAY=[dict(i=1,src="subjfull_1.png",lines=["बासमती","तेजी"],fs=FS),
-     dict(i=2,src="subjfull_2.png",lines=["पॉन्ड्स","12+1 फ्री"],fs=FS),
-     dict(i=3,src="subjfull_3.png",lines=["जन औषधि","कमाई"],fs=FS)]
+DAY=[dict(i=1,src="subjfull_1.png",lines=["राजमा","सस्ता"],fs=FS),
+     dict(i=2,src="subjfull_2.png",lines=["पैरासूट","45ML फ्री"],fs=FS),
+     dict(i=3,src="subjfull_3.png",lines=["दूध","₹9 महंगा"],fs=FS)]
 if __name__=="__main__":
     render("D", DAY, TALL, 190)   # bottom raised for FS130 + wide tn bottom line: seats block higher in the circle's wider zone to clear the ring
     # 2026-07-14 crop fix: operator flagged text CROPPING at the ring. Root cause — the
