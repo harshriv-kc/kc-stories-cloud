@@ -53,6 +53,7 @@ pn_verify.*
 badge3_*.png
 pn3_check.png
 nd_stories_kcc.json
+nd_stories*.json
 fmcg_products_contact.png
 
 # QC contact sheets (photos_contact, cards_contact, *_fix_contact — regenerated every run)
