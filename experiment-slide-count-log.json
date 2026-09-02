@@ -107,6 +107,82 @@
    "metrics": {
     "_note": "Per-day metric snapshot (deep-completion, slide-4 LR, CTA CTR, entry rate, D1 return) DEFERRED to the day-5 (2026-09-02) conclusion, computed window-vs-baseline in one pass and DM'd to U09K92G1U1X. Day 4/5: Mandi=4/FMCG=4 (matches days 2-3; day-1 was Mandi=3/FMCG=4)."
    }
+  },
+  {
+   "date": "2026-09-02",
+   "mandi_slides": 4,
+   "fmcg_slides": 4,
+   "news_slides": 1,
+   "mandi_4th": {
+    "news_id": "b09269cf-8fcf-4f07-8d3f-2911be729933",
+    "brand": "urad",
+    "LR": 5.9203,
+    "bucket_median_LR": 3.0075
+   },
+   "fmcg_4th": {
+    "news_id": "a755c7bf-5a6c-4d4f-b05b-70fbf112e220",
+    "brand": "foodwell",
+    "LR": 4.2876,
+    "bucket_median_LR": 2.3669
+   },
+   "news_ugc_extra": [],
+   "reason": "Day 5/5 (conclusion). Both flex buckets -> 4 (matches days 2-4). Mandi 4th = उड़द दाल मंदी (UGC teji_mandi LR5.9203 >= median 3.0075; body-verified concrete ₹130->₹120/kg, इस साल ज्यादा फसल), a GREEN that balances 2 in-house RED (सरसों तेल/तूर तेजी) + 1 in-house GREEN (जीरा मंदी) -> 2R+2G. In-house commodity carry no measurable LR in bookmark 90465031 so the 4th comes from the UGC teji_mandi pool (as days 1-4). REJECTED higher-LR mandi 4th: बाजरा teji_mandi LR5.949 (news_id a46bfd46) — LR-headline बाजरा but BODY is चाय +₹40/kg, Step-6 LR<->body MISMATCH (flagged for eng). FMCG 4th = फूडवेल गोल्डन खजूर (Consumer LR4.2876 >= FMCG median 2.3669; body-verified 500g 1+1 free). FMCG top-4 by LR desc after news_id(12d)+brand(7d) dedup + body-verify: क्लिनिक प्लस (Retailer LR7.5472, MRP960/WS700/₹260 margin — margin post rendered as व्यापारी स्कीम ₹260 मार्जिन pill) / लाइफबॉय (Consumer 5.7944, 100g 4+1) / इजी वॉश बार (Consumer 5.2632, 3+1 440g) / फूडवेल खजूर (Consumer 4.2876, 500g 1+1); spread hair/soap/home/food. BLOCKED higher-LR by 7d brand or 12d news_id: colgate 9.38, clinic... (taken), lux 5.42/4.24, ponds 4.77(news_id-HIT), xpert 4.76(08-31), patanjali-dant-kanti 4.49, parachute 4.03(09-01). REJECTED body-verify: चारकोल मास्क Consumer 3.84 (bare '5+1' no unit/₹). NEWS = 1: UGC-news EXTENSION ran (news flex 1-3) but 0 qualified — scan for genuine UUID published_id UGC news reposted by >=2 distinct users returned EMPTY (18h LENGTH=36 users>=2 scan; heavier 30-48h GROUP-BY scans timed out; only placeholder ids 'mandibhav'/'ugc'/'' aggregate). The repost-frequency proxy is structurally ~1 per post (each repost gets a fresh post_id AND fresh published_id), so it cannot rank genuine posts -> News=1 fallback per protocol, never padded. In-house lead news = CGTMSE बिना गिरवी कर्ज (सरकारी योजना).",
+   "metrics_asof": "2026-09-01",
+   "metrics": {
+    "_note": "Day-5 conclusion snapshot, Mixpanel project 2551336. Directional before/after (no control cohort). asof last fully-baked IST day 2026-09-01; 09-02 partial, excluded from daily/return metrics. position is 1-based (entry=pos1); last slide = pos3 (3-slide baseline) / pos4 (4-slide exp). trending_news single-slide (only pos1).",
+    "baseline_window": "2026-08-23..2026-08-28 (3-slide)",
+    "experiment_window": "2026-08-29..2026-09-02 (4-slide)",
+    "deep_completion_fmcg": {
+     "baseline": 0.7028,
+     "experiment": 0.6476,
+     "delta_pp": -5.5,
+     "n_base": "21725/30913",
+     "n_exp": "11291/17434",
+     "note": "mild dip; of users reaching slide3, 88% continue to slide4"
+    },
+    "deep_completion_mandi": {
+     "baseline": 0.8002,
+     "experiment": 0.5736,
+     "delta_pp": -22.7,
+     "rel_drop": -0.283,
+     "n_base": "21457/26815",
+     "n_exp": "8328/14519",
+     "note": "SHARP; mandi 4th slide is the main leak — of users reaching slide3 only 73% continue to slide4; -28% relative EXCEEDS the >20% rollback trigger for mandi"
+    },
+    "cta_ctr_overall": {
+     "baseline": 0.0375,
+     "experiment": 0.0293,
+     "delta_pp": -0.82,
+     "rel": -0.22,
+     "note": "largely mechanical: extra slide inflates view denominator"
+    },
+    "cta_ctr_last_slide": {
+     "baseline": 0.0222,
+     "experiment": 0.0249,
+     "delta_pp": 0.27,
+     "note": "slide4 converts fine — HIGHER than old slide3"
+    },
+    "entry_rate_per_day": {
+     "baseline": 7464,
+     "experiment": 5831,
+     "delta_rel": -0.219,
+     "note": "CONFOUNDED: fewer baked days, day-of-week swings (baseline 4892-9443/day), possible secular downtrend; not attributable to slide count with before/after alone"
+    },
+    "d1_return": {
+     "baseline": 0.1086,
+     "experiment": 0.1112,
+     "delta_pp": 0.3,
+     "n_base": "4864/44784",
+     "n_exp": "2083/18724",
+     "note": "~flat; mature cohorts only (exp = 08-29,08-30,08-31)"
+    },
+    "supply_reality": {
+     "fmcg_4slide_days": "5/5",
+     "mandi_4slide_days": "4/5 (08-29 stayed 3, no qualifying 4th)",
+     "news_slides": "1 all 5 days; UGC-news extension found 0 qualifying items the one day (09-02) it ran"
+    },
+    "verdict": "MIXED, leans caution. Slide-4 does NOT hurt conversion (last-slide CTR +0.27pp, D1 flat +0.3pp) but sheds viewers before the final slide: tolerable for FMCG (-5.5pp completion) but SEVERE for mandi_bhav (-22.7pp, -28% relative, over the rollback trigger). Entry-rate drop is confounded, not attributable."
+   }
   }
  ]
 }
