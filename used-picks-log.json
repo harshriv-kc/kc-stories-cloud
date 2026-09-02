@@ -4537,6 +4537,88 @@
      "label": "काला नमक चावल तेजी (UGC teji_mandi LR6.627) — considered mandi 4th; body 'चावल में तेजी' no number, Step-6 fail"
     }
    ]
+  },
+  {
+   "date": "2026-09-02",
+   "_note": "Fresh full run — all 3 stories + entry badges republished live (update_story x3 HTTP-ok live:true + update_story_entry_badges 3/3, actor Harsh Shrivastava). SLIDE-COUNT EXPERIMENT day 5/5 (2026-08-29..09-02, conclusion day): BOTH flex buckets -> 4. Mandi=4 (4th=उड़द दाल UGC teji_mandi LR5.9203 >= median 3.0075, body-verified concrete ₹130->₹120/kg ज्यादा फसल; a GREEN -> 2 RED + 2 GREEN balanced), FMCG=4 (4th=फूडवेल खजूर Consumer Scheme LR4.2876 >= FMCG median 2.3669, body-verified 500g 1+1 free), News=1 (UGC-news EXTENSION ran but 0 qualified — see below). Commodity = सरसों तेल तेजी (in-house 2सित तेल बाजार, RED, +₹100 -> ₹16,950/qtl; बड़े व्यापारियों की बिकवाली घटी, सरसों +₹150) + तूर दाल तेजी (in-house 2सित दाल बाजार, RED, +₹150 -> ₹8,350/qtl; मिलों की खरीद बढ़ी, दिल्ली लेमन 8300-8325) + जीरा मंदी (in-house 2सित मसाला बाजार, GREEN, -₹100 -> ₹22,600-22,800/qtl; मांग सुस्त, हल्दी-धनिया नरम) + उड़द दाल मंदी (UGC teji_mandi LR5.92, GREEN, ₹130->₹120/kg ज्यादा फसल) = 2 RED + 2 GREEN. FMCG top-4 by LR desc after news_id(12d)+brand(7d) dedup + body-verify: क्लिनिक प्लस (Retailer Scheme LR7.5472, MRP₹960/थोक₹700/₹260 मार्जिन — margin post, represented as व्यापारी स्कीम ₹260 मार्जिन pill) + लाइफबॉय साबुन (Consumer LR5.7944, 100g 4+1 फ्री) + इजी वॉश बार (Consumer LR5.2632, 3+1 440g डिशवॉश) + फूडवेल खजूर (Consumer LR4.2876, 500g 1+1 फ्री, experiment 4th). Category spread hair/soap/home-care/food. BLOCKED by 7d brand or 12d news_id (higher/near LR skipped): colgate(9.38), lux(5.42/4.24), ponds(4.77 news_id-HIT 08-31), xpert(4.76 08-31), patanjali-dant-kanti(4.49), parachute(4.03 09-01), dettol, coca-cola, ghadi, godrej-no1, dabur-red/vatika. REJECTED body-verify: बाजरा teji_mandi LR5.949 news_id a46bfd46 — LR-headline said बाजरा but BODY is चाय +₹40/kg (LR↔body MISMATCH, Step-6 trap, flagged for eng); चारकोल पील मास्क Consumer LR3.84 — bare '5+1' no unit/₹ (like Godrej-no1 08-30). News = CGTMSE बिना गिरवी कर्ज (in-house 2सित सरकारी योजना 0e920758; ₹10 लाख तक, 75-85% गारंटी, 0.37% शुल्क; concrete non-bait; picked over TN1 बिस्किट-साबुन-महंगे which topically repeats 08-25 FMCG-mehangai, and over TN2 उधार-वसूली tip which lacks a hard news number). UGC-NEWS EXTENSION (news flex 1-3, ran 09-02): scan found ZERO genuine UUID published_id UGC news posts reposted by >=2 distinct users (heavy 30-48h GROUP-BY scans timed out; 18h UUID scan LENGTH=36 users>=2 returned empty; only placeholder ids 'mandibhav'/'ugc'/'' aggregate). Repost-frequency proxy is structurally near-1 per post (each repost = new post_id+new published_id), so nothing qualified -> News=1 fallback per protocol (never padded). Slides composited via kc-card-render.py (9 cards), QC'd (contact sheet + full-size read of card_9 CGTMSE = heaviest 3-line-grid card, headline below photo, no overlap, clears bottom CTA; cards 1/2/3 shrunk to 860px to clear ~1MB nginx 413; CDN serves <=768px anyway). Badges = curved-banner (सरसों तेल/तेजी fs118 [oil bottle], लाइफबॉय/4+1 फ्री fs130 [real Lifebuoy stack], बिना गिरवी/लोन fs130 [ledger+notes]); text radial clearance verified (fs118 on badge1 because 'सरसों तेल' upper line grazed at fs130; the 456 auto-measure was the golden-oil PHOTO not text, confirmed by eye), PN alpha transparent inner ring on checkerboard + red outermost flush. Push scheduled 16:30 IST campaign_id 2gs72qo (HTTP 200, lead 411min); deep_links extracted verbatim from spec Step-12 block (decoded story_ids 51f7efb8/a93e34ab/16c9eaae verified). NO push-edit-URL Slack DM (spec Step 12c overrides summary DM line). Day-5 experiment CONCLUSION DM to U09K92G1U1X sent separately per experiment protocol. recurring ~1dng34j untouched (operator-paused).",
+   "picks": {
+    "mandi_bhav": [
+     {
+      "news_id": "21c38e7d-e0a8-401a-9a54-5b6597dde548",
+      "brand": "sarson-tel",
+      "direction": "तेजी",
+      "label": "सरसों तेल तेजी +₹100 → ₹16,950/क्विंटल; बड़े व्यापारियों की बिकवाली घटी, सरसों +₹150"
+     },
+     {
+      "news_id": "240fb8c7-e9b9-421b-b699-4f51231effed",
+      "brand": "tur",
+      "direction": "तेजी",
+      "label": "तूर दाल तेजी +₹150 → ₹8,350/क्विंटल; दाल मिलों की खरीद बढ़ी, दिल्ली लेमन 8300-8325"
+     },
+     {
+      "news_id": "c80fdafb-2036-4aff-a5ed-b2d8ea07e244",
+      "brand": "jeera",
+      "direction": "मंदी",
+      "label": "जीरा मंदी −₹100 → ₹22,600-22,800/क्विंटल; मांग सुस्त, हल्दी-धनिया भी नरम"
+     },
+     {
+      "news_id": "b09269cf-8fcf-4f07-8d3f-2911be729933",
+      "brand": "urad",
+      "direction": "मंदी",
+      "label": "उड़द दाल मंदी ₹130→₹120/किलो (UGC teji_mandi LR5.9203 >= median 3.0075, experiment 4th; ज्यादा फसल)"
+     }
+    ],
+    "fmcg": [
+     {
+      "news_id": "8c71c2d2-25ea-4860-9bee-8b6f07f81670",
+      "brand": "clinic-plus",
+      "segment": "Retailer Scheme",
+      "LR": 7.5472,
+      "label": "क्लिनिक प्लस शैम्पू MRP₹960/थोक₹700/₹260 मार्जिन (व्यापारी स्कीम)"
+     },
+     {
+      "news_id": "e15517bc-7e66-42d0-9941-273673299a98",
+      "brand": "lifebuoy",
+      "segment": "Consumer Scheme",
+      "LR": 5.7944,
+      "label": "लाइफबॉय 100g साबुन; 4 पर 1 फ्री (4+1)"
+     },
+     {
+      "news_id": "0ce0e06d-814b-46a3-b639-949307092d62",
+      "brand": "easy-wash",
+      "segment": "Consumer Scheme",
+      "LR": 5.2632,
+      "label": "इजी वॉश लाइम डिशवॉश बार; 3 पर 1 फ्री (440g)"
+     },
+     {
+      "news_id": "a755c7bf-5a6c-4d4f-b05b-70fbf112e220",
+      "brand": "foodwell",
+      "segment": "Consumer Scheme",
+      "LR": 4.2876,
+      "label": "फूडवेल गोल्डन खजूर 500g; 1 पर 1 फ्री (experiment 4th)"
+     }
+    ],
+    "trending_news": [
+     {
+      "news_id": "0e920758-1bbe-4741-a885-d2893306f5da",
+      "brand": "cgtmse",
+      "direction": "news",
+      "label": "CGTMSE बिना गिरवी कर्ज ₹10 लाख तक; 75-85% गारंटी, 0.37% सालाना शुल्क (सरकारी योजना)"
+     }
+    ]
+   },
+   "also_shown": [
+    {
+     "news_id": "a46bfd46-f0cc-47e7-83b2-5dfd11aaf358",
+     "brand": "bajra",
+     "label": "बाजरा तेजी teji_mandi LR5.949 — mandi 4th candidate; REJECTED: LR-headline बाजरा but BODY is चाय +₹40/kg (LR↔body MISMATCH, Step-6, flag for eng)"
+    },
+    {
+     "news_id": "9588f8d4-93fc-4607-9380-225df6752697",
+     "brand": "charcoal-peel-off",
+     "label": "चारकोल पील ऑफ मास्क Consumer LR3.84 — FMCG candidate; REJECTED: bare '5+1' no unit/no ₹ (Godrej-no1-style)"
+    }
+   ]
   }
  ],
  "brand_dedup_window_days": 7
