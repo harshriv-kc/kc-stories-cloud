@@ -4662,6 +4662,11 @@
       "news_id": "15fad129-1c92-4759-bba9-7cd45352b0fc",
       "brand": "janmashtami",
       "label": "कल जन्माष्टमी, व्रत का सामान (in-house); skipped 1446 ठगी scam bait"
+     },
+     {
+      "news_id": "7260c529-4003-4fe6-8c0d-b500cefd56da",
+      "brand": "chini",
+      "label": "चीनी सस्ती ₹6300->6000/qtl, GST 18% कटौती+10 लाख qtl आयात (UGC news extension slide-2, added on operator ask)"
      }
     ]
    },
@@ -4673,7 +4678,7 @@
      "label": "बादाम मंदी in-house dropped — conflicting UGC बादाम तेजी 504d0604, kept single signal"
     }
    ],
-   "note": "Day-6 (2026-09-03): no operator Y/N reply to day-5 slide-count DM -> BASE 3+3+1, no spec change (experiment held). Commodity 1R(साबूदाना)+2G. FMCG top-3 by LR after news_id(12d)+brand(7d) dedup+body-verify (blocked: lux, ghadi/ghari, close-up, colgate, clinic-plus, lifebuoy, vim, santoor, easy-wash, ponds, xpert, parachute). News=1 (जन्माष्टमी timely festive); UGC-news 2nd/3rd not attempted — repost-freq proxy proven structurally broken 09-02. PN multi_icon ~2kn786e scheduled 16:30 IST.",
+   "note": "Day-6 (2026-09-03): no operator Y/N reply to day-5 slide-count DM -> BASE 3+3+1, no spec change (experiment held). Commodity 1R(साबूदाना)+2G. FMCG top-3 by LR after news_id(12d)+brand(7d) dedup+body-verify (blocked: lux, ghadi/ghari, close-up, colgate, clinic-plus, lifebuoy, vim, santoor, easy-wash, ponds, xpert, parachute). News=2 (slide-1 जन्माष्टमी in-house + slide-2 चीनी GST/import UGC 7260c529, added post-run on operator ask — the strongest genuinely-trending UGC news of the day, missed by the per-published_id proxy because each retailer repost gets a distinct published_id); UGC-news 2nd/3rd not attempted — repost-freq proxy proven structurally broken 09-02. PN multi_icon ~2kn786e scheduled 16:30 IST.",
    "pn_campaign_id": "~2kn786e"
   }
  ],

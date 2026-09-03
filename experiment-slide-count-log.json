@@ -190,7 +190,7 @@
   "slide_count_reply": "NONE (no operator reply to day-5 DM in D09K92G6USD as of 09:36 IST)",
   "news_source_reply": "NONE",
   "action": "HELD per protocol — did NOT change kc-stories-workflow.md §5; ran BASE 3+3+1; re-DM'd U09K92G1U1X asking Y/N + NEWS-Y/N.",
-  "news_today": "News=1 (in-house जन्माष्टमी). UGC-news 2nd/3rd extension not attempted — repost-frequency proxy proven structurally unusable on 09-02 (each repost = unique published_id => proxy ~1).",
+  "news_today": "News=2 after operator follow-up. Slide-1 जन्माष्टमी (in-house). Slide-2 चीनी GST/import price cut (UGC 7260c529, ₹6300->6000/qtl) — added post-run. LEARNING: the repost-frequency proxy per published_id structurally misses the real trending story because each retailer repost gets a UNIQUE published_id; the sugar-GST story was posted independently by 4+ retailers under 4+ distinct published_ids, so it scored ~1 each and was invisible to the proxy. Manual eyeball of recent UGC news (real UUID + concrete number + policy/market-impact + non-bait, distinct topic) surfaced it fine. Reinforces the Phase-2 fix: widen bookmark 90465031 OR dedup UGC news by normalized BODY (not published_id) before ranking.",
   "carry": "Decision still pending; experiment stays ACTIVE/awaiting-decision. Note: workflow banner window (08-29→09-02) has passed, so 09-04+ base runs will not auto-re-check day-6 — operator must reply to promote/reject."
  }
 }
