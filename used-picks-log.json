@@ -4619,6 +4619,62 @@
      "label": "चारकोल पील ऑफ मास्क Consumer LR3.84 — FMCG candidate; REJECTED: bare '5+1' no unit/no ₹ (Godrej-no1-style)"
     }
    ]
+  },
+  {
+   "date": "2026-09-03",
+   "picks": {
+    "mandi_bhav": [
+     {
+      "news_id": "81928b69-3300-4cdc-a5c8-47b6782f575f",
+      "brand": "sabudana",
+      "label": "साबूदाना तेजी ₹65->75/kg, बाजार 80 (UGC teji_mandi LR8.2297, timely जन्माष्टमी व्रत)"
+     },
+     {
+      "news_id": "9357f4bd-1766-4332-b4e0-d7caa04e75a3",
+      "brand": "khadya-tel",
+      "label": "खाद्य तेल मंदी -50/qtl चारों तेल, सोया 14360 (in-house)"
+     },
+     {
+      "news_id": "88710c68-121d-46f8-8b86-7eefc669bc01",
+      "brand": "moong",
+      "label": "मूंग दाल मंदी -100/qtl, दिल्ली 8200 (in-house)"
+     }
+    ],
+    "fmcg": [
+     {
+      "news_id": "fe70c55e-eff5-4f2f-a321-d1283c6b4ca9",
+      "brand": "oreo",
+      "label": "OREO 12pc Retailer MRP120/WS108/₹12 margin (LR8.9109)"
+     },
+     {
+      "news_id": "844dbf65-7c02-45cb-b7b0-e5341df7276e",
+      "brand": "mountain-dew",
+      "label": "Mountain Dew Consumer 1L+250ml free (LR8.5714)"
+     },
+     {
+      "news_id": "2e5b784c-9fd3-4fc2-aa9a-79cc0e32f84b",
+      "brand": "gillette",
+      "label": "Gillette Guard Retailer 7+1 (LR6.1526)"
+     }
+    ],
+    "trending_news": [
+     {
+      "news_id": "15fad129-1c92-4759-bba9-7cd45352b0fc",
+      "brand": "janmashtami",
+      "label": "कल जन्माष्टमी, व्रत का सामान (in-house); skipped 1446 ठगी scam bait"
+     }
+    ]
+   },
+   "also_shown": [
+    {
+     "news_id": "e642197d-018d-4601-8b51-7e04112c419e",
+     "brand": "badam",
+     "tag": "mandi_bhav",
+     "label": "बादाम मंदी in-house dropped — conflicting UGC बादाम तेजी 504d0604, kept single signal"
+    }
+   ],
+   "note": "Day-6 (2026-09-03): no operator Y/N reply to day-5 slide-count DM -> BASE 3+3+1, no spec change (experiment held). Commodity 1R(साबूदाना)+2G. FMCG top-3 by LR after news_id(12d)+brand(7d) dedup+body-verify (blocked: lux, ghadi/ghari, close-up, colgate, clinic-plus, lifebuoy, vim, santoor, easy-wash, ponds, xpert, parachute). News=1 (जन्माष्टमी timely festive); UGC-news 2nd/3rd not attempted — repost-freq proxy proven structurally broken 09-02. PN multi_icon ~2kn786e scheduled 16:30 IST.",
+   "pn_campaign_id": "~2kn786e"
   }
  ],
  "brand_dedup_window_days": 7

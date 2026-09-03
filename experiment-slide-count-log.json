@@ -184,5 +184,13 @@
     "verdict": "MIXED, leans caution. Slide-4 does NOT hurt conversion (last-slide CTR +0.27pp, D1 flat +0.3pp) but sheds viewers before the final slide: tolerable for FMCG (-5.5pp completion) but SEVERE for mandi_bhav (-22.7pp, -28% relative, over the rollback trigger). Entry-rate drop is confounded, not attributable."
    }
   }
- ]
+ ],
+ "day6_disposition": {
+  "date": "2026-09-03",
+  "slide_count_reply": "NONE (no operator reply to day-5 DM in D09K92G6USD as of 09:36 IST)",
+  "news_source_reply": "NONE",
+  "action": "HELD per protocol — did NOT change kc-stories-workflow.md §5; ran BASE 3+3+1; re-DM'd U09K92G1U1X asking Y/N + NEWS-Y/N.",
+  "news_today": "News=1 (in-house जन्माष्टमी). UGC-news 2nd/3rd extension not attempted — repost-frequency proxy proven structurally unusable on 09-02 (each repost = unique published_id => proxy ~1).",
+  "carry": "Decision still pending; experiment stays ACTIVE/awaiting-decision. Note: workflow banner window (08-29→09-02) has passed, so 09-04+ base runs will not auto-re-check day-6 — operator must reply to promote/reject."
+ }
 }
