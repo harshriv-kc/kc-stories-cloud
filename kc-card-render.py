@@ -72,54 +72,48 @@ def b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-09-03 · Day-6: no operator Y/N reply → base 3+3+1, no spec change)
+# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-09-04 · experiment window CLOSED → base 3+3+1)
 CARDS = [
- # --- Commodity (mandi_bhav) — 1 तेजी/RED + 2 मंदी/GREEN. साबूदाना (UGC teji_mandi LR8.2297 >= median 3.5249, timely जन्माष्टमी व्रत) + खाद्य तेल + मूंग (in-house 3सित, मंदी). ---
- dict(i=1, label="मंडी भाव", stripe=RED, headline="साबूदाना",
-   price=f'{tri("up",RED)}₹75<span class="unit">/किलो</span>',
-   sub=f'साबूदाना ₹65 से चढ़कर ₹75/किलो (मंडी); बाजार में ₹80/किलो, त्योहारी मांग व मंदिर स्टॉक की कमी · <b class="delta" style="color:{RED}">₹10 तेजी</b>',
-   l1="क्यों", v1="मंदिरों में स्टॉक की कमी और त्योहारी मांग तेज; कुछ जगह बारिश से साबूदाना फसल ~10% घटी",
-   l2="क्या करें", v2="जन्माष्टमी व्रत की मांग से पहले जरूरत का माल भर लें; आगे और तेजी के आसार"),
- dict(i=2, label="मंडी भाव", stripe=GREEN, headline="खाद्य तेल",
-   price=f'{tri("down",GREEN)}₹14,360<span class="unit">/क्विंटल</span>',
-   sub=f'सोया, सरसों, बिनौला व राइसब्रान चारों तेल ₹50/क्विंटल सस्ते; कांदला सोया ₹14,360, सरसों ₹16,900 · <b class="delta" style="color:{GREEN}">₹50 गिरावट</b>',
-   l1="क्यों", v1="ग्राहकी कमजोर, बड़े व्यापारी माल निकाल रहे; तेल मिलों की मांग सुस्त, सरसों बीज भी दबा",
-   l2="क्या करें", v2="त्योहारी मांग से पहले जरूरत का तेल भर लें; पाम मजबूत है, एकसाथ भारी स्टॉक से बचें"),
- dict(i=3, label="मंडी भाव", stripe=GREEN, headline="मूंग दाल",
-   price=f'{tri("down",GREEN)}₹8,200<span class="unit">/क्विंटल</span>',
-   sub=f'मूंग दिल्ली ₹8,400 से घटकर ₹8,200; राजस्थान मूंग ₹100 नरम होकर ₹6,600–7,400/क्विंटल · <b class="delta" style="color:{GREEN}">₹100–200 गिरावट</b>',
-   l1="क्यों", v1="MP की सरकारी बिक्री का बढ़िया माल आ रहा; दागी मूंग बिक चुकी, मिलों को भाव बढ़ाने की जरूरत नहीं",
-   l2="क्या करें", v2="त्योहारी खपत से पहले जरूरत का माल उठा लें; ₹100 और नरमी संभव, भारी स्टॉक से बचें"),
- # --- FMCG (fmcg) — TOP 3 by LR desc after ledger dedup (news_id 12d + brand 7d) + body-verify. FMCG median LR=2.3760. ---
- #     oreo LR8.9109 (Retailer, MRP120/WS108/₹12 margin), mountain-dew LR8.5714 (Consumer, 1L+250ml free), gillette LR6.1526 (Retailer, 7+1).
- #     BLOCKED 7d brand/news_id: lux, ghadi(ghari), close-up, colgate, clinic-plus, lifebuoy, vim, santoor, easy-wash, ponds, xpert, parachute.
- dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="ओरियो बिस्किट",
-   price=f'<span class="offer" style="background:{SCHEME_GREEN}">₹12 मार्जिन</span>',
-   sub='ओरियो ओरिजिनल 12 पीस पैक — MRP ₹120, थोक ₹108; हर पैक पर ₹12 का सीधा मुनाफा · <b class="delta">₹12 मार्जिन</b>',
-   l1="स्कीम", v1="ओरिजिनल ओरियो 12 पीस पैक थोक ₹108 में; MRP ₹120",
-   l2="फायदा", v2="हर पैक पर ₹12 मार्जिन; बच्चों में तेज बिकने वाला ब्रांड"),
- dict(i=5, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="माउंटेन ड्यू",
-   price=f'<span class="offer" style="background:{SCHEME_BLUE}">1L पर 250ml फ्री</span>',
-   sub='माउंटेन ड्यू 1 लीटर बोतल पर 250ml बिल्कुल फ्री; ग्राहक को उसी दाम में सवा लीटर · <b class="delta">250ml फ्री</b>',
-   l1="ऑफर", v1="1 लीटर माउंटेन ड्यू पर +250ml फ्री स्कीम",
-   l2="ग्राहक को", v2="उसी कीमत में सवा लीटर; गर्मी व त्योहार में तेज बिक्री"),
- dict(i=6, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="जिलेट गार्ड",
-   price=f'<span class="offer" style="background:{SCHEME_GREEN}">7 पर 1 फ्री</span>',
-   sub='जिलेट गार्ड शेविंग रेजर सेट — 7 खरीदने पर 1 सेट बिल्कुल फ्री · <b class="delta">1 सेट फ्री</b>',
-   l1="स्कीम", v1="जिलेट गार्ड सेविंग सेट पर 7+1 स्कीम",
-   l2="फायदा", v2="रोज़ काम आने वाला रेजर; हर 7 पर 1 का सीधा फायदा"),
- # --- News (trending_news) — in-house 3सित: जन्माष्टमी (कल 4 सित), festive demand, non-bait + actionable. Skipped 1446 (ठगी scam bait). News=1 base. ---
- dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="कल जन्माष्टमी",
-   price='<span class="news">व्रत का सामान आज भरें</span>',
-   sub='कल 4 सितंबर श्रीकृष्ण जन्माष्टमी; 15 साल बाद अष्टमी-रोहिणी संयोग, दिनभर व देर रात तक बिक्री · <b class="delta">कल पूरी मांग</b>',
-   l1="क्यों ज़रूरी", v1="कुट्टू-सिंघाड़े का आटा, समा चावल, साबूदाना, मूंगफली, सेंधा नमक व मखाना व्रत में सबसे ज्यादा बिकते हैं",
-   l2="क्या करें", v2="व्रत-पूजा का सामान (घी, मिश्री, मखाना) आज शाम तक भर लें; एक जगह सजाएं ताकि ग्राहक एक साथ खरीदे"),
- # --- News slide 2 (trending_news UGC extension) — चीनी GST/import price cut (published_id 7260c529), concrete ₹6300->6000/qtl, policy/market-impact, non-bait, distinct from जन्माष्टमी. Added post-run on operator ask (2 trending news). ---
- dict(i=8, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="चीनी सस्ती",
-   price='<span class="news">₹6,300 → ₹6,000/क्विंटल</span>',
-   sub='सरकार की GST 18% कटौती व 10 लाख क्विंटल आयात से चीनी थोक ₹300/क्विंटल टूटी; होलसेल छापामारी का भी असर · <b class="delta">₹300 गिरावट</b>',
-   l1="क्यों ज़रूरी", v1="GST में कटौती + ड्यूटी-फ्री आयात + भंडारण सीमा से थोक भाव नरम; आगे और गिरावट के आसार",
-   l2="क्या करें", v2="त्योहारी मांग से पहले सस्ते में चीनी भर लें; पुराने महंगे स्टॉक से बचें, नए भाव पर बेचें"),
+ # --- Commodity (mandi_bhav) — 1 तेजी/RED + 2 मंदी/GREEN. उड़द (in-house 4सित, तेजी) + जायफल (in-house 4सित, मंदी) + मखाना (UGC teji_mandi LR7.36 >= median, मंदी). Avoided tel (over-covered, used 09-03). ---
+ dict(i=1, label="मंडी भाव", stripe=RED, headline="उड़द दाल",
+   price=f'{tri("up",RED)}₹9,600<span class="unit">/क्विंटल</span>',
+   sub=f'उड़द दिल्ली ₹9,400 से चढ़कर ₹9,600/क्विंटल — सिर्फ दो दिन में; कारोबारी आगे ₹10,100 तक की तेजी मान रहे · <b class="delta" style="color:{RED}">₹200 तेजी</b>',
+   l1="क्यों", v1="दाल मिलों के पास स्टॉक खाली, चेन्नई-दिल्ली का पुराना माल निबट चुका, नई फसल आने में देरी",
+   l2="क्या करें", v2="उड़द की जरूरत का माल अभी उठा लें; रोज थोड़ा भरने पर खरीद महंगी पड़ेगी, आगे ₹500 और तेजी के आसार"),
+ dict(i=2, label="मंडी भाव", stripe=GREEN, headline="जायफल",
+   price=f'{tri("down",GREEN)}₹730<span class="unit">/किलो</span>',
+   sub=f'छिलका उतरा जायफल ₹745 से घटकर ₹730–735/किलो; छिलके सहित ₹370–380/किलो, कोच्चि मंडी सुस्त · <b class="delta" style="color:{GREEN}">₹10 गिरावट</b>',
+   l1="क्यों", v1="निर्यात की मांग लगभग गायब — मिडिल-ईस्ट तनाव व समुद्री ढुलाई महंगी; मांग लौटने तक तेजी नहीं",
+   l2="क्या करें", v2="त्योहारी गरम-मसाला मांग से पहले नरम भाव पर थोड़ा भर लें; हवाबंद डिब्बे में रखें ताकि खुशबू न उड़े"),
+ dict(i=3, label="मंडी भाव", stripe=GREEN, headline="मखाना",
+   price=f'{tri("down",GREEN)}₹850<span class="unit">/किलो</span>',
+   sub=f'मखाना ₹1,100/किलो से घटकर ₹850/किलो; कुछ दिन पहले तक तेज था, अब ₹250 नरम पड़ा · <b class="delta" style="color:{GREEN}">₹250 गिरावट</b>',
+   l1="क्यों", v1="ऊंचे भाव पर मांग सुस्त पड़ने से मेवा बाजार में मखाना ऊपरी स्तर से लौटा; बिकवाली बढ़ी",
+   l2="क्या करें", v2="व्रत-त्योहारी मांग से पहले नरम भाव पर भर लें; व्रत-उपवास में मखाना तेज बिकता है"),
+ # --- FMCG (fmcg) — TOP 3 by LR desc after ledger dedup (news_id 12d + brand 7d) + body-verify. Real product photos from D2R posts. ---
+ #     nip LR10.46 (Consumer 3+1, ₹28→40 ₹12), wild-stone LR6.26 (Consumer 3+1, MRP114/102 ₹12), kaccha-mango LR6.09 (Retailer 1 डिब्बा→11 फ्री, ₹31).
+ #     BLOCKED 7d brand/news_id: oreo, mountain-dew, gillette, lux, ghadi, close-up, colgate, clinic-plus, lifebuoy, vim, santoor, ponds, parachute, eno, fortune, dabur-vatika, rin. Rejected no-₹: johnsons, jof-soyabean.
+ dict(i=4, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="निप महाबार",
+   price=f'<span class="offer" style="background:{SCHEME_BLUE}">3 पर 1 फ्री</span>',
+   sub='निप महाबार नींबू साबुन — 3 खरीदने पर 1 फ्री (House of Fena); रिटेलर ₹28, बिक्री ₹40, हर सेट ₹12 मुनाफा · <b class="delta">₹12 मार्जिन</b>',
+   l1="ऑफर", v1="3 साबुन पर 1 साबुन फ्री; रिटेलर को सेट ₹28 में, 100g एक्स्ट्रा भी",
+   l2="ग्राहक को", v2="उसी दाम में 4 साबुन; रोज़ काम आने वाला नींबू साबुन, तेज बिक्री"),
+ dict(i=5, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="वाइल्ड स्टोन",
+   price=f'<span class="offer" style="background:{SCHEME_BLUE}">3 पर 1 फ्री</span>',
+   sub='वाइल्ड स्टोन साबुन — 3 खरीदने पर 1 फ्री; MRP ₹114, रिटेलर ₹102, हर पैक पर ₹12 मुनाफा · <b class="delta">₹12 मार्जिन</b>',
+   l1="ऑफर", v1="3 साबुन पर 1 फ्री; MRP ₹114, रिटेलर को ₹102 में",
+   l2="ग्राहक को", v2="उसी दाम में 4 साबुन; खुशबूदार नहाने का साबुन, युवाओं में मांग"),
+ dict(i=6, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="कच्चा मैंगो",
+   price=f'<span class="offer" style="background:{SCHEME_GREEN}">1 डिब्बा पर 11 फ्री</span>',
+   sub='पार्ले कच्चा मैंगो बाइट — 1 डिब्बा पर 11 टॉफी अंदर फ्री; ₹130 खरीद, ₹150 बिक्री, कुल ₹31 फायदा · <b class="delta">₹31 फायदा</b>',
+   l1="स्कीम", v1="एक डिब्बा (₹130) पर 11 टॉफी अंदर फ्री",
+   l2="फायदा", v2="₹20 मार्जिन + ₹11 का फ्री माल = ₹31; बच्चों में तेज बिकने वाली टॉफी"),
+ # --- News (trending_news) — in-house 4सित: DigiDukaan/ONDC सीधे कंपनी से ऑर्डर, market-impact, non-bait, actionable. Skipped success-story (fa2b3499) & KVP scheme (79c032bb) & रुझान/Samachar digests. News=1 base. ---
+ dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="सीधे कंपनी से माल",
+   price='<span class="news">ONDC-DigiDukaan मुहिम शुरू</span>',
+   sub='सरकार (DPIIT) व ONDC की DigiDukaan मुहिम — दुकानदार फोन से सीधे कंपनी को ऑर्डर देगा; हैदराबाद में 10,000+ दुकान व 35+ कंपनियां जुड़ीं · <b class="delta">1.4 करोड़ दुकानें</b>',
+   l1="क्यों ज़रूरी", v1="बिचौलिए-सेल्समैन पर निर्भरता घटेगी; चालू स्कीम-छूट एक जगह दिखेगी, छोटी दुकान को भी बड़े जैसा रेट",
+   l2="क्या करें", v2="अपने शहर में शुरू होते ही जुड़ें; ONDC से 3 लाख विक्रेता व 400+ शहर पहले से जुड़े, आगे मुंबई-दिल्ली में विस्तार"),
 ]
 
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
