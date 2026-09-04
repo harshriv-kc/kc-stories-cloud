@@ -4680,6 +4680,74 @@
    ],
    "note": "Day-6 (2026-09-03): no operator Y/N reply to day-5 slide-count DM -> BASE 3+3+1, no spec change (experiment held). Commodity 1R(साबूदाना)+2G. FMCG top-3 by LR after news_id(12d)+brand(7d) dedup+body-verify (blocked: lux, ghadi/ghari, close-up, colgate, clinic-plus, lifebuoy, vim, santoor, easy-wash, ponds, xpert, parachute). News=2 (slide-1 जन्माष्टमी in-house + slide-2 चीनी GST/import UGC 7260c529, added post-run on operator ask — the strongest genuinely-trending UGC news of the day, missed by the per-published_id proxy because each retailer repost gets a distinct published_id); UGC-news 2nd/3rd not attempted — repost-freq proxy proven structurally broken 09-02. PN multi_icon ~2kn786e scheduled 16:30 IST.",
    "pn_campaign_id": "~2kn786e"
+  },
+  {
+   "date": "2026-09-04",
+   "picks": {
+    "mandi_bhav": [
+     {
+      "news_id": "aaa255e9-9e6d-4cc5-af97-a5a637b6fb0a",
+      "brand": "urad",
+      "label": "उड़द दाल तेजी +₹200 (2 दिन) → ₹9,600/क्विंटल दिल्ली; आगे ₹10,100 संभव (in-house 4सित)"
+     },
+     {
+      "news_id": "6e01b5ae-c044-4ad5-8b9b-4780a5cb4ef2",
+      "brand": "jaiphal",
+      "label": "जायफल मंदी −₹10 → ₹730-735/किलो (छिलका उतरा); निर्यात मांग सुस्त (in-house 4सित)"
+     },
+     {
+      "news_id": "b93448bf-caa2-4763-a320-0d5e7dc45756",
+      "brand": "makhana",
+      "label": "मखाना मंदी ₹1,100→₹850/किलो, −₹250 (UGC teji_mandi LR7.36 >= median)"
+     }
+    ],
+    "fmcg": [
+     {
+      "news_id": "1343f2a0-c777-43bb-b504-8495e9c64993",
+      "brand": "nip",
+      "label": "निप महाबार (House of Fena) Consumer 3+1 फ्री; रिटेलर ₹28→₹40, ₹12 मार्जिन (LR10.4575, real pack)"
+     },
+     {
+      "news_id": "9d3c76fb-8e20-4e03-b27a-d13e78010753",
+      "brand": "wild-stone",
+      "label": "वाइल्ड स्टोन साबुन Consumer 3+1 फ्री; MRP ₹114/रिटेलर ₹102, ₹12 (LR6.2571, real pack)"
+     },
+     {
+      "news_id": "220a7d91-15cd-491d-913d-d1b1f25af6d9",
+      "brand": "kaccha-mango",
+      "label": "पार्ले कच्चा मैंगो बाइट Retailer 1 डिब्बा→11 यूनिट फ्री; ₹130→₹150, कुल ₹31 (LR6.0901, real pack)"
+     }
+    ],
+    "trending_news": [
+     {
+      "news_id": "8a667d43-000e-4b39-994b-30e778f15099",
+      "brand": "digidukaan",
+      "label": "DPIIT+ONDC DigiDukaan — सीधे कंपनी से माल; हैदराबाद 10,000+ दुकान/35+ कंपनी (in-house 4सित, market-impact)"
+     }
+    ]
+   },
+   "also_shown": [
+    {
+     "news_id": "a0051090-6655-4b70-9630-461248106b5a",
+     "brand": "johnsons",
+     "tag": "fmcg",
+     "label": "जॉन्सन्स बेबी साबुन+शैम्पू फ्री — body-verify REJECT (no ₹ figure)"
+    },
+    {
+     "news_id": "91487053-f370-4097-9685-776235cdc028",
+     "brand": "jof-soyabean",
+     "tag": "fmcg",
+     "label": "JOF सोयाबीन 10% extra — body-verify REJECT (no ₹ figure, promo spam)"
+    },
+    {
+     "news_id": "d895ce0b-0bb0-496b-a465-8698ef8b5499",
+     "brand": "soya-tel",
+     "tag": "mandi_bhav",
+     "label": "सोया/सरसों तेल मंदी −₹50 (in-house 4सित) — dropped, tel over-covered + used 09-03"
+    }
+   ],
+   "note": "2026-09-04: experiment window (08-29→09-02) CLOSED -> BASE 3+3+1, no spec change. Commodity 1R(उड़द)+2G(जायफल,मखाना), avoided tel (over-covered, used 09-03). FMCG top-3 by LR after news_id(12d)+brand(7d) dedup + body-verify (BLOCKED 7d: oreo, mountain-dew, gillette, lux, ghadi, close-up, colgate, clinic-plus, lifebuoy, vim, santoor, ponds, parachute, eno, fortune, dabur-vatika, rin; rejected no-₹: johnsons, jof). All 3 FMCG used real D2R product photos (brand legible). News=1 base (DigiDukaan/ONDC, market-impact; skipped success-story fa2b3499, KVP scheme 79c032bb, रुझान/Samachar digests, scam-free). QC: chromium+Nirmala OK, all 7 cards composited, badges ring-normalized (radial 336/333/356<=448). PN multi_icon ~6nnss1 scheduled 16:30 IST.",
+   "pn_campaign_id": "~6nnss1"
   }
  ],
  "brand_dedup_window_days": 7
