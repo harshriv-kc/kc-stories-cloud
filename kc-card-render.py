@@ -72,48 +72,48 @@ def b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-09-04 · experiment window CLOSED → base 3+3+1)
+# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-09-05 · experiment window CLOSED → base 3+3+1)
 CARDS = [
- # --- Commodity (mandi_bhav) — 1 तेजी/RED + 2 मंदी/GREEN. उड़द (in-house 4सित, तेजी) + जायफल (in-house 4सित, मंदी) + मखाना (UGC teji_mandi LR7.36 >= median, मंदी). Avoided tel (over-covered, used 09-03). ---
- dict(i=1, label="मंडी भाव", stripe=RED, headline="उड़द दाल",
-   price=f'{tri("up",RED)}₹9,600<span class="unit">/क्विंटल</span>',
-   sub=f'उड़द दिल्ली ₹9,400 से चढ़कर ₹9,600/क्विंटल — सिर्फ दो दिन में; कारोबारी आगे ₹10,100 तक की तेजी मान रहे · <b class="delta" style="color:{RED}">₹200 तेजी</b>',
-   l1="क्यों", v1="दाल मिलों के पास स्टॉक खाली, चेन्नई-दिल्ली का पुराना माल निबट चुका, नई फसल आने में देरी",
-   l2="क्या करें", v2="उड़द की जरूरत का माल अभी उठा लें; रोज थोड़ा भरने पर खरीद महंगी पड़ेगी, आगे ₹500 और तेजी के आसार"),
- dict(i=2, label="मंडी भाव", stripe=GREEN, headline="जायफल",
-   price=f'{tri("down",GREEN)}₹730<span class="unit">/किलो</span>',
-   sub=f'छिलका उतरा जायफल ₹745 से घटकर ₹730–735/किलो; छिलके सहित ₹370–380/किलो, कोच्चि मंडी सुस्त · <b class="delta" style="color:{GREEN}">₹10 गिरावट</b>',
-   l1="क्यों", v1="निर्यात की मांग लगभग गायब — मिडिल-ईस्ट तनाव व समुद्री ढुलाई महंगी; मांग लौटने तक तेजी नहीं",
-   l2="क्या करें", v2="त्योहारी गरम-मसाला मांग से पहले नरम भाव पर थोड़ा भर लें; हवाबंद डिब्बे में रखें ताकि खुशबू न उड़े"),
- dict(i=3, label="मंडी भाव", stripe=GREEN, headline="मखाना",
-   price=f'{tri("down",GREEN)}₹850<span class="unit">/किलो</span>',
-   sub=f'मखाना ₹1,100/किलो से घटकर ₹850/किलो; कुछ दिन पहले तक तेज था, अब ₹250 नरम पड़ा · <b class="delta" style="color:{GREEN}">₹250 गिरावट</b>',
-   l1="क्यों", v1="ऊंचे भाव पर मांग सुस्त पड़ने से मेवा बाजार में मखाना ऊपरी स्तर से लौटा; बिकवाली बढ़ी",
-   l2="क्या करें", v2="व्रत-त्योहारी मांग से पहले नरम भाव पर भर लें; व्रत-उपवास में मखाना तेज बिकता है"),
- # --- FMCG (fmcg) — TOP 3 by LR desc after ledger dedup (news_id 12d + brand 7d) + body-verify. Real product photos from D2R posts. ---
- #     nip LR10.46 (Consumer 3+1, ₹28→40 ₹12), wild-stone LR6.26 (Consumer 3+1, MRP114/102 ₹12), kaccha-mango LR6.09 (Retailer 1 डिब्बा→11 फ्री, ₹31).
- #     BLOCKED 7d brand/news_id: oreo, mountain-dew, gillette, lux, ghadi, close-up, colgate, clinic-plus, lifebuoy, vim, santoor, ponds, parachute, eno, fortune, dabur-vatika, rin. Rejected no-₹: johnsons, jof-soyabean.
- dict(i=4, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="निप महाबार",
-   price=f'<span class="offer" style="background:{SCHEME_BLUE}">3 पर 1 फ्री</span>',
-   sub='निप महाबार नींबू साबुन — 3 खरीदने पर 1 फ्री (House of Fena); रिटेलर ₹28, बिक्री ₹40, हर सेट ₹12 मुनाफा · <b class="delta">₹12 मार्जिन</b>',
-   l1="ऑफर", v1="3 साबुन पर 1 साबुन फ्री; रिटेलर को सेट ₹28 में, 100g एक्स्ट्रा भी",
-   l2="ग्राहक को", v2="उसी दाम में 4 साबुन; रोज़ काम आने वाला नींबू साबुन, तेज बिक्री"),
- dict(i=5, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="वाइल्ड स्टोन",
-   price=f'<span class="offer" style="background:{SCHEME_BLUE}">3 पर 1 फ्री</span>',
-   sub='वाइल्ड स्टोन साबुन — 3 खरीदने पर 1 फ्री; MRP ₹114, रिटेलर ₹102, हर पैक पर ₹12 मुनाफा · <b class="delta">₹12 मार्जिन</b>',
-   l1="ऑफर", v1="3 साबुन पर 1 फ्री; MRP ₹114, रिटेलर को ₹102 में",
-   l2="ग्राहक को", v2="उसी दाम में 4 साबुन; खुशबूदार नहाने का साबुन, युवाओं में मांग"),
- dict(i=6, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="कच्चा मैंगो",
-   price=f'<span class="offer" style="background:{SCHEME_GREEN}">1 डिब्बा पर 11 फ्री</span>',
-   sub='पार्ले कच्चा मैंगो बाइट — 1 डिब्बा पर 11 टॉफी अंदर फ्री; ₹130 खरीद, ₹150 बिक्री, कुल ₹31 फायदा · <b class="delta">₹31 फायदा</b>',
-   l1="स्कीम", v1="एक डिब्बा (₹130) पर 11 टॉफी अंदर फ्री",
-   l2="फायदा", v2="₹20 मार्जिन + ₹11 का फ्री माल = ₹31; बच्चों में तेज बिकने वाली टॉफी"),
- # --- News (trending_news) — in-house 4सित: DigiDukaan/ONDC सीधे कंपनी से ऑर्डर, market-impact, non-bait, actionable. Skipped success-story (fa2b3499) & KVP scheme (79c032bb) & रुझान/Samachar digests. News=1 base. ---
- dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="सीधे कंपनी से माल",
-   price='<span class="news">ONDC-DigiDukaan मुहिम शुरू</span>',
-   sub='सरकार (DPIIT) व ONDC की DigiDukaan मुहिम — दुकानदार फोन से सीधे कंपनी को ऑर्डर देगा; हैदराबाद में 10,000+ दुकान व 35+ कंपनियां जुड़ीं · <b class="delta">1.4 करोड़ दुकानें</b>',
-   l1="क्यों ज़रूरी", v1="बिचौलिए-सेल्समैन पर निर्भरता घटेगी; चालू स्कीम-छूट एक जगह दिखेगी, छोटी दुकान को भी बड़े जैसा रेट",
-   l2="क्या करें", v2="अपने शहर में शुरू होते ही जुड़ें; ONDC से 3 लाख विक्रेता व 400+ शहर पहले से जुड़े, आगे मुंबई-दिल्ली में विस्तार"),
+ # --- Commodity (mandi_bhav) — 2 तेजी/RED + 1 मंदी/GREEN (balance). चना (in-house 5सित, तेजी) + मैदा (UGC teji_mandi LR6.09, तेजी) + चीनी (UGC teji_mandi LR6.29, मंदी). Rejected maida fc753329 (LR-headline=मैदा but body=macaroni). Avoided tel (over-covered), sabudana (repeat 09-03). ---
+ dict(i=1, label="मंडी भाव", stripe=RED, headline="देसी चना",
+   price=f'{tri("up",RED)}₹6,500<span class="unit">/क्विंटल</span>',
+   sub=f'राजस्थान मंडियों में ₹6,400 से ₹6,500/क्विंटल — एक ही दिन में ₹100 चढ़ा; कारोबारी आगे ₹7,000 की राह मान रहे (~8% और तेजी) · <b class="delta" style="color:{RED}">₹100 तेजी</b>',
+   l1="क्यों", v1="MP-राजस्थान में देसी चने की पैदावार घटी; मिलों का पुराना स्टॉक खत्म, ग्राहकी मजबूत",
+   l2="क्या करें", v2="चना-दाल-बेसन एक ही चेन; 2-3 हफ्ते का माल अभी उठाएं, त्योहारी खपत सामने"),
+ dict(i=2, label="मंडी भाव", stripe=RED, headline="मैदा",
+   price=f'{tri("up",RED)}₹1,800<span class="unit">/बैग (50kg)</span>',
+   sub=f'बेकरी मैदा का 50 किलो बैग ₹1,700 से ₹1,800 पर — ₹2/किलो यानी ₹100/बैग की तेजी; रुझान और ऊपर का · <b class="delta" style="color:{RED}">₹100 तेजी</b>',
+   l1="क्यों", v1="गेहूं उत्पादों की मांग निकल रही और मिलों की लागत बढ़ी; नई खरीद पहले से महंगी पड़ रही है",
+   l2="क्या करें", v2="बेकरी-नमकीन बनाने वालों की नियमित मांग; जरूरत का बैग अभी भर लें, आगे रेट और चढ़ने के आसार"),
+ dict(i=3, label="मंडी भाव", stripe=GREEN, headline="चीनी",
+   price=f'{tri("down",GREEN)}₹5,400<span class="unit">/क्विंटल</span>',
+   sub=f'पिछले हफ्ते ₹6,500/क्विंटल में मिली चीनी अब ₹5,300–5,500 पर आ गई; थोक बाजार में लगातार नरमी · <b class="delta" style="color:{GREEN}">₹1,100 गिरावट</b>',
+   l1="क्यों", v1="सरकार की स्टॉक-आयात सख्ती और अच्छी उपलब्धता से थोक भाव टूटे; बाजार में तेजी-मंदी का दौर बना हुआ",
+   l2="क्या करें", v2="अभी बड़ी खरीद रोकें; पुराना महंगा स्टॉक पहले निकालें, नया सस्ता माल थोड़ा-थोड़ा भरें ताकि घाटा न हो"),
+ # --- FMCG (fmcg) — TOP by LR desc after ledger dedup (news_id 12d + brand 7d) + body-verify. Real product photos. ---
+ #     ketchup LR12.96 (Consumer B1G1, ₹15+₹5 मैगी), colgate LR11.07 (Retailer, ब्रश+पेस्ट+2ब्रश फ्री), jatna-chai LR10.07 (Consumer, ₹90→100 +स्टील कटोरी).
+ #     Diana साबुन LR10.26 dropped for category-spread (soap recurred 09-02/09-04; tea fresh, LR tied). BLOCKED 7d brand/news_id: lifebuoy, ghadi, lux(soft), close-up, clinic-plus, vim, oreo, mountain-dew, gillette. Rejected: elaichi(no ₹, video), maida-macaroni mislabel.
+ dict(i=4, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="रिच केचप",
+   price=f'<span class="offer" style="background:{SCHEME_BLUE}">1 पर 1 फ्री</span>',
+   sub='रिच टोमैटो केचप ₹15 वाला — हर नग पर ₹5 वाला मैगी मसाला बिल्कुल फ्री (Buy 1 Get 1) · <b class="delta">₹5 का माल फ्री</b>',
+   l1="ऑफर", v1="₹15 के हर केचप पैक पर एक ₹5 वाला मैगी मसाला फ्री",
+   l2="ग्राहक को", v2="उसी ₹15 में केचप के साथ मैगी मसाला मुफ्त; बच्चों-नाश्ते में तेज बिकने वाला कॉम्बो"),
+ dict(i=5, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="कोलगेट सुपर फ्लेक्सी",
+   price=f'<span class="offer" style="background:{SCHEME_GREEN}">ब्रश पर पेस्ट + 2 ब्रश फ्री</span>',
+   sub='कोलगेट सुपर फ्लेक्सी ब्रश के साथ 42g मैक्सफ्रेश पेस्ट + ₹40 के 2 ZigZag ब्रश फ्री · <b class="delta">पूरा सेट</b>',
+   l1="स्कीम", v1="ब्रश पर 42g मैक्सफ्रेश पेस्ट + ₹40 के 2 ब्रश फ्री",
+   l2="फायदा", v2="एक खरीद पर ब्रश+पेस्ट+2 ब्रश; दुकानदार को बढ़िया मार्जिन"),
+ dict(i=6, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="जतना चाय",
+   price=f'<span class="offer" style="background:{SCHEME_BLUE}">पैकेट पर स्टील कटोरी फ्री</span>',
+   sub='250g जतना चाय — दुकानदार को ₹90 (₹360/किलो), बिक्री ₹100; हर पैकेट के साथ स्टील कटोरी फ्री · <b class="delta">₹10 मार्जिन + कटोरी</b>',
+   l1="ऑफर", v1="250g पैक (खरीद ₹90) पर एक स्टील कटोरी बिल्कुल फ्री",
+   l2="ग्राहक को", v2="₹100 में अच्छी चाय के साथ स्टील कटोरी का गिफ्ट; रोज़ की चाय, तेज़ बिक्री"),
+ # --- News (trending_news) — in-house 5सित: GeM सरकारी खरीद बाजार, policy/scheme, non-bait, actionable. Skipped नकली-तेल (scam bait), चीनी (used as commodity slide), रुझान/Samachar digests. News=1 base. ---
+ dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="सरकार को माल बेचें",
+   price='<span class="news">GeM पर मुफ्त पंजीकरण</span>',
+   sub='केंद्र का सरकारी खरीद बाजार GeM — दुकानदार सीधे सरकारी दफ्तर, स्कूल, अस्पताल को माल बेच सकते हैं; कोई दलाल नहीं · <b class="delta">पंजीकरण मुफ्त</b>',
+   l1="क्यों ज़रूरी", v1="PAN + बैंक खाता + आधार-मोबाइल से 1–3 दिन में विक्रेता खाता चालू; उद्यम पर जमानत माफ",
+   l2="क्या करें", v2="GeM वेबसाइट पर विक्रेता पंजीकरण करें, सामान सूची में डालें; पूरे देश के सरकारी खरीदार देखेंगे"),
 ]
 
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
