@@ -72,48 +72,48 @@ def b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-09-05 · experiment window CLOSED → base 3+3+1)
+# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-09-06 · experiment window CLOSED → base 3+3+1)
 CARDS = [
- # --- Commodity (mandi_bhav) — 2 तेजी/RED + 1 मंदी/GREEN (balance). चना (in-house 5सित, तेजी) + मैदा (UGC teji_mandi LR6.09, तेजी) + चीनी (UGC teji_mandi LR6.29, मंदी). Rejected maida fc753329 (LR-headline=मैदा but body=macaroni). Avoided tel (over-covered), sabudana (repeat 09-03). ---
- dict(i=1, label="मंडी भाव", stripe=RED, headline="देसी चना",
-   price=f'{tri("up",RED)}₹6,500<span class="unit">/क्विंटल</span>',
-   sub=f'राजस्थान मंडियों में ₹6,400 से ₹6,500/क्विंटल — एक ही दिन में ₹100 चढ़ा; कारोबारी आगे ₹7,000 की राह मान रहे (~8% और तेजी) · <b class="delta" style="color:{RED}">₹100 तेजी</b>',
-   l1="क्यों", v1="MP-राजस्थान में देसी चने की पैदावार घटी; मिलों का पुराना स्टॉक खत्म, ग्राहकी मजबूत",
-   l2="क्या करें", v2="चना-दाल-बेसन एक ही चेन; 2-3 हफ्ते का माल अभी उठाएं, त्योहारी खपत सामने"),
- dict(i=2, label="मंडी भाव", stripe=RED, headline="मैदा",
-   price=f'{tri("up",RED)}₹1,800<span class="unit">/बैग (50kg)</span>',
-   sub=f'बेकरी मैदा का 50 किलो बैग ₹1,700 से ₹1,800 पर — ₹2/किलो यानी ₹100/बैग की तेजी; रुझान और ऊपर का · <b class="delta" style="color:{RED}">₹100 तेजी</b>',
-   l1="क्यों", v1="गेहूं उत्पादों की मांग निकल रही और मिलों की लागत बढ़ी; नई खरीद पहले से महंगी पड़ रही है",
-   l2="क्या करें", v2="बेकरी-नमकीन बनाने वालों की नियमित मांग; जरूरत का बैग अभी भर लें, आगे रेट और चढ़ने के आसार"),
- dict(i=3, label="मंडी भाव", stripe=GREEN, headline="चीनी",
-   price=f'{tri("down",GREEN)}₹5,400<span class="unit">/क्विंटल</span>',
-   sub=f'पिछले हफ्ते ₹6,500/क्विंटल में मिली चीनी अब ₹5,300–5,500 पर आ गई; थोक बाजार में लगातार नरमी · <b class="delta" style="color:{GREEN}">₹1,100 गिरावट</b>',
-   l1="क्यों", v1="सरकार की स्टॉक-आयात सख्ती और अच्छी उपलब्धता से थोक भाव टूटे; बाजार में तेजी-मंदी का दौर बना हुआ",
-   l2="क्या करें", v2="अभी बड़ी खरीद रोकें; पुराना महंगा स्टॉक पहले निकालें, नया सस्ता माल थोड़ा-थोड़ा भरें ताकि घाटा न हो"),
- # --- FMCG (fmcg) — TOP by LR desc after ledger dedup (news_id 12d + brand 7d) + body-verify. Real product photos. ---
- #     ketchup LR12.96 (Consumer B1G1, ₹15+₹5 मैगी), colgate LR11.07 (Retailer, ब्रश+पेस्ट+2ब्रश फ्री), jatna-chai LR10.07 (Consumer, ₹90→100 +स्टील कटोरी).
- #     Diana साबुन LR10.26 dropped for category-spread (soap recurred 09-02/09-04; tea fresh, LR tied). BLOCKED 7d brand/news_id: lifebuoy, ghadi, lux(soft), close-up, clinic-plus, vim, oreo, mountain-dew, gillette. Rejected: elaichi(no ₹, video), maida-macaroni mislabel.
- dict(i=4, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="रिच केचप",
-   price=f'<span class="offer" style="background:{SCHEME_BLUE}">1 पर 1 फ्री</span>',
-   sub='रिच टोमैटो केचप ₹15 वाला — हर नग पर ₹5 वाला मैगी मसाला बिल्कुल फ्री (Buy 1 Get 1) · <b class="delta">₹5 का माल फ्री</b>',
-   l1="ऑफर", v1="₹15 के हर केचप पैक पर एक ₹5 वाला मैगी मसाला फ्री",
-   l2="ग्राहक को", v2="उसी ₹15 में केचप के साथ मैगी मसाला मुफ्त; बच्चों-नाश्ते में तेज बिकने वाला कॉम्बो"),
- dict(i=5, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="कोलगेट सुपर फ्लेक्सी",
-   price=f'<span class="offer" style="background:{SCHEME_GREEN}">ब्रश पर पेस्ट + 2 ब्रश फ्री</span>',
-   sub='कोलगेट सुपर फ्लेक्सी ब्रश के साथ 42g मैक्सफ्रेश पेस्ट + ₹40 के 2 ZigZag ब्रश फ्री · <b class="delta">पूरा सेट</b>',
-   l1="स्कीम", v1="ब्रश पर 42g मैक्सफ्रेश पेस्ट + ₹40 के 2 ब्रश फ्री",
-   l2="फायदा", v2="एक खरीद पर ब्रश+पेस्ट+2 ब्रश; दुकानदार को बढ़िया मार्जिन"),
- dict(i=6, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="जतना चाय",
-   price=f'<span class="offer" style="background:{SCHEME_BLUE}">पैकेट पर स्टील कटोरी फ्री</span>',
-   sub='250g जतना चाय — दुकानदार को ₹90 (₹360/किलो), बिक्री ₹100; हर पैकेट के साथ स्टील कटोरी फ्री · <b class="delta">₹10 मार्जिन + कटोरी</b>',
-   l1="ऑफर", v1="250g पैक (खरीद ₹90) पर एक स्टील कटोरी बिल्कुल फ्री",
-   l2="ग्राहक को", v2="₹100 में अच्छी चाय के साथ स्टील कटोरी का गिफ्ट; रोज़ की चाय, तेज़ बिक्री"),
- # --- News (trending_news) — in-house 5सित: GeM सरकारी खरीद बाजार, policy/scheme, non-bait, actionable. Skipped नकली-तेल (scam bait), चीनी (used as commodity slide), रुझान/Samachar digests. News=1 base. ---
- dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="सरकार को माल बेचें",
-   price='<span class="news">GeM पर मुफ्त पंजीकरण</span>',
-   sub='केंद्र का सरकारी खरीद बाजार GeM — दुकानदार सीधे सरकारी दफ्तर, स्कूल, अस्पताल को माल बेच सकते हैं; कोई दलाल नहीं · <b class="delta">पंजीकरण मुफ्त</b>',
-   l1="क्यों ज़रूरी", v1="PAN + बैंक खाता + आधार-मोबाइल से 1–3 दिन में विक्रेता खाता चालू; उद्यम पर जमानत माफ",
-   l2="क्या करें", v2="GeM वेबसाइट पर विक्रेता पंजीकरण करें, सामान सूची में डालें; पूरे देश के सरकारी खरीदार देखेंगे"),
+ # --- Commodity (mandi_bhav) — 2 तेजी/RED + 1 मंदी/GREEN (balance). काबुली चना (in-house 6सित, तेजी) + जीरा (UGC teji_mandi LR6.43, तेजी, ₹260→280) + अखरोट (in-house मेवा 6सित, मंदी). Rejected maida fc753329 (macaroni mislabel + dedup), chini bc3067e0 (12d dedup), laung (no-number), besan (margin-pitch not mandi). ---
+ dict(i=1, label="मंडी भाव", stripe=RED, headline="काबुली चना",
+   price=f'{tri("up",RED)}₹7,200<span class="unit">/क्विंटल</span>',
+   sub=f'काबुली चना ₹7,200/क्विंटल पर टिका — आज घटबढ़ नहीं, पर नई फसल दूर और स्टॉक सीमित; कारोबारी ₹7,000 के ऊपर और तेजी मान रहे · <b class="delta" style="color:{RED}">आगे और तेजी</b>',
+   l1="क्यों", v1="नई फसल आने में लंबा समय, उपलब्ध स्टॉक सीमित; इन भावों पर व्यापार लाभदायक, ग्राहकी सामान्य",
+   l2="क्या करें", v2="भाव नीचे जाने का डर कम, ऊपर की गुंजाइश ज्यादा; नवरात्र-त्योहारी मांग से पहले जरूरत का माल अभी उठाएं"),
+ dict(i=2, label="मंडी भाव", stripe=RED, headline="जीरा",
+   price=f'{tri("up",RED)}₹280<span class="unit">/किलो</span>',
+   sub=f'मसाला बाजार में जीरा ₹260 से बढ़कर ₹280/किलो — ₹20/किलो की तेजी; त्योहारी मांग निकलने से भाव चढ़े · <b class="delta" style="color:{RED}">₹20 तेजी</b>',
+   l1="क्यों", v1="त्योहारी सीजन में मसालों की मांग तेज हुई, जीरा में लिवाली बढ़ी और आवक सीमित",
+   l2="क्या करें", v2="जरूरत का जीरा अभी भर लें; ग्राहकी और निकलने पर रेट और चढ़ सकता है, पुराने भाव का फायदा लें"),
+ dict(i=3, label="मंडी भाव", stripe=GREEN, headline="अखरोट",
+   price=f'{tri("down",GREEN)}₹350–600<span class="unit">/किलो</span>',
+   sub=f'दिल्ली में अखरोट ₹350–600/किलो, गिरी ₹800–1,400; बंपर फसल और सस्ते आयात से भाव पर दबाव · <b class="delta" style="color:{GREEN}">भाव दबे</b>',
+   l1="क्यों", v1="कश्मीर में नई फसल की तुड़ाई शुरू; चीन-चिली-कैलिफोर्निया का सस्ता आयात, देसी माल पर दबाव",
+   l2="क्या करें", v2="नई फसल में मेवा सस्ता मिलने की गुंजाइश; त्योहारी मांग सामने, थोड़ा-थोड़ा स्टॉक बनाएं, साबुत+गिरी दोनों रखें"),
+ # --- FMCG (fmcg) — TOP by LR desc across all 4 segments after ledger dedup (news_id 12d + brand 7d) + body-verify. Real product photos. ---
+ #     hajmola LR7.25 (Retailer, ₹40 मार्जिन/डिब्बा), ghadi-nirma LR6.19 (Consumer, 1kg पर ₹10 साबुन फ्री), vicks LR5.60 (Retailer, 14+1 फ्री).
+ #     BLOCKED brand 7d: colgate, rich-ketchup, lifebuoy, jatna-chai, kaccha-mango, oreo, clinic-plus, gillette. BLOCKED news_id 12d: diana(3850bd45). Category spread: candy/detergent/health.
+ dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="हाजमोला",
+   price=f'<span class="offer" style="background:{SCHEME_GREEN}">₹40 मार्जिन/डिब्बा</span>',
+   sub='₹1 वाला हाजमोला — एक डिब्बा खरीद ₹130, बिक्री ₹170; सीधा ₹40 मार्जिन, 1,000 पीस पर 10 पीस अलग से फ्री · <b class="delta">₹40 मार्जिन</b>',
+   l1="स्कीम", v1="एक डिब्बा ₹130 में पड़ता, बनता ₹170; 1,000 पीस पर 10 पीस इनसाइड फ्री",
+   l2="फायदा", v2="हर डिब्बे पर ₹40 का पक्का मार्जिन; ₹1 का तेज बिकने वाला आइटम, काउंटर पर रखें"),
+ dict(i=5, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="घड़ी निरमा",
+   price=f'<span class="offer" style="background:{SCHEME_BLUE}">1kg पर साबुन फ्री</span>',
+   sub='1 किलो घड़ी डिटर्जेंट खरीदने पर ₹10 वाला वीनस साबुन बिल्कुल फ्री; ग्राहक तेजी से खिंच रहे, अच्छी सेलिंग · <b class="delta">₹10 का माल फ्री</b>',
+   l1="ऑफर", v1="1kg घड़ी निरमा पर एक ₹10 वाला वीनस साबुन बिल्कुल फ्री",
+   l2="ग्राहक को", v2="उसी दाम में डिटर्जेंट के साथ साबुन मुफ्त; रोजमर्रा का माल, तेज बिक्री का कॉम्बो"),
+ dict(i=6, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="विक्स वेपोरब",
+   price=f'<span class="offer" style="background:{SCHEME_GREEN}">14 पर 1 फ्री</span>',
+   sub='विक्स वेपोरब — 14 पीस खरीदने पर 1 पीस बिल्कुल फ्री; मौसम बदलने पर सर्दी-जुकाम में बच्चों के लिए तेज बिकने वाला · <b class="delta">1 पीस फ्री</b>',
+   l1="स्कीम", v1="14 वेपोरब खरीदने पर 1 वेपोरब बिल्कुल फ्री",
+   l2="फायदा", v2="हर 14 पर एक मुफ्त = सीधा मुनाफा; मौसम बदलते ही पक्की मांग, स्टॉक अभी रखें"),
+ # --- News (trending_news) — in-house 6सित: 17 राज्यों में भारी बारिश अलर्ट, timely + actionable (माल बचाएं), non-bait. Skipped FSSAI (alt/also_shown), नकली-तेल (scam bait), रुझान/Samachar digests. News=1 base. ---
+ dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="बारिश का अलर्ट",
+   price='<span class="news">17 राज्यों में भारी बारिश</span>',
+   sub='मौसम विभाग का 17 राज्यों में भारी बारिश-आंधी अलर्ट (हवा 60–75 किमी/घंटा); दलहन-सब्जी को नुकसान, आवक टूटने से भाव चढ़ेंगे · <b class="delta">दुकान का माल बचाएं</b>',
+   l1="क्यों ज़रूरी", v1="खेतों में पानी से खरीफ फसल-सब्जी को नुकसान; प्याज-टमाटर 2–4 दिन महंगे, दाल में तेजी और मजबूत, डिलीवरी लेट",
+   l2="क्या करें", v2="दाल-आटा-चीनी की बोरियां लकड़ी के पटरों पर, दीवार से आधा फुट दूर रखें; छत की टपकन आज ही देखें, नमी से घुन-गांठ का नुकसान बचाएं"),
 ]
 
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>

@@ -123,10 +123,10 @@ def render(tag, cfg, grad, bottom):
 # of the white ring while staying uniform. ALWAYS re-check max_text_radius <= ~438 (white-ring inner 454) after
 # changing copy — the widest line caps FS.
 FS=130   # 2026-08-25: dropped 138->130, "तूर दाल" upper line grazed ring at 455 (>448) at 138
-# 2026-09-05: mandi=चना/तेज़ (देसी चना तेजी +100), fmcg=ब्रश पर/पेस्ट फ्री (Colgate Super Flexy retailer scheme, real pack), tn=सरकार को/बेचें (GeM सरकारी खरीद). All 2-line short hooks; verify radial clearance after render.
-DAY=[dict(i=1,src="subjfull_1.png",lines=["चना","तेज़"],fs=150),           # both short lines; 150 fits well clear of ring (measure)
-     dict(i=2,src="subjfull_2.png",lines=["ब्रश पर","पेस्ट फ्री"],fs=126),  # "पेस्ट फ्री" wider bottom line -> 126 (measure)
-     dict(i=3,src="subjfull_3.png",lines=["सरकार को","बेचें"],fs=124)]      # "सरकार को" wide conjuncts upper line; 124 keeps it clear (measure)
+# 2026-09-06: mandi=जीरा/तेज़ (जीरा तेजी ₹260→280), fmcg=₹40/मार्जिन (Hajmola retailer scheme, real D2R jar), tn=बारिश/माल बचाएं (17 राज्य बारिश अलर्ट). All 2-line short hooks; verify radial clearance after render.
+DAY=[dict(i=1,src="subjfull_1.png",lines=["जीरा","तेज़"],fs=150),            # both short lines; 150 fits well clear of ring (measure)
+     dict(i=2,src="subjfull_2.png",lines=["₹40","मार्जिन"],fs=140),          # "मार्जिन" bottom line -> 140 (measure)
+     dict(i=3,src="subjfull_3.png",lines=["बारिश","माल बचाएं"],fs=112)]      # "माल बचाएं" wide 2-word bottom line; 112 keeps it clear (measure)
 if __name__=="__main__":
     render("D", DAY, TALL, 190)   # bottom raised for FS130 + wide tn bottom line: seats block higher in the circle's wider zone to clear the ring
     # 2026-07-14 crop fix: operator flagged text CROPPING at the ring. Root cause — the
