@@ -4819,6 +4819,79 @@
       ],
       "note": "base 3+3+1 (experiment window closed 09-02). Commodity 2 RED (chana,maida)+1 GREEN (chini) balance. FMCG top-3 by LR post-dedup, Diana→Jatna for category spread. News=GeM (chini used as commodity; नकली-तेल scam-bait skipped). QC composited + ring-normalized; 7 cards + 3 badges verified. PN scheduled 16:30 IST.",
       "pn_campaign_id": "~dah66a"
+    },
+    {
+      "date": "2026-09-06",
+      "picks": {
+        "mandi_bhav": [
+          {
+            "news_id": "1e8a3b5c-1934-4d2c-af07-85dfa5925d33",
+            "brand": "kabuli-chana",
+            "direction": "तेजी",
+            "label": "काबुली चना तेजी ₹7,200/क्विंटल पर टिका; नई फसल दूर+स्टॉक सीमित, आगे ₹7,000+ तेजी संकेत (in-house 6सित दाल बाजार, RED)"
+          },
+          {
+            "news_id": "f039f2cc-8d48-4754-9dd4-14e81b9725bf",
+            "brand": "jeera",
+            "direction": "तेजी",
+            "label": "जीरा तेजी ₹260→₹280/किलो (+₹20); त्योहारी मसाला मांग (UGC teji_mandi LR6.43 RED)"
+          },
+          {
+            "news_id": "9f5d6644-fc41-450a-9da9-2e165b9cea5b",
+            "brand": "akhrot",
+            "direction": "मंदी",
+            "label": "अखरोट मंदी ₹350-600/किलो (गिरी ₹800-1,400); बंपर फसल+सस्ता आयात दबाव (in-house 6सित मेवा, GREEN)"
+          }
+        ],
+        "fmcg": [
+          {
+            "news_id": "02846b58-5896-4cdd-9b80-32d0ec75af6f",
+            "brand": "hajmola",
+            "label": "हाजमोला ₹1 वाला Retailer स्कीम — डिब्बा ₹130→₹170, ₹40 मार्जिन, 1000 पर 10 फ्री (UGC scheme Retailer LR7.25)"
+          },
+          {
+            "news_id": "16c84b49-c678-4f16-aefb-47b7f9da73ae",
+            "brand": "ghadi",
+            "label": "घड़ी निरमा Consumer स्कीम — 1kg पर ₹10 वीनस साबुन फ्री (UGC scheme Consumer LR6.19)"
+          },
+          {
+            "news_id": "6d84a57a-761a-46f9-9863-f62fe430103f",
+            "brand": "vicks",
+            "label": "विक्स वेपोरब Retailer स्कीम — 14 पर 1 फ्री, सर्दी-जुकाम बच्चों के लिए (UGC scheme Retailer LR5.60)"
+          }
+        ],
+        "trending_news": [
+          {
+            "news_id": "4b86e3c8-94da-4bb0-b7e7-87fdf1c2c12c",
+            "brand": "barish",
+            "label": "17 राज्यों में भारी बारिश अलर्ट (हवा 60-75kmph); दलहन-सब्जी नुकसान, दुकान का माल बचाएं (in-house 6सित, non-bait)"
+          }
+        ]
+      },
+      "also_shown": [
+        {
+          "news_id": "3850bd45-b972-4a59-bddc-d1c8491ef0f0",
+          "brand": "diana",
+          "label": "डायना साबुन Consumer LR7.59 — swapped out (12d news_id dedup)"
+        },
+        {
+          "news_id": "fc753329-a7d3-4a9b-bf48-b7e0fa727589",
+          "brand": "maida",
+          "label": "मैदा UGC teji_mandi LR8.22 — rejected (body=macaroni mislabel + 12d dedup)"
+        },
+        {
+          "news_id": "bc3067e0-b2da-4591-9386-c95a0b888ff2",
+          "brand": "chini",
+          "label": "चीनी UGC teji_mandi LR8.13 — rejected (12d news_id dedup, used 09-05)"
+        },
+        {
+          "news_id": "d6b6185c-37ad-4d51-b0f4-da15aaf1f7f0",
+          "brand": "laung",
+          "label": "लौंग UGC teji_mandi LR7.27 — rejected (no ₹ figure, vague)"
+        }
+      ],
+      "pn_campaign_id": "~2hfajn8",
+      "notes": "experiment window CLOSED (Aug29-Sep02) → base 3+3+1. काबुली चना distinct from 09-05 देसी चना. FMCG top-3 by LR after news_id(12d)+brand(7d) dedup+body-verify."
     }
   ],
   "brand_dedup_window_days": 7
