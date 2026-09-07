@@ -58,3 +58,9 @@ fmcg_products_contact.png
 
 # QC contact sheets (photos_contact, cards_contact, *_fix_contact — regenerated every run)
 *_contact.png
+
+# upload-prepped cards + extra QC crops/strips (regenerated every run)
+up_*.png
+check_*.png
+contact_stripe.png
+contact_badges_*.png
