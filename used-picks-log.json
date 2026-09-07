@@ -4892,6 +4892,62 @@
       ],
       "pn_campaign_id": "~2hfajn8",
       "notes": "experiment window CLOSED (Aug29-Sep02) → base 3+3+1. काबुली चना distinct from 09-05 देसी चना. FMCG top-3 by LR after news_id(12d)+brand(7d) dedup+body-verify."
+    },
+    {
+      "date": "2026-09-07",
+      "picks": {
+        "mandi_bhav": [
+          {
+            "news_id": "671b4eeb-d29b-4a23-8398-c85527e00412",
+            "brand": "ajwain",
+            "direction": "तेजी",
+            "label": "अजवाइन तेजी +₹500 → जावरा ₹16,500–17,500/क्विंटल (~₹5/किलो); मेथीदाना भी +₹100 → ₹7,700–7,800 (in-house 7सित मसाला, RED)"
+          },
+          {
+            "news_id": "96072e8c-de80-4b02-a99d-0b6a73b6b80c",
+            "brand": "matar",
+            "direction": "तेजी",
+            "label": "मटर तेजी +₹50 → ₹4,700–4,750/क्विंटल; देसी+बंदरगाह स्टॉक कम, कनाडा फसल कमजोर, आगे ₹5/किलो और (in-house 7सित दाल, RED)"
+          },
+          {
+            "news_id": "5b484f05-371b-4f07-9765-f1ab0768c7c7",
+            "brand": "soya-tel",
+            "direction": "मंदी",
+            "label": "सोया तेल मंदी −₹200 → दिल्ली ₹15,400/क्विंटल (कांदला −₹350 → ₹14,250); अगस्त भारी आयात (in-house 7सित तेल, GREEN for balance)"
+          }
+        ],
+        "fmcg": [
+          {
+            "news_id": "95e8471e-2b9a-4213-9cc7-5e150ac16d87",
+            "brand": "happy-happy",
+            "direction": "scheme",
+            "label": "पारले हैप्पी हैप्पी चोकोचिप बिस्किट — Retailer Scheme 11+1 (12 पर 1 फ्री) (UGC scheme Retailer LR8.99, real Parle pack) · biscuit"
+          },
+          {
+            "news_id": "8b84b341-ce76-438b-a3e1-18901b0e5a83",
+            "brand": "kissan",
+            "direction": "product_change",
+            "label": "किसान फ्रेश टोमैटो केचप 930g — product_change RATE MRP ₹95→₹89 (GST कटौती, ₹6 सस्ता) (UGC fmcg_product_change LR7.97, real pack) · ketchup"
+          },
+          {
+            "news_id": "49a4d64e-043d-4e5d-9019-01d862ee1c3c",
+            "brand": "lux",
+            "direction": "scheme",
+            "label": "लक्स ब्यूटी साबुन 100g — Consumer Scheme 3+1 (3 पीस ₹125 पर 1 फ्री) (UGC scheme Consumer LR6.99, real pack) · soap"
+          }
+        ],
+        "trending_news": [
+          {
+            "news_id": "523ddb08-5a42-475d-b54b-6df350bae959",
+            "brand": "kyc-qr",
+            "direction": "news",
+            "label": "RBI KYC डेडलाइन — 15 सित तक सभी पुराने दुकानदारों का दोबारा KYC वरना QR/soundbox पेमेंट रुक सकता (in-house 7सित, policy/market-impact, non-bait)"
+          }
+        ]
+      },
+      "also_shown": [],
+      "pn_campaign_id": "ja6nsn",
+      "notes": "Base 3+3+1 (experiment window CLOSED). All commodity+news in-house (distinct news_ids); FMCG top-3 by LR across 4 segments after news_id-12d + brand-7d dedup + body-verify — all real product packs, 3 distinct segments (Retailer/product_change/Consumer), category spread biscuit/ketchup/soap. Skipped: चीनी/गुड़ over-covered, जीरा/धनिया/हल्दी share मसाला news_id, डाकघर-योजना+गांव-दुकान (news alt), नकली-तेल/ठगी scam bait, रुझान/Samachar digests. FMCG brand-blocked 7d: hajmola/ghadi/vicks/colgate/rich-ketchup/jatna-chai/lifebuoy/gillette/parachute/patanjali-dant-kanti/kaccha-mango/diana. QC: deterministic compositor (cards) + kc-badge-banner (ring+PN), radial 336/352/412<=448, PN alpha verified. PN 16:30 IST campaign ja6nsn."
     }
   ],
   "brand_dedup_window_days": 7
