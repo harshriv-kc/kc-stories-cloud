@@ -72,48 +72,48 @@ def b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-09-07 · experiment window CLOSED → base 3+3+1)
+# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-09-08 · experiment window CLOSED → base 3+3+1)
 CARDS = [
- # --- Commodity (mandi_bhav) — 2 तेजी/RED + 1 मंदी/GREEN (balance). अजवाइन (in-house मसाला 7सित, तेजी +₹500) + मटर (in-house दाल 7सित, तेजी +₹50) + सोया तेल (in-house तेल 7सित, मंदी −₹200). All in-house today; distinct news_ids. Skipped चीनी/गुड़ (over-covered), जीरा/धनिया/हल्दी (same मसाला news_id as अजवाइन). ---
- dict(i=1, label="मंडी भाव", stripe=RED, headline="अजवाइन",
-   price=f'{tri("up",RED)}₹16,500–17,500<span class="unit">/क्विंटल</span>',
-   sub=f'जावरा लाइन अजवाइन ₹500 उछलकर ₹16,500–17,500/क्विंटल (~₹5/किलो); त्योहारी ग्राहकी निकली, आवक सीमित; मेथीदाना भी +₹100 → ₹7,700–7,800 · <b class="delta" style="color:{RED}">₹500 तेजी</b>',
-   l1="क्यों", v1="त्योहार नजदीक, मसाला इकाइयों और थोक की खरीद अचानक निकली; पीछे से आवक सीमित",
-   l2="क्या करें", v2="अजवाइन-मेथीदाना का जरूरत का माल अभी भरें; त्योहार तक और मजबूती के आसार"),
- dict(i=2, label="मंडी भाव", stripe=RED, headline="मटर",
-   price=f'{tri("up",RED)}₹4,700–4,750<span class="unit">/क्विंटल</span>',
-   sub=f'मटर ₹50 चढ़कर ₹4,700–4,750/क्विंटल; बंदरगाह पर ₹43.50/किलो, आगे ₹5/किलो और तेजी के आसार — देसी स्टॉक कम, कनाडा फसल कमजोर · <b class="delta" style="color:{RED}">₹50 तेजी</b>',
-   l1="क्यों", v1="भारतीय बंदरगाह और देसी (UP-MP) स्टॉक कम; कनाडा में खराब मौसम से उत्पादन घटा, डॉलर महंगा — आयात महंगा पड़ रहा",
-   l2="क्या करें", v2="मटर और मटर दाल का माल अभी भरें; त्योहारी खपत में भाव और ऊपर, छनी-बगैर छनी अलग दाम पर बेचें"),
- dict(i=3, label="मंडी भाव", stripe=GREEN, headline="सोया तेल",
-   price=f'{tri("down",GREEN)}₹15,400<span class="unit">/क्विंटल</span>',
-   sub=f'दिल्ली सोया रिफाइंड ₹200 टूटकर ₹15,400/क्विंटल, कांदला ₹350 गिरकर ₹14,250; टीन ₹2,400–2,500 — अगस्त में भारी आयात से दबाव · <b class="delta" style="color:{GREEN}">₹200 गिरावट</b>',
-   l1="क्यों", v1="अगस्त में बहुत ज्यादा आयात, बाहर से माल भरपूर; हाजिर में उठाव कमजोर रहा, इसलिए भाव नीचे आए",
-   l2="क्या करें", v2="सोया रिफाइंड अभी सस्ता — कुछ दिन का माल भरना फायदे का; सरसों तेल उलटा ₹150 चढ़ा, उसमें रुककर लें"),
+ # --- Commodity (mandi_bhav) — 2 तेजी/RED + 1 मंदी/GREEN (balance). सरसों तेल (in-house तेल 8सित, तेजी +₹50) + हल्दी (in-house मसाला 8सित, तेजी +₹200) + चीनी (in-house शक्कर 8सित, मंदी −₹200). All in-house today; distinct news_ids. Skipped जीरा/राई (same मसाला news_id as हल्दी), मसूर/रुझान/Samachar digests. ---
+ dict(i=1, label="मंडी भाव", stripe=RED, headline="सरसों तेल",
+   price=f'{tri("up",RED)}₹16,900<span class="unit">/क्विंटल</span>',
+   sub=f'सरसों तेल ₹50 चढ़कर ₹16,900/क्विंटल; दादरी लाइन ₹17,650, टीन ₹2,700–2,950; आवक ढाई लाख बोरी फिर भी मिलों की खरीद मजबूत — पाम तेल $10 चढ़ा · <b class="delta" style="color:{RED}">₹50 तेजी</b>',
+   l1="क्यों", v1="मिलों की मांग मजबूत, स्टॉकिस्टों की बिकवाली कमजोर; आयातित पाम तेल $10 चढ़ने से घरेलू तेल को सहारा",
+   l2="क्या करें", v2="सरसों तेल का जरूरत का माल भरें; सोया तेल ठहरा (₹15,400) है, उसमें जल्दबाजी नहीं — टीन के भाव देखकर ऑर्डर दें"),
+ dict(i=2, label="मंडी भाव", stripe=RED, headline="हल्दी",
+   price=f'{tri("up",RED)}₹18,600–18,700<span class="unit">/क्विंटल</span>',
+   sub=f'हल्दी ₹200 उछलकर ईरोड ₹18,600–18,700/क्विंटल; सेलम फली ₹18,800–24,400 — स्टॉकिस्टों की लिवाली सुधरी, नई फसल दूर, आगे ₹19,500 तक के आसार; जीरा-राई भी चढ़े · <b class="delta" style="color:{RED}">₹200 तेजी</b>',
+   l1="क्यों", v1="बिकवाली घटी, स्टॉकिस्टों की खरीद लौटी; नई फसल आने में समय और त्योहारी मसाला मांग निकली",
+   l2="क्या करें", v2="हल्दी-जीरा का त्योहारी माल पहले उठा लें; भाव आगे और चढ़ सकते हैं, बड़ी इलायची ₹50 नरम हुई"),
+ dict(i=3, label="मंडी भाव", stripe=GREEN, headline="चीनी",
+   price=f'{tri("down",GREEN)}₹4,900–5,150<span class="unit">/क्विंटल</span>',
+   sub=f'मिल डिलीवरी चीनी ₹100–200 टूटकर ₹4,900–5,150/क्विंटल; हाजिर ₹5,200–5,400 — दाम पर रोक की आशंका में मिलों ने घटाकर माल बेचा · <b class="delta" style="color:{GREEN}">₹200 गिरावट</b>',
+   l1="क्यों", v1="बढ़ते दामों पर सरकारी रोक की चर्चा में मिलों ने भाव घटाकर बेचा; ग्राहकी का सहारा नहीं मिला",
+   l2="क्या करें", v2="त्योहार से पहले चीनी की खरीद पर लागत घटी — जरूरत का माल अभी भरें; सरकारी कदमों की खबर पर नजर रखें"),
  # --- FMCG (fmcg) — TOP by LR desc across all 4 segments after ledger dedup (news_id 12d + brand 7d) + body-verify. Real product photos. ---
- #     happy-happy LR8.99 (Retailer, Parle 11+1), kissan LR7.97 (product_change RATE, 930g MRP ₹95→₹89 GST), lux LR6.99 (Consumer, 100g 3+1).
- #     BLOCKED brand 7d: hajmola, ghadi, vicks, colgate, rich-ketchup, jatna-chai, lifebuoy, gillette, parachute, patanjali-dant-kanti, kaccha-mango, diana. Category spread: biscuit/ketchup/soap. All 3 distinct segments.
- dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="हैप्पी हैप्पी",
-   price=f'<span class="offer" style="background:{SCHEME_GREEN}">11 पर 1 फ्री</span>',
-   sub='पारले हैप्पी हैप्पी चोकोचिप कुकीज़ — 11 पैकेट खरीदने पर 1 पैकेट बिल्कुल फ्री (12 का बंडल); तेज बिकने वाला बिस्किट, बच्चों में पक्की मांग · <b class="delta">1 पैकेट फ्री</b>',
-   l1="स्कीम", v1="12 पैकेट के बंडल पर 1 पैकेट बिल्कुल फ्री (11+1 का ऑफर)",
-   l2="फायदा", v2="हर बंडल पर ~8–9% एक्स्ट्रा माल = सीधा मुनाफा; रोज बिकने वाला बिस्किट, काउंटर पर रखें"),
- dict(i=5, eyebrow="FMCG", label="प्रोडक्ट बदलाव", stripe=BLACK, headline="किसान केचप",
-   price='₹95<span class="arrow">→</span>₹89',
-   sub='किसान फ्रेश टोमैटो केचप 930g — GST कटौती के बाद MRP ₹95 से घटकर ₹89; ग्राहक को सीधी ₹6 सस्ती, असली टमाटर वाला · <b class="delta">₹6 सस्ता</b>',
-   l1="बदलाव", v1="930g फैमिली पैक की MRP ₹95 → ₹89 (GST दर घटने से ₹6 कम)",
-   l2="फायदा", v2="नई MRP पर ग्राहक को ₹6 बचत; ₹95 वाला पुराना स्टॉक पहले निकालें, फिर ₹89 का नया माल लगाएं"),
- dict(i=6, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="लक्स साबुन",
+ #     parle-eclairs LR8.15 (Retailer, 800 jar +80 free), chakachak LR5.45 (Consumer, 3+1), coca-cola LR5.30 (Consumer, 2L +200ml).
+ #     BLOCKED brand 7d: ghadi, happy-happy, kissan, lux, hajmola, jatna-chai, colgate, vicks, oreo, diana, gillette. Category spread: candy/dishwash/beverage. Segments: 1 retailer + 2 consumer (pure LR desc, no quota).
+ dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="एक्लेयर्स टॉफी",
+   price=f'<span class="offer" style="background:{SCHEME_GREEN}">800 पर 80 फ्री</span>',
+   sub='पारले 2-इन-1 एक्लेयर्स ₹1 वाली टॉफी — 800 टॉफी के जार पर 80 टॉफी एक्स्ट्रा फ्री (जार के अंदर); रोज बिकने वाली टॉफी, बच्चों-चिल्हर में पक्की मांग · <b class="delta">80 टॉफी फ्री</b>',
+   l1="स्कीम", v1="₹1 वाली 800 एक्लेयर्स टॉफी के जार पर 80 टॉफी बिल्कुल फ्री (एक्स्ट्रा जार के अंदर)",
+   l2="फायदा", v2="हर जार पर ~10% एक्स्ट्रा माल = सीधा मुनाफा; ₹1 टॉफी तेज बिकती है, काउंटर-चिल्हर दोनों में चलती"),
+ dict(i=5, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="चकाचक बार",
    price=f'<span class="offer" style="background:{SCHEME_BLUE}">3 + 1 फ्री</span>',
-   sub='लक्स ब्यूटी साबुन (100g) — 3 पीस खरीदने पर 1 पीस बिल्कुल फ्री; 3 पीस ₹125 में पड़ते, 1-1 करके बेचने पर अच्छा मुनाफा · <b class="delta">1 साबुन फ्री</b>',
-   l1="ऑफर", v1="100g लक्स के 3 पीस (₹125 में) खरीदने पर 1 पीस बिल्कुल फ्री (3+1)",
-   l2="ग्राहक को", v2="उसी दाम में 4 साबुन मिलते; 1-1 करके बेचें तो हर पीस पर बढ़िया मार्जिन निकलता है"),
- # --- News (trending_news) — in-house 7सित: RBI KYC डेडलाइन (15 सित तक दोबारा KYC वरना QR/soundbox पेमेंट रुक सकता), timely + actionable, policy/market-impact, non-bait. Skipped डाकघर योजना (alt), गांव-दुकान (no-number trend), नकली-तेल/ठगी (scam bait), रुझान/Samachar digests. News=1 base. ---
- dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="KYC वरना QR बंद",
-   price='<span class="news">15 सितंबर तक दोबारा KYC जरूरी</span>',
-   sub='RBI का आदेश — 15 सितंबर तक सभी पुराने दुकानदारों का दोबारा KYC जरूरी; अधूरा रहा तो QR पेमेंट रुक सकता है · <b class="delta">आज ही कराएं</b>',
-   l1="क्यों ज़रूरी", v1="अनुमान है ~80% का ही समय पर KYC होगा; अधूरे KYC पर QR पेमेंट रुक सकता है",
-   l2="क्या करें", v2="अपनी QR/साउंडबॉक्स कंपनी की हेल्पलाइन पर आज ही पुष्टि करें; आधार-पैन-बैंक जानकारी तैयार रखें"),
+   sub='चकाचक बर्तन बार (₹10 वाला) — 3 नग खरीदने पर 1 नग बिल्कुल फ्री (buy 3 get 1); नींबू वाला, बर्तन धोने में तेज — रोज की जरूरत · <b class="delta">1 बार फ्री</b>',
+   l1="ऑफर", v1="₹10 वाले चकाचक बर्तन बार के 3 नग खरीदने पर 1 नग बिल्कुल फ्री (3+1)",
+   l2="ग्राहक को", v2="उसी दाम में 4 बार मिलते; रोज बिकने वाला सस्ता आइटम, चिल्हर ग्राहक को बांधकर रखता है"),
+ dict(i=6, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="कोका कोला",
+   price=f'<span class="offer" style="background:{SCHEME_BLUE}">2L पर 200ml फ्री</span>',
+   sub='कोका कोला 2 लीटर कोल्ड्रिंक — खरीदने पर 200ml कोका कोला बिल्कुल फ्री; त्योहार-मेहमानी सीजन में बड़ी बोतल की तेज मांग · <b class="delta">200ml फ्री</b>',
+   l1="ऑफर", v1="2 लीटर कोका कोला की एक बोतल पर 200ml कोका कोला बिल्कुल फ्री",
+   l2="ग्राहक को", v2="उसी दाम में ज्यादा ड्रिंक; फैमिली पैक तेज चलता है, ठंडा रखकर काउंटर पर दिखाएं"),
+ # --- News (trending_news) — in-house 8सित: MSMED संशोधन कानून 2026 — छोटे उद्यम को भुगतान 45 दिन में जरूरी, विवाद ऑनलाइन 90 दिन में; policy + actionable + concrete number, non-bait. Skipped डीजल (no clear win), PMEGP योजना (alt), रुझान/Samachar digests. News=1 base. ---
+ dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="उधारी 45 दिन में",
+   price='<span class="news">भुगतान 45 दिन में — नया कानून</span>',
+   sub='MSMED संशोधन कानून 2026 — छोटे/सूक्ष्म उद्यम से माल लेने वाले को 45 दिन में भुगतान करना होगा; देर पर मामला सीधे कानूनी दायरे में · <b class="delta">मुफ्त पंजीकरण जरूरी</b>',
+   l1="क्यों ज़रूरी", v1="थोक/संस्था को माल देने वालों की उधारी अब 45 दिन में; विवाद ऑनलाइन 90 दिन में तय",
+   l2="क्या करें", v2="उद्यम पोर्टल पर मुफ्त पंजीकरण कराएं — तभी यह कानूनी सुरक्षा मिलेगी"),
 ]
 
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
