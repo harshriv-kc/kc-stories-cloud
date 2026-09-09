@@ -72,48 +72,48 @@ def b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-09-08 · experiment window CLOSED → base 3+3+1)
+# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-09-09 · experiment window CLOSED → base 3+3+1)
 CARDS = [
- # --- Commodity (mandi_bhav) — 2 तेजी/RED + 1 मंदी/GREEN (balance). सरसों तेल (in-house तेल 8सित, तेजी +₹50) + हल्दी (in-house मसाला 8सित, तेजी +₹200) + चीनी (in-house शक्कर 8सित, मंदी −₹200). All in-house today; distinct news_ids. Skipped जीरा/राई (same मसाला news_id as हल्दी), मसूर/रुझान/Samachar digests. ---
- dict(i=1, label="मंडी भाव", stripe=RED, headline="सरसों तेल",
-   price=f'{tri("up",RED)}₹16,900<span class="unit">/क्विंटल</span>',
-   sub=f'सरसों तेल ₹50 चढ़कर ₹16,900/क्विंटल; दादरी लाइन ₹17,650, टीन ₹2,700–2,950; आवक ढाई लाख बोरी फिर भी मिलों की खरीद मजबूत — पाम तेल $10 चढ़ा · <b class="delta" style="color:{RED}">₹50 तेजी</b>',
-   l1="क्यों", v1="मिलों की मांग मजबूत, स्टॉकिस्टों की बिकवाली कमजोर; आयातित पाम तेल $10 चढ़ने से घरेलू तेल को सहारा",
-   l2="क्या करें", v2="सरसों तेल का जरूरत का माल भरें; सोया तेल ठहरा (₹15,400) है, उसमें जल्दबाजी नहीं — टीन के भाव देखकर ऑर्डर दें"),
- dict(i=2, label="मंडी भाव", stripe=RED, headline="हल्दी",
-   price=f'{tri("up",RED)}₹18,600–18,700<span class="unit">/क्विंटल</span>',
-   sub=f'हल्दी ₹200 उछलकर ईरोड ₹18,600–18,700/क्विंटल; सेलम फली ₹18,800–24,400 — स्टॉकिस्टों की लिवाली सुधरी, नई फसल दूर, आगे ₹19,500 तक के आसार; जीरा-राई भी चढ़े · <b class="delta" style="color:{RED}">₹200 तेजी</b>',
-   l1="क्यों", v1="बिकवाली घटी, स्टॉकिस्टों की खरीद लौटी; नई फसल आने में समय और त्योहारी मसाला मांग निकली",
-   l2="क्या करें", v2="हल्दी-जीरा का त्योहारी माल पहले उठा लें; भाव आगे और चढ़ सकते हैं, बड़ी इलायची ₹50 नरम हुई"),
- dict(i=3, label="मंडी भाव", stripe=GREEN, headline="चीनी",
-   price=f'{tri("down",GREEN)}₹4,900–5,150<span class="unit">/क्विंटल</span>',
-   sub=f'मिल डिलीवरी चीनी ₹100–200 टूटकर ₹4,900–5,150/क्विंटल; हाजिर ₹5,200–5,400 — दाम पर रोक की आशंका में मिलों ने घटाकर माल बेचा · <b class="delta" style="color:{GREEN}">₹200 गिरावट</b>',
-   l1="क्यों", v1="बढ़ते दामों पर सरकारी रोक की चर्चा में मिलों ने भाव घटाकर बेचा; ग्राहकी का सहारा नहीं मिला",
-   l2="क्या करें", v2="त्योहार से पहले चीनी की खरीद पर लागत घटी — जरूरत का माल अभी भरें; सरकारी कदमों की खबर पर नजर रखें"),
+ # --- Commodity (mandi_bhav) — 2 तेजी/RED + 1 मंदी/GREEN (balance). बड़ी इलायची (in-house Samachar 9सित, तेजी +₹40) + मसूर (in-house दाल 9सित, तेजी आयात महंगा) + सरसों तेल (in-house तेल 9सित, मंदी −₹100). All in-house today; distinct news_ids. Skipped रुझान/Other-commodities digests, कालीमिर्च (weak +₹5), हल्दी (same मसाला/Samachar news_id). ---
+ dict(i=1, label="मंडी भाव", stripe=RED, headline="बड़ी इलायची",
+   price=f'{tri("up",RED)}₹1,540–1,550<span class="unit">/किलो</span>',
+   sub=f'बड़ी इलायची ₹40 उछलकर ₹1,540–1,550/किलो; हाजिर में माल की कमी और ग्राहकी निकलने से दो दिन में ₹30 की तेजी, राई भी ₹10 चढ़कर ₹188–190/किलो · <b class="delta" style="color:{RED}">₹40 तेजी</b>',
+   l1="क्यों", v1="हाजिर बाजार में माल की कमी और त्योहारी ग्राहकी; बड़ी इलायची की सीमित आवक ने भाव चढ़ाए",
+   l2="क्या करें", v2="बड़ी इलायची-राई का त्योहारी माल पहले उठा लें; भाव आगे और चढ़ सकते हैं, पुराना स्टॉक निकालने में जल्दबाजी न करें"),
+ dict(i=2, label="मंडी भाव", stripe=RED, headline="मसूर",
+   price=f'{tri("up",RED)}₹6,950–6,975<span class="unit">/क्विंटल</span>',
+   sub=f'देसी मसूर ₹6,950–6,975/क्विंटल; कनाडा में भाव $25–30/टन चढ़ने से आयात महंगा और देसी माल खत्म — तुवर से ~50% सस्ती होने से खपत तेज, आगे और तेजी के आसार · <b class="delta" style="color:{RED}">तेजी के आसार</b>',
+   l1="क्यों", v1="कनाडा में मसूर महंगी होने से आयात का पड़ता ऊंचा; देसी माल नहीं बचा, मिलों को ऊंचे भाव खरीदना पड़ रहा",
+   l2="क्या करें", v2="मसूर-मलका का जरूरत भर माल अभी भर लें; त्योहारों में सस्ती दाल की मांग बढ़ेगी, नीचे आने का इंतजार महंगा पड़ेगा"),
+ dict(i=3, label="मंडी भाव", stripe=GREEN, headline="सरसों तेल",
+   price=f'{tri("down",GREEN)}₹16,800<span class="unit">/क्विंटल</span>',
+   sub=f'सरसों तेल ₹100 नरम होकर ₹16,800/क्विंटल; दादरी ₹16,700 — बिकवाली बढ़ने का दबाव; सोया रिफाइंड ₹15,400 पर टिका, कांदला सोया ₹14,300 · <b class="delta" style="color:{GREEN}">₹100 गिरावट</b>',
+   l1="क्यों", v1="मुनाफावसूली में बिकवाली बढ़ी; सरसों की रोज ~2.5 लाख बोरी आवक बनी रहने से तेल पर दबाव",
+   l2="क्या करें", v2="सरसों तेल की लागत घटी — जरूरत का माल अभी भरें; टीन के भाव देखकर ऑर्डर दें, सोया तेल ठहरा (₹15,400) है"),
  # --- FMCG (fmcg) — TOP by LR desc across all 4 segments after ledger dedup (news_id 12d + brand 7d) + body-verify. Real product photos. ---
- #     parle-eclairs LR8.15 (Retailer, 800 jar +80 free), chakachak LR5.45 (Consumer, 3+1), coca-cola LR5.30 (Consumer, 2L +200ml).
- #     BLOCKED brand 7d: ghadi, happy-happy, kissan, lux, hajmola, jatna-chai, colgate, vicks, oreo, diana, gillette. Category spread: candy/dishwash/beverage. Segments: 1 retailer + 2 consumer (pure LR desc, no quota).
- dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="एक्लेयर्स टॉफी",
-   price=f'<span class="offer" style="background:{SCHEME_GREEN}">800 पर 80 फ्री</span>',
-   sub='पारले 2-इन-1 एक्लेयर्स ₹1 वाली टॉफी — 800 टॉफी के जार पर 80 टॉफी एक्स्ट्रा फ्री (जार के अंदर); रोज बिकने वाली टॉफी, बच्चों-चिल्हर में पक्की मांग · <b class="delta">80 टॉफी फ्री</b>',
-   l1="स्कीम", v1="₹1 वाली 800 एक्लेयर्स टॉफी के जार पर 80 टॉफी बिल्कुल फ्री (एक्स्ट्रा जार के अंदर)",
-   l2="फायदा", v2="हर जार पर ~10% एक्स्ट्रा माल = सीधा मुनाफा; ₹1 टॉफी तेज बिकती है, काउंटर-चिल्हर दोनों में चलती"),
- dict(i=5, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="चकाचक बार",
-   price=f'<span class="offer" style="background:{SCHEME_BLUE}">3 + 1 फ्री</span>',
-   sub='चकाचक बर्तन बार (₹10 वाला) — 3 नग खरीदने पर 1 नग बिल्कुल फ्री (buy 3 get 1); नींबू वाला, बर्तन धोने में तेज — रोज की जरूरत · <b class="delta">1 बार फ्री</b>',
-   l1="ऑफर", v1="₹10 वाले चकाचक बर्तन बार के 3 नग खरीदने पर 1 नग बिल्कुल फ्री (3+1)",
-   l2="ग्राहक को", v2="उसी दाम में 4 बार मिलते; रोज बिकने वाला सस्ता आइटम, चिल्हर ग्राहक को बांधकर रखता है"),
- dict(i=6, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="कोका कोला",
-   price=f'<span class="offer" style="background:{SCHEME_BLUE}">2L पर 200ml फ्री</span>',
-   sub='कोका कोला 2 लीटर कोल्ड्रिंक — खरीदने पर 200ml कोका कोला बिल्कुल फ्री; त्योहार-मेहमानी सीजन में बड़ी बोतल की तेज मांग · <b class="delta">200ml फ्री</b>',
-   l1="ऑफर", v1="2 लीटर कोका कोला की एक बोतल पर 200ml कोका कोला बिल्कुल फ्री",
-   l2="ग्राहक को", v2="उसी दाम में ज्यादा ड्रिंक; फैमिली पैक तेज चलता है, ठंडा रखकर काउंटर पर दिखाएं"),
- # --- News (trending_news) — in-house 8सित: MSMED संशोधन कानून 2026 — छोटे उद्यम को भुगतान 45 दिन में जरूरी, विवाद ऑनलाइन 90 दिन में; policy + actionable + concrete number, non-bait. Skipped डीजल (no clear win), PMEGP योजना (alt), रुझान/Samachar digests. News=1 base. ---
- dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="उधारी 45 दिन में",
-   price='<span class="news">भुगतान 45 दिन में — नया कानून</span>',
-   sub='MSMED संशोधन कानून 2026 — छोटे/सूक्ष्म उद्यम से माल लेने वाले को 45 दिन में भुगतान करना होगा; देर पर मामला सीधे कानूनी दायरे में · <b class="delta">मुफ्त पंजीकरण जरूरी</b>',
-   l1="क्यों ज़रूरी", v1="थोक/संस्था को माल देने वालों की उधारी अब 45 दिन में; विवाद ऑनलाइन 90 दिन में तय",
-   l2="क्या करें", v2="उद्यम पोर्टल पर मुफ्त पंजीकरण कराएं — तभी यह कानूनी सुरक्षा मिलेगी"),
+ #     patanjali-ghee LR7.20 (fmcg_product_change, MRP ₹600→₹610), bajaj-gulab-jal LR6.78 (Consumer, MRP ₹52→₹45), everyday-torch LR6.67 (Consumer, ₹80 + 2 AA फ्री).
+ #     SWAPPED OUT: patanjali-dant-kranti LR9.70 (body had NO ₹ figure + brand unconfirmed → body-verify fail). BLOCKED brand 7d: kaccha-mango, colgate, lux, kissan, ghadi, parle-eclairs, happy-happy. Category spread: ghee/personal-care/hardware. Segments: 1 product_change + 2 consumer (pure LR desc).
+ dict(i=4, eyebrow="FMCG", label="प्रोडक्ट बदलाव", stripe=BLACK, headline="पतंजलि घी",
+   price='₹600<span class="arrow">→</span>₹610',
+   sub='पतंजलि काउ घी 1 लीटर — कंपनी ने MRP ₹600 से बढ़ाकर ₹610 कर दी (₹10 महंगा); घी रोज बिकने वाला, त्योहारी मांग तेज · <b class="delta">₹10 महंगा</b>',
+   l1="बदलाव", v1="पतंजलि 1 लीटर काउ घी की नई MRP ₹610 (पहले ₹600) — कंपनी ने रेट ₹10 बढ़ाया",
+   l2="फायदा", v2="पुराना ₹600 MRP वाला स्टॉक पुराने भाव पर बेचकर एक्स्ट्रा मार्जिन लें; नया माल ₹610 पर मंगाएं"),
+ dict(i=5, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="बजाज गुलाब जल",
+   price=f'<span class="offer" style="background:{SCHEME_BLUE}">₹45 में (MRP ₹52)</span>',
+   sub='बजाज गुलाब जल — MRP ₹52 वाली शीशी इस समय ग्राहक को ₹45 में; पूजा, त्वचा और मेकअप तीनों में इस्तेमाल, त्योहार-पूजा सीजन में मांग तेज · <b class="delta">₹7 की बचत</b>',
+   l1="ऑफर", v1="MRP ₹52 वाला बजाज गुलाब जल इस समय ग्राहक को ₹45 में",
+   l2="ग्राहक को", v2="उसी माल पर ₹7 सस्ता; पूजा और त्वचा दोनों काम आता, काउंटर पर रखकर तेज बिक्री"),
+ dict(i=6, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="एवरीडे टॉर्च",
+   price=f'<span class="offer" style="background:{SCHEME_BLUE}">2 सेल फ्री</span>',
+   sub='एवरीडे टॉर्च — MRP ₹80, साथ में 2 AA बैटरी सेल बिल्कुल फ्री; रोज काम आने वाला सस्ता आइटम, गांव-कस्बे में पक्की मांग · <b class="delta">2 बैटरी फ्री</b>',
+   l1="ऑफर", v1="₹80 MRP वाली एवरीडे टॉर्च के साथ 2 AA बैटरी सेल एकदम फ्री",
+   l2="ग्राहक को", v2="टॉर्च तुरंत चालू — अलग से बैटरी नहीं खरीदनी; बिजली जाने पर हर घर की जरूरत, तेज बिकती"),
+ # --- News (trending_news) — in-house 9सित: PMFME (प्रधानमंत्री सूक्ष्म खाद्य उद्योग योजना) — मशीन/इकाई लागत का 35% सब्सिडी, ₹10 लाख तक; scheme + actionable + concrete ₹, non-bait. Skipped मसाला सम्मेलन (soft, no number), FCI भंडारण, रुझान/Samachar digests. News=1 base. ---
+ dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="₹10 लाख सब्सिडी",
+   price='<span class="news">खाद्य कारोबार पर 35% सब्सिडी</span>',
+   sub='प्रधानमंत्री सूक्ष्म खाद्य उद्योग योजना (PMFME) — मशीन/इकाई लागत का 35% सब्सिडी, अधिकतम ₹10 लाख; आटा चक्की, मसाला, बेकरी, दाल मिल जैसे काम पात्र · <b class="delta">₹10 लाख तक मदद</b>',
+   l1="क्यों ज़रूरी", v1="किराना के साथ आटा चक्की/मसाला जैसा खाद्य काम जोड़ने पर सरकार 35% (₹10 लाख तक) देती है",
+   l2="क्या करें", v2="बैंक कर्ज से जुड़ी योजना — उद्यम पोर्टल पर ऑनलाइन मुफ्त पंजीकरण कराएं"),
 ]
 
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
