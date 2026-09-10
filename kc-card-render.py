@@ -72,48 +72,48 @@ def b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-09-09 · experiment window CLOSED → base 3+3+1)
+# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-09-10 · experiment window CLOSED → base 3+3+1)
 CARDS = [
- # --- Commodity (mandi_bhav) — 2 तेजी/RED + 1 मंदी/GREEN (balance). बड़ी इलायची (in-house Samachar 9सित, तेजी +₹40) + मसूर (in-house दाल 9सित, तेजी आयात महंगा) + सरसों तेल (in-house तेल 9सित, मंदी −₹100). All in-house today; distinct news_ids. Skipped रुझान/Other-commodities digests, कालीमिर्च (weak +₹5), हल्दी (same मसाला/Samachar news_id). ---
- dict(i=1, label="मंडी भाव", stripe=RED, headline="बड़ी इलायची",
-   price=f'{tri("up",RED)}₹1,540–1,550<span class="unit">/किलो</span>',
-   sub=f'बड़ी इलायची ₹40 उछलकर ₹1,540–1,550/किलो; हाजिर में माल की कमी और ग्राहकी निकलने से दो दिन में ₹30 की तेजी, राई भी ₹10 चढ़कर ₹188–190/किलो · <b class="delta" style="color:{RED}">₹40 तेजी</b>',
-   l1="क्यों", v1="हाजिर बाजार में माल की कमी और त्योहारी ग्राहकी; बड़ी इलायची की सीमित आवक ने भाव चढ़ाए",
-   l2="क्या करें", v2="बड़ी इलायची-राई का त्योहारी माल पहले उठा लें; भाव आगे और चढ़ सकते हैं, पुराना स्टॉक निकालने में जल्दबाजी न करें"),
- dict(i=2, label="मंडी भाव", stripe=RED, headline="मसूर",
-   price=f'{tri("up",RED)}₹6,950–6,975<span class="unit">/क्विंटल</span>',
-   sub=f'देसी मसूर ₹6,950–6,975/क्विंटल; कनाडा में भाव $25–30/टन चढ़ने से आयात महंगा और देसी माल खत्म — तुवर से ~50% सस्ती होने से खपत तेज, आगे और तेजी के आसार · <b class="delta" style="color:{RED}">तेजी के आसार</b>',
-   l1="क्यों", v1="कनाडा में मसूर महंगी होने से आयात का पड़ता ऊंचा; देसी माल नहीं बचा, मिलों को ऊंचे भाव खरीदना पड़ रहा",
-   l2="क्या करें", v2="मसूर-मलका का जरूरत भर माल अभी भर लें; त्योहारों में सस्ती दाल की मांग बढ़ेगी, नीचे आने का इंतजार महंगा पड़ेगा"),
- dict(i=3, label="मंडी भाव", stripe=GREEN, headline="सरसों तेल",
-   price=f'{tri("down",GREEN)}₹16,800<span class="unit">/क्विंटल</span>',
-   sub=f'सरसों तेल ₹100 नरम होकर ₹16,800/क्विंटल; दादरी ₹16,700 — बिकवाली बढ़ने का दबाव; सोया रिफाइंड ₹15,400 पर टिका, कांदला सोया ₹14,300 · <b class="delta" style="color:{GREEN}">₹100 गिरावट</b>',
-   l1="क्यों", v1="मुनाफावसूली में बिकवाली बढ़ी; सरसों की रोज ~2.5 लाख बोरी आवक बनी रहने से तेल पर दबाव",
-   l2="क्या करें", v2="सरसों तेल की लागत घटी — जरूरत का माल अभी भरें; टीन के भाव देखकर ऑर्डर दें, सोया तेल ठहरा (₹15,400) है"),
- # --- FMCG (fmcg) — TOP by LR desc across all 4 segments after ledger dedup (news_id 12d + brand 7d) + body-verify. Real product photos. ---
- #     patanjali-ghee LR7.20 (fmcg_product_change, MRP ₹600→₹610), bajaj-gulab-jal LR6.78 (Consumer, MRP ₹52→₹45), everyday-torch LR6.67 (Consumer, ₹80 + 2 AA फ्री).
- #     SWAPPED OUT: patanjali-dant-kranti LR9.70 (body had NO ₹ figure + brand unconfirmed → body-verify fail). BLOCKED brand 7d: kaccha-mango, colgate, lux, kissan, ghadi, parle-eclairs, happy-happy. Category spread: ghee/personal-care/hardware. Segments: 1 product_change + 2 consumer (pure LR desc).
- dict(i=4, eyebrow="FMCG", label="प्रोडक्ट बदलाव", stripe=BLACK, headline="पतंजलि घी",
-   price='₹600<span class="arrow">→</span>₹610',
-   sub='पतंजलि काउ घी 1 लीटर — कंपनी ने MRP ₹600 से बढ़ाकर ₹610 कर दी (₹10 महंगा); घी रोज बिकने वाला, त्योहारी मांग तेज · <b class="delta">₹10 महंगा</b>',
-   l1="बदलाव", v1="पतंजलि 1 लीटर काउ घी की नई MRP ₹610 (पहले ₹600) — कंपनी ने रेट ₹10 बढ़ाया",
-   l2="फायदा", v2="पुराना ₹600 MRP वाला स्टॉक पुराने भाव पर बेचकर एक्स्ट्रा मार्जिन लें; नया माल ₹610 पर मंगाएं"),
- dict(i=5, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="बजाज गुलाब जल",
-   price=f'<span class="offer" style="background:{SCHEME_BLUE}">₹45 में (MRP ₹52)</span>',
-   sub='बजाज गुलाब जल — MRP ₹52 वाली शीशी इस समय ग्राहक को ₹45 में; पूजा, त्वचा और मेकअप तीनों में इस्तेमाल, त्योहार-पूजा सीजन में मांग तेज · <b class="delta">₹7 की बचत</b>',
-   l1="ऑफर", v1="MRP ₹52 वाला बजाज गुलाब जल इस समय ग्राहक को ₹45 में",
-   l2="ग्राहक को", v2="उसी माल पर ₹7 सस्ता; पूजा और त्वचा दोनों काम आता, काउंटर पर रखकर तेज बिक्री"),
- dict(i=6, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="एवरीडे टॉर्च",
-   price=f'<span class="offer" style="background:{SCHEME_BLUE}">2 सेल फ्री</span>',
-   sub='एवरीडे टॉर्च — MRP ₹80, साथ में 2 AA बैटरी सेल बिल्कुल फ्री; रोज काम आने वाला सस्ता आइटम, गांव-कस्बे में पक्की मांग · <b class="delta">2 बैटरी फ्री</b>',
-   l1="ऑफर", v1="₹80 MRP वाली एवरीडे टॉर्च के साथ 2 AA बैटरी सेल एकदम फ्री",
-   l2="ग्राहक को", v2="टॉर्च तुरंत चालू — अलग से बैटरी नहीं खरीदनी; बिजली जाने पर हर घर की जरूरत, तेज बिकती"),
- # --- News (trending_news) — in-house 9सित: PMFME (प्रधानमंत्री सूक्ष्म खाद्य उद्योग योजना) — मशीन/इकाई लागत का 35% सब्सिडी, ₹10 लाख तक; scheme + actionable + concrete ₹, non-bait. Skipped मसाला सम्मेलन (soft, no number), FCI भंडारण, रुझान/Samachar digests. News=1 base. ---
- dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="₹10 लाख सब्सिडी",
-   price='<span class="news">खाद्य कारोबार पर 35% सब्सिडी</span>',
-   sub='प्रधानमंत्री सूक्ष्म खाद्य उद्योग योजना (PMFME) — मशीन/इकाई लागत का 35% सब्सिडी, अधिकतम ₹10 लाख; आटा चक्की, मसाला, बेकरी, दाल मिल जैसे काम पात्र · <b class="delta">₹10 लाख तक मदद</b>',
-   l1="क्यों ज़रूरी", v1="किराना के साथ आटा चक्की/मसाला जैसा खाद्य काम जोड़ने पर सरकार 35% (₹10 लाख तक) देती है",
-   l2="क्या करें", v2="बैंक कर्ज से जुड़ी योजना — उद्यम पोर्टल पर ऑनलाइन मुफ्त पंजीकरण कराएं"),
+ # --- Commodity (mandi_bhav) — 2 तेजी/RED + 1 मंदी/GREEN (balance). तूर दाल (in-house दाल 10सित, तेजी) + सौंठ (in-house मसाला 10सित, तेजी +₹500) + गुड़ (in-house Samachar 10सित, मंदी −₹300, new arrival). All in-house today; distinct news_ids. Dropped सरसों तेल as over-covered (सरसों/सोया तेल 09-07/08/09). ---
+ dict(i=1, label="मंडी भाव", stripe=RED, headline="तूर दाल",
+   price=f'{tri("up",RED)}₹8,725–8,750<span class="unit">/क्विंटल</span>',
+   sub=f'दिल्ली में देसी अरहर ₹8,725–8,750/क्विंटल; महाराष्ट्र-कर्नाटक की ₹8,900–9,000 तक — उत्पादन घटा, नई फसल में देरी से तेजी कायम · <b class="delta" style="color:{RED}">तेजी कायम</b>',
+   l1="क्यों", v1="महाराष्ट्र-कर्नाटक में उत्पादन घटा, नई फसल में देरी; अगले दो महीने खपत बराबर रहेगी",
+   l2="क्या करें", v2="जरूरत भर तूर अभी उठा लें — त्योहारी मांग तेज; बहुत बड़ा स्टॉक न भरें, बकाया माल बाजार थामे है"),
+ dict(i=2, label="मंडी भाव", stripe=RED, headline="सौंठ",
+   price=f'{tri("up",RED)}₹32,000–32,500<span class="unit">/क्विंटल</span>',
+   sub=f'सौंठ ₹500 उछलकर ₹32,000–32,500/क्विंटल; ग्राहकी शुरू और बिकवाली कमजोर, सर्दी में काढ़े-लड्डू की मांग — अजवायन भी ₹500 चढ़कर ₹17,000–26,500 · <b class="delta" style="color:{RED}">₹500 तेजी</b>',
+   l1="क्यों", v1="ग्राहकी निकलनी शुरू और स्टॉकिस्टों की बिकवाली कमजोर; सर्दी नजदीक आते सौंठ की खपत बढ़ जाती",
+   l2="क्या करें", v2="सौंठ-अजवायन जल्दी खराब नहीं होतीं, पूरी सर्दी बिकतीं — अभी थोड़ा माल उठाकर रख लें; साबूदाना का स्टॉक भी देख लें"),
+ dict(i=3, label="मंडी भाव", stripe=GREEN, headline="गुड़",
+   price=f'{tri("down",GREEN)}₹5,800–6,000<span class="unit">/क्विंटल</span>',
+   sub=f'नए गुड़ की आवक शुरू — गुड़ पेड़ी ₹5,800–6,000/क्विंटल, ढैया ₹6,200–6,400; ₹300 तक टूटा, शक्कर भी ₹100 घटकर ₹6,400–6,500 · <b class="delta" style="color:{GREEN}">₹300 गिरावट</b>',
+   l1="क्यों", v1="हापुड़ मंडी में नए गुड़ की पहली आवक शुरू; ऊंचे भाव पर ग्राहकी कमजोर पड़ने से भाव टूटे",
+   l2="क्या करें", v2="गुड़ सस्ता हुआ — त्योहारी माल अभी भर लें; ग्राहक को नए सस्ते भाव का फायदा देकर बिक्री बढ़ाएं"),
+ # --- FMCG (fmcg) — TOP 3 by LR desc across all 4 segments after ledger dedup (news_id 12d + brand 7d) + body-verify (concrete ₹). Real product photos, brands legible. ---
+ #     dabur-red LR8.87 (Retailer, ₹20/6+1/₹30 margin), pulse LR6.47 (Retailer, ₹1 jar + ₹5 pouch free), clinic-plus LR5.80 (Consumer, ₹1 pouch 50% extra).
+ #     SWAPPED OUT for no concrete ₹ in body (Step 6): lifebuoy LR6.98, sargam LR6.20. BLOCKED brand 7d: patanjali-ghee/mountain-dew/colgate×3/happy-happy. kakaji vague no-number. Category spread: oral-care/candy/hair.
+ dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="डाबर रेड",
+   price=f'<span class="offer" style="background:{SCHEME_GREEN}">6 पर 1 फ्री</span>',
+   sub='डाबर रेड टूथपेस्ट ₹20 वाले पर 6+1 स्कीम; एक पैकेट ₹110 का पड़ता, ₹30 का सीधा मार्जिन — रोज बिकने वाला ओरल-केयर आइटम · <b class="delta">₹30 मार्जिन</b>',
+   l1="स्कीम", v1="₹20 वाले डाबर रेड टूथपेस्ट पर 6+1 फ्री; एक पैकेट ₹110 का पड़ता",
+   l2="फायदा", v2="पूरे पैकेट पर ₹30 सीधा मार्जिन; रोज चलने वाला माल, तेज बिक्री"),
+ dict(i=5, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="पल्स कच्चा आम",
+   price=f'<span class="offer" style="background:{SCHEME_GREEN}">जार पर पाउच फ्री</span>',
+   sub='पास-पास पल्स कच्चा आम टॉफी ₹1 वाली — 175 टॉफी का जार खरीदने पर ₹5 वाला पास-पास जिपर पाउच एक्स्ट्रा फ्री · <b class="delta">₹5 का पाउच फ्री</b>',
+   l1="स्कीम", v1="₹1 वाली पल्स कच्चा आम टॉफी का 175 नग जार; जार पर ₹5 वाला पास-पास जिपर पाउच बिल्कुल फ्री",
+   l2="फायदा", v2="फ्री पाउच सीधा मुनाफा; बच्चों में तेज चलने वाली ₹1 टॉफी, काउंटर पर रखें"),
+ dict(i=6, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="क्लिनिक प्लस",
+   price=f'<span class="offer" style="background:{SCHEME_BLUE}">50% एक्स्ट्रा</span>',
+   sub='क्लिनिक प्लस ₹1 वाला शैम्पू पाउच — हर पाउच पर 50% एक्स्ट्रा शैम्पू मुफ्त; रोज बिकने वाला सस्ता हेयर-केयर आइटम · <b class="delta">50% ज्यादा माल</b>',
+   l1="ऑफर", v1="₹1 वाले हर क्लिनिक प्लस शैम्पू पाउच में 50% एक्स्ट्रा शैम्पू मिल रहा",
+   l2="ग्राहक को", v2="उतने ही ₹1 में डेढ़ गुना शैम्पू; गांव-कस्बे में ₹1 पाउच की पक्की मांग, तेज बिक्री"),
+ # --- News (trending_news) — in-house 10सित Pan India Trending 1: shrinkflation — दाम वही, पैकेट का वजन घटा (बिस्किट 100→80g, साबुन 155→135g); concrete numbers, market-impact, non-bait. Skipped dead-stock tip (no ₹), NPS स्कीम, रुझान/Samachar digests. News=1 base. ---
+ dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="पैकेट हुआ हल्का",
+   price='<span class="news">बिस्किट 100 से 80 ग्राम</span>',
+   sub='कंपनियां दाम नहीं बढ़ा रहीं, पैकेट का वजन घटा रही हैं — ₹10 वाला बिस्किट 100g से 80g, साबुन 155g से 135g; पाम तेल-पैकिंग लागत 15–20% बढ़ी · <b class="delta">प्रति ग्राम लागत बढ़ी</b>',
+   l1="क्यों ज़रूरी", v1="पेटी का दाम वही पर अंदर माल कम — प्रति ग्राम आपकी लागत बढ़ जाती और पुराना मुनाफे का हिसाब बदल जाता",
+   l2="क्या करें", v2="नया माल आते ही पैकेट पीछे का वजन पढ़ें, मुनाफा दोबारा जोड़ें; ग्राहक को बताएं वजन कंपनी ने घटाया"),
 ]
 
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
