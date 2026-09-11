@@ -72,48 +72,48 @@ def b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-09-10 · experiment window CLOSED → base 3+3+1)
+# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-09-11 · experiment window CLOSED → base 3+3+1)
 CARDS = [
- # --- Commodity (mandi_bhav) — 2 तेजी/RED + 1 मंदी/GREEN (balance). तूर दाल (in-house दाल 10सित, तेजी) + सौंठ (in-house मसाला 10सित, तेजी +₹500) + गुड़ (in-house Samachar 10सित, मंदी −₹300, new arrival). All in-house today; distinct news_ids. Dropped सरसों तेल as over-covered (सरसों/सोया तेल 09-07/08/09). ---
- dict(i=1, label="मंडी भाव", stripe=RED, headline="तूर दाल",
-   price=f'{tri("up",RED)}₹8,725–8,750<span class="unit">/क्विंटल</span>',
-   sub=f'दिल्ली में देसी अरहर ₹8,725–8,750/क्विंटल; महाराष्ट्र-कर्नाटक की ₹8,900–9,000 तक — उत्पादन घटा, नई फसल में देरी से तेजी कायम · <b class="delta" style="color:{RED}">तेजी कायम</b>',
-   l1="क्यों", v1="महाराष्ट्र-कर्नाटक में उत्पादन घटा, नई फसल में देरी; अगले दो महीने खपत बराबर रहेगी",
-   l2="क्या करें", v2="जरूरत भर तूर अभी उठा लें — त्योहारी मांग तेज; बहुत बड़ा स्टॉक न भरें, बकाया माल बाजार थामे है"),
- dict(i=2, label="मंडी भाव", stripe=RED, headline="सौंठ",
-   price=f'{tri("up",RED)}₹32,000–32,500<span class="unit">/क्विंटल</span>',
-   sub=f'सौंठ ₹500 उछलकर ₹32,000–32,500/क्विंटल; ग्राहकी शुरू और बिकवाली कमजोर, सर्दी में काढ़े-लड्डू की मांग — अजवायन भी ₹500 चढ़कर ₹17,000–26,500 · <b class="delta" style="color:{RED}">₹500 तेजी</b>',
-   l1="क्यों", v1="ग्राहकी निकलनी शुरू और स्टॉकिस्टों की बिकवाली कमजोर; सर्दी नजदीक आते सौंठ की खपत बढ़ जाती",
-   l2="क्या करें", v2="सौंठ-अजवायन जल्दी खराब नहीं होतीं, पूरी सर्दी बिकतीं — अभी थोड़ा माल उठाकर रख लें; साबूदाना का स्टॉक भी देख लें"),
- dict(i=3, label="मंडी भाव", stripe=GREEN, headline="गुड़",
-   price=f'{tri("down",GREEN)}₹5,800–6,000<span class="unit">/क्विंटल</span>',
-   sub=f'नए गुड़ की आवक शुरू — गुड़ पेड़ी ₹5,800–6,000/क्विंटल, ढैया ₹6,200–6,400; ₹300 तक टूटा, शक्कर भी ₹100 घटकर ₹6,400–6,500 · <b class="delta" style="color:{GREEN}">₹300 गिरावट</b>',
-   l1="क्यों", v1="हापुड़ मंडी में नए गुड़ की पहली आवक शुरू; ऊंचे भाव पर ग्राहकी कमजोर पड़ने से भाव टूटे",
-   l2="क्या करें", v2="गुड़ सस्ता हुआ — त्योहारी माल अभी भर लें; ग्राहक को नए सस्ते भाव का फायदा देकर बिक्री बढ़ाएं"),
- # --- FMCG (fmcg) — TOP 3 by LR desc across all 4 segments after ledger dedup (news_id 12d + brand 7d) + body-verify (concrete ₹). Real product photos, brands legible. ---
- #     dabur-red LR8.87 (Retailer, ₹20/6+1/₹30 margin), pulse LR6.47 (Retailer, ₹1 jar + ₹5 pouch free), clinic-plus LR5.80 (Consumer, ₹1 pouch 50% extra).
- #     SWAPPED OUT for no concrete ₹ in body (Step 6): lifebuoy LR6.98, sargam LR6.20. BLOCKED brand 7d: patanjali-ghee/mountain-dew/colgate×3/happy-happy. kakaji vague no-number. Category spread: oral-care/candy/hair.
- dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="डाबर रेड",
-   price=f'<span class="offer" style="background:{SCHEME_GREEN}">6 पर 1 फ्री</span>',
-   sub='डाबर रेड टूथपेस्ट ₹20 वाले पर 6+1 स्कीम; एक पैकेट ₹110 का पड़ता, ₹30 का सीधा मार्जिन — रोज बिकने वाला ओरल-केयर आइटम · <b class="delta">₹30 मार्जिन</b>',
-   l1="स्कीम", v1="₹20 वाले डाबर रेड टूथपेस्ट पर 6+1 फ्री; एक पैकेट ₹110 का पड़ता",
-   l2="फायदा", v2="पूरे पैकेट पर ₹30 सीधा मार्जिन; रोज चलने वाला माल, तेज बिक्री"),
- dict(i=5, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="पल्स कच्चा आम",
-   price=f'<span class="offer" style="background:{SCHEME_GREEN}">जार पर पाउच फ्री</span>',
-   sub='पास-पास पल्स कच्चा आम टॉफी ₹1 वाली — 175 टॉफी का जार खरीदने पर ₹5 वाला पास-पास जिपर पाउच एक्स्ट्रा फ्री · <b class="delta">₹5 का पाउच फ्री</b>',
-   l1="स्कीम", v1="₹1 वाली पल्स कच्चा आम टॉफी का 175 नग जार; जार पर ₹5 वाला पास-पास जिपर पाउच बिल्कुल फ्री",
-   l2="फायदा", v2="फ्री पाउच सीधा मुनाफा; बच्चों में तेज चलने वाली ₹1 टॉफी, काउंटर पर रखें"),
- dict(i=6, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="क्लिनिक प्लस",
-   price=f'<span class="offer" style="background:{SCHEME_BLUE}">50% एक्स्ट्रा</span>',
-   sub='क्लिनिक प्लस ₹1 वाला शैम्पू पाउच — हर पाउच पर 50% एक्स्ट्रा शैम्पू मुफ्त; रोज बिकने वाला सस्ता हेयर-केयर आइटम · <b class="delta">50% ज्यादा माल</b>',
-   l1="ऑफर", v1="₹1 वाले हर क्लिनिक प्लस शैम्पू पाउच में 50% एक्स्ट्रा शैम्पू मिल रहा",
-   l2="ग्राहक को", v2="उतने ही ₹1 में डेढ़ गुना शैम्पू; गांव-कस्बे में ₹1 पाउच की पक्की मांग, तेज बिक्री"),
- # --- News (trending_news) — in-house 10सित Pan India Trending 1: shrinkflation — दाम वही, पैकेट का वजन घटा (बिस्किट 100→80g, साबुन 155→135g); concrete numbers, market-impact, non-bait. Skipped dead-stock tip (no ₹), NPS स्कीम, रुझान/Samachar digests. News=1 base. ---
- dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="पैकेट हुआ हल्का",
-   price='<span class="news">बिस्किट 100 से 80 ग्राम</span>',
-   sub='कंपनियां दाम नहीं बढ़ा रहीं, पैकेट का वजन घटा रही हैं — ₹10 वाला बिस्किट 100g से 80g, साबुन 155g से 135g; पाम तेल-पैकिंग लागत 15–20% बढ़ी · <b class="delta">प्रति ग्राम लागत बढ़ी</b>',
-   l1="क्यों ज़रूरी", v1="पेटी का दाम वही पर अंदर माल कम — प्रति ग्राम आपकी लागत बढ़ जाती और पुराना मुनाफे का हिसाब बदल जाता",
-   l2="क्या करें", v2="नया माल आते ही पैकेट पीछे का वजन पढ़ें, मुनाफा दोबारा जोड़ें; ग्राहक को बताएं वजन कंपनी ने घटाया"),
+ # --- Commodity (mandi_bhav) — 2 तेजी/RED + 1 मंदी/GREEN (balance). गोला (in-house Samachar 11सित, तेजी +₹1000, गणेश चतुर्थी demand) + मूंग (in-house दाल 11सित, तेजी +₹100) + बासमती चावल (in-house चावल 11सित, मंदी −₹100–200, नई फसल दबाव). All in-house today; distinct news_ids. ---
+ dict(i=1, label="मंडी भाव", stripe=RED, headline="गोला",
+   price=f'{tri("up",RED)}₹38,000–46,000<span class="unit">/क्विंटल</span>',
+   sub=f'सूखा नारियल (गोला) एक ही दिन ₹1,000 उछलकर ₹38,000–46,000/क्विंटल; गोला बुरादा भी ₹50 तेज होकर ₹7,350–7,550/25 किलो — गणेश चतुर्थी की त्योहारी मांग · <b class="delta" style="color:{RED}">₹1,000 तेजी</b>',
+   l1="क्यों", v1="बिकवाली कमजोर और गणेश चतुर्थी की त्योहारी ग्राहकी निकलने से मेवा बाजार में गोला तेज",
+   l2="क्या करें", v2="गोला-मेवा का त्योहारी माल अभी भर लें — 14 सितंबर को गणेश चतुर्थी, आगे भाव और चढ़ सकते"),
+ dict(i=2, label="मंडी भाव", stripe=RED, headline="मूंग",
+   price=f'{tri("up",RED)}₹7,700–8,400<span class="unit">/क्विंटल</span>',
+   sub=f'चमकी मूंग ₹100 तेज — जयपुर ₹7,700, अकोला ₹8,400/क्विंटल; दिल्ली में MP मूंग ₹7,850–8,300 — अच्छी किस्म का माल कम आ रहा · <b class="delta" style="color:{RED}">₹100 तेजी</b>',
+   l1="क्यों", v1="उड़द-अरहर में ग्राहकी सुस्त पर मूंग में बढ़िया किस्म का माल कम; अकोला-रायपुर में अच्छा उठाव",
+   l2="क्या करें", v2="मूंग-मूंग दाल का 2–3 हफ्ते का माल उठाएं; राजस्थान की नई फसल आते ही भाव ₹8,200 के आसपास ठहर सकते"),
+ dict(i=3, label="मंडी भाव", stripe=GREEN, headline="बासमती चावल",
+   price=f'{tri("down",GREEN)}₹9,900–10,000<span class="unit">/क्विंटल</span>',
+   sub=f'बासमती ₹100–200 टूटा — 1121 सेला ₹9,900–10,000, 1509 सेला ₹7,600–7,800/क्विंटल; परमल भी ₹100 घटकर ₹4,100–4,200 — मांग सुस्त, नई फसल का दबाव · <b class="delta" style="color:{GREEN}">₹200 गिरावट</b>',
+   l1="क्यों", v1="निर्यात-घरेलू दोनों मांग सुस्त और मिलों की बिकवाली बढ़ी; हरियाणा-पंजाब में 1509 की नई फसल उतरने लगी",
+   l2="क्या करें", v2="त्योहारी बिक्री का बासमती घटे भाव पर उठा लें; बड़ा भंडार न भरें — बारीक चावल ₹8,500 तक और नरम हो सकता"),
+ # --- FMCG (fmcg) — TOP 3 by LR desc across all 4 segments after ledger dedup (news_id 12d + brand 7d) + body-verify (concrete number). Real product photos, brands legible. ---
+ #     mountain-dew LR8.09 (Consumer, 1L+250ml free), glow-lovely LR7.91 (product_change, ₹62→₹72 rate hike), sunfeast LR7.72 (Consumer, 2×₹5 + ₹5 pencil free — chosen over aakash LR7.81 to avoid मूंग overlap + category spread).
+ #     SWAPPED OUT (Step 6 body-verify): global-soap LR9.75 (bare "4+1" ratio, no ₹/MRP/weight, vague 'Global' brand → hyper-local risk). BLOCKED brand 7d: colgate×3/ghadi×2/patanjali-ghee/patanjali-dant-kranti/lifebuoy/dabur-red. Category spread: beverage / personal-care / biscuit.
+ dict(i=4, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="माउंटेन ड्यू",
+   price=f'<span class="offer" style="background:{SCHEME_BLUE}">1L पर 250ml फ्री</span>',
+   sub='माउंटेन ड्यू 1 लीटर बोतल के साथ 250ml एक्स्ट्रा बिल्कुल फ्री — रेट में कोई बदलाव नहीं; त्योहारी-गर्मी में तेज बिकने वाला ठंडा पेय · <b class="delta">250ml फ्री</b>',
+   l1="ऑफर", v1="1 लीटर माउंटेन ड्यू पर 250ml एक्स्ट्रा फ्री, वही पुराना रेट",
+   l2="ग्राहक को", v2="उतने ही दाम में सवा लीटर पेय; ग्राहक को ज्यादा माल का फायदा, काउंटर पर तेज बिक्री"),
+ dict(i=5, eyebrow="FMCG", label="प्रोडक्ट बदलाव", stripe=BLACK, headline="ग्लो एंड लवली",
+   price='₹62<span class="arrow">→</span>₹72',
+   sub='फेयर एंड लवली (अब ग्लो एंड लवली) क्रीम का रेट ₹62 से बढ़कर ₹72 — ₹10 की रेट हाइक; रोज बिकने वाला पर्सनल-केयर आइटम · <b class="delta">₹10 महंगी</b>',
+   l1="बदलाव", v1="ग्लो एंड लवली फेयरनेस क्रीम का भाव ₹62 से ₹72 हुआ (₹10 बढ़ा)",
+   l2="फायदा", v2="पुराने ₹62 वाले स्टॉक को पुराने MRP पर बेचें — नए भाव से सीधा ज्यादा मार्जिन मिलेगा"),
+ dict(i=6, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="सनफीस्ट बाउंस",
+   price=f'<span class="offer" style="background:{SCHEME_BLUE}">2 पर ₹5 पेंसिल फ्री</span>',
+   sub='सनफीस्ट बाउंस ₹5 वाला बिस्किट — 2 पैकेट खरीदने पर ₹5 वाली पेंसिल बिल्कुल फ्री; बच्चों में तेज चलने वाला आइटम · <b class="delta">₹5 पेंसिल फ्री</b>',
+   l1="ऑफर", v1="₹5 वाले सनफीस्ट बाउंस के 2 पैकेट पर ₹5 वाली पेंसिल फ्री",
+   l2="ग्राहक को", v2="बच्चों को बिस्किट के साथ फ्री पेंसिल; स्कूल-टाइम में तेज बिकने वाला कॉम्बो"),
+ # --- News (trending_news) — in-house 11सित Pan India Schemes: मुफ्त ई-श्रम कार्ड — दुर्घटना बीमा ₹2 लाख + 60 के बाद ₹3000/माह पेंशन; concrete benefit, non-bait. Chosen over Ganesh-Chaturthi trending (overlaps गोला commodity) + QR-scam (bait). News=1 base. ---
+ dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="ई-श्रम कार्ड",
+   price='<span class="news">मुफ्त कार्ड, ₹2 लाख का बीमा</span>',
+   sub='छोटे दुकानदारों के लिए मुफ्त ई-श्रम कार्ड — दुर्घटना में ₹2 लाख तक बीमा और 60 के बाद ₹3,000/माह तक पेंशन · <b class="delta">₹2 लाख बीमा</b>',
+   l1="क्यों ज़रूरी", v1="16–59 साल के दुकानदार जो EPFO/ESIC में नहीं और आयकर नहीं भरते, सभी पात्र",
+   l2="क्या करें", v2="eshram.gov.in पर खुद या नज़दीकी CSC पर मुफ्त बनवाएं — आधार-मोबाइल लिंक जरूरी, कोई शुल्क नहीं"),
 ]
 
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
