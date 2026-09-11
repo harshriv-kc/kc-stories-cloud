@@ -5139,6 +5139,68 @@
     }
    ],
    "notes": "Base 3+3+1 (experiment window 08-29→09-02 CLOSED). Dedup: news_id 12d + brand 7d applied. FMCG picked pure LR desc among body-verified concrete-₹ picks. lifebuoy LR6.98 & sargam LR6.20 swapped (no ₹ in body). PN campaign_id ~2e7e2i9 @16:30 IST. actor=Harsh Shrivastava."
+  },
+  {
+   "date": "2026-09-11",
+   "picks": {
+    "mandi_bhav": [
+     {
+      "news_id": "0efc52b5-7784-4e88-838b-c3f1a9a97d86",
+      "brand": "gola",
+      "direction": "तेजी",
+      "label": "गोला (सूखा नारियल) तेजी +₹1,000 → ₹38,000–46,000/क्विंटल; गोला बुरादा भी +₹50 → ₹7,350–7,550/25किलो — गणेश चतुर्थी की त्योहारी मांग (in-house 11सित Samachar, RED)"
+     },
+     {
+      "news_id": "b4fb5285-9c50-4aeb-8b9b-1b80f68c3ffb",
+      "brand": "moong",
+      "direction": "तेजी",
+      "label": "मूंग तेजी +₹100 → जयपुर ₹7,700, अकोला ₹8,400/क्विंटल; दिल्ली MP मूंग ₹7,850–8,300 — अच्छी किस्म का माल कम (in-house 11सित दाल, RED)"
+     },
+     {
+      "news_id": "1e5d9efe-0594-41e2-ac03-506a37101a2a",
+      "brand": "basmati",
+      "direction": "मंदी",
+      "label": "बासमती चावल मंदी −₹100–200 → 1121 सेला ₹9,900–10,000, 1509 सेला ₹7,600–7,800; परमल −₹100 → ₹4,100–4,200 — मांग सुस्त, नई फसल का दबाव (in-house 11सित चावल, GREEN for balance)"
+     }
+    ],
+    "fmcg": [
+     {
+      "news_id": "71dd4817-b6cb-4fa0-bd99-a5e0d7e1e1c5",
+      "brand": "mountain-dew",
+      "direction": "scheme_consumer",
+      "label": "माउंटेन ड्यू 1L पर 250ml फ्री (1.25L @₹50, रेट अपरिवर्तित) — Consumer Scheme (UGC LR8.09, real D2R product photo) · beverage"
+     },
+     {
+      "news_id": "fbaa049f-1333-4755-9f64-f4d383f55528",
+      "brand": "glow-lovely",
+      "direction": "fmcg_product_change",
+      "label": "ग्लो एंड लवली (नई फेयर एंड लवली) क्रीम — रेट ₹62→₹72 (₹10 हाइक) — product_change (UGC LR7.91, real Glow & Lovely pack) · personal-care"
+     },
+     {
+      "news_id": "7217e897-e87c-4fcb-8525-294080a6952d",
+      "brand": "sunfeast",
+      "direction": "scheme_consumer",
+      "label": "सनफीस्ट बाउंस ₹5 बिस्किट — 2 पैकेट पर ₹5 वाली पेंसिल फ्री — Consumer Scheme (UGC LR7.72, real Sunfeast Bounce pack; chosen over aakash LR7.81 to avoid मूंग overlap) · biscuit"
+     }
+    ],
+    "trending_news": [
+     {
+      "news_id": "477e12d7-2a8a-45e3-90cd-7c8ae0ca2a8e",
+      "brand": "e-shram",
+      "direction": "news",
+      "label": "मुफ्त ई-श्रम कार्ड — दुर्घटना बीमा ₹2 लाख (अपंगता ₹1 लाख), 60 के बाद ₹3,000/माह तक पेंशन; eshram.gov.in/CSC (in-house 11सित scheme, concrete, non-bait)"
+     }
+    ]
+   },
+   "also_shown": [
+    {
+     "news_id": "934d24b7-b9f4-42f9-81ed-6cba3b63ee8b",
+     "brand": "global-soap",
+     "direction": "scheme_consumer",
+     "label": "ग्लोबल साबुन 4 पर 1 फ्री (UGC Consumer Scheme LR9.75) — SWAPPED OUT (Step 6 body-verify): body में कोई ठोस ₹/MRP/वजन नहीं, सिर्फ 4+1 अनुपात + अस्पष्ट 'Global' ब्रांड (hyper-local जोखिम) · soap"
+    }
+   ],
+   "notes": "Base 3+3+1 (experiment window closed 09-02/03). Commodity 2 RED (गोला/मूंग) + 1 GREEN (बासमती) for direction balance; all in-house today, distinct news_ids. FMCG top-3 by LR desc across all 4 segments after news_id(12d)+brand(7d) dedup + body-verify; global-soap LR9.75 swapped (no ₹). BLOCKED brand 7d: colgate×3/ghadi×2/patanjali-ghee/patanjali-dant-kranti/lifebuoy/dabur-red. Category spread beverage/personal-care/biscuit. News = ई-श्रम (chosen over Ganesh-Chaturthi trending which overlaps गोला, and QR-scam which is bait). All 3 stories + 3 badges published live (actor Harsh Shrivastava). PN campaign_id 104pi6k @16:30 IST (HTTP 200)."
   }
  ],
  "brand_dedup_window_days": 7
