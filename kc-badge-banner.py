@@ -123,10 +123,10 @@ def render(tag, cfg, grad, bottom):
 # of the white ring while staying uniform. ALWAYS re-check max_text_radius <= ~438 (white-ring inner 454) after
 # changing copy — the widest line caps FS.
 FS=130   # 2026-08-25: dropped 138->130, "तूर दाल" upper line grazed ring at 455 (>448) at 138
-# 2026-09-11: mandi=गोला/तेज़ (gola/dry-coconut teji +₹1000, Ganesh Chaturthi demand), fmcg=1L पर/250ml फ्री (Mountain Dew 1.25L @₹50, REAL D2R product photo), news=ई-श्रम से/₹2 लाख (free e-Shram card, ₹2 lakh accident insurance). All 2-line short hooks; verify radial clearance after render.
-DAY=[dict(i=1,src="subjfull_1.png",lines=["गोला","तेज़"],fs=140),           # both very short; measure
-     dict(i=2,src="subjfull_2.png",lines=["1L पर","250ml फ्री"],fs=120),    # "250ml फ्री" wide lower line; measure
-     dict(i=3,src="subjfull_3.png",lines=["ई-श्रम से","₹2 लाख"],fs=124)]    # "ई-श्रम से" wide upper line; measure
+# 2026-09-12: mandi=गेहूं/तेज़ (wheat teji +₹200, export ban lifted), fmcg=हिमालया/12+1 फ्री (Himalaya Neem Face Wash ₹20 jar 12+1, REAL product flat-lay), news=दुकान अब/ऑनलाइन (ONDC network, commission 25%->3-10%). All 2-line short hooks; verify radial clearance after render.
+DAY=[dict(i=1,src="subjfull_1.png",lines=["गेहूं","तेज़"],fs=150),          # both very short; measure
+     dict(i=2,src="subjfull_2.png",lines=["हिमालया","12+1 फ्री"],fs=116),   # "12+1 फ्री" wide lower line; measure
+     dict(i=3,src="subjfull_3.png",lines=["दुकान अब","ऑनलाइन"],fs=132)]     # "दुकान अब" wide upper line; measure
 if __name__=="__main__":
     render("D", DAY, TALL, 190)   # bottom raised for FS130 + wide tn bottom line: seats block higher in the circle's wider zone to clear the ring
     # 2026-07-14 crop fix: operator flagged text CROPPING at the ring. Root cause — the

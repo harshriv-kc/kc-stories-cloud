@@ -72,48 +72,48 @@ def b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-09-11 · experiment window CLOSED → base 3+3+1)
+# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-09-12 · experiment window CLOSED → base 3+3+1)
 CARDS = [
- # --- Commodity (mandi_bhav) — 2 तेजी/RED + 1 मंदी/GREEN (balance). गोला (in-house Samachar 11सित, तेजी +₹1000, गणेश चतुर्थी demand) + मूंग (in-house दाल 11सित, तेजी +₹100) + बासमती चावल (in-house चावल 11सित, मंदी −₹100–200, नई फसल दबाव). All in-house today; distinct news_ids. ---
- dict(i=1, label="मंडी भाव", stripe=RED, headline="गोला",
-   price=f'{tri("up",RED)}₹38,000–46,000<span class="unit">/क्विंटल</span>',
-   sub=f'सूखा नारियल (गोला) एक ही दिन ₹1,000 उछलकर ₹38,000–46,000/क्विंटल; गोला बुरादा भी ₹50 तेज होकर ₹7,350–7,550/25 किलो — गणेश चतुर्थी की त्योहारी मांग · <b class="delta" style="color:{RED}">₹1,000 तेजी</b>',
-   l1="क्यों", v1="बिकवाली कमजोर और गणेश चतुर्थी की त्योहारी ग्राहकी निकलने से मेवा बाजार में गोला तेज",
-   l2="क्या करें", v2="गोला-मेवा का त्योहारी माल अभी भर लें — 14 सितंबर को गणेश चतुर्थी, आगे भाव और चढ़ सकते"),
- dict(i=2, label="मंडी भाव", stripe=RED, headline="मूंग",
-   price=f'{tri("up",RED)}₹7,700–8,400<span class="unit">/क्विंटल</span>',
-   sub=f'चमकी मूंग ₹100 तेज — जयपुर ₹7,700, अकोला ₹8,400/क्विंटल; दिल्ली में MP मूंग ₹7,850–8,300 — अच्छी किस्म का माल कम आ रहा · <b class="delta" style="color:{RED}">₹100 तेजी</b>',
-   l1="क्यों", v1="उड़द-अरहर में ग्राहकी सुस्त पर मूंग में बढ़िया किस्म का माल कम; अकोला-रायपुर में अच्छा उठाव",
-   l2="क्या करें", v2="मूंग-मूंग दाल का 2–3 हफ्ते का माल उठाएं; राजस्थान की नई फसल आते ही भाव ₹8,200 के आसपास ठहर सकते"),
- dict(i=3, label="मंडी भाव", stripe=GREEN, headline="बासमती चावल",
-   price=f'{tri("down",GREEN)}₹9,900–10,000<span class="unit">/क्विंटल</span>',
-   sub=f'बासमती ₹100–200 टूटा — 1121 सेला ₹9,900–10,000, 1509 सेला ₹7,600–7,800/क्विंटल; परमल भी ₹100 घटकर ₹4,100–4,200 — मांग सुस्त, नई फसल का दबाव · <b class="delta" style="color:{GREEN}">₹200 गिरावट</b>',
-   l1="क्यों", v1="निर्यात-घरेलू दोनों मांग सुस्त और मिलों की बिकवाली बढ़ी; हरियाणा-पंजाब में 1509 की नई फसल उतरने लगी",
-   l2="क्या करें", v2="त्योहारी बिक्री का बासमती घटे भाव पर उठा लें; बड़ा भंडार न भरें — बारीक चावल ₹8,500 तक और नरम हो सकता"),
- # --- FMCG (fmcg) — TOP 3 by LR desc across all 4 segments after ledger dedup (news_id 12d + brand 7d) + body-verify (concrete number). Real product photos, brands legible. ---
- #     mountain-dew LR8.09 (Consumer, 1L+250ml free), glow-lovely LR7.91 (product_change, ₹62→₹72 rate hike), sunfeast LR7.72 (Consumer, 2×₹5 + ₹5 pencil free — chosen over aakash LR7.81 to avoid मूंग overlap + category spread).
- #     SWAPPED OUT (Step 6 body-verify): global-soap LR9.75 (bare "4+1" ratio, no ₹/MRP/weight, vague 'Global' brand → hyper-local risk). BLOCKED brand 7d: colgate×3/ghadi×2/patanjali-ghee/patanjali-dant-kranti/lifebuoy/dabur-red. Category spread: beverage / personal-care / biscuit.
- dict(i=4, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="माउंटेन ड्यू",
-   price=f'<span class="offer" style="background:{SCHEME_BLUE}">1L पर 250ml फ्री</span>',
-   sub='माउंटेन ड्यू 1 लीटर बोतल के साथ 250ml एक्स्ट्रा बिल्कुल फ्री — रेट में कोई बदलाव नहीं; त्योहारी-गर्मी में तेज बिकने वाला ठंडा पेय · <b class="delta">250ml फ्री</b>',
-   l1="ऑफर", v1="1 लीटर माउंटेन ड्यू पर 250ml एक्स्ट्रा फ्री, वही पुराना रेट",
-   l2="ग्राहक को", v2="उतने ही दाम में सवा लीटर पेय; ग्राहक को ज्यादा माल का फायदा, काउंटर पर तेज बिक्री"),
- dict(i=5, eyebrow="FMCG", label="प्रोडक्ट बदलाव", stripe=BLACK, headline="ग्लो एंड लवली",
-   price='₹62<span class="arrow">→</span>₹72',
-   sub='फेयर एंड लवली (अब ग्लो एंड लवली) क्रीम का रेट ₹62 से बढ़कर ₹72 — ₹10 की रेट हाइक; रोज बिकने वाला पर्सनल-केयर आइटम · <b class="delta">₹10 महंगी</b>',
-   l1="बदलाव", v1="ग्लो एंड लवली फेयरनेस क्रीम का भाव ₹62 से ₹72 हुआ (₹10 बढ़ा)",
-   l2="फायदा", v2="पुराने ₹62 वाले स्टॉक को पुराने MRP पर बेचें — नए भाव से सीधा ज्यादा मार्जिन मिलेगा"),
- dict(i=6, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="सनफीस्ट बाउंस",
-   price=f'<span class="offer" style="background:{SCHEME_BLUE}">2 पर ₹5 पेंसिल फ्री</span>',
-   sub='सनफीस्ट बाउंस ₹5 वाला बिस्किट — 2 पैकेट खरीदने पर ₹5 वाली पेंसिल बिल्कुल फ्री; बच्चों में तेज चलने वाला आइटम · <b class="delta">₹5 पेंसिल फ्री</b>',
-   l1="ऑफर", v1="₹5 वाले सनफीस्ट बाउंस के 2 पैकेट पर ₹5 वाली पेंसिल फ्री",
-   l2="ग्राहक को", v2="बच्चों को बिस्किट के साथ फ्री पेंसिल; स्कूल-टाइम में तेज बिकने वाला कॉम्बो"),
- # --- News (trending_news) — in-house 11सित Pan India Schemes: मुफ्त ई-श्रम कार्ड — दुर्घटना बीमा ₹2 लाख + 60 के बाद ₹3000/माह पेंशन; concrete benefit, non-bait. Chosen over Ganesh-Chaturthi trending (overlaps गोला commodity) + QR-scam (bait). News=1 base. ---
- dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="ई-श्रम कार्ड",
-   price='<span class="news">मुफ्त कार्ड, ₹2 लाख का बीमा</span>',
-   sub='छोटे दुकानदारों के लिए मुफ्त ई-श्रम कार्ड — दुर्घटना में ₹2 लाख तक बीमा और 60 के बाद ₹3,000/माह तक पेंशन · <b class="delta">₹2 लाख बीमा</b>',
-   l1="क्यों ज़रूरी", v1="16–59 साल के दुकानदार जो EPFO/ESIC में नहीं और आयकर नहीं भरते, सभी पात्र",
-   l2="क्या करें", v2="eshram.gov.in पर खुद या नज़दीकी CSC पर मुफ्त बनवाएं — आधार-मोबाइल लिंक जरूरी, कोई शुल्क नहीं"),
+ # --- Commodity (mandi_bhav) — 2 तेजी/RED + 1 मंदी/GREEN (balance). गेहूं (in-house अनाज 12सित, तेजी +₹200, निर्यात रोक हटी) + राजमा (in-house Samachar 12सित, तेजी +₹300, त्योहारी मांग) + उड़द (in-house दाल 12सित, मंदी −₹50, नई फसल दबाव). All in-house today; distinct news_ids. ---
+ dict(i=1, label="मंडी भाव", stripe=RED, headline="गेहूं",
+   price=f'{tri("up",RED)}₹3,100<span class="unit">/क्विंटल</span>',
+   sub=f'महाराष्ट्र मंडी में गेहूं ₹2,900 से चढ़कर ₹3,100/क्विंटल; दिल्ली ₹2,950–2,970 — निर्यात रोक हटने और सरकारी खरीद ज्यादा होने से मंडी आवक तंग · <b class="delta" style="color:{RED}">₹200 तेजी</b>',
+   l1="क्यों", v1="24 अगस्त को गेहूं-आटा-मैदा निर्यात की रोक हटी; ~90% माल सरकारी खरीद में गया, मंडी में तंगी",
+   l2="क्या करें", v2="पुराने भाव का गेहूं-आटा-मैदा स्टॉक अभी बेच लें; आटा-मैदा महंगा हो रहा, बड़ा भंडार न भरें"),
+ dict(i=2, label="मंडी भाव", stripe=RED, headline="राजमा",
+   price=f'{tri("up",RED)}₹11,000–11,300<span class="unit">/क्विंटल</span>',
+   sub=f'इंडियन ब्राजील राजमा ₹300 उछलकर ₹11,000–11,300/क्विंटल (₹110–113/किलो) — उत्तर भारत में स्टॉक कम और नई फसल में देर, त्योहारी मांग तेज · <b class="delta" style="color:{RED}">₹300 तेजी</b>',
+   l1="क्यों", v1="उत्तरी मंडियों में स्टॉक कम, नई फसल आने में देर; आयातकों की बिकवाली कमजोर, दाल मिलों की मांग निकल रही",
+   l2="क्या करें", v2="राजमा का त्योहारी माल पुराने भाव पर अभी उठा लें — रुक-रुककर और तेजी की गुंजाइश"),
+ dict(i=3, label="मंडी भाव", stripe=GREEN, headline="उड़द",
+   price=f'{tri("down",GREEN)}₹8,900<span class="unit">/क्विंटल</span>',
+   sub=f'दिल्ली FAQ उड़द ₹50 घटकर ₹8,900–8,910/क्विंटल; मुंबई SQ ₹75–100 टूटकर ₹9,275–9,300 — कई दिन की तेजी थमी, नई फसल तैयार · <b class="delta" style="color:{GREEN}">₹50 गिरावट</b>',
+   l1="क्यों", v1="राजस्थान-MP में नई फसल पककर तैयार, आवक शुरू; गोदाम माल पर स्टॉकिस्ट बिकवाली और रंगून का सस्ता आयात",
+   l2="क्या करें", v2="जरूरत भर का ही उड़द उठाएं, भारी स्टॉक न भरें — नई फसल तेज होते ही भाव और नीचे आ सकते"),
+ # --- FMCG (fmcg) — TOP 3 by LR desc across all 4 segments after ledger dedup (news_id 12d + brand 7d) + body-verify (concrete ₹). Real product packs legible. ---
+ #     himalaya LR8.93 (Retailer, ₹20 jar 12+1), close-up LR8.60 (Retailer, ₹20 6+1), naulakha LR8.55 (Consumer, ₹35 tub + scrubber free).
+ #     SWAPPED OUT (Step 6 body-verify): parle-mazelo LR9.28 (only "80 टॉफी फ्री", NO concrete ₹/MRP figure); non-sticky-hair-oil LR8.79 (vague/unnamed brand — "Non-sticky Hair oil"). BLOCKED brand 7d: vicks, colgate. Category spread: personal-care / oral-care / home-care.
+ dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="हिमालया फेस वॉश",
+   price=f'<span class="offer" style="background:{SCHEME_GREEN}">12 पर 1 फ्री</span>',
+   sub='हिमालया नीम फेस वॉश ₹20 वाला जार — 12 खरीदने पर 1 बिल्कुल फ्री (12+1 स्कीम); रोज़ बिकने वाला पर्सनल-केयर आइटम · <b class="delta">1 पीस फ्री</b>',
+   l1="स्कीम", v1="₹20 वाले हिमालया नीम फेस वॉश जार पर 12+1 फ्री स्कीम चल रही है",
+   l2="फायदा", v2="हर 12 पीस पर 1 मुफ्त — सीधा ~8% एक्स्ट्रा माल; तेज़ बिकने वाला रोज़मर्रा आइटम"),
+ dict(i=5, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="क्लोज़अप",
+   price=f'<span class="offer" style="background:{SCHEME_GREEN}">6 पर 1 फ्री</span>',
+   sub='क्लोज़अप टूथपेस्ट ₹20 वाला — 6 पीस खरीदने पर 1 बिल्कुल फ्री (6+1 स्कीम); रोज़ बिकने वाला ओरल-केयर आइटम · <b class="delta">1 पीस फ्री</b>',
+   l1="स्कीम", v1="₹20 वाली क्लोज़अप टूथपेस्ट के 6 पीस पर 1 फ्री",
+   l2="फायदा", v2="हर 6 पर 1 मुफ्त — ~16% एक्स्ट्रा माल; पुराने भाव पर बेचकर बढ़िया मार्जिन"),
+ dict(i=6, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="नौलखा डिशवॉश",
+   price=f'<span class="offer" style="background:{SCHEME_BLUE}">टब पर जूना फ्री</span>',
+   sub='नौलखा डिशवॉश टब ₹35 — साथ में बर्तन धोने का स्क्रबर (जूना) बिल्कुल फ्री; रोज़ ज़रूरत का घरेलू आइटम · <b class="delta">जूना फ्री</b>',
+   l1="ऑफर", v1="₹35 वाले नौलखा डिशवॉश टब के साथ बर्तन का स्क्रबर (जूना) फ्री",
+   l2="ग्राहक को", v2="एक ही दाम में डिशवॉश + स्क्रबर; ग्राहक को पूरा सेट, काउंटर पर तेज़ बिक्री"),
+ # --- News (trending_news) — in-house 12सित Pan India Trending 1: ONDC नेटवर्क किराना दुकानों का सामान मोबाइल पर दिखाएगा, कमीशन 25%+ से घटकर 3–10%; concrete numbers, non-bait, market-impact. Chosen over success-story (soft) + QR-scam (bait). News=1 base. ---
+ dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="ONDC नेटवर्क",
+   price='<span class="news">कमीशन 25% से घटकर 3–10%</span>',
+   sub='सरकारी ONDC नेटवर्क किराना दुकानों का सामान अब मोबाइल पर दिखाएगा; 1.4 करोड़ दुकानें जुड़ीं · <b class="delta">11 गुना ऑर्डर</b>',
+   l1="क्यों ज़रूरी", v1="बड़े ऑनलाइन बाज़ार 25%+ कमीशन लेते हैं; ONDC ऐप पर सिर्फ 3–10%",
+   l2="क्या करें", v2="विक्रेता ऐप पर दुकान का नाम, पता, GST व बैंक खाता देकर मुफ्त जुड़ें"),
 ]
 
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
