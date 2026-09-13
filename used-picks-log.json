@@ -5268,6 +5268,91 @@
           "label": "Non-sticky Hair oil + No.1 ₹10 साबुन फ्री (Consumer Scheme, LR8.79; SWAPPED Step6 — vague/unnamed hair-oil brand)"
         }
       ]
+    },
+    {
+      "date": "2026-09-13",
+      "picks": {
+        "mandi_bhav": [
+          {
+            "news_id": "ec90010d-9acb-4c6f-a7ff-a62f7911ca0d",
+            "brand": "chana",
+            "direction": "तेजी",
+            "label": "देसी चना तेजी +₹50 → ₹6,650–6,660/क्विंटल; दाल मिलों की खरीद, आवक तंग, त्योहारी मांग (in-house दाल 13सित RED, slide1)"
+          },
+          {
+            "news_id": "52de1b9f-739b-4ae5-a70c-9f5a2966f00a",
+            "brand": "kali-mirch",
+            "direction": "तेजी",
+            "label": "काली मिर्च तेजी ₹704–724/किलो; त्योहारी मांग, घरेलू उपलब्धता सीमित (in-house Samachar 13सित RED, slide2)"
+          },
+          {
+            "news_id": "0e3027d6-a868-4d4d-94af-fddde2a0ac5a",
+            "brand": "makhana",
+            "direction": "मंदी",
+            "label": "मखाना मंदी ₹975→₹550–560/किलो (~45% सस्ता); उत्पादन ज्यादा (in-house Other-commodity 13सित GREEN, slide3)"
+          }
+        ],
+        "fmcg": [
+          {
+            "news_id": "4582e84b-ae46-4802-9596-bd956b708a02",
+            "brand": "colgate",
+            "direction": "scheme",
+            "label": "कोलगेट ₹10/20g टूथपेस्ट — 12+1 फ्री (Retailer Scheme, LR7.84, slide1)"
+          },
+          {
+            "news_id": "4d255497-1589-477b-8d1e-5866fd48e024",
+            "brand": "chik",
+            "direction": "scheme",
+            "label": "चिक शैम्पू ₹1/6ml सैशे — 3+1 फ्री (Consumer Scheme, LR6.18, slide2)"
+          },
+          {
+            "news_id": "bba5ff1a-7ac2-4b70-9e81-5cc34a1eafb8",
+            "brand": "dairy-kiss",
+            "direction": "scheme",
+            "label": "डेयरी किस चॉकलेट जार ₹100→₹165, ₹65 मार्जिन (Retailer Scheme, LR6.05, slide3)"
+          }
+        ],
+        "trending_news": [
+          {
+            "news_id": "b69c3d49-b532-4b69-a9a3-59f486d045d3",
+            "brand": "kharif-buaai",
+            "direction": "news",
+            "label": "खरीफ बुआई — धान रकबा −3.7%, दलहन +1.6%, उड़द +12%; चावल सप्लाई तंग (in-house 13सित Trending-2, non-bait, slide1)"
+          }
+        ]
+      },
+      "also_shown": [
+        {
+          "news_id": "01415338-d62e-4974-9a32-a69864f7cfd7",
+          "brand": "close-up",
+          "direction": "scheme",
+          "label": "Close up 44g 6+1 (Retailer LR8.84; SWAPPED — brand 7d dedup, close-up used 12सित)"
+        },
+        {
+          "news_id": "682b770b-46ab-41d4-a10f-7fc552dee692",
+          "brand": "johnsons-baby",
+          "direction": "scheme",
+          "label": "Johnson's baby साबुन 75g + 15ml shampoo free (Consumer LR7.35; SWAPPED Step6 — no concrete ₹/MRP, only weight+free-good)"
+        },
+        {
+          "news_id": "545a5f58-f873-4d8e-afea-faf59d658f56",
+          "brand": "naulakha",
+          "direction": "scheme",
+          "label": "नौलखा डिशवॉश टब ₹35 (Consumer LR7.12; SWAPPED — brand+news_id dedup, used 12सित)"
+        },
+        {
+          "news_id": "26de1eac-9b71-49d0-b35a-b5f3e11c081b",
+          "brand": "jelly",
+          "direction": "scheme",
+          "label": "जेली ₹1 80+5 (Retailer LR6.22; SWAPPED Step6 — unbranded, no real pack to render)"
+        },
+        {
+          "news_id": "cfd7b393-d5fd-4d84-bf56-f48041a6c6c3",
+          "brand": "himalaya",
+          "direction": "scheme",
+          "label": "Himalaya neem face wash 12+1 (Retailer LR6.54; SWAPPED — brand 7d dedup, used 12सित)"
+        }
+      ]
     }
   ],
   "brand_dedup_window_days": 7
