@@ -72,48 +72,48 @@ def b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-09-12 · experiment window CLOSED → base 3+3+1)
+# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-09-13 . experiment window CLOSED -> base 3+3+1)
 CARDS = [
- # --- Commodity (mandi_bhav) — 2 तेजी/RED + 1 मंदी/GREEN (balance). गेहूं (in-house अनाज 12सित, तेजी +₹200, निर्यात रोक हटी) + राजमा (in-house Samachar 12सित, तेजी +₹300, त्योहारी मांग) + उड़द (in-house दाल 12सित, मंदी −₹50, नई फसल दबाव). All in-house today; distinct news_ids. ---
- dict(i=1, label="मंडी भाव", stripe=RED, headline="गेहूं",
-   price=f'{tri("up",RED)}₹3,100<span class="unit">/क्विंटल</span>',
-   sub=f'महाराष्ट्र मंडी में गेहूं ₹2,900 से चढ़कर ₹3,100/क्विंटल; दिल्ली ₹2,950–2,970 — निर्यात रोक हटने और सरकारी खरीद ज्यादा होने से मंडी आवक तंग · <b class="delta" style="color:{RED}">₹200 तेजी</b>',
-   l1="क्यों", v1="24 अगस्त को गेहूं-आटा-मैदा निर्यात की रोक हटी; ~90% माल सरकारी खरीद में गया, मंडी में तंगी",
-   l2="क्या करें", v2="पुराने भाव का गेहूं-आटा-मैदा स्टॉक अभी बेच लें; आटा-मैदा महंगा हो रहा, बड़ा भंडार न भरें"),
- dict(i=2, label="मंडी भाव", stripe=RED, headline="राजमा",
-   price=f'{tri("up",RED)}₹11,000–11,300<span class="unit">/क्विंटल</span>',
-   sub=f'इंडियन ब्राजील राजमा ₹300 उछलकर ₹11,000–11,300/क्विंटल (₹110–113/किलो) — उत्तर भारत में स्टॉक कम और नई फसल में देर, त्योहारी मांग तेज · <b class="delta" style="color:{RED}">₹300 तेजी</b>',
-   l1="क्यों", v1="उत्तरी मंडियों में स्टॉक कम, नई फसल आने में देर; आयातकों की बिकवाली कमजोर, दाल मिलों की मांग निकल रही",
-   l2="क्या करें", v2="राजमा का त्योहारी माल पुराने भाव पर अभी उठा लें — रुक-रुककर और तेजी की गुंजाइश"),
- dict(i=3, label="मंडी भाव", stripe=GREEN, headline="उड़द",
-   price=f'{tri("down",GREEN)}₹8,900<span class="unit">/क्विंटल</span>',
-   sub=f'दिल्ली FAQ उड़द ₹50 घटकर ₹8,900–8,910/क्विंटल; मुंबई SQ ₹75–100 टूटकर ₹9,275–9,300 — कई दिन की तेजी थमी, नई फसल तैयार · <b class="delta" style="color:{GREEN}">₹50 गिरावट</b>',
-   l1="क्यों", v1="राजस्थान-MP में नई फसल पककर तैयार, आवक शुरू; गोदाम माल पर स्टॉकिस्ट बिकवाली और रंगून का सस्ता आयात",
-   l2="क्या करें", v2="जरूरत भर का ही उड़द उठाएं, भारी स्टॉक न भरें — नई फसल तेज होते ही भाव और नीचे आ सकते"),
- # --- FMCG (fmcg) — TOP 3 by LR desc across all 4 segments after ledger dedup (news_id 12d + brand 7d) + body-verify (concrete ₹). Real product packs legible. ---
- #     himalaya LR8.93 (Retailer, ₹20 jar 12+1), close-up LR8.60 (Retailer, ₹20 6+1), naulakha LR8.55 (Consumer, ₹35 tub + scrubber free).
- #     SWAPPED OUT (Step 6 body-verify): parle-mazelo LR9.28 (only "80 टॉफी फ्री", NO concrete ₹/MRP figure); non-sticky-hair-oil LR8.79 (vague/unnamed brand — "Non-sticky Hair oil"). BLOCKED brand 7d: vicks, colgate. Category spread: personal-care / oral-care / home-care.
- dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="हिमालया फेस वॉश",
+ # Commodity (mandi_bhav) - 2 tejii/RED + 1 mandi/GREEN. desi chana (dal 13sep, +Rs50), kali mirch (Samachar 13sep, tejii), makhana (Other-commodity 13sep, ~45% down). All in-house today; distinct news_ids.
+ dict(i=1, label="मंडी भाव", stripe=RED, headline="देसी चना",
+   price=f'{tri("up",RED)}₹6,650<span class="unit">/क्विंटल</span>',
+   sub=f'देसी चना ₹50 चढ़कर ₹6,650–6,660/क्विंटल; दाल मिलों की खरीद निकली, आवक समय से कम और त्योहारी मांग शुरू · <b class="delta" style="color:{RED}">₹50 तेजी</b>',
+   l1="क्यों", v1="देसी चने की आवक पूरी नहीं, ऑस्ट्रेलिया का चना निपटा और आयात राहत घटी; उत्पादक राज्यों में बारिश कम",
+   l2="क्या करें", v2="चना दाल-बेसन की खरीद ज्यादा न टालें — त्योहारी मांग शुरू होते ही भाव और ऊपर जा सकते"),
+ dict(i=2, label="मंडी भाव", stripe=RED, headline="काली मिर्च",
+   price=f'{tri("up",RED)}₹704–724<span class="unit">/किलो</span>',
+   sub=f'अनगार्बल्ड काली मिर्च ₹704 व गार्बल्ड ₹724/किलो — त्योहारी खरीदारी शुरू और घरेलू उपलब्धता सीमित रहने से भाव ऊंचे बने · <b class="delta" style="color:{RED}">त्योहारी तेजी</b>',
+   l1="क्यों", v1="त्योहारी खरीदारी शुरू और घरेलू काली मिर्च की उपलब्धता सीमित रहने से भाव मजबूत बने हुए",
+   l2="क्या करें", v2="दिवाली-सीजन की काली मिर्च अभी उठा लें — उपलब्धता तंग, भाव और चढ़ने के आसार"),
+ dict(i=3, label="मंडी भाव", stripe=GREEN, headline="मखाना",
+   price=f'{tri("down",GREEN)}₹550<span class="unit">/किलो</span>',
+   sub=f'पूर्णिया मंडी में मखाना पिछले साल ₹975 से घटकर ₹550–560/किलो (~45% सस्ता) — इस बार उत्पादन ज्यादा, फसल पूरी आई · <b class="delta" style="color:{GREEN}">₹425 गिरावट</b>',
+   l1="क्यों", v1="किसानों ने पिछले साल से ~50% ज्यादा खेती की और फसल पूरी आई; भाव पिछले साल से ~45% नीचे",
+   l2="क्या करें", v2="व्रत-नवरात्रि सीजन का मखाना सस्ते भाव पर अभी स्टॉक कर लें — आगे बड़ी गिरावट के आसार नहीं"),
+ # FMCG (fmcg) - TOP 3 by LR desc after ledger dedup (news_id 12d + brand 7d) + body-verify (concrete Rs). Real packs legible.
+ #   colgate LR7.84 (Retailer, Rs10/20g 12+1), chik LR6.18 (Consumer, Rs1/6ml 3+1), dairy-kiss LR6.05 (Retailer, Rs100->165 Rs65 margin).
+ #   SWAPPED (Step6 body-verify): johnsons-baby LR7.35 (weight+free-good, NO concrete Rs); jelly LR6.22 (unbranded, no real pack). BLOCKED brand7d: close-up, naulakha, himalaya, non-sticky-hair-oil. Spread: oral / hair / chocolate.
+ dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="कोलगेट",
    price=f'<span class="offer" style="background:{SCHEME_GREEN}">12 पर 1 फ्री</span>',
-   sub='हिमालया नीम फेस वॉश ₹20 वाला जार — 12 खरीदने पर 1 बिल्कुल फ्री (12+1 स्कीम); रोज़ बिकने वाला पर्सनल-केयर आइटम · <b class="delta">1 पीस फ्री</b>',
-   l1="स्कीम", v1="₹20 वाले हिमालया नीम फेस वॉश जार पर 12+1 फ्री स्कीम चल रही है",
-   l2="फायदा", v2="हर 12 पीस पर 1 मुफ्त — सीधा ~8% एक्स्ट्रा माल; तेज़ बिकने वाला रोज़मर्रा आइटम"),
- dict(i=5, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="क्लोज़अप",
-   price=f'<span class="offer" style="background:{SCHEME_GREEN}">6 पर 1 फ्री</span>',
-   sub='क्लोज़अप टूथपेस्ट ₹20 वाला — 6 पीस खरीदने पर 1 बिल्कुल फ्री (6+1 स्कीम); रोज़ बिकने वाला ओरल-केयर आइटम · <b class="delta">1 पीस फ्री</b>',
-   l1="स्कीम", v1="₹20 वाली क्लोज़अप टूथपेस्ट के 6 पीस पर 1 फ्री",
-   l2="फायदा", v2="हर 6 पर 1 मुफ्त — ~16% एक्स्ट्रा माल; पुराने भाव पर बेचकर बढ़िया मार्जिन"),
- dict(i=6, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="नौलखा डिशवॉश",
-   price=f'<span class="offer" style="background:{SCHEME_BLUE}">टब पर जूना फ्री</span>',
-   sub='नौलखा डिशवॉश टब ₹35 — साथ में बर्तन धोने का स्क्रबर (जूना) बिल्कुल फ्री; रोज़ ज़रूरत का घरेलू आइटम · <b class="delta">जूना फ्री</b>',
-   l1="ऑफर", v1="₹35 वाले नौलखा डिशवॉश टब के साथ बर्तन का स्क्रबर (जूना) फ्री",
-   l2="ग्राहक को", v2="एक ही दाम में डिशवॉश + स्क्रबर; ग्राहक को पूरा सेट, काउंटर पर तेज़ बिक्री"),
- # --- News (trending_news) — in-house 12सित Pan India Trending 1: ONDC नेटवर्क किराना दुकानों का सामान मोबाइल पर दिखाएगा, कमीशन 25%+ से घटकर 3–10%; concrete numbers, non-bait, market-impact. Chosen over success-story (soft) + QR-scam (bait). News=1 base. ---
- dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="ONDC नेटवर्क",
-   price='<span class="news">कमीशन 25% से घटकर 3–10%</span>',
-   sub='सरकारी ONDC नेटवर्क किराना दुकानों का सामान अब मोबाइल पर दिखाएगा; 1.4 करोड़ दुकानें जुड़ीं · <b class="delta">11 गुना ऑर्डर</b>',
-   l1="क्यों ज़रूरी", v1="बड़े ऑनलाइन बाज़ार 25%+ कमीशन लेते हैं; ONDC ऐप पर सिर्फ 3–10%",
-   l2="क्या करें", v2="विक्रेता ऐप पर दुकान का नाम, पता, GST व बैंक खाता देकर मुफ्त जुड़ें"),
+   sub='कोलगेट ₹10 MRP वाली 20 ग्राम टूथपेस्ट — 12 पीस खरीदने पर 1 बिल्कुल फ्री (12+1 स्कीम); रोज़ बिकने वाला ओरल-केयर आइटम · <b class="delta">1 पीस फ्री</b>',
+   l1="स्कीम", v1="₹10 MRP वाली कोलगेट 20 ग्राम के 12 पीस पर 1 फ्री (12+1)",
+   l2="फायदा", v2="हर 12 पर 1 मुफ्त — ~8% एक्स्ट्रा माल; तेज़ बिकने वाला भरोसेमंद रोज़मर्रा ब्रांड"),
+ dict(i=5, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="चिक शैम्पू",
+   price=f'<span class="offer" style="background:{SCHEME_BLUE}">3 पर 1 फ्री</span>',
+   sub='चिक शैम्पू ₹1 वाला 6ml सैशे — 3 खरीदने पर 1 बिल्कुल फ्री (3+1 ऑफर); कम दाम का तेज़ बिकने वाला हेयर-केयर आइटम · <b class="delta">1 सैशे फ्री</b>',
+   l1="ऑफर", v1="₹1 MRP वाले चिक शैम्पू 6ml सैशे पर 3+1 फ्री ऑफर",
+   l2="ग्राहक को", v2="₹1 में शैम्पू, हर 3 पर 1 मुफ्त — कम बजट ग्राहक को सीधा फायदा, तेज़ बिक्री"),
+ dict(i=6, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="डेयरी किस",
+   price=f'<span class="offer" style="background:{SCHEME_GREEN}">₹65 मार्जिन</span>',
+   sub='डेयरी किस चॉकलेट जार ₹100 में खरीद, ₹165 MRP पर बिक्री — हर जार पर ₹65 (~65%) का सीधा मार्जिन; त्योहारी सीजन तेज़ बिक्री · <b class="delta">₹65 मार्जिन</b>',
+   l1="स्कीम", v1="₹100 में आने वाला डेयरी किस चॉकलेट जार ₹165 MRP पर बिकता है",
+   l2="फायदा", v2="हर जार पर ₹65 (~65%) मार्जिन — त्योहारी सीजन में तेज़ चलने वाली मिठास"),
+ # News (trending_news) - in-house 13sep Trending-2: kharif buaai - dhaan rakba -3.7%, dalhan +1.6%, urad +12%; concrete, non-bait, market-impact. Chosen over namkeen-raid bait. News=1 base.
+ dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="धान रकबा घटा",
+   price='<span class="news">धान रकबा −3.7%, दलहन +1.6%</span>',
+   sub='खरीफ बुआई 1,097 लाख हे. (−1.4%); धान का रकबा ~16 लाख हे. घटा, अकेले उड़द रकबा ~12% ऊपर · <b class="delta">चावल सप्लाई तंग</b>',
+   l1="क्यों ज़रूरी", v1="धान घटने से चावल सप्लाई पर दबाव — भाव नरम की उम्मीद कम; उड़द रकबा बढ़ा तो उड़द में तेजी सीमित",
+   l2="क्या करें", v2="चावल का स्टॉक थोड़ा पहले बना लें; उड़द दाल थोड़ा ठहरकर लें"),
 ]
 
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
