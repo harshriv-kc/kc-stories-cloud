@@ -5353,6 +5353,82 @@
           "label": "Himalaya neem face wash 12+1 (Retailer LR6.54; SWAPPED — brand 7d dedup, used 12सित)"
         }
       ]
+    },
+    {
+      "date": "2026-09-14",
+      "picks": {
+        "mandi_bhav": [
+          {
+            "news_id": "9f4dadb7-6d47-45f2-905c-f20d58e0df06",
+            "brand": "rai",
+            "direction": "तेजी",
+            "label": "राई तेजी +₹2,000 → ₹18,000–18,200/क्विंटल; हाजिर में माल की भारी कमी (in-house मसाला 14sep)"
+          },
+          {
+            "news_id": "1d7b3f6d-d3cc-474c-b608-ab74c1caa07c",
+            "brand": "kabuli-chana",
+            "direction": "तेजी",
+            "label": "काबुली चना तेजी +₹100 → ₹7,000–7,300/क्विंटल; फसल कमजोर, त्योहारी मांग (in-house दाल 14sep)"
+          },
+          {
+            "news_id": "487ea8ca-4b10-4891-9431-fa8277aa2dc7",
+            "brand": "sarson-tel",
+            "direction": "मंदी",
+            "label": "सरसों तेल मंदी −₹100 → ₹16,800/क्विंटल; ग्राहकी कमजोर, बीज ₹50 महंगा (in-house तेल 14sep)"
+          }
+        ],
+        "fmcg": [
+          {
+            "news_id": "bf0acc5e-f3d5-4490-a44c-d1359af8b943",
+            "brand": "vicks",
+            "segment": "Retailer Scheme",
+            "LR": 9.8266,
+            "label": "विक्स गोली ₹2 MRP जार — जार में ₹100 (50 गोली) माल फ्री (Retailer Scheme, slide1)"
+          },
+          {
+            "news_id": "8dcb6ea2-9b97-486b-a4f6-0dda5cdc0ddd",
+            "brand": "rich-ketchup",
+            "segment": "Consumer Scheme",
+            "LR": 7.765,
+            "label": "रिच टोमैटो केचप पिचकू ₹15 — हर नग पर ₹5 मैगी मसाला फ्री (Consumer Scheme, slide2)"
+          },
+          {
+            "news_id": "14eeddb3-c2ad-4e92-9bdb-32f37a215eff",
+            "brand": "ghadi",
+            "segment": "Consumer Scheme",
+            "LR": 6.875,
+            "label": "घड़ी 1kg डिटर्जेंट ₹74 MRP + ₹10 Venus साबुन फ्री (Consumer Scheme, slide3)"
+          }
+        ],
+        "trending_news": [
+          {
+            "news_id": "3188ef65-9aad-4580-9ba9-935f81d91fa2",
+            "brand": "bombay-creamery",
+            "direction": "news",
+            "label": "रिलायंस Bombay Creamery ₹10 आइसक्रीम लॉन्च; ~5,000 डिस्ट्रीब्यूटर, ~30 लाख दुकानें (in-house Trending-1 14sep)"
+          }
+        ]
+      },
+      "also_shown": [
+        {
+          "news_id": "0db60dd9-5561-4d7f-b9c0-4325a2f3b1e4",
+          "brand": "lux",
+          "direction": "fmcg",
+          "label": "Lux साबुन 4+1 (Consumer LR9.18) — BLOCKED brand7d"
+        },
+        {
+          "news_id": "fd616d8c-7a32-4ba3-8302-a3b0df44af58",
+          "brand": "britannia-20-20",
+          "direction": "fmcg",
+          "label": "₹10 में 20 बिस्किट 11+1 (Retailer LR7.99) — swapped: no legible brand in body"
+        },
+        {
+          "news_id": "266dd0d2-d592-4ef8-9573-73e7a59b1b56",
+          "brand": "oral-b",
+          "direction": "fmcg",
+          "label": "ओरल बी टूथब्रश 11+2 (Retailer LR7.10) — swapped for oral-care category spread"
+        }
+      ]
     }
   ],
   "brand_dedup_window_days": 7
