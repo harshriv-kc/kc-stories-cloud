@@ -5429,6 +5429,73 @@
           "label": "ओरल बी टूथब्रश 11+2 (Retailer LR7.10) — swapped for oral-care category spread"
         }
       ]
+    },
+    {
+      "date": "2026-09-15",
+      "picks": {
+        "mandi_bhav": [
+          {
+            "news_id": "2f1b1c2e-3dc4-4a9e-97c0-8e2418af4c4b",
+            "brand": "kalonji",
+            "direction": "तेजी",
+            "label": "कलौंजी तेजी +₹800–1000 → ₹22,000–23,000/क्विंटल; मांग बढ़ी, आज का सबसे बड़ा मसाला उछाल (in-house 15सित Samachar, RED, slide1)"
+          },
+          {
+            "news_id": "cabdddb8-4d1a-41d3-8e1e-e1f279c65f25",
+            "brand": "javitri",
+            "direction": "मंदी",
+            "label": "जावित्री लाल मंदी −₹75 → ₹1,900–2,300/किलो; ग्राहकी कमजोर + आयातक बिकवाली, आज की सबसे बड़ी नरमी (in-house 15सित मसाला बाजार, GREEN, slide2)"
+          },
+          {
+            "news_id": "ec1d1900-9519-49f0-9a91-850d048f8bee",
+            "brand": "soya-tel",
+            "direction": "मंदी",
+            "label": "सोया तेल मंदी −₹100 → ₹15,300/क्विंटल; महाराष्ट्र नई सोयाबीन आवक + स्टॉकिस्ट बिकवाली (in-house 15सित तेल बाजार, GREEN, slide3; sarson ran 14sep so soya fresher — soya over-covered flag noted)"
+          }
+        ],
+        "fmcg": [
+          {
+            "news_id": "0cb3930b-2a56-439f-917b-42c7f3cdf1d9",
+            "brand": "kismi",
+            "segment": "Retailer Scheme",
+            "LR": 10.0,
+            "label": "पारले किस्मी टॉफी ₹130 वाला जार — अंदर 150 नग + 11 नग फ्री (Retailer Scheme, LR10.0, real Kismi pack, slide1) · candy"
+          },
+          {
+            "news_id": "43ab2c6f-2cca-4e9e-9975-9fcc9562c6bb",
+            "brand": "venus",
+            "segment": "Consumer Scheme",
+            "LR": 8.6351,
+            "label": "वीनस साबुन ₹114 MRP — 3 पर 1 फ्री (Consumer Scheme, LR8.64, slide2) · soap"
+          },
+          {
+            "news_id": "1d980cd0-3612-4a4d-a315-944735345c23",
+            "brand": "taaza",
+            "segment": "fmcg_product_change",
+            "LR": 6.347,
+            "label": "ताज़ा 250g चाय — MRP ₹50→₹60 (₹10 रेट हाइक) (product_change, LR6.35, real Taaza pack, slide3) · tea"
+          }
+        ],
+        "trending_news": [
+          {
+            "news_id": "fc7534d5-526c-4e8e-a068-dcc158a070bd",
+            "brand": "cpi-mehangai",
+            "direction": "news",
+            "label": "गांव में महंगाई ज्यादा — अगस्त 2026 खुदरा महंगाई 4.82% (जुलाई 4.45%), खाद्य 5.95%, गांव 6.13% > शहर 5.64%; RBI 2–6% सीमा के भीतर (in-house 15सित Trending-2, non-bait, concrete)"
+          }
+        ]
+      },
+      "also_shown": [
+        {
+          "news_id": "70249405-af3e-4c60-a1e6-a2c1cc779c3d",
+          "brand": "hajmola",
+          "segment": "Retailer Scheme",
+          "LR": 6.66,
+          "label": "हाजमोला रेगुलर ₹1 जार 170+10 नग फ्री (Retailer Scheme, LR6.66) — top-3 by LR but SWAPPED for category+representation diversity (2nd candy-jar vs kismi)"
+        }
+      ],
+      "pn_campaign_id": "~2kn790d",
+      "notes": "experiment window CLOSED (base 3+3+1). Commodity 1R/2G. FMCG top-by-LR after news_id-12d + brand-7d dedup + body-verify; blocked: closeup/lux/rich-ketchup/colgate/vicks (brand or news_id 12d). News chosen: CPI (over RBI re-KYC deadline — shelf-life/panic risk)."
     }
   ],
   "brand_dedup_window_days": 7
