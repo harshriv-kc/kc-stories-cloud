@@ -72,48 +72,49 @@ def b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-09-14 . experiment window CLOSED -> base 3+3+1)
+# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-09-15 . experiment window CLOSED -> base 3+3+1)
 CARDS = [
- # Commodity (mandi_bhav) - 2 tejii/RED + 1 mandi/GREEN. rai (masala 14sep, +Rs2000 big), kabuli chana (dal 14sep, +Rs100 festival), sarson tel (tel 14sep, -Rs100). All in-house today; distinct news_ids.
- dict(i=1, label="मंडी भाव", stripe=RED, headline="राई",
-   price=f'{tri("up",RED)}₹18,000–18,200<span class="unit">/क्विंटल</span>',
-   sub=f'राई ₹2,000 उछलकर ₹18,000–18,200/क्विंटल के उच्च शिखर पर — हाजिर में माल की भारी कमी, मांग बनी हुई · <b class="delta" style="color:{RED}">₹2,000 तेजी</b>',
-   l1="क्यों", v1="हाजिर बाजार में राई की आवक कम और स्टॉक तंग; मसाले-अचार की मांग बनी रहने से भाव चढ़े",
-   l2="क्या करें", v2="सिर्फ जरूरत भर का माल लें — भाव पहले ही तेज़ चढ़ चुके, ज्यादा स्टॉक भरना जोखिम"),
- dict(i=2, label="मंडी भाव", stripe=RED, headline="काबुली चना",
-   price=f'{tri("up",RED)}₹7,000–7,300<span class="unit">/क्विंटल</span>',
-   sub=f'काबुली चना (मीडियम) ₹100 चढ़कर ₹7,000–7,300/क्विंटल — उत्पादक इलाकों में फसल कमजोर, त्योहारी मांग शुरू · <b class="delta" style="color:{RED}">₹100 तेजी</b>',
-   l1="क्यों", v1="उत्पादक इलाकों में फसल कमजोर और नया माल कम; नवरात्रि-त्योहारी मांग निकलनी शुरू",
-   l2="क्या करें", v2="घटाकर बेचने में समझदारी नहीं — कमी बनी रहने से भाव और ऊपर जा सकते"),
- dict(i=3, label="मंडी भाव", stripe=GREEN, headline="सरसों तेल",
-   price=f'{tri("down",GREEN)}₹16,800<span class="unit">/क्विंटल</span>',
-   sub=f'सरसों तेल ₹100 घटकर ₹16,800/क्विंटल; ग्राहकी कमजोर रही — पर सरसों बीज ₹50 महंगा होकर ₹8,150–8,200 · <b class="delta" style="color:{GREEN}">₹100 गिरावट</b>',
-   l1="क्यों", v1="ग्राहकी का साथ न मिलने से तेल नरम पड़ा; लेकिन बीज महंगा होने से गिरावट सीमित",
-   l2="क्या करें", v2="लंबा स्टॉक न भरें — जरूरत का माल लें और पुराने भाव पर बेच लें"),
- # FMCG (fmcg) - TOP 3 by LR desc across all segments after ledger dedup (news_id 12d + brand 7d) + body-verify (concrete Rs). Real packs legible. Category spread (candy/condiment/detergent) breaks oral-care streak.
- #   vix LR9.83 (Retailer, Rs2 goli jar, 50 goli/Rs100 free), rich-ketchup LR7.77 (Consumer, Rs15, Rs5 maggi free per unit), ghadi LR6.88 (Consumer, 1kg Rs74 + Rs10 Venus soap free).
- #   SWAPPED: lux LR9.18/8.61 (brand7d BLOCKED); 20-20 biscuit LR7.99 (no legible brand in body); oral-b LR7.10 (oral-care streak spread).
- dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="विक्स गोली",
-   price=f'<span class="offer" style="background:{SCHEME_GREEN}">₹100 माल फ्री</span>',
-   sub='विक्स ₹2 MRP वाली गोली का जार — हर जार में ₹100 MRP (50 गोली) का माल बिल्कुल फ्री; तेज़ बिकने वाला भरोसेमंद आइटम · <b class="delta">50 गोली फ्री</b>',
-   l1="स्कीम", v1="₹2 MRP वाली विक्स गोली के जार पर ₹100 (करीब 50 गोली) का माल फ्री",
-   l2="फायदा", v2="हर जार पर ~₹100 एक्स्ट्रा माल मुफ्त — तेज़ बिकने वाला भरोसेमंद ब्रांड"),
- dict(i=5, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="रिच केचप",
-   price=f'<span class="offer" style="background:{SCHEME_BLUE}">₹5 मैगी फ्री</span>',
-   sub='रिच टोमैटो केचप पिचकू ₹15 वाली — हर नग के साथ ₹5 का मैगी मसाला बिल्कुल फ्री; कम दाम में डबल आइटम · <b class="delta">हर नग पर फ्री</b>',
-   l1="ऑफर", v1="₹15 MRP वाली रिच केचप पिचकू के हर नग पर ₹5 का मैगी मसाला फ्री",
-   l2="ग्राहक को", v2="₹15 में केचप के साथ ₹5 का मसाला मुफ्त — ग्राहक को सीधा फायदा, तेज़ बिक्री"),
- dict(i=6, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="घड़ी 1 किलो",
-   price=f'<span class="offer" style="background:{SCHEME_BLUE}">₹10 Venus फ्री</span>',
-   sub='घड़ी डिटर्जेंट 1 किलो ₹74 MRP वाला — साथ में ₹10 MRP का Venus साबुन बिल्कुल फ्री; रोज़मर्रा का तेज़ बिकने वाला आइटम · <b class="delta">₹10 साबुन फ्री</b>',
-   l1="ऑफर", v1="₹74 MRP वाले घड़ी 1kg डिटर्जेंट के साथ ₹10 का Venus साबुन फ्री",
-   l2="ग्राहक को", v2="हर पैक पर ₹10 का साबुन मुफ्त — रोज़मर्रा का भरोसेमंद डिटर्जेंट, तेज़ बिक्री"),
- # News (trending_news) - in-house 14sep Trending-1: Reliance 'Bombay Creamery' Rs10 ice cream launch; concrete Rs10, non-bait, market-impact (chosen over rain/scheme). News=1 base.
- dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="₹10 आइसक्रीम",
-   price='<span class="news">रिलायंस का ₹10 वाला नया आइसक्रीम ब्रांड</span>',
-   sub="रिलायंस ने 'Bombay Creamery' उतारा — शुरुआत सिर्फ ₹10 से; ~5,000 डिस्ट्रीब्यूटर, ~30 लाख दुकानों तक पहुंच · <b class=\"delta\">नया मौका</b>",
-   l1="क्यों ज़रूरी", v1="₹10 पैक नए ग्राहक खोलता है (जैसे ₹5 बिस्किट); ₹27–30 हज़ार करोड़ का बाजार, मुकाबला तेज़",
-   l2="क्या करें", v2="डीप-फ्रीज़र की शर्त पूछें (कंपनी देती है); शुरू में कम माल रखें"),
+ # Commodity (mandi_bhav) - 1 tejii/RED + 2 mandi/GREEN, all in-house 15sep, distinct news_ids.
+ #   kalonji (Samachar, +Rs800-1000 biggest spice jump), javitri (masala, -Rs75 biggest drop), soya tel (tel, -Rs100 real mover; sarson ran 14sep so soya is fresher).
+ dict(i=1, label="मंडी भाव", stripe=RED, headline="कलौंजी",
+   price=f'{tri("up",RED)}₹22,000–23,000<span class="unit">/क्विंटल</span>',
+   sub=f'कलौंजी ₹800–1,000 उछलकर ₹22,000–23,000/क्विंटल — मांग बढ़ने से आज मसाला बाजार की सबसे बड़ी तेजी · <b class="delta" style="color:{RED}">₹1,000 तेजी</b>',
+   l1="क्यों", v1="मांग बढ़ने से कलौंजी में जोरदार उछाल; आज के मसाला बाजार की सबसे बड़ी छलांग",
+   l2="क्या करें", v2="पहले से भरा स्टॉक अच्छे मार्जिन पर बेचें; नई खरीद जरूरत भर करें"),
+ dict(i=2, label="मंडी भाव", stripe=GREEN, headline="जावित्री",
+   price=f'{tri("down",GREEN)}₹1,900–2,300<span class="unit">/किलो</span>',
+   sub=f'जावित्री लाल ₹75 घटकर ₹1,900–2,300/किलो — ग्राहकी कमजोर और आयातकों की बिकवाली, आज की सबसे बड़ी नरमी · <b class="delta" style="color:{GREEN}">₹75 गिरावट</b>',
+   l1="क्यों", v1="मांग का साथ न मिलने और आयातकों की बिकवाली से जावित्री के भाव नरम पड़े",
+   l2="क्या करें", v2="त्योहारी गरम-मसाला खपत से पहले सस्ते में स्टॉक भर लें"),
+ dict(i=3, label="मंडी भाव", stripe=GREEN, headline="सोया तेल",
+   price=f'{tri("down",GREEN)}₹15,300<span class="unit">/क्विंटल</span>',
+   sub=f'सोया तेल ₹100 घटकर ₹15,300/क्विंटल — महाराष्ट्र में नई सोयाबीन आवक और स्टॉकिस्टों की बिकवाली से नरमी · <b class="delta" style="color:{GREEN}">₹100 गिरावट</b>',
+   l1="क्यों", v1="नई सोयाबीन की आवक शुरू और स्टॉकिस्टों की बिकवाली से तेल नरम पड़ा",
+   l2="क्या करें", v2="भाव नरम — लंबा स्टॉक न भरें, जरूरत भर का माल लें"),
+ # FMCG (fmcg) - TOP by LR desc across all segments after ledger dedup (news_id 12d + brand 7d) + body-verify (concrete Rs). Real packs legible.
+ #   kismi LR10.0 (Retailer, Rs130 jar 150+11 free), venus LR8.64 (Consumer, Rs114 MRP 3+1 free), taaza LR6.35 (product_change, 250g Rs50->Rs60).
+ #   SWAPPED: closeup LR9.21/5.94/5.70 & lux LR8.89 (brand7d BLOCKED); hajmola LR6.66 (dropped for category+representation diversity vs kismi candy-jar); rich-ketchup LR6.21 (brand7d).
+ dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="किस्मी टॉफी",
+   price=f'<span class="offer" style="background:{SCHEME_GREEN}">जार पर 11 नग फ्री</span>',
+   sub='पारले किस्मी टॉफी का ₹130 वाला जार — अंदर 150 नग टॉफी के साथ 11 नग बिल्कुल फ्री · <b class="delta">11 नग फ्री</b>',
+   l1="स्कीम", v1="₹130 का 1 जार — अंदर 150 नग टॉफी और 11 नग फ्री",
+   l2="फायदा", v2="हर जार पर 11 टॉफी मुफ्त — तेज़ बिकने वाला भरोसेमंद आइटम"),
+ dict(i=5, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="वीनस साबुन",
+   price=f'<span class="offer" style="background:{SCHEME_BLUE}">3 + 1 फ्री</span>',
+   sub='वीनस साबुन ₹114 MRP — 3 साबुन खरीदने पर 1 साबुन बिल्कुल फ्री · <b class="delta">चौथा फ्री</b>',
+   l1="ऑफर", v1="₹114 MRP वाला वीनस साबुन — 3 पर 1 फ्री",
+   l2="ग्राहक को", v2="3 साबुन के साथ चौथा ₹0 में — ग्राहक को सीधा फायदा"),
+ dict(i=6, eyebrow="FMCG", label="प्रोडक्ट बदलाव", stripe=BLACK, headline="ताज़ा चाय",
+   price='₹50<span class="arrow">→</span>₹60',
+   sub='ताज़ा 250g चाय का MRP ₹50 से बढ़कर ₹60 हुआ — ₹10 की रेट बढ़ोतरी · <b class="delta">₹10 महंगी</b>',
+   l1="बदलाव", v1="250g पैक का MRP ₹50 से ₹60 हुआ",
+   l2="फायदा", v2="पुराना ₹50 वाला स्टॉक पुराने MRP पर बेच लें"),
+ # News (trending_news) - in-house 15sep Trending-2: Aug 2026 CPI inflation (retail 4.82%, food 5.95%, rural>urban); concrete numbers, non-bait, policy/market-impact, zero shelf-life/accuracy risk. News=1 base.
+ dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="गांव में महंगाई ज्यादा",
+   price='<span class="news">अगस्त खुदरा महंगाई 4.82%, खाद्य 5.95%</span>',
+   sub="अगस्त 2026 में खुदरा महंगाई 4.45% से बढ़कर 4.82%; गांव में 6.13% वहीं शहर में 5.64% — RBI की 2–6% सीमा के भीतर · <b class=\"delta\">छोटा पैक चलेगा</b>",
+   l1="क्यों ज़रूरी", v1="महंगाई बढ़ने पर ग्राहक दुकान आना बंद नहीं करता, छोटा पैक लेने लगता है",
+   l2="क्या करें", v2="दाल, तेल, चायपत्ती और मसालों के छोटे पैक भरपूर रखें"),
 ]
 
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
