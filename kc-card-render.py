@@ -72,49 +72,49 @@ def b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-09-15 . experiment window CLOSED -> base 3+3+1)
+# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-09-16 . experiment window CLOSED -> base 3+3+1)
 CARDS = [
- # Commodity (mandi_bhav) - 1 tejii/RED + 2 mandi/GREEN, all in-house 15sep, distinct news_ids.
- #   kalonji (Samachar, +Rs800-1000 biggest spice jump), javitri (masala, -Rs75 biggest drop), soya tel (tel, -Rs100 real mover; sarson ran 14sep so soya is fresher).
- dict(i=1, label="मंडी भाव", stripe=RED, headline="कलौंजी",
-   price=f'{tri("up",RED)}₹22,000–23,000<span class="unit">/क्विंटल</span>',
-   sub=f'कलौंजी ₹800–1,000 उछलकर ₹22,000–23,000/क्विंटल — मांग बढ़ने से आज मसाला बाजार की सबसे बड़ी तेजी · <b class="delta" style="color:{RED}">₹1,000 तेजी</b>',
-   l1="क्यों", v1="मांग बढ़ने से कलौंजी में जोरदार उछाल; आज के मसाला बाजार की सबसे बड़ी छलांग",
-   l2="क्या करें", v2="पहले से भरा स्टॉक अच्छे मार्जिन पर बेचें; नई खरीद जरूरत भर करें"),
- dict(i=2, label="मंडी भाव", stripe=GREEN, headline="जावित्री",
-   price=f'{tri("down",GREEN)}₹1,900–2,300<span class="unit">/किलो</span>',
-   sub=f'जावित्री लाल ₹75 घटकर ₹1,900–2,300/किलो — ग्राहकी कमजोर और आयातकों की बिकवाली, आज की सबसे बड़ी नरमी · <b class="delta" style="color:{GREEN}">₹75 गिरावट</b>',
-   l1="क्यों", v1="मांग का साथ न मिलने और आयातकों की बिकवाली से जावित्री के भाव नरम पड़े",
-   l2="क्या करें", v2="त्योहारी गरम-मसाला खपत से पहले सस्ते में स्टॉक भर लें"),
- dict(i=3, label="मंडी भाव", stripe=GREEN, headline="सोया तेल",
-   price=f'{tri("down",GREEN)}₹15,300<span class="unit">/क्विंटल</span>',
-   sub=f'सोया तेल ₹100 घटकर ₹15,300/क्विंटल — महाराष्ट्र में नई सोयाबीन आवक और स्टॉकिस्टों की बिकवाली से नरमी · <b class="delta" style="color:{GREEN}">₹100 गिरावट</b>',
-   l1="क्यों", v1="नई सोयाबीन की आवक शुरू और स्टॉकिस्टों की बिकवाली से तेल नरम पड़ा",
-   l2="क्या करें", v2="भाव नरम — लंबा स्टॉक न भरें, जरूरत भर का माल लें"),
+ # Commodity (mandi_bhav) - 1 tejii/RED + 2 mandi/GREEN, all in-house 16sep, distinct news_ids.
+ #   matar (dal, tejii kaayam ~Rs4750/qtl, import duty+dollar), badam (mewa, -Rs500/40kg), cheeni (Samachar, 4th day <Rs60, Rs59.57/kg).
+ dict(i=1, label="मंडी भाव", stripe=RED, headline="मटर",
+   price=f'{tri("up",RED)}₹4,750<span class="unit">/क्विंटल</span>',
+   sub=f'सफेद मटर ₹4,750/क्विंटल के आसपास, छनी मटर ₹5,100–5,200 — 30% आयात शुल्क और महंगे डॉलर से तेजी कायम · <b class="delta" style="color:{RED}">तेजी कायम</b>',
+   l1="क्यों", v1="1 नवंबर से 30% आयात शुल्क, डॉलर ₹94 और कनाडा में कम फसल से बाहर का माल महंगा",
+   l2="क्या करें", v2="नई फसल 5 महीने दूर — त्योहारी माल का जरूरी स्टॉक समय रहते उठा लें"),
+ dict(i=2, label="मंडी भाव", stripe=GREEN, headline="बादाम",
+   price=f'{tri("down",GREEN)}₹29,500–30,000<span class="unit">/40 किलो</span>',
+   sub=f'कैलिफोर्निया बादाम ₹500 टूटकर ₹29,500–30,000 प्रति 40 किलो — ऊंचे भाव पर ग्राहकी कमजोर, स्टॉकिस्टों की बिकवाली · <b class="delta" style="color:{GREEN}">₹500 गिरावट</b>',
+   l1="क्यों", v1="ऊंचे भाव पर बड़े खरीदार जरूरत भर ले रहे; स्टॉकिस्टों की बिकवाली से दबाव",
+   l2="क्या करें", v2="नवरात्रि–दिवाली की मांग से पहले इसी नरमी में जरूरी स्टॉक भर लें"),
+ dict(i=3, label="मंडी भाव", stripe=GREEN, headline="चीनी",
+   price=f'{tri("down",GREEN)}₹59.57<span class="unit">/किलो</span>',
+   sub=f'चीनी का औसत खुदरा भाव लगातार चौथे दिन ₹60 से नीचे, सोमवार को ₹59.57/किलो — सरकार के आयात व दाम-काबू कदमों का असर · <b class="delta" style="color:{GREEN}">चौथे दिन ₹60 से नीचे</b>',
+   l1="क्यों", v1="21 अगस्त को आयात की अनुमति समेत दाम काबू करने के कदमों का असर, त्योहारी मांग के बावजूद",
+   l2="क्या करें", v2="भाव नरम — जरूरत भर लें; ग्राहक को त्योहार पर सस्ती चीनी का फायदा दें"),
  # FMCG (fmcg) - TOP by LR desc across all segments after ledger dedup (news_id 12d + brand 7d) + body-verify (concrete Rs). Real packs legible.
- #   kismi LR10.0 (Retailer, Rs130 jar 150+11 free), venus LR8.64 (Consumer, Rs114 MRP 3+1 free), taaza LR6.35 (product_change, 250g Rs50->Rs60).
- #   SWAPPED: closeup LR9.21/5.94/5.70 & lux LR8.89 (brand7d BLOCKED); hajmola LR6.66 (dropped for category+representation diversity vs kismi candy-jar); rich-ketchup LR6.21 (brand7d).
- dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="किस्मी टॉफी",
-   price=f'<span class="offer" style="background:{SCHEME_GREEN}">जार पर 11 नग फ्री</span>',
-   sub='पारले किस्मी टॉफी का ₹130 वाला जार — अंदर 150 नग टॉफी के साथ 11 नग बिल्कुल फ्री · <b class="delta">11 नग फ्री</b>',
-   l1="स्कीम", v1="₹130 का 1 जार — अंदर 150 नग टॉफी और 11 नग फ्री",
-   l2="फायदा", v2="हर जार पर 11 टॉफी मुफ्त — तेज़ बिकने वाला भरोसेमंद आइटम"),
- dict(i=5, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="वीनस साबुन",
-   price=f'<span class="offer" style="background:{SCHEME_BLUE}">3 + 1 फ्री</span>',
-   sub='वीनस साबुन ₹114 MRP — 3 साबुन खरीदने पर 1 साबुन बिल्कुल फ्री · <b class="delta">चौथा फ्री</b>',
-   l1="ऑफर", v1="₹114 MRP वाला वीनस साबुन — 3 पर 1 फ्री",
-   l2="ग्राहक को", v2="3 साबुन के साथ चौथा ₹0 में — ग्राहक को सीधा फायदा"),
- dict(i=6, eyebrow="FMCG", label="प्रोडक्ट बदलाव", stripe=BLACK, headline="ताज़ा चाय",
-   price='₹50<span class="arrow">→</span>₹60',
-   sub='ताज़ा 250g चाय का MRP ₹50 से बढ़कर ₹60 हुआ — ₹10 की रेट बढ़ोतरी · <b class="delta">₹10 महंगी</b>',
-   l1="बदलाव", v1="250g पैक का MRP ₹50 से ₹60 हुआ",
-   l2="फायदा", v2="पुराना ₹50 वाला स्टॉक पुराने MRP पर बेच लें"),
- # News (trending_news) - in-house 15sep Trending-2: Aug 2026 CPI inflation (retail 4.82%, food 5.95%, rural>urban); concrete numbers, non-bait, policy/market-impact, zero shelf-life/accuracy risk. News=1 base.
- dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="गांव में महंगाई ज्यादा",
-   price='<span class="news">अगस्त खुदरा महंगाई 4.82%, खाद्य 5.95%</span>',
-   sub="अगस्त 2026 में खुदरा महंगाई 4.45% से बढ़कर 4.82%; गांव में 6.13% वहीं शहर में 5.64% — RBI की 2–6% सीमा के भीतर · <b class=\"delta\">छोटा पैक चलेगा</b>",
-   l1="क्यों ज़रूरी", v1="महंगाई बढ़ने पर ग्राहक दुकान आना बंद नहीं करता, छोटा पैक लेने लगता है",
-   l2="क्या करें", v2="दाल, तेल, चायपत्ती और मसालों के छोटे पैक भरपूर रखें"),
+ #   happy-happy LR8.00 (Retailer, Rs5 pack 11+1 free), santoor LR7.23 (Consumer, gattu par Rs10 paste free), bajaj-almond-drops LR6.72 (Retailer, Rs82 100-pouch set, 2 H&S free, Rs18 margin).
+ #   SWAPPED/BLOCKED: colgate LR9.18/7.03 & dabur-red LR7.91 & lifebuoy LR7.21 & vicks(vix) LR6.76 & close-up LR6.68 (brand7d BLOCKED); wild-stone LR6.58 dropped (2nd soap, lower LR than bajaj).
+ dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="हैप्पी हैप्पी बिस्किट",
+   price=f'<span class="offer" style="background:{SCHEME_GREEN}">11 पैकेट पर 1 फ्री</span>',
+   sub='₹5 वाला हैप्पी हैप्पी चॉकलेट-चिप बिस्किट — 11 पैकेट खरीदने पर 1 पैकेट बिल्कुल फ्री · <b class="delta">1 पैकेट फ्री</b>',
+   l1="स्कीम", v1="₹5 वाले 11 पैकेट पर 1 पैकेट फ्री",
+   l2="फायदा", v2="तेज़ बिकने वाला ₹5 आइटम — हर दर्जन पर सीधा फ्री माल"),
+ dict(i=5, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="संतूर साबुन",
+   price=f'<span class="offer" style="background:{SCHEME_BLUE}">₹10 पेस्ट फ्री</span>',
+   sub='संतूर साबुन का गट्टू खरीदने पर ₹10 MRP वाला कोलगेट टूथपेस्ट बिल्कुल फ्री · <b class="delta">₹10 पेस्ट फ्री</b>',
+   l1="ऑफर", v1="1 गट्टू संतूर साबुन पर ₹10 वाला पेस्ट फ्री",
+   l2="ग्राहक को", v2="साबुन के साथ ₹10 का पेस्ट मुफ्त — ग्राहक को सीधा फायदा"),
+ dict(i=6, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="बजाज आलमंड ड्रॉप्स",
+   price=f'<span class="offer" style="background:{SCHEME_GREEN}">2 शैंपू पाउच फ्री</span>',
+   sub='बजाज आलमंड ड्रॉप्स ₹1 पाउच का 100-पीस सेट ₹82 — हर सेट पर ₹2 वाले 2 हेड&शोल्डर शैंपू पाउच फ्री · <b class="delta">₹18 मार्जिन</b>',
+   l1="स्कीम", v1="₹82 का 100-पाउच सेट पर 2 शैंपू पाउच फ्री",
+   l2="फायदा", v2="हर सेट बेचने पर दुकानदार को ₹18 का सीधा मुनाफा"),
+ # News (trending_news) - in-house 16sep Trending-1: Brent crude ~$108/bbl 4-month high (Saudi pipeline drone attack + Libya); diesel->transport/packaging cost impact. Concrete number, non-bait, market-impact. News=1 base.
+ dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="कच्चा तेल शिखर पर",
+   price='<span class="news">ब्रेंट ~$108/बैरल — 4 महीने का उच्चतम</span>',
+   sub="सऊदी पाइपलाइन पर ड्रोन हमले और लीबिया में उत्पादन ठप से ब्रेंट क्रूड ~$108/बैरल, 4 महीने का शिखर — डीजल महंगा तो ढुलाई-पैकिंग लागत बढ़ेगी · <b class=\"delta\">ढुलाई महंगी</b>",
+   l1="क्यों ज़रूरी", v1="कच्चा तेल महंगा तो डीजल, ढुलाई, प्लास्टिक थैली-पैकिंग और डिटर्जेंट की लागत बढ़ती है",
+   l2="क्या करें", v2="त्योहारी माल समय रहते उठा लें; अभी खुदरा डीजल दाम नहीं बदले — घबराएं नहीं"),
 ]
 
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
