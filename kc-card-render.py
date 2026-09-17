@@ -72,49 +72,49 @@ def b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-09-16 . experiment window CLOSED -> base 3+3+1)
+# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-09-17 . experiment window CLOSED -> base 3+3+1)
 CARDS = [
- # Commodity (mandi_bhav) - 1 tejii/RED + 2 mandi/GREEN, all in-house 16sep, distinct news_ids.
- #   matar (dal, tejii kaayam ~Rs4750/qtl, import duty+dollar), badam (mewa, -Rs500/40kg), cheeni (Samachar, 4th day <Rs60, Rs59.57/kg).
- dict(i=1, label="मंडी भाव", stripe=RED, headline="मटर",
-   price=f'{tri("up",RED)}₹4,750<span class="unit">/क्विंटल</span>',
-   sub=f'सफेद मटर ₹4,750/क्विंटल के आसपास, छनी मटर ₹5,100–5,200 — 30% आयात शुल्क और महंगे डॉलर से तेजी कायम · <b class="delta" style="color:{RED}">तेजी कायम</b>',
-   l1="क्यों", v1="1 नवंबर से 30% आयात शुल्क, डॉलर ₹94 और कनाडा में कम फसल से बाहर का माल महंगा",
-   l2="क्या करें", v2="नई फसल 5 महीने दूर — त्योहारी माल का जरूरी स्टॉक समय रहते उठा लें"),
- dict(i=2, label="मंडी भाव", stripe=GREEN, headline="बादाम",
-   price=f'{tri("down",GREEN)}₹29,500–30,000<span class="unit">/40 किलो</span>',
-   sub=f'कैलिफोर्निया बादाम ₹500 टूटकर ₹29,500–30,000 प्रति 40 किलो — ऊंचे भाव पर ग्राहकी कमजोर, स्टॉकिस्टों की बिकवाली · <b class="delta" style="color:{GREEN}">₹500 गिरावट</b>',
-   l1="क्यों", v1="ऊंचे भाव पर बड़े खरीदार जरूरत भर ले रहे; स्टॉकिस्टों की बिकवाली से दबाव",
-   l2="क्या करें", v2="नवरात्रि–दिवाली की मांग से पहले इसी नरमी में जरूरी स्टॉक भर लें"),
- dict(i=3, label="मंडी भाव", stripe=GREEN, headline="चीनी",
-   price=f'{tri("down",GREEN)}₹59.57<span class="unit">/किलो</span>',
-   sub=f'चीनी का औसत खुदरा भाव लगातार चौथे दिन ₹60 से नीचे, सोमवार को ₹59.57/किलो — सरकार के आयात व दाम-काबू कदमों का असर · <b class="delta" style="color:{GREEN}">चौथे दिन ₹60 से नीचे</b>',
-   l1="क्यों", v1="21 अगस्त को आयात की अनुमति समेत दाम काबू करने के कदमों का असर, त्योहारी मांग के बावजूद",
-   l2="क्या करें", v2="भाव नरम — जरूरत भर लें; ग्राहक को त्योहार पर सस्ती चीनी का फायदा दें"),
- # FMCG (fmcg) - TOP by LR desc across all segments after ledger dedup (news_id 12d + brand 7d) + body-verify (concrete Rs). Real packs legible.
- #   happy-happy LR8.00 (Retailer, Rs5 pack 11+1 free), santoor LR7.23 (Consumer, gattu par Rs10 paste free), bajaj-almond-drops LR6.72 (Retailer, Rs82 100-pouch set, 2 H&S free, Rs18 margin).
- #   SWAPPED/BLOCKED: colgate LR9.18/7.03 & dabur-red LR7.91 & lifebuoy LR7.21 & vicks(vix) LR6.76 & close-up LR6.68 (brand7d BLOCKED); wild-stone LR6.58 dropped (2nd soap, lower LR than bajaj).
- dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="हैप्पी हैप्पी बिस्किट",
-   price=f'<span class="offer" style="background:{SCHEME_GREEN}">11 पैकेट पर 1 फ्री</span>',
-   sub='₹5 वाला हैप्पी हैप्पी चॉकलेट-चिप बिस्किट — 11 पैकेट खरीदने पर 1 पैकेट बिल्कुल फ्री · <b class="delta">1 पैकेट फ्री</b>',
-   l1="स्कीम", v1="₹5 वाले 11 पैकेट पर 1 पैकेट फ्री",
-   l2="फायदा", v2="तेज़ बिकने वाला ₹5 आइटम — हर दर्जन पर सीधा फ्री माल"),
- dict(i=5, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="संतूर साबुन",
-   price=f'<span class="offer" style="background:{SCHEME_BLUE}">₹10 पेस्ट फ्री</span>',
-   sub='संतूर साबुन का गट्टू खरीदने पर ₹10 MRP वाला कोलगेट टूथपेस्ट बिल्कुल फ्री · <b class="delta">₹10 पेस्ट फ्री</b>',
-   l1="ऑफर", v1="1 गट्टू संतूर साबुन पर ₹10 वाला पेस्ट फ्री",
-   l2="ग्राहक को", v2="साबुन के साथ ₹10 का पेस्ट मुफ्त — ग्राहक को सीधा फायदा"),
- dict(i=6, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="बजाज आलमंड ड्रॉप्स",
-   price=f'<span class="offer" style="background:{SCHEME_GREEN}">2 शैंपू पाउच फ्री</span>',
-   sub='बजाज आलमंड ड्रॉप्स ₹1 पाउच का 100-पीस सेट ₹82 — हर सेट पर ₹2 वाले 2 हेड&शोल्डर शैंपू पाउच फ्री · <b class="delta">₹18 मार्जिन</b>',
-   l1="स्कीम", v1="₹82 का 100-पाउच सेट पर 2 शैंपू पाउच फ्री",
-   l2="फायदा", v2="हर सेट बेचने पर दुकानदार को ₹18 का सीधा मुनाफा"),
- # News (trending_news) - in-house 16sep Trending-1: Brent crude ~$108/bbl 4-month high (Saudi pipeline drone attack + Libya); diesel->transport/packaging cost impact. Concrete number, non-bait, market-impact. News=1 base.
- dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="कच्चा तेल शिखर पर",
-   price='<span class="news">ब्रेंट ~$108/बैरल — 4 महीने का उच्चतम</span>',
-   sub="सऊदी पाइपलाइन पर ड्रोन हमले और लीबिया में उत्पादन ठप से ब्रेंट क्रूड ~$108/बैरल, 4 महीने का शिखर — डीजल महंगा तो ढुलाई-पैकिंग लागत बढ़ेगी · <b class=\"delta\">ढुलाई महंगी</b>",
-   l1="क्यों ज़रूरी", v1="कच्चा तेल महंगा तो डीजल, ढुलाई, प्लास्टिक थैली-पैकिंग और डिटर्जेंट की लागत बढ़ती है",
-   l2="क्या करें", v2="त्योहारी माल समय रहते उठा लें; अभी खुदरा डीजल दाम नहीं बदले — घबराएं नहीं"),
+ # Commodity (mandi_bhav) - 1 tejii/RED + 2 mandi/GREEN for direction balance, all in-house 17sep, distinct news_ids.
+ #   basmati (Samachar, +Rs200 -> Rs9500-9600/qtl, RED), masoor (dal, -Rs100 -> Rs6800/qtl, GREEN), haldi (masala, -Rs100 -> Rs18700/qtl, GREEN).
+ dict(i=1, label="मंडी भाव", stripe=RED, headline="बासमती चावल",
+   price=f'{tri("up",RED)}₹9,600<span class="unit">/क्विंटल</span>',
+   sub=f'1401 स्टीम बासमती ₹200 चढ़कर ₹9,500–9,600/क्विंटल — निर्यात सौदे खुलने से मिलों की मजबूत लिवाली · <b class="delta" style="color:{RED}">₹200 बढ़ोतरी</b>',
+   l1="क्यों", v1="पुराना धान खत्म, निर्यात सौदे खुलने से राइस मिलों की लिवाली मजबूत",
+   l2="क्या करें", v2="त्योहारी मांग से पहले बासमती का जरूरी स्टॉक अभी भर लें"),
+ dict(i=2, label="मंडी भाव", stripe=GREEN, headline="मसूर",
+   price=f'{tri("down",GREEN)}₹6,800<span class="unit">/क्विंटल</span>',
+   sub=f'मसूर ₹100 टूटकर ₹6,800/क्विंटल — कनाडा से सस्ता आयात और कमजोर ग्राहकी से भाव नरम · <b class="delta" style="color:{GREEN}">₹100 गिरावट</b>',
+   l1="क्यों", v1="कनाडा से नीचे भाव में आया माल और मुंबई में कमजोर ग्राहकी से बाजार दबा",
+   l2="क्या करें", v2="नीचे जाने की जगह कम — दिवाली तक की मसूर-मलका इसी गिरे भाव में अभी उठा लें"),
+ dict(i=3, label="मंडी भाव", stripe=GREEN, headline="हल्दी",
+   price=f'{tri("down",GREEN)}₹18,700<span class="unit">/क्विंटल</span>',
+   sub=f'हल्दी ₹100 नरम होकर ₹18,700/क्विंटल — ईरोड में आवक बढ़ी और वायदा ~1% टूटा · <b class="delta" style="color:{GREEN}">₹100 गिरावट</b>',
+   l1="क्यों", v1="ईरोड मंडी में ~3,500 बोरी आवक और सटोरिया बिकवाली से वायदा ~1% मंदा",
+   l2="क्या करें", v2="हल्दी में रुककर खरीदें, नई आवक का दबाव; काली मिर्च का त्योहारी माल पहले भर लें"),
+ # FMCG (fmcg) - TOP by LR desc across ALL segments after ledger dedup (news_id 12d + brand 7d) + body-verify (concrete Rs). Real packs legible.
+ #   glimmer LR8.28 (Consumer, Rs35/pc 4+1 free), mario LR8.02 (Consumer, Rs55 pack + free spork), maggi LR5.89 (fmcg_product_change, Rs58->Rs60, wt 280g same).
+ #   SWAPPED/BLOCKED: close-up LR9.30/5.49 & ghadi LR6.69 & dabur-red LR5.71 & colgate LR5.28 (brand7d BLOCKED); margo LR6.52 & wild-stone LR5.13 DROPPED (body-verify: no concrete Rs) -> also_shown.
+ dict(i=4, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="ग्लिमर साबुन",
+   price=f'<span class="offer" style="background:{SCHEME_BLUE}">4 + 1 फ्री</span>',
+   sub='ग्लिमर बाथिंग साबुन — 4 साबुन खरीदने पर 1 साबुन बिल्कुल फ्री; प्रति पीस MRP ₹35 · <b class="delta">1 साबुन फ्री</b>',
+   l1="ऑफर", v1="₹35 वाले 4 साबुन पर 1 साबुन फ्री",
+   l2="ग्राहक को", v2="हर 4 साबुन पर ₹35 का 1 साबुन मुफ्त — ग्राहक को सीधा फायदा"),
+ dict(i=5, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="मारियो नूडल्स",
+   price=f'<span class="offer" style="background:{SCHEME_BLUE}">चम्मच फ्री</span>',
+   sub='₹55 वाले मारियो मसाला नूडल्स के हर पैकेट पर एक स्पॉर्क चम्मच बिल्कुल फ्री · <b class="delta">चम्मच फ्री</b>',
+   l1="ऑफर", v1="₹55 पैकेट पर एक स्पॉर्क चम्मच फ्री",
+   l2="ग्राहक को", v2="नूडल्स के साथ ग्राहक को चम्मच मुफ्त"),
+ dict(i=6, eyebrow="FMCG", label="प्रोडक्ट बदलाव", stripe=BLACK, headline="मैगी",
+   price='₹58<span class="arrow">→</span>₹60',
+   sub='₹58 MRP वाली मैगी अब ₹60 की — सिर्फ पैकिंग बदली, वजन वही 280g · <b class="delta">₹2 महंगी</b>',
+   l1="बदलाव", v1="MRP ₹58 से बढ़कर ₹60; वजन 280g वही, केवल पैकिंग बदली",
+   l2="फायदा", v2="पुराना ₹58 वाला स्टॉक अभी बेच लें; डिस्ट्रीब्यूटर से नया महंगा माल सोच-समझकर उठाएं"),
+ # News (trending_news) - in-house 17sep Trending-1: UPI Rs2000+ merchant payments 0.4% fee from 15 Oct; up to Rs2000 free, small shops (upto Rs1L/month via QR) fully exempt. Concrete, non-bait, high-impact. News=1 base.
+ dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="UPI पर नया शुल्क",
+   price='<span class="news">₹2,000+ भुगतान पर 0.4% शुल्क, 15 अक्टूबर से</span>',
+   sub="₹2,000 से ऊपर के दुकान-भुगतान पर 0.4% शुल्क — पर ₹2,000 तक और छोटी दुकानें (₹1 लाख/माह तक) पूरी तरह मुफ्त · <b class=\"delta\">छोटी दुकानें मुफ्त</b>",
+   l1="क्यों ज़रूरी", v1="बड़े UPI भुगतान पर लागत बढ़ेगी; कुल लेनदेन का सिर्फ ~4% ही दायरे में",
+   l2="क्या करें", v2="घबराएं नहीं — ₹2,000 तक के भुगतान अब भी मुफ्त"),
 ]
 
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
