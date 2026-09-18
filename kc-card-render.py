@@ -72,51 +72,50 @@ def b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-09-17 . experiment window CLOSED -> base 3+3+1)
+# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-09-18 . experiment window CLOSED -> base 3+3+1)
 CARDS = [
- # Commodity (mandi_bhav) - 1 tejii/RED + 2 mandi/GREEN for direction balance, all in-house 17sep, distinct news_ids.
- #   basmati (Samachar, +Rs200 -> Rs9500-9600/qtl, RED), masoor (dal, -Rs100 -> Rs6800/qtl, GREEN), haldi (masala, -Rs100 -> Rs18700/qtl, GREEN).
- dict(i=1, label="मंडी भाव", stripe=RED, headline="बासमती चावल",
-   price=f'{tri("up",RED)}₹9,600<span class="unit">/क्विंटल</span>',
-   sub=f'1401 स्टीम बासमती ₹200 चढ़कर ₹9,500–9,600/क्विंटल — निर्यात सौदे खुलने से मिलों की मजबूत लिवाली · <b class="delta" style="color:{RED}">₹200 बढ़ोतरी</b>',
-   l1="क्यों", v1="पुराना धान खत्म, निर्यात सौदे खुलने से राइस मिलों की लिवाली मजबूत",
-   l2="क्या करें", v2="त्योहारी मांग से पहले बासमती का जरूरी स्टॉक अभी भर लें"),
- dict(i=2, label="मंडी भाव", stripe=GREEN, headline="मसूर",
-   price=f'{tri("down",GREEN)}₹6,800<span class="unit">/क्विंटल</span>',
-   sub=f'मसूर ₹100 टूटकर ₹6,800/क्विंटल — कनाडा से सस्ता आयात और कमजोर ग्राहकी से भाव नरम · <b class="delta" style="color:{GREEN}">₹100 गिरावट</b>',
-   l1="क्यों", v1="कनाडा से नीचे भाव में आया माल और मुंबई में कमजोर ग्राहकी से बाजार दबा",
-   l2="क्या करें", v2="नीचे जाने की जगह कम — दिवाली तक की मसूर-मलका इसी गिरे भाव में अभी उठा लें"),
- dict(i=3, label="मंडी भाव", stripe=GREEN, headline="हल्दी",
-   price=f'{tri("down",GREEN)}₹18,700<span class="unit">/क्विंटल</span>',
-   sub=f'हल्दी ₹100 नरम होकर ₹18,700/क्विंटल — ईरोड में आवक बढ़ी और वायदा ~1% टूटा · <b class="delta" style="color:{GREEN}">₹100 गिरावट</b>',
-   l1="क्यों", v1="ईरोड मंडी में ~3,500 बोरी आवक और सटोरिया बिकवाली से वायदा ~1% मंदा",
-   l2="क्या करें", v2="हल्दी में रुककर खरीदें, नई आवक का दबाव; काली मिर्च का त्योहारी माल पहले भर लें"),
+ # Commodity (mandi_bhav) - 1 mandi/GREEN + 2 tejii/RED for direction balance. gola=in-house masala post (18sep); besan+soya-badi=MP teji_mandi top-up (LR desc, body-verified concrete Rs).
+ #   gola (masala, -Rs1000 -> Rs34000-44000/qtl, GREEN), besan (UGC LR11.86, +Rs10 -> Rs90/kg, RED), soya-badi (UGC LR11.05, +Rs20 -> Rs80-85/kg, RED).
+ dict(i=1, label="मंडी भाव", stripe=GREEN, headline="गोला",
+   price=f'{tri("down",GREEN)}₹34,000<span class="unit">/क्विंटल</span>',
+   sub=f'सूखा नारियल (गोला) ₹1,000 टूटकर ₹34,000–44,000/क्विंटल — मेवों में मांग घटने से नरमी · <b class="delta" style="color:{GREEN}">₹1,000 गिरावट</b>',
+   l1="क्यों", v1="त्योहारी मेवा-खरीद अभी सुस्त और मंडियों में आवक का दबाव",
+   l2="क्या करें", v2="दिवाली की मेवा-मिठाई मांग से पहले गोला घटे भाव में अभी भर लें"),
+ dict(i=2, label="मंडी भाव", stripe=RED, headline="बेसन",
+   price=f'{tri("up",RED)}₹90<span class="unit">/किलो</span>',
+   sub=f'बेसन ₹80 से चढ़कर ₹90/किलो — त्योहारी मिठाई-नमकीन मांग से ~₹10/किलो तेजी · <b class="delta" style="color:{RED}">₹10 बढ़ोतरी</b>',
+   l1="क्यों", v1="त्योहारों की मिठाई और नमकीन बनाने की मांग से बेसन में लिवाली तेज",
+   l2="क्या करें", v2="सेव-नमकीन का बेसन अभी उठा लें; आगे और तेजी के आसार"),
+ dict(i=3, label="मंडी भाव", stripe=RED, headline="सोया बड़ी",
+   price=f'{tri("up",RED)}₹85<span class="unit">/किलो</span>',
+   sub=f'सोया बड़ी ₹60–65 से बढ़कर ₹80–85/किलो — मांग निकलने से ~₹20/किलो की तेजी · <b class="delta" style="color:{RED}">₹20 बढ़ोतरी</b>',
+   l1="क्यों", v1="सस्ती प्रोटीन की मांग बढ़ी, भाव ₹60–65 से ₹80–85/किलो पर पहुंचा",
+   l2="क्या करें", v2="व्रत-त्योहार में खपत बढ़ेगी; जरूरी स्टॉक इसी भाव पर भर लें"),
  # FMCG (fmcg) - TOP by LR desc across ALL segments after ledger dedup (news_id 12d + brand 7d) + body-verify (concrete Rs). Real packs legible.
- #   glimmer LR8.28 (Consumer, Rs35/pc 4+1 free), mario LR8.02 (Consumer, Rs55 pack + free spork), maggi LR5.89 (fmcg_product_change, Rs58->Rs60, wt 280g same).
- #   SWAPPED/BLOCKED: close-up LR9.30/5.49 & ghadi LR6.69 & dabur-red LR5.71 & colgate LR5.28 (brand7d BLOCKED); margo LR6.52 & wild-stone LR5.13 DROPPED (body-verify: no concrete Rs) -> also_shown.
- dict(i=4, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="ग्लिमर साबुन",
-   price=f'<span class="offer" style="background:{SCHEME_BLUE}">4 + 1 फ्री</span>',
-   sub='ग्लिमर बाथिंग साबुन — 4 साबुन खरीदने पर 1 साबुन बिल्कुल फ्री; प्रति पीस MRP ₹35 · <b class="delta">1 साबुन फ्री</b>',
-   l1="ऑफर", v1="₹35 वाले 4 साबुन पर 1 साबुन फ्री",
-   l2="ग्राहक को", v2="हर 4 साबुन पर ₹35 का 1 साबुन मुफ्त — ग्राहक को सीधा फायदा"),
- dict(i=5, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="मारियो नूडल्स",
-   price=f'<span class="offer" style="background:{SCHEME_BLUE}">चम्मच फ्री</span>',
-   sub='₹55 वाले मारियो मसाला नूडल्स के हर पैकेट पर एक स्पॉर्क चम्मच बिल्कुल फ्री · <b class="delta">चम्मच फ्री</b>',
-   l1="ऑफर", v1="₹55 पैकेट पर एक स्पॉर्क चम्मच फ्री",
-   l2="ग्राहक को", v2="नूडल्स के साथ ग्राहक को चम्मच मुफ्त"),
- dict(i=6, eyebrow="FMCG", label="प्रोडक्ट बदलाव", stripe=BLACK, headline="मैगी",
-   price='₹58<span class="arrow">→</span>₹60',
-   sub='₹58 MRP वाली मैगी अब ₹60 की — सिर्फ पैकिंग बदली, वजन वही 280g · <b class="delta">₹2 महंगी</b>',
-   l1="बदलाव", v1="MRP ₹58 से बढ़कर ₹60; वजन 280g वही, केवल पैकिंग बदली",
-   l2="फायदा", v2="पुराना ₹58 वाला स्टॉक अभी बेच लें; डिस्ट्रीब्यूटर से नया महंगा माल सोच-समझकर उठाएं"),
- # News (trending_news) - in-house 17sep Trending-1: UPI Rs2000+ merchant payments 0.4% fee from 15 Oct; up to Rs2000 free, small shops (upto Rs1L/month via QR) fully exempt. Concrete, non-bait, high-impact. News=1 base.
- dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="UPI पर नया शुल्क",
-   price='<span class="news">₹2,000+ भुगतान पर 0.4% शुल्क, 15 अक्टूबर से</span>',
-   sub="₹2,000 से ऊपर के दुकान-भुगतान पर 0.4% शुल्क — पर ₹2,000 तक और छोटी दुकानें (₹1 लाख/माह तक) पूरी तरह मुफ्त · <b class=\"delta\">छोटी दुकानें मुफ्त</b>",
-   l1="क्यों ज़रूरी", v1="बड़े UPI भुगतान पर लागत बढ़ेगी; कुल लेनदेन का सिर्फ ~4% ही दायरे में",
-   l2="क्या करें", v2="घबराएं नहीं — ₹2,000 तक के भुगतान अब भी मुफ्त"),
+ #   badshah-rusk LR7.39 (Retailer, Rs5 cookies free), fena LR6.66 (Consumer, 5kg pe 13L container free), dabur-lal-manjan LR5.06 (Retailer, Rs10/18g 12+2 free, Rs33 margin).
+ #   DROPPED/also_shown: ande-ka-fanda LR6.99 (fmcg_product_change segment but body is a MARGIN story, no price/weight change -> segment mismatch); dabur-red LR5.22 (near-tie, thin body, same Dabur oral-care). BLOCKED brand7d: kismi/close-up/happy-happy/glimmer/vicks/mario/colgate/lux/20-20.
+ dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="बादशाह रस्क",
+   price=f'<span class="offer" style="background:{SCHEME_GREEN}">₹5 कुकीज़ फ्री</span>',
+   sub='बादशाह रस्क (टोस्ट) के हर पैक के साथ ₹5 का कुकीज़ पैकेट बिल्कुल फ्री · <b class="delta">₹5 कुकीज़ फ्री</b>',
+   l1="स्कीम", v1="हर रस्क पैक पर ₹5 का कुकीज़ पैकेट मुफ्त",
+   l2="फायदा", v2="ग्राहक को साथ में फ्री कुकीज़ — बिक्री बढ़ाना आसान"),
+ dict(i=5, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="फेना पाउडर",
+   price=f'<span class="offer" style="background:{SCHEME_BLUE}">13L कंटेनर फ्री</span>',
+   sub='फेना वॉशिंग पाउडर 5kg पैक के साथ एक 13 लीटर का कंटेनर बिल्कुल फ्री · <b class="delta">कंटेनर फ्री</b>',
+   l1="ऑफर", v1="5kg फेना पाउडर पर 13 लीटर का कंटेनर फ्री",
+   l2="ग्राहक को", v2="पाउडर के साथ मुफ्त कंटेनर — ग्राहक को सीधा फायदा"),
+ dict(i=6, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="डाबर लाल दंत मंजन",
+   price=f'<span class="offer" style="background:{SCHEME_GREEN}">12 पर 2 फ्री</span>',
+   sub='₹10 MRP वाला 18g डाबर लाल दंत मंजन — 1 दर्जन पर 2 नग फ्री; खरीद ₹107, बिक्री ₹140 · <b class="delta">₹33 का मार्जिन</b>',
+   l1="स्कीम", v1="₹10/18g मंजन, दर्जन पर 2 फ्री (खरीद ₹107)",
+   l2="फायदा", v2="पूरा दर्जन बिकने पर ₹140 — सीधा ₹33 का मुनाफा"),
+ # News (trending_news) - in-house 18sep Trending-1: big FMCG cos (HUL/Britannia/Dabur/Godrej) to raise prices 2-5% this quarter before festivals; new stock at higher MRP. Concrete (2-5%), non-bait, high-impact. News=1 base.
+ dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="दाम फिर बढ़ेंगे",
+   price='<span class="news">बड़ी कंपनियां त्योहार से पहले 2–5% दाम बढ़ाएंगी</span>',
+   sub="HUL, डाबर, गोदरेज साबुन-बिस्किट-चाय-तेल के दाम 2–5% बढ़ाएंगी; नया माल ऊंचे MRP पर आएगा · <b class=\"delta\">2–5% महंगा</b>",
+   l1="क्यों ज़रूरी", v1="कच्चा माल, पाम तेल और पैकिंग महंगी होने से कंपनियों की लागत बढ़ी",
+   l2="क्या करें", v2="तेज बिकने वाला त्योहारी स्टॉक पुराने MRP पर अभी उठा लें"),
 ]
-
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
 html,body{{margin:0;padding:0;width:1080px;height:1920px;overflow:hidden;font-family:'Nirmala UI','Segoe UI',sans-serif;}}
 .card{{width:1080px;height:1920px;position:relative;background:#FAFAF7;}}
