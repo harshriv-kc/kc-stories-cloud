@@ -5682,6 +5682,74 @@
         }
       ],
       "notes": "experiment window CLOSED (base 3+3+1). Commodity: in-house oil(soya/sarson) + sugar posts skipped as recently over-covered (soya-tel 09-15, sarson 09-17, cheeni 09-16 within 3d), topped up from MP teji_mandi. FMCG brand7d-blocked: kismi/close-up/happy-happy/glimmer/vicks/mario/colgate/lux/20-20. new_product_launch pool empty in bookmark this run."
+    },
+    {
+      "date": "2026-09-19",
+      "picks": {
+        "mandi_bhav": [
+          {
+            "news_id": "0505a805-b2e8-4991-a33f-19b527966860",
+            "brand": "arhar",
+            "direction": "तेजी",
+            "label": "अरहर (तुवर) तेजी +₹300 → ₹8,600–8,625/क्विंटल (मुंबई लेमन); target ₹8,950 (in-house 19sep dal RED)"
+          },
+          {
+            "news_id": "8903ad1b-884d-4902-ac89-9d6d86da4d64",
+            "brand": "gud",
+            "direction": "मंदी",
+            "label": "गुड़ मंदी → 555 brand peti 20kg ₹1,280→₹1,220 (₹64→₹61/kg, -₹3/kg) (UGC teji_mandi LR11.07 GREEN)"
+          },
+          {
+            "news_id": "0a702237-d01a-4af0-852c-0fe4f0244e4a",
+            "brand": "elaichi",
+            "direction": "तेजी",
+            "label": "इलायची तेजी +₹500 → ₹3,300→₹3,800/kg; festival demand (UGC teji_mandi LR10.20 RED)"
+          }
+        ],
+        "fmcg": [
+          {
+            "news_id": "bea892f6-1ba8-4a95-bc96-c2f3f8ac736b",
+            "brand": "vivel",
+            "label": "Vivel Aloe Vera soap 90g — 4+1 free, MRP ₹115, ₹25 save/₹10 margin — Consumer Scheme LR6.81"
+          },
+          {
+            "news_id": "1129162a-f520-4140-97ef-c52447ba44a0",
+            "brand": "godrej-magic",
+            "label": "Godrej Magic hand wash ₹10 — 11+1 free — Consumer Scheme LR5.78"
+          },
+          {
+            "news_id": "38e11a6f-6452-4c34-b8b4-3ce26e79bfad",
+            "brand": "vasmol",
+            "label": "Super Vasmol 33 kesh kala 100ml + ₹9 16g Dabur Red toothpaste free — Consumer Scheme LR4.19"
+          }
+        ],
+        "trending_news": [
+          {
+            "news_id": "53c72583-f975-4a8c-82e3-f83a8a2f4a9b",
+            "brand": "mithai",
+            "label": "Festival sweets 10-15% costlier; raw material ~40% up (ghee/mewa/freight) — besan/maida/mawa demand up (in-house 19sep TN1, non-bait market-impact)"
+          }
+        ]
+      },
+      "also_shown": [
+        {
+          "news_id": "a80761b5-87a2-4a38-bedd-569156c7fac9",
+          "brand": "soya-tel",
+          "direction": "मंदी",
+          "label": "Soya tel mandi -₹100 → ₹15,200/qtl (in-house 19sep) — SWAPPED: over-covered (oil mandi 14/15sep)"
+        },
+        {
+          "news_id": "22fdb081-eac2-4e3b-84df-68296adda30d",
+          "brand": "basmati",
+          "direction": "मंदी",
+          "label": "Basmati mandi 1401 steam ₹9,500-9,600 (in-house 19sep) — SWAPPED: same ₹ level as 17sep teji (optics)"
+        },
+        {
+          "news_id": "ac8305d1-5dc8-4de9-991d-7b590f8a0d95",
+          "brand": "dettol",
+          "label": "Dettol soap 100g 4+1 free — Consumer LR6.63 — SWAPPED: near-duplicate soap offer, lower LR than vivel + soap saturation"
+        }
+      ]
     }
   ],
   "brand_dedup_window_days": 7
