@@ -5750,6 +5750,74 @@
           "label": "Dettol soap 100g 4+1 free — Consumer LR6.63 — SWAPPED: near-duplicate soap offer, lower LR than vivel + soap saturation"
         }
       ]
+    },
+    {
+      "date": "2026-09-20",
+      "picks": {
+        "mandi_bhav": [
+          {
+            "news_id": "1ddc8d78-52aa-430c-b333-9267e1702902",
+            "brand": "urad",
+            "direction": "तेजी",
+            "label": "उड़द तेजी +₹200 → ₹9,500-9,550/qtl (in-house dal post, रंगून SQ)"
+          },
+          {
+            "news_id": "4eb8f434-456f-47e0-841f-b9d02fc460fd",
+            "brand": "makki",
+            "direction": "मंदी",
+            "label": "मक्की मंदी ₹2,650-2,690 → aage ₹2,600-2,650 (in-house other-commodities post)"
+          },
+          {
+            "news_id": "d6acd674-c45d-4214-97f0-fc27927a96bd",
+            "brand": "sabudana",
+            "direction": "तेजी",
+            "label": "साबूदाना तेजी ₹1,920→₹2,040/30kg +₹120 (UGC teji_mandi LR8.91)"
+          }
+        ],
+        "fmcg": [
+          {
+            "news_id": "9b874745-723e-4e1d-b0fa-e04bee7f2abd",
+            "brand": "dabur-amla",
+            "label": "Dabur Amla hair oil 450ml MRP225 par 90ml MRP53 free — Consumer LR8.72"
+          },
+          {
+            "news_id": "fb0b92aa-23b9-4338-b738-eebf7aad8219",
+            "brand": "tic-tac",
+            "label": "Tic Tac ₹5 — 72pc par 3 free + ₹15 margin — Retailer LR7.33"
+          },
+          {
+            "news_id": "c5f1bb55-5a7a-42e7-a677-01b812f7e741",
+            "brand": "vatika",
+            "label": "Vatika shampoo 100ml MRP57 + Dabur Almond oil MRP33 free — Consumer LR5.71"
+          }
+        ],
+        "trending_news": [
+          {
+            "news_id": "94c81ea5-43b1-446b-a510-72e57c294845",
+            "brand": "digidukaan",
+            "label": "DPIIT-ONDC DigiDukaan to connect 1.4 crore kirana shops (in-house TN1, non-bait)"
+          }
+        ]
+      },
+      "also_shown": [
+        {
+          "news_id": "4c3448e9-6dd5-4f95-9192-a2d17713bc14",
+          "brand": "opal",
+          "label": "Opal Moisturizing Lotion 500ml MRP175 @ ₹90 — Consumer LR5.36 — DROPPED: category-spread backup, lower LR than vatika"
+        },
+        {
+          "news_id": "86f84e64-ffca-4b29-889a-7bf5352b8f07",
+          "brand": "bajaj-almond-drops",
+          "label": "Bajaj Almond Oil 45ml + 2 H&S sampoo free — Consumer LR8.52 — DROPPED: brand7d (used 16sep)"
+        },
+        {
+          "news_id": "24f5e72d-6e02-4ecd-9bdc-2c7782fed1c9",
+          "brand": "dabur-red",
+          "label": "Dabur Red toothpaste 75g — 20 MRP free — Consumer LR7.58 — DROPPED: brand7d"
+        }
+      ],
+      "campaign_id": "37hfjl5",
+      "notes": "experiment window CLOSED -> base 3+3+1. commodity 2R+1G. FMCG top-3 by LR after news_id-12d + brand-7d dedup + body-verify. news=in-house best-1 (non-bait)."
     }
   ],
   "brand_dedup_window_days": 7
