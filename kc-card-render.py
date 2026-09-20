@@ -72,49 +72,47 @@ def b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-09-19 . experiment window CLOSED -> base 3+3+1)
+# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-09-20 . experiment window CLOSED -> base 3+3+1)
 CARDS = [
- # Commodity (mandi_bhav) - 2 tejii/RED + 1 mandi/GREEN. arhar=in-house dal post (19sep); gud+elaichi=MP teji_mandi (LR desc, body-verified concrete Rs).
- #   arhar (in-house, +Rs300 -> Rs8600-8625/qtl, RED), gud (UGC LR11.07, Rs64->Rs61/kg -Rs3, GREEN), elaichi (UGC LR10.20, Rs3300->Rs3800/kg +Rs500, RED).
- dict(i=1, label="मंडी भाव", stripe=RED, headline="अरहर",
-   price=f'{tri("up",RED)}₹8,600<span class="unit">/क्विंटल</span>',
-   sub=f'अरहर (तुवर) ₹300 उछलकर ₹8,600–8,625/क्विंटल — चेन्नई में माल कम, बर्मा सौदे महंगे · <b class="delta" style="color:{RED}">₹300 बढ़ोतरी</b>',
-   l1="क्यों", v1="चेन्नई में स्टॉक घटा, आयात महंगा; दाल मिलों की खरीद जारी",
-   l2="क्या करें", v2="भाव ₹8,950 तक जा सकते हैं; जरूरत का माल अभी उठा लें"),
- dict(i=2, label="मंडी भाव", stripe=GREEN, headline="गुड़",
-   price=f'{tri("down",GREEN)}₹61<span class="unit">/किलो</span>',
-   sub=f'555 ब्रांड गुड़ पेटी (20kg) ₹1,280 से घटकर ₹1,220 — ₹64 से ₹61/किलो · <b class="delta" style="color:{GREEN}">₹3/किलो गिरावट</b>',
-   l1="क्यों", v1="थोक में गुड़ की आवक बढ़ने से पेटी पीछे ₹60 नरम",
-   l2="क्या करें", v2="त्योहारी मिठाई मांग से पहले सस्ते भाव पर गुड़ भर लें"),
- dict(i=3, label="मंडी भाव", stripe=RED, headline="इलायची",
-   price=f'{tri("up",RED)}₹3,800<span class="unit">/किलो</span>',
-   sub=f'इलायची ₹3,300 से चढ़कर ₹3,800/किलो — त्योहारी मांग से ~₹500/किलो तेजी · <b class="delta" style="color:{RED}">₹500 बढ़ोतरी</b>',
-   l1="क्यों", v1="त्योहारों की जबरदस्त मांग से इलायची में तेज लिवाली",
-   l2="क्या करें", v2="नवरात्रि-दिवाली से पहले जरूरी इलायची अभी स्टॉक कर लें"),
+ # Commodity (mandi_bhav) - 2 tejii/RED + 1 mandi/GREEN. urad+makki=in-house 20sep posts; sabudana=MP teji_mandi LR8.91 body-verified.
+ dict(i=1, label="मंडी भाव", stripe=RED, headline="उड़द",
+   price=f'{tri("up",RED)}₹9,550<span class="unit">/क्विंटल</span>',
+   sub=f'उड़द (रंगून SQ) ₹200 चढ़कर ₹9,500–9,550/क्विंटल — दाल मिलों की लिवाली लौटी · <b class="delta" style="color:{RED}">₹200 बढ़ोतरी</b>',
+   l1="क्यों", v1="दाल मिलों की मांग लौटने से उड़द बाजार में मजबूती",
+   l2="क्या करें", v2="चालू खपत भर उड़द/उड़द दाल अभी उठा लें; ऊपर लंबा स्टॉक न रोकें"),
+ dict(i=2, label="मंडी भाव", stripe=GREEN, headline="मक्की",
+   price=f'{tri("down",GREEN)}₹2,650<span class="unit">/क्विंटल</span>',
+   sub=f'मक्की ₹2,650–2,690/क्विंटल — नई आवक के दबाव से आगे ₹2,600–2,650 का अंदेशा · <b class="delta" style="color:{GREEN}">~₹50 गिरावट संभव</b>',
+   l1="क्यों", v1="बिहार-यूपी के बाद MP-राजस्थान में भी नई मक्की आने लगी",
+   l2="क्या करें", v2="पुराना मक्की/मक्की आटा अभी निकालें; नई खरीद घटे भाव पर करें"),
+ dict(i=3, label="मंडी भाव", stripe=RED, headline="साबूदाना",
+   price=f'{tri("up",RED)}₹68<span class="unit">/किलो</span>',
+   sub=f'साबूदाना 30 किलो कट्टा ₹1,920 से ₹2,040 — ₹120 उछाल (~₹64→₹68/किलो) · <b class="delta" style="color:{RED}">₹120/कट्टा बढ़ोतरी</b>',
+   l1="क्यों", v1="त्योहार-व्रत की मांग से साबूदाना में लिवाली तेज",
+   l2="क्या करें", v2="नवरात्रि व्रत मांग से पहले साबूदाना का स्टॉक भर लें"),
  # FMCG (fmcg) - TOP by LR desc across ALL segments after ledger dedup (news_id 12d + brand 7d) + body-verify (concrete Rs). Real packs legible.
- #   vivel LR6.81 (Consumer, 4+1 free, MRP115, Rs25 save/Rs10 margin), godrej-magic LR5.78 (Consumer, Rs10 handwash 11+1), vasmol LR4.19 (Consumer, +Rs9 dabur red toothpaste free).
- #   also_shown (swapped): dettol LR6.63 (near-duplicate soap 4+1, lower LR than vivel). BLOCKED brand7d: kismi/colgate/hajmola/close-up/glimmer/happy-happy/oral-b/fena/mario/venus/lux/ghadi.
- dict(i=4, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="विवेल साबुन",
-   price=f'<span class="offer" style="background:{SCHEME_BLUE}">4 + 1 फ्री</span>',
-   sub='विवेल एलोवेरा 90g साबुन — 4 खरीदने पर 1 फ्री; MRP ₹115, ₹25 की बचत · <b class="delta">₹10 का मार्जिन</b>',
-   l1="ऑफर", v1="90g विवेल एलोवेरा — 4 पर 1 साबुन फ्री",
-   l2="ग्राहक को", v2="₹25 की बचत; दुकानदार को ₹10 मार्जिन"),
- dict(i=5, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="गोदरेज मैजिक",
-   price=f'<span class="offer" style="background:{SCHEME_BLUE}">11 + 1 फ्री</span>',
-   sub='गोदरेज मैजिक हैंड वाश ₹10 वाला — 11 खरीदने पर 1 फ्री · <b class="delta">1 पैक फ्री</b>',
-   l1="ऑफर", v1="₹10 वाला मैजिक हैंड वाश — 11 पर 1 फ्री",
-   l2="ग्राहक को", v2="हर दर्जन पर एक पैक मुफ्त — बिक्री बढ़ाना आसान"),
- dict(i=6, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="सुपर वासमोल 33",
-   price=f'<span class="offer" style="background:{SCHEME_BLUE}">टूथपेस्ट फ्री</span>',
-   sub='100ml सुपर वासमोल 33 केश काला के साथ ₹9 का 16g डाबर रेड टूथपेस्ट फ्री · <b class="delta">₹9 का गिफ्ट फ्री</b>',
-   l1="ऑफर", v1="हर 100ml वासमोल 33 पर 16g डाबर रेड टूथपेस्ट फ्री",
-   l2="ग्राहक को", v2="₹9 का टूथपेस्ट मुफ्त — साथ में सीधा फायदा"),
- # News (trending_news) - in-house 19sep Trending-1: festival sweets 10-15% costlier (raw material ~40% up: ghee/mewa/freight). Non-bait, market-impact, concrete. News=1 base.
- dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="मिठाई महंगी",
-   price='<span class="news">त्योहार पर मिठाई 10–15% तक महंगी</span>',
-   sub="देसी घी, मेवा और ढुलाई महंगी होने से कच्चा माल ~40% चढ़ा; मिठाई 10–15% महंगी · <b class=\"delta\">10–15% महंगी</b>",
-   l1="क्यों ज़रूरी", v1="महंगी तैयार मिठाई से घर पर बनाने का सामान ज्यादा बिकेगा",
-   l2="क्या करें", v2="बेसन, मैदा, मावा, घी, मेवा-चीनी का त्योहारी स्टॉक अभी भर लें"),
+ #   dabur-amla LR8.72 (Consumer), tic-tac LR7.33 (Retailer), vatika LR5.71 (Consumer). BLOCKED brand7d incl bajaj-almond/maggi/dabur-red/kismi/colgate/close-up/hajmola/vivel/godrej-magic/vasmol/glimmer/mario/dettol/margo/fena.
+ dict(i=4, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="डाबर आमला तेल",
+   price=f'<span class="offer" style="background:{SCHEME_BLUE}">साथ 90ml फ्री</span>',
+   sub='डाबर आमला हेयर ऑयल 450ml (MRP ₹225) खरीदने पर 90ml (MRP ₹53) तेल फ्री · <b class="delta">₹53 का तेल फ्री</b>',
+   l1="ऑफर", v1="450ml डाबर आमला (MRP ₹225) पर 90ml तेल फ्री",
+   l2="ग्राहक को", v2="₹53 का एक्स्ट्रा तेल मुफ्त — सीधा फायदा"),
+ dict(i=5, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="टिक टैक",
+   price=f'<span class="offer" style="background:{SCHEME_GREEN}">72 पर 3 फ्री</span>',
+   sub='₹5 MRP टिक टैक — 72 पीस लेने पर 3 पीस फ्री; ₹15 एक्स्ट्रा मार्जिन · <b class="delta">₹15 का मार्जिन</b>',
+   l1="स्कीम", v1="₹5 वाला टिक टैक — 72 पीस पर 3 पीस फ्री",
+   l2="फायदा", v2="दुकानदार को ₹15 अतिरिक्त मार्जिन"),
+ dict(i=6, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="वाटिका शैम्पू",
+   price=f'<span class="offer" style="background:{SCHEME_BLUE}">साथ तेल फ्री</span>',
+   sub='वाटिका शैम्पू 100ml (MRP ₹57) के साथ ₹33 वाला डाबर आलमंड तेल फ्री · <b class="delta">₹33 का तेल फ्री</b>',
+   l1="ऑफर", v1="100ml वाटिका शैम्पू पर डाबर आलमंड तेल फ्री",
+   l2="ग्राहक को", v2="₹33 का तेल मुफ्त — बिक्री बढ़ाना आसान"),
+ # News (trending_news) - in-house 20sep Trending-1: DPIIT+ONDC DigiDukaan to connect 1.4 crore kirana shops. Non-bait, policy/market-impact, concrete. News=1 base.
+ dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="डिजी दुकान",
+   price='<span class="news">DPIIT-ONDC जोड़ेंगे 1.4 करोड़ किराना दुकानें</span>',
+   sub="DPIIT और ONDC की DigiDukaan मुहिम — दुकानदार सीधे कंपनी/डिस्ट्रीब्यूटर से जुड़ेंगे; हैदराबाद में 10,000+ दुकानें शुरू · <b class=\"delta\">1.4 करोड़ दुकानें</b>",
+   l1="क्यों ज़रूरी", v1="कंपनी की स्कीम-छूट मोबाइल पर दिखेगी; पूरा-समय पर माल, हिसाब साफ़",
+   l2="क्या करें", v2="अपने इलाके में शुरू होने पर जुड़ें; अभी स्कीम की जानकारी रखें"),
 ]
 
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
