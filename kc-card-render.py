@@ -72,47 +72,48 @@ def b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-09-20 . experiment window CLOSED -> base 3+3+1)
+# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-09-21 . experiment window CLOSED -> base 3+3+1)
 CARDS = [
- # Commodity (mandi_bhav) - 2 tejii/RED + 1 mandi/GREEN. urad+makki=in-house 20sep posts; sabudana=MP teji_mandi LR8.91 body-verified.
- dict(i=1, label="मंडी भाव", stripe=RED, headline="उड़द",
-   price=f'{tri("up",RED)}₹9,550<span class="unit">/क्विंटल</span>',
-   sub=f'उड़द (रंगून SQ) ₹200 चढ़कर ₹9,500–9,550/क्विंटल — दाल मिलों की लिवाली लौटी · <b class="delta" style="color:{RED}">₹200 बढ़ोतरी</b>',
-   l1="क्यों", v1="दाल मिलों की मांग लौटने से उड़द बाजार में मजबूती",
-   l2="क्या करें", v2="चालू खपत भर उड़द/उड़द दाल अभी उठा लें; ऊपर लंबा स्टॉक न रोकें"),
- dict(i=2, label="मंडी भाव", stripe=GREEN, headline="मक्की",
-   price=f'{tri("down",GREEN)}₹2,650<span class="unit">/क्विंटल</span>',
-   sub=f'मक्की ₹2,650–2,690/क्विंटल — नई आवक के दबाव से आगे ₹2,600–2,650 का अंदेशा · <b class="delta" style="color:{GREEN}">~₹50 गिरावट संभव</b>',
-   l1="क्यों", v1="बिहार-यूपी के बाद MP-राजस्थान में भी नई मक्की आने लगी",
-   l2="क्या करें", v2="पुराना मक्की/मक्की आटा अभी निकालें; नई खरीद घटे भाव पर करें"),
- dict(i=3, label="मंडी भाव", stripe=RED, headline="साबूदाना",
-   price=f'{tri("up",RED)}₹68<span class="unit">/किलो</span>',
-   sub=f'साबूदाना 30 किलो कट्टा ₹1,920 से ₹2,040 — ₹120 उछाल (~₹64→₹68/किलो) · <b class="delta" style="color:{RED}">₹120/कट्टा बढ़ोतरी</b>',
-   l1="क्यों", v1="त्योहार-व्रत की मांग से साबूदाना में लिवाली तेज",
-   l2="क्या करें", v2="नवरात्रि व्रत मांग से पहले साबूदाना का स्टॉक भर लें"),
+ # Commodity (mandi_bhav) - 2 tejii/RED + 1 mandi/GREEN. All in-house 21sep posts: chana(daal post), ghee(samachar digest), pista(mewa post).
+ dict(i=1, label="मंडी भाव", stripe=RED, headline="देसी चना",
+   price=f'{tri("up",RED)}₹6,625<span class="unit">/क्विंटल</span>',
+   sub=f'दिल्ली देसी चना ₹6,550 से ₹6,625/क्विंटल — राजस्थान लाइन ₹6,700; आगे ₹7,000 पार की उम्मीद · <b class="delta" style="color:{RED}">₹75 बढ़ोतरी</b>',
+   l1="क्यों", v1="आवक घटी, दाल मिलों को कच्चा माल नहीं — हर 2-3 दिन में ₹100 तेज़ी",
+   l2="क्या करें", v2="त्योहारी मांग से पहले चना/बेसन का जरूरत भर माल अभी उठा लें"),
+ dict(i=2, label="मंडी भाव", stripe=RED, headline="देसी घी",
+   price=f'{tri("up",RED)}₹9,900<span class="unit">/टीन</span>',
+   sub=f'बढ़िया देसी घी ₹9,700-9,900/टीन, साधारण ₹8,000/टीन — ₹75/टीन महंगा; बढ़िया माल की किल्लत · <b class="delta" style="color:{RED}">₹75/टीन बढ़ोतरी</b>',
+   l1="क्यों", v1="प्लांट उत्पादन घटा, सीजन ऑफ; दूध ₹62-63/लीटर के ऊंचे भाव पर",
+   l2="क्या करें", v2="त्योहारी खरीद से पहले घी का सौदा टालना भारी पड़ेगा — अभी भरें"),
+ dict(i=3, label="मंडी भाव", stripe=GREEN, headline="पिस्ता",
+   price=f'{tri("down",GREEN)}₹3,000<span class="unit">/किलो</span>',
+   sub=f'ईरानी पिस्ता ₹2,900-3,000/किलो — मांग सुस्त से ₹50-100 नरम; बादाम गिरी भी ₹10 घटी · <b class="delta" style="color:{GREEN}">₹50-100 गिरावट</b>',
+   l1="क्यों", v1="त्योहारी ग्राहकी अभी सुस्त, विदेशी सप्लाई खुली रहने के संकेत",
+   l2="क्या करें", v2="मिठाई/त्योहारी डिब्बों के लिए पिस्ता-मेवा अभी सस्ते में भर लें"),
  # FMCG (fmcg) - TOP by LR desc across ALL segments after ledger dedup (news_id 12d + brand 7d) + body-verify (concrete Rs). Real packs legible.
- #   dabur-amla LR8.72 (Consumer), tic-tac LR7.33 (Retailer), vatika LR5.71 (Consumer). BLOCKED brand7d incl bajaj-almond/maggi/dabur-red/kismi/colgate/close-up/hajmola/vivel/godrej-magic/vasmol/glimmer/mario/dettol/margo/fena.
- dict(i=4, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="डाबर आमला तेल",
-   price=f'<span class="offer" style="background:{SCHEME_BLUE}">साथ 90ml फ्री</span>',
-   sub='डाबर आमला हेयर ऑयल 450ml (MRP ₹225) खरीदने पर 90ml (MRP ₹53) तेल फ्री · <b class="delta">₹53 का तेल फ्री</b>',
-   l1="ऑफर", v1="450ml डाबर आमला (MRP ₹225) पर 90ml तेल फ्री",
-   l2="ग्राहक को", v2="₹53 का एक्स्ट्रा तेल मुफ्त — सीधा फायदा"),
- dict(i=5, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="टिक टैक",
-   price=f'<span class="offer" style="background:{SCHEME_GREEN}">72 पर 3 फ्री</span>',
-   sub='₹5 MRP टिक टैक — 72 पीस लेने पर 3 पीस फ्री; ₹15 एक्स्ट्रा मार्जिन · <b class="delta">₹15 का मार्जिन</b>',
-   l1="स्कीम", v1="₹5 वाला टिक टैक — 72 पीस पर 3 पीस फ्री",
-   l2="फायदा", v2="दुकानदार को ₹15 अतिरिक्त मार्जिन"),
- dict(i=6, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="वाटिका शैम्पू",
-   price=f'<span class="offer" style="background:{SCHEME_BLUE}">साथ तेल फ्री</span>',
-   sub='वाटिका शैम्पू 100ml (MRP ₹57) के साथ ₹33 वाला डाबर आलमंड तेल फ्री · <b class="delta">₹33 का तेल फ्री</b>',
-   l1="ऑफर", v1="100ml वाटिका शैम्पू पर डाबर आलमंड तेल फ्री",
-   l2="ग्राहक को", v2="₹33 का तेल मुफ्त — बिक्री बढ़ाना आसान"),
- # News (trending_news) - in-house 20sep Trending-1: DPIIT+ONDC DigiDukaan to connect 1.4 crore kirana shops. Non-bait, policy/market-impact, concrete. News=1 base.
- dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="डिजी दुकान",
-   price='<span class="news">DPIIT-ONDC जोड़ेंगे 1.4 करोड़ किराना दुकानें</span>',
-   sub="DPIIT और ONDC की DigiDukaan मुहिम — दुकानदार सीधे कंपनी/डिस्ट्रीब्यूटर से जुड़ेंगे; हैदराबाद में 10,000+ दुकानें शुरू · <b class=\"delta\">1.4 करोड़ दुकानें</b>",
-   l1="क्यों ज़रूरी", v1="कंपनी की स्कीम-छूट मोबाइल पर दिखेगी; पूरा-समय पर माल, हिसाब साफ़",
-   l2="क्या करें", v2="अपने इलाके में शुरू होने पर जुड़ें; अभी स्कीम की जानकारी रखें"),
+ #   colgate LR9.71 (Retailer), jelly-toffee LR7.53 (Retailer), sargam LR5.30 (Consumer). Eclairs(5.32) swapped out = vague tattoo-scheme, no trade number.
+ #   BLOCKED brand7d: lux/bajaj-almond/maggi/dettol/opal/dabur-amla/tic-tac/kismi/vatika/glimmer/dabur-red/godrej-magic.
+ dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="कोलगेट ब्रश",
+   price=f'<span class="offer" style="background:{SCHEME_GREEN}">पेस्ट + 2 ब्रश फ्री</span>',
+   sub='कोलगेट सुपर फ्लेक्सी ब्रश के साथ 42g कोलगेट मैक्सफ्रेश पेस्ट फ्री और ₹40 MRP के दो ब्रश भी फ्री · <b class="delta">₹40+ का माल फ्री</b>',
+   l1="स्कीम", v1="1 सुपर फ्लेक्सी ब्रश पर 42g मैक्सफ्रेश पेस्ट + 2 ब्रश फ्री",
+   l2="फायदा", v2="एक ब्रश की बिक्री पर ग्राहक को कई गुना सामान — तेज़ बिकवाली"),
+ dict(i=5, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="जेली टॉफी",
+   price=f'<span class="offer" style="background:{SCHEME_GREEN}">80 पर 5 फ्री</span>',
+   sub='₹1 वाली जेली टॉफी — एक पैकेट में 80+5 पीस, खरीद रेट ₹50; 5 पीस स्कीम में मुफ्त · <b class="delta">₹5 का माल फ्री</b>',
+   l1="स्कीम", v1="₹1 जेली — 80+5 पीस पैकेट, खरीद रेट ₹50",
+   l2="फायदा", v2="हर पैकेट पर 5 पीस (₹5) एक्स्ट्रा मार्जिन"),
+ dict(i=6, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="सरगम साबुन",
+   price=f'<span class="offer" style="background:{SCHEME_BLUE}">3 पर 1 फ्री</span>',
+   sub='सरगम शाइन बार ₹10 वाला साबुन — 3 साबुन लेने पर 1 साबुन फ्री (3+1) · <b class="delta">₹10 का साबुन फ्री</b>',
+   l1="ऑफर", v1="₹10 वाला सरगम शाइन बार — 3+1 फ्री",
+   l2="ग्राहक को", v2="चार में एक साबुन मुफ्त — सीधी बचत"),
+ # News (trending_news) - in-house 21sep Trending-2: 1 Oct se dalhan ki sarkari kharid (MSP procurement). Non-bait, policy/market-impact, concrete MSP. News=1 base.
+ dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="दलहन खरीद",
+   price='<span class="news">1 अक्टूबर से MSP पर सरकारी खरीद शुरू</span>',
+   sub="हरियाणा में 1 अक्टूबर से खरीफ दलहन-तिलहन की MSP खरीद — मूंग ₹8,780, अरहर ₹8,450, उड़द ₹8,200/क्विंटल · <b class=\"delta\">MSP मूंग ₹8,780</b>",
+   l1="क्यों ज़रूरी", v1="MSP खरीद से दाल के थोक भाव को नीचे एक मजबूत सहारा मिलेगा",
+   l2="क्या करें", v2="सस्ते की आस में दाल का सौदा ज्यादा दिन टालना ठीक नहीं"),
 ]
 
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
