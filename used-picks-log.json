@@ -5876,6 +5876,72 @@
    ],
    "campaign_id": "~qd3j1d",
    "notes": "experiment window CLOSED -> base 3+3+1. commodity 2R(chana,ghee)+1G(pista), all in-house 21sep. FMCG top-3 by LR after news_id-12d + brand-7d dedup + body-verify. Blocked brand7d: lux/bajaj-almond/maggi/dettol/opal/dabur-amla/tic-tac/kismi/vatika/glimmer/dabur-red/godrej-magic. news=in-house best-1 MSP procurement (skipped नकली-काली-मिर्च scam bait + रुझान digest)."
+  },
+  {
+   "date": "2026-09-22",
+   "picks": {
+    "mandi_bhav": [
+     {
+      "news_id": "c577a029-a729-4832-bd3d-16b36c69f8b5",
+      "brand": "saunth",
+      "direction": "तेजी",
+      "label": "सौंठ (सूखी अदरक) तेजी ₹29,500-32,500/क्विंटल, आगे +₹500 (in-house masala post)"
+     },
+     {
+      "news_id": "2d17cb37-33d8-4c00-a5ba-3460202bb1db",
+      "brand": "kali-mirch",
+      "direction": "तेजी",
+      "label": "काली मिर्च तेजी खरीद ₹780/किलो, बिक्री ₹850-900, +₹80/15din (MP teji_mandi LR9.83 topup)"
+     },
+     {
+      "news_id": "a9792fb3-4c81-4576-b4bd-953b914442f3",
+      "brand": "soya-tel",
+      "direction": "मंदी",
+      "label": "सोया तेल मंदी ₹15,200/क्विंटल नरम (in-house oil post, GREEN for balance)"
+     }
+    ],
+    "fmcg": [
+     {
+      "news_id": "f3c9e892-8fcf-47b6-8f52-9762cb41e599",
+      "brand": "lux",
+      "label": "Lux 100g साबुन — Consumer Scheme 4+1 free — LR8.65"
+     },
+     {
+      "news_id": "30803b43-3732-4493-991b-7d33da082616",
+      "brand": "patanjali-dant-kanti",
+      "label": "Patanjali Dant Kanti 100g paste + 1 toothbrush free — Retailer Scheme — LR8.26"
+     },
+     {
+      "news_id": "7b7dc930-c844-4215-8570-53e307b48689",
+      "brand": "frooti",
+      "label": "Frooti ₹10 new 130ml bottle — नया लॉंच, box buy ₹300 sell ₹400 (₹100 margin) — LR7.83"
+     }
+    ],
+    "trending_news": [
+     {
+      "news_id": "ba80948c-6c84-4d6c-8d5e-86581243d600",
+      "brand": "sabzi-mehngi",
+      "label": "भारी बारिश से सब्ज़ियां महंगी — प्याज ₹65-70, टमाटर ~₹40, लहसुन ~3x (in-house TN1, non-bait market-impact)"
+     }
+    ]
+   },
+   "also_shown": [
+    {
+     "tag": "mandi_bhav",
+     "news_id": "049e5989-eb83-40e5-be4f-5d7c1a5911ff",
+     "brand": "urad",
+     "direction": "तेजी",
+     "label": "उड़द तेजी ₹8,800/क्विंटल (in-house) — DROPPED: same commodity+direction as recent day (soft skip), replaced by MP kali-mirch"
+    },
+    {
+     "tag": "fmcg",
+     "news_id": "f725c252-d3d4-423e-a21a-d7dde91083af",
+     "brand": "dant-kranti",
+     "label": "Dant Kranti (LR7.78) — DROPPED: headline/body mismatch, body describes a shampoo scheme reduction (11 vs 12 pcs), confusing negative"
+    }
+   ],
+   "campaign_id": "2acdoe1",
+   "notes": "experiment window CLOSED -> base 3+3+1. commodity 2R(saunth,kali-mirch)+1G(soya-tel); urad+तेजी skipped (recent), topped up with MP teji_mandi kali-mirch LR9.83. FMCG top-3 by LR after news_id-12d + brand-7d dedup + body-verify (lux/patanjali/frooti). Blocked brand7d incl: colgate/jelly-toffee/sargam/dabur-red/opal/vatika/vivel/maggi/dettol/dabur-amla/santoor/tic-tac/kismi/glimmer/margo/venus/mario/hajmola/ande-ka-fanda/badshah-rusk/bajaj-almond-drops/fena/godrej-magic/happy-happy/dabur-lal-manjan/vasmol/taaza/parle-eclairs. news=in-house best-1 sabzi-mehngi (skipped नकली-काली-मिर्च scam bait + रुझान digest + Reliance icecream/PMFME). PN campaign 2acdoe1 @16:30 IST HTTP200."
   }
  ],
  "brand_dedup_window_days": 7
