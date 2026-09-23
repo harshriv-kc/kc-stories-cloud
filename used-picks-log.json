@@ -5942,6 +5942,65 @@
    ],
    "campaign_id": "2acdoe1",
    "notes": "experiment window CLOSED -> base 3+3+1. commodity 2R(saunth,kali-mirch)+1G(soya-tel); urad+तेजी skipped (recent), topped up with MP teji_mandi kali-mirch LR9.83. FMCG top-3 by LR after news_id-12d + brand-7d dedup + body-verify (lux/patanjali/frooti). Blocked brand7d incl: colgate/jelly-toffee/sargam/dabur-red/opal/vatika/vivel/maggi/dettol/dabur-amla/santoor/tic-tac/kismi/glimmer/margo/venus/mario/hajmola/ande-ka-fanda/badshah-rusk/bajaj-almond-drops/fena/godrej-magic/happy-happy/dabur-lal-manjan/vasmol/taaza/parle-eclairs. news=in-house best-1 sabzi-mehngi (skipped नकली-काली-मिर्च scam bait + रुझान digest + Reliance icecream/PMFME). PN campaign 2acdoe1 @16:30 IST HTTP200."
+  },
+  {
+   "date": "2026-09-23",
+   "picks": {
+    "mandi_bhav": [
+     {
+      "news_id": "957956af-559e-452f-a122-82ab670340fd",
+      "brand": "kabuli-chana",
+      "direction": "तेजी",
+      "label": "काबुली चना तेजी ₹7,300-7,400/क्विंटल; खुदरा ₹68-72→₹75-80/किलो, निर्यात मांग (in-house daal post 23sep)"
+     },
+     {
+      "news_id": "a9e831e4-4106-4373-8bcd-454f4546c4fc",
+      "brand": "elaichi",
+      "direction": "तेजी",
+      "label": "छोटी इलायची तेजी +₹150 → ₹3,000/किलो; इडुक्की बारिश, नीलामी ₹3,199 (in-house masala post 23sep)"
+     },
+     {
+      "news_id": "4cb5e155-5eb6-48ef-a6bb-a4889e305fa4",
+      "brand": "gud",
+      "direction": "मंदी",
+      "label": "गुड़ मंदी ₹70→₹60/किलो (−₹10/किलो), आगे और नरमी (UGC teji_mandi LR9.04)"
+     }
+    ],
+    "fmcg": [
+     {
+      "news_id": "ec0c1894-7d22-40e0-9bca-3a0b74f7ef8d",
+      "brand": "5-star",
+      "label": "Cadbury 5 Star ₹10 choc — Retailer Scheme, 39 pcs box par 1 free — LR12.08"
+     },
+     {
+      "news_id": "76265a45-e754-4591-8a1a-8f6e1a2a67df",
+      "brand": "vim",
+      "label": "Vim bartan bar ₹10 — Consumer Scheme, buy 4 get 2 free — LR8.37"
+     },
+     {
+      "news_id": "e4b5be6b-442a-4069-975a-fe334bdcce7b",
+      "brand": "coca-cola",
+      "label": "Coca-Cola 2L ₹99 + 250ml ₹20 free — Consumer Scheme — LR7.09"
+     }
+    ],
+    "trending_news": [
+     {
+      "news_id": "da47168e-0409-47ab-b6cd-454f4546c4fc",
+      "brand": "gaon-retail",
+      "label": "गांव में FMCG बिक्री शहरों से तेज; ग्रामीण मालवाहक +29% vs शहर +19% (in-house TN1, non-bait market-impact)"
+     }
+    ]
+   },
+   "also_shown": [
+    {
+     "tag": "fmcg",
+     "news_id": "4d7a229f-7146-4649-91e8-ea2ce1ad563e",
+     "brand": "close-up",
+     "label": "Close-up ₹20 — Retailer 6+1 free — LR9.38 — DROPPED: body has no concrete ₹ figure (bare '6+1 free'), fails body-verify"
+    }
+   ],
+   "campaign_id": "mi3bd1",
+   "notes": "experiment window CLOSED -> base 3+3+1. commodity 2R(kabuli-chana,elaichi)+1G(gud); soya-tel(मंदी)+kali-mirch(तेजी) skipped = same commodity+direction as 22sep. FMCG top-3 by LR desc across all segments after news_id-12d + brand-7d dedup + body-verify: 5-star/vim/coca-cola. close-up(LR9.38) dropped = no concrete ₹ in body. Blocked brand7d incl: colgate/patanjali-dant-kanti/lux/dettol/frooti/dabur-red/dant-kranti/fena/mario/vatika/vivel/opal/margo/santoor/tic-tac/dabur-amla/bajaj-almond-drops/godrej-magic/happy-happy/jelly-toffee/sargam/maggi. news=in-house best-1 gaon-retail (skipped नकली-काली-मिर्च scam bait + रुझान digest + दुकानदार-9.49लाख theft/fraud + Reliance icecream). PN campaign mi3bd1 @16:30 IST HTTP200."
   }
  ],
  "brand_dedup_window_days": 7
