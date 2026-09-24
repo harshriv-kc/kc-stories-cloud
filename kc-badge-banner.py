@@ -123,10 +123,10 @@ def render(tag, cfg, grad, bottom):
 # of the white ring while staying uniform. ALWAYS re-check max_text_radius <= ~438 (white-ring inner 454) after
 # changing copy — the widest line caps FS.
 FS=130   # 2026-08-25: dropped 138->130, "तूर दाल" upper line grazed ring at 455 (>448) at 138
-# 2026-09-23: mandi=इलायची/तेज़ (chhoti elaichi teji, dense green cardamom flat-lay), fmcg=5 स्टार/1 फ्री (Cadbury 5 Star retailer scheme 39+1, real packs), news=गांव में/बिक्री तेज़ (rural retail booming). 2-line short hooks; verify radial clearance after render.
-DAY=[dict(i=1,src="subjfull_1.png",lines=["इलायची","तेज़"],fs=128),
-     dict(i=2,src="subjfull_2.png",lines=["5 स्टार","1 फ्री"],fs=124),
-     dict(i=3,src="subjfull_3.png",lines=["गांव में","बिक्री तेज़"],fs=112)]
+# 2026-09-24: mandi=प्याज/तेज़ (onion prices hot, dense red-onion flat-lay), fmcg=घी पर/फ्री (Ramsons goudhan ghee 1L + Rs35 chini free), news=डीज़ल/स्थिर (crude up but diesel/freight stable). 2-line short hooks; verify radial clearance after render.
+DAY=[dict(i=1,src="subjfull_1.png",lines=["प्याज","तेज़"],fs=118),
+     dict(i=2,src="subjfull_2.png",lines=["घी पर","फ्री"],fs=116),
+     dict(i=3,src="subjfull_3.png",lines=["डीज़ल","स्थिर"],fs=118)]
 if __name__=="__main__":
     render("D", DAY, TALL, 190)   # bottom raised for FS130 + wide tn bottom line: seats block higher in the circle's wider zone to clear the ring
     # 2026-07-14 crop fix: operator flagged text CROPPING at the ring. Root cause — the

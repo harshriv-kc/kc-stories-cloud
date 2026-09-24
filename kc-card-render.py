@@ -72,48 +72,48 @@ def b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-09-23 . experiment window CLOSED -> base 3+3+1)
+# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-09-24 . experiment window CLOSED -> base 3+3+1)
 CARDS = [
- # Commodity (mandi_bhav) - 2 tejii/RED (kabuli chana, chhoti elaichi = in-house 23sep) + 1 mandi/GREEN (gud = MP teji_mandi LR9.04). soya-tel+kali-mirch skipped (same commodity+direction as 22sep).
- dict(i=1, label="मंडी भाव", stripe=RED, headline="काबुली चना",
-   price=f'{tri("up",RED)}₹7,400<span class="unit">/क्विंटल</span>',
-   sub=f'काबुली चना ₹7,300-7,400/क्विंटल — निर्यात मांग से पकड़ मजबूत; खुदरा ₹68-72/किलो, आगे ₹75-80/किलो तक · <b class="delta" style="color:{RED}">₹5-10/किलो बढ़त</b>',
-   l1="क्यों", v1="इंदौर-कांडला निर्यातकों की लिवाली लौटी, अब घटने की गुंजाइश खत्म",
-   l2="क्या करें", v2="त्योहारी मांग से पहले साफ बड़े दाने वाला जरूरत भर स्टॉक बना लें"),
- dict(i=2, label="मंडी भाव", stripe=RED, headline="छोटी इलायची",
-   price=f'{tri("up",RED)}₹3,000<span class="unit">/किलो</span>',
-   sub=f'छोटी इलायची +₹150 → ₹2,850 से ₹3,000/किलो; इडुक्की की भारी बारिश से फसल प्रभावित, नीलामी ₹3,199/किलो · <b class="delta" style="color:{RED}">₹150 बढ़ोतरी</b>',
-   l1="क्यों", v1="केरल के इडुक्की में भारी बारिश से तुड़ाई घटी, नीलामी भाव चढ़े",
-   l2="क्या करें", v2="त्योहारी मिठाई मांग से पहले जरूरत भर लें, पूरा स्टॉक एक साथ न भरें"),
- dict(i=3, label="मंडी भाव", stripe=GREEN, headline="गुड़",
-   price=f'{tri("down",GREEN)}₹60<span class="unit">/किलो</span>',
-   sub=f'गुड़ ₹70 से घटकर ₹60/किलो — प्रति किलो ₹10 की नरमी, आगे और मंदी के आसार · <b class="delta" style="color:{GREEN}">₹10/किलो गिरावट</b>',
-   l1="क्यों", v1="नई आवक और मांग सुस्त पड़ने से गुड़ के भाव लगातार नरम",
+ # Commodity (mandi_bhav) - 2 tejii/RED (safed matar in-house 24sep, pyaaz MP LR8.25) + 1 mandi/GREEN (cheeni/shakkar in-house Samachar). soya-tel skipped (over-covered, mandi 22sep).
+ dict(i=1, label="मंडी भाव", stripe=RED, headline="सफेद मटर",
+   price=f'{tri("up",RED)}₹4,650<span class="unit">/क्विंटल</span>',
+   sub=f'सफेद मटर +₹50 → ₹4,650/क्विंटल; लोकल-चालानी मांग तेज़, फसल कम, बंदरगाह पर दबाव नहीं · <b class="delta" style="color:{RED}">₹50 बढ़त</b>',
+   l1="क्यों", v1="ललितपुर-झांसी में स्टॉक कम, आयात का दबाव नहीं, उड़ीसा की लिवाली बढ़ी",
+   l2="क्या करें", v2="नीचे भाव मिलना मुश्किल — मटर दाल का जरूरत भर माल अभी उठा लें"),
+ dict(i=2, label="मंडी भाव", stripe=RED, headline="प्याज",
+   price=f'{tri("up",RED)}₹60–90<span class="unit">/किलो</span>',
+   sub=f'प्याज ₹60 से ₹90/किलो (क्वालिटी अनुसार); लहसुन में भी तेज़ी, अक्टूबर अंत नई फसल तक ऊंचे भाव · <b class="delta" style="color:{RED}">₹12/किलो मार्जिन</b>',
+   l1="क्यों", v1="देशभर में आवक घटी, मांग मजबूत; नई फसल अक्टूबर के अंत में आएगी",
+   l2="क्या करें", v2="साफ अच्छी क्वालिटी का माल रखें; ₹58 खरीद पर ₹70 तक बिक्री"),
+ dict(i=3, label="मंडी भाव", stripe=GREEN, headline="चीनी",
+   price=f'{tri("down",GREEN)}₹6,000–6,200<span class="unit">/क्विंटल</span>',
+   sub=f'चीनी −₹100 → ₹6,000–6,200/क्विंटल; गुड़-खांडसारी भी ₹100–200 नरम, उठाव कमजोर · <b class="delta" style="color:{GREEN}">₹100 गिरावट</b>',
+   l1="क्यों", v1="पश्चिमी यूपी मंडियों से मंदे समाचार और मांग सुस्त पड़ने से भाव नरम",
    l2="क्या करें", v2="भाव नरम — त्योहारी मिठाई मांग से पहले सस्ते में स्टॉक भर लें"),
  # FMCG (fmcg) - TOP by LR desc across ALL segments after ledger dedup (news_id 12d + brand 7d) + body-verify (concrete Rs).
- #   5-star LR12.08 (Retailer 39+1), vim LR8.37 (Consumer 4+2, Rs10), coca-cola LR7.09 (Consumer 2L Rs99 + 250ml free).
- #   close-up(9.38) DROPPED = body "6+1 free" has no concrete Rs figure. BLOCKED brand7d incl: colgate/patanjali/lux/dettol/frooti/dabur-red/dant-kranti/fena/mario/vatika/vivel/opal/margo/santoor/tic-tac.
- dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="5 स्टार चॉकलेट",
-   price=f'<span class="offer" style="background:{SCHEME_GREEN}">39 पर 1 फ्री</span>',
-   sub='₹10 वाली 5 स्टार चॉकलेट — 39 पीस का बॉक्स लेने पर ₹10 MRP का 1 पीस बिल्कुल फ्री · <b class="delta">1 पीस फ्री</b>',
-   l1="स्कीम", v1="₹10 वाली 5 स्टार का 39 पीस बॉक्स लेने पर 1 पीस फ्री",
-   l2="फायदा", v2="हर बॉक्स पर एक चॉकलेट एक्स्ट्रा — त्योहारी बिक्री में सीधा मुनाफा"),
- dict(i=5, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="विम बार",
-   price=f'<span class="offer" style="background:{SCHEME_BLUE}">4 + 2 फ्री</span>',
-   sub='₹10 वाला विम बर्तन बार — 4 बार खरीदने पर 2 बार बिल्कुल फ्री (4+2) · <b class="delta">2 बार फ्री</b>',
-   l1="ऑफर", v1="₹10 MRP विम बार के 4 पैक पर 2 बार फ्री",
-   l2="ग्राहक को", v2="चार पर दो मुफ्त — बर्तन बार की तेज़ बिकवाली, ग्राहक को सीधी बचत"),
- dict(i=6, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="कोका कोला",
-   price=f'<span class="offer" style="background:{SCHEME_BLUE}">2L पर 250ml फ्री</span>',
-   sub='₹99 वाली 2 लीटर कोका कोला के साथ ₹20 वाली 250ml बोतल बिल्कुल मुफ्त · <b class="delta">250ml फ्री</b>',
-   l1="ऑफर", v1="₹99 की 2 लीटर कोका कोला पर ₹20 की 250ml बोतल फ्री",
-   l2="ग्राहक को", v2="बड़ी बोतल के साथ छोटी मुफ्त — दुकानदार को बढ़िया मुनाफा"),
- # News (trending_news) - in-house 23sep Trending-1: gaon me FMCG bikri shehron se tez. Non-bait market-impact. News=1 base.
- dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="गांव में बिक्री तेज़",
-   price='<span class="news">गांव की दुकानों पर बिक्री शहरों से आगे</span>',
-   sub="साबुन, तेल, चायपत्ती, बिस्किट की मांग गांवों में तेज़ — ग्रामीण छोटे मालवाहक बिक्री +29%, शहरों में +19% · <b class=\"delta\">त्योहार पर दाम स्थिर</b>",
-   l1="क्यों ज़रूरी", v1="खेती की आमदनी और पहुंच बढ़ी; कंपनियां त्योहार पर दाम नहीं बढ़ा रहीं",
-   l2="क्या करें", v2="त्योहार से पहले तेल-साबुन-चाय-बिस्किट का स्टॉक थोड़ा बढ़ा लें"),
+ #   dairy-day LR10.08 (Retailer 30+1, Rs5), goudhan-ghee LR7.44 (Consumer 1L Rs695 + Rs35 chini free), pears LR6.02 (product-change Rs58->Rs50).
+ #   dham-darshan(8.76) DROPPED = body "free gift inside" vague, no concrete offer figure. ghadi(6.11) skipped = literal re-run of 14sep Ghadi+Rs10 Venus scheme (=pears at tied LR). BLOCKED brand7d incl: colgate/patanjali-dant-kanti/lux/coca-cola/frooti/dant-kranti/fena/mario/vatika/vivel/margo/sargam/dabur-amla/tic-tac/5-star/vim/jelly-toffee/badshah-rusk/godrej-magic/glimmer/vasmol.
+ dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="डेयरी डे चॉकलेट",
+   price=f'<span class="offer" style="background:{SCHEME_GREEN}">30 पर 1 फ्री</span>',
+   sub='₹5 वाली डेयरी डे चॉकलेट (11 ग्राम) — 30 पीस लेने पर ₹5 MRP का 1 पीस फ्री · <b class="delta">1 पीस फ्री</b>',
+   l1="स्कीम", v1="₹5 वाली 11 ग्राम चॉकलेट के 30 पीस लेने पर 1 पीस मुफ्त",
+   l2="फायदा", v2="हर 30 पीस पर एक एक्स्ट्रा — त्योहारी बिक्री में सीधा मुनाफा"),
+ dict(i=5, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="गौधन देसी घी",
+   price=f'<span class="offer" style="background:{SCHEME_BLUE}">1L पर चीनी फ्री</span>',
+   sub='रैमसंस गौधन शुद्ध देसी घी 1 लीटर (MRP ₹695) के साथ ₹35 MRP की चीनी बिल्कुल मुफ्त · <b class="delta">₹35 चीनी फ्री</b>',
+   l1="ऑफर", v1="₹695 वाले 1 लीटर देसी घी के साथ ₹35 की चीनी मुफ्त",
+   l2="ग्राहक को", v2="घी के साथ चीनी मुफ्त — त्योहारी खरीदार को सीधी बचत"),
+ dict(i=6, eyebrow="FMCG", label="प्रोडक्ट बदलाव", stripe=BLACK, headline="पिअर्स साबुन",
+   price='₹58<span class="arrow">→</span>₹50<span class="unit">MRP · 100g</span>',
+   sub='पिअर्स ग्लिसरीन साबुन 100 ग्राम — MRP ₹58 से घटकर ₹50, सीधे ₹8 की कमी · <b class="delta">₹8 MRP कम</b>',
+   l1="बदलाव", v1="पिअर्स 100g साबुन का MRP ₹58 से ₹50 हुआ (₹8 कम)",
+   l2="फायदा", v2="पुराने ₹58 MRP स्टॉक की बिक्री पहले करें, नया MRP जांच लें"),
+ # News (trending_news) - in-house 24sep Trending-1: crude chadha fir bhi diesel nahi badhega -> bhaada sthir. Non-bait market-impact. News=1 base.
+ dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="डीज़ल के दाम स्थिर",
+   price='<span class="news">कच्चा तेल चढ़ा, फिर भी डीज़ल महंगा नहीं</span>',
+   sub="कच्चा तेल ~$115/बैरल के बावजूद डीज़ल ₹95.20 (दिल्ली) स्थिर; तेल कंपनियां ~₹23/लीटर घाटा उठा रहीं · <b class=\"delta\">भाड़ा स्थिर</b>",
+   l1="क्यों ज़रूरी", v1="सरकार पंप रेट स्थिर रख रही; डीज़ल न बढ़ने से ढुलाई लागत नहीं बढ़ेगी",
+   l2="क्या करें", v2="त्योहारी सीजन में माल की ढुलाई-भाड़ा स्थिर, सामान्य स्टॉक भरें"),
 ]
 
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
