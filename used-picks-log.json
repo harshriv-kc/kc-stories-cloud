@@ -6062,6 +6062,92 @@
         }
       ],
       "notes": "experiment window CLOSED (base 3+3+1). 2 in-house commodity + 1 MP (pyaaz), dir 2 teji/1 mandi. FMCG top-3 by LR post dedup+body-verify. News=in-house TN1. PN campaign ppssl5 @16:30 IST."
+    },
+    {
+      "date": "2026-09-25",
+      "picks": {
+        "mandi_bhav": [
+          {
+            "news_id": "8f8426ed-ed92-42bd-a9a9-1ecde2949399",
+            "brand": "masoor",
+            "direction": "तेजी",
+            "label": "देसी मसूर तेजी +₹25 → दिल्ली ₹6,800–6,825/क्विंटल; घरेलू आवक कम, त्योहारी मांग (in-house दाल 25sep RED, slide1)"
+          },
+          {
+            "news_id": "3bf27b42-bf8f-4fb5-a5f0-fc72f6d6c25e",
+            "brand": "sabudana",
+            "direction": "तेजी",
+            "label": "साबूदाना तेजी ₹42–43→₹57–58/किलो (+₹18–20); नई फसल ~40% कम, नवरात्रि व्रत मांग (in-house other-commodity 25sep RED, slide2)"
+          },
+          {
+            "news_id": "e938c69c-61ad-416e-9f93-103987d3e13b",
+            "brand": "sarson-tel",
+            "direction": "मंदी",
+            "label": "सरसों तेल मंदी −₹100 → ₹16,600/क्विंटल (चरखी दादरी ₹16,450); आयात शुल्क 10%→5% (in-house tel post 25sep GREEN; framed as sarson to avoid soya over-cover, slide3)"
+          }
+        ],
+        "fmcg": [
+          {
+            "news_id": "f1639258-322d-4dd2-b9b8-4e6581f6cd69",
+            "brand": "pitara",
+            "label": "पिटारा नमकीन 2×400g ₹176 box पर 5L डिब्बा फ्री (Consumer Scheme, MP LR7.78, body-verified)"
+          },
+          {
+            "news_id": "31f4028d-485e-4813-a699-e9e458089269",
+            "brand": "parle-g",
+            "label": "पार्ले-जी ₹10 पैक वजन +12.5% (fmcg_product_change, MP LR6.95, body-verified)"
+          },
+          {
+            "news_id": "eb6f04a2-422a-48f0-8634-2267d824a5eb",
+            "brand": "santoor",
+            "label": "संतूर 4 साबुन सेट + ₹35 बाला हैंडवॉश फ्री (Consumer Scheme, MP LR6.88, body-verified)"
+          }
+        ],
+        "trending_news": [
+          {
+            "news_id": "7bc77872-4839-4483-b966-7d91db9df1fc",
+            "brand": "upi-charge",
+            "label": "UPI पर नया शुल्क 15 अक्टूबर; ₹2,000+ दुकान-पेमेंट पर 0.4% (max ₹300), ₹2,000 तक फ्री, ₹1 लाख/माह तक कुछ नहीं (in-house Trending-1 25sep)"
+          }
+        ]
+      },
+      "also_shown": [
+        {
+          "news_id": "9c7a1945-8216-4182-8de7-e1c2de012e50",
+          "brand": "goudhan-ghee",
+          "label": "Goudhan ghee Consumer LR9.16 — DROPPED: news_id + brand used 24sep"
+        },
+        {
+          "news_id": "43b88134-5858-43f9-9654-b1c369bc1e98",
+          "brand": "dham-darshan",
+          "label": "Dham darshan agarbatti Consumer LR8.80 — DROPPED: news_id used + vague 'gift inside', no concrete offer"
+        },
+        {
+          "news_id": "f748799a-3f68-473f-82bf-0f189c283d40",
+          "brand": "dabur-red",
+          "label": "Dabur red paste Retailer LR9.02 — DROPPED: brand within 7d"
+        },
+        {
+          "news_id": "798a3a35-6b47-435f-ac6a-1c8f9c1fb527",
+          "brand": "lux",
+          "label": "Lux soap Consumer LR6.98 — DROPPED: brand within 7d"
+        },
+        {
+          "news_id": "932c55f1-bb76-4ba7-bdd7-542f11b4df16",
+          "brand": "sargam",
+          "label": "Sargam surf Retailer LR5.10 — DROPPED: brand within 7d"
+        },
+        {
+          "news_id": "9e3bd106-e75f-4266-a510-17227f4a0923",
+          "brand": "pears",
+          "label": "Pears product_change LR5.01 — DROPPED: news_id + brand used 24sep"
+        },
+        {
+          "news_id": "9879ab45-dafd-4ea9-91c7-3ce18748fea4",
+          "brand": "godrej-no-1",
+          "label": "Godrej No.1 Consumer LR6.09 — DROPPED: no concrete Rs in body ('4 sabun 1 free')"
+        }
+      ]
     }
   ],
   "brand_dedup_window_days": 7
