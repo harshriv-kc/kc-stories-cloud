@@ -72,48 +72,48 @@ def b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-09-24 . experiment window CLOSED -> base 3+3+1)
+# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-09-25 . experiment window CLOSED -> base 3+3+1)
 CARDS = [
- # Commodity (mandi_bhav) - 2 tejii/RED (safed matar in-house 24sep, pyaaz MP LR8.25) + 1 mandi/GREEN (cheeni/shakkar in-house Samachar). soya-tel skipped (over-covered, mandi 22sep).
- dict(i=1, label="मंडी भाव", stripe=RED, headline="सफेद मटर",
-   price=f'{tri("up",RED)}₹4,650<span class="unit">/क्विंटल</span>',
-   sub=f'सफेद मटर +₹50 → ₹4,650/क्विंटल; लोकल-चालानी मांग तेज़, फसल कम, बंदरगाह पर दबाव नहीं · <b class="delta" style="color:{RED}">₹50 बढ़त</b>',
-   l1="क्यों", v1="ललितपुर-झांसी में स्टॉक कम, आयात का दबाव नहीं, उड़ीसा की लिवाली बढ़ी",
-   l2="क्या करें", v2="नीचे भाव मिलना मुश्किल — मटर दाल का जरूरत भर माल अभी उठा लें"),
- dict(i=2, label="मंडी भाव", stripe=RED, headline="प्याज",
-   price=f'{tri("up",RED)}₹60–90<span class="unit">/किलो</span>',
-   sub=f'प्याज ₹60 से ₹90/किलो (क्वालिटी अनुसार); लहसुन में भी तेज़ी, अक्टूबर अंत नई फसल तक ऊंचे भाव · <b class="delta" style="color:{RED}">₹12/किलो मार्जिन</b>',
-   l1="क्यों", v1="देशभर में आवक घटी, मांग मजबूत; नई फसल अक्टूबर के अंत में आएगी",
-   l2="क्या करें", v2="साफ अच्छी क्वालिटी का माल रखें; ₹58 खरीद पर ₹70 तक बिक्री"),
- dict(i=3, label="मंडी भाव", stripe=GREEN, headline="चीनी",
-   price=f'{tri("down",GREEN)}₹6,000–6,200<span class="unit">/क्विंटल</span>',
-   sub=f'चीनी −₹100 → ₹6,000–6,200/क्विंटल; गुड़-खांडसारी भी ₹100–200 नरम, उठाव कमजोर · <b class="delta" style="color:{GREEN}">₹100 गिरावट</b>',
-   l1="क्यों", v1="पश्चिमी यूपी मंडियों से मंदे समाचार और मांग सुस्त पड़ने से भाव नरम",
-   l2="क्या करें", v2="भाव नरम — त्योहारी मिठाई मांग से पहले सस्ते में स्टॉक भर लें"),
+ # Commodity (mandi_bhav) - 2 tejii/RED (masoor+sabudana, in-house 25sep) + 1 mandi/GREEN (sarson tel, in-house tel post; import-duty cut). soya-tel framed as sarson to avoid over-covered soya repeat (mandi 22sep age3).
+ dict(i=1, label="मंडी भाव", stripe=RED, headline="देसी मसूर",
+   price=f'{tri("up",RED)}₹6,800–6,825<span class="unit">/क्विंटल</span>',
+   sub=f'देसी मसूर +₹25 → दिल्ली ₹6,800–6,825/क्विंटल; घरेलू आवक कम, त्योहारी मांग मजबूत · <b class="delta" style="color:{RED}">₹25 बढ़त</b>',
+   l1="क्यों", v1="MP की गंज बासौदा-सागर लाइन में आवक कमजोर; बिहार-बंगाल-असम से त्योहारी मांग बनी",
+   l2="क्या करें", v2="नवरात्रि मांग तक जरूरत भर मसूर दाल भर लें; एक माह से ज्यादा स्टॉक न रखें"),
+ dict(i=2, label="मंडी भाव", stripe=RED, headline="साबूदाना",
+   price=f'{tri("up",RED)}₹57–58<span class="unit">/किलो</span>',
+   sub=f'साबूदाना ₹42–43 से चढ़कर ₹57–58/किलो (बढ़िया ₹67–68); नई फसल ~40% कम, व्रत मांग तेज़ · <b class="delta" style="color:{RED}">₹18–20 बढ़त</b>',
+   l1="क्यों", v1="तमिलनाडु (कोयंबटूर-सेलम) में खराब मौसम से फसल ~40% घटी, MP से आवक भी कम",
+   l2="क्या करें", v2="नवरात्रि व्रत में बिक्री सबसे ज्यादा — बढ़िया माल का स्टॉक अभी कर लें"),
+ dict(i=3, label="मंडी भाव", stripe=GREEN, headline="सरसों तेल",
+   price=f'{tri("down",GREEN)}₹16,600<span class="unit">/क्विंटल</span>',
+   sub=f'सरसों तेल −₹100 → ₹16,600/क्विंटल (चरखी दादरी ₹16,450); आयात शुल्क 10%→5%, तेल सस्ता · <b class="delta" style="color:{GREEN}">₹100 गिरावट</b>',
+   l1="क्यों", v1="सरकार ने खाद्य तेल आयात ड्यूटी घटाई; सस्ते आयात से घरेलू तेल में नरमी",
+   l2="क्या करें", v2="भाव और नरम पड़ सकते हैं — भारी स्टॉक रोककर जरूरत भर तेल खरीदें"),
  # FMCG (fmcg) - TOP by LR desc across ALL segments after ledger dedup (news_id 12d + brand 7d) + body-verify (concrete Rs).
- #   dairy-day LR10.08 (Retailer 30+1, Rs5), goudhan-ghee LR7.44 (Consumer 1L Rs695 + Rs35 chini free), pears LR6.02 (product-change Rs58->Rs50).
- #   dham-darshan(8.76) DROPPED = body "free gift inside" vague, no concrete offer figure. ghadi(6.11) skipped = literal re-run of 14sep Ghadi+Rs10 Venus scheme (=pears at tied LR). BLOCKED brand7d incl: colgate/patanjali-dant-kanti/lux/coca-cola/frooti/dant-kranti/fena/mario/vatika/vivel/margo/sargam/dabur-amla/tic-tac/5-star/vim/jelly-toffee/badshah-rusk/godrej-magic/glimmer/vasmol.
- dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="डेयरी डे चॉकलेट",
-   price=f'<span class="offer" style="background:{SCHEME_GREEN}">30 पर 1 फ्री</span>',
-   sub='₹5 वाली डेयरी डे चॉकलेट (11 ग्राम) — 30 पीस लेने पर ₹5 MRP का 1 पीस फ्री · <b class="delta">1 पीस फ्री</b>',
-   l1="स्कीम", v1="₹5 वाली 11 ग्राम चॉकलेट के 30 पीस लेने पर 1 पीस मुफ्त",
-   l2="फायदा", v2="हर 30 पीस पर एक एक्स्ट्रा — त्योहारी बिक्री में सीधा मुनाफा"),
- dict(i=5, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="गौधन देसी घी",
-   price=f'<span class="offer" style="background:{SCHEME_BLUE}">1L पर चीनी फ्री</span>',
-   sub='रैमसंस गौधन शुद्ध देसी घी 1 लीटर (MRP ₹695) के साथ ₹35 MRP की चीनी बिल्कुल मुफ्त · <b class="delta">₹35 चीनी फ्री</b>',
-   l1="ऑफर", v1="₹695 वाले 1 लीटर देसी घी के साथ ₹35 की चीनी मुफ्त",
-   l2="ग्राहक को", v2="घी के साथ चीनी मुफ्त — त्योहारी खरीदार को सीधी बचत"),
- dict(i=6, eyebrow="FMCG", label="प्रोडक्ट बदलाव", stripe=BLACK, headline="पिअर्स साबुन",
-   price='₹58<span class="arrow">→</span>₹50<span class="unit">MRP · 100g</span>',
-   sub='पिअर्स ग्लिसरीन साबुन 100 ग्राम — MRP ₹58 से घटकर ₹50, सीधे ₹8 की कमी · <b class="delta">₹8 MRP कम</b>',
-   l1="बदलाव", v1="पिअर्स 100g साबुन का MRP ₹58 से ₹50 हुआ (₹8 कम)",
-   l2="फायदा", v2="पुराने ₹58 MRP स्टॉक की बिक्री पहले करें, नया MRP जांच लें"),
- # News (trending_news) - in-house 24sep Trending-1: crude chadha fir bhi diesel nahi badhega -> bhaada sthir. Non-bait market-impact. News=1 base.
- dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="डीज़ल के दाम स्थिर",
-   price='<span class="news">कच्चा तेल चढ़ा, फिर भी डीज़ल महंगा नहीं</span>',
-   sub="कच्चा तेल ~$115/बैरल के बावजूद डीज़ल ₹95.20 (दिल्ली) स्थिर; तेल कंपनियां ~₹23/लीटर घाटा उठा रहीं · <b class=\"delta\">भाड़ा स्थिर</b>",
-   l1="क्यों ज़रूरी", v1="सरकार पंप रेट स्थिर रख रही; डीज़ल न बढ़ने से ढुलाई लागत नहीं बढ़ेगी",
-   l2="क्या करें", v2="त्योहारी सीजन में माल की ढुलाई-भाड़ा स्थिर, सामान्य स्टॉक भरें"),
+ #   pitara LR7.78 (Consumer, 2x400g Rs176 box + 5L dibba free), parle-g LR6.95 (product_change, Rs10 wt +12.5%), santoor LR6.88 (Consumer, 4-set + Rs35 Bala handwash free).
+ #   DROPPED: goudhan-ghee(9.16 news_id 9c7a1945 used 24sep + brand), dham-darshan(8.80 news_id used + vague "gift inside"), dabur-red(9.02 brand7d), lux(6.98 brand7d), sargam(5.10 brand7d), pears(5.01 news_id+brand). godrej-no1(6.09) skipped=no concrete Rs in body ("4 sabun 1 free"). BLOCKED brand7d: dabur-red/lux/sargam/ghadi/colgate/patanjali-dant-kanti/coca-cola/vim/vatika/frooti/dant-kranti/fena/5-star/tic-tac/vivel/dabur-amla/godrej-magic.
+ dict(i=4, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="पिटारा नमकीन",
+   price=f'<span class="offer" style="background:{SCHEME_BLUE}">2 पैकेट पर डिब्बा फ्री</span>',
+   sub='पिटारा नमकीन 400 ग्राम के 2 पैकेट (₹176 पूरा बॉक्स) पर एक 5 लीटर का प्लास्टिक डिब्बा बिल्कुल फ्री · <b class="delta">डिब्बा फ्री</b>',
+   l1="ऑफर", v1="400g के 2 पैकेट खरीदने पर 5 लीटर का प्लास्टिक डिब्बा मुफ्त",
+   l2="ग्राहक को", v2="₹176 में पूरा बॉक्स के साथ काम आने वाला डिब्बा — सीधा फायदा"),
+ dict(i=5, eyebrow="FMCG", label="प्रोडक्ट बदलाव", stripe=BLACK, headline="पार्ले-जी बिस्कुट",
+   price='<span class="wt">वजन +12.5%</span><span class="unit">₹10 पैक · दाम वही</span>',
+   sub='₹10 वाले पार्ले-जी बिस्कुट का वजन 12.5% बढ़ा — कीमत वही, माल ज़्यादा · <b class="delta">12.5% ज़्यादा</b>',
+   l1="बदलाव", v1="₹10 पैक का वजन 12.5% बढ़ाया गया, कीमत नहीं बदली",
+   l2="फायदा", v2="उसी ₹10 में ग्राहक को ज्यादा बिस्कुट — तेज़ बिकने वाला पैक"),
+ dict(i=6, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="संतूर साबुन",
+   price=f'<span class="offer" style="background:{SCHEME_BLUE}">4 पर हैंडवॉश फ्री</span>',
+   sub='संतूर के 4 साबुन का पूरा सेट लेने पर ₹35 MRP का बाला हैंडवॉश बिल्कुल फ्री · <b class="delta">₹35 हैंडवॉश फ्री</b>',
+   l1="ऑफर", v1="4 साबुन का पूरा सेट खरीदने पर ₹35 का बाला हैंडवॉश मुफ्त",
+   l2="ग्राहक को", v2="नहाने के साबुन के साथ हैंडवॉश फ्री — त्योहारी खरीदार को सीधी बचत"),
+ # News (trending_news) - in-house 25sep Trending-1: UPI par naya shulk 15 Oct, chhoti dukan bahar. Policy/market-impact, non-bait. News=1 base.
+ dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="UPI पर नया शुल्क",
+   price='<span class="news">15 अक्टूबर से बड़े दुकान-पेमेंट पर छोटा शुल्क</span>',
+   sub="15 अक्टूबर से ₹2,000 से ऊपर के दुकान-पेमेंट पर 0.4% (अधिकतम ₹300); ₹2,000 तक हर पेमेंट फ्री · <b class=\"delta\">₹2,000 तक फ्री</b>",
+   l1="क्यों ज़रूरी", v1="96% से ज्यादा दुकान-पेमेंट ₹2,000 से कम; ग्राहक से कुछ नहीं कटेगा",
+   l2="क्या करें", v2="महीने की कुल UPI रसीद देख लें; ₹1 लाख/माह तक कोई शुल्क नहीं"),
 ]
 
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
