@@ -124,9 +124,10 @@ def render(tag, cfg, grad, bottom):
 # changing copy — the widest line caps FS.
 FS=130   # 2026-08-25: dropped 138->130, "तूर दाल" upper line grazed ring at 455 (>448) at 138
 # 2026-09-25: mandi=साबूदाना/तेज़ (Navratri sago rally, dense pearl flat-lay), fmcg=पिटारा/स्कीम (Pitaara namkeen real photo, 5L container free), news=UPI पर/शुल्क (new UPI merchant fee 15 Oct). 2-line short hooks; verify radial clearance after render. साबूदाना is a wide word -> fs lowered.
-DAY=[dict(i=1,src="subjfull_1.png",lines=["साबूदाना","तेज़"],fs=98),
-     dict(i=2,src="subjfull_2.png",lines=["पिटारा","स्कीम"],fs=118),
-     dict(i=3,src="subjfull_3.png",lines=["UPI पर","शुल्क"],fs=112)]
+# 2026-09-26: mandi=लाल मिर्च/तेज़ (Guntur chilli rally, dense chilli flat-lay), fmcg=निमा साबुन Buy2Get1 (real Nima Sandal photo), news=त्योहार तक/दाम स्थिर (FMCG price hold till Diwali). 2-line short hooks; verify radial clearance after render.
+DAY=[dict(i=1,src="subjfull_1.png",lines=["लाल मिर्च","तेज़"],fs=112),
+     dict(i=2,src="subjfull_2.png",lines=["साबुन 2 पर","1 फ्री"],fs=114),
+     dict(i=3,src="subjfull_3.png",lines=["त्योहार तक","दाम स्थिर"],fs=112)]
 if __name__=="__main__":
     render("D", DAY, TALL, 190)   # bottom raised for FS130 + wide tn bottom line: seats block higher in the circle's wider zone to clear the ring
     # 2026-07-14 crop fix: operator flagged text CROPPING at the ring. Root cause — the
