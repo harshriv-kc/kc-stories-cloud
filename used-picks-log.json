@@ -6148,6 +6148,64 @@
           "label": "Godrej No.1 Consumer LR6.09 — DROPPED: no concrete Rs in body ('4 sabun 1 free')"
         }
       ]
+    },
+    {
+      "date": "2026-09-26",
+      "picks": {
+        "mandi_bhav": [
+          {
+            "news_id": "3146dc7c-b6d7-4c5b-ae5f-ee43f3f827a1",
+            "brand": "rajma-chitra",
+            "direction": "तेजी",
+            "label": "राजमां चित्रा तेजी +₹3–4 → ₹105–107/किलो (थोक ₹11,500/क्विंटल); बीड़-बारसी में माल नहीं, चीन महंगा (in-house दाल 26sep RED, slide1)"
+          },
+          {
+            "news_id": "b8f73e63-8754-4e75-bba3-3ba71afb9e5f",
+            "brand": "lal-mirch",
+            "direction": "तेजी",
+            "label": "लाल मिर्च तेजी ₹28,000/क्विंटल (334 नंबर); गुंटूर आवक आधी, आंध्र तूफान से फसल खतरा, हाल में +₹3,800 (in-house Samachar 26sep RED, slide2)"
+          },
+          {
+            "news_id": "aa444b91-8fb2-43b6-8b0c-613ae0dffd53",
+            "brand": "chironji",
+            "direction": "मंदी",
+            "label": "चिरौंजी मंदी ₹1,440–1,450 → ₹1,330–1,360/किलो; अब और मंदा नहीं, दिसंबर तक तेजी संभव (in-house मेवा 26sep GREEN, slide3)"
+          }
+        ],
+        "fmcg": [
+          {
+            "news_id": "33eb6aee-464e-410a-8985-6e3614f023b7",
+            "brand": "doms",
+            "label": "डोम्स कलर इरेज़र — product_change MRP ₹95→₹100, थोक ₹90, ₹10 मार्जिन (MP fmcg_product_change LR7.12)"
+          },
+          {
+            "news_id": "6e59d33a-ac74-4373-b00a-adaffefaf490",
+            "brand": "dairy-miss",
+            "label": "डेयरी मिस ₹5 मिल्क चॉकलेट बॉक्स पर 6 पीस फ्री (₹30 MRP) — Retailer Scheme (MP LR6.91)"
+          },
+          {
+            "news_id": "64f37a72-c56a-4b78-bf36-fe35b36852a2",
+            "brand": "nima",
+            "label": "निमा सैंडल साबुन 3×100g मल्टीपैक Buy 2 Get 1 Free, MRP ₹120→₹80 — Consumer Scheme (MP LR6.55)"
+          }
+        ],
+        "trending_news": [
+          {
+            "news_id": "ffec59ae-9c7e-4edd-b09b-a34bc948236e",
+            "brand": "fmcg-price-hold",
+            "label": "दाम नहीं बढ़ेंगे — बिस्किट/साबुन/चाय दिवाली तक भाव स्थिर; कंपनियां 2–5% बढ़ा चुकीं, अब लागत खुद उठाएंगी (in-house Trending-1 26sep)"
+          }
+        ]
+      },
+      "also_shown": {
+        "fmcg": [
+          {
+            "news_id": "fbe6677d-0c50-4dd4-9ef6-9d671d4be1ce",
+            "brand": "bikaji",
+            "label": "बीकाजी भुजिया ₹10 पर ₹10 पेटीएम कैशबैक (MP Consumer LR9.77 top) — DROPPED: implausible ~100% cashback gimmick, off-format for a trade-scheme rail"
+          }
+        ]
+      }
     }
   ],
   "brand_dedup_window_days": 7
