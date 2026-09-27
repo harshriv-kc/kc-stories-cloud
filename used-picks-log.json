@@ -6206,6 +6206,56 @@
           }
         ]
       }
+    },
+    {
+      "date": "2026-09-27",
+      "picks": {
+        "mandi_bhav": [
+          {
+            "news_id": "d38740cb-5232-450b-b6da-cc119156e050",
+            "brand": "kabuli-chana",
+            "direction": "तेजी",
+            "label": "काबुली चना तेजी +₹300 → ₹7,400–7,700/क्विंटल (मीडियम); देसी चना महंगा, हल्के काबुली की मांग तेज (in-house Samachar 27sep RED, slide1)"
+          },
+          {
+            "news_id": "ec09a0a9-2161-4563-bf9c-432b1c975d8e",
+            "brand": "shakkar",
+            "direction": "मंदी",
+            "label": "शक्कर मंदी −₹100 → ₹6,000–6,100/क्विंटल; गुड़ भी नरम, नए माल की आवक (in-house daal/shakkar 27sep GREEN, slide2)"
+          },
+          {
+            "news_id": "94556b0c-0c1d-4d67-9242-5e92ab059eb0",
+            "brand": "akhrot",
+            "direction": "मंदी",
+            "label": "अखरोट मंदी ₹620–625 → ₹575–600/किलो; बढ़िया फसल + चीन का सस्ता माल (in-house mewa 27sep GREEN, slide3)"
+          }
+        ],
+        "fmcg": [
+          {
+            "news_id": "6dfe52ba-7d2a-4c6e-95fa-e02c037d07e8",
+            "brand": "tide",
+            "label": "टाइड डबल पावर ₹10 (जैस्मिन-रोज़) — 5+1 फ्री (Retailer Scheme, MP LR9.14, body-verified)"
+          },
+          {
+            "news_id": "75dba469-3319-4124-9b11-bca1f4a66937",
+            "brand": "pulse",
+            "label": "पल्स गोलमोल इमली 550pc जार पर ₹47 पाउच फ्री (Retailer Scheme, MP LR4.86, body-verified)"
+          },
+          {
+            "news_id": "29bac79d-c76a-4f01-a565-c1569d9331e9",
+            "brand": "dettol",
+            "label": "डेटॉल पाउडर हैंडवॉश 12+1 फ्री (Consumer Scheme, MP LR4.64, body-verified)"
+          }
+        ],
+        "trending_news": [
+          {
+            "news_id": "ecc0a301-14e7-461a-8250-4eaf0aec07cc",
+            "brand": "khudra-retail",
+            "label": "खुदरा बिक्री +10% YoY (अगस्त), किराना +12%; नवरात्रि-दिवाली त्योहारी दौर आगे (in-house Trending-1 27sep, non-bait)"
+          }
+        ]
+      },
+      "also_shown": []
     }
   ],
   "brand_dedup_window_days": 7
