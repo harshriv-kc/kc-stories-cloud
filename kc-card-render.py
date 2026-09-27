@@ -72,48 +72,48 @@ def b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-09-26 . experiment window CLOSED -> base 3+3+1)
+# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-09-27 . experiment window CLOSED -> base 3+3+1)
 CARDS = [
- # Commodity (mandi_bhav) - 2 tejii/RED (rajma chitra in-house daal, lal mirch in-house Samachar) + 1 mandi/GREEN (chironji in-house mewa). Oil skipped (25sep was sarson tel) for freshness.
- dict(i=1, label="मंडी भाव", stripe=RED, headline="राजमां चित्रा",
-   price=f'{tri("up",RED)}₹105–107<span class="unit">/किलो</span>',
-   sub=f'राजमां चित्रा +₹3–4 → ₹105–107/किलो (थोक ₹11,500/क्विंटल); बीड़-बारसी लाइन में माल नहीं, चीन महंगा · <b class="delta" style="color:{RED}">₹3–4 बढ़त</b>',
-   l1="क्यों", v1="बीड़-बारसी लाइन में आपूर्ति नहीं; चीन का माल महंगा और वहां बिजाई भी लेट",
-   l2="क्या करें", v2="नवरात्रि-शादी में राजमा की खपत तेज — जरूरत भर का स्टॉक अभी रख लें"),
- dict(i=2, label="मंडी भाव", stripe=RED, headline="लाल मिर्च",
-   price=f'{tri("up",RED)}₹28,000<span class="unit">/क्विंटल</span>',
-   sub=f'334 नंबर लाल मिर्च ₹28,000/क्विंटल; गुंटूर आवक आधी, आंध्र में तूफान से फसल को खतरा · <b class="delta" style="color:{RED}">हाल में ₹3,800 उछाल</b>',
-   l1="क्यों", v1="गुंटूर आवक 50 हजार से घटकर 20–25 हजार बोरी; आंध्र तूफान से खड़ी फसल पर नुकसान का डर",
-   l2="क्या करें", v2="फसल का नुकसान बढ़ा तो भाव और चढ़ेंगे — साबुत व पिसी मिर्च का स्टॉक देख लें"),
- dict(i=3, label="मंडी भाव", stripe=GREEN, headline="चिरौंजी",
-   price=f'{tri("down",GREEN)}₹1,330–1,360<span class="unit">/किलो</span>',
-   sub=f'चिरौंजी ₹1,440–1,450 से घटकर ₹1,330–1,360/किलो; अब और मंदा नहीं, दिसंबर तक तेजी संभव · <b class="delta" style="color:{GREEN}">~₹100 गिरावट</b>',
-   l1="क्यों", v1="ऊंचे भाव पर ग्राहकी कमजोर और नई फसल के इंतजार में स्टॉकिस्ट बिकवाली",
-   l2="क्या करें", v2="भाव तले लग चुके — घबराकर माल न काटें; त्योहारी मांग में खपत बढ़ेगी"),
- # FMCG (fmcg) - TOP by LR desc across ALL segments after ledger dedup (news_id 12d + brand 7d) + body-verify (concrete Rs).
- #   doms LR7.12 (product_change, MRP 95->100 thok 90), dairy-miss LR6.91 (Retailer scheme, Rs5 box +6pc free worth Rs30), nima LR6.55 (Consumer scheme, 3x100g Buy2Get1 MRP120->80).
- #   DROPPED: bikaji-bhujia(9.77 top LR - implausible Rs10 Paytm-cashback-on-Rs10 = ~100pct free gimmick, off-format for a trade-scheme rail). BLOCKED brand7d: pitara/parle-g/santoor/lux/dabur-red/patanjali-dant-kanti/sargam/vim/pears/dairy-day/close-up/godrej-no-1/dham-darshan/colgate/vatika/frooti/tic-tac/5-star/coca-cola/dabur-amla/ghadi/parle-eclairs.
- dict(i=4, eyebrow="FMCG", label="प्रोडक्ट बदलाव", stripe=BLACK, headline="डोम्स कलर इरेज़र",
-   price='₹95<span class="arrow">→</span>₹100<span class="unit">MRP</span>',
-   sub='डोम्स कलर इरेज़र का MRP ₹95 से बढ़कर ₹100; थोक भाव ₹90 — हर पीस पर ₹10 का मार्जिन · <b class="delta">₹10 मार्जिन</b>',
-   l1="बदलाव", v1="MRP ₹95 से बढ़कर ₹100; थोक रेट ₹90 प्रति इरेज़र",
-   l2="फायदा", v2="नए ₹100 रेट पर बेचें — हर इरेज़र पर ₹10 का सीधा मार्जिन"),
- dict(i=5, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="डेयरी मिस चॉकलेट",
-   price=f'<span class="offer" style="background:{SCHEME_GREEN}">बॉक्स पर 6 पीस फ्री</span>',
-   sub='₹5 वाली डेयरी मिस मिल्क चॉकलेट बार के पूरे बॉक्स पर 6 पीस (₹30 MRP) एक्स्ट्रा फ्री · <b class="delta">₹30 का माल फ्री</b>',
-   l1="स्कीम", v1="₹5 चॉकलेट बार के एक बॉक्स पर 6 पीस बिल्कुल मुफ्त",
-   l2="फायदा", v2="₹30 का अतिरिक्त माल हर बॉक्स पर — सीधा मार्जिन बढ़े"),
- dict(i=6, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="निमा सैंडल साबुन",
-   price=f'<span class="offer" style="background:{SCHEME_BLUE}">2 पर 1 साबुन फ्री</span>',
-   sub='निमा सैंडल 100g×3 मल्टीपैक (MRP ₹120) — 2 खरीदने पर 1 साबुन फ्री, यानी ₹80 में 3 साबुन · <b class="delta">₹40 की बचत</b>',
-   l1="ऑफर", v1="300g मल्टीपैक (3×100g) — Buy 2 Get 1 Free",
-   l2="ग्राहक को", v2="₹120 MRP का पैक ₹80 में — एक साबुन फ्री जैसा फायदा"),
- # News (trending_news) - in-house 26sep Trending-1: FMCG companies hold prices till Diwali. Policy/market-impact, non-bait. News=1 base.
- dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="दाम नहीं बढ़ेंगे",
-   price='<span class="news">बिस्किट, साबुन, चाय — दिवाली तक भाव स्थिर</span>',
-   sub='बड़ी FMCG कंपनियां जून तिमाही में 2–5% दाम बढ़ा चुकीं; अब त्योहार तक भाव नहीं बढ़ाएंगी · <b class="delta">लागत लॉक</b>',
-   l1="क्यों ज़रूरी", v1="आज की लागत त्योहार तक चलेगी; बीच में दाम बढ़ने का डर नहीं",
-   l2="क्या करें", v2="तेज बिकने वाला त्योहारी स्टॉक अभी भर लें; वजन-भाव मिलाकर देखें"),
+ # Commodity (mandi_bhav) - 1 teji/RED (kabuli chana in-house Samachar) + 2 mandi/GREEN (shakkar in-house daal/shakkar, akhrot in-house mewa). Oil skipped (over-covered: sarson 25sep). Direction balance 1R+2G.
+ dict(i=1, label="मंडी भाव", stripe=RED, headline="काबुली चना",
+   price=f'{tri("up",RED)}₹7,400–7,700<span class="unit">/क्विंटल</span>',
+   sub=f'काबुली चना (मीडियम) +₹300 → ₹7,400–7,700/क्विंटल; देसी चना महंगा होने से हल्के काबुली की मांग तेज · <b class="delta" style="color:{RED}">₹300 उछाल</b>',
+   l1="क्यों", v1="देसी चना ऊंचे भाव पर बिक रहा; हल्के दाने काबुली की मांग बढ़ी, स्टॉकिस्टों की बिकवाली कमजोर",
+   l2="क्या करें", v2="10–12 रुपये किलो और चढ़ने के आसार — त्योहारी जरूरत का माल अभी तोल लें"),
+ dict(i=2, label="मंडी भाव", stripe=GREEN, headline="शक्कर",
+   price=f'{tri("down",GREEN)}₹6,000–6,100<span class="unit">/क्विंटल</span>',
+   sub=f'शक्कर −₹100 → ₹6,000–6,100/क्विंटल; गुड़ भी ₹100–200 नरम, नए माल की आवक से दबाव · <b class="delta" style="color:{GREEN}">₹100 गिरावट</b>',
+   l1="क्यों", v1="मुजफ्फरनगर में नया गुड़ रोज ~1,000 कट्टे आ रहा; स्टॉक 68,259 कट्टे — पिछले साल से दोगुना",
+   l2="क्या करें", v2="अभी और नरमी की गुंजाइश — त्योहारी मिठास का माल थोड़ा-थोड़ा तोलकर उठाएं"),
+ dict(i=3, label="मंडी भाव", stripe=GREEN, headline="अखरोट",
+   price=f'{tri("down",GREEN)}₹575–600<span class="unit">/किलो</span>',
+   sub=f'अखरोट ₹620–625 से घटकर ₹575–600/किलो; बढ़िया फसल और चीन का सस्ता माल भाव पर दबाव बना रहे · <b class="delta" style="color:{GREEN}">~₹45 गिरावट</b>',
+   l1="क्यों", v1="इस बार फसल बढ़िया, पुराना माल भी बचा; चीन का अखरोट आयात पड़ता ₹265–270/किलो",
+   l2="क्या करें", v2="भारी स्टॉक न बांधें — त्योहारी बिक्री भर का ही माल उठाएं, आगे तेजी की खबर नहीं"),
+ # FMCG (fmcg) - TOP by LR desc across ALL segments after ledger dedup (news_id 12d + brand 7d) + body-verify (concrete Rs). Category spread: detergent/candy/handwash.
+ #   tide LR9.14 (Retailer scheme, Rs10 5+1 free), pulse LR4.86 (Retailer scheme, 550pc jar + Rs47 pouch free), dettol LR4.64 (Consumer scheme, powder handwash 12+1 free).
+ #   DROPPED: bikaji-bhujia LR6.95 (Rs10 Paytm-cashback-on-Rs10 = ~100pct off gimmick, off-format), fanta LR5.37 (vague, no concrete number). BLOCKED brand7d: dabur-red/colgate/ghadi/lux/pitara/parle-g/patanjali-dant-kanti/dairy-miss/dant-kranti/vim/sargam. saras(4.87 detergent) skipped for category spread vs tide.
+ dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="टाइड डबल पावर",
+   price=f'<span class="offer" style="background:{SCHEME_GREEN}">5 पैकेट पर 1 फ्री</span>',
+   sub='₹10 वाला टाइड डबल पावर (जैस्मिन-रोज़) डिटर्जेंट — 5 पैकेट खरीदने पर 1 पैकेट बिल्कुल फ्री · <b class="delta">₹10 का माल फ्री</b>',
+   l1="स्कीम", v1="₹10 MRP डिटर्जेंट पर 5+1 की लाइव कंपनी स्कीम",
+   l2="फायदा", v2="हर 5 पैकेट पर ₹10 का एक पैकेट मुफ्त — सीधा मार्जिन बढ़े"),
+ dict(i=5, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="पल्स गोलमोल इमली",
+   price=f'<span class="offer" style="background:{SCHEME_GREEN}">जार पर ₹47 पाउच फ्री</span>',
+   sub='पल्स गोलमोल इमली गोली के 550 पीस वाले बड़े जार पर ₹47 कीमत का एक बड़ा पाउच बिल्कुल फ्री · <b class="delta">₹47 का माल फ्री</b>',
+   l1="स्कीम", v1="550 पीस जार खरीदने पर ₹47 कीमत का 1 पाउच मुफ्त (जार पर छपी लाइव स्कीम)",
+   l2="फायदा", v2="हर जार पर ₹47 का अतिरिक्त माल — त्योहारी कैंडी की खपत में तेज मुनाफा"),
+ dict(i=6, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="डेटॉल हैंडवॉश",
+   price=f'<span class="offer" style="background:{SCHEME_BLUE}">12 पर 1 फ्री</span>',
+   sub='डेटॉल पाउडर हैंडवॉश — 12 पीस खरीदने पर 1 पीस बिल्कुल फ्री (12+1 ऑफर) · <b class="delta">1 पीस फ्री</b>',
+   l1="ऑफर", v1="डेटॉल पाउडर हैंडवॉश पर 12+1 फ्री की चालू स्कीम",
+   l2="ग्राहक को", v2="12 के साथ 1 पीस मुफ्त — हर दर्जन पर एक फ्री जैसा फायदा"),
+ # News (trending_news) - in-house 27sep Trending-1: retail sales +10% YoY (Aug), kirana leads. Festival tailwind, non-bait, concrete. News=1 base.
+ dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="खुदरा बिक्री तेज़",
+   price='<span class="news">अगस्त में खुदरा बिक्री +10%, किराना +12%</span>',
+   sub='पश्चिम +11%, दक्षिण +10%, उत्तर +9%, पूर्व +8%; नवरात्रि से दिवाली ~29 दिन का त्योहारी दौर आगे · <b class="delta">किराना सबसे आगे</b>',
+   l1="क्यों ज़रूरी", v1="त्योहारी सीजन में कुल कारोबार ₹6 लाख करोड़+ का अनुमान; गांव-कस्बों की हिस्सेदारी ~28%",
+   l2="क्या करें", v2="अभी से तेल, चीनी, मैदा, सूखे मेवे और पूजा का सामान गिनकर भर लें — बाद में महंगा व कम मिलेगा"),
 ]
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
 html,body{{margin:0;padding:0;width:1080px;height:1920px;overflow:hidden;font-family:'Nirmala UI','Segoe UI',sans-serif;}}
