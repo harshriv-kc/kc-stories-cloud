@@ -72,48 +72,48 @@ def b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-09-27 . experiment window CLOSED -> base 3+3+1)
+# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-09-28 . experiment window CLOSED -> base 3+3+1)
 CARDS = [
- # Commodity (mandi_bhav) - 1 teji/RED (kabuli chana in-house Samachar) + 2 mandi/GREEN (shakkar in-house daal/shakkar, akhrot in-house mewa). Oil skipped (over-covered: sarson 25sep). Direction balance 1R+2G.
- dict(i=1, label="मंडी भाव", stripe=RED, headline="काबुली चना",
-   price=f'{tri("up",RED)}₹7,400–7,700<span class="unit">/क्विंटल</span>',
-   sub=f'काबुली चना (मीडियम) +₹300 → ₹7,400–7,700/क्विंटल; देसी चना महंगा होने से हल्के काबुली की मांग तेज · <b class="delta" style="color:{RED}">₹300 उछाल</b>',
-   l1="क्यों", v1="देसी चना ऊंचे भाव पर बिक रहा; हल्के दाने काबुली की मांग बढ़ी, स्टॉकिस्टों की बिकवाली कमजोर",
-   l2="क्या करें", v2="10–12 रुपये किलो और चढ़ने के आसार — त्योहारी जरूरत का माल अभी तोल लें"),
- dict(i=2, label="मंडी भाव", stripe=GREEN, headline="शक्कर",
-   price=f'{tri("down",GREEN)}₹6,000–6,100<span class="unit">/क्विंटल</span>',
-   sub=f'शक्कर −₹100 → ₹6,000–6,100/क्विंटल; गुड़ भी ₹100–200 नरम, नए माल की आवक से दबाव · <b class="delta" style="color:{GREEN}">₹100 गिरावट</b>',
-   l1="क्यों", v1="मुजफ्फरनगर में नया गुड़ रोज ~1,000 कट्टे आ रहा; स्टॉक 68,259 कट्टे — पिछले साल से दोगुना",
-   l2="क्या करें", v2="अभी और नरमी की गुंजाइश — त्योहारी मिठास का माल थोड़ा-थोड़ा तोलकर उठाएं"),
- dict(i=3, label="मंडी भाव", stripe=GREEN, headline="अखरोट",
-   price=f'{tri("down",GREEN)}₹575–600<span class="unit">/किलो</span>',
-   sub=f'अखरोट ₹620–625 से घटकर ₹575–600/किलो; बढ़िया फसल और चीन का सस्ता माल भाव पर दबाव बना रहे · <b class="delta" style="color:{GREEN}">~₹45 गिरावट</b>',
-   l1="क्यों", v1="इस बार फसल बढ़िया, पुराना माल भी बचा; चीन का अखरोट आयात पड़ता ₹265–270/किलो",
-   l2="क्या करें", v2="भारी स्टॉक न बांधें — त्योहारी बिक्री भर का ही माल उठाएं, आगे तेजी की खबर नहीं"),
- # FMCG (fmcg) - TOP by LR desc across ALL segments after ledger dedup (news_id 12d + brand 7d) + body-verify (concrete Rs). Category spread: detergent/candy/handwash.
- #   tide LR9.14 (Retailer scheme, Rs10 5+1 free), pulse LR4.86 (Retailer scheme, 550pc jar + Rs47 pouch free), dettol LR4.64 (Consumer scheme, powder handwash 12+1 free).
- #   DROPPED: bikaji-bhujia LR6.95 (Rs10 Paytm-cashback-on-Rs10 = ~100pct off gimmick, off-format), fanta LR5.37 (vague, no concrete number). BLOCKED brand7d: dabur-red/colgate/ghadi/lux/pitara/parle-g/patanjali-dant-kanti/dairy-miss/dant-kranti/vim/sargam. saras(4.87 detergent) skipped for category spread vs tide.
- dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="टाइड डबल पावर",
-   price=f'<span class="offer" style="background:{SCHEME_GREEN}">5 पैकेट पर 1 फ्री</span>',
-   sub='₹10 वाला टाइड डबल पावर (जैस्मिन-रोज़) डिटर्जेंट — 5 पैकेट खरीदने पर 1 पैकेट बिल्कुल फ्री · <b class="delta">₹10 का माल फ्री</b>',
-   l1="स्कीम", v1="₹10 MRP डिटर्जेंट पर 5+1 की लाइव कंपनी स्कीम",
-   l2="फायदा", v2="हर 5 पैकेट पर ₹10 का एक पैकेट मुफ्त — सीधा मार्जिन बढ़े"),
- dict(i=5, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="पल्स गोलमोल इमली",
-   price=f'<span class="offer" style="background:{SCHEME_GREEN}">जार पर ₹47 पाउच फ्री</span>',
-   sub='पल्स गोलमोल इमली गोली के 550 पीस वाले बड़े जार पर ₹47 कीमत का एक बड़ा पाउच बिल्कुल फ्री · <b class="delta">₹47 का माल फ्री</b>',
-   l1="स्कीम", v1="550 पीस जार खरीदने पर ₹47 कीमत का 1 पाउच मुफ्त (जार पर छपी लाइव स्कीम)",
-   l2="फायदा", v2="हर जार पर ₹47 का अतिरिक्त माल — त्योहारी कैंडी की खपत में तेज मुनाफा"),
- dict(i=6, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="डेटॉल हैंडवॉश",
-   price=f'<span class="offer" style="background:{SCHEME_BLUE}">12 पर 1 फ्री</span>',
-   sub='डेटॉल पाउडर हैंडवॉश — 12 पीस खरीदने पर 1 पीस बिल्कुल फ्री (12+1 ऑफर) · <b class="delta">1 पीस फ्री</b>',
-   l1="ऑफर", v1="डेटॉल पाउडर हैंडवॉश पर 12+1 फ्री की चालू स्कीम",
-   l2="ग्राहक को", v2="12 के साथ 1 पीस मुफ्त — हर दर्जन पर एक फ्री जैसा फायदा"),
- # News (trending_news) - in-house 27sep Trending-1: retail sales +10% YoY (Aug), kirana leads. Festival tailwind, non-bait, concrete. News=1 base.
- dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="खुदरा बिक्री तेज़",
-   price='<span class="news">अगस्त में खुदरा बिक्री +10%, किराना +12%</span>',
-   sub='पश्चिम +11%, दक्षिण +10%, उत्तर +9%, पूर्व +8%; नवरात्रि से दिवाली ~29 दिन का त्योहारी दौर आगे · <b class="delta">किराना सबसे आगे</b>',
-   l1="क्यों ज़रूरी", v1="त्योहारी सीजन में कुल कारोबार ₹6 लाख करोड़+ का अनुमान; गांव-कस्बों की हिस्सेदारी ~28%",
-   l2="क्या करें", v2="अभी से तेल, चीनी, मैदा, सूखे मेवे और पूजा का सामान गिनकर भर लें — बाद में महंगा व कम मिलेगा"),
+ # Commodity (mandi_bhav) - 2 teji/RED (moong in-house daal, jeera MP LR7.14) + 1 mandi/GREEN (badam in-house mewa). Oil skipped (over-covered: sarson 25/27sep). Direction balance 2R+1G.
+ dict(i=1, label="मंडी भाव", stripe=RED, headline="मूंग",
+   price=f'{tri("up",RED)}₹8,200–8,600<span class="unit">/क्विंटल</span>',
+   sub=f'नई मूंग ₹8,200–8,600/क्विंटल — राजस्थान की नई फसल चढ़ी; उड़द भी ₹100 तेज होकर ₹10,100 · <b class="delta" style="color:{RED}">₹500–600 तेजी</b>',
+   l1="क्यों", v1="यूपी-बिहार-बंगाल-एमपी में आवक लगभग खत्म, पाइपलाइन में पुराना माल नहीं; पैकिंग कंपनियों की चौतरफा मांग",
+   l2="क्या करें", v2="नवरात्रि-दिवाली तक मूंग व मूंग दाल की मांग बढ़ेगी — पुराने भाव का माल अभी उठा लें"),
+ dict(i=2, label="मंडी भाव", stripe=GREEN, headline="बादाम",
+   price=f'{tri("down",GREEN)}₹27,500–28,500<span class="unit">/40 किलो</span>',
+   sub=f'कैलिफोर्निया बादाम −₹500–1,000 → ₹27,500–28,500/40 किलो; ऊंचे भाव पर ग्राहकी टूटी, पूरी मेवा लाइन नरम · <b class="delta" style="color:{GREEN}">₹1,000 तक गिरावट</b>',
+   l1="क्यों", v1="भाव चढ़ने पर खरीदार पीछे हटे, उठाव रुका; बादामगिरी भी ₹50–80 सस्ती होकर ₹950–1,020/किलो",
+   l2="क्या करें", v2="दिवाली की मिठाई-मेवा पैकेट का माल घटे भाव पर अभी भरें — मेवा जल्दी खराब नहीं होता"),
+ dict(i=3, label="मंडी भाव", stripe=RED, headline="जीरा",
+   price=f'{tri("up",RED)}₹300<span class="unit">/किलो</span>',
+   sub=f'जीरा ₹270 से चढ़कर ₹300/किलो; अच्छी मांग को देखते हुए आगे भी तेजी के आसार · <b class="delta" style="color:{RED}">₹30 तेजी</b>',
+   l1="क्यों", v1="त्योहारी सीजन में मसालों की मांग तेज; होलसेल-डिस्ट्रीब्यूटर स्तर पर भाव लगातार ऊपर",
+   l2="क्या करें", v2="जीरे का त्योहारी जरूरत भर का माल अभी तोल लें — आगे और महंगा पड़ सकता है"),
+ # FMCG (fmcg) - TOP by LR desc across ALL segments after ledger dedup (news_id 12d + brand 7d) + body-verify (concrete Rs). Category spread: candy/oral-care/soap.
+ #   hajmola LR6.92 (Retailer scheme, dabba+10 pouch free), colgate LR5.29 (Retailer scheme, Rs10 12+1, buy Rs100/MRP Rs130), margo LR4.18 (Consumer scheme, 100g 4+1 free).
+ #   DROPPED: colgate-100g LR5.81 (vague 'free dental checkup', no goods number), dabur-lal-manjan LR4.97 (report seg=packaging-change but body=12+2 scheme -> segment<>body mismatch + 2nd oral-care). BLOCKED brand7d: tide/lux/pulse/pitara/dettol/ghadi/sargam/patanjali/parle-g/dairy-miss/dabur-red.
+ dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="हाजमोला",
+   price=f'<span class="offer" style="background:{SCHEME_GREEN}">डब्बे पर 10 पाउच फ्री</span>',
+   sub='हाजमोला रेगुलर के बड़े डब्बे के साथ ₹10 कीमत के 10 पाउच (10N सैशे) बिल्कुल फ्री · <b class="delta">₹10 का माल फ्री</b>',
+   l1="स्कीम", v1="हर डब्बे पर 10N रेगुलर सैशे फ्री की लाइव कंपनी स्कीम",
+   l2="फायदा", v2="हर डब्बे पर ₹10 का अतिरिक्त माल — त्योहारी चटपटी मांग में सीधा मुनाफा"),
+ dict(i=5, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="कोलगेट ₹10",
+   price=f'<span class="offer" style="background:{SCHEME_GREEN}">12 पर 1 फ्री</span>',
+   sub='₹10 वाला कोलगेट टूथपेस्ट — 12 पीस खरीदने पर 1 पीस फ्री; खरीद ₹100, MRP ₹130 बनते हैं · <b class="delta">~₹30 का फायदा</b>',
+   l1="स्कीम", v1="₹10 MRP पेस्ट पर 12+1 की चालू स्कीम — खरीद ₹100, MRP ₹130",
+   l2="फायदा", v2="हर 12 पर 1 पीस मुफ्त — पूरे पैक पर ~₹30 का सीधा मार्जिन"),
+ dict(i=6, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="मार्गो साबुन",
+   price=f'<span class="offer" style="background:{SCHEME_BLUE}">4 पर 1 फ्री</span>',
+   sub='100g बाला मार्गो नीम साबुन — 4 पीस खरीदने पर 1 पीस बिल्कुल फ्री (4+1 ऑफर) · <b class="delta">1 साबुन फ्री</b>',
+   l1="ऑफर", v1="100g मार्गो नीम साबुन पर 4+1 फ्री की ग्राहक स्कीम",
+   l2="ग्राहक को", v2="4 के साथ 1 साबुन मुफ्त — ग्राहक को हर सेट पर सीधी बचत"),
+ # News (trending_news) - in-house 28sep Trending-1: 3-day bank strike (28-30 Sep), ATM/UPI running. Timely, non-bait, actionable. News=1 base.
+ dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="बैंक 3 दिन बंद",
+   price='<span class="news">28–30 सितंबर बैंक हड़ताल</span>',
+   sub='करीब 8 लाख बैंककर्मी हड़ताल पर; सरकारी-ग्रामीण बैंक शाखाएं ठप, निजी बैंक खुले रहेंगे · <b class="delta">नकद-चेक अटकेंगे</b>',
+   l1="क्यों ज़रूरी", v1="नकद जमा-निकासी, चेक क्लियरिंग व कर्ज के कागज तीन दिन अटकेंगे",
+   l2="क्या करें", v2="आज ही चेक-नकदी का इंतजाम करें; ATM-UPI चलते रहेंगे"),
 ]
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
 html,body{{margin:0;padding:0;width:1080px;height:1920px;overflow:hidden;font-family:'Nirmala UI','Segoe UI',sans-serif;}}
