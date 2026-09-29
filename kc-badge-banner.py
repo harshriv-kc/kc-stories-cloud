@@ -124,10 +124,10 @@ def render(tag, cfg, grad, bottom):
 # changing copy — the widest line caps FS.
 FS=130   # 2026-08-25: dropped 138->130, "तूर दाल" upper line grazed ring at 455 (>448) at 138
 # 2026-09-25: mandi=साबूदाना/तेज़ (Navratri sago rally, dense pearl flat-lay), fmcg=पिटारा/स्कीम (Pitaara namkeen real photo, 5L container free), news=UPI पर/शुल्क (new UPI merchant fee 15 Oct). 2-line short hooks; verify radial clearance after render. साबूदाना is a wide word -> fs lowered.
-# 2026-09-28: mandi=मूंग/तेज़ (moong new-crop rally, dense green-gram flat-lay), fmcg=10 पाउच/फ्री (Hajmola Regular dabba+10 sachet free, REAL D2R retailer jar photo), news=बैंक 3 दिन/बंद (3-day bank strike 28-30 Sep, currency+passbook flat-lay). 2-line short hooks; verify radial clearance after render.
-DAY=[dict(i=1,src="subjfull_1.png",lines=["मूंग","तेज़"],fs=150),
-     dict(i=2,src="subjfull_2.png",lines=["10 पाउच","फ्री"],fs=124),
-     dict(i=3,src="subjfull_3.png",lines=["बैंक 3 दिन","बंद"],fs=112)]
+# 2026-09-29: mandi=देसी चना/तेज़ (desi chana +Rs300 rally, dense chana flat-lay), fmcg=3 पर 1/फ्री (Gillette Presto 3+1 scheme, real razor packs), news=MSME दर्जा/मुफ्त (Kirana MSME status + free Udyam registration, certificate flat-lay). Wide word on the upper (wider) line; verify radial clearance after render.
+DAY=[dict(i=1,src="subjfull_1.png",lines=["देसी चना","तेज़"],fs=118),
+     dict(i=2,src="subjfull_2.png",lines=["3 पर 1","फ्री"],fs=150),
+     dict(i=3,src="subjfull_3.png",lines=["MSME दर्जा","मुफ्त"],fs=120)]
 if __name__=="__main__":
     render("D", DAY, TALL, 190)   # bottom raised for FS130 + wide tn bottom line: seats block higher in the circle's wider zone to clear the ring
     # 2026-07-14 crop fix: operator flagged text CROPPING at the ring. Root cause — the
