@@ -6316,6 +6316,66 @@
    ],
    "pn_campaign_id": "16kin4c",
    "notes": "base 3+3+1. Commodity 2R(moong,jeera)+1G(badam). FMCG top-3 distinct-brand by LR after news_id-12d + brand-7d dedup + body-verify; category spread candy/oral-care/soap. News=in-house 3-day bank strike (timely, non-bait). Oil skipped (over-covered sarson 25/27sep). Blocked brands7d: tide/lux/pulse/pitara/dettol/ghadi/sargam/patanjali/parle-g/dairy-miss/dabur-red."
+  },
+  {
+   "date": "2026-09-29",
+   "picks": {
+    "mandi_bhav": [
+     {
+      "news_id": "e6691940-b8aa-497e-bf24-0a187b5b4301",
+      "brand": "desi-chana",
+      "label": "देसी चना तेजी +₹300 → लॉरेंस रोड दिल्ली ₹7,050/क्विंटल (in-house daal)"
+     },
+     {
+      "news_id": "a3b749cb-8a24-4e79-a30f-648b52f535c5",
+      "brand": "soya-tel",
+      "label": "सोया तेल मंदी −₹200 → ~₹15,000/क्विंटल, आयात शुल्क 27% (in-house oil)"
+     },
+     {
+      "news_id": "b5bf5bae-38e8-4e5c-a9f3-8ab0de50aef1",
+      "brand": "suji",
+      "label": "सूजी तेजी ₹48→₹50/किलो, बिक्री ₹55, ₹5 मार्जिन (MP teji_mandi LR6.38)"
+     }
+    ],
+    "fmcg": [
+     {
+      "news_id": "c3b6f6a5-b875-4355-b6b6-6b65c8522220",
+      "brand": "gillette",
+      "label": "Gillette Presto razor MRP ₹25 3+1 free (Retailer Scheme LR6.54)"
+     },
+     {
+      "news_id": "685f96f3-61fc-47ad-9412-aac9ec16ea57",
+      "brand": "good-knight",
+      "label": "Good Knight Maha Jumbo coil MRP ₹45→₹47 (fmcg_product_change LR5.71)"
+     },
+     {
+      "news_id": "13c64cd1-a849-4d69-af48-4e80965e2ad4",
+      "brand": "alpenliebe",
+      "label": "Alpenliebe Creamfills 650pc jar ₹570 + ₹60 free (Retailer Scheme LR4.56)"
+     }
+    ],
+    "trending_news": [
+     {
+      "news_id": "97072baa-3e87-43f9-98e4-42a391640225",
+      "brand": "msme-udyam",
+      "label": "किराना को MSME दर्जा, मुफ्त उद्यम पंजीकरण + 43B(h) 45-दिन भुगतान (in-house Pan India Schemes)"
+     }
+    ]
+   },
+   "also_shown": [
+    {
+     "news_id": "535332a6-e98a-4131-99d0-c69fa4ec34d0",
+     "brand": "dyana",
+     "label": "Dyana beauty soap 4+1 Consumer LR5.92 — DROPPED: no concrete ₹ in body"
+    },
+    {
+     "news_id": "07b904b7-981f-4bcb-8c8a-5c68f54e1ddd",
+     "brand": "priyagold",
+     "label": "Priyagold Tom Tom Retailer LR5.45 — DROPPED: no body row / unverifiable"
+    }
+   ],
+   "pn_campaign_id": "104pgs1",
+   "notes": "base 3+3+1. Commodity 2R(desi-chana,suji)+1G(soya-tel). FMCG top-3 by LR after 7d brand-dedup blocked hajmola/nima/colgate/patanjali/lux; category spread razor/home-care/candy. News=in-house MSME scheme. PN 104pgs1 @16:30 IST HTTP200."
   }
  ],
  "brand_dedup_window_days": 7
