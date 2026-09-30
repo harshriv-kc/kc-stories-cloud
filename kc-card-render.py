@@ -72,48 +72,48 @@ def b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-09-29 . experiment window CLOSED -> base 3+3+1)
+# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-09-30 . experiment window CLOSED -> base 3+3+1)
 CARDS = [
- # Commodity (mandi_bhav) - 2 teji/RED (desi chana in-house daal, sooji MP LR6.38) + 1 mandi/GREEN (soya tel in-house oil, import-duty cut). Direction balance 2R+1G. Mewa skipped (badam covered 28sep).
- dict(i=1, label="मंडी भाव", stripe=RED, headline="देसी चना",
-   price=f'{tri("up",RED)}₹7,050<span class="unit">/क्विंटल</span>',
-   sub=f'देसी चना +₹300 → लॉरेंस रोड दिल्ली ₹7,050/क्विंटल; माल की तंगी से आगे ₹7,500 तक की संभावना · <b class="delta" style="color:{RED}">₹300 तेजी</b>',
-   l1="क्यों", v1="ऑस्ट्रेलिया के अगाऊ सौदे बंद, हाजिर में माल की कमी; नए माल का दबाव अभी किसी मंडी में नहीं",
-   l2="क्या करें", v2="चना दाल-बेसन की त्योहारी मांग से पहले जरूरत भर का माल अभी उठा लें"),
- dict(i=2, label="मंडी भाव", stripe=GREEN, headline="सोया तेल",
-   price=f'{tri("down",GREEN)}₹15,000<span class="unit">/क्विंटल</span>',
-   sub=f'सोया तेल −₹200 → ~₹15,000/क्विंटल; आयात शुल्क घटकर 27% होने से मांग ढीली, कांदला ₹13,950 · <b class="delta" style="color:{GREEN}">₹200 गिरावट</b>',
-   l1="क्यों", v1="रिफाइंड सोया तेल पर आयात शुल्क 5% घटकर 27%; एमपी मंडियों में भाव ₹14,200–14,250",
-   l2="क्या करें", v2="सस्ता सोया तेल ग्राहक को खींचेगा — त्योहारी बिक्री का चालू स्टॉक अभी भर लें"),
- dict(i=3, label="मंडी भाव", stripe=RED, headline="सूजी",
-   price=f'{tri("up",RED)}₹50<span class="unit">/किलो</span>',
-   sub=f'सूजी खरीद ₹48 से ₹50/किलो (+₹2); दुकान बिक्री ₹55/किलो, ₹5/किलो का मार्जिन · <b class="delta" style="color:{RED}">₹2 तेजी</b>',
-   l1="क्यों", v1="त्योहारी सीजन शुरू होते ही सूजी की मांग बढ़ी, भाव ऊपर की ओर",
-   l2="क्या करें", v2="नवरात्रि हलवा-शीरा की मांग में ₹5/किलो मार्जिन — जरूरत भर स्टॉक रखें"),
- # FMCG (fmcg) - TOP by LR desc across ALL segments after ledger dedup (news_id 12d + brand 7d) + body-verify (concrete Rs). Category spread: razor/home-care/candy.
- #   gillette LR6.54 (Retailer scheme, MRP Rs25 3+1 free), good-knight LR5.71 (fmcg_product_change, MRP Rs45->Rs47), alpenliebe LR4.56 (Retailer scheme, 650pc jar Rs570 + Rs60 free).
- #   DROPPED (also_shown): dyana-soap LR5.92 (4+1 but NO concrete Rs in body), priyagold-tomtom LR5.45 (no body row -> unverifiable). BLOCKED brand7d: hajmola/nima/colgate/patanjali/lux.
- dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="जिलेट प्रेस्टो",
-   price=f'<span class="offer" style="background:{SCHEME_GREEN}">3 पर 1 फ्री</span>',
-   sub='जिलेट प्रेस्टो रेजर MRP ₹25 — 3 पीस एक साथ खरीदने पर 1 पीस पैकेट के साथ फ्री · <b class="delta">₹25 का माल फ्री</b>',
-   l1="स्कीम", v1="₹25 MRP रेजर पर 3+1 की चालू व्यापारी स्कीम",
-   l2="फायदा", v2="हर 3 पर 1 रेजर मुफ्त — पूरे पैक पर ₹25 का सीधा फायदा"),
- dict(i=5, eyebrow="FMCG", label="प्रोडक्ट बदलाव", stripe=BLACK, headline="गुड नाइट कॉइल",
-   price='₹45<span class="arrow">→</span>₹47',
-   sub='गुड नाइट महा जंबो कॉइल का MRP ₹45 से बढ़कर ₹47 हुआ (+₹2); नया पैक इसी नए दाम पर आएगा · <b class="delta">MRP +₹2</b>',
-   l1="बदलाव", v1="पुराने पैक का MRP ₹45, नए पैक का MRP ₹47 — ₹2 की बढ़ोतरी",
-   l2="फायदा", v2="पुराने स्टॉक पर पुराना ₹45 MRP बेच लें; नया माल ₹47 पर बिकेगा"),
- dict(i=6, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="अल्पेनलीब",
-   price=f'<span class="offer" style="background:{SCHEME_GREEN}">जार पर ₹60 फ्री</span>',
-   sub='अल्पेनलीब क्रीमफिल्स 650 पीस जार खरीद ₹570; साथ में ₹60 कीमत के 12 पीस अतिरिक्त फ्री · <b class="delta">₹60 का माल फ्री</b>',
-   l1="स्कीम", v1="650 पीस जार ₹570 में; हर जार पर 12 पीस (₹60) फ्री",
-   l2="फायदा", v2="हर जार पर ₹60 का अतिरिक्त माल — त्योहारी टॉफी मांग में सीधा मुनाफा"),
- # News (trending_news) - in-house 29sep Pan India Schemes: Kirana ko MSME darja, free Udyam registration + 43B(h) 45-day payment protection. Actionable, non-bait, scheme category. News=1 base.
- dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="किराना को MSME दर्जा",
-   price='<span class="news">मुफ्त उद्यम पंजीकरण शुरू</span>',
-   sub='खुदरा-थोक व्यापार अब MSME में शामिल — उद्यम पोर्टल पर आधार से मुफ्त ऑनलाइन रजिस्ट्रेशन · <b class="delta">₹0 फीस</b>',
-   l1="क्यों ज़रूरी", v1="प्राथमिकता क्षेत्र में बैंक कर्ज आसान; धारा 43B(h) से खरीदार को भुगतान 45 दिन में जरूरी",
-   l2="क्या करें", v2="आधार + दुकान का PAN लेकर उद्यम पोर्टल पर आज ही मुफ्त पंजीकरण कराएं"),
+ # Commodity (mandi_bhav) - 2 teji/RED (sarson tel in-house oil headline, desi ghee Samachar lead) + 1 mandi/GREEN (moong in-house daal). Direction balance 2R+1G. 3 distinct in-house posts. jeera skipped (used 28sep, 3d window). rujhan digest skipped.
+ dict(i=1, label="मंडी भाव", stripe=RED, headline="सरसों तेल",
+   price=f'{tri("up",RED)}₹16,950<span class="unit">/क्विंटल</span>',
+   sub=f'सरसों तेल एक्सपेलर +₹150 → ₹16,950/क्विंटल; मिलों की खरीद तेज, स्टॉकिस्टों ने माल रोका, जयपुर सरसों ₹8,650 · <b class="delta" style="color:{RED}">₹150 तेजी</b>',
+   l1="क्यों", v1="मंडी आवक ~2 लाख बोरी फिर भी मिल खरीद तेज; दिवाली से पहले भरपाई और महंगी पड़ेगी",
+   l2="क्या करें", v2="त्योहारी खपत से पहले जरूरत भर सरसों तेल अभी उठा लें; सस्ते सोया की ओर ग्राहक झुक सकते हैं"),
+ dict(i=2, label="मंडी भाव", stripe=GREEN, headline="मूंग",
+   price=f'{tri("down",GREEN)}₹8,600<span class="unit">/क्विंटल</span>',
+   sub=f'मूंग −₹100 → ₹8,600/क्विंटल; दाल मिलों की खरीद कमजोर पड़ी, भाव नरम · <b class="delta" style="color:{GREEN}">₹100 गिरावट</b>',
+   l1="क्यों", v1="दाल मिलों की मांग सुस्त; अरहर-उड़द में तेजी के बीच मूंग पिछड़ा",
+   l2="क्या करें", v2="मूंग में जल्दबाजी नहीं; भाव और नरम होने पर सस्ती दाल का स्टॉक भरें"),
+ dict(i=3, label="मंडी भाव", stripe=RED, headline="देसी घी",
+   price=f'{tri("up",RED)}₹10,500<span class="unit">/टिन</span>',
+   sub=f'प्रीमियम देसी घी +₹300/टिन → ₹9,900–10,500; दूध पाउडर +₹20 → ₹340–353/किलो, दिवाली तक और तेजी के आसार · <b class="delta" style="color:{RED}">₹300 तेजी</b>',
+   l1="क्यों", v1="लिक्विड दूध की कमी, प्लांट स्टॉक खाली, मिलावट पर सरकारी सख्ती; त्योहारी मांग तेज",
+   l2="क्या करें", v2="दिवाली तक ₹30–50/किलो और तेजी संभव — देसी घी का चालू स्टॉक अभी भर लें"),
+ # FMCG (fmcg) - TOP by LR desc across segments after ledger dedup (news_id 12d + brand 7d) + body-verify (concrete Rs). Category spread: hair-oil/noodles/oral-care.
+ #   dabur-amla LR6.11 (fmcg_product_change, MRP Rs69->Rs60, 170ml same wt), priyagold-tomtom LR6.07 (Retailer scheme, 96pc peti -> Rs125 Hunk choc box free), patanjali-dant-kanti LR4.36 (Consumer scheme, 200g paste + brush free).
+ #   DROPPED (also_shown): maggi LR7.50 (win-gold lucky-draw gimmick, no concrete offer). BLOCKED brand7d: colgate/alpenliebe/gillette/hajmola/nima/close-up/pitara etc.
+ dict(i=4, eyebrow="FMCG", label="प्रोडक्ट बदलाव", stripe=BLACK, headline="डाबर आंवला केश तेल",
+   price='₹69<span class="arrow">→</span>₹60',
+   sub='डाबर सरसों आंवला केश तेल (170ml) का MRP ₹69 से घटकर ₹60 हुआ; वजन में कोई बदलाव नहीं · <b class="delta">MRP −₹9</b>',
+   l1="बदलाव", v1="170ml पैक का MRP ₹69 से ₹60 — कंपनी ने ₹9 घटाया, वजन वही",
+   l2="फायदा", v2="पुराना स्टॉक पुराने ₹69 MRP पर बेच लें; नया माल ₹60 MRP पर आएगा"),
+ dict(i=5, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="टॉम टॉम नूडल्स",
+   price=f'<span class="offer" style="background:{SCHEME_GREEN}">पेटी पर ₹125 फ्री</span>',
+   sub='प्रियागोल्ड टॉम टॉम नूडल्स 96 पीस पेटी पर ₹125 का हंक चॉकलेट बॉक्स (25 पीस) फ्री · <b class="delta">₹125 का माल फ्री</b>',
+   l1="स्कीम", v1="96 पीस टॉम टॉम नूडल्स की पेटी पर 25 पीस हंक चॉकलेट बॉक्स फ्री",
+   l2="फायदा", v2="हर पेटी पर ₹125 का चॉकलेट माल मुफ्त — त्योहारी बिक्री में सीधा मुनाफा"),
+ dict(i=6, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="पतंजलि दंत कांति",
+   price=f'<span class="offer" style="background:{SCHEME_BLUE}">पेस्ट पर ब्रश फ्री</span>',
+   sub='पतंजलि दंत कांति पेस्ट 200g के पैक के साथ एक टूथब्रश फ्री — ग्राहक को हर पैक पर अतिरिक्त ब्रश · <b class="delta">ब्रश फ्री</b>',
+   l1="ऑफर", v1="पतंजलि दंत कांति 200g पेस्ट के साथ एक टूथब्रश मुफ्त",
+   l2="ग्राहक को", v2="हर पैक पर मुफ्त ब्रश दिखाकर ग्राहक को बिक्री बढ़ाएं"),
+ # News (trending_news) - in-house 30sep Pan India Schemes: PM Janaushadhi Kendra - 20% margin + up to Rs5L incentive. Actionable, non-bait, scheme/policy category. News=1 base. (News-1 nakli-maal fraud bait skipped; News-2 shop-tips no-number skipped.)
+ dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="जनऔषधि केंद्र",
+   price='<span class="news">20% मार्जिन + ₹5 लाख तक</span>',
+   sub='प्रधानमंत्री जनऔषधि केंद्र पर हर दवा पर 20% मार्जिन और ₹5 लाख तक प्रोत्साहन (मासिक खरीद का 15%, अधिकतम ₹15,000/माह) · <b class="delta">₹5 लाख तक</b>',
+   l1="क्यों ज़रूरी", v1="किराना के साथ दूसरी कमाई; गांव-कस्बे में सस्ती दवा की मांग हमेशा बनी रहती है",
+   l2="क्या करें", v2="janaushadhi.gov.in पर आधार, दुकान का PAN व फार्मासिस्ट प्रमाण से आवेदन करें"),
 ]
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
 html,body{{margin:0;padding:0;width:1080px;height:1920px;overflow:hidden;font-family:'Nirmala UI','Segoe UI',sans-serif;}}
