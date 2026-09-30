@@ -6376,6 +6376,61 @@
    ],
    "pn_campaign_id": "104pgs1",
    "notes": "base 3+3+1. Commodity 2R(desi-chana,suji)+1G(soya-tel). FMCG top-3 by LR after 7d brand-dedup blocked hajmola/nima/colgate/patanjali/lux; category spread razor/home-care/candy. News=in-house MSME scheme. PN 104pgs1 @16:30 IST HTTP200."
+  },
+  {
+   "date": "2026-09-30",
+   "picks": {
+    "mandi_bhav": [
+     {
+      "news_id": "81bf98e0-5c1b-4df1-bd17-150f98ee3d6f",
+      "brand": "sarson-tel",
+      "label": "सरसों तेल तेजी +₹150 → ₹16,950/क्विंटल, मिल खरीद तेज (in-house oil)"
+     },
+     {
+      "news_id": "aa21a4cb-ebfa-40d4-9a02-e0375b645d24",
+      "brand": "moong",
+      "label": "मूंग मंदी −₹100 → ₹8,600/क्विंटल, मिल खरीद कमजोर (in-house daal, GREEN balance)"
+     },
+     {
+      "news_id": "e413543c-ad0f-4642-9980-7426c1d7fb10",
+      "brand": "desi-ghee",
+      "label": "देसी घी तेजी +₹300/टिन → ₹9,900–10,500, दिवाली मांग (in-house Samachar lead)"
+     }
+    ],
+    "fmcg": [
+     {
+      "news_id": "3d3667b8-199e-495d-b751-8bc8360a2ca6",
+      "brand": "dabur-amla",
+      "label": "डाबर सरसों आंवला केश तेल MRP ₹69→₹60 (170ml same wt) — fmcg_product_change LR6.11"
+     },
+     {
+      "news_id": "476f0015-bca5-4075-a1a6-482827ce9d43",
+      "brand": "priyagold-tomtom",
+      "label": "टॉम टॉम नूडल्स 96pc पेटी → ₹125 हंक चॉकलेट बॉक्स फ्री — Retailer Scheme LR6.07"
+     },
+     {
+      "news_id": "9aedba26-2a78-4948-bc2f-6418312eefba",
+      "brand": "patanjali-dant-kanti",
+      "label": "पतंजलि दंत कांति पेस्ट 200g + ब्रश फ्री — Consumer Scheme LR4.36"
+     }
+    ],
+    "trending_news": [
+     {
+      "news_id": "62762157-305a-47f5-aae0-ba6623496e1d",
+      "brand": "janaushadhi",
+      "label": "जनऔषधि केंद्र 20% मार्जिन + ₹5 लाख तक प्रोत्साहन (in-house Pan India Schemes, non-bait policy)"
+     }
+    ]
+   },
+   "also_shown": [
+    {
+     "news_id": "f8ad8372-7fc3-4422-a738-63e0cb9c240f",
+     "brand": "maggi",
+     "label": "Maggi ₹10 win-gold contest Consumer LR7.50 — DROPPED: lucky-draw gimmick, no concrete offer/₹"
+    }
+   ],
+   "pn_campaign_id": "349j1bh",
+   "notes": "base 3+3+1. Commodity 2R(sarson-tel,desi-ghee)+1G(moong), 3 distinct in-house posts; jeera skipped (used 28sep, 3d window); rujhan digest skipped. FMCG top-3 by LR after 7d brand-dedup + body-verify; category spread hair-oil/noodles/oral-care. Dropped Maggi LR7.50 gimmick. patanjali cleared (last d-8); tom-tom product-line clear (last published never in 7d, only 29sep also_shown/dropped as 'priyagold'). News=in-house Janaushadhi scheme. PN 349j1bh @16:30 IST HTTP200. Slack #inhouse-content posted (KC Bot). 12b Hritik/Harsh DM skipped per spec 12c (retired)."
   }
  ],
  "brand_dedup_window_days": 7
