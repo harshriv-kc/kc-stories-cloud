@@ -125,10 +125,10 @@ def render(tag, cfg, grad, bottom):
 FS=130   # 2026-08-25: dropped 138->130, "तूर दाल" upper line grazed ring at 455 (>448) at 138
 # 2026-09-25: mandi=साबूदाना/तेज़ (Navratri sago rally, dense pearl flat-lay), fmcg=पिटारा/स्कीम (Pitaara namkeen real photo, 5L container free), news=UPI पर/शुल्क (new UPI merchant fee 15 Oct). 2-line short hooks; verify radial clearance after render. साबूदाना is a wide word -> fs lowered.
 # 2026-09-29: mandi=देसी चना/तेज़ (desi chana +Rs300 rally, dense chana flat-lay), fmcg=3 पर 1/फ्री (Gillette Presto 3+1 scheme, real razor packs), news=MSME दर्जा/मुफ्त (Kirana MSME status + free Udyam registration, certificate flat-lay). Wide word on the upper (wider) line; verify radial clearance after render.
-# 2026-09-30: mandi=देसी घी/तेज़ (desi ghee +Rs300/tin Diwali rally, ghee flat-lay), fmcg=₹125 गिफ्ट/फ्री (Tom Tom 96pc peti -> Rs125 Hunk choc box free, real carton photo), news=दवा दुकान/₹5 लाख (PM Janaushadhi Kendra 20% margin + up to Rs5L). Short 2-line hooks, wider element on the UPPER line; verify radial clearance <=~448 after render.
-DAY=[dict(i=1,src="subjfull_1.png",lines=["देसी घी","तेज़"],fs=128),
-     dict(i=2,src="subjfull_2.png",lines=["₹125 गिफ्ट","फ्री"],fs=126),
-     dict(i=3,src="subjfull_3.png",lines=["दवा दुकान","₹5 लाख"],fs=120)]
+# 2026-10-01: mandi=अरहर/तेज़ (arhar/toor 3rd-day rally Rs9,150/qtl, dense toor-dal flat-lay), fmcg=घड़ी/1kg फ्री (Ghadi 500g bori -> 1kg free, real Ghadi pack photo), news=12.6% कम/बारिश (monsoon departed 12.6% below normal, cracked-earth flat-lay). Short 2-line hooks, wider element on the UPPER line; verify radial clearance <=~448 after render.
+DAY=[dict(i=1,src="subjfull_1.png",lines=["अरहर","तेज़"],fs=118),
+     dict(i=2,src="subjfull_2.png",lines=["घड़ी","1kg फ्री"],fs=120),
+     dict(i=3,src="subjfull_3.png",lines=["12.6% कम","बारिश"],fs=116)]
 if __name__=="__main__":
     render("D", DAY, TALL, 190)   # bottom raised for FS130 + wide tn bottom line: seats block higher in the circle's wider zone to clear the ring
     # 2026-07-14 crop fix: operator flagged text CROPPING at the ring. Root cause — the
