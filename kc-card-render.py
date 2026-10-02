@@ -72,48 +72,48 @@ def b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-10-01 . experiment window CLOSED -> base 3+3+1)
+# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-10-02 . experiment window CLOSED -> base 3+3+1)
 CARDS = [
- # Commodity (mandi_bhav) - 2 teji/RED (arhar in-house daal, badi-elaichi in-house masala) + 1 mandi/GREEN (soyabean in-house oil post). Direction balance 2R+1G. 3 distinct in-house posts. sarson-tel skipped (used 30sep teji, 3d soft window). Samachar + rujhan digests skipped.
- dict(i=1, label="मंडी भाव", stripe=RED, headline="अरहर",
-   price=f'{tri("up",RED)}₹9,150<span class="unit">/क्विंटल</span>',
-   sub=f'तुवर ₹9,100 → ₹9,150/क्विंटल; चेन्नई लेमन तुवर ₹91/किलो (+₹1), लगातार तीसरे दिन तेजी, मिलों की पकड़ मजबूत · <b class="delta" style="color:{RED}">₹50 तेजी</b>',
-   l1="क्यों", v1="दाल मिलों की खरीद जोर पर, चेन्नई में माल कम उतर रहा; ब्राजील आयात अक्टूबर-नवंबर से शुरू होने की उम्मीद",
-   l2="क्या करें", v2="एक-दो हफ्ते की जरूरत का अरहर अभी उठा लें; लंबा स्टॉक भरने से पहले ब्राजील आवक का असर देखें"),
- dict(i=2, label="मंडी भाव", stripe=RED, headline="बड़ी इलायची",
-   price=f'{tri("up",RED)}₹1,470<span class="unit">/किलो</span>',
-   sub=f'बड़ी इलायची +₹30–50 → ₹1,430–1,470/किलो; ग्राहकी बढ़ी, स्टॉकिस्ट बिकवाली घटी। जीरा भी +₹200 → ₹23,200–23,400/क्विंटल · <b class="delta" style="color:{RED}">₹50 तेजी</b>',
-   l1="क्यों", v1="त्योहारी मांग तेज, बिकवाली घटी; कई दिनों की सबसे साफ तेजी बड़ी इलायची में",
-   l2="क्या करें", v2="त्योहारी बिक्री का बड़ी इलायची व जीरा का माल समय रहते उठा लें; छोटी इलायची-लौंग में जल्दबाजी नहीं"),
- dict(i=3, label="मंडी भाव", stripe=GREEN, headline="सोयाबीन",
-   price=f'{tri("down",GREEN)}₹6,050<span class="unit">/क्विंटल</span>',
-   sub=f'जलगांव सोयाबीन −₹100 → ₹6,050/क्विंटल; उठाव कमजोर, सोया खेमे में दबाव। बिनौला तेल भी −₹50 → ₹14,800/क्विंटल · <b class="delta" style="color:{GREEN}">₹100 गिरावट</b>',
-   l1="क्यों", v1="मांग सुस्त और उठाव कमजोर; सरसों तेल तेज रहने के बीच सोया दबाव में",
-   l2="क्या करें", v2="सोयाबीन में जल्दबाजी नहीं; भाव और नरम होने पर सस्ते सोया माल का स्टॉक भरें"),
- # FMCG (fmcg) - TOP by LR desc across segments after ledger dedup (news_id 12d + brand 7d) + body-verify (concrete). Category spread: detergent/confectionery/dishwash.
- #   ghadi LR6.45 (Retailer scheme, 500g bori -> 1kg free), my-fruit-jelly LR6.23 (Retailer scheme, 900pc jar Rs680 -> 100pc free ~Rs320 profit), vim LR5.85 (Consumer scheme, 4+2 free MRP Rs40).
- #   DROPPED (also_shown): krackjack LR8.26 (11+1 but NO Rs/weight -> fails body-verify no-number). BLOCKED brand7d: colgate/santoor/gillette/margo/hajmola/alpenliebe/dabur-lal-manjan/nima/patanjali-dant-kanti/maggi/goudhan-ghee/priyagold-tomtom/dabur-amla.
- dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="घड़ी डिटर्जेंट",
-   price=f'<span class="offer" style="background:{SCHEME_GREEN}">बोरी पर 1kg फ्री</span>',
-   sub='घड़ी डिटर्जेंट पाउडर 500 ग्राम वाली 1 बोरी खरीदने पर 1 किलो घड़ी पाउडर फ्री · <b class="delta">1kg माल फ्री</b>',
-   l1="स्कीम", v1="500 ग्राम वाली 1 बोरी पर 1 किलो घड़ी डिटर्जेंट पाउडर मुफ्त",
-   l2="फायदा", v2="हर बोरी पर 1kg अतिरिक्त माल — त्योहारी सफाई मांग में सीधा मुनाफा"),
- dict(i=5, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="माय फ्रूट जेली",
-   price=f'<span class="offer" style="background:{SCHEME_GREEN}">जार पर 100 नग फ्री</span>',
-   sub='माय फ्रूट जेली 900 नग वाला जार (लागत ₹680) पर 100 नग फ्री; ₹220 मार्जिन + फ्री माल मिलाकर ~₹320 मुनाफा, खाली टुन्टी जार अलग · <b class="delta">~₹320 मुनाफा</b>',
-   l1="स्कीम", v1="900 पीस जेली जार (लागत ₹680) के साथ 100 पीस बिल्कुल फ्री",
-   l2="फायदा", v2="₹220 मार्जिन और फ्री माल मिलाकर ~₹320 का मुनाफा; टुन्टी वाला जार भी बचे"),
- dict(i=6, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="विम बार",
-   price=f'<span class="offer" style="background:{SCHEME_BLUE}">4 पर 2 फ्री</span>',
-   sub='विम डिश वॉश बार (MRP ₹40) — 4 बार खरीदने पर 2 बार फ्री; ग्राहकों में तेज बिक्री · <b class="delta">4 + 2 फ्री</b>',
-   l1="ऑफर", v1="विम बार MRP ₹40 — 4 बार खरीदने पर 2 बार बिल्कुल मुफ्त",
-   l2="ग्राहक को", v2="हर 4 पर 2 फ्री दिखाकर ग्राहक की ज्यादा खरीद कराएं"),
- # News (trending_news) - in-house 1oct Pan India Trending 2: monsoon departed 12.6% below normal. Non-bait, concrete number, direct mandi-price impact. News=1 base. (News-1 nakli-ghee fraud bait skipped; Pan India Schemes pension kept as backup — Janaushadhi scheme used 30sep.)
- dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="मानसून विदा",
-   price='<span class="news">12.6% कम बारिश</span>',
-   sub='दक्षिण-पश्चिम मानसून सामान्य से 12.6% कम (759.4mm) बारिश के साथ विदा — 2001 के बाद चौथा सबसे कमजोर सीजन; अक्टूबर भी औसत से कम बारिश के आसार · <b class="delta">12.6% कम</b>',
-   l1="क्यों ज़रूरी", v1="खेत में नमी कम से रबी बुवाई (गेहूं, चना, सरसों, मसूर) में देरी; दाल-तिलहन भाव ऊपर की ओर",
-   l2="क्या करें", v2="तेज चलने वाली दाल, सरसों तेल व मसालों का स्टॉक समय रहते भरें; गेहूं-चीनी में जल्दबाजी नहीं"),
+ # Commodity (mandi_bhav) - 2 teji/RED (moth in-house daal, milk-powder in-house Samachar) + 1 mandi/GREEN (binola-tel in-house oil post). Direction balance 2R+1G. 3 DISTINCT in-house posts -> 3 distinct news_ids. sarson-tel/soyabean/desi-ghee/arhar skipped (used within 3d). masala sounth flat (no direction). rujhan digest skipped.
+ dict(i=1, label="मंडी भाव", stripe=RED, headline="मोठ",
+   price=f'{tri("up",RED)}₹7,800<span class="unit">/क्विंटल</span>',
+   sub=f'मोठ +₹100–200 → ₹7,600–7,800/क्विंटल; बिकवाली घटने से दलहन में मोठ सबसे आगे। उड़द भी +₹100–200 → रंगून FAQ ₹9,400–9,450 · <b class="delta" style="color:{RED}">₹200 तक तेजी</b>',
+   l1="क्यों", v1="बिकवाली घटी और दाल मिलों की मांग निकली; डॉलर मजबूत होने से आयातित माल का पड़ता महंगा, बिकवाल पीछे हटे",
+   l2="क्या करें", v2="मोठ व उड़द में जरूरत भर का माल पहले उठा लें; भाव अभी ऊपर की तरफ चल रहे हैं"),
+ dict(i=2, label="मंडी भाव", stripe=RED, headline="दूध पाउडर",
+   price=f'{tri("up",RED)}₹353<span class="unit">/किलो</span>',
+   sub=f'दूध पाउडर +₹20 → ₹340–353/किलो; ठंड से लिक्विड दूध की लागत बढ़ी और कंपनियों ने स्टॉक रोका। देसी घी भी +₹150 → ₹10,050/टिन · <b class="delta" style="color:{RED}">₹20 तेजी</b>',
+   l1="क्यों", v1="ठंड शुरू होने से लिक्विड दूध महंगा, प्लांटों पर लागत बढ़ी; दिवाली की मिठाई-खोया मांग सामने",
+   l2="क्या करें", v2="मिठाई-खोया व दूध पाउडर की त्योहारी मांग के लिए माल समय रहते रखें; दिवाली तक और तेजी के आसार"),
+ dict(i=3, label="मंडी भाव", stripe=GREEN, headline="बिनौला तेल",
+   price=f'{tri("down",GREEN)}₹14,800<span class="unit">/क्विंटल</span>',
+   sub=f'बिनौला तेल −₹50 → ₹14,800/क्विंटल; रिफाइंड वालों की मांग ढीली। सोयाबीन भी −₹100 → ₹6,050/क्विंटल, पाम वायदा नीचे · <b class="delta" style="color:{GREEN}">₹50 गिरावट</b>',
+   l1="क्यों", v1="रिफाइंड वालों की मांग कमजोर; सोया-पाम में नरमी के बीच बिनौला भी दबाव में, सरसों अकेली चढ़ी",
+   l2="क्या करें", v2="सोया-पाम वाले रिफाइंड तेल में भराई का मौका बना; सरसों तेल में देर करना महंगा पड़ सकता है"),
+ # FMCG (fmcg) - TOP 3 by LR desc across segments after ledger dedup (news_id 12d + brand 7d) + body-verify (all concrete Rs). All Consumer Scheme today (pure LR order). Category spread: oral-care / hair-oil / ghee.
+ #   sensodyne LR9.06 (MRP185 paste + Rs70 brush free), kesh-king LR7.82 (MRP190 4+1 + 4 lotion free, buy Rs150), param-ghee LR7.74 (900ml MRP680 + steel glass free, buy Rs550 sell Rs600).
+ #   BLOCKED brand7d: colgate/santoor/gillette/margo/hajmola/alpenliebe/dabur-lal-manjan/nima/patanjali-dant-kanti/krackjack/lux/vim/ghadi/my-fruit-jelly/pulse/dabur-amla/priyagold-tomtom.
+ dict(i=4, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="सेंसोडाइन",
+   price=f'<span class="offer" style="background:{SCHEME_BLUE}">पेस्ट पर ब्रश फ्री</span>',
+   sub='सेंसोडाइन टूथपेस्ट MRP ₹185 के साथ ₹70 वाला सेंसोडाइन ब्रश बिल्कुल फ्री — पैक के अंदर ही, पैक पर साफ लिखा है · <b class="delta">₹70 ब्रश फ्री</b>',
+   l1="ऑफर", v1="₹185 MRP पेस्ट के पैक में ही ₹70 का सेंसोडाइन ब्रश बिल्कुल मुफ्त",
+   l2="ग्राहक को", v2="एक ही पैक में पेस्ट और ब्रश — ₹70 की सीधी बचत, प्रीमियम ब्रांड का भरोसा"),
+ dict(i=5, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="केश किंग तेल",
+   price=f'<span class="offer" style="background:{SCHEME_BLUE}">4 पर 1 फ्री</span>',
+   sub='केश किंग हेयर ऑयल (MRP ₹190) — 4 पीस पर 1 पीस फ्री, साथ में 4 बॉडी लोशन भी फ्री; दुकानदार को ₹150 में, डबल मुनाफा · <b class="delta">4+1 + 4 लोशन फ्री</b>',
+   l1="ऑफर", v1="MRP ₹190 के 4 तेल पर 1 तेल फ्री और साथ में 4 बॉडी लोशन भी बिल्कुल मुफ्त",
+   l2="ग्राहक को", v2="एक ही खरीद में ज्यादा सामान; दुकानदार की खरीद ₹150 — अच्छा मार्जिन"),
+ dict(i=6, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="पारम घी",
+   price=f'<span class="offer" style="background:{SCHEME_BLUE}">घी पर स्टील गिलास फ्री</span>',
+   sub='पारम 900ml देसी घी (MRP ₹680) के साथ 1 स्टील गिलास फ्री; दुकानदार को ₹550 में, ₹600 में बेचकर भी ग्राहक को फायदा · <b class="delta">स्टील गिलास फ्री</b>',
+   l1="ऑफर", v1="900ml पारम देसी घी (MRP ₹680) पर 1 स्टील गिलास बिल्कुल फ्री",
+   l2="ग्राहक को", v2="₹600 में घी के साथ फ्री गिलास — ₹80 बचत; दुकानदार खरीद ₹550 पर मार्जिन"),
+ # News (trending_news) - in-house 2oct Pan India Trending 1: commercial 19kg LPG cylinder +Rs62.50 from 1 Oct. Non-bait, concrete Rs, direct dukandar cost impact (tea/namkeen/food). News=1 base. (News-2 rural-retail kept as backup; Pan India Schemes janaushadhi used 30sep; nakli-ghee bait never considered.)
+ dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="कमर्शियल गैस",
+   price='<span class="news">19kg सिलेंडर ₹62.50 महंगा</span>',
+   sub='1 अक्टूबर से 19 किलो कमर्शियल LPG सिलेंडर ₹62.50 महंगा → दिल्ली ₹2,810, पटना ₹3,100; 14 किलो घरेलू सिलेंडर अपरिवर्तित · <b class="delta">₹62.50 महंगा</b>',
+   l1="क्यों ज़रूरी", v1="चाय-नमकीन-मिठाई या खाने का काम करने वाली दुकानों की मासिक लागत बढ़ी, वो भी त्योहारी खपत के बीच",
+   l2="क्या करें", v2="महीने की खपत का हिसाब पहले लगाकर भरवाएं; बिक्री दाम में यह लागत जोड़ लें"),
 ]
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
 html,body{{margin:0;padding:0;width:1080px;height:1920px;overflow:hidden;font-family:'Nirmala UI','Segoe UI',sans-serif;}}

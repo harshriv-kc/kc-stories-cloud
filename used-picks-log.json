@@ -6486,6 +6486,86 @@
       ],
       "notes": "base 3+3+1. Commodity 2R(arhar,badi-elaichi)+1G(soyabean), 3 distinct in-house posts; sarson-tel skipped (used 30sep teji, 3d soft window); Samachar + rujhan digests skipped. FMCG top-3 by LR after 7d brand-dedup + body-verify; category detergent/confectionery/dishwash. Dropped Krackjack LR8.26 (highest) — body '11 packet par 1 free' has no ₹/weight, fails body-verify. BLOCKED brand7d incl colgate/santoor/gillette/margo/hajmola/alpenliebe/dabur-lal-manjan/nima/patanjali-dant-kanti/maggi/goudhan-ghee/priyagold-tomtom/dabur-amla. News=in-house monsoon-departure (nakli-ghee fraud bait skipped). QC: cards contact-sheet + 2 heavy cards full-size OK; badges radial-clearance OK (vD_1 456 false-positive = yellow toor-dal photo, text clear), PN alpha OK. PN ~27kkqri @16:30 IST HTTP200 (lead 418min). Slack #inhouse-content posted (KC Bot ok). 12c Hritik/Harsh DM skipped (retired, spec wins over 12b summary).",
       "pn_campaign_id": "~27kkqri"
+    },
+    {
+      "date": "2026-10-02",
+      "picks": {
+        "mandi_bhav": [
+          {
+            "news_id": "6840e43b-72a8-4e33-ad0c-28b766e14b46",
+            "brand": "moth",
+            "direction": "तेजी",
+            "label": "मोठ तेजी +₹100–200 → ₹7,600–7,800/क्विंटल; उड़द भी +₹100–200 → रंगून FAQ ₹9,400–9,450 (in-house daal 2oct RED, slide1)"
+          },
+          {
+            "news_id": "df5b0a98-8b56-410f-9d9f-5a2e2577625b",
+            "brand": "milk-powder",
+            "direction": "तेजी",
+            "label": "दूध पाउडर तेजी +₹20 → ₹340–353/किलो; देसी घी भी +₹150 → ₹10,050/टिन (in-house Samachar 2oct RED, slide2)"
+          },
+          {
+            "news_id": "3f822818-fd0e-4e51-b247-02a1b6a46362",
+            "brand": "binola-tel",
+            "direction": "मंदी",
+            "label": "बिनौला तेल मंदी −₹50 → ₹14,800/क्विंटल; सोयाबीन भी −₹100 → ₹6,050 (in-house tel post 2oct GREEN, slide3)"
+          }
+        ],
+        "fmcg": [
+          {
+            "news_id": "9ffba5a9-8f25-4e6d-80ba-3db8e2d1f8e6",
+            "brand": "sensodyne",
+            "direction": null,
+            "label": "सेंसोडाइन पेस्ट MRP₹185 के साथ ₹70 वाला ब्रश फ्री — Consumer Scheme (MP LR9.06, body-verified)"
+          },
+          {
+            "news_id": "139964e7-c934-46fc-b94d-d0b78a36f52f",
+            "brand": "kesh-king",
+            "direction": null,
+            "label": "केश किंग हेयर ऑयल MRP₹190 4+1 फ्री + 4 बॉडी लोशन फ्री, खरीद ₹150 — Consumer Scheme (MP LR7.82, body-verified)"
+          },
+          {
+            "news_id": "52ff46f5-cac7-4914-a1e2-4d171b1d7603",
+            "brand": "param-ghee",
+            "direction": null,
+            "label": "पारम 900ml देसी घी MRP₹680 पर स्टील गिलास फ्री, खरीद ₹550 बिक्री ₹600 — Consumer Scheme (MP LR7.74, body-verified)"
+          }
+        ],
+        "trending_news": [
+          {
+            "news_id": "342d7893-6601-4ae8-857c-a72da72387f2",
+            "brand": "lpg-commercial",
+            "direction": null,
+            "label": "कमर्शियल 19kg LPG सिलेंडर +₹62.50 → दिल्ली ₹2,810, पटना ₹3,100; 14kg घरेलू अपरिवर्तित (in-house Trending-1 2oct)"
+          }
+        ]
+      },
+      "also_shown": [
+        {
+          "news_id": "b7e3be2d-bd04-413f-ab0a-457c5ec23f63",
+          "brand": "rural-retail",
+          "label": "ग्रामीण FMCG रिटेल +6% vs शहरी 2.8%, 89% किराना हिस्सा (in-house TN2 2oct) — BACKUP: picked LPG instead (sharper concrete ₹ + direct dukandar cost impact)"
+        },
+        {
+          "news_id": "32306b69-607d-44b2-b200-87a38fcda91b",
+          "brand": "sounth",
+          "label": "सौंठ ₹32,500 पर थमी (in-house masala 2oct) — SKIPPED: flat, no clear direction/₹ move for a commodity card"
+        },
+        {
+          "news_id": "4a435f64-e066-4795-97b7-dc5e8fd900ab",
+          "brand": "ghadi",
+          "label": "Ghadi detergent 500g bori -> 1kg free Retailer LR5.19 — DROPPED: brand within 7d (used 1oct)"
+        },
+        {
+          "news_id": "583f3d91-16f0-4611-a4d4-ccd2f6edc465",
+          "brand": "santoor",
+          "label": "Santoor 4 set + 180ml handwash free Consumer LR5.28 — DROPPED: brand within 7d (used 25sep)"
+        },
+        {
+          "news_id": "bc599473-ac52-49c2-bc2d-b891acb8b28a",
+          "brand": "lux",
+          "label": "Lux 4+1 free MRP₹105 Consumer LR5.15 — DROPPED: brand within 7d (used 25sep)"
+        }
+      ]
     }
   ],
   "brand_dedup_window_days": 7
