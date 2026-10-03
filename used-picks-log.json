@@ -6566,6 +6566,72 @@
           "label": "Lux 4+1 free MRP₹105 Consumer LR5.15 — DROPPED: brand within 7d (used 25sep)"
         }
       ]
+    },
+    {
+      "date": "2026-10-03",
+      "picks": {
+        "mandi_bhav": [
+          {
+            "news_id": "968a9ed7-be99-4762-b699-4c405cda69de",
+            "brand": "kabuli-chana",
+            "label": "काबुली चना तेजी +₹300 → महाराष्ट्र ₹8,300–8,500/क्विंटल; 10 दिन में ₹13/किलो उछला (in-house daal 3oct RED, slide1)"
+          },
+          {
+            "news_id": "8a2a23a6-8dd4-4bff-9e13-0e076e971416",
+            "brand": "anjeer",
+            "label": "अंजीर मंदी → थोक बढ़िया ₹800/किलो (नीचे 500–550); नई फसल+पुराना स्टॉक भारी, उत्पादन +8–10% (in-house mewa 3oct GREEN, slide2)"
+          },
+          {
+            "news_id": "26e16eae-02aa-4f30-9c51-15208afdd319",
+            "brand": "jau",
+            "label": "जौ तेजी +₹60–90 → ₹2,900–2,950/क्विंटल; माल्ट/फ्लोर मिल मांग व उत्पादन घटा, जल्द ₹3,000 पार (in-house Samachar 3oct RED, slide3)"
+          }
+        ],
+        "fmcg": [
+          {
+            "news_id": "db555145-33ce-4a8e-a60d-0a1cae3c6f5c",
+            "brand": "snakker",
+            "label": "स्नैकर चॉकलेट पेटी MRP₹135 (30 नग), हर नग ₹5 → ₹150, ₹15 मुनाफ़ा — Retailer Scheme (MP LR7.92, body-verified)"
+          },
+          {
+            "news_id": "69bf9f28-d26a-4e60-91f0-1fb5890c0e02",
+            "brand": "surf-excel",
+            "label": "सर्फ एक्सेल 1kg बोरी पर ₹10 वाले 2 पाउच फ्री; खरीद ₹128.33 vs MRP₹147 — Consumer Scheme (MP LR6.08, body-verified)"
+          },
+          {
+            "news_id": "ef97ba9a-4d91-4139-ab75-e3ef726b94d8",
+            "brand": "exo",
+            "label": "एक्सो बार ₹5 में 50g+40g एक्स्ट्रा = 90g — Consumer Scheme (MP LR5.97, body-verified)"
+          }
+        ],
+        "trending_news": [
+          {
+            "news_id": "f95b467d-2c29-4e08-90ec-f1539fa12638",
+            "brand": "upi-mdr",
+            "label": "UPI नया MDR नियम 15 अक्टूबर से — ₹2,000 तक फ्री, ₹1 लाख/माह तक वसूली वाली छोटी दुकानों पर शून्य शुल्क (in-house Trending-1 3oct, non-bait policy)"
+          }
+        ]
+      },
+      "also_shown": [
+        {
+          "tag": "fmcg",
+          "news_id": "5be9cfab-a842-4e45-8db0-25bc3b0beb35",
+          "brand": "santoor",
+          "label": "Santoor 100g 4-set + 180ml handwash free Consumer LR6.13 — DROPPED: brand within 7d (also_shown 2oct)"
+        },
+        {
+          "tag": "fmcg",
+          "news_id": "c9dcd7e2-4007-40ec-a379-bff8e25e5952",
+          "brand": "unclear",
+          "label": "vague 'किरण क्लब से सामान मंगाया 15' Retailer LR6.34 — DROPPED: vague no-number post"
+        },
+        {
+          "tag": "mandi_bhav",
+          "news_id": "c1a51c00-1ad5-452f-99b9-4c10a82be0e7",
+          "brand": "sarson-tel",
+          "label": "oil post सरसों दाना teji +₹100 → 8,450–8,500 — SKIPPED commodity: सरसों complex used 30sep (3d soft window)"
+        }
+      ]
     }
   ],
   "brand_dedup_window_days": 7
